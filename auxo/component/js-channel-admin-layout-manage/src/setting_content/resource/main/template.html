@@ -1,0 +1,56 @@
+<div data-bind="attr:{id: params.id}" class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="" style="border-bottom: none; padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                <span class="text-danger tip" data-bind="text: model.tip"></span>
+                <ul class="nav nav-tabs" role="tablist" id="tabList">
+                    <!--ko foreach: model.channelList -->
+                    <!-- ko if: $index()<3 -->
+                    <li role="presentation"
+                        data-bind="click: $component.changeTab.bind($component,$index()),attr:{'class': !$index() ? 'active':''}">
+                        <a role="tab" data-toggle="tab"
+                           data-bind="attr:{'href':'#' + id + $component.params.id}, css:{'text-success': status}">
+                            <!--ko text: title +'('+ (status ? '启用' : '停用')+')'--><!--/ko--><span
+                                    data-bind="text: '(已选'+selected()+'个)', css:{'text-danger':selected()}"></span></a>
+                    </li>
+                    <!--/ko-->
+                    <!--/ko -->
+                    <!-- ko if: model.channelList().length>=4-->
+                    <li role="presentation" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bind="attr: {id : 'myTabDrop1'+ $component.params.id}"
+                           data-toggle="dropdown"
+                           aria-expanded="false">更多<span class="caret"></span></a>
+                        <ul class="dropdown-menu" data-bind="attr: {id : 'myTabDrop1-contents'+ $component.params.id}">
+                            <!--ko foreach: model.channelList -->
+                            <!-- ko ifnot: $index()<3 -->
+                            <li data-bind="click: $component.changeTab.bind($component,$index()),attr:{'class': !$index() ? 'active':''}">
+                                <a role="tab" data-toggle="tab"
+                                   data-bind="attr:{'href':'#'+id+$component.params.id},css:{'text-success': status}">
+                                    <!--ko text: title +'('+ (status ? '启用' : '停用')+')'--><!--/ko--><span
+                                            data-bind="text: '(已选'+selected()+'个)', css:{'text-danger':selected()}"></span></a>
+                            </li>
+                            <!--/ko-->
+                            <!--/ko -->
+                        </ul>
+                    </li>
+                    <!--/ko -->
+                </ul>
+            </div>
+            <div class="modal-body tab-content" style="max-height: 500px;overflow-y:auto;overflow-x:hidden;"
+                 data-bind="foreach: model.channelList">
+                <div role="tabpanel" class="tab-pane"
+                     data-bind="attr:{'class': $index() ? 'tab-pane' : 'tab-pane active', id: ''+id+$component.params.id}">
+                    <!-- ko if: $index() == $component.model.current() && clicked() -->
+                    <div data-bind="component: {name: 'x-channel-admin-layout-content-resource-list',params: { options: $component.params.options, id: id, count: selected, selectedCourse : selectedItems}}"></div>
+                    <!--/ko-->
+                </div>
+            </div>
+            <div class="modal-footer" style="border-top: none;">
+                <a class="btn-primary btn" data-bind="click: save">保存</a>
+                <a class="btn btn-default" data-dismiss="modal">取消</a>
+            </div>
+        </div>
+    </div>
+</div>

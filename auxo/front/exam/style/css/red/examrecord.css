@@ -1,0 +1,339 @@
+@charset "UTF-8";
+html * {
+  box-sizing: border-box; }
+
+i,
+em {
+  font-style: normal; }
+
+html {
+  height: 100%; }
+
+body {
+  overflow-y: scroll;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 157px;
+  min-width: 1200px;
+  background-color: #f2f2f2;
+  min-height: 100%; }
+
+*[data-render] {
+  display: none; }
+
+.boxs {
+  box-shadow: 0 1px 2px 1px #ddd; }
+
+/*item box shadow*/
+.vm {
+  vertical-align: middle;
+  display: inline-block; }
+
+/* 垂直居中常用 */
+.vb {
+  vertical-align: bottom; }
+
+/* 垂直居底常用 */
+.ovh {
+  overflow: hidden; }
+
+/* 溢出隐藏 */
+.icon-m i {
+  margin-right: 8px; }
+
+.lh1 {
+  line-height: 1; }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+/* 溢出省略号 */
+.nodata {
+  min-height: 300px;
+  line-height: 200px;
+  text-align: center; }
+
+/* margin padding */
+.mt20 {
+  margin-top: 20px !important; }
+
+.mt30 {
+  margin-top: 30px; }
+
+.ml20 {
+  margin-left: 20px; }
+
+.ml10 {
+  margin-left: 10px; }
+
+.mr20 {
+  margin-right: 20px; }
+
+.mb20 {
+  margin-bottom: 20px; }
+
+.mb30 {
+  margin-bottom: 30px !important; }
+
+.mt30 {
+  margin-top: 30px !important; }
+
+.mb40 {
+  margin-bottom: 40px !important; }
+
+.mtb15 {
+  margin: 15px 0; }
+
+.mtb10 {
+  margin: 10px 0; }
+
+.pd15 {
+  padding: 15px; }
+
+.pos_r {
+  position: relative; }
+
+.pos_a {
+  position: absolute; }
+
+/* background */
+.bc-f2 {
+  background: #f2f2f2; }
+
+.bc-c5 {
+  background: #c5c5c5; }
+
+.bc-f {
+  background: #fff; }
+
+.bc-blue {
+  border: 1px solid #ce3f3f;
+  background: #ce3f3f; }
+
+.bc-o {
+  background: #f60; }
+
+.bc-transparent {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+/* font color */
+.blue {
+  color: #ce3f3f !important; }
+
+/*hover:#0096ff*/
+.fc3 {
+  color: #333 !important; }
+
+.fc6 {
+  color: #666 !important; }
+
+.fc9 {
+  color: #999 !important; }
+
+.white {
+  color: #fff; }
+
+.fs12 {
+  font-size: 12px !important; }
+
+.fs13 {
+  font-size: 13px !important; }
+
+.fs14 {
+  font-size: 14px !important; }
+
+.fs16 {
+  font-size: 16px !important; }
+
+.fs18 {
+  font-size: 18px !important; }
+
+.fs20 {
+  font-size: 20px !important; }
+
+.fs24 {
+  font-size: 24px !important; }
+
+/*button*/
+a.s-btn {
+  display: inline-block;
+  padding: 0 20px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff; }
+
+a.mb-btn {
+  display: inline-block;
+  border: 1px solid #ce3f3f;
+  border-radius: 4px;
+  padding: 0 50px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  color: #fff; }
+
+a.l-btn {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0 65px;
+  height: 50px;
+  font-size: 22px;
+  line-height: 50px;
+  color: #fff; }
+
+a.l-btn.bc-blue:hover {
+  box-sizing: border-box;
+  border: 1px solid #992727;
+  background: #b62e2e; }
+
+.s-img,
+.side-pro .s-img {
+  width: 80px;
+  height: 54px; }
+
+a.l-btn.bc-o:hover {
+  background: #e35b00; }
+
+a.l-btn.blue:hover {
+  background: rgba(56, 173, 255, 0.9);
+  box-shadow: 0 1px 3px 1px #ccc; }
+
+a.l-btn.blue:hover {
+  background: rgba(56, 173, 255, 0.9);
+  box-shadow: 0 1px 3px 1px #ccc; }
+
+.hide {
+  display: none; }
+
+.hidden {
+  visibility: hidden; }
+
+.show {
+  display: block; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.tc {
+  text-align: center; }
+
+.tl {
+  text-align: left; }
+
+.tr {
+  text-align: right; }
+
+.cf:before, .cf:after {
+  content: "";
+  display: table; }
+
+.cf:after, .cl {
+  clear: both; }
+
+.cf {
+  zoom: 1; }
+
+.w {
+  width: 100%; }
+
+.wrap {
+  margin: 0 auto;
+  width: 1200px; }
+
+.container {
+  margin: 15px auto 30px;
+  width: 1200px;
+  min-height: 540px; }
+
+/*.col-left{width: mpx;float: left;}*/
+.col-center {
+  float: left;
+  width: 880px; }
+
+.col-right {
+  float: right;
+  width: 300px; }
+
+.record-list {
+  padding: 40px;
+  position: relative; }
+  .record-list .record-tit {
+    font-size: 24px;
+    margin-bottom: 20px; }
+  .record-list .pass-box {
+    background: url(../../images/pass-bg.png) no-repeat center;
+    color: #59a144;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 92px;
+    width: 185px; }
+    .record-list .pass-box.no {
+      background: url(../../images/nopass-bg.png) no-repeat center;
+      color: #de7676; }
+    .record-list .pass-box i {
+      display: inline-block;
+      height: 92px;
+      width: 92px;
+      line-height: 92px;
+      font-size: 20px;
+      text-align: center; }
+
+.nomal-table {
+  line-height: 1.75;
+  font-size: 14px;
+  width: 100%; }
+  .nomal-table td {
+    padding: 15px 25px; }
+  .nomal-table tr, .nomal-table td, .nomal-table th {
+    border: 1px solid #e5e5e5;
+    height: 50px; }
+  .nomal-table tr td:nth-child(2), .nomal-table tr th:nth-child(2) {
+    text-align: center; }
+  .nomal-table th, .nomal-table .total {
+    font-weight: bold;
+    padding: 10px 25px; }
+
+.cord-table {
+  line-height: 1.75;
+  font-size: 14px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  font-size: 16px;
+  width: 100%; }
+  .cord-table.exercise tr td:nth-child(3), .cord-table.exercise tr th:nth-child(3) {
+    padding-right: 70px;
+    text-align: right; }
+  .cord-table th, .cord-table .total {
+    font-weight: bold;
+    padding: 10px 25px; }
+  .cord-table thead th {
+    border: 1px solid #e5e5e5;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold; }
+  .cord-table tbody tr {
+    border: 1px dashed #e5e5e5; }
+  .cord-table tbody td {
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    height: 50px; }
+  .cord-table .control {
+    font-size: 0; }
+    .cord-table .control a {
+      font-size: 16px;
+      color: #ce3f3f; }
+      .cord-table .control a:hover {
+        text-decoration: underline; }
+  .cord-table .hr {
+    height: 10px;
+    width: 1px;
+    display: inline-block;
+    background: #e5e5e5;
+    margin: 0 15px; }

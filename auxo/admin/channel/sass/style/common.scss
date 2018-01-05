@@ -1,0 +1,239 @@
+@import '../share/common';
+
+body, button, input, select, textarea {
+  font-family: 'microsoft yahei', arial, tahoma, simsun;
+}
+
+$themeColor: #0cadb7;
+$panelHeight: 50px;
+.channel-panel {
+  position: fixed;
+  width: 100%;
+  height: $panelHeight;
+  overflow: hidden;
+  min-width: 1080px;
+  background-color: #dcdcdc;
+  z-index: 600;
+  a {
+    text-decoration: none;
+  }
+  .btn-wrap {
+    width: 150px;
+    float: right;
+    padding-right: 20px;
+    text-align: right;
+  }
+  .btn-create {
+    border: 1px solid #999;
+    margin-top: ($panelHeight - 34px) / 2;
+  }
+  .scroll-wrap {
+    position: absolute;
+    right: 150px;
+    left: 0;
+    top: 1px;
+    bottom: 0;
+    padding: 0 38px;
+    height: $panelHeight - 3px;
+    overflow: hidden;
+  }
+  .scroll-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .channel-list {
+    overflow: hidden;
+  }
+  .channel-item {
+    position: relative;
+    float: left;
+    font-size: 14px;
+    width: 180px;
+    height: $panelHeight - 3px;
+    color: #333;
+    border: 1px solid #f5f5f5;
+    background-color: #f5f5f5;
+    margin-left: 2px;
+    cursor: pointer;
+    &.drag-placeholder {
+      border: 1px dashed #95A5A6;
+      background-color: #fff;
+    }
+    &.offline {
+      color: #999;
+    }
+    &:hover {
+      color: $themeColor;
+    }
+    &.active {
+      color: #fff;
+      background-color: $themeColor;
+      border: 1px solid $themeColor;
+    }
+    .content-wrap {
+      height: 100%;
+      line-height: ($panelHeight / 2 - 2px) * 2;
+      padding: 0 10px;
+      .channel-title {
+        width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .glyphicon {
+          color: #d9534f;
+        }
+      }
+    }
+    .hover-group {
+      position: absolute;
+      right: 0;
+      top: -2px;
+      display: none;
+      line-height: 1;
+      .btn-op {
+        padding: 2px 3px;
+        line-height: 1;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      .hover-group {
+        display: block;
+      }
+    }
+  }
+  .input-full {
+    width: 100%;
+    height: 26px;
+    line-height: 1;
+    color: #666;
+    &:focus {
+      outline: none;
+    }
+  }
+  .slider {
+    position: absolute;
+    top: 0;
+    height: ($panelHeight / 2 - 1px) * 2;
+    width: 38px;
+    line-height: ($panelHeight / 2 - 1px) * 2;
+    font-size: 20px;
+    text-align: center;
+    &.slider-left {
+      left: 0;
+    }
+    &.slider-right {
+      right: 0;
+    }
+  }
+}
+
+.menu-panel {
+  position: fixed;
+  top: $panelHeight;
+  left: 0;
+  bottom: 0;
+  z-index: 300;
+  background-color: #d6d6d6;
+  width: 140px;
+  .menu-title {
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #bfbfbf;
+    padding-left: 20px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+    background: #ebebeb;
+    box-shadow: 0 1px 1px #bfbfbf;
+    .title-icon {
+      margin-left: 30px;
+    }
+  }
+  .menu-item {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 20px;
+    color: #666;
+    text-decoration: none;
+    &:hover, &.active {
+      color: #0cadb7;
+      background-color: #ccc;
+    }
+  }
+}
+
+.main-wrap {
+  position: absolute;
+  top: $panelHeight;
+  right: 0;
+  bottom: 0;
+  left: 140px;
+  &.hide-menu {
+    left: 0;
+  }
+  &.hide-top {
+    top: 0;
+  }
+}
+
+.container-error {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 200px;
+}
+
+.validationMessage {
+  color: #d9534f;
+}
+
+.dropdown-submenu {
+  position: relative;
+  & > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    border-radius: 0 6px 6px 6px;
+  }
+  &:hover {
+    & > .dropdown-menu {
+      display: block;
+    }
+    & > a:after {
+      border-left-color: #fff;
+    }
+  }
+  & > a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #333;
+    margin-top: 5px;
+    margin-right: -10px;
+  }
+  &.pull-left {
+    float: none;
+    & > .dropdown-menu {
+      left: -100%;
+      margin-left: 10px;
+      border-radius: 6px 0 6px 6px;
+    }
+  }
+}
+
+.item-user {
+  margin-right: 10px;
+}
+
+.item-price {
+  color: #ff9900;
+}

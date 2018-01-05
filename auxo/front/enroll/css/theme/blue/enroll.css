@@ -1,0 +1,14 @@
+.enroll-result,.enroll-result .top{text-align:center}
+body{padding-top:15px}
+.container{margin-top:0}
+.enroll-container{padding:0 30px 30px}
+.enroll-form{width:580px;margin:0 auto}
+.single-tit{font-size:22px;line-height:64px;font-weight:700;border-bottom:1px dashed #e0e0e0}
+.enroll-result{max-width:850px;margin:0 auto;min-height:500px}
+.enroll-result .inner{display:inline-block;padding:50px 0}
+.enroll-result .top i[class^=en-icon]{font-size:86px;color:#38adff;display:inline-block;vertical-align:middle}
+.enroll-result .top span{display:inline-block;vertical-align:middle;margin-left:15px;font-size:40px;color:#333}
+.enroll-result .bottom{color:#666;font-size:16px;margin-top:30px;text-align:center}
+.enroll-result .bottom .theme,.enroll-result .bottom a{color:#38adff}
+.enroll-result .bottom a:hover{text-decoration:underline}
+.error{color:red}

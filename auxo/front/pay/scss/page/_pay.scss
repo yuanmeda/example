@@ -1,0 +1,26 @@
+@import "../shared/mixins";
+@import "../shared/pagination";
+@import "../shared/nav";
+@import "../shared/table";
+.pay-container {
+    display: none;
+
+    color: #444;
+
+    @extend %tab-nav;
+    @extend %table-list;
+    #pagination {
+        text-align: center;
+        .pagination {
+            display: inline-block;
+        }
+        .pagination-info {
+            float: right;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .pagination-info {
+        display: none;
+    }
+}

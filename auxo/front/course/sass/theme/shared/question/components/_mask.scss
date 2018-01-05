@@ -1,0 +1,18 @@
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3f000000, endColorstr=#3f000000);
+    transition: opacity .3s linear;
+    z-index: 100;
+    :root &{
+        background: RGBA(0, 0, 0, .25);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled='false');
+    }
+    &.abs {
+        position: absolute;
+    }
+}

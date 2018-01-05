@@ -1,0 +1,75 @@
+.ko-simple-dialog {
+  border: 1px solid #666;
+  border-radius: 3px;
+  height: 300px;
+  width: 500px;
+  position: fixed;
+  left: 50%;
+  margin: 0 0 0 -250px;
+  top: 30%;
+  z-index: 9999;
+  background: #fff;
+  padding: 0; }
+  .ko-simple-dialog .ksd-header {
+    position: relative;
+    height: 40px;
+    border-bottom: 1px solid #cbcbcb; }
+    .ko-simple-dialog .ksd-header h1 {
+      font-size: 14px;
+      font-weight: normal;
+      padding: 0 0 0 15px;
+      line-height: 40px;
+      margin: 0; }
+    .ko-simple-dialog .ksd-header .ksd-close {
+      height: 16px;
+      width: 16px;
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhBRsIFgxFCZUtAAAAS0lEQVQoz2NgWMCgwIALKDAsYGBQYDiAQwlcBrsSFFFMJRgiqAJYzUQI4nQVRAK3o6FK0KSZGEgABKwg4EgC3iQQUASCmmBkEYhuALpTHMPbzYcBAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTA1LTI3VDA4OjIyOjEyKzAyOjAw/0nnKgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wNS0yN1QwODoyMjoxMiswMjowMI4UX5YAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC") no-repeat center center; }
+  .ko-simple-dialog .ksd-body {
+    position: absolute;
+    top: 41px;
+    bottom: 49px;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0; }
+  .ko-simple-dialog .ksd-footer {
+    height: 50px;
+    border-top: 1px solid #cbcbcb;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+    .ko-simple-dialog .ksd-footer span {
+      display: inline-block;
+      border-radius: 3px;
+      font-size: 12px;
+      padding: 5px 20px;
+      cursor: pointer;
+      margin: 10px 5px 0 5px; }
+    .ko-simple-dialog .ksd-footer .ksd-btn-confirm {
+      background: #38adff;
+      border: 1px solid #38adff;
+      color: #fff; }
+    .ko-simple-dialog .ksd-footer .ksd-btn-cancel {
+      border: 1px solid #cbcbcb;
+      color: #333; }
+
+.ko-simple-dialog-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background: #000;
+  z-index: 999;
+  padding: 0;
+  margin: 0; }

@@ -1,0 +1,12 @@
+<div class="ksd-header">
+  <h1 data-bind="text:title"></h1>
+  <span class="ksd-close" data-bind="click:cancel_command"></span>
+</div>
+<div class="ksd-body">
+  <div class="ksd-msg-center" data-bind="text:msg"></div>
+</div>
+<div class="ksd-footer">
+  <!--ko foreach:buttons-->
+  <span data-bind="css:{'ksd-btn-confirm': is_primary, 'ksd-btn-cancel': !is_primary},click:click,text:label"></span>
+  <!--/ko-->
+</div>

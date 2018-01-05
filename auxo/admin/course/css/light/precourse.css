@@ -1,0 +1,52 @@
+.selected-list li {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.form-horizontal .control-label {
+  width: 150px; }
+
+a, a:hover {
+  text-decoration: none; }
+
+i {
+  vertical-align: baseline !important; }
+
+.mr5 {
+  margin-right: 5px; }
+
+input {
+  padding: 3px !important;
+  box-sizing: content-box !important; }
+
+.selected-list {
+  margin-bottom: 20px;
+  box-sizing: content-box; }
+  .selected-list li {
+    position: relative;
+    border: 1px solid #dcdcdc;
+    width: 500px;
+    height: 40px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px; }
+    .selected-list li .delete {
+      display: none;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+      line-height: 15px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      color: #ccc; }
+      .selected-list li .delete:hover {
+        background-color: #ccc;
+        color: #fff; }
+    .selected-list li:hover .delete {
+      display: block; }

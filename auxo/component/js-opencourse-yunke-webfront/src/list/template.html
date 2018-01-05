@@ -1,0 +1,82 @@
+<div class="opencourse-yunke-list">
+
+  <div class="list-queries">
+    <ul>
+      <li data-bind="css:{active:coursesAuditStatus() == null},click:searchByStatus.bind($root, null),translate:{key: 'opencourse.list.nav.0'}">全部</li>
+      <li data-bind="css:{active:coursesAuditStatus() == 0},click:searchByStatus.bind($root, 0),translate:{key: 'opencourse.list.nav.1'}">待修改</li>
+      <li data-bind="css:{active:coursesAuditStatus() == 1},click:searchByStatus.bind($root, 1),translate:{key: 'opencourse.list.nav.2'}">待审核</li>
+      <li data-bind="css:{active:coursesAuditStatus() == 2},click:searchByStatus.bind($root, 2),translate:{key: 'opencourse.list.nav.3'}">已审核</li>
+      <li data-bind="css:{active:coursesAuditStatus() == 4},click:searchByStatus.bind($root, 4),translate:{key: 'opencourse.list.nav.4'}">已复审</li>
+      <li data-bind="css:{active:coursesAuditStatus() == 8},click:searchByStatus.bind($root, 8),translate:{key: 'opencourse.list.nav.5'}">已驳回</li>
+    </ul>
+  </div>
+  <!--ko if:courses().length > 0-->
+  <div class="list">
+    <table>
+      <thead>
+        <tr>
+          <th class="tl" style="width: 35%;" data-bind="translate:{key:'opencourse.list.headers.names'}">课程名称</th>
+          <th class="tl" style="width: 35%;" data-bind="translate:{key:'opencourse.list.headers.tags'}">课程标签</th>
+          <th style="width: 10%;" data-bind="translate:{key:'opencourse.list.headers.status'}">状态</th>
+          <th style="width: 20%;" data-bind="translate:{key:'opencourse.list.headers.actions'}">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--ko foreach:courses-->
+        <tr>
+          <td class="tl">
+            <span class="label" data-bind="text:name"></span>
+          </td>
+          <td class="tl">
+            <span class="label" data-bind="text:tagsText"></span>
+          </td>
+          <td>
+            <span class="label" data-bind="text:auditStatusText"></span>
+          </td>
+          <td>
+            <!--ko if:auditStatus == 0-->
+            <a class="act" data-bind="click:$parent.modifyCourse.bind($root, id),translate:{key:'opencourse.list.actions.modify'}">修改</a>
+            <!--/ko-->
+
+            <!--ko if:auditStatus != 0-->
+            <a class="act" data-bind="click:$parent.checkCourseDetail.bind($root, id),translate:{key:'opencourse.list.actions.detail'}">课程详情</a>
+            <!--/ko-->
+          </td>
+        </tr>
+        <!--/ko-->
+      </tbody>
+    </table>
+  </div>
+  <!--/ko-->
+
+  <!--ko if:courses().length === 0-->
+  <div class="empty">暂无课程</div>
+  <!--/ko-->
+
+  <!--ko if:totalPages() > 1-->
+  <div class="yunke-list-foot">
+    <div class="yunke-pagination">
+      <!--ko if:pageNum() > 1-->
+      <span data-bind="click:searchByPage.bind($root, pageNum()-1),translate:{key:'opencourse.list.pages.prev'}"></span>
+      <span data-bind="click:searchByPage.bind($root, pageNum()-1),text:pageNum()-1"></span>
+      <!--/ko-->
+
+      <span class="active" data-bind="text:pageNum()"></span>
+
+      <!--ko if:pageNum() < totalPages()-->
+
+      <span data-bind="click:searchByPage.bind($root, pageNum()+1),text:pageNum()+1"></span>
+      <span data-bind="click:searchByPage.bind($root, pageNum()+1),translate:{key:'opencourse.list.pages.next'}"></span>
+
+      <!--/ko-->
+    </div>
+    <div class="yunke-jump">
+      <span data-bind="translate:{key:'opencourse.list.pages.jump'}"></span>
+      <input type="text" data-bind="value:inputPageNum" />
+      <span data-bind="translate:{key:'opencourse.list.pages.pgn'}"></span>
+      <span class="btn" data-bind="click:searchByPage.bind($root, inputPageNum()),translate:{key: 'opencourse.list.pages.go'}"></span>
+    </div>
+  </div>
+  <!--/ko-->
+
+</div>

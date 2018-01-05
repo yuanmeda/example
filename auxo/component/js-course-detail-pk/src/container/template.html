@@ -1,0 +1,41 @@
+<div class="x-course-detail-pk pk-entrance-main">
+    <div class="catelog-l">
+        <div class="note-side">
+            <div class="n-ui-tab-menu">
+                <a href="javascript:;" class="btn-tab" data-bind="translate: {key: 'courseDetailPk.catalog'}">课程目录</a>
+                <!--<a href="###" class="btn-tab">知识索引</a>-->
+            </div>
+            <div class="n-ui-menu">
+                <!-- 课程目录 -->
+                <dl class="dlist" data-bind="visible: model.course().catalog.length">
+                    <dt data-bind="text: model.course_name, attr: {title: model.course_name},click:switchChapter.bind($component)"
+                        style="cursor:pointer;"></dt>
+                    <!-- ko foreach: {data: model.course().catalog, as: 'catalog'} -->
+                    <dd data-bind="css:{'open': !$index()}">
+                        <div class="d-item"
+                             data-bind="attr:{title: catalog.title}, click: $component.switchChapter.bind($component)">
+                            <span data-bind="text: catalog.title"></span>
+                            <span class="tree-pk" data-bind="visible:extra && extra.pk_id"></span>
+                        </div>
+                    </dd>
+                    <!-- /ko -->
+                </dl>
+                <!-- 课程目录为空 -->
+                <p class="no-menu"
+                   data-bind="visible: !model.course().catalog.length,translate:{key: 'courseDetailPk.noCatalog'}">
+                    暂无课程目录</p>
+            </div>
+        </div>
+    </div>
+    <div class="relavant-r">
+        <!--ko if:model.pkId-->
+        <div data-bind="component: {'name': 'x-course-detail-pk-entrance', params: {'pkId':model.pkId(),'options':options}}"></div>
+        <!--/ko-->
+        <!--ko if:!model.pkId()-->
+        <div class="no-pk-wrap">
+            <img data-bind="attr:{'src':urls.static + 'auxo/component/js-course-detail-pk/images/ico-nopk.png'}">
+            <p data-bind="translate:{key: 'courseDetailPk.noCoursePk'}">该节课程暂无PK赛，我们正在为您努力准备中！</p>
+        </div>
+        <!--/ko-->
+    </div>
+</div>

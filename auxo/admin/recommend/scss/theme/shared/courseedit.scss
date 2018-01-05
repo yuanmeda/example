@@ -1,0 +1,45 @@
+//@import "base";
+@import "banner_header";
+@import "mixins";
+.box{
+  margin-bottom: 20px;
+  margin-top:5px;
+  .form-horizontal input[type="text"]{
+    height:26px;
+  }
+  .form-horizontal .img-sm{
+    display:inline-block;
+    width:270px;
+    height:180px;
+    border-radius: 3px;
+    vertical-align: middle;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .ztree{
+    height: 300px;
+    width: 270px;
+    border: #AFA8A8 1px solid;
+    overflow: scroll;
+  }
+}
+html{
+  overflow: auto;
+}
+.status{
+  label{
+    display: inline-block;
+    margin:5px 10px 0 0;
+    span,input{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+.form-horizontal.coures-feature{
+  .control-group{
+    padding:10px 0 5px;
+  }
+}

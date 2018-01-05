@@ -1,0 +1,92 @@
+@import "mixins";
+
+/*!
+ * 课程标签样式组
+ * @type {[type]}
+ */
+$labels: (
+  important:$red,
+  warning:#c3c3c3,
+  success:$tipsColor,
+  info:$themeColor,
+  reverse:#c3c3c3
+) !default;
+
+.label-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    text-align: left;
+}
+
+%label {
+    display: inline-block;
+
+    margin-right: 5px;
+    padding: 0 10px;
+    height: 21px;
+
+    font-size: 12px;
+    line-height: 21px;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    color: #fff;
+    background-color: #999;
+
+    @include css3(border-radius,0px);
+}
+
+@mixin label($color) {
+    background-color: $color;
+
+    @extend %label;
+    &:hover {
+        background-color: $color;
+    }
+}
+
+@each $type,$color in $labels {
+    .label-#{$type} {
+        @include label($color);
+    }
+}
+
+/*!
+ * i课程标签样式
+ */
+//容器--定位用
+.item-label-box{
+  position:absolute;
+  right: 0;
+  bottom: 0;  
+}
+i.item-label {
+    display: inline-block;
+
+    margin-left: 3px;
+    padding: 0 10px;
+    height: 21px;
+
+    font-size: 12px;
+    font-style: normal;
+    line-height: 21px;
+
+    color: $white;
+    background: #8cc951;
+    &.off {
+        background: #c3c3c3;
+    }
+    &.zd {
+        background: $themeColor;
+    }
+    &.tj {
+        background: $red;
+    }
+    &.gk {
+        background: darken($themeColor,10%);
+    }
+}

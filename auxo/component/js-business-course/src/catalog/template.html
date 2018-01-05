@@ -1,0 +1,63 @@
+<script id="catalog-lesson-item" type="text/html">
+    <li class="sub-item" data-bind="click:$component.getResources.bind($component),clickBubble: false">
+        <div class="item-content">
+            <span class="item-txt" data-bind="css: { 'state-on' : $data.id == $component.model.lesson_id() }">
+                <em data-bind="html: name, attr: { 'title' : name }"></em>
+                <i class="iconfont-e-course" data-bind="css: { 'xcd-icon-e-course--done': status == 2, 'xcd-icon-e-course--half': status == 1, 'xcd-icon-e-course--empty': status == 0 }"></i>
+            </span>
+        </div>
+    </li>
+</script>
+
+<script id="catalog-tree-item" type="text/html">
+    <li class="sub-item open" data-bind="css:{'open':isOpen},click:$component.getSections.bind($component),clickBubble: false">
+        <div class="item-content">
+            <i class="iconfont-e-course" data-bind="click: $component.toggleTree.bind($component), visible: children.length || lessons.length > 1, css: { 'xcd-icon-e-course--down' : isOpen, 'xcd-icon-e-course--right': !isOpen() }"></i>
+            <span class="item-txt" data-bind="click: $component.getResourcesByCatalog.bind($component), css: { 'state-on' : $data.id == $component.model.lesson_id() }">
+                <em data-bind="html: name, attr: { 'title' : name }"></em>
+                <i class="iconfont-e-course" data-bind="css: { 'xcd-icon-e-course--done': $component.lessonStatus.bind($component) == 2, 'xcd-icon-e-course--half': $component.lessonStatus.bind($component) == 1, 'xcd-icon-e-course--empty': $component.lessonStatus.bind($component) == 0 }"></i>
+            </span>
+        </div>
+        <ul class="list">
+            <!--ko foreach:children-->
+                <!--ko template: { 'name': 'catalog-tree-item', 'data': $data }--><!--/ko-->
+            <!--/ko-->
+            <!--ko if:lessons.length>1-->
+                <!--ko foreach:lessons-->
+                    <!--ko template: { 'name': 'catalog-lesson-item', 'data': $data }--><!--/ko-->
+                <!--/ko-->
+            <!--/ko-->
+        </ul>
+    </li>
+</script>
+
+<div class="n-ui-menu-cata course-menu-default" data-bind="css: { 'hide': !model.catalog() || model.catalog().children.length <= 0 }">
+    <ul class="dlist" data-bind="with:model.catalog">
+        <li class="n-ui-menu-cata-title" data-bind="click: $component.courseClick.bind($component), visible: $component.config.showCourse, text: $component.config.courseTitle, css: { 'state-on': $component.model.courseSelected }, attr: { 'data-id' : $component.config.courseId }"></li>
+        <!--ko foreach:children-->
+            <li class="sub-item open" data-bind="css:{'open':isOpen},click:$component.getChapters.bind($component)">
+                <div class="item-content">
+                    <i class="iconfont-e-course" data-bind="click: $component.toggleTree.bind($component), visible: children.length || lessons.length > 1, css: { 'xcd-icon-e-course--minus' : isOpen, 'xcd-icon-e-course--add' : !isOpen() }"></i>
+                    <span class="item-txt" data-bind="click: $component.getResourcesByCatalog.bind($component), css: { 'state-on' : $data.id == $component.model.lesson_id() }">
+                        <em data-bind="html: name, attr: { 'title' : name }"></em>
+                        <i class="iconfont-e-course" data-bind="css: { 'xcd-icon-e-course--done': $component.lessonStatus.bind($component) == 2, 'xcd-icon-e-course--half': $component.lessonStatus.bind($component) == 1, 'xcd-icon-e-course--empty': $component.lessonStatus.bind($component) == 0 }"></i>
+                    </span>
+                </div>
+                <ul class="list">
+                    <!--ko foreach:children-->
+                        <!--ko template: { 'name': 'catalog-tree-item', 'data': $data }--><!--/ko-->
+                    <!--/ko-->
+                    <!--ko if:lessons.length>1-->
+                        <!--ko foreach:lessons-->
+                            <!--ko template: { 'name': 'catalog-lesson-item', 'data': $data }--><!--/ko-->
+                        <!--/ko-->
+                    <!--/ko-->
+                </ul>
+            </li>
+        <!--/ko-->
+    </ul>
+</div>
+
+<div class="course__no-menu" data-bind="css: { 'hide': model.catalog() && model.catalog().children.length > 0 }">
+    <p class="no-menu-word" data-bind="translate: { key: 'courseLearn.catalog.nodata' }"></p>
+</div>

@@ -1,0 +1,28 @@
+<script id="catalog-lesson-item" type="text/html">
+    <li class="sub-item" data-bind="click:$component.getResources.bind($component)">
+        <span class="item-txt" data-bind="css:{'active': $data.id == $component.model.lesson_id()}">
+            <em data-bind="html:name"></em>
+        </span>
+    </li>
+</script>
+<script id="catalog-tree-item" type="text/html">
+    <li class="sub-item" data-bind="attr:{'title':name},css:{'open':isOpen}">
+        <a class="icon-toggle" href="javascript:;"
+           data-bind="click:$component.toggleTree.bind($component),visible:children.length || lessons.length > 1">
+            <i class="xcl-icon-right" data-bind="css:{'xcl-icon-down':isOpen,'xcl-icon-right':!isOpen()}"></i>
+        </a>
+        <span class="item-txt" data-bind="click:$component.getResourcesByCatalog.bind($component),css:{'active':lessons.length == 1 && lessons[0].id == $component.model.lesson_id()}">
+            <em data-bind="html:name"></em>
+        </span>
+        <ul class="list level-2">
+            <!--ko foreach:children-->
+                <!--ko template: { 'name': 'catalog-tree-item', 'data': $data }--><!--/ko-->
+            <!--/ko-->
+            <!--ko if:lessons.length > 1-->
+                <!--ko foreach:lessons-->
+                    <!--ko template: { 'name': 'catalog-lesson-item', 'data': $data }--><!--/ko-->
+                <!--/ko-->
+            <!--/ko-->
+        </ul>
+    </li>
+</script>

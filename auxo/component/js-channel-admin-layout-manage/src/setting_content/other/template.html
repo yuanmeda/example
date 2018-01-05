@@ -1,0 +1,26 @@
+<div class="section-block modal fade" data-backdrop="static" id="sectionSetting4">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title" data-bind="text:params.type === 4?'资源列表':'全部资源'">全部资源</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <label class="control-label">资源标签：</label>
+                            <a href="javascript:;" class="form-control-static"
+                               data-bind="click: _openDialog, text: model.tag_name">请选择标签</a>
+                            <p data-bind="text: model.tip_text"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ko if: model.tag -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-tag', params:{'selected_tag': model.setting.data, from:'other', type: params.type, save: true, auto_selected: true, parent: $component, id: model.tag_id()}}"></div>
+<!--/ko-->

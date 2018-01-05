@@ -1,0 +1,150 @@
+.udialog {
+    border-radius: 0;
+    padding: 0;
+
+    background: #fff;
+
+    box-shadow: 0 0 10px #e4e4e4;
+}.udialog .ui-widget-header {
+    padding: 32px 0 0 26px;
+
+    background: #fff;
+}.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    border-radius: 0;
+
+    color: #fff;
+
+    opacity: 1;
+}.udialog .ui-dialog-title {
+    margin: 0;
+    padding: 0;
+
+    color: #333;
+}.udialog .ui-dialog-titlebar-close {
+    top: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+}.udialog .ui-dialog-content {
+    padding: 20px 26px 0;
+}.udialog .ui-dialog-buttonpane {
+    padding: 32px 0 27px;
+
+    text-align: center;
+
+    background: #fff;
+}.udialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none;
+}.udialog button.udialogBtn.ui-state-default {
+    border-color: #b11000;
+
+    color: #fff;
+    background-color: #ce3f3f;
+    background-image: none;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c11000), to(#ce3f3f));
+}.udialog button.udialogBtn.ui-state-default span {
+    color: white;
+}.udialog button.udialogBtn.ui-state-hover {
+    background-color: #b11000;
+    background-image: none;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#be3f3f), to(#b11000));
+}.udialog .udialog-message-text {
+    position: relative;
+}.udialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+    border-radius: 3px;
+}.udialog .udialog-message .udialog-icon {
+    position: absolute;
+    top: 12px;
+    left: 40px;
+}.udialog .udialog-icon {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+
+    background-image: url(img/u-icon.png);
+}.udialog .udialog-icon-right {
+    background-position: 0 0;
+}.udialog .udialog-icon-info {
+    background-position: -54px 0;
+}.udialog .udialog-icon-error {
+    background-position: -108px 0;
+}.udialog .ui-widget-header .ui-state-hover,
+.udialog .ui-widget-header .ui-state-focus {
+    background: none;
+}.udialog .ui-dialog-titlebar .ui-state-hover {
+    border: 0;
+
+    background: none;
+}.sys-alert .ui-widget-header {
+    border: 0;
+    height: 30px;
+
+    line-height: 30px;
+
+    background: #fff;
+}.sys-alert .ui-dialog-titlebar-close {
+    top: 0;
+
+    border: 0;
+    width: 40px;
+    height: 40px;
+}.sys-alert .ui-dialog-titlebar-close span.ui-icon-closethick {
+    margin: 10px auto;
+}.sys-alert .ui-dialog-titlebar .ui-state-hover {
+    border: 0;
+}.sys-alert .ui-dialog-buttonpane {
+    border: 0;
+    padding: 32px 0 27px;
+}.sys-alert .udialog-text {
+    padding: 20px 30px 30px 80px;
+
+    font: 18px/1.8 "microsoft yahei";
+}.sys-alert .udialog-text em {
+    padding: 0 5px;
+
+    color: #9f0a00;
+}.sys-alert .btn-red {
+    color: #fff;
+}.sys-alert .sys-ft {
+    text-align: right;
+}.sys-alert *:focus {
+    outline: none;
+}.sys-confirm .ui-dialog-content .udialog-text {
+    font-size: 14px;
+
+    color: #999;
+}.sys-confirm .ui-dialog-title {
+    font-size: 18px;
+}.ui-widget-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: #000;
+}.sys-modalTip .ui-widget-header {
+    padding: 14px 14px 0 0 !important;
+
+    text-align: right;
+}.sys-modalTip .ui-widget-header .ui-icon-closethick {
+    font-size: 26px;
+}.sys-modalTip .sys-err-box {
+    padding: 7px 0 64px 0;
+}.sys-modalTip .sys-err-alert {
+    text-align: center;
+}.sys-modalTip .sys-err-alert .sys-err-text {
+    padding: 20px 0 10px 0;
+
+    font-size: 22px;
+    line-height: 22px;
+}.sys-modalTip .sys-err-alert .sys-err-desc {
+    font-size: 14px;
+    line-height: 14px;
+
+    color: #666;
+}

@@ -1,0 +1,256 @@
+body {
+  background: #fff;
+  overflow: visible; }
+
+html {
+  overflow: visible; }
+
+.x-appraise-list .top, .x-appraise-resource .top {
+  height: 102px;
+  overflow: hidden;
+  margin: 20px 0 20px 0; }
+
+.x-appraise-list .top > div, .x-appraise-resource .top > div {
+  float: left;
+  margin-right: 8px;
+  height: 100%; }
+
+.x-appraise-list .top .star, .x-appraise-resource .top .star {
+  width: 200px;
+  color: #9B9B9B; }
+
+.x-appraise-list .top .star .ratio, .x-appraise-resource .top .star .ratio {
+  height: 10px;
+  background-color: #FFD596;
+  margin-left: 10px;
+  margin-right: 5px;
+  display: -moz-inline-stack;
+  display: inline-block; }
+
+.x-appraise-list .top img, .x-appraise-list .top .pic, .x-appraise-resource .top img, .x-appraise-resource .top .pic {
+  height: 100%;
+  max-width: 160px; }
+
+.x-appraise-list .top .desc, .x-appraise-resource .top .desc {
+  width: 200px; }
+
+.x-appraise-list .top .desc h1, .x-appraise-resource .top .desc h1 {
+  font-size: 18px;
+  font-weight: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden; }
+
+.x-appraise-list .top .desc p, .x-appraise-resource .top .desc p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px; }
+
+.x-appraise-list .top .desc p .score, .x-appraise-resource .top .desc p .score {
+  font-size: 16px; }
+
+.x-appraise-list .container-fluid, .x-appraise-resource .container-fluid {
+  padding: 20px 20px 50px; }
+
+.x-appraise-list .content-bottom, .x-appraise-resource .content-bottom {
+  margin-bottom: 15px;
+  background-color: #fff; }
+
+.x-appraise-list .form-horizontal, .x-appraise-resource .form-horizontal {
+  height: 50px; }
+
+.x-appraise-list .form-horizontal .form-control select, .x-appraise-resource .form-horizontal .form-control select {
+  width: 250px;
+  height: 30px;
+  margin-right: 10px;
+  padding-left: 5px; }
+
+.x-appraise-list .form-horizontal .form-control .input-large, .x-appraise-resource .form-horizontal .form-control .input-large {
+  width: 250px;
+  height: 28px;
+  margin-right: 10px;
+  padding-left: 5px; }
+
+.x-appraise-list .review-box, .x-appraise-resource .review-box {
+  width: 1000px; }
+
+.x-appraise-list .clearfix:after, .x-appraise-resource .clearfix:after {
+  content: "";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both; }
+
+.x-appraise-list .clearfix, .x-appraise-resource .clearfix {
+  zoom: 1; }
+
+.x-appraise-list .clear, .x-appraise-resource .clear {
+  clear: both; }
+
+.x-appraise-list .content .box, .x-appraise-resource .content .box {
+  padding: 10px 20px; }
+  .x-appraise-list .content .box:hover .box-label .del, .x-appraise-resource .content .box:hover .box-label .del {
+    display: block; }
+
+.x-appraise-list .content .box:not(:last-child), .x-appraise-resource .content .box:not(:last-child) {
+  border-bottom: 1px solid #ddd; }
+
+.x-appraise-list .box-pic, .x-appraise-list .box-label, .x-appraise-resource .box-pic, .x-appraise-resource .box-label {
+  float: left;
+  position: relative; }
+
+.x-appraise-list .box-label .desc, .x-appraise-resource .box-label .desc {
+  width: 800px;
+  padding: 3px 6px;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap; }
+
+.x-appraise-list .box-label .del, .x-appraise-resource .box-label .del {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  color: #0cadb7;
+  display: none; }
+
+.x-appraise-list .box-pic, .x-appraise-resource .box-pic {
+  width: 100px;
+  overflow: hidden; }
+
+.x-appraise-list .box-pic img, .x-appraise-resource .box-pic img {
+  width: calc(100% - 8px);
+  height: 100%;
+  border: 1px solid #ddd;
+  padding: 3px;
+  box-shadow: 0 0 1px #eee; }
+
+.x-appraise-list .box-pic .course-name, .x-appraise-resource .box-pic .course-name {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.x-appraise-list .box-label, .x-appraise-resource .box-label {
+  margin-left: 10px;
+  width: calc(100% - 120px); }
+
+.x-appraise-list .left, .x-appraise-resource .left {
+  float: left; }
+
+.x-appraise-list .right, .x-appraise-resource .right {
+  float: right; }
+
+.x-appraise-list .box-label span, .x-appraise-resource .box-label span {
+  display: inline-block; }
+
+.x-appraise-list .content-bottom, .x-appraise-resource .content-bottom {
+  margin-bottom: 15px;
+  background-color: #fff; }
+
+.x-appraise-list .content div p, .x-appraise-resource .content div p {
+  margin: 15px 0 10px 15px; }
+
+.x-appraise-list .content div hr, .x-appraise-resource .content div hr {
+  width: 990px;
+  height: 1px;
+  margin-left: 5px;
+  border: none;
+  border-top: 1px solid #BCBCBC; }
+
+.x-appraise-list .content div .text, .x-appraise-resource .content div .text {
+  width: 850px;
+  word-wrap: break-word;
+  word-break: break-all; }
+
+.x-appraise-list .content div p .time, .x-appraise-resource .content div p .time {
+  float: right;
+  margin-right: 50px; }
+
+.x-appraise-list .content div p .del, .x-appraise-resource .content div p .del {
+  float: right;
+  margin-right: -70px;
+  color: #2F7ED8;
+  cursor: pointer;
+  display: none;
+  margin-top: -8px; }
+
+.x-appraise-list .page-widget, .x-appraise-resource .page-widget {
+  font-size: 14px;
+  width: 1000px;
+  margin-top: 15px; }
+
+.x-appraise-list .manage-head, .x-appraise-resource .manage-head {
+  margin-top: 25px; }
+
+.x-appraise-list .content .pic, .x-appraise-resource .content .pic {
+  height: 60px; }
+
+.x-appraise-list .rv-spring, .x-appraise-resource .rv-spring {
+  display: inline-block;
+  background: url(../../images/star.png); }
+
+.x-appraise-list .star-icon, .x-appraise-resource .star-icon {
+  width: 68px;
+  height: 12px;
+  position: relative;
+  margin: 3px 10px 0 0;
+  background-position: 0 -13px;
+  overflow: hidden; }
+
+.x-appraise-list .star-icon .on, .x-appraise-resource .star-icon .on {
+  width: 68px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  background-position: 0 0px; }
+
+.x-appraise-list .review-box, .x-appraise-resource .review-box {
+  width: 1024px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px #ccc; }
+
+.x-appraise-list .tab-group, .x-appraise-resource .tab-group {
+  height: 48px;
+  line-height: 48px;
+  border-bottom: 1px solid #ddd; }
+  .x-appraise-list .tab-group a, .x-appraise-resource .tab-group a {
+    height: 48px;
+    line-height: 48px;
+    display: inline-block;
+    float: left;
+    padding: 0 40px;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    box-sizing: border-box; }
+    .x-appraise-list .tab-group a.btn-tab-selected, .x-appraise-resource .tab-group a.btn-tab-selected {
+      border-bottom: 2px solid #0097DA; }
+      .x-appraise-list .tab-group a.btn-tab-selected:before, .x-appraise-resource .tab-group a.btn-tab-selected:before {
+        display: inline-block;
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 5px solid #0097DA;
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%); }
+
+.x-appraise-list .item-nodata, .x-appraise-resource .item-nodata {
+  text-align: center;
+  display: block;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  font-size: 20px;
+  color: #999; }
+
+.x-appraise-list .cf:after, .x-appraise-resource .cf:after {
+  height: 0;
+  content: "";
+  clear: both;
+  zoom: 1; }

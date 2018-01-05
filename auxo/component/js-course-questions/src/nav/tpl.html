@@ -1,0 +1,41 @@
+<div class="note-side">
+  <div class="n-ui-tab-menu">
+    <a href="javascript:void(0);" class="btn-tab" data-bind="translate:{key:'qas_course_question.nav_course_title'}">课程目录</a>
+    <!--<a href="###" class="btn-tab">知识索引</a>-->
+  </div>
+  <div class="n-ui-menu">
+    <!-- 课程目录 -->
+    <dl class="dlist" data-bind="visible: content.length">
+      <!--课程名称-->
+      <dt data-bind="text: course_name,
+      click: select_course,
+      css:{active: selected().id === course_id},
+      attr: {title: course_name}"></dt>
+      <!-- 一级-->
+      <!-- ko foreach: {data: content ,as: 'content'} -->
+      <dd data-bind="css:{'open': !$index()}">
+        <em class="iconfont-learn n-icon-add"
+            data-bind="click: $component.toggle_list.bind($component),
+            css: $index()>0 ? 'n-icon-add': 'n-icon-minus'"></em>
+        <span class="d-item"
+              data-bind="text: content.title,
+              css:{active: $component.selected() && $data.id === $component.selected().id},
+              attr:{title: content.title},
+              click: $component.switch_chapter.bind($component)"></span>
+        <!-- 二级-->
+        <!-- ko if: content.children.length-->
+        <ul class="list" data-bind="foreach: {data: content.children, as: 'section'}">
+          <li class="sub-item"
+              data-bind="text: section.title,
+              css:{active: $component.selected() && $data.id === $component.selected().id},
+              attr:{title: section.title},
+              click: $component.switch_chapter.bind($component)"></li>
+        </ul>
+        <!-- /ko -->
+      </dd>
+      <!-- /ko -->
+    </dl>
+    <!-- 课程目录为空 -->
+    <p class="no-menu" data-bind="visible: !content.length,translate:{key:'qas_course_question.empty.nav'}">暂无课程目录</p>
+  </div>
+</div>

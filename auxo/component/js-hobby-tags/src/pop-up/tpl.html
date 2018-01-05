@@ -1,0 +1,26 @@
+<!--ko if:!is_loading()-->
+<!--ko if:has_tags() && show_selector()-->
+<div class="hobby-tags-selector-pop-up">
+  <span class="hts-close" data-bind="click:close_selector"></span>
+  <!--ko component:{name:'x-hobby-tags-selector', params:params}--><!--/ko-->
+</div>
+<div class="hobby-tags-mask"></div>
+<!--/ko-->
+
+<!--ko if:show_success_dlg()-->
+<div class="hobby-tags-success-dlg">
+  <div class="hts-dlg-header">
+    <h1 data-bind="translate:{key: 'hobby_tags.success_dlg_title'}"></h1>
+    <span class="hts-close" data-bind="click:close_success_dlg"></span>
+  </div>
+  <div class="hts-dlg-body">
+    <p data-bind="translate:{key: 'hobby_tags.success_dlg_desc'}"></p>
+    <div class="dc"><a data-bind="translate:{key: 'hobby_tags.my_hobby_label'},attr:{href:my_study_url}"></a></div>
+  </div>
+  <div class="hts-dlg-footer">
+    <a data-bind="translate:{key: 'hobby_tags.go_to_see'},attr:{href:my_study_url}"></a>
+  </div>
+</div>
+<div class="hobby-tags-mask"></div>
+<!--/ko-->
+<!--/ko--><!--end if:!is_loading()-->

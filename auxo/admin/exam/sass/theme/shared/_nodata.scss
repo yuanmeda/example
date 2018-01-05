@@ -1,0 +1,14 @@
+/*!
+ * 无数据通用样式
+ */
+.item-nodata {
+    height: 200px;
+    font-size: 22px;
+    line-height: 200px;
+    text-align: center;
+	font-size: 36px;
+    color: #999;
+    &:after {
+        content: " -_- !";
+    }
+}

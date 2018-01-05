@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* -------------display------------- */
+
+.show {
+	display: block;
+}
+.hide.hide.hide.hide.hide.hide {
+	display: none;
+}
+.fl { 
+	float: left;
+} 
+.fr { 
+	float: right;
+}
+.cl { 
+	clear: both;
+}
+.tl { 
+	text-align: left; 
+} 
+.tc { 
+	text-align: center; 
+} 
+.tr { 
+	text-align: right; 
+} 
+.underline {
+    text-decoration: underline;
+}
+
+
+
+/* -------------margin------------- */
+
+// .mt5 { margin-top: 5px; }
+// .mt20 { margin-top: 20px; }
+// .mt30 { margin-top: 30px; }
+// .mt80 { margin-top: 80px; }
+
+.ml10 { margin-left: 10px; }
+.mr10 { margin-right: 10px; }
+
+// .mb15 { margin-bottom: 15px; }
+// .mb20 { margin-bottom: 20px; }
+// .mb40 { margin-bottom: 40px; }
+
+.pdl20 { padding-left: 20px; }
+.pdl40 { padding-left: 40px; }
+// .pdr25 { padding-right: 25px; }

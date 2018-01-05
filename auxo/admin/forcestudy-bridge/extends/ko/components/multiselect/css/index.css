@@ -1,0 +1,99 @@
+.x-multiselect-box {
+    *zoom: 1
+}
+
+.x-multiselect-box:after {
+    content: '';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.x-multiselect-box {
+    margin: 0px;
+    list-style: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    width: 100%;
+    min-height: 25px;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.x-multiselect-box:hover {
+    border-color: #49afcd
+}
+
+.x-multiselect-box li {
+    margin: 5px 5px 5px 5px;
+    padding: 0 5px;
+    float: left;
+    background-color: #0074cc;
+    border-radius: 5px;
+    line-height: 22px
+}
+
+.x-multiselect-box li span {
+    font-size: 14px;
+    color: #FFFFFF
+}
+
+.x-multiselect-box li a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-left: 5px;
+    transition: all .5s ease 0s;
+    -ms-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -webkit-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s
+}
+
+.x-multiselect-box li a:hover {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg)
+}
+
+/*# sourceMappingURL=x-multiselect.css.map */

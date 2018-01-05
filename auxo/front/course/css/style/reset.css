@@ -1,0 +1,24 @@
+@charset "UTF-8";
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+pre{word-break:break-all;word-wrap:break-word;white-space:pre-wrap}
+body,button,input,select,textarea{font:14px/1.5 "Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp{font-family:courier new,courier,monospace}
+small{font-size:12px}
+ol,ul{list-style:none}
+a{text-decoration:none;color:#333}
+a:hover{text-decoration:underline}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+article,aside,audio,details,figcaption,figure,footer,header,hgroup,mark,menu,nav,section,summary,time,video{display:block;margin:0;padding:0}
+mark{background:#ff0}
+.clearfix:after{content:"";height:0;visibility:hidden;display:block;clear:both}
+.clearfix{zoom:1}
+.clear{clear:both}
+.container-fluid{padding-bottom:50px!important}
+.row-fluid{background:#fff}

@@ -1,0 +1,16 @@
+.u__icon-sprite {
+    background: url("../../images/sprite.png") no-repeat;
+    background-size: auto 120px;
+    &.u__icon-search {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        background-position: $searchIconPosi
+    }
+    &.u__icon-search:hover {
+        background-position: $searchIconPressPosi
+    }
+    &.u__icon-search:focus {
+        background-position: $searchIconPressPosi
+    }
+}

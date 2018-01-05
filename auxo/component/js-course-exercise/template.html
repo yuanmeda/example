@@ -1,0 +1,104 @@
+<div class="course-exercise-wrapper">
+    <div class="practice-entrance-main clearfix">
+        <div class="catelog-l">
+            <!-- treeBox -->
+            <div class="select-tree">
+                <div class="select-tab">
+                    <a class="active" href="javascript:;" title="章节目录" data-bind="click: $component.switchTab.bind($component,$element,1), translate: {key:'courseExercise.chapterCatalogue'}, attr: {'title': i18nHelper.getKeyValue('courseExercise.chapterCatalogue')}" style="white-space: nowrap;text-overflow:ellipsis;overflow: hidden;">章节目录</a>
+                    <a class="last" href="javascript:;" title="知识点目录" data-bind="click: $component.switchTab.bind($component,$element,2), translate: {key:'courseExercise.knowledgeCatalogue'}, attr: {'title': i18nHelper.getKeyValue('courseExercise.knowledgeCatalogue')}" style="white-space: nowrap;text-overflow:ellipsis;overflow: hidden;">知识点目录</a>
+                </div>
+                <div class="tree-con" data-bind="visible: model.tab() == 1">
+                    <!--ko component:{name:'x-course-learn-catalog', params:{ callbacks: { lesson: $component.updateLesson.bind($component), section: $component.updateSection.bind($component), chapter: $component.updateChapter.bind($component) }, config: {courseId: model.courseFilter.course_id(), contextId: model.courseFilter.course_id(), businessCoursesGatewayUrl: model.businessCoursesGatewayUrl()} }}--><!--/ko-->
+                </div>
+                <div class="tree-con" data-bind="visible: model.tab() == 2">
+                    <!--ko component:{name:'x-course-learn-knowledge', params:{ callbacks: { knowledge: $component.updateKnowledge.bind($component) }, config: {courseId: model.courseFilter.course_id(), contextId: model.courseFilter.course_id(), businessCoursesGatewayUrl: model.businessCoursesGatewayUrl()} }}--><!--/ko-->
+                </div>
+            </div>
+            <!-- /treeBox -->
+        </div>
+        <div class="relavant-r">
+            <div class="practice-top-situ clearfix">
+                <p class="passage-situ">
+                    <!-- ko translate: {key:'courseExercise.total'} --><!--/ko-->
+                    <span data-bind="text: model.courseData.question_count"></span>
+                    <!-- ko translate: {key:'courseExercise.question'} --><!--/ko-->
+                    <!--ko if: model.courseData.done_question_count() != 0-->
+                    ，<!-- ko translate: {key:'courseExercise.done'} --><!--/ko-->
+                    <span data-bind="text: model.courseData.done_question_count"></span>
+                    <!-- ko translate: {key:'courseExercise.question'} --><!--/ko-->，
+                    <!-- ko translate: {key:'courseExercise.correctRate'} --><!--/ko-->
+                    <span data-bind="text: formatCorrectRate(model.courseData.done_question_count()-model.courseData.wrong_question_count(),model.courseData.done_question_count(),'0')"></span>
+                    <!--/ko-->
+                </p>
+                <a class="btn-border-blue" href="javascript:;" title="智能练习" data-bind="click: $component.smartPractice.bind($component),translate: {key:'courseExercise.smart'}, attr: {'title': i18nHelper.getKeyValue('courseExercise.smart')}">智能练习</a>
+            </div>
+            <!-- 练习首次进入时 -->
+            <div class="practice-entrance" data-bind="visible: model.catalogStatisticData.question_count() != 0">
+                <!-- 练习方式设置 -->
+                <div class="practice-way-wrap clearfix">
+                    <div class="way-item">
+                        <span class="way-tit" data-bind="text: model.userExamSessions.question_count() + (language=='zh-CN' ? ' 题' : ' questions')"></span>
+                        <ul class="way-droplist" id="questionSelect">
+                            <li data-type="question_count" data-bind="css: {'on': model.userExamSessions.question_count() == 10},translate: {key:'courseExercise.questionNumber.ten'}">10题</li>
+                            <li data-type="question_count" data-bind="css: {'on': model.userExamSessions.question_count() == 20},translate: {key:'courseExercise.questionNumber.twenty'}">20题</li>
+                            <li data-type="question_count" data-bind="css: {'on': model.userExamSessions.question_count() == 30},translate: {key:'courseExercise.questionNumber.thirty'}">30题</li>
+                        </ul>
+                    </div>
+                    <div class="way-item">
+                        <span class="way-tit" data-bind="translate: {key:model.userExamSessions.mode() == 1 ? 'courseExercise.mode.done' : 'courseExercise.mode.recite'}"></span>
+                        <ul class="way-droplist">
+                            <li data-type="mode" data-bind="css: {'on': model.userExamSessions.mode() == 1},translate: {key:'courseExercise.mode.done'}">答题模式</li>
+                            <li data-type="mode" data-bind="css: {'on': model.userExamSessions.mode() == 2},translate: {key:'courseExercise.mode.recite'}">背题模式</li>
+                        </ul>
+                    </div>
+                    <div class="way-item">
+                        <span class="way-tit" data-bind="translate: {key:model.userExamSessions.type() == 1 ? 'courseExercise.type.order' : (model.userExamSessions.type() == 2 ? 'courseExercise.type.random' :　'courseExercise.type.wrong')}"></span>
+                        <ul class="way-droplist">
+                            <li data-type="type" data-bind="css: {'on': model.userExamSessions.type() == 1},translate: {key:'courseExercise.type.order'}">顺序练习</li>
+                            <li data-type="type" data-bind="css: {'on': model.userExamSessions.type() == 2},translate: {key:'courseExercise.type.random'}">随机练习</li>
+                            <li data-type="type" data-bind="css: {'on': model.userExamSessions.type() == 3},translate: {key:'courseExercise.type.wrong'}">错题练习</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /练习方式设置 -->
+                <div class="practice-entrance-cont">
+                    <h3 data-bind="text: model.catalogStatisticData.title"></h3>
+                    <span class="circle-progress2" data-bind="attr:{'data-percent': model.correctRate}">
+    						<span class="percent" data-bind="text: model.correctRate"></span>
+    				        <span class="txt-situ" data-bind="translate: {key:'courseExercise.correctRate'}">正确率</span>
+    				</span>
+                    <p class="passage-situ">
+                        <!-- ko translate: {key:'courseExercise.total'} --><!--/ko-->
+                        <span data-bind="text: model.catalogStatisticData.question_count"></span>
+                        <!-- ko translate: {key:'courseExercise.question'} --><!--/ko-->
+                        ，<!-- ko translate: {key:'courseExercise.done'} --><!--/ko-->
+                        <span data-bind="text: model.catalogStatisticData.done_question_count"></span>
+                        <!-- ko translate: {key:'courseExercise.question'} --><!--/ko-->，
+                        <!-- ko translate: {key:'courseExercise.doneCorrect'} --><!--/ko-->
+                        <span data-bind="text: model.catalogStatisticData.done_question_count()-model.catalogStatisticData.wrong_question_count()"></span>
+                        <!-- ko translate: {key:'courseExercise.question'} --><!--/ko-->
+                    </p>
+                    <div class="btm-wrap">
+                        <a class="btn-blue" href="javascript:;" title="立即练习" data-bind="click: $component.practiceNow.bind($component),visible: model.catalogStatisticData.last_exercise_info.status() == 0,translate: {key:'courseExercise.practiceNow'}, attr: {'title': i18nHelper.getKeyValue('courseExercise.practiceNow')}">立即练习</a>
+                        <!-- 练习非首次进入时 -->
+                        <a class="btn-border-blue" href="javascript:;" title="重新练习" data-bind="click: $component.retryPractice.bind($component),visible: model.catalogStatisticData.last_exercise_info.status() == 2,translate: {key:'courseExercise.retry'}, attr: {'title': i18nHelper.getKeyValue('courseExercise.retry')}">重新练习</a>
+                        <a class="btn-blue" href="javascript:;" title="继续练习" data-bind="click: $component.continuePractice.bind($component),visible: model.catalogStatisticData.last_exercise_info.status() == 1,translate: {key:'courseExercise.continuePractice'}, attr: {'title': i18nHelper.getKeyValue('courseExercise.continuePractice')}">继续练习</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /练习首次进入时 -->
+
+            <!-- 无练习时 -->
+             <div class="no-things-wrap" data-bind="visible: model.catalogStatisticData.question_count() == 0">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAACKCAYAAABB/hN4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjExNzhCMDU1Mzk2OTExRTc5QzhBOTEwNkJCMTM3NDI2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjExNzhCMDU2Mzk2OTExRTc5QzhBOTEwNkJCMTM3NDI2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTE3OEIwNTMzOTY5MTFFNzlDOEE5MTA2QkIxMzc0MjYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3OEIwNTQzOTY5MTFFNzlDOEE5MTA2QkIxMzc0MjYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz44UWyFAAABc0lEQVR42uzdQQ6CMBBAUWq8/1F7BQxrNJEwJe3MewdgQX5m0BRtvfetsH0jxMstQEgICSHBydstOGluwfUPKSYSVhtCQkggJISEkBASCAkhISSEBEJCSAgJhISQEBJCAiExjsP/Mf59Y7cFXy9CyMsOJhJWG1ZbNm3y6wlpsQCsNhASQkJIICSEhJDI6vgeyS+7Pift91YmEkJCSAgJvj9sl3oofFCpDzEmEkMnErWm2e0NZCJhtWG1MXjVmEhYbQgJhISQEBIICSEhJIQEQkJICAkhwTWOkczJCUmsNrDaknFCEqsNhISQEBIICSEhJIQEQkJICAkhgZAQEkJCSCAkhEQOzmzPYfm/mzCREBJCQkjgYXtWy/8/nomEkBASQgIhISSEhJBASAgJISEkEBJCQkggJISEkBASCAkhISSEBEJCSAgJIYGQEBJCAiEhJISEkEBICAkhISQQEkJCSJT165f/d7cGEwkhISSEBPd8BBgAlbgN+wxiwjoAAAAASUVORK5CYII=" alt="暂无试题，敬请期待">
+                <p>本章节暂无试题，敬请期待！</p>
+            </div>
+            <!-- /无练习时 -->
+        </div>
+    </div>
+</div>
+<!--ko if:model.is_loading()-->
+<div class="exercise-loading-flag">
+    <span></span>
+</div>
+<!--/ko-->

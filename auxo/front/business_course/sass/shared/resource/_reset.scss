@@ -1,0 +1,24 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p, dl, dd, ul, ol, pre, blockquote, textarea, input, button, hr, figure{ margin:0;}
+ul, ol, th, td, button, textarea, input{ padding:0;}
+ul, ol{ list-style:none;}
+img{ vertical-align:top; border:none;}
+table{ border-collapse:collapse; border-spacing:0;}
+input, textarea, select{ font-size:14px; font-family: 'Microsoft YaHei', SimSun, sans-serif;}
+input, select{ vertical-align:middle;}
+textarea { resize:vertical;}
+label{ cursor:pointer;}
+html {word-wrap: break-word;word-break: break-word;}
+input {word-break: initial;}
+.show{ display:block;} .ibshow{ display:inline-block; } .hide{ display:none;}
+.fl{ float:left;} .fr{ float:right;} .cl{ clear:both;}
+.clearfix:after{ content:""; display:table; clear:both;}
+
+.fb{ font-weight:700;}
+.tl{ text-align:left;} .tc{ text-align:center;} .tr{ text-align:right;}
+.textoverflow{ overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.wordbreak{ word-break:break-all; word-wrap:break-word;}
+.nowrap{ white-space:nowrap;}
+
+// body{ font:14px/1.5 'Microsoft YaHei', SimSun, sans-serif;}
+// a{ text-decoration:none;}

@@ -1,0 +1,28 @@
+@import "basebox";
+@import "banner_header";
+
+.input-append .add-on, .input-append .btn{
+  margin-left: -5px;
+  height:26px;
+}
+
+.box{
+  margin-bottom: 20px;
+  margin-top:5px;
+  .form-horizontal input[type="text"]{
+    height:26px;
+  }
+  .form-horizontal .img-sm{
+    display:inline-block;
+    width:270px;
+    height:150px;
+  }
+  .static-tip{
+    font-weight: bold;
+    margin: 8px 0;
+    color: #444;
+    span{
+      margin-right:10px;
+    }
+  }
+}

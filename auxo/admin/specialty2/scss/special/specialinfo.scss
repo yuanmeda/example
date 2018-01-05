@@ -1,0 +1,19 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/form";
+@import "../utils/header";
+.radio-group {
+    display: inline-block;
+
+    vertical-align: middle;
+    label {
+        margin-right: 10px;
+
+        font-weight: normal;
+
+        cursor: pointer;
+    }
+    input {
+        margin: 0;
+    }
+}

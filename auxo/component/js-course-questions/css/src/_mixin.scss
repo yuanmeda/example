@@ -1,0 +1,28 @@
+@mixin qas-h(){
+  padding:20px;
+  border-bottom:1px solid #e8e8e8;
+  overflow:hidden;
+  .qas-return{
+    text-align:center;
+    float:right;
+    height:26px;
+    line-height:26px;
+    background:#fff;
+    color:#666;
+    border:1px solid #ddd;
+    border-radius:2px;
+    cursor:pointer;
+    width:60px;
+    &:hover{
+      background:$theme-color;
+      border-color:$theme-color;
+      color:#fff;
+    }
+  }
+  .qas-label{
+    font-size:14px;
+    color:#999999;
+    float:left;
+    line-height:26px;
+  }
+}

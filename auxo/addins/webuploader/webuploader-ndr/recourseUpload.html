@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>资源上传</title>
+    <!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" media="screen"/>-->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="webuploader/v0.1.5/css/webuploader.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <style>
+        p{
+            font: 12px/1.5 tahoma, arial, simsun;
+            display: none;;
+        }
+        #picker, #pickerDoc, #pickExam {
+            display: inline-block;
+            line-height: 1.0;
+            vertical-align: middle;
+            margin: 12px;
+            background-color: rgb(0, 183, 238);
+            width: 86px;
+            height: 36px;
+            color: #fff;
+        }
+
+        #pickExam {
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="baiduuploader" class="wu-example" style="display: none;">
+<div>
+    <p id="pickExamInfo">上传试卷，请在打开的客户端中完成。如不能打开客户端请检查是否安装<a id="download_url" href="javascript:void(0);">客户端</a>。</p>
+    <p>上传完资源后可关闭此窗口查看最新上传的资源。</p>
+</div>
+    <div class="btns">
+        <div id="picker">选择视频</div>
+        <div id="pickerDoc">选择文档</div>
+        <a id="pickExam" href="javascript:void(0);">上传试卷</a>
+    </div>
+    <!--用来存放文件信息-->
+    <div id="thelist" class="uploader-list" style="width:400px;"></div>
+</div>
+<div><span id="errorMsg" style="display: none;"> </span></div>
+<script src="jquery/v1.7.1/jquery.min.js?v=20161024"></script>
+<script src="queryParam/index.js?v=20161024"></script>
+<script src="queryParam/auth.js?v=20161024"></script>
+<script src="webuploader/v0.1.5/js/webuploader.js?v=20161024"></script>
+<script src="getting-starteds.js?v=20161024"></script>
+</body>

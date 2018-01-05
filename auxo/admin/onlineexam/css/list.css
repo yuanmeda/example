@@ -1,0 +1,69 @@
+.score-manage , .session-list{
+	background: #fff;
+}
+.container-fluid{
+	margin: 20px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px #ccc;
+}
+.testlist-secher{
+	margin-bottom: 15px;
+	margin-top: 20px;
+}
+.testlist-secher span{
+	font-size: 14px;
+	display: inline-block;
+	
+}
+.testlist-secher select{
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+	margin-bottom: 0px;
+}
+.testlist-secher input , .testlist-secher button{
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+	width: 130px;
+}
+.testlist-secher button{
+	width: 50px;
+}
+.testlist-secher .studentId{
+	width: 150px;
+}
+.testlist-secher .test-time{
+	padding-left: 15px;
+}
+.table-responsive>table>thead{
+	background: #ececec;
+	height: 35px;
+	text-align: center;
+}
+.table-responsive>table>thead>tr>th{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.table-responsive>table>thead>tr>th>i{
+	height: 35px;
+	line-height: 35px;
+	width: 10px;
+	color: #08c;
+	font-size: 14px;
+	margin-left: 5px;
+	display: inline-block;
+	cursor: pointer;
+}
+.table-responsive>table>thead>tr>th>i:hover{
+	color: #ff1919;
+}
+.table-responsive>table>tbody>tr>td{
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+}
+.table-responsive>table>tbody>tr>td>a{
+	color: #08c;
+}

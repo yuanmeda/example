@@ -1,0 +1,30 @@
+.x-question-list {
+  font-size: 14px;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0 10px 15px; }
+  .x-question-list .question-item {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px; }
+    .x-question-list .question-item:first-child {
+      border-top: none;
+      margin-top: 0; }
+  .x-question-list .btn-group-question {
+    width: 230px;
+    margin: 0 0 0 auto; }
+  .x-question-list .block-mark {
+    border-top: 1px solid #ddd;
+    padding: 20px; }
+  .x-question-list .vm {
+    display: inline-block;
+    vertical-align: middle; }
+  .x-question-list .input {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: content-box;
+    margin-bottom: 0; }
+  .x-question-list .ml {
+    margin-left: 100px; }
+  .x-question-list .nqti-extras-answer span {
+    display: block;
+    padding-left: 0; }

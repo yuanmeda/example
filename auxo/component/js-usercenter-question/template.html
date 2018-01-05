@@ -1,0 +1,215 @@
+<div class="uc-qa" id="x-usercenter-qa">
+    <div class="uc-qa-header clearfix">
+        <div data-bind="visible: model.tab() != 4 && model.tab() != 3">
+            <form autocomplete="off" class="uc-qa-header-form fr"
+                  data-bind="event: {submit: $component.switchQTab.bind($component, 5)}">
+                <input maxlength="200" type="text"
+                       data-bind="textInput: model.question.search.content, event:{focus: $component.toggleActive, blur: $component.toggleActive}"
+                       class="uc-qa-header-form-word">
+                <i class="uc-qa-header-form-search usercenter-qa uq-icon-search"
+                   data-bind="click: $component.switchQTab.bind($component, 5)"></i>
+                <label class="uc-qa-header-form-placeholder"
+                       data-bind="click: $component.focus, visible: !model.question.search.content().length, translate: {key: 'ucQa.ph1'}">搜索问题</label>
+            </form>
+            <div class="uc-qa-header-select fr">
+                <div class="uc-qa-header-select-item">
+                    <div class="uc-qa-header-select-item-name" data-bind="text: model.select.name"></div>
+                    <i class="uc-qa-header-select-icon usercenter-qa uq-icon-down"></i></div>
+                <ul id="js_qa_slist" class="uc-qa-header-select-list" style="display: none;"
+                    data-bind="foreach: model.course.items, event:{scroll: $component.throttle.call($component, $component.scroll.bind($component), 500) }">
+                    <li data-bind="text: name, attr: { title: name }, css: {'uc-qa__active': custom_id == $component.model.select.custom_id()}, click: $component.selectCourse.bind($component)">
+                        全部
+                    </li>
+                </ul>
+            </div>
+            <a href="javascript:;" class="uc-qa-header-btn fl"
+               data-bind="click: $component.switchQTab.bind($component, 4, null)">
+                <!-- ko translate: {key: 'ucQa.ask' }-->我要提问
+                <!--/ko--></a>
+        </div>
+        <a style="display: none;" href="javascript:;" class="uc-qa-header-back fl"
+           data-bind="click: $component.goBack.bind($component), visible: model.tab() == 4 || model.tab() == 3, translate: {key: 'ucQa.back'}">返回</a>
+    </div>
+    <div class="uc-qa-body">
+        <ul class="uc-qa-body-nav clearfix"
+            data-bind="visible: model.tab() != 4 && model.tab() != 3 && model.tab() != 5">
+            <li data-bind="click: $component.switchQTab.bind($component, 0), css: {active: !model.tab()},translate: {key: 'ucQa.mineQ'}">
+                我的提问
+            </li>
+            <li data-bind="click: $component.switchQTab.bind($component, 1), css: {active: model.tab() == 1},translate: {key: 'ucQa.mineA'}">
+                我的回答
+            </li>
+            <li data-bind="click: $component.switchQTab.bind($component, 6), css: {active: model.tab() == 6},translate: {key: 'ucQa.mineInterest'}">
+                我的关注
+            </li>
+            <li data-bind="click: $component.switchQTab.bind($component, 2), css: {active: model.tab() == 2},translate: {key: 'ucQa.allQ'}">
+                全部问题
+            </li>
+        </ul>
+        <div class="uc-qa-body-searchbar clearfix" data-bind="visible: model.tab() === 5">
+            <span class="fl"
+                  data-bind="translate: {key: 'ucQa.result', properties:{total: $component.model.question.counts()}}"></span>
+            <a href="javascript:;" class="uc-qa-header-back fr"
+               data-bind="click: $component.goBack.bind($component), translate: {key:'ucQa.back'}">返回</a>
+        </div>
+        <div class="uc-qa-body-content">
+            <div data-bind="visible: model.tab() != 4 && model.tab() != 3 && model.tab() != 5, foreach: model.query_type" class="usercenter-tab">
+                <a data-bind="text: title, css: {'on': !$index() }, click: $component.queryByType.bind($component)" href="javascript:;" ></a>
+            </div>
+            <!-- 问题详情-->
+            <div data-bind="visible: model.tab() == 3 && model.init() , with: model.question.info">
+                <div class="uc-qa-body-content-question clearfix">
+                    <div class="uc-qa-body-content-answer-img fl">
+                        <img data-bind="attr:{src: display_user.icon() + '&defaultImage=1'}">
+                    </div>
+                    <div class="uc-qa-body-content-answer-cont fl">
+                        <h5 class="uc-qa-body-content-question-title" data-bind="text: title"></h5>
+                        <p class="uc-qa-body-content-question-description" data-bind="text: content"></p>
+                        <!--ko component:{name:'x-qas-image-preview', params:{images: ko.toJS(attach_pictures) }}-->
+                        <!--/ko-->
+                        <div class="uc-qa-body-content-question-info">
+                            <span data-bind="text: display_user.display_name"></span>
+                            <span data-bind="text: $.format.toBrowserTimeZone($component.formatDate(create_time()), 'yyyy-MM-dd HH:mm')"></span>
+                            <span data-bind="visible: target_name, translate: {key: 'ucQa.from', properties:{course: target_name()}}"></span>
+                        </div>
+                        <div class="uc-qa-body-content-question-focus">
+                            <span class="uc-qa-body-content-question-focus-num"
+                                  data-bind="translate: {key: 'ucQa.fellow', properties:{total: follow_count || 0 }}">2</span>
+                        </div>
+                        <div class="uc-qa-body-content-question-wrap"
+                             data-bind="visible: $component.model.user.id() != create_user()" style="display:none;">
+                            <form class="uc-qa-body-content-question-form"
+                                  data-bind="event: {submint: $component.createAnswer.bind($component)}">
+                                <textarea maxlength="2000" class="uc-qa-body-content-question-form-answer"
+                                          data-bind="textInput: $component.model.answer.content, event:{focus: $component.toggleActive, blur: $component.toggleActive}"></textarea>
+                                <label class="uc-qa-header-form-placeholder"
+                                       data-bind="visible: !$component.model.answer.content().length, click: $component.focus.bind($component), translate:{key:'ucQa.ph3'}">写下你的回答</label>
+                            </form>
+                            <a href="javascript:;" class="uc-qa-body-content-picture fl"
+                               data-bind="click: $component.showUpload.bind($component)"><i
+                                        class="usercenter-qa uq-icon-picture uc-qa-icon"></i><span
+                                        data-bind="translate: {key: 'ucQa.image'}">图片</span></a>
+                            <a href="javascript:;" class="fr uc-qa-body-content-question-form-btn"
+                               data-bind="click: $component.createAnswer.bind($component), translate:{key:'ucQa.answer'}">回答</a>
+                            <span class="uc-qa-body-content-ask-label-limit fr" style="margin: 15px 5px 0 0;"><em
+                                        data-bind="text: $component.model.answer.content().length"></em>/2000</span>
+                            <div class="uc-qa-body-content-upimg"
+                                 data-bind="visible:$component.model.tab()===3"
+                                 style="left: 0;bottom: -200px;">
+                                <!-- ko if: $component.model.showUpload() && $component.model.tab()===3  -->
+                                <!--ko component:{name:'x-question-uploadimg', params:{attach_pictures: $component.model.answer.attach_pictures, api_url: $component.model.api.qa_api, is_show: $component.model.showUpload} }-->
+                                <!--/ko-->
+                                <!--/ko-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uc-qa-body-content-question-total"
+                     data-bind="translate: {key: 'ucQa.total', properties:{total:$component.model.question.counts }}"></div>
+            </div>
+            <!-- 问题列表 -->
+            <div class="uc-qa-body-content-list" data-bind="visible: model.tab() !== 4">
+                <!-- 我的回答 -->
+                <!-- ko if: model.tab() === 1&&model.question.items().length && model.init() -->
+                <div data-bind="foreach: model.question.items">
+                    <div class="uc-qa-body-content-answer clearfix">
+                        <div class="uc-qa-body-content-answer-img fl">
+                            <img data-bind="attr: {src: $component.model.user.photo}">
+                        </div>
+                        <div class="uc-qa-body-content-answer-cont fl">
+                            <p class="uc-qa-body-content-answer-title" data-bind="text: content"></p>
+                            <a href="javascript:;" class="uc-qa-body-content-answer-ques"
+                               data-bind="click: $component.switchQTab.bind($component, 3, question_vo.id)">
+                                <p data-bind="text: question_vo ? question_vo.title : ''"></p>
+                                <span data-bind="translate:{key: 'ucQa.question', properties:{name: question_vo.display_user.display_name}}">提问者：张珊</span>
+                                <span data-bind="text: $.format.toBrowserTimeZone($component.formatDate(question_vo.create_time), 'yyyy-MM-dd HH:mm')">2013-11-05  10:23</span>
+                                <span data-bind="visible:question_vo.target_name ,translate:{key: 'ucQa.from', properties:{course: question_vo.target_name}}">来自：此处显示课件名称</span>
+                                <i class="uc-qa-body-content-answer-triangle"></i>
+                            </a>
+                            <div class="uc-qa-body-content-answer-info">
+                                <span class="uc-qa-body-content-answer-info-time"
+                                      data-bind="text: $.format.toBrowserTimeZone($component.formatDate(create_time), 'yyyy-MM-dd HH:mm')">2013-11-05  10:23</span>
+                                <a class="uc-qa-body-content-answer-info-like"><i
+                                            class="usercenter-qa uq-icon-like"></i><span
+                                            data-bind="text: like_count"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: model.tab() != 1 && model.tab() != 3 && model.question.items().length && model.init() -->
+                <!-- ko foreach: model.question.items -->
+                <!--ko component:{name:'x-qas-question', params:{question: $data, options:{keyword: $component.model.question.search.content,on_del_command: $component.getList.bind($component), on_edit_command: $component.switchQTab.bind($component, 4, $data), on_title_command: $component.switchQTab.bind($component, 3, id) , curr_user_id: $component.model.user.id(), gw_host: $component.model.api.qa_gateway , api_host: $component.model.api.qa_api } } }-->
+                <!--/ko-->
+                <!--/ko-->
+                <!--/ko-->
+                <!-- 问题详情/回答列表 -->
+                <!-- ko if: model.tab() == 3 && model.question.items().length && model.init() -->
+                <!-- ko foreach: model.question.items -->
+                <!--ko component:{name:'x-qas-answer', params:{answer: $data, options:{on_del_command: $component.getList.bind($component), curr_user_id: $component.model.user.id(), question: $component.model.question.info, gw_host: $component.model.api.qa_gateway , api_host: $component.model.api.qa_api, show_images: true } } }-->
+                <!--/ko-->
+                <!--/ko-->
+                <!--/ko-->
+                <div class="uc-qa-body-content-nodata" data-bind="visible: !model.question.items().length">
+                    <i data-bind="visible: model.init" class="ms-icon-question-empty"></i>
+                    <p data-bind="visible: model.init, translate:{key: 'ucQa.nodata'}">暂无问题</p>
+                    <p data-bind="visible: !model.init(), translate:{key: 'ucQa.loading'}">数据加载中...</p>
+                </div>
+                <div id="js_qa_pagination" data-bind="visible: model.question.items().length && model.init()"
+                     class="cf pagination-box"></div>
+            </div>
+            <!-- 编辑问题-->
+            <div class="uc-qa-body-content-ask" data-bind="visible: model.tab() == 4">
+                <form autocomplete="off" class="uc-qa-body-content-ask-form"
+                      data-bind="event: {submit: createQuestion}">
+                    <div class="uc-qa-body-content-ask-label clearfix">
+                        <span class="uc-qa-body-content-ask-label-title fl" data-bind="translate:{key: 'ucQa.title'}">问题：</span>
+                        <span class="uc-qa-body-content-ask-label-limit fr"><em
+                                    data-bind="text: model.question.title().length"></em>/50</span>
+                    </div>
+                    <div class="uc-qa-body-content-ask-form-input-wrap">
+                        <input maxlength="50" type="text"
+                               data-bind="textInput: model.question.title, event:{focus: $component.searchRelateQ, blur: $component.toggleActive}"
+                               class="uc-qa-body-content-ask-form-input">
+                        <label class="uc-qa-header-form-placeholder"
+                               data-bind="click: $component.focus, visible: !model.question.title().length, translate:{key: 'ucQa.ph2'}">写下你的问题</label>
+                        <ul id="js_relateq_list" class="uc-qa-body-content-ask-form-input-list" style="display: none;"
+                            data-bind="visible: model.question.relateQ().length">
+                            <li class="uc-qa-body-content-ask-form-input-list-header"
+                                data-bind="translate:{key: 'ucQa.relateq'}"></li>
+                            <!--ko foreach: model.question.relateQ -->
+                            <li class="uc-qa-body-content-ask-form-input-list-item"
+                                data-bind="click: $component.switchQTab.bind($component, 3, id)">
+                                <a href="javascript:;" data-bind="text: title"></a><span
+                                        data-bind="translate:{key: 'ucQa.answercount', properties:{total: answer_count || 0}}">4个回答</span>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                    </div>
+                    <div class="uc-qa-body-content-ask-label clearfix">
+                        <span class="uc-qa-body-content-ask-label-title fl" data-bind="translate:{key: 'ucQa.title1'}">问题详情（选填）：</span>
+                        <span class="uc-qa-body-content-ask-label-limit fr"><em
+                                    data-bind="text: model.question.content().length"></em>/2000</span>
+                    </div>
+                    <div class="uc-qa-body-content-ask-form-textarea-wrap">
+                        <textarea maxlength="2000" class="uc-qa-body-content-ask-form-textarea"
+                                  data-bind="textInput: model.question.content, event:{focus: $component.toggleActive, blur: $component.toggleActive}"></textarea>
+                        <label class="uc-qa-header-form-placeholder"
+                               data-bind="click: $component.focus, visible: !model.question.content().length, translate:{key: 'ucQa.ph4'}">问题详细信息</label>
+                    </div>
+                </form>
+                <a href="javascript:;" class="uc-qa-body-content-picture fl" data-bind="click: showUpload"><i
+                            class="usercenter-qa uq-icon-picture uc-qa-icon"></i><span
+                            data-bind="translate: {key: 'ucQa.image'}">图片</span></a>
+                <a href="javascript:;" class="uc-qa-body-content-ask-btn fr"
+                   data-bind="click: $component.createQuestion, translate:{key: 'ucQa.askfor'}">马上提问</a>
+                <div class="uc-qa-body-content-upimg" data-bind="visible: model.tab() === 4">
+                    <!-- ko if: model.showUpload() && model.tab()===4 -->
+                    <!--ko component:{name:'x-question-uploadimg', params:{attach_pictures: $component.model.question.attach_pictures, api_url: model.api.qa_api, is_show: model.showUpload} }-->
+                    <!--/ko-->
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

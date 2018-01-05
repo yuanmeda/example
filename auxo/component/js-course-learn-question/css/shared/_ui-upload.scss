@@ -1,0 +1,157 @@
+
+.qaui-upload {
+    position: relative;
+    padding: 10px 1%;
+    width: 98%;
+    background: #eee;
+    border-radius: 5px;
+    &:before {
+        content: "\e603";
+        display: block;
+        position: absolute;
+        left: 14px; 
+        top: -14px;
+        width: 14px;
+        height: 14px;
+        color: #eee;
+        font-family:"qaiconfont" !important;
+        font-size:16px;
+    }
+    .upload__tit {
+        line-height: 24px;
+        font-size: 14px;
+        color: #6f6e6e;
+        .str {
+            color: $main;
+        }
+        .upload__close {
+            display: block;
+            float: right;
+            width: 24px;
+            height: 100%;
+            line-height: 24px;
+            font-size: 12px;
+            text-align: center;
+            color: #696e78;
+            cursor: pointer;
+            &:hover {
+                color: $main;
+            }
+            &:active {
+                color: $main-light;
+            }
+        }
+    }
+    .upload__list {
+        overflow: hidden;
+        margin-left: -9px;
+        width: 100%;
+        .upload__item {
+            float: left;
+            position: relative;
+            margin-left: 9px;
+            margin-top: 14px;
+            height: 88px;
+            &:hover {
+                .item__close {
+                    display: block;
+                }
+            }
+            &.item__fail {
+                .item__close,
+                .mask {
+                    display: block;
+                }
+            }
+        }
+        .item__close {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            z-index: 5;
+            cursor: pointer;
+            &:hover {
+                color: $main;
+            }
+            &:active {
+                color: $main-light;
+            }
+        }
+        .upload__item__pic {
+            overflow: hidden;
+            position: relative;
+            width: 94px;
+            height: 82px;
+            background: #333;
+            img {
+                 width: 100%;
+                 height: 100%;
+            }
+            .mask {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                line-height: 82px;
+                font-size: 10px;
+                color: #fff;
+                text-align: center;
+                background: #312d2a;
+                background: rgba(0,0,0,.8);
+            }
+        }
+        .upload__item_process {
+            position: relative;
+            margin-top: 2px;
+            height: 4px;
+            background: #414141;
+            .process__on {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                background: $main;
+            }
+        }
+        .item__add {
+            &:hover .qaicon-add {
+                border-color: $main;
+                color: $main;
+            }
+            &:active .qaicon-add {
+                border-color: $main-light;
+                color: $main-light;
+
+            }
+            .qaicon-add {
+                display: block;
+                width: 88px;
+                height: 76px;
+                line-height: 76px;
+                border: 3px dashed #ccc;
+                font-size: 30px;
+                color: #ccc;
+                text-align: center;
+                transition: color .3s ease-out,border-color .3s ease-out;
+            }
+            .item__file {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 82px;
+                opacity: 0;
+            }
+        }
+    }
+}

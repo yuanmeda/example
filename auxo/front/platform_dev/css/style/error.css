@@ -1,0 +1,14 @@
+body{background-color:#f6f6f6;font:14px/1 'microsoft yahei',arial,tahoma,simsun;color:#666}
+a{text-decoration:none;color:#38adff;font-size:16px}
+a:hover{color:#52b8ff}
+a:hover .arrow-right:before{border-left-color:#52b8ff}
+.arrow-right{padding-left:10px}
+.arrow-right:before{position:absolute;content:"";margin-top:1px;border-style:dashed dashed dashed solid;border-width:7px 0 7px 7px;border-color:transparent transparent transparent #38adff}
+.error{width:630px;margin:120px auto 0}
+.error-wrap{border-radius:25px;border:3px solid #fff;text-align:center;padding:86px 0 95px}
+.error-img{margin-bottom:57px}
+.error-hint,.error-info,.error-text{margin-bottom:16px}
+.error-text{padding:15px;width:420px;height:150px;resize:none;font-family:'microsoft yahei',arial,tahoma,simsun}
+.error-text:focus{outline:0}
+.error-info{font-size:27px}
+.error-hint{font-size:16px}

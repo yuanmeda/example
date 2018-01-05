@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'opencourse';
+    src:    url('../../fonts/opencourse.eot?mwa98m');
+    src:    url('../../fonts/opencourse.eot?mwa98m#iefix') format('embedded-opentype'),
+    url('../../fonts/opencourse.ttf?mwa98m') format('truetype'),
+    url('../../fonts/opencourse.woff?mwa98m') format('woff'),
+    url('../../fonts/opencourse.svg?mwa98m#opencourse') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="oc-icon-"], [class*=" oc-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'opencourse' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.oc-icon-add:before {
+    content: "\e901";
+}
+.oc-icon-min:before {
+    content: "\e902";
+}
+.oc-icon-search:before {
+    content: "\e903";
+}
+.oc-icon-phone:before {
+    content: "\e904";
+}
+.oc-icon-rarrow:before {
+    content: "\e905";
+}
+.oc-icon-larrow:before {
+    content: "\e906";
+}
+.oc-icon-rsj:before {
+    content: "\e907";
+}
+.oc-icon-dsj:before {
+    content: "\e908";
+}
+.oc-icon-view:before {
+    content: "\e909";
+}
+.oc-icon-user:before {
+    content: "\e90a";
+}
+.oc-icon-close:before {
+    content: "\e90b";
+}
+.oc-icon-play:before {
+    content: "\e90c";
+}
+.oc-icon-star2:before {
+    content: "\e90d";
+}
+.oc-icon-star1:before {
+    content: "\e90e";
+}
+.oc-icon-darrow:before {
+    content: "\e90f";
+}
+.oc-icon-uparrow:before {
+    content: "\e910";
+}
+.oc-icon-question:before {
+    content: "\e911";
+}
+.oc-icon-document:before {
+    content: "\e912";
+}
+.oc-icon-study:before {
+    content: "\e913";
+}
+.oc-icon-sort:before {
+    content: "\e914";
+}
+.oc-icon-halfstar:before {
+    content: "\e915";
+}
+.oc-icon-study2:before {
+    content: "\e916";
+}
+.oc-icon-exam2:before {
+    content: "\e917";
+}
+.oc-icon-note2:before {
+    content: "\e918";
+}
+.oc-icon-answer2:before {
+    content: "\e919";
+}
+.oc-icon-auth2:before {
+    content: "\e91a";
+}
+.oc-icon-sort2:before {
+    content: "\e91b";
+}
+.oc-icon-check-yes:before {
+    content: "\e91c";
+}
+.oc-icon-radio:before {
+    content: "\e91d";
+}
+.oc-icon-gz:before {
+    content: "\e91e";
+}
+.oc-icon-finish:before {
+    content: "\e91f";
+}
+.oc-icon-half:before {
+    content: "\e920";
+}
+.oc-icon-star:before {
+    content: "\e921";
+}
+.oc-icon-write:before {
+    content: "\e922";
+}
+.oc-icon-share:before {
+    content: "\e923";
+}
+.oc-icon-circle:before {
+    content: "\e924";
+}
+.oc-icon-book:before {
+    content: "\e925";
+}
+.oc-icon-review:before {
+    content: "\e926";
+}
+.oc-icon-vide:before {
+    content: "\e928";
+}
+.oc-icon-collection:before {
+    content: "\e929";
+}
+.oc-icon-pic:before {
+    content: "\e92a";
+}
+.oc-icon-doc:before {
+    content: "\e92b";
+}
+.oc-icon-txt:before {
+    content: "\e92c";
+}
+.oc-icon-music:before {
+    content: "\e92d";
+}
+.oc-icon-time:before {
+    content: "\e900";
+}
+

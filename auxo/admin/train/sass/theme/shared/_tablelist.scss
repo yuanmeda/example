@@ -1,0 +1,58 @@
+/*!
+ * 课程列表表格样式
+ */
+//@import "table";
+.list-table {
+    width: 100%;
+
+    background: $white;
+    th {
+        height: 36px;
+
+        line-height: 36px;
+
+        background: #efefef;
+    }
+    th,
+    tr,
+    td {
+        text-align: center;
+        &.tl {
+            text-align: left;
+        }
+    }
+    tbody {
+        tr,
+        td {
+            line-height: 32px;
+            a {
+                color: #08c;
+
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            span {
+                &.name {
+                    display: block;
+
+                    width: 100%;
+
+                    line-height: 1.5;
+
+                    color: $themeColor;
+                }
+                &.pro-status {
+                    color: $tipsColor;
+                }
+            }
+        }
+        tr {
+            border-bottom: 1px dashed #e6e6e6;
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+}

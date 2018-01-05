@@ -1,0 +1,26 @@
+<div class="cplay__content--play" data-bind="css:{'no-resource':!model.dataForPlayer()}">
+    <!--ko if:model.dataForPlayer-->
+        <!--ko if:model.dataForPlayer().resource.type==0-->
+            <!--ko component:{'name':'x-course-learn-player-video','params':{'config':$root.config,'data':model.dataForPlayer() }}-->
+            <!--/ko-->
+        <!--/ko-->
+        <!--ko if:model.dataForPlayer().resource.type==1-->
+            <!--ko component:{'name':'x-course-learn-player-doc','params':{'config':$root.config,'data':model.dataForPlayer() }}-->
+            <!--/ko-->
+        <!--/ko-->
+        <!--ko if:model.dataForPlayer().resource.type==10-->
+            <!--ko component:{'name':'x-course-learn-player-evaluating','params':{'config':$root.config,'data':model.dataForPlayer(),'resourceFilter':model.resourceFilter()}}-->
+            <!--/ko-->
+        <!--/ko-->
+        <div class="exp-container">
+            <p class="try-tip" data-bind="translate: { key: 'courseLearn.player.expTip' }"></p>
+            <p class="try-tip" data-bind="text: model.course().title"></p>
+        </div>
+    <!--/ko-->
+    <!--ko ifnot:model.dataForPlayer-->
+        <div class="no-content">
+            <div class="icon-sprite icon-res-nocontent"></div>
+            <div class="hint" data-bind="translate:{'key':'courseLearn.player.noResource'}">暂无课程资源</div>
+        </div>
+    <!--/ko-->
+</div>

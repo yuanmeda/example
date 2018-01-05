@@ -1,0 +1,31 @@
+.u-ui-check {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    &.select {
+        &:after {
+            content: '';
+            position: absolute;
+            left: 3px;
+            top: 2px;
+            width: 12px;
+            height: 11px;
+            background-color: $main;
+            border-radius: 3px;
+        }
+    }
+    .radio {
+        display: none;
+    }
+    &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -1px;
+        width: 16px;
+        height: 15px;
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,74 @@
+//@import "../share/form";
+
+body {
+  padding-top: 15px;
+}
+
+.container {
+  margin-top: 0;
+}
+
+.enroll-container {
+  padding: 0 30px 30px;
+}
+
+.enroll-form {
+  width: 580px;
+  margin: 0 auto;
+}
+
+.single-tit {
+  font-size: 22px;
+  line-height: 64px;
+  font-weight: bold;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.enroll-result {
+  max-width: 850px;
+  margin: 0 auto;
+  min-height: 500px;
+  text-align: center;
+  .inner {
+    display: inline-block;
+    padding: 50px 0;
+    // min-height: 280px
+  }
+  .top {
+    text-align: center;
+    i[class^="en-icon"] {
+      font-size: 86px;
+      color: $themeColor;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    span {
+      // line-height: 86px;
+      // height: 86px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+      font-size: 40px;
+      color: #333;
+    }
+  }
+  .bottom {
+    color: #666;
+    font-size: 16px;
+    margin-top: 30px;
+    text-align: center;
+    a {
+      color: $themeColor;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .theme {
+      color: $themeColor;
+    }
+  }
+}
+
+.error {
+  color: #ff0000;
+}

@@ -1,0 +1,146 @@
+@import "./_mixin";
+@import "./_variables";
+@import "./_ui-btn";
+@import "./_ui-check";
+a,
+span,
+div,
+p {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 12px;
+}
+.fr {
+    float: right;
+}
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+.u-ui-add-note {
+    //position: fixed;
+    //bottom: 0;
+    //left: 0;
+    //right: 0;
+    width: 100%;
+    background: #f2f2f2;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    //@at-root {
+    .add-note-btn, .add-note-input {
+        margin: 0 10px;
+    }
+    .n-icon-pen {
+        display: inline-block;
+        margin-left: 14px;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+    .add-note-btn {
+        display: block;
+        background: #fff;
+        border-radius: $radius;
+        line-height: 40px;
+        cursor: pointer;
+        .note-txt {
+            color: $light-gray;
+        }
+        .note-icon-pen {
+            margin-left: 15px;
+            background: url(../images/icon.png) no-repeat 0 -240px;
+        }
+        &:hover {
+            .note-txt {
+                color: $main;
+            }
+            .n-icon-pen {
+                color: $main;
+            }
+        }
+    }
+    .add-note-input {
+        .note-icon-txt {
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .n-icon-chapter, .n-icon-topic {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .n-icon-topic{
+            width: 14px;
+            height: 18px;
+            margin-left: 5px;
+            color: #fff;
+            background-color: #b7b7b7;
+            &:before{
+                display: inline-block;
+                margin-top: -10px;
+                vertical-align: middle;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+
+        @at-root {
+            .add-note-textarea {
+                position: relative;
+                background: #fff;
+                border-radius: $radius;
+                textarea {
+                    display: block;
+                    width: 99%;
+                    padding: 0.5em;
+                    border: 0;
+                    line-height: 1.25;
+                    height: 8em *1.25;
+                    font-size: 14px;
+                    font-family: 'Microsoft YaHei';
+                }
+            }
+            .add-note-num {
+                position: absolute;
+                right: 10px;
+                bottom: 8px;
+                color: $light-gray;
+            }
+            .add-note-btns {
+                position: relative;
+                text-align: right;
+                margin-top: 10px;
+                .u-ui-check {
+                    //display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    input {
+                        border: 0;
+                    }
+                }
+                .note-icon-txt{
+                    position: absolute;
+                    left: 0;
+                    top: -6px;
+                    .iconfont-learn{
+                        display: inline-block;
+                        *display: inline;
+                        *zoom: 1;
+                    }
+                    .note-txt{
+                        vertical-align: top;
+                        color: $light-gray;
+                    }
+                }
+                .n-ui-btn {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    //}
+}

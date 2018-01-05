@@ -1,0 +1,82 @@
+/*
+Error: Invalid GBK character "\xE6"
+        on line 1 of ../shared/_base.scss
+        from line 1 of ../shared/backend.scss
+        from line 2 of backend.scss
+
+1: /** 清除内外边距 **\/
+2: body,
+3: h1,
+4: h2,
+5: h3,
+6: h4,
+
+Backtrace:
+../shared/_base.scss:1
+../shared/backend.scss:1
+backend.scss:2
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1299:in `rescue in block in find_encoding_error'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1296:in `block in find_encoding_error'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1295:in `each'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1295:in `each_with_index'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1295:in `find_encoding_error'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:904:in `check_sass_encoding'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:433:in `check_encoding!'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:389:in `_to_tree'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:309:in `to_tree'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `map'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `block in with_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:88:in `with_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `block in with_base'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:115:in `with_frame'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/stack.rb:79:in `with_base'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:363:in `watch_or_update'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/bin/scss:13:in `<top (required)>'
+d:/Ruby21-x64/bin/scss:23:in `load'
+d:/Ruby21-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE6\"\A         on line 1 of ../shared/_base.scss\A         from line 1 of ../shared/backend.scss\A         from line 2 of backend.scss\A \A 1: /** 清除内外边距 **/\A 2: body,\A 3: h1,\A 4: h2,\A 5: h3,\A 6: h4,"; }

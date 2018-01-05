@@ -1,0 +1,38 @@
+.qa-detail {
+  position: relative;
+  height: 100%;
+  padding: 0 0 20px;
+  border-left: 1px solid #ececec;
+
+  .article {
+    padding: 20px 20px 0;
+  }
+
+  .detail-body {
+    position: absolute;
+    padding: 0 0 50px;
+    top: 58px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 200px;
+    overflow: auto;
+    .btn.btn {
+      color: #fff;
+      &:hover {
+        color: #fff;
+        background-color: $btnHover;
+      }
+    }
+  }
+  .reply-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .detail-reply {
+    margin: 20px 10px 0;
+  }
+  .detail-list {
+    padding: 0 0 50px;
+  }
+}

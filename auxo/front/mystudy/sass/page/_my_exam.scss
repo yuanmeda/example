@@ -1,0 +1,51 @@
+$version: 20160524001;
+
+@mixin baseBtn($w,$h,$f,$color: #fff) {
+    display: inline-block;
+
+    width: $w;
+    height: $h;
+
+    font-size: $f;
+    line-height: $h;
+    text-align: center;
+
+    color: $color;
+    &:hover {
+        text-decoration: none;
+    }
+}
+@mixin effectBtn($color,$hoverColor) {
+    background-color: $color;
+    &:hover {
+        background-color: $hoverColor;
+    }
+}
+%ico {
+    background: url("../../images/userexam.png?#{$version}") no-repeat;
+}
+.x-my-exam {
+    .center-bd {
+        padding: 0 0 50px 50px;
+    }
+    .no-exam {
+        .no-exam-bg {
+            margin: 180px auto 15px;
+            width: 100px;
+            height: 130px;
+
+            background-position: 0 0;
+
+            @extend %ico;
+        }
+        .no-exam-tip {
+            font-size: 18px;
+            text-align: center;
+
+            color: #666;
+        }
+    }
+    .pagination-box {
+        padding-right: 50px;
+    }
+}

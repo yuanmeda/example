@@ -1,0 +1,41 @@
+//@import "base";
+@import "mixins";
+
+// $mainWidth:1280px;
+// $baseFont:14px;
+
+// //main
+// .main{
+//   font-size: $baseFont;
+//   min-height: 280px;
+//   @include css3(transition,margin 0.3s);
+//   &.top100{
+//     margin-top: 100px;
+//   }
+//   &.top110{
+//     margin-top: 110px;
+//   }
+// }
+
+
+//content
+// .content {
+//   padding: 0 5px 10px 5px;
+//   @import "toollist";
+//   .table-format{
+//     td a{
+//       color: #08c;
+//       cursor: pointer;
+//     }
+//   }
+// }
+//catalogs
+@import "catalog";
+//item-box
+@import "imgbox";
+//基础课程样式
+@import "basebox";
+//标题栏样式
+@import "banner_header";
+//无数据样式
+@import "nodata";

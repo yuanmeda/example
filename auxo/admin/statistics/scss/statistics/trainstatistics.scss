@@ -1,0 +1,66 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/form";
+@import "../utils/pagination";
+@import "../utils/header";
+@import "../utils/utils";
+$widthLeft: 260px;
+#container_js{
+	display:none;
+}
+.tab-content {
+    margin-top: 20px;
+
+    @include clearfix;
+    .tree-container {
+        float: left;
+
+        width: $widthLeft;
+        .ztree {
+            overflow: auto;
+
+            margin-top: 10px;
+            height: 700px;
+        }
+    }
+    .main-container {
+        margin-left: $widthLeft;
+        padding: 0 20px;
+        .tips {
+            position: relative;
+
+            text-decoration: none;
+
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                .tip-block {
+                    display: block;
+                }
+            }
+            .tip-block {
+                display: none;
+
+                position: absolute;
+                top: 19px;
+                left: -370px;
+
+                border: 1px solid #000;
+                padding: 1em;
+                width: 420px;
+
+                background: #fff;
+            }
+        }
+        .sort-icon {
+            color: lighten(#337ab7,20%);
+            outline:none;
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+
+                color: #337ab7;
+            }
+        }
+    }
+}

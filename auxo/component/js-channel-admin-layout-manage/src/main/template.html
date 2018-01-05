@@ -1,0 +1,137 @@
+<div class="manage-header">
+    <a class="back" data-bind="click:back"></a>
+    <span class="manage-header-title" data-bind="text:page_title">布局管理</span>
+    <div class="btn-group manage-btn-group-header">
+        <a data-bind="attr:{'href':preview_url}"
+           target="_blank"
+           class="btn btn-default manage-btn">效果预览</a>
+        <!--ko if:$component.setting_type === 'layout'-->
+        <button class="btn btn-primary manage-btn" data-bind="click:open_create_modal">新增板块</button>
+        <!--/ko-->
+        <!--ko if:is_change() === 'true'-->
+        <button class="btn btn-default manage-btn" data-bind="click:revert_layout">还原</button>
+        <button class="btn btn-default manage-btn" data-bind="click:save_layout">保存</button>
+        <!--/ko-->
+    </div>
+</div>
+
+<div class="channel-container containe channel-manage-main ">
+    <!--ko if:sections().length>0-->
+    <div class="channel-sections" data-bind="foreach:sections">
+        <!--ko if:type !== 6-->
+        <div class="section" data-id="section">
+            <h1 class="title-handler" data-bind="text:_name"></h1>
+            <div class="main-area">
+                <img data-bind="attr:{src:$component.cmp_url + '/images/section_thumb_' + type + '.png'}"/>
+            </div>
+            <div class="side-bar">
+                <!--ko if:$component.setting_type === 'layout'-->
+                <div class="actions-mid">
+                    <!--ko if:!_is_fixed-->
+                    <!--ko if:_move_up_enable-->
+                    <span class="move-up"
+                          data-bind="click:$component.move.bind($component, $index(), id, -1)"><i></i>上移</span>
+                    <!--/ko-->
+                    <!--ko if:_move_down_enable-->
+                    <span class="move-down"
+                          data-bind="click:$component.move.bind($component, $index(), id, 2)"><i></i>下移</span>
+                    <!--/ko-->
+                    <!--/ko-->
+                </div>
+                <!--/ko-->
+                <div class="actions-btm">
+                    <!--ko if:$component.setting_type === 'layout'-->
+                    <span class="btn btn-primary" data-bind="click:$component.open_layout_setting">设置</span>
+                    <span class="btn btn-default" data-bind="click:$component.remove_section">删除</span>
+                    <!--/ko-->
+                    <!--ko if:$component.setting_type === 'content'-->
+                    <span class="btn btn-primary" data-bind="click:$component.open_content_setting">设置</span>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+        <!--/ko-->
+    </div>
+    <!--/ko-->
+    <!--ko if:sections().length===0-->
+    <div class="sections-empty">暂无板块</div>
+    <!--/ko-->
+</div>
+
+
+<!--新增板块-->
+<div id="createSectionModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">×</span></button>
+                <h4 class="modal-title">新增版块</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row"
+                         data-bind="visible: section_type_list.length, foreach: section_type_list">
+                        <div class="col-md-4 plate">
+                            <div class="thumbnail">
+                                <i data-bind="attr: {'class': 'layout-icon layout-icon-'+type}"></i>
+                                <div class="caption">
+                                    <button class="btn btn-default" data-toggle="tooltip" data-placement="top"
+                                            data-bind="text:section_name,
+                                            attr:{
+                                                'data-original-title': description,
+                                                disabled:(type === 4 || type == 5) && $component.has_bottom_section()
+                                            },
+                                            click:$component.select_section.bind($root, $data)"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--ko if:$component.setting_type === 'layout'-->
+<!--Banner推荐-->
+<!--ko if: selected_section() && selected_section().type == 1 -->
+<!--ko component:{'name': 'x-channel-admin-layout-manage-banner', params: {'section': selected_section(),'parent': $component}}--><!--/ko-->
+<!--/ko-->
+
+
+<!--橱窗推荐-->
+<!--ko if: selected_section() && selected_section().type == 2 -->
+<!--ko component:{'name': 'x-channel-admin-layout-manage-window', params: {'section': selected_section(),'parent': $component}}--><!--/ko-->
+<!--/ko-->
+
+<!--图标导航区-->
+<!--ko if: selected_section() && selected_section().type == 3 -->
+<!--ko component:{'name': 'x-channel-admin-layout-manage-icon', params: {'section': selected_section(),'parent': $component}}--><!--/ko-->
+<!--/ko-->
+
+<!--频道资源 || 全部资源-->
+<!--ko if: selected_section() && (selected_section().type == 4 || selected_section().type == 5) -->
+<!--ko component:{'name': 'x-channel-admin-layout-manage-other', params: {'section': selected_section(),'parent': $component}}--><!--/ko-->
+<!--/ko-->
+<!--/ko-->
+
+<!--ko if:$component.setting_type === 'content'-->
+<!--Banner推荐-->
+<!--ko if: selected_section() && selected_section().type == 1 -->
+<!--ko component:{'name': 'x-channel-admin-layout-content-banner', params: {'section': selected_section(),'layout_manager': $component}}--><!--/ko-->
+<!--/ko-->
+<!--橱窗推荐-->
+<!--ko if: selected_section() && selected_section().type == 2 -->
+<!--ko component:{'name': 'x-channel-admin-layout-content-window', params: {'section': selected_section(),'layout_manager': $component}}--><!--/ko-->
+<!--/ko-->
+<!--图标导航区-->
+<!--ko if: selected_section() && selected_section().type == 3 -->
+<!--ko component:{'name': 'x-channel-admin-layout-content-icon', params: {'section': selected_section(),'layout_manager': $component}}--><!--/ko-->
+<!--/ko-->
+<!--频道资源 || 全部资源-->
+<!--ko if: selected_section() && (selected_section().type == 4 || selected_section().type == 5) -->
+<!--ko component:{'name': 'x-channel-admin-layout-content-other', params: {'section': selected_section(),'layout_manager': $component}}--><!--/ko-->
+<!--/ko-->
+<!--/ko-->

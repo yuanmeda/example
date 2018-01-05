@@ -1,0 +1,211 @@
+//是否支持IE
+$legacy-support-for-ie: true;
+
+//css3浏览器通用前缀
+@mixin css3($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, ''{
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+//css3变换
+@mixin transform($value) {
+  @include css3(transform,$value);
+}
+
+//css3过渡
+@mixin transition($value) {
+  @include css3(transition,$value);
+}
+
+//透明度
+@mixin opacity($opacity:50) {
+  opacity: $opacity/100;
+  @if $legacy-support-for-ie {
+    filter: alpha(opacity=$opacity)
+  }
+}
+
+//css居中
+@mixin horizontal-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//清除浮动
+@mixin clearfix {
+  @if $legacy-support-for-ie {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+%clearfix {
+  @include clearfix;
+}
+
+//截取文本
+@mixin singleline-ellipsis($width:0) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100% - $width;
+}
+
+%singleline-ellipsis {
+  @include singleline-ellipsis;
+}
+
+//禁用样式
+@mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
+  background-color: $bgColor !important;
+  color: $textColor !important;
+  cursor: not-allowed !important;
+}
+
+//绝对定位
+@mixin abs-pos($top:auto,$right:auto,$bottom:auto,$left:auto){
+  top: $top;
+  right:$right;
+  bottom: $bottom;
+  left:$left;
+  position: absolute;
+}
+@mixin fs($size:14px){
+  font-size:$size;
+}
+@mixin float($position:left){
+  float:$position;
+}
+%db{
+  display:block;
+}
+%tc{
+  text-align:center;
+}
+%tl{
+  text-align:left;
+}
+%tr{
+  text-align:right;
+}
+%vm{
+  display:inline-block;
+  vertical-align:middle;
+}
+%ovh{
+  overflow:hidden;
+}
+%fl{float: left;}
+%fr{float: right;}
+%border-bottom{
+  border-bottom: 1px solid $colorEd;
+}
+%ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+%transition{
+  transition:all 0.5s;
+}
+@mixin lineHeight($height: 21px){
+  height: $height;
+  line-height: $height;
+} 
+@mixin sBtnH($height: 28px,$lineHeight:$height,$padding:0 10px){
+  height:$height;
+  line-height:$lineHeight;
+  padding:$padding;
+  border-radius: 3px;
+}
+@mixin vhr($height: 10px,$vhcolor:#d2d2d2){
+  width:1px;
+  height: $height;
+  background: $vhcolor;
+  display: inline-block;
+  vertical-align: middle;
+}
+@mixin rotate($roate){
+  transform:rotate($roate);
+}
+.rotate18{
+  @include rotate(180deg);
+}
+.rotate9{
+  @include rotate(-90deg);
+}
+.w120{
+  width: 120px;
+}
+%boxRadius{
+  border:1px solid #ebebeb;
+  border-radius: 5px;
+}
+@mixin btn($bgColor:$themeColor,$fColor:$white){
+  background: $bgColor;
+  color: $fColor;
+  @extend %tc;
+}
+a.btn{
+  i,span{   
+    vertical-align: middle;
+  }
+  i{
+    margin-right:5px;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+}
+a.d-btn{
+  display:inline-block;
+  @include sBtnH(30px,30px);
+  @include btn(#fcfcfc, #555);
+  border: 1px solid #dcdcdc;
+  &:hover{
+    background: #ededed;
+    color: #555;
+    text-decoration: underline;
+  }
+}
+a.s-btn{
+  display:inline-block;
+  @include sBtnH(30px,30px);
+  @include btn;
+  &:hover{
+    color: $white;
+  }
+}
+a.m-btn{
+  display:inline-block;
+  @include sBtnH(40px,40px,0 20px);
+  @include btn;
+  &:hover{
+    color: $white;
+  }
+}
+a.gs-btn{
+  display:inline-block;
+  @include sBtnH(30px,30px);
+  @include btn(lighten($fontColor999,10%));
+  &:hover{
+    @include btn(lighten($fontColor333,10%),$white);
+  }
+}
+a.gm-btn{
+  display:inline-block;
+  @include sBtnH(40px,40px,0 20px);
+  @include btn(lighten($fontColor999,10%));
+  &:hover{
+    @include btn(lighten($fontColor333,10%),$white);
+  }
+}

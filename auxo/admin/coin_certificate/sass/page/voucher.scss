@@ -1,0 +1,57 @@
+@import "../share/variables";
+@import "../share/mixins";
+@import "../share/header";
+@import "../share/pagination";
+.voucher-container {
+	display:none;
+	font-family:$fontYaHei;
+    .second-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $gray;
+        padding: 0 10px;
+        height: 40px;
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 45px;
+
+        color: $black;
+    }
+    .search-box{
+    	position: relative;
+        .ab-btn{
+			position:absolute;
+			right:19px;
+			top:19px;
+        }
+    }
+    .voucher-form {
+        font-size: 13px;
+    }
+    .form-box {
+        display: inline-block;
+
+        margin-right: 25px;
+        margin-bottom: 8px;
+        input[readonly]{
+        	background-color:$white;
+        	cursor: pointer;
+        }
+    }
+    .form-tool a {
+        font-size: 13px;
+        &:not(:first-child){
+        	margin-left:8px;
+        }
+    }
+    .error {
+        border-color: #a94442;
+
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
+    .forbidModal_js{
+    	top:30%;
+    	font-family:$fontYaHei;
+    }
+}

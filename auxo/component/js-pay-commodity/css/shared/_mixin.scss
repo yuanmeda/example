@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* -------------extend------------- */
+
+/* wordbreak */
+%wb {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* 文字超出显示省略号 */
+%tof {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 垂直居中 */
+%vm-css3 {
+  transform: translate(-50%);
+  margin-left: 50%;
+  margin-top: 50%;
+}
+
+/* 清除浮动 */
+%clearfix {
+  display: inline-block;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+}
+
+/* 垂直居中 */
+%vm {
+    &:after {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+}
+/* -------------mixin------------- */
+
+/* 设置透明度 0~100 */
+@mixin opacity($s) {
+  	opacity: $s/100;
+  	filter: alpha(opacity=$op);
+}
+
+/* 背景图片 */
+@mixin bgurl($url, $repeat:no-repeat, $x:left, $y:top, $xsize:auto, $ysize: 100%) {
+    background: url('../images/#{$url}') $repeat $x $y;
+    background-size: $xsize $ysize;
+}

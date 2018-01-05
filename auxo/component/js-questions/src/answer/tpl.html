@@ -1,0 +1,61 @@
+<!--回答-问题列表-展开回答列表-->
+<div class="qas-rose">
+  <!--头像-->
+  <div class="qas-profile">
+    <img width="50" height="50" data-bind="attr:{src:user_icon}"/>
+  </div>
+  <div class="qas-wrap">
+    <!--用户名等前导信息-->
+    <p class="qas-prelead" data-bind="text:pre_info"></p>
+    <!--回答内容-->
+    <div class="qas-re-desc" data-bind="text:content"></div>
+    <!--图片-->
+    <!--ko if:show_images && image_preview_params.images.length > 0-->
+    <!--ko component:{name:'x-qas-image-preview', params:image_preview_params}--><!--/ko-->
+    <!--/ko-->
+    <!--时间-->
+    <p class="qas-time" data-bind="text:create_time"></p>
+    <!--脚部-->
+    <div class="qas-footer">
+      <!--回复数-->
+      <span class="qas-reply-count" data-bind="click:open_pop_replies">
+        <i class="iconfont-qas ico-qas-chat"></i><strong></strong>
+        <!--ko text:reply_count--><!--/ko-->
+        <!--ko translate:{key: 'qas_cmp_questions.reply_label'}--><!--/ko-->
+      </span>
+
+      <!--点赞-->
+      <span class="qas-praise" data-bind="click:toggle_like,css:{on:is_current_user_like()}">
+        <i class="iconfont-qas ico-qas-praise"></i>
+        <!--ko text:like_count--><!--/ko-->
+      </span>
+
+      <!--采纳-->
+      <!--ko if:is_my_question && !has_question_accepted() && !has_accepted()-->
+      <span class="qas-do-accept" data-bind="click:accept_it">
+        <i class="iconfont-qas ico-qas-xunzhang"></i><!--ko translate:{key:'qas_cmp_questions.acts.accept'}--><!--/ko-->
+      </span>
+      <!--/ko-->
+
+      <!--ko if:is_my_question && has_question_accepted() && has_accepted()-->
+      <span class="qas-do-accept" data-bind="click:cancel_accept">
+        <i class="iconfont-qas ico-qas-xunzhang"></i><!--ko translate:{key:'qas_cmp_questions.acts.cancel_accept'}--><!--/ko-->
+      </span>
+      <!--/ko-->
+
+      <!--删除-->
+      <!--ko if:is_my_answer && !has_accepted()-->
+      <span class="qas-do-del" data-bind="click:del"><i class="iconfont-qas ico-qas-delete"></i>
+        <!--ko translate:{key:'qas_cmp_questions.acts.del'}--><!--/ko-->
+      </span>
+      <!--/ko-->
+    </div>
+  </div>
+  <!--已采纳-->
+  <!--ko if:has_accepted()-->
+  <span class="qas-accepted"></span>
+  <!--/ko-->
+</div>
+<!--ko if:show_pop_replies()-->
+<!--ko component:{name:'x-qas-pop-replies', params:pop_replies_params}--><!--/ko-->
+<!--/ko-->

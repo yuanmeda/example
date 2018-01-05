@@ -1,0 +1,115 @@
+/**
+ * @author  wendy(944145)
+ * @editor  wendy(944145)
+ * @date    2017/4/24
+ */
+@import "./variables";
+.mod-sidebar {
+    %scrollbar {
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background: $light-gray;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f7f7f7;
+        }
+    }
+    //position: relative;
+    background: #fff;
+    //width: 100%;
+    //height: 100%;
+    //overflow: hidden;
+    .tab {
+        //position: absolute;
+        //left: 0;
+        //right: 0;
+        //top: 0;
+        overflow: auto;
+        @extend %scrollbar;
+        &.input-status {
+            bottom: 217px;
+        }
+        &.btn-status {
+            bottom: 61px;
+        }
+    }
+    .note-tip {
+        padding: 0 20px;
+        line-height: 30px;
+        border-bottom: 1px dashed #e0e0e0;
+        .n-ui-txt-main{
+            margin: 0 5px;
+            color: $main-dark;
+        }
+    }
+    .note-list {
+        .note-icon-edit {
+            position: relative;
+            margin-right: 10px;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 50%;
+                margin-left: 12px;
+                background: #f2f2f2;
+                width: 1px;
+                height: 17px;
+                margin-top: -8px;
+            }
+        }
+        .note-icon-edit, .note-icon-delete {
+            display: none;
+            margin-left: 10px;
+        }
+        .note-empty {
+            $w: 300px;
+            $h: 260px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: $w;
+            height: $h;
+            margin-top: - $w /2;
+            margin-left: - $w /2;
+            font-size: 18px;
+            text-align: center;
+            @at-root {
+                .note-empty-icon {
+                    display: block;
+                    background: url(../../images/icon-none.png) no-repeat center;
+                    height: 138px;
+                }
+                .note-empty-tips {
+                    margin: 10px 0;
+                    color: $gray;
+                    text-align: center;
+                }
+                .note-empty-btn {
+                    display: inline-block;
+                    *display: inline;
+                    *zoom: 1;
+                    color: $main;
+                    border: 1px solid $main;
+                    border-radius: $radius-s;
+                    height: 42px;
+                    line-height: 42px;
+                    margin: auto;
+                    padding: 0 30px;
+                    cursor: pointer;
+                    &:hover {
+                        background: $main-light;
+                        color: #fff;
+                    }
+                    &:active {
+                        background: $main-dark;
+                    }
+                }
+            }
+        }
+    }
+}

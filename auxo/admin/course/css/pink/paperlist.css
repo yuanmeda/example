@@ -1,0 +1,126 @@
+.examtab-box {
+  padding: 30px;
+  text-align: center; }
+  .examtab-box div {
+    display: inline-block;
+    width: 20%;
+    margin-right: 20px; }
+    .examtab-box div i, .examtab-box div span {
+      display: inline-block;
+      vertical-align: middle; }
+    .examtab-box div i {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 50%;
+      background: #999;
+      border: 1px solid #666666;
+      margin-right: 15px;
+      color: #fff;
+      font-style: normal; }
+    .examtab-box div span {
+      font-size: 24px;
+      color: #999; }
+    .examtab-box div.active i {
+      background-color: #CA0000;
+      border-color: #b10000;
+      color: #fff; }
+    .examtab-box div.active span {
+      color: #CA0000; }
+
+.bt-primary,
+a.bt-primary, .bt-default,
+a.bt-default, .bt-tips,
+a.bt-tips, .bt-save,
+a.bt-save, .bt-disabled,
+a.bt-disabled, .bt-sm,
+a.bt-sm, .bt-md,
+a.bt-md, .bt-lg,
+a.bt-lg {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0 15px;
+  cursor: pointer; }
+
+.bt-primary,
+a.bt-primary {
+  border-color: #b10000;
+  color: #fff;
+  background: #CA0000;
+  transition: all .3s; }
+  .bt-primary:hover,
+  a.bt-primary:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #b10000; }
+
+.bt-default,
+a.bt-default {
+  border-color: #d8d8d8;
+  color: #333;
+  background: #e5e5e5;
+  transition: all .3s; }
+  .bt-default:hover,
+  a.bt-default:hover {
+    text-decoration: none;
+    color: #333;
+    background: #d8d8d8; }
+
+.bt-tips,
+a.bt-tips {
+  border-color: #e65c00;
+  color: #fff;
+  background: #f60;
+  transition: all .3s; }
+  .bt-tips:hover,
+  a.bt-tips:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #e65c00; }
+
+.bt-save,
+a.bt-save {
+  border-color: #7fc33e;
+  color: #fff;
+  background: #8cc951;
+  transition: all .3s; }
+  .bt-save:hover,
+  a.bt-save:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #7fc33e; }
+
+.bt-disabled,
+a.bt-disabled {
+  border-color: #8c8c8c;
+  color: #fff;
+  background: #999;
+  transition: all .3s; }
+  .bt-disabled:hover,
+  a.bt-disabled:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #8c8c8c; }
+
+.bt-sm,
+a.bt-sm {
+  padding: 0 15px;
+  height: 28px;
+  line-height: 28px; }
+
+.bt-md,
+a.bt-md {
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px; }
+
+.bt-lg,
+a.bt-lg {
+  padding: 0 25px;
+  height: 36px;
+  line-height: 36px; }
+
+.bt-group [class^="bt-"] + [class^="bt-"] {
+  margin-left: 20px; }

@@ -1,0 +1,68 @@
+//@import "base";
+@import "mixins";
+.ztree *{
+  font-size: 14px;
+}
+.ztree li{
+  line-height: 20px;
+}
+.ztree li a.curSelectedNode{
+  height: 20px;
+}
+.tool-bar{
+  margin-top:10px;
+  padding:3px 30px;
+}
+
+.tree-container{
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.commandButtonBar{
+  display: block;
+  left: 90px;
+  top: 133px;
+  position:absolute;
+  a{
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+  }
+  .add{
+    background-image: url(../images/u144_normal.png);
+  }
+  .edit{
+    background-image: url(../images/u140_normal.png);
+  }
+  .delete{
+    background-image: url(../images/u142_normal.png);
+  }
+  .move-up{
+    background-image: url(../images/move_up.png);
+  }
+  .move-down{
+    background-image: url(../images/move_down.png);
+  }
+  .grade-up{
+
+  }
+  .grade-down{
+
+  }
+}
+.edit-table{
+  margin-top:20px;
+  input{
+    height:26px;
+  };
+  small{
+    color: #a00;
+    vertical-align: bottom;
+    margin-left: 5px;
+  }
+}

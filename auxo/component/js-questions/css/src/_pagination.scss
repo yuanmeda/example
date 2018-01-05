@@ -1,0 +1,30 @@
+.qas-pagination{
+  text-align:center;
+  span{
+    display:inline-block;
+    line-height:27px;
+    height:27px;
+    color:#666666;
+    background:#dddddd;
+    font-size:12px;
+    padding:0 12px;
+    cursor:pointer;
+    &.omit{
+      cursor:default;
+    }
+    &:hover, &.on{
+      color:#fff;
+      background:$theme-color;
+    }
+    &.on{
+      cursor:default;
+    }
+    &.disabled{
+      cursor:default;
+      &:hover{
+        color:#666666;
+        background:#dddddd;
+      }
+    }
+  }
+}

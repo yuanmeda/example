@@ -1,0 +1,143 @@
+%text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.default-btn {
+  position: relative;
+  .title {
+    position: absolute;
+    left: 5%;
+    display: inline-block;
+    margin-right: 48%;
+    vertical-align: top;
+    height: 28px;
+  }
+  .icon {
+    position: absolute;
+    right: 5%;
+    display: inline-block;
+    height: 28px;
+    vertical-align: top;
+    font-family: "microsoft yahei";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+  }
+}
+
+.setting-item {
+  position: relative;
+  padding: 10px 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &.drag-placeholder {
+    border: 1px dashed #dcdcdc;
+  }
+  label {
+    cursor: pointer;
+  }
+  &:hover {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  .row-fluid {
+    &:first-child {
+      margin-top: 0;
+    }
+    margin-top: 10px;
+  }
+  .label-inline {
+    display: inline-block;
+    .checkbox-icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      border: 1px solid #999;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 14px;
+      border-radius: 5px;
+      &:hover {
+        background-color: darken(#fff, 5%);
+      }
+
+    }
+  }
+  .option-list {
+    .add-item {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 0 10px 0;
+      .add-input {
+        height: 24px;
+        margin-right: 10px;
+      }
+      $btnColor: #3498db;
+      .add-btn {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        border: 1px solid $btnColor;
+        line-height: 30px;
+        border-radius: 5px;
+        background-color: $btnColor;
+        color: #fff;
+        &:hover {
+          background-color: lighten($btnColor, 5%);
+        }
+      }
+    }
+    .option-item {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 10px;
+      height: 30px;
+      border: 1px solid #999;
+      position: relative;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 30px;
+      margin: 0 20px 10px 0;
+      .option-text {
+        display: inline-block;
+        max-width: 300px;
+        @extend %text-overflow;
+      }
+      $closeBtnColor: #e74c3c;
+      .close-icon {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 16px;
+        background-color: $closeBtnColor;
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        font-family: "microsoft yahei";
+        &:hover {
+          background-color: lighten($closeBtnColor, 5%);
+        }
+      }
+    }
+  }
+
+  input[type=checkbox] {
+    position: absolute;
+    left: -9999px;
+  }
+  input[type=checkbox]:checked + label {
+    i {
+      display: inline-block;
+    }
+  }
+
+}

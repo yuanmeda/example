@@ -1,0 +1,262 @@
+.opencourse-yunke-dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #E4E4E4;
+  box-shadow: 0 0 10px #E4E4E4;
+  border-radius: 3px;
+  z-index: 101;
+  background: #fff;
+  min-height: 374px;
+  min-width: 300px; }
+  .opencourse-yunke-dialog .cc-dlg-header {
+    position: relative;
+    height: 154px;
+    border-bottom: 1px solid #e5e5e5; }
+    .opencourse-yunke-dialog .cc-dlg-header h1 {
+      text-align: center;
+      font-size: 22px;
+      padding-top: 20px;
+      margin: 0; }
+    .opencourse-yunke-dialog .cc-dlg-header .close {
+      background: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyIDUyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MiA1MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxwYXRoIGQ9Ik0yNiwwQzExLjY2NCwwLDAsMTEuNjYzLDAsMjZzMTEuNjY0LDI2LDI2LDI2czI2LTExLjY2MywyNi0yNlM0MC4zMzYsMCwyNiwweiBNMjYsNTBDMTIuNzY3LDUwLDIsMzkuMjMzLDIsMjYgICBTMTIuNzY3LDIsMjYsMnMyNCwxMC43NjcsMjQsMjRTMzkuMjMzLDUwLDI2LDUweiIgZmlsbD0iIzhjOGM4YyIvPgoJPHBhdGggZD0iTTM1LjcwNywxNi4yOTNjLTAuMzkxLTAuMzkxLTEuMDIzLTAuMzkxLTEuNDE0LDBMMjYsMjQuNTg2bC04LjI5My04LjI5M2MtMC4zOTEtMC4zOTEtMS4wMjMtMC4zOTEtMS40MTQsMCAgIHMtMC4zOTEsMS4wMjMsMCwxLjQxNEwyNC41ODYsMjZsLTguMjkzLDguMjkzYy0wLjM5MSwwLjM5MS0wLjM5MSwxLjAyMywwLDEuNDE0QzE2LjQ4OCwzNS45MDIsMTYuNzQ0LDM2LDE3LDM2ICAgczAuNTEyLTAuMDk4LDAuNzA3LTAuMjkzTDI2LDI3LjQxNGw4LjI5Myw4LjI5M0MzNC40ODgsMzUuOTAyLDM0Ljc0NCwzNiwzNSwzNnMwLjUxMi0wLjA5OCwwLjcwNy0wLjI5MyAgIGMwLjM5MS0wLjM5MSwwLjM5MS0xLjAyMywwLTEuNDE0TDI3LjQxNCwyNmw4LjI5My04LjI5M0MzNi4wOTgsMTcuMzE2LDM2LjA5OCwxNi42ODQsMzUuNzA3LDE2LjI5M3oiIGZpbGw9IiM4YzhjOGMiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K") no-repeat center center;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      right: 23px;
+      top: 23px; }
+      .opencourse-yunke-dialog .cc-dlg-header .close:hover {
+        background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUyIDUyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MiA1MjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxwYXRoIGQ9Ik0yNiwwQzExLjY2NCwwLDAsMTEuNjYzLDAsMjZzMTEuNjY0LDI2LDI2LDI2czI2LTExLjY2MywyNi0yNlM0MC4zMzYsMCwyNiwweiBNMjYsNTBDMTIuNzY3LDUwLDIsMzkuMjMzLDIsMjYgICBTMTIuNzY3LDIsMjYsMnMyNCwxMC43NjcsMjQsMjRTMzkuMjMzLDUwLDI2LDUweiIgZmlsbD0iIzAwNkRGMCIvPgoJPHBhdGggZD0iTTM1LjcwNywxNi4yOTNjLTAuMzkxLTAuMzkxLTEuMDIzLTAuMzkxLTEuNDE0LDBMMjYsMjQuNTg2bC04LjI5My04LjI5M2MtMC4zOTEtMC4zOTEtMS4wMjMtMC4zOTEtMS40MTQsMCAgIHMtMC4zOTEsMS4wMjMsMCwxLjQxNEwyNC41ODYsMjZsLTguMjkzLDguMjkzYy0wLjM5MSwwLjM5MS0wLjM5MSwxLjAyMywwLDEuNDE0QzE2LjQ4OCwzNS45MDIsMTYuNzQ0LDM2LDE3LDM2ICAgczAuNTEyLTAuMDk4LDAuNzA3LTAuMjkzTDI2LDI3LjQxNGw4LjI5Myw4LjI5M0MzNC40ODgsMzUuOTAyLDM0Ljc0NCwzNiwzNSwzNnMwLjUxMi0wLjA5OCwwLjcwNy0wLjI5MyAgIGMwLjM5MS0wLjM5MSwwLjM5MS0xLjAyMywwLTEuNDE0TDI3LjQxNCwyNmw4LjI5My04LjI5M0MzNi4wOTgsMTcuMzE2LDM2LjA5OCwxNi42ODQsMzUuNzA3LDE2LjI5M3oiIGZpbGw9IiMwMDZERjAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"); }
+  .opencourse-yunke-dialog .cc-dlg-body {
+    position: absolute;
+    top: 155px;
+    bottom: 119px;
+    left: 0;
+    right: 0;
+    overflow-y: auto; }
+  .opencourse-yunke-dialog .cc-dlg-footer {
+    height: 120px;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    border-top: 1px solid #e5e5e5;
+    text-align: center; }
+    .opencourse-yunke-dialog .cc-dlg-footer span {
+      display: inline-block;
+      background-color: #3bb800;
+      color: #fff;
+      width: 110px;
+      height: 36px;
+      margin: 15px 42px 0 0;
+      line-height: 36px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer; }
+      .opencourse-yunke-dialog .cc-dlg-footer span.disabled {
+        background-color: #ddd;
+        cursor: default; }
+  .opencourse-yunke-dialog .create-chapter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; }
+
+.opencourse-yunke-container {
+  background: #fff;
+  padding: 20px; }
+  .opencourse-yunke-container .create-chapter {
+    height: 400px; }
+
+.opencourse-yunke-editor {
+  z-index: 101;
+  min-width: 520px; }
+  .opencourse-yunke-editor .cc-dlg-header {
+    height: 175px;
+    overflow: hidden; }
+    .opencourse-yunke-editor .cc-dlg-header .progress-bar {
+      position: relative;
+      height: 60px;
+      margin: 12px 190px 0 190px; }
+      .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar-num {
+        width: 120px;
+        position: absolute;
+        z-index: 2;
+        top: 0; }
+        .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar-num .circle {
+          width: 48px;
+          height: 48px;
+          position: relative;
+          margin: 0 auto 5px auto; }
+          .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar-num .circle .deco-back {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 100px;
+            background: #999;
+            opacity: 0.2; }
+          .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar-num .circle .num {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            left: 4px;
+            top: 4px;
+            position: absolute;
+            font-size: 22px;
+            color: #fff;
+            background: #999;
+            border-radius: 100px; }
+        .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar-num p {
+          text-align: center;
+          font-size: 14px;
+          color: #666; }
+        .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar-num.done .circle .num {
+          background: #3bb800; }
+      .opencourse-yunke-editor .cc-dlg-header .progress-bar .n1 {
+        left: -60px; }
+      .opencourse-yunke-editor .cc-dlg-header .progress-bar .n2 {
+        left: 50%;
+        margin-left: -60px; }
+      .opencourse-yunke-editor .cc-dlg-header .progress-bar .n3 {
+        right: -60px; }
+      .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar {
+        position: absolute;
+        z-index: 1;
+        height: 10px;
+        width: 100%;
+        background: #E4E4E4;
+        left: 0;
+        top: 20px; }
+        .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar span {
+          width: 50%;
+          background: #3bb800;
+          height: 100%; }
+        .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar .active-left {
+          float: left; }
+        .opencourse-yunke-editor .cc-dlg-header .progress-bar .bar .active-right {
+          float: right; }
+  .opencourse-yunke-editor .cc-dlg-body {
+    top: 176px;
+    bottom: 60px; }
+  .opencourse-yunke-editor .cc-dlg-footer {
+    height: 60px;
+    text-align: center; }
+    .opencourse-yunke-editor .cc-dlg-footer span {
+      display: inline-block;
+      background-color: #3bb800;
+      color: #fff;
+      width: 110px;
+      height: 36px;
+      margin: 15px 42px 0 0;
+      line-height: 36px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer; }
+      .opencourse-yunke-editor .cc-dlg-footer span.disabled {
+        background-color: #ddd;
+        cursor: default; }
+  .opencourse-yunke-editor .create-base-info {
+    padding: 20px; }
+    .opencourse-yunke-editor .create-base-info input {
+      height: 28px;
+      line-height: 28px;
+      padding: 0;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #d2d2d2;
+      width: 100%; }
+    .opencourse-yunke-editor .create-base-info textarea {
+      border: 1px solid #d2d2d2;
+      border-radius: 3px;
+      background: #fff;
+      padding: 0;
+      resize: none;
+      width: 100%; }
+    .opencourse-yunke-editor .create-base-info table {
+      width: 100%; }
+      .opencourse-yunke-editor .create-base-info table th,
+      .opencourse-yunke-editor .create-base-info table td {
+        padding: 8px 3px;
+        vertical-align: top; }
+      .opencourse-yunke-editor .create-base-info table th {
+        text-align: right;
+        font-weight: normal;
+        width: 200px;
+        white-space: nowrap; }
+    .opencourse-yunke-editor .create-base-info .required {
+      color: red;
+      margin-right: 10px;
+      font-size: 20px;
+      vertical-align: middle; }
+    .opencourse-yunke-editor .create-base-info .summary-remain-words {
+      text-align: right;
+      padding: 10px 0 10px 0;
+      font-size: 14px;
+      width: 100%; }
+      .opencourse-yunke-editor .create-base-info .summary-remain-words span {
+        color: #3bb800;
+        font-style: italic; }
+    .opencourse-yunke-editor .create-base-info .tree-border {
+      width: 300px;
+      border: 1px solid #b9b9b9; }
+    .opencourse-yunke-editor .create-base-info .validationMessage {
+      display: none; }
+  .opencourse-yunke-editor .create-cover {
+    padding: 20px; }
+    .opencourse-yunke-editor .create-cover div {
+      margin-bottom: 20px; }
+      .opencourse-yunke-editor .create-cover div img {
+        width: 300px;
+        display: block;
+        margin: 0 auto; }
+    .opencourse-yunke-editor .create-cover span {
+      display: block;
+      width: 120px;
+      background: #eee;
+      padding: 10px 0;
+      text-align: center;
+      cursor: pointer;
+      margin: 0 auto; }
+
+.cc-loading-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 200; }
+
+.opencourse-yunke-img-uploader {
+  width: 1028px;
+  top: 13%;
+  bottom: 23%;
+  left: 50%;
+  margin-left: -514px;
+  z-index: 103; }
+  .opencourse-yunke-img-uploader .cc-dlg-header {
+    height: 70px; }
+    .opencourse-yunke-img-uploader .cc-dlg-header h1 {
+      text-align: left;
+      font-weight: normal;
+      padding-left: 20px;
+      font-size: 18px; }
+  .opencourse-yunke-img-uploader .cc-dlg-body {
+    top: 70px;
+    bottom: 50px; }
+  .opencourse-yunke-img-uploader .cc-dlg-footer {
+    height: 50px; }
+    .opencourse-yunke-img-uploader .cc-dlg-footer span {
+      margin-top: 7px; }
+
+.cc-img-uploader-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 102; }

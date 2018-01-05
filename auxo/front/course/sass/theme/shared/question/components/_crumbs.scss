@@ -1,0 +1,26 @@
+
+.crumbs {
+    position: relative;
+    padding: 0 0 0 16px;
+    @extend %clearfix;
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 12px;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        background: $themeColor;
+    }
+    li {
+        float: left;
+    }
+    a, span {
+        font: 14px/28px 'microsoft yahei';
+        color: #999;
+    }
+    a:hover {
+        color: $themeColor;
+    }
+}

@@ -1,0 +1,150 @@
+.edupf-header {
+    display: none;
+}
+
+.edupf-footer {
+    display: none;
+}
+
+/**公告样式*/
+.comlist06 {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.comlist06 li {
+    position: relative;
+    height: 100px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.comlist06 li .like {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background: #0096ca;
+}
+
+.comlist06 li .like .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+    background-position: 0 -440px;
+}
+
+.icon {
+    background: url(../images/icon.png) no-repeat;
+}
+
+i {
+    font-style: normal;
+}
+
+.comlist06 li .like .txt {
+    display: block;
+    width: 100%;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.comlist06 li .listcon {
+    position: relative;
+    padding: 25px 0 25px 73px;
+    font-size: 16px;
+    color: #333333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.comlist06 li .listcon .newstit {
+    display: inline-block;
+    width: 94%;
+    height: 25px;
+    margin-bottom: 9px;
+    line-height: 25px;
+    font-size: 16px;
+    color: #333333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.comlist06 li .listcon .newstime {
+    width: 100%;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #b6b6b6;
+}
+
+address, code, caption, th, cite, dfn, em, var {
+    font-style: normal;
+}
+
+.comlist06 li .listcon .read {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 50px;
+    height: 17px;
+    line-height: 17px;
+    font-family: "微软雅黑";
+    font-size: 17px;
+    color: #dc1703;
+    text-align: right;
+    overflow: hidden;
+}
+
+.comlist06 li .listcon .comment {
+    display: block;
+    position: absolute;
+    top: 63px;
+    right: 0;
+    height: 11px;
+    padding-left: 17px;
+    line-height: 11px;
+    background-position: 0 -650px;
+    font-size: 12px;
+    color: #888888;
+}
+
+a {
+    text-decoration: none;
+}
+
+#container {
+    width: 1198px;
+    margin: 0 auto;
+    background: white;
+    color: #4d4d4d;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+#main {
+    padding: 0px 70px;
+    line-height: 2.5;
+}
+
+#title {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.sub_title {
+    color: #a7a7a7;
+    text-align: center;
+}
+
+.sub_title .name {
+    margin-right: 50px;
+}

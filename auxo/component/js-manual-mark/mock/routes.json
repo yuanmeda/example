@@ -1,0 +1,8 @@
+{
+    "/api/v0.1/articles": "/articles",
+    "/api/v0.1/reviewers": "/reviewers",
+    "/api/v0.1/correct-list": "/correctList",
+    "/api/v0.1/correct-setting": "/correctSettingConfig",
+    "/api/v0.1/answerList": "/answerList",
+    "/api/v0.1/correctDetail": "/correctDetail"
+}

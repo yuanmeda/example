@@ -1,0 +1,1238 @@
+.form .form-card, .form .form-group, .e-panel .e-panel-header .e-panel-switch {
+    *zoom: 1
+}
+
+.form .form-card:after, .form .form-group:after, .e-panel .e-panel-header .e-panel-switch:after {
+    content: '';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both
+}
+
+.ellipsis, .e-select .e-select-holder .e-select-holder-text, .e-select .e-select-list li, .e-panel .e-panel-header h2, .cert .prog-info p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.form .btn-upload, .form .help-inline, .e-select, .e-dialog .e-dialog-container .e-panel, .cert .study .study-header span, .cert .prog-show .prog-point, .cert .result .icon-p-over, .cert .result ins, .cert .result .result-share .icon-s-chat, .cert .btn {
+    display: inline-block;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes autorotate {
+    0% {
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -xhtml-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    25% {
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -xhtml-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg)
+    }
+    50% {
+        -o-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -xhtml-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg)
+    }
+    75% {
+        -o-transform: rotate(-270deg);
+        -ms-transform: rotate(-270deg);
+        -moz-transform: rotate(-270deg);
+        -xhtml-transform: rotate(-270deg);
+        -webkit-transform: rotate(-270deg);
+        transform: rotate(-270deg)
+    }
+    100% {
+        -o-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -xhtml-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg)
+    }
+}
+
+@-webkit-keyframes autorotate {
+    0% {
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -xhtml-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    25% {
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -xhtml-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg)
+    }
+    50% {
+        -o-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -xhtml-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg)
+    }
+    75% {
+        -o-transform: rotate(-270deg);
+        -ms-transform: rotate(-270deg);
+        -moz-transform: rotate(-270deg);
+        -xhtml-transform: rotate(-270deg);
+        -webkit-transform: rotate(-270deg);
+        transform: rotate(-270deg)
+    }
+    100% {
+        -o-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -xhtml-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg)
+    }
+}
+
+@-moz-keyframes autorotate {
+    0% {
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -xhtml-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    25% {
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -xhtml-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg)
+    }
+    50% {
+        -o-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -xhtml-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg)
+    }
+    75% {
+        -o-transform: rotate(-270deg);
+        -ms-transform: rotate(-270deg);
+        -moz-transform: rotate(-270deg);
+        -xhtml-transform: rotate(-270deg);
+        -webkit-transform: rotate(-270deg);
+        transform: rotate(-270deg)
+    }
+    100% {
+        -o-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -xhtml-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg)
+    }
+}
+
+@-o-keyframes autorotate {
+    0% {
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -xhtml-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    25% {
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -xhtml-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg)
+    }
+    50% {
+        -o-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -xhtml-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg)
+    }
+    75% {
+        -o-transform: rotate(-270deg);
+        -ms-transform: rotate(-270deg);
+        -moz-transform: rotate(-270deg);
+        -xhtml-transform: rotate(-270deg);
+        -webkit-transform: rotate(-270deg);
+        transform: rotate(-270deg)
+    }
+    100% {
+        -o-transform: rotate(-360deg);
+        -ms-transform: rotate(-360deg);
+        -moz-transform: rotate(-360deg);
+        -xhtml-transform: rotate(-360deg);
+        -webkit-transform: rotate(-360deg);
+        transform: rotate(-360deg)
+    }
+}
+
+body {
+    background-color: #f2f2f2
+}
+
+.light {
+    color: #38adff
+}
+
+.gray {
+    color: #999
+}
+
+.wrapper {
+    width: 1200px;
+    padding: 18px 0 42px;
+    margin: 0 auto
+}
+
+table {
+    table-layout: fixed
+}
+
+table img {
+    width: 100%
+}
+
+table th, table td {
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+.tip {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    padding: 20px 0
+}
+
+.text-red {
+    color: red !important
+}
+
+.flip-3d {
+    perspective: 1200px
+}
+
+.flip-3d.back .flip-box {
+    transform: rotateY(0.5turn)
+}
+
+.flip-3d .flip-box {
+    position: relative;
+    transition: 1s transform;
+    transform-style: preserve-3d
+}
+
+.flip-3d .flip-back {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(0.5turn) translateZ(1px)
+}
+
+.btn-submit {
+    display: block;
+    font: 18px/40px 'microsoft yahei';
+    color: #fff;
+    text-align: center;
+    background: #38adff;
+    border: 1px solid #38adff;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -o-transition: background, color .2s linear;
+    -ms-transition: background, color .2s linear;
+    -moz-transition: background, color .2s linear;
+    -xhtml-transition: background, color .2s linear;
+    -webkit-transition: background, color .2s linear;
+    transition: background, color .2s linear
+}
+
+.btn-submit:hover {
+    background: #1fa2ff
+}
+
+.btn-submit.btn-spook {
+    color: #38adff;
+    background: transparent
+}
+
+.btn-submit.btn-spook:hover {
+    color: #fff;
+    background: #38adff
+}
+
+.e-apply {
+    background: #fff
+}
+
+.e-apply .e-apply-header {
+    margin: 0 34px;
+    font: 22px/63px 'microsoft yahei';
+    color: #333;
+    text-align: center;
+    border-bottom: 1px dashed #e0e0e0
+}
+
+.e-apply .e-apply-body {
+    min-height: 1px
+}
+
+.form {
+    margin: 0 auto
+}
+
+.form.form-normal {
+    width: 466px
+}
+
+.form .form-card {
+    margin: 0 0 32px;
+    padding: 26px 0 0
+}
+
+.form .form-group {
+    margin: 26px 0 0
+}
+
+.form .form-group .group-label {
+    float: left;
+    margin: 0 18px 0 0;
+    width: 70px;
+    font: 14px/40px 'microsoft yahei';
+    color: #333;
+    text-align: right
+}
+
+.form .form-group .group-control {
+    float: left;
+    width: 346px;
+    padding: 0 16px
+}
+
+.form .form-group .group-control .form-control {
+    width: 100%;
+    height: 26px;
+    margin: 0 0 0 -15px;
+    padding: 6px 15px;
+    border: 1px solid #ddd;
+    font: 14px/26px 'microsoft yahei';
+    color: #333;
+    outline: none;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -xhtml-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear
+}
+
+.form .form-group .group-control .form-control:focus {
+    border-color: #38adff;
+    -o-box-shadow: inset 0 1px 1px #39adff, 0 0 4px #3baeff;
+    -ms-box-shadow: inset 0 1px 1px #39adff, 0 0 4px #3baeff;
+    -moz-box-shadow: inset 0 1px 1px #39adff, 0 0 4px #3baeff;
+    -xhtml-box-shadow: inset 0 1px 1px #39adff, 0 0 4px #3baeff;
+    -webkit-box-shadow: inset 0 1px 1px #39adff, 0 0 4px #3baeff;
+    box-shadow: inset 0 1px 1px #39adff, 0 0 4px #3baeff
+}
+
+.form .form-group .group-control select.form-control {
+    height: 38px
+}
+
+.form .form-group .group-control textarea.form-control {
+    height: 64px;
+    resize: none;
+    overflow: auto
+}
+
+.form .form-group .group-control .help-block {
+    margin-left: -15px
+}
+
+.form .btn-upload {
+    vertical-align: middle;
+    margin: 0 8px 0 0;
+    padding: 0 32px;
+    font: 18px/38px 'microsoft yahei';
+    color: #999;
+    border: 1px solid #ddd;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -o-transition: border-color, color .2s linear;
+    -ms-transition: border-color, color .2s linear;
+    -moz-transition: border-color, color .2s linear;
+    -xhtml-transition: border-color, color .2s linear;
+    -webkit-transition: border-color, color .2s linear;
+    transition: border-color, color .2s linear
+}
+
+.form .btn-upload:hover {
+    border-color: #38adff;
+    color: #38adff
+}
+
+.form .help-inline {
+    vertical-align: middle;
+    color: #999
+}
+
+.form .help-block {
+    margin: 4px 0 0;
+    font: 14px/22px 'microsoft yahei';
+    color: #999
+}
+
+.form-card .form-card-header {
+    position: relative;
+    padding-left: 12px;
+    margin: -2px 0;
+    font: 14px/18px 'microsoft yahei';
+    color: #999
+}
+
+.form-card .form-card-header:before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 4px;
+    margin: 7px 0;
+    background: #38adff;
+    -o-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -xhtml-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px
+}
+
+.e-select {
+    position: relative;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -xhtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.e-select.select-w270 {
+    width: 270px
+}
+
+.e-select.select-w150 {
+    width: 150px
+}
+
+.e-select .e-select-holder {
+    position: relative;
+    height: 22px;
+    padding: 7px 42px 7px 0;
+    font: 14px/22px "microsoft yahei";
+    color: #333;
+    background: transparent;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px
+}
+
+.e-select .e-select-holder .e-select-holder-text {
+    display: block;
+    min-width: 40px;
+    padding: 0 12px;
+    border-right: 1px solid #ddd
+}
+
+.e-select .e-select-holder .e-select-holder-arrow {
+    position: absolute;
+    right: 14px;
+    margin: 4px 0 0
+}
+
+.e-select .e-select-holder:hover {
+    color: #38adff
+}
+
+.e-select .e-select-list {
+    display: none;
+    position: absolute;
+    max-height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    left: 0;
+    right: 0;
+    margin: -1px 0 0;
+    padding: 4px;
+    z-index: 100;
+    background: #fff;
+    border: 1px solid #ddd;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px
+}
+
+.e-select .e-select-list li {
+    padding: 0 10px;
+    font: 14px/28px "microsoft yahei";
+    color: #333;
+    cursor: pointer;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px
+}
+
+.e-select .e-select-list li.active, .e-select .e-select-list li:hover {
+    background: #eee;
+    color: #38adff
+}
+
+.block {
+    margin: 30px 0 0;
+    background: #fff
+}
+
+.block .block-header {
+    margin: 0 30px;
+    padding: 28px 0 8px;
+    font: 16px/28px 'microsoft yahei';
+    color: #333;
+    border-bottom: 1px solid #efefef
+}
+
+.block .block-body {
+    padding: 20px 30px 30px;
+    font: 16px/24px 'microsoft yahei';
+    color: #555
+}
+
+.study-list .item {
+    float: left;
+    position: relative;
+    margin: 0 15px 20px 0;
+    width: 270px;
+    cursor: pointer
+}
+
+.study-list .item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px
+}
+
+.study-list .item .item-img {
+    width: 270px;
+    height: 180px;
+    position: relative;
+}
+
+.study-list .item .item-img .item-type {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #38adff;
+    color: #fff;
+    padding: 5px;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+
+.study-list .item .item-img .lazy-image {
+    width: 100%;
+    height: 100%
+}
+
+.study-list .item .item-img .item-ldt {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#8F000000, endColorstr=#02000000, GradientType=1);
+    height: 24px;
+    line-height: 24px
+}
+
+:root .study-list .item .item-img .item-ldt {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01))
+}
+
+.study-list .item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff
+}
+
+.study-list .item .item-info .item-name {
+    font-size: 18px
+}
+
+.study-list .item .item-info .item-label-box {
+    overflow: inherit;
+    position: relative;
+    margin-top: 15px;
+    height: 30px;
+    line-height: 30px
+}
+
+.study-list .item .item-info .item-label-box .item-view i.date {
+    font-size: 12px
+}
+
+.study-list .item .item-info .v-line > em {
+    padding: 0 5px
+}
+
+.study-list .item .item-info .v-line:not(:last-child) > em {
+    color: #999
+}
+
+.study-list .item .item-info .v-line:not(:last-child) > em:before {
+    content: "|"
+}
+
+.study-list .item .item-info .item-icon {
+    height: 20px;
+    line-height: 20px
+}
+
+.study-list .item .item-info, .study-list .item .item-img {
+    position: relative
+}
+
+.study-list .item a.bc-btn {
+    display: inline-block;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+
+.study-list .item:hover .item-name {
+    color: #38adff
+}
+
+.study-list .item:hover a.bc-btn {
+    display: inline-block
+}
+
+.study-list .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px
+}
+
+.study-list .status-icon:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 54px;
+    text-align: center;
+    transform: rotate(-16deg);
+    content: attr(data-flag)
+}
+
+.study-list .status-icon.yes {
+    color: #38adff
+}
+
+.study-list .status-icon.no {
+    color: #ff7c7c
+}
+
+.study-list .status-icon.ended {
+    color: #a0a0a0
+}
+
+.study-list .status-icon.finished {
+    color: #38adff
+}
+
+.study-list .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee
+}
+
+.study-list .study-process .inner {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #38adff;
+    transition: all .3s
+}
+
+.ele-btn, .ele-btn-disabled, .ele-btn-theme {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0 10px;
+    width: auto;
+    color: #fff;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px
+}
+
+.ele-btn.disabled, .disabled.ele-btn-disabled, .disabled.ele-btn-theme {
+    color: #e6e6e6 !important;
+    background-color: #ababab !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    border-color: #9e9e9e
+}
+
+.ele-btn.ele-sm, .ele-sm.ele-btn-disabled, .ele-sm.ele-btn-theme {
+    padding: 0 7px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px
+}
+
+.ele-btn-disabled.disabled {
+    color: #e6e6e6 !important;
+    background-color: #ababab !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    border-color: #9e9e9e
+}
+
+.ele-btn-theme {
+    border: 1px solid #1fa2ff;
+    background: #38adff
+}
+
+.ele-btn-theme:hover {
+    box-shadow: inset 0 0 3px #0598ff;
+    background-color: #0598ff
+}
+
+.ele-btn-theme.disabled {
+    color: #e6e6e6 !important;
+    background-color: #ababab !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    border-color: #9e9e9e
+}
+
+.e-dialog {
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33333333, endColorstr=#33333333)
+}
+
+:root .e-dialog {
+    background: RGBA(51, 51, 51, 0.2);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled='false')
+}
+
+.e-dialog .e-dialog-container {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle
+}
+
+.e-dialog .e-dialog-container .e-panel {
+    text-align: left
+}
+
+.e-panel {
+    background: #fff;
+    -o-box-shadow: 0 1px 2px 1px #e9e9e9;
+    -ms-box-shadow: 0 1px 2px 1px #e9e9e9;
+    -moz-box-shadow: 0 1px 2px 1px #e9e9e9;
+    -xhtml-box-shadow: 0 1px 2px 1px #e9e9e9;
+    -webkit-box-shadow: 0 1px 2px 1px #e9e9e9;
+    box-shadow: 0 1px 2px 1px #e9e9e9
+}
+
+.e-panel .e-panel-header {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.e-panel .e-panel-header h2 {
+    height: 28px;
+    padding: 15px 20px;
+    font: 16px/28px "microsoft yahei";
+    color: #333
+}
+
+.e-panel .e-panel-header h2 ins {
+    font-size: 12px;
+    color: #999;
+    text-decoration: none
+}
+
+.e-panel .e-panel-header .e-side-bar {
+    position: absolute;
+    right: 20px;
+    top: 15px
+}
+
+.e-panel .e-panel-header .e-side-bar a {
+    font-size: 14px
+}
+
+.e-panel .e-panel-header .e-side-bar a.active, .e-panel .e-panel-header .e-side-bar a:hover {
+    color: #38adff
+}
+
+.e-panel .e-panel-header .e-side-bar ins {
+    height: 8px;
+    width: 1px;
+    background: #ccc;
+    display: inline-block;
+    margin: 0 10px
+}
+
+.e-panel .e-panel-header .e-panel-close {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    font: 22px/normal "micorosoft yahei";
+    color: #b7b7b7;
+    cursor: pointer;
+    -o-transition: transform 0.3s linear;
+    -ms-transition: transform 0.3s linear;
+    -moz-transition: transform 0.3s linear;
+    -xhtml-transition: transform 0.3s linear;
+    -webkit-transition: transform 0.3s linear;
+    transition: transform 0.3s linear
+}
+
+.e-panel .e-panel-header .e-panel-close:hover {
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -xhtml-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.e-panel .e-panel-header .e-panel-switch {
+    height: 58px;
+    padding: 0 0 0 20px
+}
+
+.e-panel .e-panel-header .e-panel-switch li {
+    float: left;
+    margin: 0 0 0 20px
+}
+
+.e-panel .e-panel-header .e-panel-switch li:hover a, .e-panel .e-panel-header .e-panel-switch li.active a {
+    color: #38adff
+}
+
+.e-panel .e-panel-header .e-panel-switch li:hover a:after, .e-panel .e-panel-header .e-panel-switch li.active a:after {
+    width: 100%;
+    margin-left: 0
+}
+
+.e-panel .e-panel-header .e-panel-switch a {
+    position: relative;
+    display: block;
+    padding: 15px 20px;
+    font: 16px/28px "microsoft yahei";
+    color: #666
+}
+
+.e-panel .e-panel-header .e-panel-switch a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    margin: 0 0 0 50%;
+    background: #38adff;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -xhtml-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear
+}
+
+.e-panel .e-panel-tabs {
+    padding: 16px 0 46px
+}
+
+.e-panel .e-panel-tabs .e-panel-tab {
+    padding: 0 15px;
+    display: none
+}
+
+.e-panel .e-panel-tabs .e-panel-tab.active {
+    display: block
+}
+
+.e-panel .data {
+    padding: 30px 15px;
+    font: 18px/34px "microsoft yahei";
+    color: #666;
+    text-align: center
+}
+
+.apply-block {
+    min-height: 600px;
+    padding: 0 0 58px;
+    background: #fff;
+    -o-box-shadow: 2px 3px 8px RGBA(0, 0, 0, 0.05);
+    -ms-box-shadow: 2px 3px 8px RGBA(0, 0, 0, 0.05);
+    -moz-box-shadow: 2px 3px 8px RGBA(0, 0, 0, 0.05);
+    -xhtml-box-shadow: 2px 3px 8px RGBA(0, 0, 0, 0.05);
+    -webkit-box-shadow: 2px 3px 8px RGBA(0, 0, 0, 0.05);
+    box-shadow: 2px 3px 8px RGBA(0, 0, 0, 0.05)
+}
+
+.cert {
+    padding: 30px;
+    background: #fff
+}
+
+.cert .cert-title {
+    margin: -5px 0;
+    font: 26px/36px 'microsoft yahei';
+    color: #333
+}
+
+.cert .cert-page {
+    padding: 30px;
+    border-bottom: 1px dashed #e0e0e0
+}
+
+.cert .cert-page .cert-info {
+    min-height: 100px;
+    margin: 0 auto;
+    text-align: center
+}
+
+.cert .cert-page .cert-info img {
+    max-width: 100%
+}
+
+.cert .study .study-header {
+    padding: 20px 0
+}
+
+.cert .study .study-header span {
+    vertical-align: middle;
+    font: 18px/40px 'microsoft yahei';
+    color: #333
+}
+
+.cert .study .study-header .btn {
+    vertical-align: middle
+}
+
+.cert .study .study-body {
+    overflow: hidden
+}
+
+.cert .study .study-list {
+    width: 1140px
+}
+
+.cert .prog .prog-content {
+    position: relative;
+    height: 160px
+}
+
+.cert .prog .prog-content .prog-label {
+    position: absolute;
+    top: 44px;
+    font: 16px/28px 'microsoft yahei';
+    color: #333
+}
+
+.cert .prog .prog-content .prog-show {
+    position: absolute;
+    left: 306px;
+    top: 38px
+}
+
+.cert .prog-show p {
+    margin: 4px 0 0;
+    font: 16px/28px 'microsoft yahei';
+    color: #666
+}
+
+.cert .prog-show em {
+    margin: 4px 0 0;
+    font: 16px/28px 'microsoft yahei';
+    color: #999
+}
+
+.cert .prog-show .prog-show-line {
+    float: left;
+    text-align: center
+}
+
+.cert .prog-show .prog-show-line ins {
+    display: block;
+    margin: 18px 0 0;
+    width: 458px;
+    height: 1px;
+    background: #ccc
+}
+
+.cert .prog-show .prog-show-start {
+    float: left;
+    left: 0;
+    top: 0;
+    text-align: center
+}
+
+.cert .prog-show .prog-show-end {
+    float: left;
+    right: 0;
+    top: 0;
+    text-align: center
+}
+
+.cert .prog-show .prog-point {
+    font-size: 37px;
+    width: 37px;
+    height: 37px;
+    color: #ccc
+}
+
+.cert .prog-show.red .icon-p-normal, .cert .prog-show.red .icon-p-over {
+    color: #fe8282
+}
+
+.cert .prog-show.red .prog-show-line ins {
+    background: #fe8282
+}
+
+.cert .prog-show.blue .icon-p-normal, .cert .prog-show.blue .icon-p-over {
+    color: #38adff
+}
+
+.cert .prog-show.blue .prog-show-line ins {
+    background: #38adff
+}
+
+.cert .prog-info {
+    padding: 14px 20px;
+    border: 1px solid #ddd;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px
+}
+
+.cert .prog-info p {
+    padding: 0 180px 0 0;
+    font: 14px/40px 'microsoft yahei';
+    color: #333
+}
+
+.cert .prog-info .btn {
+    float: right;
+    padding: 0 34px;
+    font-size: 18px;
+    line-height: 40px
+}
+
+.cert .result {
+    position: relative;
+    margin: 20px 0 0
+}
+
+.cert .result .icon-p-over {
+    vertical-align: middle;
+    font-size: 37px;
+    margin: 0 7px 0 0;
+    width: 37px;
+    height: 37px;
+    color: #38adff
+}
+
+.cert .result ins {
+    vertical-align: middle;
+    margin: 0 56px 0 0;
+    font: 16px/37px 'microsoft yahei';
+    color: #333;
+    text-decoration: none
+}
+
+.cert .result .result-share {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font: 16px/28px 'microsoft yahei';
+    color: #333
+}
+
+.cert .result .result-share .icon-s-chat {
+    vertical-align: middle;
+    font-size: 28px;
+    color: #38adff
+}
+
+.cert .btn {
+    font: 22px/50px 'microsoft yahei';
+    color: #fff;
+    padding: 0 66px;
+    background: #38adff;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -xhtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -o-transition: background 0.2s linear;
+    -ms-transition: background 0.2s linear;
+    -moz-transition: background 0.2s linear;
+    -xhtml-transition: background 0.2s linear;
+    -webkit-transition: background 0.2s linear;
+    transition: background 0.2s linear
+}
+
+.cert .btn:hover {
+    background: #1fa2ff
+}
+
+.cert .btn.btn-disabled {
+    background: #ccc
+}
+
+.cert .btn.btn-disabled:hover {
+    background: #ccc
+}
+
+.nodata {
+    padding: 20px 0;
+    font: 14px/34px 'microsoft yahei';
+    color: #999;
+    text-align: center
+}

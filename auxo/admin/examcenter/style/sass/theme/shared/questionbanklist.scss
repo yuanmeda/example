@@ -1,0 +1,18 @@
+@import "list_base";
+@import "animation";
+
+.modal input {
+  padding: 3px;
+  height: 25px;
+}
+
+.error-hint {
+  color: #f00;
+}
+
+.block .block-tit {
+  padding-left: 0;
+  .tit-tab-box .tit-search {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,39 @@
+@import "banner_header";
+@import "basebox";
+
+.train-main {
+  font-size:14px;
+  background-color: #ebebeb;
+  overflow-x:hidden;
+  overflow-y:auto;
+  bottom:0;
+  left:0;
+  position: absolute;
+  right: 0;
+  top:40px;
+  .input-append {
+    input {
+      height: 26px;
+    }
+    .add-on {
+      height: 26px;
+    }
+  }
+  .courseInfo {
+    margin-top: 5px;
+  }
+  .right-info {
+    position: absolute;
+    right: 400px;
+    top: 67px;
+  }
+  .footer {
+    text-align: center;
+    max-width: 1643px;
+    .controls {
+      a {
+        width: 105px
+      }
+    }
+  }
+}

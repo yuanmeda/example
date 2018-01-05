@@ -1,0 +1,24 @@
+.table{
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+thead{
+  border-bottom: 1px solid #ccc;
+  background: #ddd;
+}
+
+tr + tr{
+  border-top: 1px solid #ccc;
+}
+
+th,td{
+  padding: 5px 8px;
+  text-align: center;
+}
+
+th + th, td + td{
+  border-left: 1px solid #ccc;
+}
+

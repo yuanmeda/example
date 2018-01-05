@@ -1,0 +1,115 @@
+<div class="pk-wrap wrapper">
+  <div class="pk-choose-wrap">
+    <div class="tit-part">
+      <h3 data-bind="translate:{key: 'pk_choose.main_title'}"></h3>
+      <!--<span class="ico-oprate ico-rank">本关排行榜</span>-->
+    </div>
+    <div class="pk-master-list" data-bind="css:{'no-one-pk': matched_list().length == 0}">
+      <dl class="pk-person-item clearfix">
+        <!--当前用户头像-->
+        <dt><a><img data-bind="attr:{src:curr_user_icon}"></a></dt>
+        <dd class="info">
+          <div class="info-wrap">
+            <!--当前用户名-->
+            <h4><a data-bind="text:curr_user_name"></a></h4>
+            <!--当前用户来自-->
+            <p class="from" data-bind="text:curr_user_from"></p>
+          </div>
+        </dd>
+        <dd class="pk-situ">
+          <div class="situ-wrap">
+            <div class="situ-top">
+
+              <!--ko if:matched_list().length>0-->
+              <!--当前用户胜率-->
+              <span><!--ko translate:{key: 'pk_choose.winning_percentage'}--><!--/ko-->：<em data-bind="text:curr_user_win_rate"></em></span>
+              <!--当前用户排名-->
+              <span><!--ko translate:{key: 'pk_choose.ranking'}--><!--/ko-->：<em data-bind="text:curr_user_ranking"></em><!--ko translate:{key: 'pk_choose.ranking_quantifier'}--><!--/ko--></span>
+              <!--当前用户PK分数-->
+              <span><!--ko translate:{key: 'pk_choose.score'}--><!--/ko-->：<em data-bind="text:curr_user_score"></em><!--ko translate:{key: 'pk_choose.score_quantifier'}--><!--/ko--></span>
+              <!--/ko-->
+
+              <!--ko if:matched_list().length == 0-->
+              <span><!--ko translate:{key: 'pk_choose.winning_percentage'}--><!--/ko-->：<em data-bind="text:curr_user_win_rate"></em></span>
+              <span><!--ko translate:{key: 'pk_choose.ranking'}--><!--/ko-->：<em data-bind="text:curr_user_ranking"></em></span>
+              <span><!--ko translate:{key: 'pk_choose.score'}--><!--/ko-->：<em data-bind="text:curr_user_score"></em></span>
+              <!--/ko-->
+
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </div>
+    <div class="pk-chooser-wrap">
+      <div class="tit-center">
+        <h3></h3>
+        <div class="btn-wrap">
+          <!--换一组-->
+          <!--ko if:matched_list().length>0-->
+          <a class="btn-change"
+             href="javascript:void(0);"
+             data-bind="click:change_another_group,translate:{key: 'pk_choose.change_group'}"></a>
+          <!--/ko-->
+        </div>
+      </div>
+      <div class="pk-chooser-list">
+        <!--ko if:!is_loading()-->
+
+        <!-- 有PK对手时 -->
+        <!--ko if:matched_list().length > 0-->
+        <!--ko foreach:matched_list-->
+        <div class="pk-rival-item">
+          <!--对手基本信息-->
+          <div class="rival-info">
+            <img data-bind="attr:{src:uc_user_display_facade.icon+'&defaultImage=1'}" width="60" height="60"/>
+            <div class="rival-meta">
+              <p class="rival-name" data-bind="text:uc_user_display_facade.display_name"></p>
+              <p class="rival-from" data-bind="text:uc_user_display_facade.org_exinfo && uc_user_display_facade.org_exinfo.node_name"></p>
+            </div>
+          </div>
+          <!--对手PK信息-->
+          <div class="rival-pk-data">
+            <p class="lino">
+              <span><!--ko translate:{key: 'pk_choose.winning_percentage'}--><!--/ko-->：<em data-bind="text:pk_user_vo.win_rate"></em></span>
+              <!--排名-->
+              <span><!--translate:{key: 'pk_choose.ranking'}--><!--/--><em></em><!--translate:{key: 'pk_choose.ranking_quantifier'}--><!--/--></span>
+              <!--分数-->
+              <span><!--translate:{key: 'pk_choose.score'}--><!--/--><em></em><!--translate:{key: 'pk_choose.score_quantifier'}--><!--/--></span>
+            </p>
+            <!--ko if:pk_prediction-->
+            <p class="ein">
+              <!--胜 +积分-->
+              <span data-bind="translate:{html:{key:'pk_choose.point_win',properties:{point:pk_prediction.win_pk_point}}}"></span>
+              <!--平 +积分-->
+              <span data-bind="translate:{html:{key:'pk_choose.point_draw',properties:{point:pk_prediction.drawn_pk_point}}}"></span>
+              <!--负 -积分-->
+              <span data-bind="translate:{html:{key:'pk_choose.point_lose',properties:{point:pk_prediction.lose_pk_point}}}"></span>
+            </p>
+            <!--/ko-->
+          </div>
+          <a class="start-pk-btn" href="javascript:void(0);" data-bind="click:$component.start_pk">PK</a>
+        </div>
+        <!--/ko-->
+        <!--/ko-->
+
+        <!-- 无PK对手时 -->
+        <!--ko if:matched_list().length == 0-->
+        <div class="no-pk-wrap">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAACKCAYAAABB/hN4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjExNzhCMDU1Mzk2OTExRTc5QzhBOTEwNkJCMTM3NDI2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjExNzhCMDU2Mzk2OTExRTc5QzhBOTEwNkJCMTM3NDI2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTE3OEIwNTMzOTY5MTFFNzlDOEE5MTA2QkIxMzc0MjYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTE3OEIwNTQzOTY5MTFFNzlDOEE5MTA2QkIxMzc0MjYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz44UWyFAAABc0lEQVR42uzdQQ6CMBBAUWq8/1F7BQxrNJEwJe3MewdgQX5m0BRtvfetsH0jxMstQEgICSHBydstOGluwfUPKSYSVhtCQkggJISEkBASCAkhISSEBEJCSAgJhISQEBJCAiExjsP/Mf59Y7cFXy9CyMsOJhJWG1ZbNm3y6wlpsQCsNhASQkJIICSEhJDI6vgeyS+7Pift91YmEkJCSAgJvj9sl3oofFCpDzEmEkMnErWm2e0NZCJhtWG1MXjVmEhYbQgJhISQEBIICSEhJIQEQkJICAkhwTWOkczJCUmsNrDaknFCEqsNhISQEBIICSEhJIQEQkJICAkhgZAQEkJCSCAkhEQOzmzPYfm/mzCREBJCQkjgYXtWy/8/nomEkBASQgIhISSEhJBASAgJISEkEBJCQkggJISEkBASCAkhISSEBEJCSAgJIYGQEBJCAiEhJISEkEBICAkhISQQEkJCSJT165f/d7cGEwkhISSEBPd8BBgAlbgN+wxiwjoAAAAASUVORK5CYII=" alt="">
+          <p data-bind="translate:{key:'pk_choose.not_found_msg'}"></p>
+          <!--自己玩-->
+          <a href="javascript:void(0);" class="btn-border-blue" data-bind="click:play_alone,translate:{key:'pk_choose.play_alone'}"></a>
+        </div>
+        <!--/ko-->
+
+        <!--/ko--><!--/end is_loading-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--ko if:is_loading()-->
+<div class="pk-choose-loading">
+  <span></span>
+</div>
+<!--/ko-->

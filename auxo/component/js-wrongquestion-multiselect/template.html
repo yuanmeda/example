@@ -1,0 +1,120 @@
+<!-- ko if: model.flag() == 'homework' -->
+<div id="multiSelectBox" class="select-bar">
+    <dl>
+        <dt>学科</dt>
+        <dd>
+            <div class="select-list-cell">
+                <!-- ko foreach: model.subject_tags -->
+                <span data-bind="text: tag_name, css: {'active': $index() == $parent.model.subject_tag_index()}, click: $parent.switchSubject.bind($parent, $element)"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <dl>
+        <dt>教材</dt>
+        <dd>
+            <div class="select-list-cell">
+                <!-- ko foreach: model.teaching_material_tags -->
+                <span data-bind="text: tag_name, css: {'active': $index() == $parent.model.teaching_material_tag_index()}, click: $parent.switchMaterial.bind($parent, $element)"></span><!--默认第一个为选择-->
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <dl>
+        <dt>题型</dt>
+        <dd>
+            <div class="select-list-cell">
+                <span data-bind="css: {'active': $component.model.question_type_index() == 0},click: $component.switchAll.bind($component, $element, 0)">全部</span>
+                <!-- ko foreach: model.question_types -->
+                <span data-bind="css: {'active': $index() == $parent.model.question_type_index() - 1},text: tag_name, click: $parent.switchQuestionType.bind($parent, $element)"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <!--掌握度默认就这样-->
+    <dl>
+        <dt>掌握度</dt>
+        <dd>
+            <div class="select-list-cell">
+                <!-- ko foreach: model.mastery -->
+                <span data-bind="text: $data, css: {'active': $index() == $parent.model.mastered_index()}, click: $parent.switchMaster.bind($parent, $element, $index())"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <dl class="last">
+        <dt>错因</dt>
+        <dd>
+            <div class="select-list-cell">
+                <span data-bind="css: {'active': $component.model.wrong_reason_index() == 0},click: $component.switchAll.bind($component, $element, 1)">全部</span>
+                <!-- ko foreach: model.wrong_reason_tags -->
+                <span data-bind="css:{'active': $index() == $parent.model.wrong_reason_index() - 1},text: tag_name, click: $parent.switchWrongReason.bind($parent, $element)"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+</div>
+<!-- /ko -->
+
+
+<!--课程开始-->
+<!-- ko if: model.flag() == 'course' -->
+<div id="multiSelectBox" class="select-bar">
+    <!-- ko if: model.showCourseTags()-->
+    <dl>
+        <dt>课程</dt>
+        <dd>
+            <div class="select-list-cell">
+                <!-- ko foreach: model.course_tags -->
+                <span data-bind="text: tag_name, css: {'active': $index() == $parent.model.course_tag_index()}, click: $parent.switchCourse.bind($parent, $element)"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <!-- /ko -->
+    <!-- ko if: model.showQuestionTypes()-->
+    <dl>
+        <dt>题型</dt>
+        <dd>
+            <div class="select-list-cell">
+                <span data-bind="css: {'active': $component.model.question_type_index() == 0},click: $component.switchAll.bind($component, $element, 0)">全部</span>
+                <!-- ko foreach: model.question_types -->
+                <span data-bind="css: {'active': $index() == $parent.model.question_type_index() - 1},text: tag_name, click: $parent.switchQuestionType.bind($parent, $element)"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <!-- /ko -->
+    <!--掌握度默认就这样-->
+    <dl>
+        <dt>掌握度</dt>
+        <dd>
+            <div class="select-list-cell">
+                <!-- ko foreach: model.mastery -->
+                <span data-bind="text: $data, css: {'active': $index() == $parent.model.mastered_index()}, click: $parent.switchMaster.bind($parent, $element, $index())"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+    <dl class="last">
+        <dt>错因</dt>
+        <dd>
+            <div class="select-list-cell">
+                <span data-bind="css: {'active': $component.model.wrong_reason_index() == 0},click: $component.switchAll.bind($component, $element, 1)">全部</span>
+                <!-- ko foreach: model.wrong_reason_tags -->
+                <span data-bind="css:{'active': $index() == $parent.model.wrong_reason_index() - 1},text: tag_name, click: $parent.switchWrongReason.bind($parent, $element)"></span>
+                <!-- /ko -->
+            </div>
+            <span class="btn-more" data-bind="click: showMore.bind($root, $element)">更多</span>
+        </dd>
+    </dl>
+</div>
+<!-- /ko -->

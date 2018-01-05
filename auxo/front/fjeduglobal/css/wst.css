@@ -1,0 +1,40 @@
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .wxt-box {
+        width: 100%;
+        min-width: 1200px;
+        height: 950px;
+        background: url("../images/wxt-bg.jpg") no-repeat center;
+    }
+
+    .wxt-wrapper {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+    .wxt-btn {
+        position: absolute;
+        left: 18px;
+        width: 200px;
+        height: 56px;
+        background: #fff;
+        opacity: 0;
+        filter: Alpha(opacity=0);
+    }
+
+    .wxt-btn-andorid {
+        top: 486px;
+    }
+
+    .wxt-btn-ios {
+        top: 568px;
+    }
+
+    .wxt-btn:hover {
+        opacity: 0.1;
+        filter: Alpha(opacity=10);
+    }

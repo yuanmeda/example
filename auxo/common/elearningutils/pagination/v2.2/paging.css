@@ -1,0 +1,13 @@
+.pagination, .pagination-info { margin: 10px 0px; }
+.pagination a { text-decoration: none; border: solid 1px #d8d8d8; color: #333; border-left-width: 0;  height:32px !important;}
+.pagination a, .pagination span { height:32px !important; display: block; float: left; padding: 0 14px; text-align: center; line-height: 32px;  }
+.pagination .current { background-color: #a80f00; color: #fff; padding: 0 14px; border: solid 1px #d8d8d8; z-index:9999  }
+.pagination .prev { border: solid 1px #C0D3E6;  }
+.pagination .next { border-left-width: 0; border-right-width: 1px;  }
+.pagination .current.prev, .pagination .current.next { color: #dcdcdc; border-color: #efefef; background: #fff; }
+.pagination-info span { display: block; line-height: 30px; vertical-align: middle; }
+.pre-next-color{ color:#216FAD; font-family:Arial, Helvetica, sans-serif;}
+.pre-page-break {border-right: 1px solid #C0D3E6; padding: 0 14px;}
+.pull-left{ float:left;}
+.pull-right{ float:right}
+.pagination a:hover{ background-color:#fae1df;}

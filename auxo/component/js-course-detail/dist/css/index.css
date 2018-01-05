@@ -1,0 +1,115 @@
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0; }
+
+ul,
+ol {
+  list-style: none; }
+
+.course-lecturers-view {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 300px;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #fff;
+  min-height: 204px; }
+  .course-lecturers-view .lecturer-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 18px;
+    border-bottom: 1px solid #d7d7d7;
+    box-sizing: border-box; }
+  .course-lecturers-view .course-lecturer-list {
+    padding: 20px 28px; }
+    .course-lecturers-view .course-lecturer-list .course-lecturer-item {
+      margin-top: 30px; }
+      .course-lecturers-view .course-lecturer-list .course-lecturer-item:first-child {
+        margin-top: 0; }
+      .course-lecturers-view .course-lecturer-list .course-lecturer-item .lecturer-info .lecturer-avatar {
+        width: 58px;
+        height: 58px;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 50%;
+        display: inline-block; }
+        .course-lecturers-view .course-lecturer-list .course-lecturer-item .lecturer-info .lecturer-avatar img {
+          width: 100%;
+          height: 100%;
+          transition: all 0.3s ease; }
+          .course-lecturers-view .course-lecturer-list .course-lecturer-item .lecturer-info .lecturer-avatar img:hover {
+            transform: scale(1.2); }
+      .course-lecturers-view .course-lecturer-list .course-lecturer-item .lecturer-info .lecturer-name {
+        display: inline-block;
+        width: 180px;
+        color: #333;
+        height: 64px;
+        line-height: 64px;
+        padding-left: 18px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        box-sizing: border-box; }
+      .course-lecturers-view .course-lecturer-list .course-lecturer-item .lecturer-intro {
+        margin-top: 12px;
+        color: #999;
+        font-size: 14px;
+        overflow-wrap: break-word; }
+  .course-lecturers-view .lecturer-more {
+    color: #38adff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 40px;
+    position: relative; }
+    .course-lecturers-view .lecturer-more .lecturer-button {
+      position: absolute;
+      font-size: 14px;
+      background-color: transparent;
+      color: #f28d18;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+      border-radius: 3px; }
+      .course-lecturers-view .lecturer-more .lecturer-button-collapse {
+        top: 10px;
+        left: 0;
+        min-width: 50px;
+        max-width: 80px; }
+      .course-lecturers-view .lecturer-more .lecturer-button-more {
+        top: 10px;
+        right: 0;
+        min-width: 50px;
+        max-width: 80px; }
+      .course-lecturers-view .lecturer-more .lecturer-button .dir-up {
+        transform: rotate3d(0, 0, 1, -90deg);
+        display: inline-block; }
+      .course-lecturers-view .lecturer-more .lecturer-button .dir-down {
+        transform: rotate3d(0, 0, 1, 90deg);
+        display: inline-block; }
+      .course-lecturers-view .lecturer-more .lecturer-button:hover {
+        color: #ff9617; }
+  .course-lecturers-view .course-lecturers-no-data {
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    .course-lecturers-view .course-lecturers-no-data .no-data-prompt {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      font-size: 16px;
+      text-align: center;
+      color: #999; }

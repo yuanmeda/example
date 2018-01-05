@@ -1,0 +1,80 @@
+@import './mixin';
+@import './_ui';
+@import './layout';
+
+.uc-head{
+    padding: 30px 0;
+    border-bottom: 1px solid #d7d7d7;
+    text-align: center;
+    color: #666;
+    .total-item{
+        float: left;
+        width: 390px;
+        border-right: 1px solid #ddd;
+    }
+    .uc-head-tit{
+        padding-top: 10px;
+        line-height: 55px;
+        font-size: 20px;
+    }
+    .icome-item{
+        overflow: hidden;
+    }
+    .uc-head-info{
+        display: inline-block;
+        width: 150px;
+        line-height: 40px;
+        font-size: 14px;
+        .num{
+            margin: 0 5px;
+            color: $blue;
+            font-size: 24px;
+        }
+    }
+}
+.uc-tab-item{
+    border-bottom: 1px solid #d7d7d7;
+    li{
+        display: inline-block;
+        margin-bottom: -1px;
+        padding: 0 30px;
+        height: 61px;
+        line-height: 59px;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        &:hover,&.active{
+            color: $blue;
+        }
+        &.active{
+            height: 59px;
+            border-bottom: 2px solid $blue;
+        }
+        &.tab-lab{
+            font-weight: bold;
+            color: #333;
+            // cursor: text;
+        }
+    }
+}
+.uc-mymsg-list{
+    font-size: 14px;
+    min-height: 400px;
+    padding-bottom: 50px;
+    line-height: 2;
+    clip-path: #333;
+    .mymsg-cell{
+        padding: 20px 0;
+        border-bottom: 1px dashed #e0e0e0;
+    }
+    .mymsg-time{
+        color: #999;
+    }
+    .mymsg-info{
+        padding: 5px 0;
+        line-height: 1.5;
+    }
+}
+.uc-course-list{
+    padding: 0 20px 40px;
+}

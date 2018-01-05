@@ -1,0 +1,68 @@
+<div class="x-my-enroll" id="x-my-enroll">
+    <div class="tab-nav">
+        <ul>
+            <li class="active" data-bind="css:{'active':model.processStatus() == 0},click:switchTab.bind($data,0)">
+                <!--ko translate:{key:'myEnroll.processing'}-->
+                <!--/ko-->
+            </li>
+            <li data-bind="css:{'active':model.processStatus() == 1},click:switchTab.bind($data,1)">
+                <!--ko translate:{key:'myEnroll.finish'}-->
+                <!--/ko-->
+            </li>
+        </ul>
+    </div>
+    <div class="panel-body clearfix">
+        <div class="enroll-list" style="display: none;" data-bind="visible:model.data.items().length && model.init(),foreach:model.data.items">
+            <div class="enroll-item">
+                <div class="inline">
+                    <img data-bind="attr:{'src':cover_url? cover_url+'!m300x200.jpg': $parent.model.defaultImage ,'alt':title },event:{'error':$parent.fixImage.bind($parent)}">
+                </div>
+                <div class="inline">
+                    <div class="title" data-bind="text:title"></div>
+                    <div class="info">
+                        <span class="label"><i class="me-icon-time"></i>&nbsp;&nbsp;<!--ko translate:{key:'myEnroll.activityTime'}--><!--/ko--></span>
+                        <!--ko translate:{ 'key':enroll.enroll_time_limit_type?'myEnroll.fromTo':'myEnroll.noLimit',properties:{'startTime':$parent.formatTime(enroll.enroll_start_time),'endTime':$parent.formatTime(enroll.enroll_end_time)}}-->
+                        <!--/ko-->
+                    </div>
+                    <div class="info">
+                        <span class="label"><i class="me-icon-clock"></i>&nbsp;&nbsp;<!--ko translate:{key:'myEnroll.enrollTime'}--><!--/ko--></span>
+                        <!--ko text:$parent.formatTime(enroll.create_time,true)-->
+                        <!--/ko-->
+                    </div>
+                </div>
+                <div class="item-right">
+                    <div class="money-panel" data-bind="text:display_amount||''"></div>
+                    <a href="javascript:;" data-bind="attr:{'href': button.btnHref,'class':button.btnClass },click:$parent.triggerButton.bind($parent)">
+                        <!--ko translate:{ 'key': button.btnText }-->
+                        <!--/ko-->
+                    </a>
+                    <div class="control-panel" style="display:none;" data-bind="visible:user_enroll_form && enroll.enroll_form_type">
+                        <a href="javascript:;" class="btn-triangle"></a>
+                        <div class="control-list">
+                            <a class="control-item" href="javascript:;" data-bind="click:$parent.hrefTo.bind($parent,'form')">
+                                <!--ko translate:{key:'myEnroll.myEnrollInfo'}-->
+                                <!--/ko-->
+                            </a>
+                        </div>
+                    </div>
+                    <div class="time-panel" data-bind="visible:pay_order"></div>
+                </div>
+            </div>
+        </div>
+        <div class="more-panel" data-bind="visible:model.data.items().length < model.data.total()">
+            <a class="more-btn" href="javascript:;" data-bind="click:showMore">
+                <!--ko translate:{key:'myEnroll.showMore'}-->
+                <!--/ko-->
+            </a>
+        </div>
+        <div class="no-content" style="display: none;" data-bind="visible: !model.data.items().length && model.init()">
+            <div class="book-icon">
+                <i class="me-icon-study"></i>
+            </div>
+            <div class="text-panel">
+                <!--ko translate:{key:'myEnroll.noEnroll'}-->
+                <!--/ko-->
+            </div>
+        </div>
+    </div>
+</div>

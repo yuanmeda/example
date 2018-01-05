@@ -1,0 +1,16 @@
+<!--独立的回答列表-->
+<div class="qas-answer-list indep">
+
+  <h1 class="qas-title" data-bind="translate:{html:{key:'qas_cmp_questions.answers_count',properties:{total:total}}}"></h1>
+
+  <div class="qas-list-container">
+    <!--列表-->
+    <!--ko foreach:list-->
+    <!--ko component:{name:'x-qas-answer', params:{answer:$data, options:$component.answer_options}}--><!--/ko-->
+    <!--/ko-->
+  </div>
+  <!--分页-->
+  <!--ko if:showPagination()-->
+  <!--ko component:{name:'x-qas-pagination-prv',params:pagination_params}--><!--/ko-->
+  <!--/ko-->
+</div>

@@ -1,0 +1,268 @@
+@import "./_theme";
+@import "../shared/my_note/_mixin";
+@import "../shared/my_note/_variables";
+@import "../shared/my_note/_ui-btn";
+@import "../shared/my_note/_ui-tab";
+@import "../shared/my_note/_ui-search";
+@import "../shared/my_note/_ui-menu";
+@import "../shared/my_note/_ui-check";
+@import "../shared/my_note/_ui-list-pic";
+@import "../shared/my_note/_ui-txta";
+@import "../shared/my_note/_ui-pagination";
+@import "../shared/my_note/_ui-pop";
+@import "../shared/my_note/_ui-item";
+@import "../shared/my_note/_iconfont";
+
+@charset "UTF-8";
+/*
+ * module:  n-mod-mynote
+ * author:  yl
+ */
+
+.ml10 {
+    margin-left: 10px;
+}
+.mr10 {
+    margin-right: 10px;
+}
+
+.n-mod-user-center {
+    background: #fff;
+    .user-tip {
+        line-height: 70px;
+        color: $light-gray;
+        .strong {
+            padding: 0 3px;
+            color: $main-dark;
+        }
+    }
+    .btn-more-wrap{
+        text-align: center;
+        margin-top: 25px;
+    }
+    .btn-more {
+        display: inline-block;
+        padding: 0 50px;
+        line-height: 35px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-radius: 50px;
+        -moz-transition: border 0.3s ease-out,color 0.3s ease-out;
+        -webkit-transition: border 0.3s ease-out,color 0.3s ease-out;
+        -o-transition: border 0.3s ease-out,color 0.3s ease-out;
+        transition: border 0.3s ease-out,color 0.3s ease-out;
+        &:hover {
+            border: 1px solid $main;
+            color: $main;
+            text-decoration: none;
+        }
+    }
+}
+
+.n-mod-mynote { //开发要求单独提取个人中心样式
+    height: 100%;
+    background: #fff;
+    .note-head {
+        overflow: hidden;
+        padding: 20px 34px 0 0;
+        height: 50px;
+        border-bottom: 1px dashed #e0e0e0;
+        .btn-back {
+                margin-left: 34px;
+                line-height: 32px;
+                font-size: 14px;
+                font-family:"iconfont-learn";
+                color: $main;
+                // background: url("../images/icon2.png");
+                // background-repeat: no-repeat;
+                // background-position: 0 -167px;
+                &:before {
+                    display: inline-block;
+                    margin-right: 3px;
+                    font-size: 20px;
+                    content: "\e80b";
+                    vertical-align: middle;
+                }
+                &:hover {
+                    opacity: .7;
+                }
+                &:active {
+                    opacity: .9;
+                }
+            }
+        .n-ui-tab-filter {
+            margin-top: 5px;
+        }
+    }
+    .user-tip {
+        position: relative;
+        line-height: 70px;
+        color: $light-gray;
+        .strong {
+            padding: 0 3px;
+            color: $main-dark;
+        }
+    }
+    .user-tip2 {
+        position: relative;
+        line-height: 70px;
+        font-size: 14px;
+        color: #666;
+        border-bottom: 1px dashed #e0e0e0;
+        .strong {
+            padding: 0 3px;
+            color: $main-dark;
+        }
+        .btn-return{
+            position: absolute;
+            right: 9px;
+            top: 22px;
+        }
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            vertical-align: middle;
+            background: $main-dark;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+    }
+
+    .btn-return {
+        display: inline-block;
+        padding: 0 12px;
+        line-height: 26px;
+        text-align: center;
+        color: #fff;
+        background: $main;
+        border-radius: $radius;
+        &:hover {
+           background: $main-light;
+        }
+        &:hover {
+           background: $main-dark;
+        }
+    }
+    .btn-more-wrap{
+        text-align: center;
+        margin-top: 25px;
+    }
+    .btn-more {
+        display: inline-block;
+        padding: 0 50px;
+        line-height: 35px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-radius: 50px;
+        -moz-transition: border 0.3s ease-out,color 0.3s ease-out;
+        -webkit-transition: border 0.3s ease-out,color 0.3s ease-out;
+        -o-transition: border 0.3s ease-out,color 0.3s ease-out;
+        transition: border 0.3s ease-out,color 0.3s ease-out;
+        &:hover {
+            border: 1px solid $main;
+            color: $main;
+            text-decoration: none;
+        }
+    }
+    .note-wrap {
+        .n-ui-note-item {
+            display: none;
+        }
+        .note-wrap-btn {
+            display: block;
+            position: relative;
+            padding-left: 20px;
+            margin: 20px 0;
+            height: 36px;
+            line-height: 36px;
+            background: #f9f9f9;
+            border-radius: 3px;
+            color: $gray;
+            cursor: pointer;
+            &:after {
+                content: "\e80c";
+                display: inline-block;
+                position: absolute;
+                right: 26px;
+                top: 0;
+                width: 16px;
+                height: 8px;
+                font-family:"iconfont-learn";
+                font-size: 20px;
+                color: #7f7f7f;
+                //@include bgurl("icon-down.png");
+                // background: url("../images/icon2.png");
+                // background-position: 0 -60px;
+            }
+        }
+        .strong {
+            padding: 0 3px;
+            color: $main-dark;
+        }
+        .info {
+            position: absolute;
+            right: 72px;
+        }
+        &.on {
+            .n-ui-note-item {
+                display: block;
+            }
+            .note-wrap-btn {
+                &:after {
+                    content: "\e809";
+                }
+            }
+        }
+    }
+    
+    .note-empty {
+        $w: 300px;
+        $h: 260px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: $w;
+        height: $h;
+        margin-top: - $w /2;
+        margin-left: - $w /2;
+        font-size: 18px;
+        text-align: center;
+        @at-root {
+            .note-empty-icon {
+                height: 138px;
+                display:block;
+                background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAACKAQMAAAB7MIE7AAAABlBMVEUAAADu7u6BVFV4AAAAAXRSTlMAQObYZgAAAFhJREFUSMdjgALG/3BwgGZiH2As9lGxwStW/4AdGGvkiSHMg4NBKvYfAR7QSuwH3EJmYsXAYdpAphiYGhUbDecRJlYPzna0FYMyRsVGxUbFSBT7jwC0EgMAoI/q1t3VoIYAAAAASUVORK5CYII=) no-repeat center;
+            }
+            .note-empty-tips {
+                margin: 10px 0;
+                color: $gray;
+                text-align: center;
+            }
+            .note-empty-btn {
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+                color: $main;
+                border: 1px solid $main;
+                border-radius: $radius-s;
+                height: 42px;
+                line-height: 42px;
+                margin: auto;
+                padding: 0 30px;
+                cursor: pointer;
+                &:hover {
+                    background: $main-light;
+                    color: #fff;
+                }
+                &:active {
+                    background: $main-dark;
+                }
+            }
+        }
+    }
+
+}

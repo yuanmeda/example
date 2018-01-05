@@ -1,0 +1,40 @@
+body {
+  background: #fff;
+  font-family: "microsoft yahei", tahoma, arial, simsun, sans-serif;
+  font-size: 14px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.yunke-opencourse-topbar {
+  padding-top: 10px;
+  overflow: hidden;
+  .create-course {
+    float: right;
+    padding: 8px 15px;
+    cursor: pointer;
+    background: $themeColor;
+    color: #fff;
+    border-radius: 3px;
+  }
+}
+
+.yunke-opencourse-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  z-index: 100
+}

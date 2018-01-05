@@ -1,0 +1,73 @@
+@mixin text-overflow($width: 0) {
+  overflow: hidden;
+
+  width: 100% - $width;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+%text-overflow {
+  @include text-overflow;
+}
+
+.form-horizontal .control-label {
+  width: 150px;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+i {
+  vertical-align: baseline !important;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+input {
+  padding: 3px !important;
+  box-sizing: content-box !important;
+}
+
+.selected-list {
+  margin-bottom: 20px;
+  box-sizing: content-box;
+  li {
+    position: relative;
+    border: 1px solid #dcdcdc;
+    width: 500px;
+    height: 40px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    @extend %text-overflow;
+    .delete {
+      display: none;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+      line-height: 15px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      color: #ccc;
+      &:hover {
+        background-color: #ccc;
+        color: #fff;
+      }
+    }
+    &:hover {
+      .delete {
+        display: block;
+      }
+    }
+  }
+}
+

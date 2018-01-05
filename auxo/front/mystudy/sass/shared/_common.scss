@@ -1,0 +1,22 @@
+/*!
+ * 页面公共样式类
+ * @type {css}
+ */
+$version: 20160520;
+@import "./../addins/scrollbar";
+@import "utils";
+
+.study-container {
+  a {
+    text-decoration: none;
+  }
+  font: 14px/1.5 tahoma, arial, "microsoft yahei", simsun, sans-serif;
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  i {
+    font-style: normal;
+  }
+}

@@ -1,0 +1,165 @@
+@mixin text-overflow($width: 0) {
+  overflow: hidden;
+
+  width: 100% - $width;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+%text-overflow {
+  @include text-overflow;
+}
+
+.courses {
+  width: 100%;
+  margin: 0;
+  min-height: 410px;
+  ul {
+    margin: 30px;
+    width: 100%;
+    li.course-box {
+      box-shadow: 0 15px 15px rgba(0, 0, 0, .1);
+      transition: all .2s linear;
+      cursor: pointer;
+      width: 250px;
+      float: left;
+      margin: 0 32px 40px 0;
+      position: relative;
+      bottom: 0;
+      &:hover .img-box img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .course-box {
+    position: relative;
+    .item-type {
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      padding: 0 12px;
+      display: inline-block;
+      background: lighten($themeColor, 5%);
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      &.rc {
+        background: #ff9617;
+      }
+      &.sc {
+        background: lighten($themeColor, 5%);
+      }
+    }
+    .item-name {
+      @extend %text-overflow;
+    }
+    &:hover {
+      bottom: 2px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0 15px 30px 0;
+      .item-name {
+        color: $themeColor;
+
+      }
+
+    }
+    & > a {
+      text-decoration: none;
+    }
+    float: left;
+    margin: 0 40px 40px 0;
+    .img-box {
+      position: relative;
+      width: 250px;
+      height: 180px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+        z-index: 10;
+      }
+    }
+    .item-box {
+      height: 70px;
+      .item-name {
+        //        height: 53px;
+        font-size: 18px;
+        text-decoration: none;
+      }
+      .item-other {
+        margin-top: 10px;
+        line-height: 1;
+        font: 14px/1.5 "Microsoft Yahei";
+        em {
+          color: $themeColor;
+        }
+        span {
+          color: #999;
+        }
+        .has-logo {
+          float: left;
+          margin-right: 10px;
+          font-size: 12px;
+          color: #999;
+          i {
+            font-size: 16px;
+          }
+          .ecount-logo {
+            display: inline-block;
+            padding-left: 5px;
+            vertical-align: middle;
+            width: 50px;
+            //@extend %text-overflow;
+          }
+        }
+        .tag-list {
+          font-size: 12px;
+          color: #999;
+        }
+        .etime-logo {
+          padding-left: 14px;
+          border-left: 1px solid #e3e3e3;
+        }
+        .tag-unit {
+          &:hover {
+            text-decoration: underline
+          }
+          width: 50px;
+          height: 20px;
+          word-spacing: normal;
+          word-break: normal;
+          margin-right: 10px;
+          display: inline-block;
+          //@extend %text-overflow;
+        }
+      }
+      background-color: #ffffff;
+      padding: 15px;
+      font-size: 18px;
+    }
+    .vtag-box {
+      position: absolute;
+      z-index: 999;
+      top: 10px;
+      left: 10px;
+      .vtag-unit {
+        padding-left: 10px;
+        height: 24px;
+        display: inline-block;
+        line-height: 24px;
+        font-size: 12px;
+        padding-right: 10px;
+        background-color: #ff9617;
+        border-radius: 5px;
+        color: #fff;
+        font-family: inherit;
+        text-align: center;
+        min-width: 50px;
+      }
+    }
+  }
+}

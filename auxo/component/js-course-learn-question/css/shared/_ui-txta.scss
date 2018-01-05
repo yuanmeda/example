@@ -1,0 +1,77 @@
+
+.qaui-txta {
+    position: relative;
+    background: #fff;
+    &.upload--pic {
+        .qaui-upload {
+            display: block;
+        }
+        .txta__oper__pic {
+            color: $main;
+            .qaiconfont {
+                color: $main;
+            }
+        }
+    }
+    .txta {
+        padding: 10px 1%;
+        width: 97%;
+        height: 78px;
+        line-height: 21px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        color: #333;
+        font-family: "Microsoft Yahei";
+        -moz-transition: border .3s ease-out;
+        -webkit-transition: border .3s ease-out;
+        -o-transition: border .3s ease-out;
+        transition: border .3s ease-out;
+        border-radius: 5px;
+        outline: none;
+        resize:none;
+        vertical-align: top;
+        &::-webkit-input-placeholder {
+            color: #ccc;
+        }
+        &:-ms-input-placeholder {
+            color: #ccc;
+        }
+        &:focus {
+            border-color: $main;
+        }
+    }
+    .txta__oper {
+        position: relative;
+        overflow: hidden;
+        padding: 10px 0;
+        .qaui-btn {
+            float: right;
+        }
+    }
+    .txta__oper__text {
+        font-size: 14px;
+    }
+    .txta__oper__pic,
+    .txta__oper__full {
+        display: inline-block;
+        line-height: 30px;
+        color: #999;
+        cursor: pointer;
+        &:hover {
+            .qaiconfont {
+                color: $main;
+            }
+        }
+        &:active {
+            .qaiconfont {
+                color: $main-dark;
+            }
+        }
+    }
+    .txta__oper__pic {
+        padding-right: 20px;
+    }
+    .qaui-upload {
+        display: none;
+    }
+}

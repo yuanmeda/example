@@ -1,0 +1,46 @@
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+  background-color: #eee;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+input[readonly], select[readonly], textarea[readonly] {
+  cursor: default
+}
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 157px;
+  min-width: 1200px;
+  height: auto !important;
+  background-color: #f2f2f2;
+  min-height: 100%;
+}
+
+.pk-wrap {
+  padding-top: 18px;
+  padding-bottom: 46px;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}

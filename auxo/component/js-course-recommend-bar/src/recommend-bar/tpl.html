@@ -1,0 +1,32 @@
+<div class="course-recommend-bar">
+  <h1 data-bind="translate:{key: 'course_recommend_bar.title'}"></h1>
+  <!--ko if:courses().length-->
+  <div class="crb-bar">
+
+    <!--ko if:has_more_pages()-->
+    <span class="alter-prev" data-bind="click:page_down"></span>
+    <span class="alter-next" data-bind="click:page_up"></span>
+    <!--/ko-->
+
+    <div class="crb-list">
+      <ul>
+        <!--ko foreach:courses-->
+        <li>
+          <a data-bind="attr:{href:url,title:title}">
+            <span class="pic"><img width="150" height="100" data-bind="defimg:$component.default_cover,src:cover_url"/></span>
+            <span class="title" data-bind="text:title"></span>
+          </a>
+        </li>
+        <!--/ko-->
+      </ul>
+    </div>
+  </div>
+  <!--/ko-->
+
+  <!--ko if:!courses().length-->
+  <div class="crb-empty">
+    <img data-bind="attr:{src:empty_img}"/>
+    <span data-bind="translate:{key: 'course_recommend_bar.empty'}"></span>
+  </div>
+  <!--/ko-->
+</div>

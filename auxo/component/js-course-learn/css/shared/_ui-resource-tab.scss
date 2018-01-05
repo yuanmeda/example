@@ -1,0 +1,156 @@
+/* 资源tab */
+.cplay__content--resource {
+  position: relative;
+  height: 55px;
+  width: 100%;
+  padding: 0 30px;
+  background: #1e1e1e;
+}
+
+.cplay__resource--scroller {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  height: 72px;
+}
+
+.cplay__resource--list {
+  height: 100%;
+}
+
+.cplay__resource--item {
+  float: left;
+  width: 220px;
+  height: 100%;
+  padding-left: 42px;
+  padding-right: 10px;
+  background: #262626;
+  border-left: 2px solid #1e1e1e;
+  cursor: pointer;
+  &.state-on {
+    .name-text {
+      color: #ff951b;
+    }
+  }
+  &:hover {
+    background: lighten(#262626, 5%);
+  }
+}
+
+.cplay__resource--name {
+  position: relative;
+  padding-top: 10px;
+  .icon-res-finish,
+  .icon-res-half,
+  .icon-res-empty {
+    position: absolute;
+    left: -28px;
+    top: 9px;
+  }
+  .name-text {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    @extend %tof;
+  }
+}
+
+.cplay__resource--other {
+  white-space: nowrap;
+  position: relative;
+  margin-top: 2px;
+  color: #525252;
+  .other-txt {
+    font-size: 12px;
+    color: #545454;
+    @extend %tof;
+  }
+  .exp-tip {
+    font-size: 12px;
+    color: #ce3f3f;
+    @extend %tof;
+  }
+}
+
+.cplay__content--play {
+  position: absolute;
+  background: #000;
+  left: 60px;
+  right: 64px;
+  top: 99px;
+  bottom: 80px;
+  &.no-resource {
+    top: 46px;
+  }
+  .player-container {
+    height: 100%;
+  }
+  .exp-container {
+    position: absolute;
+    text-align: center;
+    width: 400px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+    display: none;
+    .try-tip {
+      color: #fff;
+      max-width: 400px;
+      margin: 10px 0;
+      font-size: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 20px;
+      line-height: 20px;
+    }
+  }
+  .no-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #666;
+    text-align: center;
+    margin-top: -89px;
+    margin-left: -78px;
+    .icon-sprite {
+      //margin: 0 auto;
+    }
+    .hint {
+      margin-top: 13px;
+      font-size: 18px;
+    }
+  }
+}
+
+/* 左右切换按钮 */
+.cplay__switch-btn {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  background: #262626;
+  text-align: center;
+  @extend %vm;
+  &.btn-left {
+    left: 0;
+  }
+  &.btn-right {
+    right: 0;
+  }
+  .xcl-icon-triangle-left,
+  .xcl-icon-triangle-right {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #999;
+  }
+  &:hover {
+    .xcl-icon-triangle-left,
+    .xcl-icon-triangle-right {
+      color: #ff951b;
+    }
+  }
+}

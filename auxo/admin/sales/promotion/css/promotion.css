@@ -1,0 +1,10 @@
+.name-limit{
+  width:24em;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.data-list th,
+.data-list td{
+  white-space:nowrap;
+}

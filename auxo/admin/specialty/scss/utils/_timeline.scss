@@ -1,0 +1,55 @@
+@import "../share/variables";
+@import "../share/mixins";
+.time-line {
+    list-style: none;
+
+    position: relative;
+
+    $activeColor: #41ae5c;
+    li {
+        position: relative;
+
+        margin-bottom: 5px;
+        border-bottom: 1px solid #ececec;
+        padding-bottom: 10px;
+
+        color: #ccc;
+        &:after {
+            position: absolute;
+            top: 2px;
+            bottom: -7px;
+            left: -20px;
+
+            width: 2px;
+
+            background-color: #ccc;
+
+            content: "";
+        }
+        &:last-child {
+            border-bottom: none;
+            &:after{
+                display: none;
+            }
+        }
+        &:before {
+            position: absolute;
+            top: -15px;
+            left: -27px;
+
+            font-size: 25px;
+
+            color: inherit;
+
+            content: "●";
+            z-index: 2;
+        }
+        &.active {
+            color: $activeColor;
+            &:before{
+                font-size: 30px;
+                left: -29px;
+            }
+        }
+    }
+}

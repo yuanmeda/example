@@ -1,0 +1,17 @@
+<script id="knowledge-tree-item" type="text/html">
+    <li class="sub-item" data-bind="attr:{'title':name},css:{'open':isOpen}">
+        <a class="icon-toggle" href="javascript:;"
+           data-bind="click:$component.toggleTree.bind($component),visible:children.length">
+            <i class="xcl-icon-right" data-bind="css:{'xcl-icon-down':isOpen,'xcl-icon-right':!isOpen()}"></i>
+        </a>
+        <span class="item-txt"
+              data-bind="click:$component.getResources.bind($component),css:{'active':id == $component.model.knowledge_id()}">
+            <em data-bind="html:title"></em>
+        </span>
+        <ul class="list level-2">
+            <!--ko foreach:children-->
+            <!--ko template: { 'name': 'knowledge-tree-item', 'data': $data }--><!--/ko-->
+            <!--/ko-->
+        </ul>
+    </li>
+</script>

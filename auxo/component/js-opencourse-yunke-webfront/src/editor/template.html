@@ -1,0 +1,127 @@
+<div class="opencourse-yunke-dialog opencourse-yunke-editor">
+  <div class="cc-dlg-header">
+    <h1 data-bind="text:dlgTitle"></h1>
+    <span class="close" icon data-bind="click:closeYunkeEditor">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAiEAAAIhAENVwL6AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAGNQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf7bw3gAAACF0Uk5TAAEGBwsOFRctRUlVWGBie32WmKaywcLEzdri7vLz9Pf8M2K5HwAAAOVJREFUOMuFU8kWhCAMi6i4oOC+oIzz/185h1EBl9eeCklbSFvgtDBv+tmYuW/yEHdL6nXrVJllpeq2tU4uMKvMJKLjFInJVMwLH3URuBdBoUcnSaoHfi3JB52e8bpl90exVu852Dg84AAbxv99pTkejesKABJT4MUKkwCop+CNEEw1EK5iPy7yAOSyO2INkW+HPvIrLw6iLUfTnRl3wOJA16BX8BkuDtVjLuExPBzlDJPBY3g4MkMTyBLkI8lvkkJZqT9W6o8jtW1WbEvHTrPodpMDQ48cObT02NOLQ68evbzv6/8D99YT4ZkEYkQAAAAASUVORK5CYII=" />
+    </span>
+    <div class="progress-bar">
+      <div class="bar">
+        <!--ko if:step() >= 2-->
+        <span class="active-left"></span>
+        <!--/ko-->
+        <!--ko if:step() >= 3-->
+        <span class="active-right"></span>
+        <!--/ko-->
+      </div>
+      <div class="bar-num n1" data-bind="css:{'done': step() >= 1}">
+        <div class="circle">
+          <span class="deco-back"></span>
+          <span class="num">1</span>
+        </div>
+        <p data-bind="translate:{key:'opencourse.editor.baseInfo'}">基本信息</p>
+      </div>
+      <div class="bar-num n2" data-bind="css:{'done': step() >= 2}">
+        <div class="circle">
+          <span class="deco-back"></span>
+          <span class="num">2</span>
+        </div>
+        <p data-bind="translate:{key:'opencourse.editor.createChapters'}">创建章节</p>
+      </div>
+      <div class="bar-num n3" data-bind="css:{'done': step() >= 3}">
+        <div class="circle">
+          <span class="deco-back"></span>
+          <span class="num">3</span>
+        </div>
+        <p data-bind="translate:{key:'opencourse.editor.setCover'}">设置封面</p>
+      </div>
+    </div>
+  </div>
+  <div class="cc-dlg-body">
+    <!--基本信息-->
+    <div class="create-base-info" data-bind="style:{'display':step() == 1 ? 'block' : 'none'}">
+      <table>
+        <tr>
+          <th><i class="required">*</i><span data-bind="translate:{key:'opencourse.courseModel.name'}"></span>：</th>
+          <td>
+            <input type="text" data-bind="value:courseTitle,valueUpdate:'input'"/>
+          </td>
+        </tr>
+        <tr>
+          <th><i class="required">*</i><span data-bind="translate:{key:'opencourse.courseModel.desc'}"></span>：</th>
+          <td>
+            <textarea rows="4" id="description" data-bind="value:courseDescription"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <th><i class="required">*</i><span data-bind="translate:{key:'opencourse.courseModel.summary'}"></span>：</th>
+          <td>
+            <textarea rows="4"
+                      data-bind="value:courseSummary,valueUpdate:'input'"
+                      maxlength="100"></textarea>
+            <p class="summary-remain-words">你还可以输入<span data-bind="text:summaryRemainWords"></span>个字</p>
+          </td>
+        </tr>
+        <tr>
+          <th><i class="required">*</i><span data-bind="translate:{key:'opencourse.courseModel.tag'}"></span>：</th>
+          <td>
+            <ul id="J_Tree" class="ztree tree-border"></ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!--创建章节-->
+    <div class="create-chapter" data-bind="style:{'display':step() == 2 ? 'block' : 'none'}">
+      <iframe frameborder="0" width="100%" height="99%" data-bind="attr:{src:cloudChapterSettingUrl()}"></iframe>
+    </div>
+
+    <!--设置封面-->
+    <div class="create-cover" data-bind="style:{'display':step() == 3 ? 'block' : 'none'}">
+      <div>
+        <img width="300" height="200" data-bind="attr:{src:courseCoverUrl}" />
+      </div>
+      <p><span data-bind="click:openImageUploader">上传课程封面</span></p>
+    </div>
+  </div>
+  <div class="cc-dlg-footer">
+
+    <!--ko if:step() == 1-->
+    <span data-bind="click:saveBaseInfo">下一步</span>
+    <!--/ko-->
+
+    <!--ko if:step() == 2-->
+    <span data-bind="click:returnBaseInfo">上一步</span>
+    <span data-bind="click:nextSetCover">下一步</span>
+    <!--/ko-->
+
+    <!--ko if:step() == 3-->
+    <span data-bind="click:returnSetChapter">上一步</span>
+    <span data-bind="click:submitAudit">提交</span>
+    <!--/ko-->
+  </div>
+</div>
+
+<!--图片上传区-->
+<!--ko if:isOpenImgUploader() -->
+<div class="opencourse-yunke-dialog opencourse-yunke-img-uploader">
+  <div class="cc-dlg-header">
+    <h1>更换封面</h1>
+    <span class="close" data-bind="click:closeImageUploader">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAiEAAAIhAENVwL6AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAGNQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf7bw3gAAACF0Uk5TAAEGBwsOFRctRUlVWGBie32WmKaywcLEzdri7vLz9Pf8M2K5HwAAAOVJREFUOMuFU8kWhCAMi6i4oOC+oIzz/185h1EBl9eeCklbSFvgtDBv+tmYuW/yEHdL6nXrVJllpeq2tU4uMKvMJKLjFInJVMwLH3URuBdBoUcnSaoHfi3JB52e8bpl90exVu852Dg84AAbxv99pTkejesKABJT4MUKkwCop+CNEEw1EK5iPy7yAOSyO2INkW+HPvIrLw6iLUfTnRl3wOJA16BX8BkuDtVjLuExPBzlDJPBY3g4MkMTyBLkI8lvkkJZqT9W6o8jtW1WbEvHTrPodpMDQ48cObT02NOLQ68evbzv6/8D99YT4ZkEYkQAAAAASUVORK5CYII=" />
+    </span>
+  </div>
+  <div class="cc-dlg-body">
+    <div class="work-area">
+      <div id="J_UploadImg"></div>
+    </div>
+  </div>
+  <div class="cc-dlg-footer">
+    <span data-bind="click:updateCover,css:{disabled: !courseCoverId()}">使用该封面</span>
+  </div>
+</div>
+<div class="cc-img-uploader-mask"></div>
+<!--/ko-->
+
+<!--ko if:isLoading()-->
+<div class="cc-loading-mask"></div>
+<!--/ko-->

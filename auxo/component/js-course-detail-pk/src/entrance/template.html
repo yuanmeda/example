@@ -1,0 +1,91 @@
+<div class="pk-entrance" data-bind="if:model.pk()&&model.pkUser()">
+    <h3 data-bind="text:model.pk().pk.name">走进生命科学PK赛</h3>
+    <div class="pk-situ-show">
+        <div class="pk-situ-list">
+            <!--ko ifnot:model.pkUser().best_pk_answer -->
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.bestScore'}">最佳分数</dt>
+                <dd>
+                    <span class="line"></span>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.bestCostTime'}">最短用时</dt>
+                <dd>
+                    <span class="line"></span>
+                </dd>
+            </dl>
+            <!--
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.pkRank'}">PK排名</dt>
+                <dd>
+                    <span class="line"></span>
+                </dd>
+            </dl>
+            -->
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.pkWinRate'}">PK胜率</dt>
+                <dd>
+                    <span class="line"></span>
+                </dd>
+            </dl>
+            <!--/ko-->
+            <!--ko if:model.pkUser().best_pk_answer -->
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.bestScore'}">最佳分数</dt>
+                <dd>
+                    <span class="relavant-value"
+                          data-bind="translate:{'key':'courseDetailPk.scoreAndTotal','properties':{'score':model.pkUser().best_pk_answer.user_exam_session.score,'totalScore':model.pkUser().best_pk_answer.user_exam_session.paper.score}}">95 <em>(100满分)</em></span>
+                    <a class="brush-score" href="javascript:;"
+                       data-bind="click:$component.hrefTo.bind($component,true),translate:{'key':'courseDetailPk.refreshScore'}">刷成绩</a>
+                </dd>
+            </dl>
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.bestCostTime'}">最短用时</dt>
+                <dd>
+                    <span class="relavant-value"
+                          data-bind="text:formatDuration(model.pkUser().best_pk_answer.user_exam_session.fix_cost_time)">00:00:50</span>
+                </dd>
+            </dl>
+            <!--
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.pkRank'}">PK排名</dt>
+                <dd>
+                    <span class="relavant-value"
+                          data-bind="translate:{'key':model.pkUser().user_rank?'courseDetailPk.pkRankNumber':'courseDetailPk.noPkRankNumber','properties':{'number':model.pkUser().user_rank?model.pkUser().user_rank.rank:0}}">28名</span>
+                </dd>
+            </dl>
+            -->
+            <dl class="clearfix">
+                <dt data-bind="translate:{'key':'courseDetailPk.pkWinRate'}">PK胜率</dt>
+                <dd>
+                    <span class="relavant-value" data-bind="text:Math.round(model.pkUser().win_rate)*100+'%'">48%</span>
+                </dd>
+            </dl>
+            <!--/ko-->
+            <div class="oprate-wrap">
+                <div class="pk-rule-wrap">
+                    <span class="rule xcdp-icon-rule" data-bind="translate:{'key':'courseDetailPk.pkRule'}">PK规则</span>
+                    <div class="rule-popup" data-bind="text:model.pk().rule_description,visible:model.pk().rule_description">
+                        <p>1、先在5分钟内完成10道题的闯关任务，分数越高获得更高的积分奖励（积分=分数*10）</p>
+                        <p>2、闯关成功后可以通过与其他人PK获得积分奖励，快来闯关吧</p>
+                    </div>
+                    <div class="rule-popup" data-bind="translate:{'key':'courseDetailPk.noPkRankNumber'},visible:!model.pk().rule_description">
+                    </div>
+                </div>
+                <!--ko if:model.pk().user_exam_session -->
+                <!--
+                <a class="see-ranking xcdp-icon-rank" href="javascript:;"
+                   data-bind="translate:{'key':'courseDetailPk.pkRankList'}">PK排行</a>
+                   -->
+                <a class="see-score xcdp-icon-score" href="javascript:;"
+                   data-bind="click:hrefToRecord,translate:{'key':'courseDetailPk.pkRecord'}">PK战绩</a>
+                <!--/ko-->
+            </div>
+        </div>
+        <div class="btm-wrap">
+            <a class="btn-border-blue" href="javascript:;"
+               data-bind="click:hrefTo.bind($component,null),translate:{'key':model.pk().user_exam_session?'courseDetailPk.goPk':'courseDetailPk.goSingle'}">闯关答题/发起挑战</a>
+        </div>
+    </div>
+</div>

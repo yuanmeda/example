@@ -1,0 +1,33 @@
+@import "mixins";
+
+.sys-confirm {
+    .ui-btn-primary {
+        @include uiBtn(110px, 36px, #fff, #999, 0 10px, 5px);
+    }
+    .ui-btn-confirm {
+        @include uiBtn(110px, 36px, #fff, $themeColor, 0 10px, 5px);
+    }
+}
+.udialog {
+    font-family: "microsoft yahei";
+    .ui-dialog-title {
+        color: #666;
+    }
+}
+
+.sys-alert{
+    .ui-dialog-titlebar{
+        display: none;
+    }
+    .udialog-icon-info{
+        display: none!important;
+    }
+    .default-btn{
+        @include uiBtn(110px, 36px, #fff, $themeColor, 0 10px, 5px);
+        font-size: 16px;
+    }
+    .udialog-text{
+        text-align: center;
+        padding: 20px 0 0 0!important;
+    }
+}

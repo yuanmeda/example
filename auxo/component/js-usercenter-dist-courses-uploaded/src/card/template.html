@@ -1,0 +1,72 @@
+<div class="x-my-dcu-course-card" data-bind="click: $component.linkToCourseDetail.bind($component, $data)">
+  <!--封面-->
+  <div class="cover">
+    <img width="270" height="180" data-bind="attr:{src:cover_url}" />
+    <!--ko if:show_stat_label-->
+    <span class="status-label"><!--ko translate:{key:'my_dcu.stat_lb.'+status}--><!--/ko--></span>
+    <!--/ko-->
+  </div>
+  <div class="course-data">
+    <!--主要课程数据-->
+    <div class="data-main">
+      <!--标题-->
+      <p class="title" data-bind="attr:{title:title},text:title"></p>
+      <!--资源-->
+      <div class="resources">
+        <span><i data-bind="text:extra.video_count || 0"></i><!--ko translate:{key:'my_dcu.card.resource.video'}--><!--/ko--></span> |
+        <span><i data-bind="text:extra.document_count || 0"></i><!--ko translate:{key:'my_dcu.card.resource.doc'}--><!--/ko--></span> |
+        <span><i data-bind="text:extra.exercise_count || 0"></i><!--ko translate:{key:'my_dcu.card.resource.exercise'}--><!--/ko--></span>
+      </div>
+    </div>
+    <!--脚部附加-->
+    <div class="data-footer">
+      <!--开通人数（热度）-->
+      <span class="users"><i></i><!--ko text:user_count--><!--/ko--></span>
+      <!--价格-->
+      <!--ko if:!is_free-->
+      <span class="price pay"><!--ko text:price--><!--/ko--></span>
+      <!--/ko-->
+      <!--ko if:is_free-->
+      <span class="price free"><!--ko translate:{key:'my_dcu.card.free_label'}--><!--/ko--></span>
+      <!--/ko-->
+    </div>
+  </div>
+  <!--操作-->
+  <!--ko if:operations.length > 0-->
+  <div class="operations">
+    <div class="toggle">
+      <span class="arr"></span>
+      <ul class="drop">
+        <!--ko foreach:operations-->
+        <li data-bind="click:$component.operate.bind($component, $data),clickBubble: false">
+          <i data-bind="attr:{'class':'ico-'+$data}"></i>
+          <!--ko text:$component.operation_names[$data]--><!--/ko-->
+        </li>
+        <!--/ko-->
+      </ul>
+    </div>
+  </div>
+  <!--/ko-->
+  <!--ko if: opinion-->
+  <div class="reason-item">
+    <span class="highlight"><!--ko translate:{key:'my_dcu.card.opinion'}--><!--/ko-->：</span>
+    <span data-bind="text: opinion"></span>
+  </div>
+  <!--/ko-->
+</div>
+<!--ko if: popDel()===true-->
+<div class="ui-pop">
+  <div class="mask"></div>
+  <div class="model">
+    <div class="model-hd"><!--ko translate:{key:'my_dcu.card.pop.hint'}--><!--/ko--></div>
+    <div class="model-bd">
+      <div class="tip-warn"><!--ko translate:{key:'my_dcu.card.pop.delWarning'}--><!--/ko-->？</div>
+    </div>
+    <div class="model-ft">
+      <a href="javascript:;" class="ui-btn" data-bind="click:del.bind($component)"><!--ko translate:{key:'my_dcu.card.pop.confirm'}--><!--/ko--></a>
+      <a href="javascript:;" class="ui-btn2" data-bind="click:hidePopDel.bind($component)"><!--ko translate:{key:'my_dcu.card.pop.cancel'}--><!--/ko--></a>
+    </div>
+    <a href="javascript:;" class="btn-close" data-bind="click:hidePopDel.bind($component)"></a>
+  </div>
+</div>
+<!--/ko-->

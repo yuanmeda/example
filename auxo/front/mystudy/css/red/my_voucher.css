@@ -1,0 +1,131 @@
+@charset "UTF-8";
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl .coin-desc,
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl .coin-time,
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl .coin-title {
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.x-my-voucher .pagination {
+  padding: 0 20px
+}
+.x-my-voucher .voucher-list {
+  margin-top: 20px;
+  margin-left: 20px
+}
+.x-my-voucher .voucher-list:after,
+.x-my-voucher .voucher-list:before {
+  display: table;
+  content: ""
+}
+.x-my-voucher .voucher-list:after {
+  clear: both;
+  overflow: hidden
+}
+.x-my-voucher .voucher-list .voucher-item {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 478px;
+  height: 120px
+}
+.x-my-voucher .voucher-list .voucher-item .circle-down,
+.x-my-voucher .voucher-list .voucher-item .circle-up {
+  position: absolute;
+  left: 322px;
+  font-size: 26px;
+  color: #fff
+}
+.x-my-voucher .voucher-list .voucher-item .circle-down {
+  top: -13px
+}
+.x-my-voucher .voucher-list .voucher-item .circle-up {
+  top: 107px
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item {
+  border-top: 3px solid #ff9617;
+  border-radius: 5px;
+  padding: 20px 0;
+  background-color: #fff9e1
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item:after,
+.x-my-voucher .voucher-list .voucher-item .coin-item:before {
+  display: table;
+  content: ""
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item:after {
+  clear: both;
+  overflow: hidden
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl {
+  float: left;
+  border-right: 2px dashed #ff9617;
+  padding: 0 10px 0 20px;
+  width: 70%
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl .coin-title {
+  font-size: 18px
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl .coin-desc,
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-fl .coin-time {
+  margin-top: 10px;
+  color: #666
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt {
+  float: right;
+  width: 30%
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 88px;
+  height: 88px
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap .circle-above,
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap .circle-bottom,
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap .coin-status {
+  line-height: 88px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap .circle-bottom {
+  z-index: 2;
+  font-size: 88px;
+  color: #ff9617
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap .circle-above {
+  top: -1px;
+  z-index: 3;
+  font-size: 86px;
+  color: #fff9e1
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item .coin-rt .coin-rt-wrap .coin-status {
+  z-index: 4;
+  width: 88px;
+  height: 88px;
+  font-size: 18px;
+  color: #ff9617
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item.disabled {
+  border-top-color: #ccc;
+  background-color: #f2f2f2
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item.disabled .coin-fl {
+  border-right-color: #ccc
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item.disabled .coin-rt .coin-rt-wrap .circle-bottom {
+  color: #ccc
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item.disabled .coin-rt .coin-rt-wrap .circle-above {
+  color: #f2f2f2
+}
+.x-my-voucher .voucher-list .voucher-item .coin-item.disabled .coin-rt .coin-rt-wrap .coin-status {
+  color: #999
+}

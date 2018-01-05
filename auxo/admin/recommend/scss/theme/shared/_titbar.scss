@@ -1,0 +1,101 @@
+
+.block{
+  min-height: auto;
+  max-width: 1643px;
+  min-width: 1000px;
+  .block-tit{
+    @include lineHeight(46px);
+    position: relative;
+    margin-bottom: 10px;
+    background: $white;
+    padding:8px 20px;
+    a.add-btn{
+      i{
+        vertical-align: baseline;
+      }
+      &:hover{
+        background: darken($themeColor,5%);
+      }
+    }
+    .tit-name{
+      color: $fontColor999;
+      b{
+        @include fs(16px);
+        color: $fontColor333;
+      }       
+      i{
+        display: inline-block;
+        margin:0 3px;
+      }
+      .vhr{
+        @include vhr;
+        margin:0 5px;
+      } 
+    }
+    .tit-tab-box{
+      @include fs(12px);
+      @include lineHeight(30px);
+      position: relative;
+      .vline{
+        @include vhr(30px);
+        margin-left:15px;
+        margin-right: 5px;
+      }
+      .tit-status{
+        a{
+          @extend %vm;
+          margin:0 10px;
+          &.on,&.active{
+            color: $tipsColor;
+          }
+        }
+      }
+      .tit-search{
+        background: $white;
+        margin-left: 20px;
+        @include lineHeight(30px);
+        input{
+          @include lineHeight(30px);
+          padding:0 10px;
+          display: inline-block;
+          border:none;
+          vertical-align: top;
+          box-shadow: none;
+          background: #fff;/*agan1111chang*/
+        }
+        a{
+          @include fs(16px);
+          color:$white;
+          @include lineHeight(30px);
+          background: $themeColor;
+          border-radius: 3px;
+          width: 30px;
+          text-align: center;
+          vertical-align: top;
+          i{
+            vertical-align: baseline;
+          }
+        }       
+      }
+      .tit-tab{
+        a{
+          display: inline-block;
+          .icon-list{
+            font-size: 23px;
+            margin-top: 2px;
+          }
+          .icon-pro{
+            font-size: 18px;
+            margin-right: 15px;
+          }
+          &.on,&.active{
+            color: $themeColor;
+          }
+          &:hover{
+            color: darken($themeColor,10%);
+          }
+        }
+      }
+    }   
+  }
+}

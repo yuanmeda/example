@@ -1,0 +1,41 @@
+<a class="center-item center-item-img" href="javascript:;" data-bind="click:hrefTo,attr: { title: model.data.unit_info.title }" target="_blank">
+  <h5 class="item-title item-title-img" data-bind="text: model.data.unit_info.title"></h5>
+  <div class="item-img">
+    <img data-bind="attr:{'src': model.defaultImage, 'data-original': model.data.unit_info.cover_url ? (model.data.unit_info.cover_url + '!m300x200.jpg') : model.data.unit_info.cover_url }" class="lazy-image" style="display: block;">
+  </div>
+  <div class="item-info clearfix">
+    <ul class="info-fl fl" data-bind="css: { pt1 : !ko.unwrap(model.data.unit_info.extra.duration) || (ko.unwrap(model.data.extra.remain_chance) <= 0) || getExamStatus() == '70', pt2: (!ko.unwrap(model.data.unit_info.extra.duration) && (ko.unwrap(model.data.extra.remain_chance) <= 0)) || (getExamStatus() == '70' && !ko.unwrap(model.data.unit_info.extra.duration)) }">
+      <!-- ko if: ko.unwrap(model.data.extra.remain_chance) > 0 && getExamStatus() !== '70' -->
+      <li class="ellipsis">
+        <i>•</i>
+        <!--ko if: model.data.extra.remain_chance <= 1000-->
+        <span class="info" data-bind="translate:{ key:'course_offline_unit.examTimes', properties:{ count: ko.unwrap(model.data.extra.remain_chance) } },visible: getExamStatus() !== '70'"></span>
+        <!--/ko-->
+        <!--ko if: model.data.extra.remain_chance > 1000-->
+        <span class="info" data-bind="translate:{ key:'course_offline_unit.noLimit' }, visible: getExamStatus() !== '70'"></span>
+        <!--/ko-->
+      </li>
+      <!--/ko-->
+      <li class="ellipsis">
+        <i>•</i>
+        <span class="info" data-bind="translate:{ key:'course_offline_unit.totalAndPassingScore', properties:{ totalScore: formatScore(ko.unwrap(model.data.unit_info.extra.total_score)), passingScore:formatScore(ko.unwrap(model.data.unit_info.extra.pass_score)) } }"></span>
+      </li>
+      <!--ko if: model.data.unit_info.extra.exam_area -->
+      <li class="ellipsis">
+        <i>•</i>
+        <span class="info" data-bind="translate:{ key:'course_offline_unit.duration', properties:{ count: model.data.unit_info.extra.exam_area } },visible: getExamStatus() !== '70'"></span>
+      </li>
+      <!--/ko-->
+    </ul>
+    <div class="info-fr fr" style="display: none;" data-bind="css: { 'wait': ko.unwrap(model.data.extra.pass_status) == 0, 'failed': ko.unwrap(model.data.extra.pass_status) == -1 }, visible: (ko.unwrap(model.data.extra.last_status) == 32 || ko.unwrap(model.data.extra.last_status) == 96)">
+      <p data-bind="translate: { key: 'course_offline_unit.scoreMark', properties:{ count: formatScore(ko.unwrap(model.data.extra.best_scores)) } }"></p>
+      <p data-bind="visible: ko.unwrap(model.data.extra.pass_status) == -1, translate: { key: 'course_offline_unit.failed' }"></p>
+      <p data-bind="visible: ko.unwrap(model.data.extra.pass_status) == 0, translate: { key: 'course_offline_unit.waitForMark' }"></p>
+      <p data-bind="visible: ko.unwrap(model.data.extra.pass_status) == 1, translate: { key: 'course_offline_unit.passed' }"></p>
+    </div>
+  </div>
+  <div class="item-ft">
+    <p class="ft-fl fl" data-bind="html: formatDateTime($data)"></p>
+    <span class="ft-fr fr btn btn-primary" data-bind="css: { 'btn-default': disableBtn() }, translate: { key:userExamStatus($data) }"></span>
+  </div>
+</a>

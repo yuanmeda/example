@@ -1,0 +1,57 @@
+$version: 20151127;
+$vendors: -o-,
+-ms-,
+-moz-,
+-xhtml-,
+-webkit- !default;
+
+%clearfix {
+  *zoom: 1;
+  &:after {
+    content: '';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+  }
+}
+
+%ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%inline-block {
+  display: inline-block;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+@mixin blur($depth) {
+  -webkit-filter: blur(#{$depth}px);
+  -moz-filter: blur(#{$depth}px);
+  -ms-filter: blur(#{$depth}px);
+  filter: blur(#{$depth}px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$depth*10, MakeShadow=false);
+}
+
+%blur {
+  @include blur(2);
+}
+
+%blur-recover {
+  @include blur(0);
+}
+
+@function getMapValue ($map, $list) {
+  $listLength: length($list);
+  $value: $map;
+  @for $index from 1 through $listLength {
+    $value: map-get($value, unquote(nth($list, $index)));
+  }
+  @return $value;
+}
+
+

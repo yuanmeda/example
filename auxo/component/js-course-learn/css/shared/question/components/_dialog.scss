@@ -1,0 +1,51 @@
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -400px;
+    width: 800px;
+    background: #fff;
+    .dialog-header {
+        position: relative;
+        border-bottom: 1px solid #e5e5e5;
+        h2 {
+            padding: 12px 20px;
+            font: 16px/26px 'microsoft yahei';
+            color: #666;
+            @extend %ellipse;
+        }
+        .icon-close {
+            position: absolute;
+            top: 14px;
+            right: 20px;
+            cursor: pointer;
+            transition: transform, border-radius .2s linear;
+            &:hover {
+                border-radius: 50%;
+                @extend %icon-close-blue;
+            }
+        }
+    }
+    .dialog-body {
+        min-height: 1px;
+    }
+    .mask {
+        z-index: -1;
+    }
+
+    &.dialog-lg {
+        height: 590px;
+        margin-top: -295px;
+    }
+    &.dialog-qa {
+        position: absolute;
+        top: 190px;
+        right: 10px;
+        bottom: 20px;
+        left: 10px;
+        width: 340px;       // for IE
+        min-height: 200px;
+        margin: 0;
+    }
+}

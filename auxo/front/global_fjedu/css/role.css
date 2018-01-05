@@ -1,0 +1,21 @@
+.role-container {
+    margin: 100px auto;
+    width: 800px;
+    text-align: center;
+}
+
+.role-container div {
+    display: inline-block;
+    width: 300px;
+    height: 260px;
+    cursor: pointer;
+    margin:0 45px;
+}
+
+.teacher {
+    background: url(../images/teacher.png?v=201703117002) no-repeat left;
+}
+
+.student {
+    background: url(../images/student.png?v=201703117002) no-repeat left;
+}

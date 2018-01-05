@@ -1,0 +1,231 @@
+body {
+  background-color: #f2f2f2;
+}
+
+#examPrepare {
+  padding-top: 15px;
+  //background-color: #f2f2f2;
+  font: 24px/1.5 "microsoft yahei";
+}
+
+#pk_prepare {
+  padding-top: 18px;
+  .pre-header{
+    .title{
+      span{
+        font-size: 24px;
+      }
+    }
+  }
+  .pk-result-show{
+    position: absolute;
+    bottom: 0;
+    left: 222px;
+    text-align: center;
+    span{
+      line-height: 40px;
+      color: #fff;
+      font-size: 18px;
+      margin-right: 28px;
+    }
+    em{
+      color: #ffea00;
+    }
+    .brush-score{
+      display: inline-block;
+      padding: 0 6px;
+      margin-left: -10px;
+      font-size: 12px;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      &:hover {
+        color: #ffea00;
+        border-color: #ffea00;
+      }
+
+    }
+  }
+}
+
+.n-select {
+  cursor: default;
+}
+
+.disabled {
+  cursor: default;
+  background-color: #ccc !important;
+}
+
+.pre-container {
+  height: 800px;
+  width: 1200px;
+  padding: 0px 30px;
+  margin: 0 auto;
+  background-color: #fff;
+  height: 800px;
+  width: 1200px;
+  box-shadow: 0 1px 2px 2px #ddd;
+}
+
+.pre-header {
+  position: relative;
+  padding: 21px 0;
+}
+
+.title {
+  display: inline-block;
+}
+
+.options {
+  right: 0px;
+  position: absolute;
+  display: inline-block;
+  .option-item {
+    font: 14px/1.5 "microsoft yahei";
+    text-decoration: none;
+    margin: 0 0 0 36px;
+    color: #80c5ff;
+  }
+}
+
+.pre-content {
+  height: 620px;
+  .banner {
+    position: relative;
+    height: 333px;
+    background-image: url("../../images/tounament/banner.png");
+    .r-date {
+      .target {
+        background-image: url("../../images/tounament/target.png");
+        width: 184px;
+        height: 184px;
+        z-index: 999;
+        display: inline-block;
+        position: absolute;
+        left: 480px;
+        top: 47px;
+        text-align: center;
+        line-height: 184px;
+        color: #ffffff;
+        .day {
+          font-size: 70px;
+          margin-left: 25px;
+        }
+        .d-tit {
+          font-size: 18px;
+        }
+      }
+    }
+    .x-countdown {
+      .time {
+        color: #fff;
+        font-size: 70px;
+        position: absolute;
+        top: 110px;
+        left: 410px;
+      }
+    }
+    .x-finish-tit {
+      color: #fff;
+      font-size: 70px;
+      position: absolute;
+      top: 110px;
+      left: 470px;
+    }
+    .t-title {
+      z-index: 999;
+      display: inline-block;
+      position: absolute;
+      left: 410px;
+      top: 68px;
+      color: #FFFFFF;
+      font-size: 18px;
+    }
+    .t-title2 {
+      z-index: 999;
+      display: inline-block;
+      position: absolute;
+      left: 538px;
+      top: 68px;
+      color: #FFFFFF;
+      font-size: 18px;
+    }
+  }
+  .info {
+    height: 287px;
+    padding: 0 155px;
+    .caption {
+      height: 55px;
+      overflow-x: hidden;
+    }
+    .description {
+      height: 232px;
+      color: #989898;
+      .d-content {
+        margin: 0;
+        font-size: 16px;
+        color: #989898;
+        overflow-y: auto;
+        height: 177px;
+      }
+    }
+  }
+}
+
+.c-item {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 40px;
+  line-height: 55px;
+  color: #989898;
+}
+
+.pre-footer {
+  padding-top: 30px;
+  text-align: center;
+  .button {
+    width: 380px;
+    font-size: 15px;
+    padding: 10px 15px;
+    line-height: normal;
+    background: $themeColor;
+    color: #FFF;
+    border-radius: 5px;
+    font: 20px/1.5 "microsoft yahei";
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.icon {
+  width: 14px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.i-history {
+  background-image: url("../../images/tounament/history_icon.png");
+}
+
+.i-integral {
+  background-image: url("../../images/tounament/integral_icon.png");
+}
+
+.i-ranking {
+  background-image: url("../../images/tounament/ranking_icon.png");
+}
+.i-fav{
+  background-image: url("../../images/tounament/fav.png");
+  background-position: 20px 0;
+  width: 20px;
+  height: 18px;
+}
+.i-fav-active{
+  background-image: url("../../images/tounament/fav.png");
+  background-position: 0 0;
+  width: 20px;
+  height: 18px;
+}
+

@@ -1,0 +1,146 @@
+@import "../shared/mixins";
+// voucher
+$tabHeight: 60px;
+$iconSize: 54px;
+$labelHeight: 24px;
+$borderColor: #e0e0e0;
+
+// coinItem
+$listGutter: 20px;
+$coinItemHeight: 120px;
+$iconItemWidth: 478px;
+$coinItemSize: 26px;
+$coinItemTheme: #ff9617;
+$coinItemBg: #fff9e1;
+$WrapBaseSize: 88px;
+.x-my-voucher {
+    .pagination {
+        padding: 0 20px;
+    }
+    .voucher-list {
+        margin-top: $listGutter;
+        margin-left: $listGutter;
+
+        @include clearfix;
+        .voucher-item {
+            float: left;
+            overflow: hidden;
+
+            position: relative;
+
+            margin-right: $listGutter;
+            margin-bottom: $listGutter;
+            width: $iconItemWidth;
+            height: $coinItemHeight;
+            .circle-down,
+            .circle-up {
+                position: absolute;
+                left: 322px;
+
+                font-size: $coinItemSize;
+
+                color: #fff;
+            }
+            .circle-down {
+                top: -($coinItemSize/2);
+            }
+            .circle-up {
+                top: $coinItemHeight - $coinItemSize/2;
+            }
+            .coin-item {
+                border-top: 3px solid $coinItemTheme;
+                border-radius: 5px;
+                padding: $listGutter 0;
+
+                background-color: $coinItemBg;
+
+                @include clearfix;
+                .coin-fl {
+                    float: left;
+
+                    border-right: 2px dashed $coinItemTheme;
+                    padding: 0 10px 0 20px;
+                    width: 70%;
+                    .coin-title,
+                    .coin-desc,
+                    .coin-time {
+                        @extend %text-overflow;
+                    }
+                    .coin-title {
+                        font-size: 18px;
+                    }
+                    .coin-desc,
+                    .coin-time {
+                        margin-top: 10px;
+
+                        color: #666;
+                    }
+                }
+                .coin-rt {
+                    float: right;
+
+                    width: 30%;
+                    .coin-rt-wrap {
+                        position: relative;
+
+                        margin: 0 auto;
+                        width: $WrapBaseSize;
+                        height: $WrapBaseSize;
+                        .circle-bottom,
+                        .circle-above,
+                        .coin-status {
+                            line-height: $WrapBaseSize;
+                            text-align: center;
+
+                            @include position-absolute;
+                        }
+                        .circle-bottom {
+                            z-index: 2;
+
+                            font-size: $WrapBaseSize;
+
+                            color: $coinItemTheme;
+                        }
+                        .circle-above {
+                            top: -1px;
+                            z-index: 3;
+
+                            font-size: $WrapBaseSize - 2px;
+
+                            color: $coinItemBg;
+                        }
+                        .coin-status {
+                            z-index: 4;
+
+                            width: $WrapBaseSize;
+                            height: $WrapBaseSize;
+
+                            font-size: 18px;
+
+                            color: $coinItemTheme;
+                        }
+                    }
+                }
+                &.disabled {
+                    border-top-color: #ccc;
+
+                    background-color: #f2f2f2;
+                    .coin-fl {
+                        border-right-color: #ccc;
+                    }
+                    .coin-rt .coin-rt-wrap {
+                        .circle-bottom {
+                            color: #ccc;
+                        }
+                        .circle-above {
+                            color: #f2f2f2;
+                        }
+                        .coin-status {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

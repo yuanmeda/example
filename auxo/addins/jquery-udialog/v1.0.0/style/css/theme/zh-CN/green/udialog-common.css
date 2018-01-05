@@ -1,0 +1,358 @@
+@charset "UTF-8";
+@font-face {
+  font-family: udialog-common;
+  src: url(../../../../fonts/udialog-common.eot?wmqrn8);
+  font-weight: 400;
+  font-style: normal
+}
+@font-face {
+  font-family: udialog-common;
+  src: url(../../../../fonts/udialog-common.eot?wmqrn8);
+  src: url(../../../../fonts/udialog-common.eot?wmqrn8#iefix) format("embedded-opentype"),url(../../../../fonts/udialog-common.ttf?wmqrn8) format("truetype"),url(../../../../fonts/udialog-common.woff?wmqrn8) format("woff"),url(../../../../fonts/udialog-common.svg?wmqrn8#udialog-common) format("svg");
+  font-weight: 400;
+  font-style: normal
+}
+[class*=" uc-icon-"],
+[class^=uc-icon-] {
+  font-family: udialog-common!important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.uc-icon-add:before {
+  content: "\e901"
+}
+.uc-icon-min:before {
+  content: "\e902"
+}
+.uc-icon-search:before {
+  content: "\e903"
+}
+.uc-icon-close:before {
+  content: "\e90b"
+}
+.uc-icon-check-yes:before {
+  content: "\e91c"
+}
+.uc-icon-circle-check:before {
+  content: "\e927"
+}
+.uc-icon-circle-warn:before {
+  content: "\e92e"
+}
+.uc-icon-circle-solid:before {
+  content: "\e930"
+}
+.udialog .udialog-icon-error,
+.udialog .udialog-icon-info,
+.udialog .udialog-icon-right,
+.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  font-family: udialog-common!important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.sys-confirm .ui-dialog-content .udialog-text {
+  padding: 0 20px
+}
+.udialog {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 10px #e4e4e4;
+  box-shadow: 0 0 10px #e4e4e4;
+  font-family: 'microsoft yahei',arial,tahoma,simsun
+}
+.udialog .ui-button {
+  height: 40px;
+  line-height: 40px
+}
+.udialog .ui-widget-header {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 400
+}
+.udialog .ui-widget-header .ui-dialog-title {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: #333
+}
+.udialog .ui-widget-header .ui-icon {
+  overflow: hidden;
+  text-indent: 0;
+  background: 0 0
+}
+.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  opacity: 1;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+  border: none
+}
+.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  width: 22px;
+  height: 22px
+}
+.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick:before {
+  content: "\e90b"
+}
+.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close:focus {
+  outline: 0
+}
+.udialog .ui-dialog-content {
+  padding: 40px 0
+}
+.udialog.ui-widget-content {
+  border: none
+}
+.udialog .ui-widget-content {
+  background-color: #f9f9f9;
+  text-align: center;
+  border: none
+}
+.udialog .ui-dialog-buttonpane {
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  padding: 16px 0;
+  margin-top: 0
+}
+.udialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: none
+}
+.udialog .ui-dialog-buttonset .ui-button-text-only {
+  border: 1px solid #ccc;
+  background: 0 0;
+  padding: 0 20px;
+  color: grey
+}
+.udialog .ui-dialog-buttonset .ui-button-text-only:hover {
+  background: 0 0;
+  background-color: #eee
+}
+.udialog .ui-dialog-buttonset .ui-button-text-only.default-btn {
+  color: #fff;
+  background-color: #4da4d8
+}
+.udialog .ui-dialog-buttonset .ui-button-text-only.default-btn:hover {
+  background-color: #62afdd
+}
+.udialog .ui-dialog-buttonset .ui-button-text-only span {
+  background: 0 0;
+  float: none;
+  display: inline
+}
+.udialog .ui-dialog-buttonset .ui-btn-default {
+  border: 1px solid #ccc;
+  background: 0 0;
+  padding: 0 20px
+}
+.udialog .ui-dialog-buttonset .ui-btn-default:hover {
+  background: 0 0;
+  background-color: #eee
+}
+.udialog .ui-dialog-buttonset .ui-btn-default span {
+  background: 0 0;
+  float: none;
+  display: inline
+}
+.udialog .ui-dialog-buttonpane .ui-dialog-buttonset button {
+  border-radius: 3px
+}
+.udialog .ui-button .ui-button-text {
+  display: inline;
+  line-height: normal
+}
+.udialog .ui-button-text-only .ui-button-text {
+  padding: 0
+}
+.udialog .udialog-message .udialog-icon {
+  display: inline-block;
+  vertical-align: middle
+}
+.udialog .udialog-message .udialog-message-text {
+  display: inline-block;
+  vertical-align: middle
+}
+.udialog .udialog-message .udialog-text-center {
+  text-align: center
+}
+.udialog .udialog-message .udialog-text-left {
+  text-align: left
+}
+.udialog .udialog-icon-right {
+  background-position: 0 0
+}
+.udialog .udialog-icon-error,
+.udialog .udialog-icon-info,
+.udialog .udialog-icon-right {
+  margin-right: 16px;
+  font-size: 54px;
+  color: #5cb731
+}
+.udialog .udialog-icon-right:before {
+  content: "\e927"
+}
+.udialog .udialog-icon-error:before {
+  content: "\e92e"
+}
+.udialog .udialog-icon-info:before {
+  content: "\e92e"
+}
+.udialog .ui-widget-header .ui-state-focus,
+.udialog .ui-widget-header .ui-state-hover {
+  background: 0 0;
+  color: #444
+}
+.udialog .ui-dialog-titlebar .ui-state-hover {
+  border: 0;
+  background: 0 0;
+  color: #444
+}
+.udialog .ui-btn-primary {
+  display: inline-block;
+  color: #5cb731!important;
+  background: #f9f9f9!important;
+  width: 140px!important;
+  height: 36px!important;
+  margin: 0;
+  line-height: 36px!important;
+  border-radius: 5px;
+  padding: 0!important;
+  border: 1px solid #5cb731!important;
+  font-size: 18px!important
+}
+.udialog .ui-btn-primary:hover {
+  text-decoration: none
+}
+.udialog .ui-btn-primary:hover {
+  background-color: #f1f1f1!important
+}
+.udialog .ui-btn-confirm {
+  display: inline-block;
+  color: #fff!important;
+  background: #5cb731!important;
+  width: 140px!important;
+  height: 36px!important;
+  margin: 0 20px 0 0;
+  line-height: 36px!important;
+  border-radius: 5px;
+  padding: 0!important;
+  border: 1px solid #5cb731!important;
+  font-size: 18px!important
+}
+.udialog .ui-btn-confirm:hover {
+  text-decoration: none
+}
+.udialog .ui-btn-confirm:hover {
+  background-color: #62c334!important
+}
+.udialog .ui-btn-disabled {
+  display: inline-block;
+  color: #fff!important;
+  background: #bbb!important;
+  width: 140px!important;
+  height: 36px!important;
+  margin: 0 20px 0 0;
+  line-height: 36px!important;
+  border-radius: 5px;
+  padding: 0!important;
+  border: 1px solid #5cb731!important;
+  font-size: 18px!important;
+  border: 1px solid #bbb!important
+}
+.udialog .ui-btn-disabled:hover {
+  text-decoration: none
+}
+.udialog .ui-btn-disabled:hover {
+  cursor: default!important
+}
+.sys-alert .ui-dialog-titlebar-close {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  border: none
+}
+.sys-alert .ui-dialog-titlebar-close span.ui-icon-closethick {
+  margin: 10px auto
+}
+.sys-alert .ui-dialog-titlebar .ui-state-hover {
+  border: 0
+}
+.sys-alert .udialog-text {
+  font-size: 18px;
+  padding: 0 20px
+}
+.sys-alert .btn-red {
+  color: #fff
+}
+.sys-alert .sys-ft {
+  text-align: right
+}
+.sys-alert :focus {
+  outline: 0
+}
+.sys-confirm .ui-dialog-content .udialog-text {
+  font-size: 18px;
+  color: #333;
+  text-align: center
+}
+.ui-widget-overlay {
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0
+}
+.sys-modalTip .ui-widget-header {
+  padding: 14px 14px 0 0!important;
+  text-align: right
+}
+.sys-modalTip .ui-widget-header .ui-icon-closethick {
+  font-size: 26px
+}
+.sys-modalTip .sys-err-box {
+  padding: 7px 0 64px 0
+}
+.sys-modalTip .sys-err-alert {
+  text-align: center
+}
+.sys-modalTip .sys-err-alert .sys-err-text {
+  padding: 20px 0 10px 0;
+  font-size: 22px;
+  line-height: 22px
+}
+.sys-modalTip .sys-err-alert .sys-err-desc {
+  font-size: 14px;
+  line-height: 14px;
+  color: #666
+}

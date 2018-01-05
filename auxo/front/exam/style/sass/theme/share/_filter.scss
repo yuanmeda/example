@@ -1,0 +1,134 @@
+@import "_iconfont";
+/*筛选*/
+.proFilter{
+  box-sizing: border-box;
+  background: #fff;
+  padding: 6px 30px;
+  margin-bottom: 35px;
+  box-shadow: 0 1px 2px 2px #ddd;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+
+.catalogs{
+  margin-top: 30px;
+  padding:6px 30px;
+  .catalog-column {
+    position:relative;
+    padding: 15px 10px 7px 0;
+    border-top: 1px dotted #dedede;
+    &:first-child{ border-top: none}
+    .column-list,.column-title,.item-all{
+      display:block;
+      float:left;
+    }
+    .column-title{
+      line-height: 26px;
+      word-break: break-all;
+      padding-top: 2px;
+      // width: 90px;
+      font-weight: bold;
+      text-align: right;
+      color: #333;
+    }
+    .item-all{
+      margin-left: 10px;
+      padding-top: 2px;
+      a{
+        display: block;
+        line-height: 26px;
+        padding: 0 15px;
+        color: #666;
+        font-size: 13px;
+        text-decoration: none;
+        border-radius: 3px;
+      }
+      &:hover a,&.active a{
+        color: #fff;
+        background-color: $themeColor;
+        text-decoration: none;
+      }
+    }
+    .column-list{
+      overflow:visible;
+      position: relative;
+      width: -webkit-calc(100% - 185px);
+      height: auto;
+      max-width: 905px;
+      padding-left: 8px;
+      li{
+        float: left;
+        margin-left: 2px;
+        padding-top:2px;
+        margin-bottom: 8px;
+        a{
+          min-width:50px;
+          display: block;
+          height: 26px;
+          line-height: 26px;
+          padding: 0 15px;
+          color: #333;
+          font-size: 13px;
+          text-align: center;
+          border-radius: 3px;
+        }
+        &:hover a,&.active a{
+          color: #fff;
+          background-color: $themeColor;
+          text-decoration: none;
+        }
+        b.warn{
+          display: block;
+          float: right;
+          vertical-align: middle;
+          width:15px;
+          height:24px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          background-color: #fff;
+          background-image: url(/elearningweb/templates.admin/images/warn.png);
+        }
+      }
+    }
+    .attr-more{
+      color:$themeColor;
+      font-size: 12px;
+      position:absolute;
+      right:10px;
+      top: 18px;
+      &:before{
+        content:attr(data-up);
+      }
+      .cl-icon-darrow {
+        display:inline-block;
+        margin-left: 10px;
+        color:rgb(140,140,140);
+        cursor: default;
+      }
+    }
+  }
+  .on{
+    // .column-list{
+    //   height: 34px;
+    //   overflow:hidden;
+    // }
+    .attr-more{
+      &:before{
+        content:attr(data-down);
+      }
+      .cl-icon-darrow {
+        display:inline-block;
+        margin-left: 8px;
+        color:rgb(140,140,140);
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        cursor: default;
+      }
+    }
+  }
+}

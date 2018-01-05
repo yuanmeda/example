@@ -1,0 +1,293 @@
+.self-container{
+  width:1200px;
+  margin:15px auto 30px;
+  min-height:540px;
+}
+.sales-cart {
+
+  .cart-list {
+    border: 1px solid #e0e0e0;
+    border-bottom: 0 none;
+    table {
+      width: 100%;
+    }
+    th {
+      background: #f8f8f8;
+      border-bottom: 1px solid #e0e0e0;
+      line-height: 32px;
+      font-size: 12px;
+      color: #999;
+      vertical-align:middle;
+      text-align: center;
+    }
+
+    td {
+      position: relative;
+      padding:19px 10px;
+      font-size:14px;
+      color:#666666;
+      border-bottom:1px solid #eee;
+      &.center{
+        text-align:center;
+      }
+    }
+
+    // 组合优惠
+    .comb-sales {
+      $height: 20px;
+      padding: 7px 10px;
+      h2 {
+        float: left;
+        background: #f85552;
+        color: #fff;
+        font-size: 12px;
+        padding: 0 10px;
+        line-height: $height;
+        height: $height;
+        margin-right: 10px;
+      }
+      p {
+        line-height: $height;
+        float: left;
+        font-size: 12px;
+      }
+      strong {
+        color: #f85552;
+        margin-right: 20px;
+      }
+      span {
+        color: #999999;
+        margin-right: 20px;
+      }
+    }
+
+    // 其他优惠
+    .common-goods {
+      padding: 7px 10px;
+      h2 {
+        float: left;
+        padding: 0 10px;
+        color: #999999;
+        background: #eee;
+        font-size: 12px;
+      }
+    }
+
+    // 复选框
+    .checkbox {
+      display: inline-block;
+      height: 11px;
+      width: 11px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      cursor: default;
+      &.checked {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2ODdCMDFDRjk5RDcxMUU3OUQ4MDk1QUI0NDZBRjk5NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2ODdCMDFEMDk5RDcxMUU3OUQ4MDk1QUI0NDZBRjk5NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY4N0IwMUNEOTlENzExRTc5RDgwOTVBQjQ0NkFGOTk2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY4N0IwMUNFOTlENzExRTc5RDgwOTVBQjQ0NkFGOTk2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jKfUiwAAAHBJREFUeNpitF7xgYFYwEKkOn4gTmUhUuF2ILZkIlYhELeAFHcDsTshhUBcC1KcAsSbgDgYn0KQIBPU1O9AvAyqAatCmOJTQOyKpOE4NoUwxSBwGkmDJhA3oytED2eQBj0gVgPiPcREyiMoxgoAAgwArJga1RcjnWwAAAAASUVORK5CYII=") #fff no-repeat center center;
+      }
+      &:hover {
+        background-color: #f6fcff;
+      }
+    }
+
+    // 主要信息
+    .res-col-main {
+      overflow:hidden;
+      .col-fix{
+        padding-bottom: 9999px;
+        margin-bottom: -9999px;
+        float:left;
+        width:160px;
+      }
+      img {
+        float: left;
+      }
+      i{
+        float:left;
+        margin:10px 10px 0 10px;
+        line-height:20px;
+        color: #9c9c9c;
+      }
+      span{
+        padding-bottom: 9999px;
+        margin-bottom: -9999px;
+        overflow:hidden;
+        font-size:14px;
+        color:#666666;
+        line-height:20px;
+        display:block;
+        padding-top:10px;
+      }
+    }
+
+    // 价格
+    .res-col-price{
+      span{
+        display:block;
+        margin-bottom:5px;
+      }
+      .fake{
+        text-decoration:line-through;
+        font-size:12px;
+        color:#b6b6b6;
+        padding-right:5px;
+      }
+      .real{
+        color:#f85552;
+        font-size:14px;
+        padding-right:3px;
+      }
+      .type{
+        display:inline-block;
+        color:#f85552;
+        font-size:12px;
+        background:#f5f5f5;
+        padding:1px 15px;
+      }
+    }
+
+    // 操作
+    .res-col-opts{
+      padding-right:40px;
+      span{
+        white-space:nowrap;
+        display:inline-block;
+        color:#666666;
+        font-size:14px;
+        margin-bottom:5px;
+        cursor:pointer;
+        &:hover{
+          text-decoration:underline;
+        }
+      }
+      .disable{
+        color: #a1a1a1;
+        cursor:default;
+        &:hover{text-decoration:none;}
+      }
+    }
+
+    // 失效的商品
+    .goods-disabled{
+      td{
+        background:#f9f9f9;
+        color:#999999;
+        .res-col-main{
+          span{color:#999;}
+        }
+        .res-col-price{
+          span{color:#999;}
+        }
+      }
+    }
+
+    .disabled-label{
+      font-size:12px;
+      display:inline-block;
+      color:#999;
+      background:#e3e3e3;
+      white-space:nowrap;
+      padding:0 4px;
+    }
+
+    .foot-toolbar{
+      span{
+        float:left;
+        margin-right:40px;
+        font-size:12px;
+        color:#666666;
+        cursor:pointer;
+        &:hover{
+          text-decoration:underline;
+        }
+        &.disable{
+          color: #b4b4b4;
+          cursor:default;
+          &:hover{text-decoration:none;}
+        }
+      }
+    }
+  }
+
+  // 底部
+  .bottom-toolbar{
+    border:1px solid #e0e0e0;
+    border-top:0 none;
+    overflow:hidden;
+    padding:38px 20px;
+    .pull-right{
+      float:right;
+    }
+    .col{
+      float:left;
+      overflow:hidden;
+      margin-left:40px;
+    }
+    .selected{
+      color:#333333;
+      padding-top: 10px;
+      font-size:14px;
+      line-height:1;
+      i{
+        font-weight:bold;
+        color:#f85552;
+        margin:0 10px;
+      }
+    }
+    .total-count{
+      display:block;
+      line-height:1;
+      color:#333333;
+      vertical-align:baseline;
+      margin-bottom:5px;
+      strong{
+        color:#f85552;
+        font-size:24px;
+        font-weight:bold;
+      }
+    }
+    .reduced{
+      color:#999999;
+    }
+    .order-confirm{
+      float:right;
+      width:200px;
+      height:50px;
+      text-align:center;
+      line-height:50px;
+      font-size:20px;
+      color:#fff;
+      border-radius:3px;
+      background:$theme-color;
+      cursor:pointer;
+      &:hover{
+        background:darken($theme-color, 10%);
+      }
+      &.disable{
+        background: #c4c4c4;
+        cursor:default;
+        &:hover{
+          background:#c4c4c4;
+        }
+      }
+    }
+  }
+}
+
+.empty-cart{
+  text-align:center;
+  padding:100px 0;
+  width:146px;
+  margin:0 auto;
+  i{
+    display:block;
+    background:url('/auxo/front/other/images/sprite.png') no-repeat 0 -45px;
+    width:146px;
+    height:138px;
+    margin-bottom:20px;
+  }
+  span{
+    display:block;
+    font-size: 15px;
+    color: #828282;
+  }
+}

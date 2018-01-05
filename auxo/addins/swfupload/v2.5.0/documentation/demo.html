@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/addins/bootstrap/v2.3.1/css/bootstrap.css" />
+
+    <script src="/addins/jquery/jquery-1.7.1.js"></script>
+    <script src="/addins/bootstrap/v2.3.1/js/bootstrap.js"></script>
+
+    <script src="/addins/swfupload/swfupload.js"></script>
+    <!--如果需要取消所有上传要加这个插件-->
+    <!--<script src="/addins/swfupload/plugins/swfupload.queue.js"></script>-->
+
+    <script src="/addins/swfupload/swfupload.jquery.js"></script>
+    <script src="/addins/swfupload/documentation/helper.js"></script>
+    <style>
+        /*文件信息的样式*/
+        .progress-wrapper { margin: 8px 0; font-size: 12px; position: relative; }
+        .progress-wrapper .progress-container { padding: 6px 10px; margin-bottom: 0; border: 0 none; background: #e3eaf4; border-radius: 0; }
+        .progress-wrapper .progress-container-danger { background: #f2dede; }
+        .progress-wrapper .progress-close { color: #0e6098; position: absolute; right: 2px; top: 2px; font: normal 12px Simsun; opacity: 0.7; filter: alpha(opacity=70); }
+        .progress-wrapper .progress-close:hover,
+        .progress-wrapper .progress-close:focus { opacity: 0.9; filter: alpha(opacity=90); }
+        .progress-wrapper .progress-close-img { }
+        .progress-wrapper .progress-name,
+        .progress-wrapper .progress { margin-bottom: 2px; height: 16px; }
+        .progress-wrapper .progress { width: 100%; }
+        .progress-wrapper .progress-bar-status { text-align: center; }
+        .progress-wrapper .progress-bar-status b { color: #24ac7e; font-size: 14px; font-weight: normal; }
+        .progress-wrapper .img-container { width: 500px; }
+
+        .swfupload { vertical-align: middle; }
+
+        /*页面样式*/
+        .swfuploadWrap { height: 28px; width: 90px; display: inline-block; vertical-align: middle; background: #090; border-radius: 3px; }
+        .swfuploadWrap:hover { background: #ffd800; }
+        #fsUploadProgress { min-height: 50px; border: 1px solid #369; }
+    </style>
+</head>
+<body style="background: #ccc;">
+    <!-- flash占位符 -->
+    <span class="swfuploadWrap"><span id="element_id"></span></span>（请上传jpg 或 png格式图片）
+
+
+    <!--    <input id="btnCancel" type="button" value="取消所有上传" style="margin-left: 2px; height: 28px;" disabled="">-->
+
+    <div id="fsUploadProgress"></div>
+
+    <!-- flash占位符 -->
+    <span class="swfuploadWrap"><span id="video"></span></span>（请上传jpg 或 png格式图片）
+   
+    <div id="videoUploadProgress"></div>
+
+    <br />
+    <br />
+    <div>
+        swfupload.jquery.js 使用范例
+        <dl>
+            <dt>初始化</dt>
+            <dd>$("#element_id").swfupload(settings);  setting默认参数说明请看swfupload.jquery.js源码</dd>
+            <dt>获取swfupload实例</dt>
+            <dd>$("#element_id").swfupload("instance"); 如果$(selector)选中了多个元素 返回的实例是第一个元素的实例 非jquery对象 不能再使用jquery方法 swfupload实例方法请看 http://www.cnblogs.com/youring2/archive/2012/07/13/2590010.html</dd>
+            <dt>绑定事件</dt>
+            <dd>
+                <p>$("#element_id").swfupload(settings).bind("fileQueued",function(evt,file){
+                    //多出的evt 是jquery封装的事件
+                    //file选中的文件信息
+                    var swfu = $(this).swfupload("instance");//获取当前swfupload实例 然后调用swfup的方法开始上传
+                    swfu.startUpload();
+                }).bind("fileQueued",function(evt, file,serverData,receivedResponse){
+                    //file选中的文件信息
+                });</p>
+                提供jquery方式绑定的事件：
+                <ul>
+                    <li>swfuploadPreload 对应原swfupload事件 swfupload_preload_handler</li>
+                    <li>swfuploadLoadFailed 对应原swfupload事件 swfupload_load_failed_handler</li>
+                    <li>swfuploadLoaded 对应原swfupload事件 swfupload_loaded_handler </li>
+                    <li>fileDialogStart 对应原swfupload事件 file_dialog_start_handler  :刚打开选择框时</li>
+                    <li>fileQueued 对应原swfupload事件 file_queued_handler : 选好的 符合要求的文件，每个文件触发一次</li>
+                    <li>fileQueueError 对应原swfupload事件 file_queue_error_handler  :选择的不符合要求文件 每个文件触发一次</li>
+                    <li>fileDialogComplete 对应原swfupload事件 file_dialog_complete_handler :关闭选择框时</li>
+                    <li>uploadResizeStart 对应原swfupload事件 upload_resize_start_handler </li>
+                    <li>uploadStart每个文件开始上传前 对应原swfupload事件 upload_start_handler </li>
+                    <li>uploadProgress 对应原swfupload事件 upload_progress_handler  :每个文件上传进度 linux下只会触发一次</li>
+                    <li>uploadError 对应原swfupload事件 upload_error_handler  :每个文件 上传中出错</li>
+                    <li>uploadSuccess 对应原swfupload事件 upload_success_handler  :每个文件上传成功 这是会收到服务端给出的反馈数据 uploadSuccess: function (file, serverData) 基础平台在上传完成后服务端如果给出的serverData.Code!=0 也是错误的</li>
+                    <li>uploadComplete 对应原swfupload事件 upload_complete_handler  :每个文件 上传完成时</li>
+                    <li>mouseClick 对应原swfupload事件 mouse_click_handler </li>
+                    <li>mouseOut 对应原swfupload事件 mouse_out_handler </li>
+                    <li>mouseOver 对应原swfupload事件 mouse_over_handler </li>
+                    <li>queueComplete 对应原swfupload事件 queue_complete_handler' :全部上传完成时触发 <b>需要添加swfupload.queue插件</b></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+
+    <script>
+
+        $(function () {
+            var settings = {
+                //下面这两个地址中职后端应该有
+                upload_url: "http://test.cloud.91open.huayu.nd//v3/store/object/upload",//修改为对应环境的host 测试test.cloud.91open.huayu.nd 正式;cloud.91open.com
+                flash_url: "/addins/swfupload/flash/swfupload.swf",//修改为对应环境的host 测试test.static.huayu.nd 正式源机;s1.tianyuimg.com 正式cdn:s21~s25.tianyuimg.com
+                custom_settings: {
+                    progressTarget: "fsUploadProgress"//用来存放上传进度和预览的元素id
+                },
+                post_params: {
+                    "bucketName": "$image",//必须 图片: $image  视频: $video
+                    "name": "filename",//文件名（可选）
+                    "AccessToken": "118b155d802d4e12966571aa7b815ad2"//必须 基础平台的token php程序应该有给出
+                },
+                file_types: SWFUPHelper.IMAGES,//限制上传的类型 格式要求："*.jpg;*.gif;*.png;"   SWFUPHelper 提供字符串常量 SWFUPHelper.IMAGES   SWFUPHelper.VIDEOS  SWFUPHelper.AUDIOS
+                file_types_description: "Web图片",
+                file_size_limit: "1000",//默认单位是KB 可以指定单位 如设置为 2MB
+
+                //button_text_top_padding: 0//调整垂直位置
+            };
+            //实例化一个SWFUpload，传入参数配置对象
+            //window.swfu = new SWFUpload($.extend({}, SWFUPDefaultSetting, settings));
+            window.swfu = $("#element_id").swfupload($.extend(true, {}, SWFUPDefaultSetting, settings)).bind("fileQueueError uploadComplete uploadSuccess", function (evt, file, serviceData) {
+                console.log(file);
+                console.log(serviceData);
+            }).swfupload("instance");
+
+            var setting2 = {
+                custom_settings: {
+                    progressTarget: "videoUploadProgress"//用来存放上传进度和预览的元素id
+                },
+                post_params: {
+                    "bucketName": "$video",//必须 图片: $image  视频: $video
+                    "name": "filename",//文件名（可选）
+                    "AccessToken": "118b155d802d4e12966571aa7b815ad2"//必须
+                },
+                file_types: SWFUPHelper.VIDEOS + SWFUPHelper.AUDIOS,//限制上传的类型 格式要求："*.jpg;*.gif;*.png;"   SWFUPHelper 提供字符串常量 SWFUPHelper.IMAGES   SWFUPHelper.VIDEOS  SWFUPHelper.AUDIOS
+                file_types_description: "音视频",
+                file_size_limit: "500MB",//单位是Kb
+                button_placeholder_id: "video"//替换为falsh的元素id
+            }
+            //实例化一个SWFUpload，传入参数配置对象
+            window.swfu2 = $("#video").swfupload($.extend(true, {}, SWFUPDefaultSetting, settings, setting2)).swfupload("instance");
+            //取消所有上传
+            //$("#btnCancel").click(function(){
+            //    swfu.cancelQueue();
+            //});
+        });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+@import "../shared/mixins";
+
+.x-my-question {
+  .item-nodata {
+    height: 500px;
+    font-size: 24px;
+    text-align: center;
+    color: #777;
+    padding-top: 200px;
+    .ms-icon-doc {
+      display: block;
+      font-size: 126px;
+      color: #eee;
+    }
+  }
+
+  .search-box {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    .search-label {
+      position: absolute;
+      color: #ccc;
+      top: 4px;
+      left: 12px;
+      cursor: text;
+    }
+    .search-input {
+      padding: 0 28px 0 12px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid #ccc;
+      width: 215px;
+      height: 30px;
+      &:focus {
+        border: 1px solid $themeColor;
+      }
+    }
+    .search-btn {
+      position: absolute;
+      top: 4px;
+      right: 8px;
+      color: #ccc;
+    }
+  }
+  .search-result {
+    padding: 20px 0;
+    border-bottom: 1px #ddd dashed;
+  }
+  .question-list {
+    .question-item {
+      position: relative;
+      display: block;
+      padding: 24px 0;
+      border-bottom: 1px #ddd dashed;
+      &.has-user {
+        padding-left: 70px;
+        .btns {
+          top: 48px;
+        }
+        .user, .user-logo {
+          display: block;
+        }
+      }
+      &:hover {
+        .hover-btns {
+          display: block;
+        }
+      }
+      .user-logo {
+        position: absolute;
+        display: none;
+        top: 30px;
+        left: 0;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+      .user {
+        display: none;
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 10px;
+      }
+      .title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        word-break: break-all;
+        padding-right: 90px;
+      }
+      .info {
+        font-size: 12px;
+        color: #999;
+      }
+      .btns {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        text-align: right;
+
+        .reply {
+          font-size: 12px;
+          text-align: center;
+          width: 60px;
+          height: 26px;
+          line-height: 26px;
+          border: 1px solid $themeColor;
+          color: $themeColor;
+          border-radius: 5px;
+          margin-bottom: 7px;
+          display: inline-block;
+        }
+        @at-root .hover-btns {
+          display: none;
+          .hover-btn {
+            font-size: 12px;
+            color: $themeColor;
+            padding-left: 14px;
+            margin-left: 14px;
+            border-left: 1px solid #ddd;
+            i {
+              margin-right: 3px;
+            }
+            &:first-child {
+              padding-left: 0;
+              margin-left: 0;
+              border-left: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.course-name {
+  color: $themeColor;
+  &:hover {
+    color: $btnhover;
+  }
+}
+
+.return-btn {
+  @include hoverBtn(110px, 30px, $themeColor, $themeColor, 0, 5px);
+  margin-top: 15px;
+}
+

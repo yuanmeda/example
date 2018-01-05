@@ -1,0 +1,23 @@
+<!--回复-->
+<div class="qas-rose">
+  <!--头像-->
+  <div class="qas-profile">
+    <img width="50" height="50" data-bind="attr:{src:user_icon}"/>
+  </div>
+  <div class="qas-wrap">
+    <!--用户名等前导信息-->
+    <p class="qas-prelead" data-bind="text:pre_info"></p>
+    <!--回答内容-->
+    <div class="qas-re-desc" data-bind="text:content"></div>
+    <!--时间-->
+    <p class="qas-time" data-bind="text:update_time"></p>
+    <!--脚部-->
+    <div class="qas-footer">
+      <!--点赞-->
+      <span class="qas-praise" data-bind="click:toggle_like,css:{on:is_current_user_like()}">
+        <i class="iconfont-qas ico-qas-praise"></i>
+        <!--ko text:like_count--><!--/ko-->
+      </span>
+    </div>
+  </div>
+</div>

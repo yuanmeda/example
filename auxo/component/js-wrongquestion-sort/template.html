@@ -1,0 +1,20 @@
+<div class="btn-rank-list">
+    <span>排序:</span>
+    <a data-bind="click:$component.sort.bind($component,'update_time'),css:{'active':sort_params()[0].sort_property()=='update_time' && sort_params()[0].active()}"
+       href="javascript:;"
+       title="最新收录">最新收录
+        <i data-bind="css:{'icon-rank-down':sort_params()[0].sort_direction()=='desc',
+        'icon-rank-up':sort_params()[0].sort_direction()=='asc'}"></i>
+    </a>
+    <a data-bind="click:$component.sort.bind($component,'wrong_times'),css:{'active':sort_params()[1].sort_property()=='wrong_times' && sort_params()[1].active()}"
+       href="javascript:;"
+       title="做错次数">做错次数
+        <i data-bind="css:{'icon-rank-down':sort_params()[1].sort_direction()=='desc',
+        'icon-rank-up':sort_params()[1].sort_direction()=='asc'}"></i>
+    </a>
+</div>
+<div class="btn-type-list">
+    <a data-bind="click:onBtnClick.bind($component,4)" class="btn" href="javascript:;" title="类似题练习">类似题练习</a>
+    <a data-bind="click:onBtnClick.bind($component,8)" class="btn" href="javascript:;" title="错题重练">错题重练</a>
+    <a data-bind="click:onBtnClick.bind($component,16)" class="btn btn-tongji" href="javascript:;" title="错题统计">错题统计</a>
+</div>

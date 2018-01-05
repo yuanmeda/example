@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'x-course-learn';
+  src: url('#{$iconPath}fonts/x-course-learn.eot?u3m5b7');
+  src: url('#{$iconPath}fonts/x-course-learn.eot?u3m5b7#iefix') format('embedded-opentype'),
+  url('#{$iconPath}fonts/x-course-learn.ttf?u3m5b7') format('truetype'),
+  url('#{$iconPath}fonts/x-course-learn.woff?u3m5b7') format('woff'),
+  url('#{$iconPath}fonts/x-course-learn.svg?u3m5b7#x-course-learn') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="xcl-icon-"], [class*=" xcl-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'x-course-learn' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.xcl-icon-print:before {
+  content: "\78";
+}
+
+.xcl-icon-finish:before {
+  content: "\e600";
+}
+
+.xcl-icon-half:before {
+  content: "\e603";
+}
+
+.xcl-icon-triangle-right:before {
+  content: "\e604";
+}
+
+.xcl-icon-video:before {
+  content: "\e607";
+}
+
+.xcl-icon-note:before {
+  content: "\e60b";
+}
+
+.xcl-icon-exam:before {
+  content: "\e60c";
+}
+
+.xcl-icon-document:before {
+  content: "\e60e";
+}
+
+.xcl-icon-del:before {
+  content: "\e615";
+}
+
+.xcl-icon-add:before {
+  content: "\e62f";
+}
+
+.xcl-icon-attachment:before {
+  content: "\e63b";
+}
+
+.xcl-icon-minus:before {
+  content: "\e68d";
+}
+
+.xcl-icon-ask:before {
+  content: "\e6d7";
+}
+
+.xcl-icon-circle:before {
+  content: "\e784";
+}
+
+.xcl-icon-down:before {
+  content: "\e80d";
+}
+
+.xcl-icon-left:before {
+  content: "\e80e";
+}
+
+.xcl-icon-top:before {
+  content: "\e80f";
+}
+
+.xcl-icon-right:before {
+  content: "\e810";
+}
+
+.xcl-icon-triangle-left:before {
+  content: "\e811";
+}

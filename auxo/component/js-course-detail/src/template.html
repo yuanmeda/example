@@ -1,0 +1,47 @@
+<div class="sidebox boxs" data-bind="visible: items().length">
+    <div class="course-lecturers-view">
+        <div class="lecturer-title"><!--ko translate:{key:'lecturer.title'}--><!--/ko--></div>
+        <!-- ko if:items().length -->
+        <ul class="course-lecturer-list" data-bind="foreach: items">
+            <li class="course-lecturer-item">
+                <div class="lecturer-info">
+                    <div class="lecturer-avatar">
+                        <img data-bind="attr: {src: photo_id}, event: {error: $parent.handleAvatarError, click: $parent.handleAvatarClick}"/>
+                    </div>
+                    <div class="lecturer-name">
+                        <span data-bind="text: name"></span>
+                        <span class="lecturer-nickname" data-bind="text: nick_name ? '(' + nick_name + ')' : ''"></span>
+                    </div>
+                </div>
+                <!-- ko if: intro -->
+                <div class="lecturer-intro" data-bind="text: intro"></div>
+                <!-- /ko -->
+            </li>
+        </ul>
+        <!-- /ko -->
+        <!-- ko if: total() > 3 -->
+        <div class="lecturer-more">
+            <div>
+                <!-- ko if: showMore() -->
+                <button class="lecturer-button lecturer-button-collapse" data-bind="event: {click: hideMoreItems}">
+                    <span><!--ko translate:{key:'lecturer.collapse'}--><!--/ko--></span>
+                </button>
+                <!-- /ko -->
+            </div>
+            <div>
+                <!-- ko if: items().length < total() && !fetching() -->
+                <button class="lecturer-button lecturer-button-more" data-bind="event: {click: showMoreItems}">
+                    <span><!--ko translate:{key:'lecturer.more'}--><!--/ko--></span>
+                </button>
+                <!-- /ko -->
+            </div>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+        <!-- ko if:items().length < 1 -->
+        <div class="course-lecturers-no-data">
+            <p class="no-data-prompt"><!--ko translate:{key:'lecturer.nodata'}--><!--/ko--></p>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

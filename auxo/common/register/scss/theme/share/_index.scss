@@ -1,0 +1,151 @@
+body {
+  //min-height: 540px;
+  background-color: #efefef;
+}
+
+.sign-up-container {
+  margin: 0 auto;
+  padding: 30px 0;
+  height: 100%;
+  background-color: #efefef;
+}
+
+.block-wrapper-white {
+  width: 1200px;
+  padding: 130px 0;
+  margin: 0 auto;
+  background-color: #fff;
+  &.wrap-password {
+    min-height: 433px;
+  }
+}
+
+.reg-layer {
+  width: 410px;
+  margin: 0 auto;
+  .reg-layer-hd {
+    padding: 0 0 20px;
+    font-size: 28px;
+    text-align: center;
+  }
+  .reg-layer-control-group {
+    position: relative;
+    margin: 0 0 20px;
+    .reg-layer-label {
+      position: absolute;
+      top: 13px;
+      left: 11px;
+      font-size: 16px;
+      color: #999999;
+      cursor: text;
+    }
+  }
+  .reg-layer-input {
+    float: left;
+    width: 408px;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    input {
+      width: 388px;
+      height: 20px;
+      padding: 15px 10px 13px;
+      font-size: 16px;
+      border: 0 none;
+      outline: none;
+      vertical-align: middle;
+    }
+  }
+  .input-mobile-country {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 5px 11px;
+    font-size: 16px;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .reg-layer-code .reg-layer-input {
+    width: 263px;
+    margin: 0 20px 0 0;
+    input {
+      width: 243px;
+    }
+  }
+  .reg-layer-code-send {
+    float: left;
+    width: 123px;
+    height: 48px;
+    line-height: 48px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    text-align: center;
+    color: $themeColor;
+    &:hover {
+      text-decoration: none;
+      color: $themeColor;
+    }
+  }
+  .reg-layer-code-disabled {
+    background-color: #999;
+    color: #fff;
+    cursor: default;
+    &:hover {
+      background-color: #999;
+      color: #fff;
+    }
+  }
+  .reg-layer-ft {
+    text-align: center;
+    .reg-layer-button {
+      display: inline-block;
+      width: 410px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+      border-radius: 5px;
+      background-color: $themeColor;
+      color: #fff;
+      &:hover {
+        background-color: $themeColor;
+        text-decoration: none;
+      }
+    }
+    .reg-layer-link {
+      padding: 20px 0 0;
+      text-align: right;
+      font-size: 16px;
+      a {
+        color: $themeColor;
+      }
+    }
+  }
+  .reg-layer-error-text {
+    position: absolute;
+    display: none;
+    left: 430px;
+    top: 15px;
+    color: #ff6f6f;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .reg-layer-error {
+    .reg-layer-input {
+      border-color: #ff6f6f;
+    }
+    .reg-layer-error-text {
+      display: block;
+    }
+  }
+}
+
+.en-US {
+  .reg-layer-control-group {
+    .password-label {
+      top: 3px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+/*
+Error: Invalid GBK character "\xEF"
+        on line 35 of sort.scss
+
+30:                     padding: 0;
+31:                 }
+32:                 &.thead {
+33:                     font-weight: bold;
+34:                     .td2 {
+35:                         color: #333；;
+36:                     }
+37:                 }
+38:                 span {
+39:                     display: inline-block;
+40:                     float: left;
+
+Backtrace:
+sort.scss:35
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1299:in `rescue in block in find_encoding_error'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1296:in `block in find_encoding_error'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1295:in `each'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1295:in `each_with_index'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:1295:in `find_encoding_error'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/util.rb:904:in `check_sass_encoding'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:433:in `check_encoding!'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:389:in `_to_tree'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:363:in `watch_or_update'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
+D:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sass-3.4.21/bin/scss:13:in `<top (required)>'
+d:/Ruby21-x64/bin/scss:23:in `load'
+d:/Ruby21-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xEF\"\A         on line 35 of sort.scss\A \A 30:                     padding: 0;\A 31:                 }\A 32:                 &.thead {\A 33:                     font-weight: bold;\A 34:                     .td2 {\A 35:                         color: #333；;\A 36:                     }\A 37:                 }\A 38:                 span {\A 39:                     display: inline-block;\A 40:                     float: left;"; }

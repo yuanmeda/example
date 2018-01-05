@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+@import "../shared/animate";
+@import "../shared/variable";
+@import "../shared/mixin";
+@import "../shared/pk_common";
+
+%ico {
+  background: url("../../../images/pk-spr.png") no-repeat;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 74px;
+  font-weight: 400;
+}
+
+.pk-result-wrap {
+  min-height: 780px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 0 5px #e2e2e2;
+  h3 {
+    font-weight: normal;
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 98px 70px 0 70px;
+  }
+}
+
+.pk-result-cont {
+  padding-top: 20px;
+  width: 544px;
+  margin: 0 auto;
+  .img-result {
+    display: block;
+    margin: 0 auto;
+    width: 518px;
+    height: 269px;
+    opacity: 0;
+    opacity: 1 \9
+  ;
+    animation: rotateY cubic-bezier(.17, .67, .56, .99) 0.88s forwards;
+    -webkit-animation: rotateY cubic-bezier(.17, .67, .56, .99) 0.88s forwards;
+
+  }
+  .pk-score {
+    padding: 15px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    span {
+      font-weight: 700;
+      color: $themeColor;
+    }
+  }
+  .btm-operat-wrap {
+    padding-top: 36px;
+    text-align: center;
+    .btn-blue, .btn-border-blue {
+      display: inline-block;
+      width: 176px;
+      height: 40px;
+      line-height: 40px;
+      margin: 0 auto;
+      font-size: 16px;
+      margin: 0 8px;
+      vertical-align: middle;
+    }
+  }
+
+  &.sucess {
+    .img-result {
+      background: url("../../../images/pk-result-sucess.jpg") center center no-repeat;
+    }
+    .pk-person-me {
+      &:before {
+        position: absolute;
+        top: -13px;
+        left: -14px;
+        content: "";
+        width: 30px;
+        height: 30px;
+        @extend %ico;
+        background-position: -80px -218px;
+        z-index: 3;
+      }
+    }
+  }
+  &.fail {
+    .img-result {
+      background: url("../../../images/pk-result-fail.jpg") center center no-repeat;
+    }
+    .pk-person-others {
+      &:before {
+        position: absolute;
+        top: -13px;
+        right: -14px;
+        content: "";
+        width: 30px;
+        height: 30px;
+        @extend %ico;
+        background-position: -80px -218px;
+        z-index: 3;
+      }
+    }
+  }
+  &.tie {
+    .img-result {
+      background: url("../../../images/pk-result-tie.jpg") center center no-repeat;
+    }
+  }
+  &.waiting {
+    .img-result {
+      background: url("../../../images/pk-result-waiting.jpg") center center no-repeat;
+    }
+    .pk-score {
+      visibility: hidden;
+    }
+  }
+}
+
+.pk-double-result-wrap {
+  text-align: center;
+}
+
+.pk-stand-result {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+  .pk-person {
+    position: absolute;
+    top: -31px;
+  }
+  .imghead-wrap {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
+  }
+  .name {
+    display: inline-block;
+
+    max-width: 168px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .pk-person-me {
+    left: 0;
+    .name {
+      margin-left: 8px;
+    }
+  }
+  .pk-person-others {
+    right: 0;
+    .name {
+      margin-right: 8px;
+    }
+  }
+  .pk-result-show {
+    width: 228px;
+    padding: 24px 36px 30px 50px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    .item {
+      margin-top: 10px;
+      font-size: 14px;
+      dt {
+        float: left;
+        width: 63px;
+        color: #999;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      dd {
+        float: left;
+        margin-left: 5px;
+        color: #333;
+      }
+    }
+  }
+}
+
+.pk-loading-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  z-index: 900;
+  .pk-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -190px;
+    margin-left: -60px;
+  }
+}

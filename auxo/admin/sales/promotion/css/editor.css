@@ -1,0 +1,17 @@
+.item-list .item{
+  width:31%;
+  min-width: 350px
+}
+.item-list .item .item-dd {
+  font-size: 12px;
+}
+
+@media (max-width: 1430px){
+  .item-list .item{
+    width:47%;
+  }
+}
+
+.line-through{
+  text-decoration:line-through;
+}

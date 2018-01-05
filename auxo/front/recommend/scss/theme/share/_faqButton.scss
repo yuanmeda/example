@@ -1,0 +1,130 @@
+@import "_iconfont";
+
+.slider-bar{
+  bottom:10px;
+  position: fixed !important;
+  width:50px;
+  right: 20px;
+  .sfhdb{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin:9px;
+    &:hover {
+      cursor: pointer;
+      i{
+        color:#fff;
+      }
+//      background-color: $themeColor;
+    }
+    i{
+      font-weight:100;
+      font-size: 25px;
+      color:$themeColor;
+      display: block;
+    }
+  }
+}
+.circle{
+  height: 80px;
+  width:70px;
+  position:relative;
+  z-index: 98;
+  a{
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color:#fff;
+    }
+  }
+}
+
+.faqCircle{
+  height: 80px;
+  width:70px;
+  position:relative;
+  z-index: 99;
+  .circleFaq{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/faqBackground.png");
+//    background-position: -12px -18px;
+    background-repeat: no-repeat;
+  }
+//  &:hover {
+//    .circleFaq{
+//      background-position: -8px -89px;
+//    }
+//  }
+  a{
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      color:#fff;
+    }
+  }
+}
+.topCircle{
+  height: 80px;
+  width:70px;
+  position:relative;
+  z-index: 99;
+  .circleTop{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/faqBackground.png");
+//    background-position: -12px -19px;
+    background-repeat: no-repeat;
+  }
+//  &:hover {
+//    .circleTop{
+//      background-position: -8px -89px;
+//    }
+//  }
+}
+.cv{
+  height: 70px;
+  width: 70px;
+  margin:0 auto;
+}
+.canvas-text{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+//  z-index: 99;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  a{
+    color:$themeColor;
+  }
+  &:hover {
+    a{
+      color:#fff;
+    }
+    .sfhdb{
+      a{
+        cursor: pointer;
+      }
+      i{
+        color:#fff;
+      }
+    }
+    color:#fff;
+  }
+}
+.first_span{
+  display:block;
+  margin: 0px 20px -5px 20px;
+}
+.second_span{
+  display: inline-block;
+  margin:0 20px;
+}
+.language-en{
+  padding-top: 25px;
+}

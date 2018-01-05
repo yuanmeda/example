@@ -1,0 +1,97 @@
+@import "list_base";
+@import "animation";
+.catalog-module {
+  position: fixed;
+  top: 103px;
+  left: 230px;
+  width: 200px;
+  // overflow: hidden;
+  height: calc(100% - 110px);
+  border: 1px solid #ddd;
+  padding: 5px;
+  background-color: #fff;
+  z-index: 1;
+  .tree-tip {
+    padding: 3px 6px;
+    background-color: #f3f3f3;
+    color: #3F98D2;
+    box-shadow: 0 2px 0 0#ddd;
+  }
+  input {
+    width: 130px;
+    padding-left: 3px;
+    height: 25px;
+  }
+  .ztree {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: auto;
+  }
+}
+
+.content {
+  margin-left: 200px;
+}
+
+.ztree li ul.line {
+  overflow: inherit !important;
+}
+
+.ztree-btn {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  margin-top: -20px;
+  width: 24px;
+  background: $themeColor;
+  border-radius: 0 10px 10px 0px;
+  height: 110px;
+  line-height: 40px;
+  text-align: center;
+  transform: translateY(-50%);
+  span {
+    width: 12px;
+    display: inline-block;
+    position: absolute;
+    line-height: 1.5;
+    left: 6px;
+    top: 10px;
+    color: #fff;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  i {
+    position: absolute;
+    bottom: 2px;
+    left: 7px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #fff;
+    animation: leftANI 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1.5s;
+  }
+}
+
+@-webkit-keyframes leftANI {
+  0% {
+    opacity: 0.3;
+    // left: -4px;
+  }
+  40% {
+    opacity: 1;
+    left: -4px;
+  }
+  80% {
+    opacity: 0.3;
+    left: 15px;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,175 @@
+<div class="qas-course-questions">
+
+  <!--ko if:is_login-->
+  <div class="qas-nav">
+    <!--ko component: {name: "x-qas-course-q-nav", params:nav_params}--><!--/ko-->
+  </div>
+  <div class="qas-main">
+    <!--搜索与数据列表-->
+    <!--ko if:page_content() === 'list'-->
+    <div class="qas-t-h">
+      <!--关键字搜索-->
+      <div class="qas-keyword-search" data-bind="css:{on:has_fts_input_focus}">
+        <input type="text" data-bind="
+        attr:{placeholder: window.i18nHelper.getKeyValue('qas_course_question.label_kw_ph')},
+        textInput:keyword,
+        hasFocus:has_fts_input_focus,
+        event:{keyup:on_fts_keyup}"/>
+        <img width="32"
+             data-bind="click:full_txt_search.bind(this, 1)"
+             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACiUlEQVRYR+2Wv4sTURDHZ94GQxqJByb5A+QqOQ/RTkE8RLTQRiKHp4gWabLvJV7wGtHIiYWFm/cSkkotPD200srzwMYflT9QrlFbq8Rf0S7J7o48MCAr2bdB4ikk3TI/3mdmvswEYZ1/uM7vwxjg/+lAvV7f1Ov1TiPiYQDYCgAbAeA7Ea0h4n3P864Vi8X2sJqK1AGl1EkAuAIAK4h4CxFfpFKpdqvVSnqetxMAjiHifiKaF0LcHAbCCFCpVBYB4IhlWVnbttcGJVdKbSOiuwCwLIQoR4UIBdCV+76/4Lru7lKp9MmUVCm1mYieMsYWbdteMvlr+0AAPXPXdd8h4kxY5cFHHMeZtixr1fO8ySiaGAggpSwh4hTn/ESUSn71UUotEdErIcRVU+xAAKXUE0S8ZNv2Q1OSoL1arR4gogXO+R5TbBjAV8bYlnw+/9mUJGhvNBqpTqfztlAoTJhiwwC8TCazIZvNeqYkQXu5XI4lk8luoVBgpth/twNSyscAcFkIsWKqImiXUh5ExLN/qoF5IpoWQhwfFqBSqdy2LOu5bduOKXbgCBzHSVqW9R4A9nHO35gS9e21Wm2767oPEonEZC6X+2aKC92EUkpd/TlE3MU5/2hKptXf6/WeAcB5zvmyyT90E/aDpZR6r8/6vn+0WCy+HpRUV+77/h0A+MA53xvl8UgA2qlarc4Rkd5qq/oaxmKxl81m80s6nZ7odrs7iGgOAGYA4BFjbJaILkY9SMZr2K9Ea4IxdgoRD/m+PwUA+lvPWOvjXjwev6FnrjuGiBeiQkQGiNpS7TcMxEgAhoEYGUBUiJECBCD037XfzvPIAX5CnEHENuf8elBLfwUgTMBjgHEHfgB2xxwweE1PpAAAAABJRU5ErkJggg==" />
+      </div>
+      <span class="qas-to-post-q" data-bind="click:show_question_editor,translate:{key:'qas_course_question.open_editor'}">我要提问</span>
+    </div>
+    <div class="qas-t-switch">
+      <table>
+        <tr>
+          <th data-bind="translate:{key:'qas_course_question.types_title'}">答疑类型：</th>
+          <td>
+            <span data-bind="click:search.bind(this, 0, 0, 1),css:{selected:list_type() === 0},translate:{key:'qas_course_question.types.my_questions'}">我的问题</span>
+            <span data-bind="click:search.bind(this, 1, 0, 1),css:{selected:list_type() === 1},translate:{key:'qas_course_question.types.my_answers'}">我的回答</span>
+            <span data-bind="click:search.bind(this, 3, 0, 1),css:{selected:list_type() === 3},translate:{key:'qas_course_question.types.my_follow'}">我的关注</span>
+            <span data-bind="click:search.bind(this, 2, 0, 1),css:{selected:list_type() === 2},translate:{key:'qas_course_question.types.all_questions'}">全部问题</span>
+          </td>
+        </tr>
+        <tr>
+          <th data-bind="translate:{key:'qas_course_question.states_title'}">问题状态：</th>
+          <td>
+            <!--ko if:list_type() == 0-->
+            <span data-bind="click:search.bind(this, 0, 0, 1),css:{selected:list_tab() === 0},translate:{key:'qas_course_question.states.all'}">全部</span>
+            <span data-bind="click:search.bind(this, 0, 1, 1),css:{selected:list_tab() === 1},translate:{key:'qas_course_question.states.unsolved'}">等待解答</span>
+            <span data-bind="click:search.bind(this, 0, 2, 1),css:{selected:list_tab() === 2},translate:{key:'qas_course_question.states.solved'}">已解决</span>
+            <!--/ko-->
+
+            <!--ko if:list_type() == 1-->
+            <span data-bind="click:search.bind(this, 1, 0, 1),css:{selected:list_tab() === 0},translate:{key:'qas_course_question.states.all'}">全部</span>
+            <span data-bind="click:search.bind(this, 1, 1, 1),css:{selected:list_tab() === 1},translate:{key:'qas_course_question.states.accepted'}">被采纳</span>
+            <!--/ko-->
+
+            <!--ko if:list_type() == 2-->
+            <span data-bind="click:search.bind(this, 2, 0, 1),css:{selected:list_tab() === 0},translate:{key:'qas_course_question.states.hottest'}">最热</span>
+            <span data-bind="click:search.bind(this, 2, 1, 1),css:{selected:list_tab() === 1},translate:{key:'qas_course_question.states.newest'}">最新</span>
+            <!--/ko-->
+
+            <!--ko if:list_type() == 3-->
+            <span data-bind="click:search.bind(this, 3, 0, 1),css:{selected:list_tab() === 0},translate:{key:'qas_course_question.states.all'}">全部</span>
+            <span data-bind="click:search.bind(this, 3, 1, 1),css:{selected:list_tab() === 1},translate:{key:'qas_course_question.states.unsolved'}">等待解答</span>
+            <span data-bind="click:search.bind(this, 3, 2, 1),css:{selected:list_tab() === 2},translate:{key:'qas_course_question.states.solved'}">已解决</span>
+            <!--/ko-->
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="qas-res-list">
+      <div class="qas-list-bean">
+        <!--ko if:!is_loading()-->
+        <!--ko if:list().length > 0-->
+
+        <!--我的问题列表-->
+        <!--ko if:list_type() == 0-->
+        <!--ko foreach:list-->
+        <!--ko component:{name:"x-qas-question", params:{question:$data, options:$component.question_options}}--><!--/ko-->
+        <!--/ko-->
+        <!--/ko-->
+
+        <!--我的回答列表-->
+        <!--ko if:list_type() == 1-->
+        <!--ko foreach:list-->
+        <!--ko component:{name:"x-qas-answer-mine", params:{my_answer:$data, options:$component.my_answer_options}}--><!--/ko-->
+        <!--/ko-->
+        <!--/ko-->
+
+        <!--全培问题列表-->
+        <!--ko if:list_type() == 2-->
+        <!--ko foreach:list-->
+        <!--ko component:{name:"x-qas-question", params:{question:$data, options:$component.all_question_opts}}--><!--/ko-->
+        <!--/ko-->
+        <!--/ko-->
+
+        <!--我的关注-->
+        <!--ko if:list_type() == 3-->
+        <!--ko foreach:list-->
+        <!--ko component:{name:"x-qas-question", params:{question:$data, options:$component.question_follow_opts}}--><!--/ko-->
+        <!--/ko-->
+        <!--/ko-->
+
+        <!--分页-->
+        <!--ko if:show_pagination()-->
+        <div class="qas-l-footer">
+        <!--ko component:{name:'x-qas-pagination-prv',params:$component.pagination_options}--><!--/ko-->
+        </div>
+        <!--/ko-->
+
+        <!--/ko--><!--end if:list.length>0-->
+
+
+        <!--无数据-->
+        <!--ko if:list().length === 0-->
+        <div class="qas-empty" data-bind="translate:{key:'qas_course_question.empty.msg'}">无数据</div>
+        <!--/ko-->
+        <!--/ko--><!--end if:!is_loading-->
+
+        <!--ko if:is_loading()-->
+        <div class="qas-loading" data-bind="translate:{key:'qas_course_question.loading'}">加载中</div>
+        <!--/ko-->
+
+      </div>
+    </div>
+    <!--/ko--><!--end if:page_content === list-->
+
+    <!--编辑问题-->
+    <!--ko if:page_content() === 'question-editor'-->
+    <!--ko component:{name:"x-qas-course-q-editor", params:editor_params}--><!--/ko-->
+    <!--/ko-->
+
+    <!--问题详情-->
+    <!--ko if:page_content() === 'question-details'-->
+    <!--ko component:{name:"x-qas-course-q-details", params:details_params}--><!--/ko-->
+    <!--/ko-->
+
+    <!--全文搜索结果列表-->
+    <!--ko if:page_content() === 'full-text-search-list'-->
+    <div class="qas-full-txt-search-list">
+      <div class="qas-h">
+        <span class="qas-label" data-bind="translate:{key: 'qas_course_question.label_kw_search_res', properties:{total:total_items()}}"></span>
+        <span class="qas-return" data-bind="translate:{key:'qas_course_question.acts.back'},click:on_back_command"></span>
+      </div>
+      <div class="qas-list-bean">
+
+        <!--ko if:!is_loading()-->
+        <!--列表-->
+        <!--ko if:list().length>0-->
+        <!--ko foreach:list-->
+        <!--ko component:{name:"x-qas-question", params:{question:$data, options:$component.fts_question_opts}}--><!--/ko-->
+        <!--/ko-->
+        <!--分页-->
+        <!--ko if:show_pagination()-->
+        <div class="qas-l-footer">
+          <!--ko component:{name:'x-qas-pagination-prv',params:$component.pagination_options}--><!--/ko-->
+        </div>
+        <!--/ko-->
+        <!--/ko--><!--end if:list.length>0-->
+
+        <!--ko if:list().length === 0-->
+        <div class="qas-empty" data-bind="translate:{key:'qas_course_question.empty.msg'}">无数据</div>
+        <!--/ko-->
+        <!--/ko--><!--end if:!is_loading-->
+
+        <!--ko if:is_loading()-->
+        <div class="qas-loading" data-bind="translate:{key:'qas_course_question.loading'}">加载中</div>
+        <!--/ko-->
+
+      </div>
+    </div>
+    <!--/ko-->
+
+  </div>
+  <!--/ko--><!--end if:is_login-->
+
+  <!--ko if:!is_login-->
+  <div class="qas-list-fl">
+    <i class="ico"></i>
+    <p data-bind="translate:{key:'qas_course_question.empty.un_login'}">您还没有登录</p>
+  </div>
+  <!--/ko-->
+</div>

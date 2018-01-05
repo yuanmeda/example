@@ -1,0 +1,63 @@
+@charset "UTF-8";
+.pagination-box{margin-bottom:30px}
+.pagination-box .pagination{text-align:center;position:inherit}
+.pagination-box .pagination:after{content:"";display:block;height:0;clear:both}
+.pagination-box .pagination a,.pagination-box .pagination span{display:inline-block;float:left;margin-right:10px;border-radius:2px;padding:0 18px;height:37px;line-height:37px;background:#ddd}
+.pagination-box .pagination a:hover,.pagination-box .pagination span{background:#ce3f3f;color:#fff}
+.pagination-box .pagination .prev{width:80px;margin:0 10px 0 0}
+.pagination-box .pagination .next{width:80px;margin:0 0 0 10px}
+.pagination-box .pagination span.current{border-color:#ce3f3f;background:#ce3f3f;color:#fff}
+.pagination-box .pagination span.next,.pagination-box .pagination span.prev{background:#fff;color:#c8c8c8}
+.pagination-box .page-input{display:inline-block;margin:0 0 0 40px;color:grey;font-size:14px;vertical-align:middle;float:right}
+.pagination-box .page-input input{width:46px;height:21px;line-height:21px;margin:0 5px;padding:7px 5px;border:1px solid #d8d8d8;outline:0;vertical-align:middle;border-radius:3px}
+.pagination-box .page-input input:focus{border-color:#ce3f3f}
+.pagination-box .page-input input.select-page-btn{width:58px;height:36px;border:1px solid #d8d8d8;background:#fff;color:grey}
+.pagination-box .page-input input.select-page-btn:active{border-color:#d8d8d8;outline-color:#d8d8d8}
+.pagination-box .page-input input.select-page-btn:hover{color:#fff;cursor:pointer;background:#ce3f3f;border:1px solid #ce3f3f}
+.pagination-box .pagination-info{margin:24px 0 0;font-size:14px}
+.pagination-box .pull-left{float:left}
+.pagination-box .pull-right{float:right}
+:link,:visited,ins{text-decoration:none}
+.x-message-list .my-study{padding-bottom:20px}
+.x-message-list .my-study .tit .tab-tit a{display:inline-block;padding:0 50px;height:59px;line-height:59px;color:#666}
+.x-message-list .my-study .tit .tab-tit a :hover{text-decoration:none;color:#ce3f3f}
+.x-message-list .my-study .tit .tab-tit a.active{margin-bottom:-1px;border-bottom:2px solid #ce3f3f;height:58px;font-weight:700;line-height:58px;color:#ce3f3f}
+.x-message-list .my-study .study-list{padding:20px 50px 0;width:110%}
+.x-message-list .my-study .study-list li{float:left;border:1px solid #e0e0e0}
+.x-message-list .user-center{width:1020px;border:1px solid #e0e0e0;background:#fff;box-sizing:border-box;overflow:hidden;min-height:540px;color:#666;word-break:break-all;word-wrap:break-word}
+.x-message-list .user-center .tit{position:relative;color:#999;height:60px;line-height:60px;padding-left:30px;border-bottom:1px solid #e0e0e0}
+.x-message-list .user-center .tit .tit-name{color:#666;font-size:26px}
+.x-message-list .user-center .tit .tit-desc{font-size:12px;line-height:42px}
+.x-message-list .user-center .tit .tit-tab{position:absolute;right:10px;bottom:-1px;z-index:9}
+.x-message-list .user-center .tit .tit-tab a{display:inline-block;padding:0 20px;border-color:2px solid transparent}
+.x-message-list .user-center .tit .tit-tab a.active{color:#ce3f3f;border-bottom:2px solid #ce3f3f}
+.x-message-list .msg-ul{margin:0;padding:0}
+.x-message-list .msg-ul .is_read{opacity:.5}
+.x-message-list .msg-ul li{padding:30px;border-bottom:1px solid #e1e4e6;list-style:none}
+.x-message-list .msg-ul li:hover{background-color:#f6f8f8}
+.x-message-list .msg-ul li:hover .msg-red a,.x-message-list .msg-ul li:hover .msg-red p{display:block}
+.x-message-list .msg-ul li .msg-title{font-size:16px;height:20px;line-height:20px;padding-bottom:5px;vertical-align:middle}
+.x-message-list .msg-ul li .msg-title .time{float:right;font-size:14px;color:#999}
+.x-message-list .msg-ul li .msg-title .sysMessage{text-decoration:underline;color:#ce3f3f;cursor:pointer}
+.x-message-list .msg-ul li .msg-title i{font-size:12px;padding:2px 6px;margin-right:5px;border-radius:2px;background-color:#f6ac3c;color:#fff;font-style:normal;float:left}
+.x-message-list .msg-ul li .msg-title em{vertical-align:middle;display:inline-block;color:#ce3f3f}
+.x-message-list .msg-ul li .msg-title span{vertical-align:middle;color:#333}
+.x-message-list .msg-ul li .msg-title .title{width:780px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;float:left}
+.x-message-list .msg-ul li .msg-red{float:right;margin-top:12px}
+.x-message-list .msg-ul li .msg-red a,.x-message-list .msg-ul li .msg-red p{font-size:12px;display:none;margin:auto}
+.x-message-list .msg-ul li .msg-red a{color:#ce3f3f!important}
+.x-message-list .msg-ul li .msg-content .go-origin,.x-message-list .msg-ul li .msg-content .show-all-content:hover{text-decoration:underline;color:#ce3f3f}
+.x-message-list .msg-ul li .msg-content{font-size:14px}
+.x-message-list .msg-ul li .msg-content p{width:800px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.x-message-list .msg-ul li .msg-content .show-all-content{float:right;margin-right:15px;position:relative}
+.x-message-list .msg-ul li .msg-content .show-all-content:before{position:absolute;content:'';width:0;height:0;right:-13px;top:8px;border-top:5px solid #9e9e9e;border-left:5px solid transparent;border-right:5px solid transparent}
+.x-message-list .msg-ul li .msg-content .show-all-content .up:before{border-top:0 none;border-bottom:5px solid #9e9e9e}
+.x-message-list .msg-container .com-page-box{margin-right:30px;margin-bottom:0}
+.x-message-list .msg-container .com-page-box .page-input,.x-message-list .msg-container .com-page-box .pagination-info{display:none!important}
+.x-message-list .no-something-box{text-align:center;vertical-align:middle;height:60px;overflow:hidden;padding:70px 0;width:100%}
+.x-message-list .no-something-box .show{display:block}
+.x-message-list .no-something-box i{background:url(../images/no-this.png) no-repeat;width:60px;height:60px;display:inline-block;vertical-align:middle}
+.x-message-list .no-something-box span{font:16px/60px "microsoft yahei";height:60px;display:inline-block;vertical-align:middle;text-align:left;color:grey}
+.x-message-list .no-something-box .two-line{font:16px/24px "microsoft yahei";display:inline-block;height:48px;padding:6px 0}
+.x-message-list .no-something-box a{color:#ce3f3f;padding:0 3px}
+.x-message-list .no-something-box .no-announcemen{background-position:4px -240px}

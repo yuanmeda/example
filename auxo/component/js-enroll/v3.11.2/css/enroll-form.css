@@ -1,0 +1,33 @@
+.vm{display:inline-block;vertical-align:middle}
+.fl{float:left}
+.fr{float:right}
+.tc{text-align:center}
+.tl{text-align:left}
+.tr{text-align:right}
+.cf:after,.cf:before{content:"";display:table}
+.cf:after,.cl{clear:both}
+.cf{zoom:1}
+.enroll-form,.form{width:565px;margin:0 auto;padding-top:30px}
+.enroll-form *,.form *{box-sizing:border-box}
+.enroll-form .form-control,.form .form-control{margin-bottom:25px;position:relative}
+.enroll-form .form-control .error-box,.form .form-control .error-box{width:100%;position:absolute;bottom:-22px;text-align:center;color:red}
+.enroll-form .form-control .label-left,.form .form-control .label-left{width:80px;height:42px;line-height:42px;text-align:right;float:left;margin-right:12px}
+.enroll-form .form-control .label-right,.form .form-control .label-right{float:right}
+.enroll-form .form-control .label-right.fl,.form .form-control .label-right.fl{float:left}
+.enroll-form .form-control .input,.form .form-control .input{padding-right:15px;width:100%}
+.enroll-form .form-control .input,.enroll-form .form-control .select,.form .form-control .input,.form .form-control .select{height:42px;line-height:42px;padding-left:15px}
+.enroll-form .form-control .input,.enroll-form .form-control .select,.enroll-form .form-control .textarea,.form .form-control .input,.form .form-control .select,.form .form-control .textarea{display:block;border:1px solid #ddd;border-radius:5px}
+.enroll-form .form-control .select,.form .form-control .select{padding-right:42px}
+.enroll-form .form-control .select option,.form .form-control .select option{line-height:36px;height:36px}
+.enroll-form .form-control .textarea,.form .form-control .textarea{height:83px;width:473px;padding:15px;overflow-x:hidden;overflow-y:auto;resize:none}
+.enroll-form .form-control .w227,.form .form-control .w227{width:227px}
+.enroll-form .form-control .w473,.form .form-control .w473{width:473px}
+.enroll-form .form-control .small-tit,.form .form-control .small-tit{color:#999}
+.enroll-form .form-control .radio-tit,.form .form-control .radio-tit{margin-bottom:10px;min-width:80px;text-align:right;display:inline-block}
+.enroll-form .form-control .radio-group,.form .form-control .radio-group{display:block;margin-left:45px;padding-left:48px;position:relative;line-height:18px}
+.enroll-form .form-control .radio-group label,.form .form-control .radio-group label{margin-bottom:10px;display:block}
+.enroll-form .form-control .radio-group label i.after,.enroll-form .form-control .radio-group label i.before,.form .form-control .radio-group label i.after,.form .form-control .radio-group label i.before{display:inline-block;border:1px solid #ddd}
+.enroll-form .form-control .radio-group label.radio-box i.after,.enroll-form .form-control .radio-group label.radio-box i.before,.form .form-control .radio-group label.radio-box i.after,.form .form-control .radio-group label.radio-box i.before{border-radius:50%}
+.enroll-form .form-control .radio-group label.check-box i.before,.form .form-control .radio-group label.check-box i.before{border-radius:2px}
+.enroll-form .form-control .radio-group label.check-box i.after,.form .form-control .radio-group label.check-box i.after{border-radius:1px}
+.enroll-form .form-control .radio-group label.active i.after,.form .form-control .radio-group label.active i.after{display:block}

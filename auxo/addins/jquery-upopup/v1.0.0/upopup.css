@@ -1,0 +1,37 @@
+.upopup-i { background: url(images/upopup.png) no-repeat; }
+* html .upopup-i { background: url(images/upopup.gif) no-repeat; }
+
+.upopup { border: none; background: none; padding: 0; border: 0 solid #DDE5EF; }
+.upopup .ui-dialog-titlebar { display: none; }
+
+.upopup-concent { width: 98%; overflow: hidden; position: relative; }
+.upopup-concent .upopup-left { padding: 16px 10px 10px 15px; float: left; overflow: hidden; }
+.upopup-concent .upopup-left .upopup-pic { width: 54px; height: 54px; display: block; }
+.upopup-concent .upopup-right { float: left; padding: 12px 16px; width: 220px; min-height: 60px; }
+.upopup-concent .upopup-right .upopup-prompt { font: 18px/30px "MicroSoft YaHei"; }
+.upopup-concent .upopup-right .upopup-info { color: #FFF; line-height: 26px; font-size: 12px; }
+.upopup-concent .upopup-close { position: absolute; top: 7px; right: 8px; z-index: 999; background-position: 0 -56px; height: 14px; width: 14px; cursor: pointer; outline: none; }
+
+.upopup-success .upopup-concent { background: #6babdd;border: 1px solid #5c95c1; }
+.upopup-success .upopup-concent .upopup-left .upopup-pic { background-position: 0 0; }
+.upopup-success .upopup-concent .upopup-right { border-left: 1px solid #88bee5; }
+.upopup-success .upopup-concent .upopup-right .upopup-prompt { color: #ffe400; }
+.upopup-success .upopup-concent .upopup-close:hover { background-position: -19px -56px; }
+
+.upopup-error .upopup-concent { background: #ea843b; border: 1px solid #dd6b2e; }
+.upopup-error .upopup-concent .upopup-left .upopup-pic { background-position: -56px 0; }
+.upopup-error .upopup-concent .upopup-right { border-left: 1px solid #ef9e5b; }
+.upopup-error .upopup-concent .upopup-right .upopup-prompt { color: #5b2900; }
+.upopup-error .upopup-concent .upopup-close:hover { background-position: -19px -74px; }
+
+.upopup-a { border:1px solid #dedede; }
+.upopup-a .upopup-concent{ background:#fefefe url("images/upbg.jpg") 0 bottom repeat; border:0; }
+.upopup-a .upopup-concent .upopup-right .upopup-prompt{color: #333;  }
+.upopup-a .upopup-concent .upopup-left { border:0;  padding: 15px 15px 10px 0; }
+.upopup-a .upopup-concent .upopup-right { border:0;  padding: 12px 0; width:230px; }
+.upopup-a .upopup-right .upopup-info { color: #666; font:14px/26px simsun; word-break:break-all; }
+
+.upopup-a .upopup-i { background: url(images/up-a.png) no-repeat; }
+* html .upopup-a .upopup-i { background: url(images/upopup.gif) no-repeat; }
+.upopup-a .upopup-concent .upopup-close { background-position:0 -56px; }
+.upopup-a .upopup-concent .upopup-close:hover { background-position:-20px -56px; }

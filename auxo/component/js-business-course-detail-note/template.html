@@ -1,0 +1,68 @@
+<div class="x-course-detail-note n-mod-note" id="x-course-detail-note">
+    <div class="note-wrap">
+        <div class="note-content">
+            <div class="n-ui-tab">
+                <a href="javascript:;" class="btn-tab"
+                   data-bind="click: $component.search.bind($component,0,'note_type'), translate: {key: 'courseNote.mine'}, css:{'on': !model.note_type()}">我的笔记</a>
+                <a href="javascript:;" class="btn-tab"
+                   data-bind="click: $component.search.bind($component,1,'note_type'), translate: {key: 'courseNote.all'}, css:{'on': model.note_type()}">全部笔记</a>
+            </div>
+            <div class="note-head" data-bind="visible: !model.note_type()&&model.data.items().length || model.note_type()">
+                <!--我的笔记-->
+                <p class="head-tip" data-bind="visible: !model.note_type(), translate:{key:'courseNote.tips',properties: {user_name: model.user_name, count: model.data.total}}"></p>
+                <!--全部笔记 搜索前，或搜索后有内容-->
+                <form class="n-ui-search fr" data-bind="visible: model.note_type, event:{submit: search}">
+                    <span class="tip" data-bind="visible: model.init()&&model.is_hide_statusbar()&&!model.data.items().length,translate:{key: 'courseNote.noResult'}"></span>
+                    <input class="txt" type="text" maxlength="100" data-bind="attr: { 'placeholder': i18n.courseNote.placeholder }, textInput: model.search.keyword" />
+                    <a href="javascript:;" class="btn-search" data-bind="click: search"></a>
+                    <!--<label class="placeholder" data-bind="click: focus, visible: !model.search.keyword().length, translate:{key: 'courseNote.placeholder'}"></label>-->
+                </form>
+                <div class="n-ui-tab-filter" data-bind="visible: model.note_type()&&!model.is_hide_statusbar()">
+                    <a href="javascript:;" class="btn-tab" data-bind="click: $component.search.bind($component, 1, 'search.order_by'), translate: {key: 'courseNote.hot'}, css: {'on': model.search.order_by}">最热</a>
+                    <a href="javascript:;" class="btn-tab" data-bind="click: $component.search.bind($component, 0, 'search.order_by'), translate: {key: 'courseNote.new'}, css: {'on': !model.search.order_by()}">最新</a>
+                    <span class="total" data-bind="translate:{key: 'courseNote.total', properties:{total: model.data.total} }"></span>
+                </div>
+                <!--全部笔记 搜索后无内容-->
+                <a href="javascript:;" class="btn-back" data-bind="click: search.bind($component,1,'note_type'),visible: model.init()&&model.is_hide_statusbar()&&!model.data.items().length,translate:{key: 'courseNote.back'}" style="display: none;">返回全部</a>
+            </div>
+            <!-- 列表 -->
+            <div data-bind="foreach: model.data.items, visible: model.data.items().length && model.init()">
+                <div data-bind="component:{
+                name: 'x-note-item-a',
+                params:{
+                  note: $data,
+                  options: {
+                    apiHost: $component.model.api_url,
+                    userId: $component.model.user_id,
+                    isLogin: $component.model.is_login,
+                    onDelCommand: $component.on_del_command,
+                    onEditCommand: $component.on_edit_command,
+                    showExcerpt: $component.model.note_type(),
+                    showBlowing: $component.model.note_type()
+                }}}"></div>
+            </div>
+            <!-- 列表为空 -->
+            <div class="note-empty" data-bind="visible: (!model.data.items().length && model.init())">
+                <i class="note-empty-icon"></i>
+                <p class="note-empty-tips" data-bind="visible: model.note_type() || model.mynote_count(), translate:{key: 'courseNote.noNote'}">暂无任何笔记</p>
+                <p class="note-empty-tips" data-bind="visible: !model.note_type() && !model.mynote_count() && model.is_login, translate:{key: 'courseNote.noMineNote',properties: {user_name: model.user_name}}">HI~鲜阳飞同学，你在此目录下还未记录笔记，</p>
+                <p class="note-empty-tips" data-bind="visible: !model.note_type() && !model.mynote_count() && model.is_login, translate:{key: 'courseNote.noMineNoteTip'}">在课程学习过程中可以把有用的知识记录下来喔。</p>
+                <p class="note-empty-tips" data-bind="visible: !model.note_type() && !model.is_login, translate:{key: 'courseNote.noLigin'}">您还没有登录</p>
+            </div>
+            <div class="note-empty" data-bind="visible: !model.init()">
+                <p class="note-empty-tips" data-bind="translate:{key:'courseNote.loading'}">数据加载中...</p>
+            </div>
+            <div id="js_note_pagination" data-bind="visible: model.data.items().length&&model.init" class="cf pagination-box"></div>
+        </div>
+        <div class="note-side">
+            <div class="n-ui-tab-menu">
+                <a href="javascript:;" class="btn-tab" data-bind="translate: {key: 'courseNote.content'}">课程目录</a>
+                <!--<a href="###" class="btn-tab">知识索引</a>-->
+            </div>
+            <div data-bind="component: { name: 'x-course-learn-catalog', params: { callbacks: { course: $component.updateCourse.bind($component), lesson: $component.updateLesson.bind($component) }, config: { businessCoursesGatewayUrl: model.catalogGateway, showCourse: true, courseTitle: model.course_name, courseId: window.course_id, contextId: window.course_id} }}" style="height: 100%;"></div>
+        </div>
+    </div>
+</div>
+<!--ko if:show_editor()-->
+<!--ko component:{name:"x-note-editor",params:editor_params}--><!--/ko-->
+<!--/ko-->

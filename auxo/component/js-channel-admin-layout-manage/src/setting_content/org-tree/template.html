@@ -1,0 +1,47 @@
+<div class="modal fade" id="zT-orgTreeModal" data-backdrop="static">
+    <div class="modal-dialog" style="min-width: 600px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">选择组织</h4>
+            </div>
+            <div class="modal-body" id="zT-orgTreeModalBody">
+                <div data-bind="visible: model.hasTree">
+                    <form class="well form-inline" id="zT-searchForm" data-bind="event:{submit: orgTreeSearch}">
+                        <div class="form-group">
+                            <label>搜索：</label>
+                            <input data-bind="textInput: model.search.keywords" autocomplete="off" class="form-control"
+                                   name="keyword" placeholder="搜索部门关键字"/>
+                            <a href="javascript:;" class="btn btn-primary" data-bind="click: orgTreeSearch">搜索</a>
+                            <span style="color:red;" data-bind="text: model.search.result"></span>
+                        </div>
+                    </form>
+                    <div class="x-tree-selector-list" data-bind="visible: model.showSelect">
+                        <ul data-bind="foreach: model.updateNodes">
+                            <!--ko if: $data.title-->
+                            <li data-bind="attr:{ title: $data.path }">
+                                <a class="x-tree-selector-list-close" href="javascript:;"
+                                   data-bind="click: $component.removeNode.bind($component)">&times;</a>
+                                <span data-bind="text:$data.title"></span>
+                            </li>
+                            <!--/ko-->
+                        </ul>
+                    </div>
+                    <div id="orgTreeModelBody" class="container-fluid" style="max-height: 500px;overflow: auto;">
+                        <ul class="ztree" id="ch-lo-orgtree"></ul>
+                    </div>
+                </div>
+                <div data-bind="visible: !model.hasTree()"
+                     style="text-align: center; height: 100px; vertical-align: middle;line-height: 100px;display: none;">
+                    请在项目中配置项目的UC组织
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" aria-hidden="true" data-dismiss="modal" data-bind="click: cancelAllNodes">
+                    清空
+                </button>
+                <button class="btn btn-primary" data-bind="click:saveOrg">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

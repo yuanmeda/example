@@ -1,0 +1,273 @@
+.pagination,
+.pagination-info {
+  margin: 10px 0; }
+
+.pagination a {
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+  background: #fff; }
+.pagination span {
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #fff; }
+.pagination .current,
+.pagination a:hover,
+.pagination span {
+  display: inline-block;
+  border: solid 1px #0a969f;
+  padding: 0 12px;
+  color: #fff;
+  background-color: #0cadb7; }
+.pagination .prev {
+  border: solid 1px #ddd;
+  border-bottom-left-radius: 3px; }
+.pagination .current.prev, .pagination .current.next {
+  border-color: #ccc;
+  color: #666;
+  background: #ccc; }
+
+.pagination-info span {
+  display: block;
+  line-height: 34px;
+  vertical-align: middle; }
+
+.pagination .first {
+  margin-right: 5px;
+  border-width: 1px;
+  border-radius: 3px; }
+.pagination .last {
+  margin-left: 5px;
+  border-width: 1px;
+  border-radius: 3px; }
+
+.page-input {
+  display: block;
+  float: right;
+  overflow: hidden;
+  margin-left: 15px; }
+  .page-input .page-text {
+    margin: 0 5px;
+    box-sizing: content-box;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    padding: 7px 5px;
+    width: 32px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: middle;
+    outline: 0; }
+  .page-input .select-page-btn {
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    width: 58px;
+    height: 30px;
+    vertical-align: top;
+    color: grey;
+    background: #fff;
+    cursor: pointer; }
+    .page-input .select-page-btn:hover {
+      color: #fff;
+      background-color: #0cadb7; }
+
+.page-selector {
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 5px 0 0 15px; }
+  .page-selector select {
+    margin: 0 5px;
+    width: 60px;
+    vertical-align: baseline; }
+
+#pagination {
+  margin: 20px 0;
+  *zoom: 1; }
+  #pagination:before, #pagination:after {
+    display: table;
+    content: ""; }
+  #pagination:after {
+    clear: both;
+    overflow: hidden; }
+  #pagination .pagination-info {
+    margin: 10px; }
+
+#courseSelectModal .modal-dialog {
+  width: 950px !important; }
+
+.nodata,
+.loading {
+  margin: 150px auto 0;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  color: #666; }
+
+.cs-main {
+  padding: 0;
+  height: 100%;
+  font-family: "microsoft yahei";
+  color: #333;
+  background-color: #fff; }
+  .cs-main a:hover {
+    text-decoration: none; }
+
+.cs-tool {
+  margin: 10px 0; }
+
+.cs-body {
+  overflow: hidden;
+  position: relative;
+  height: calc(100% - 50px);
+  min-height: 500px;
+  *zoom: 1; }
+  .cs-body:before, .cs-body:after {
+    display: table;
+    content: ""; }
+  .cs-body:after {
+    clear: both;
+    overflow: hidden; }
+  .cs-body .cs-nav,
+  .cs-body .cs-content {
+    overflow: hidden;
+    overflow-y: auto; }
+  .cs-body .cs-nav {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    bottom: 15px;
+    left: 0;
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    width: 160px; }
+  .cs-body .cs-content {
+    position: relative;
+    margin-left: 160px; }
+    .item-list {
+      padding: 0 10px;
+      width: 760px;
+      *zoom: 1; }
+      .item-list:before, .item-list:after {
+        display: table;
+        content: ""; }
+      .item-list:after {
+        clear: both;
+        overflow: hidden; }
+
+    .item-box {
+      float: left;
+      position: relative;
+      margin: 0 20px 20px 0;
+      background-color: white;
+      box-shadow: 0 0 5px #e3dede; }
+      .item-box input[type="radio"],
+      .item-box input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+        opacity: 0; }
+        .item-box input[type="radio"]:checked ~ label i,
+        .item-box input[type="checkbox"]:checked ~ label i {
+          color: #38adff; }
+      .item-box:nth-of-type(4n) {
+        margin-right: 0; }
+      .item-box img {
+        width: 170px;
+        height: 120px; }
+      .item-box .item-img-container {
+        position: relative; }
+        .item-box .item-img-container .item-type {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          padding: 2px 4px;
+          background-color: #38adff;
+          color: #fff; }
+      .item-box .item-info {
+        overflow: hidden;
+        padding: 10px 6px;
+        width: 160px;
+        height: 70px;
+        font-size: 13px; }
+        .item-box .item-info .title {
+          display: inline-block;
+          margin-bottom: 8px;
+          width: 100%;
+          font-size: 14px;
+          color: #38adff;
+          overflow: hidden;
+          width: 100%;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+        .item-box .item-info i {
+          padding: 0 2px;
+          font-style: normal;
+          color: #38adff; }
+        .item-box .item-info span:empty {
+          display: none; }
+      .item-box .item-check,
+      .item-box .item-status {
+        position: absolute;
+        top: 3px;
+        text-align: center;
+        height: 18px;
+        line-height: 18px; }
+      .item-box .label-tip {
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        border: 30px solid rgba(255, 255, 255, 0.5);
+        transform: rotate(-135deg); }
+      .item-box .item-status {
+        left: 8px;
+        border-radius: 3px;
+        padding: 0 6px;
+        font-size: 12px; }
+        .item-box .item-status.on-line {
+          color: white;
+          background-color: #38adff; }
+        .item-box .item-status.off-line {
+          color: white;
+          background-color: #8d8d8d; }
+      .item-box .item-check {
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        color: white;
+        transition: all .1s ease-in-out;
+        cursor: pointer;
+        position: absolute; }
+        .item-box .item-check:hover {
+          color: white; }
+          .item-box .item-check:hover i {
+            color: #38adff; }
+        .item-box .item-check.active i {
+          animation: scale .3s; }
+        .item-box .item-check.r-type {
+          border-radius: 50%; }
+        .item-box .item-check i {
+          position: absolute;
+          right: 5px;
+          top: 5px; }
+
+@keyframes scale {
+  50% {
+    transform: scale(0.8); } }
+
+/*# sourceMappingURL=courseCheck.css.map */

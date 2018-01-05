@@ -1,0 +1,75 @@
+$version: 20151127;
+
+%clearfix{
+    *zoom:1;        // for IE6,7
+    &:after{
+        content: '';
+        height: 0;
+        visibility: hidden;
+        display: block;
+        clear: both;
+    }
+}
+
+// 文字溢出 ...
+%ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 兼容IE7的 inline-block
+%inline-block {
+    display: inline-block;
+    *vertical-align: auto; // fixed IE7 inline-block
+    zoom: 1;
+    *display: inline;
+}
+
+// 模糊加深 $depth px效果
+@mixin blur($depth) {
+    //filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+    -webkit-filter: blur(#{$depth}px); /* Chrome, Opera */
+    -moz-filter: blur(#{$depth}px);
+    -ms-filter: blur(#{$depth}px);
+    filter: blur(#{$depth}px);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$depth*10, MakeShadow=false); /* IE6~IE9 */
+}
+// 模糊加深 2px 效果
+%blur {
+    @include blur(2);
+}
+// 还原模糊效果
+%blur-recover {
+    @include blur(0);
+}
+
+// 取多重嵌套map的值
+@function getMapValue ($map, $list) {
+    $listLength: length($list);
+    $value: $map;
+    @for $index from 1 through $listLength {
+        $value: map-get($value, unquote(nth($list, $index)));
+    }
+    @return $value;
+}
+
+
+
+// fadeIn
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

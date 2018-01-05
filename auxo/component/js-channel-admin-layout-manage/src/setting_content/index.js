@@ -1,0 +1,9 @@
+import './banner';
+import './icon';
+import './other';
+import './window';
+import './upload';
+import './tag';
+import './resource';
+import './rule';
+import './org-tree';

@@ -1,0 +1,16 @@
+/**
+ * 页面基础样式
+ */
+html,
+body {
+    font-family: "microsoft yahei";
+}
+@import "../utils/variables";
+@import "../utils/scrollbar";
+@import "../utils/utils";
+.main-wrap {
+    min-height: auto !important;
+}
+.main-content {
+    overflow: auto;
+}

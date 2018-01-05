@@ -1,0 +1,10 @@
+@import "list_base";
+@import "animation";
+@import "placeholder";
+html,body{
+	height: 100%;
+  overflow: auto;
+}
+#block{
+  min-height: 280px;
+}

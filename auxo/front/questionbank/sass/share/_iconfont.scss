@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'questionbank';
+  src: url('../../fonts/questionbank.eot?p2hcuy');
+  src: url('../../fonts/questionbank.eot?p2hcuy#iefix') format('embedded-opentype'),
+  url('../../fonts/questionbank.ttf?p2hcuy') format('truetype'),
+  url('../../fonts/questionbank.woff?p2hcuy') format('woff'),
+  url('../../fonts/questionbank.svg?p2hcuy#questionbank') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="qicon-"], [class*=" qicon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'questionbank' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.qicon-add:before {
+  content: "\e900";
+}
+.qicon-min:before {
+  content: "\e901";
+}
+.qicon-rarrow:before {
+  content: "\e904";
+}
+.qicon-larrow:before {
+  content: "\e905";
+}
+.qicon-rsj:before {
+  content: "\e906";
+}
+.qicon-dsj:before {
+  content: "\e907";
+}
+.qicon-close:before {
+  content: "\e90a";
+}
+.qicon-darrow:before {
+  content: "\e90e";
+}
+.qicon-uparrow:before {
+  content: "\e90f";
+}
+.qicon-check-yes:before {
+  content: "\e91b";
+}
+.qicon-radio:before {
+  content: "\e91c";
+}
+.qicon-gz:before {
+  content: "\e91d";
+}
+

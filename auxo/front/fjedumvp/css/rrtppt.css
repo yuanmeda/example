@@ -1,0 +1,269 @@
+.wuh-center {
+    width: 1240px;
+    margin: 0 auto
+}
+
+.wuh-main {
+    width: 100%;
+    height: 951px;
+    background: url(../images/banner.png) top no-repeat #eaf0f9
+}
+
+.wuh-main .wuh-slogan p {
+    font-size: 20px;
+    line-height: 30px;
+    padding-top: 15px;
+    text-align: justify;
+    color: #333
+}
+
+.wuh-main .wuh-download {
+    width: 45%;
+    margin-top: 60px
+}
+
+.wuh-main .wuh-download .wuh-help {
+    width: 80%;
+    display: block;
+    font-size: 18px;
+    color: #3d3d3d;
+    padding-left: 22px
+}
+
+.wuh-main .wuh-download ul {
+    width: 45%;
+    display: inline-block
+}
+
+.wuh-main .wuh-download ul li {
+    width: 100%;
+    height: 56px;
+    background: #3187f6;
+    margin-top: 25px;
+    float: left
+}
+
+.wuh-main .wuh-download ul li a {
+    height: 56px;
+    line-height: 56px;
+    width: 100%;
+    font-size: 24px;
+    display: block;
+    color: #fff
+}
+
+.wuh-main .wuh-download ul li:hover {
+    background: #4692f7
+}
+
+.wuh-main .wuh-download ul li i {
+    width: 30px;
+    height: 30px;
+    background: url(../images/wh_icon.png) 0 -60px no-repeat;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    margin-right: 5px;
+    margin-left: 60px
+}
+
+.wuh-main .wuh-download ul li:nth-child(2) i {
+    background-position: 0 -90px
+}
+
+.wuh-main .wuh-download ul li:nth-child(3) i {
+    background-position: 0 -120px
+}
+
+.wuh-main .wuh-download .wuh-wh-code {
+    width: 203px;
+    height: 200px;
+    float: right;
+    margin: 25px 55px 0 0;
+    position: relative;
+    left: 0;
+    opacity: 0;
+    display: none;
+    z-index: 0
+}
+
+.wuh-download ul .wh-download1 .wuh-wh-code {
+    top: -81px;
+    animation: whblock .4s linear forwards;
+    -moz-animation: whblock .4s linear forwards;
+    -webkit-animation: whblock .4s linear forwards;
+    -o-animation: whblock .4s linear forwards
+}
+
+.wuh-download ul .wh-download2 .wuh-wh-code {
+    top: -162px;
+    animation: whblock .4s linear forwards;
+    -moz-animation: whblock .4s linear forwards;
+    -webkit-animation: whblock .4s linear forwards;
+    -o-animation: whblock .4s linear forwards
+}
+
+.wuh-download ul .wh-download3 .wuh-wh-code {
+    top: -243px;
+    background: url(../images/pcdownload-bg.png) top;
+    border-radius: 3px;
+    padding: 25px;
+    width: 203px;
+    height: auto;
+    animation: whblockt .4s linear forwards;
+    -moz-animation: whblockt .4s linear forwards;
+    -webkit-animation: whblockt .4s linear forwards;
+    -o-animation: whblockt .4s linear forwards
+}
+
+.wuh-download ul li:hover .wuh-wh-code {
+    display: block;
+    left: 300px;
+    opacity: 1
+}
+
+.wuh-download ul .wh-download3 .code-text {
+    left: 350px !important;
+    position: relative
+}
+
+.wuh-download ul .wh-download3 .wuh-wh-code span {
+    color: #fff;
+    font-size: 15px;
+    line-height: 25px;
+    width: 100%;
+    display: block
+}
+
+.wuh-download ul .wh-download3 .wuh-wh-code .wuh-tips-title {
+    margin-bottom: 10px
+}
+
+.wuh-download ul .wh-download3 .wuh-wh-code p {
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    width: 100%
+}
+
+.wuh-banner2 {
+    background: url(../images/banner2.png) top no-repeat;
+    height: 932px
+}
+
+.wuh-banner2 .wuh-slogan h2 {
+    color: #fff;
+    width: 1200px;
+    font-size: 55px;
+    font-weight: 700
+}
+
+.wuh-banner2 .wuh-slogan p {
+    color: #fff;
+    font-size: 18px
+}
+
+.wuh-banner2 .wuh-download ul .wh-download1 {
+    background: #1ad6b9
+}
+
+.wuh-banner2 .wuh-download ul .wh-download1:hover {
+    background: #24e5c7
+}
+
+.wuh-banner2 .wuh-download ul .wh-download2 {
+    background: #03baef
+}
+
+.wuh-banner2 .wuh-download ul .wh-download2:hover {
+    background: #04c6f9
+}
+
+.wuh-banner2 .wuh-download ul .wh-download3 {
+    background: #d2b035
+}
+
+.wuh-banner2 .wuh-download ul .wh-download3:hover {
+    background: #f8bb12
+}
+
+.wuh-banner2 .wuh-download {
+    margin-top: 150px
+}
+
+.wuh-banner2 .wuh-download .wuh-help {
+    color: #3598db
+}
+
+.wuh-main .wuh-slogan {
+    width: 45%;
+    padding-top: 17%
+}
+
+.wuh-main .wuh-slogan h2 {
+    width: 1200px;
+    font-size: 54px;
+    color: #1d7bf6;
+    font-weight: 400
+}
+
+.wuh-banner2 .wuh-slogan {
+    padding-top: 10%;
+    width: 42%
+}
+
+@-webkit-keyframes whblock {
+    0% {
+        opacity: 0;
+        left: 0
+    }
+    70% {
+        opacity: 0
+    }
+    100% {
+        left: 300px;
+        opacity: 1
+    }
+}
+
+@keyframes whblock {
+    0% {
+        opacity: 0;
+        left: 0
+    }
+    70% {
+        opacity: 0
+    }
+    100% {
+        left: 300px;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes whblockt {
+    0% {
+        opacity: 0;
+        left: 0
+    }
+    70% {
+        opacity: 0
+    }
+    100% {
+        left: 300px;
+        opacity: 1
+    }
+}
+
+@keyframes whblockt {
+    0% {
+        opacity: 0;
+        left: 0
+    }
+    70% {
+        opacity: 0
+    }
+    100% {
+        left: 350px;
+        opacity: 1
+    }
+}

@@ -1,0 +1,13 @@
+.displayInLine{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.addReviewer{
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.back-gray{
+  background: #e8e8e8;
+}

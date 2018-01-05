@@ -1,0 +1,61 @@
+@mixin btn-height($height: 2) {
+    height: $height;
+
+    line-height: $height;
+}
+$btn-color: (
+    primary:($themeColor #fff),
+    default:(#e5e5e5 #333),
+    tips:(#f60 #fff),
+    save:(#8cc951 #fff),
+    disabled:(#999 #fff)
+);
+$btn-size: (
+    sm:(28px 15px),
+    md:(32px 20px),
+    lg:(36px 25px)
+);
+%btn {
+    display: inline-block;
+
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0 15px;
+
+    cursor: pointer;
+}
+@each $type,$color in $btn-color {
+    .bt-#{$type},
+    a.bt-#{$type} {
+        border-color: darken(nth($color,1),5%);
+
+        color: nth($color,2);
+        background: nth($color,1);
+
+        transition: all .3s;
+
+        @extend %btn;
+        &:hover {
+            text-decoration: none;
+
+            color: nth($color,2);
+            background: darken(nth($color,1),5%);
+        }
+    }
+}
+@each $size,$height in $btn-size {
+    .bt-#{$size},
+    a.bt-#{$size} {
+        padding: 0 nth($height,2);
+
+        @extend %btn;
+        @include btn-height(nth($height,1));
+    }
+}
+
+
+.bt-group {
+    [class^="bt-"]+[class^="bt-"] {
+        margin-left: 20px;
+    }
+}

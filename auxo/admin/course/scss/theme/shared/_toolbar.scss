@@ -1,0 +1,45 @@
+.block{
+	.tool-bar{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		padding: 0 15px;
+		background: lighten($themeColor,50%);
+		// color: #fff;
+		border-radius: 5px;
+		transition:all .3s;
+		a{
+			display: inline-block;
+			padding:0 10px;
+			margin-right: 5px;
+			span,i{
+				@extend %vm;
+			}
+			&.on,&:hover{
+				color: $themeColor;
+			}
+		}
+		&>span{
+			@extend %vm;
+			i{
+			    padding: 0 2px;
+			    font-size: larger;
+			    color: $themeColor;
+			}
+		}
+	}
+}
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,-100%,0);
+        transform: translate3d(0,-100%,0)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none
+    }
+}

@@ -1,0 +1,78 @@
+/* u-ui-list */
+.u-ui-list  {
+    .u-ui-item {
+        display: inline-block;
+    }
+    .item {
+        display: inline-block;
+        position: relative;
+        background-color: #fff;
+        -moz-transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear;
+        overflow: hidden;
+        width: 270px;
+        height: 300px;
+        margin: 0 50px 50px 0;
+        border: 1px solid #e0e0e0;
+        img {
+            width: 100%;
+            height: 100%;
+            -moz-transform: scale(1);
+            -webkit-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1);
+            -moz-transition: all .3s;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+
+        }
+        .item-img {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        .item-info {
+            padding: 15px;
+            font-size: 12px;
+            line-height: 1;
+        }
+        .item-info-title {
+            margin-top: 5px;
+            font-size: 18px;
+            width: 100%;
+            height: 19px;
+            @extend %tof;
+        }
+        .item-info-other {
+            margin-top: 18px;
+            color: #999;
+            font-size: 14px;
+            height: 14px;
+            @extend %tof;
+        }
+        .item-info-foot {
+            margin-top: 18px;
+            color: #999;
+            @extend %tof;
+        }
+        .strong {
+            color: $main-dark;
+        }
+        &:hover {
+            -moz-transform: translate(0,-2px);
+            -webkit-transform: translate(0,-2px);
+            -o-transform: translate(0,-2px);
+            transform:  translate(0,-2px);
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1), -1px 1px 20px rgba(0, 0, 0, 0.1);
+            img{
+                -moz-transform: trscale(1.2) translate3d(-1px,0,0);
+                -webkit-transform: trscale(1.2) translate3d(-1px,0,0);
+                -o-transform: trscale(1.2) translate3d(-1px,0,0);
+                transform: scale(1.2) translate3d(-1px,0,0);
+            }
+        }
+    }
+}

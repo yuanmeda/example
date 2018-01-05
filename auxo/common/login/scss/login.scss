@@ -1,0 +1,1423 @@
+.android {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  span {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.app {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.apple {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  span {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.banner-next, .banner-prev, .btn-login, .btn-reg, .down .phone {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.err-tip {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  ins {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.i-checkbox {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.ipt-account {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  .ipt {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.ipt-active {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.ipt-password, .ipt-vcode {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  .ipt {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.tel s {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.header {
+  height: 90px;
+}
+
+.footer-inner {
+  width: 980px;
+  margin: 0 auto;
+  color: #666;
+}
+
+.header-inner {
+  width: 980px;
+  margin: 0 auto;
+  color: #666;
+  h1 {
+    font: 28px/90px "microsoft yahei";
+    a {
+      color: #444;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .down {
+    float: right;
+    margin: 40px 0 0;
+    color: #619ee0;
+  }
+}
+
+.android, .app {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.apple {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-position: -221px -94px;
+  &:hover {
+    background-position: -190px -94px;
+  }
+}
+
+.android {
+  background-position: -159px -94px;
+  &:hover {
+    background-position: -128px -94px;
+  }
+}
+
+.app {
+  background-position: -190px -127px;
+  &:hover {
+    background-position: -231px -127px;
+  }
+}
+
+.down .phone {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  background-position: -358px -216px;
+  cursor: default;
+  vertical-align: middle;
+}
+
+.open-down .phone {
+  background-position: -358px -248px;
+  cursor: pointer;
+}
+
+.footer-inner {
+  padding: 20px 0;
+  a {
+    color: #666;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .tel {
+    float: right;
+    padding: 0 30px;
+  }
+}
+
+.tel s {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 8px 0 0;
+  background-position: -355px -185px;
+  vertical-align: text-bottom;
+}
+
+.android, .apple {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  vertical-align: middle;
+}
+
+.android span {
+  display: block;
+  width: 22px;
+  height: 24px;
+  cursor: default;
+}
+
+.apple span {
+  display: block;
+  width: 22px;
+  height: 24px;
+  cursor: default;
+  background-position: -125px -91px;
+}
+
+.android span {
+  background-position: -186px -91px;
+}
+
+.apple span.on {
+  background-position: -156px -91px;
+  cursor: pointer;
+}
+
+.android span.on {
+  background-position: -220px -91px;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  height: 600px;
+}
+
+.banner-con {
+  display: block;
+  height: 600px;
+  .banner-main {
+    z-index: 10;
+    position: relative;
+    width: 1020px;
+    height: 600px;
+    margin: 0 auto;
+  }
+  .banner-left, .banner-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 600px;
+    background-repeat: repeat-x;
+  }
+  .banner-left {
+    left: 0;
+  }
+  .banner-right {
+    right: 0;
+  }
+}
+
+.banner-ctrl {
+  position: relative;
+  width: 980px;
+  height: 0;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.banner-next {
+  position: absolute;
+  top: 520px;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.banner-prev {
+  position: absolute;
+  top: 520px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  right: 65px;
+  background-position: 0 -87px;
+}
+
+.banner-next {
+  right: 10px;
+  background-position: -44px -87px;
+}
+
+.banner-prev:hover {
+  background-position: 0 -126px;
+}
+
+.banner-next:hover {
+  background-position: -44px -126px;
+}
+
+.login-box {
+  position: relative;
+  width: 980px;
+  height: 0;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.login-aside {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  width: 348px;
+  border: 1px solid #a3b5c5;
+  background: rgba(255, 255, 255, 0.94);
+  overflow: hidden;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#F2FFFFFF', endColorstr='#F2FFFFFF');
+}
+
+:root .login-aside {
+  filter: none;
+}
+
+.login-tabs {
+  height: 45px;
+  ul {
+    overflow: hidden;
+    li {
+      &.full {
+        width: 349px;
+        a {
+          cursor: default;
+        }
+      }
+      float: left;
+      width: 117px;
+      margin: 0 0 0 -1px;
+      &.on a {
+        background: 0 0;
+        border-bottom-color: transparent;
+        _border-bottom-color: #fff;
+        cursor: default;
+      }
+    }
+    a {
+      display: block;
+      border: 1px solid #a8b5c2;
+      border-top: 0;
+      border-right: 0;
+      font: 16px/45px simsun;
+      background: #e4f0fc;
+      text-align: center;
+      color: #555;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.login-form {
+  padding: 40px;
+}
+
+.login-ipts input {
+  vertical-align: middle;
+}
+
+.ipt-account, .ipt-password {
+  width: 268px;
+  height: 42px;
+  background-position: 0 -213px;
+}
+
+.ipt-account .ipt, .ipt-password .ipt {
+  position: relative;
+  padding: 0 0 0 45px;
+  height: 42px;
+}
+
+.ipt-account .ipt {
+  background-position: -340px -86px;
+}
+
+.ipt-password .ipt {
+  background-position: -340px -128px;
+}
+
+.ipt-account input, .ipt-password input, .ipt-vcode input {
+  height: 22px;
+  padding: 10px 0 8px;
+  border: 0;
+  background: 0 0;
+  font-size: 14px;
+  outline: 0;
+}
+
+.ipt-account input, .ipt-password input {
+  width: 210px;
+}
+
+.ipt-vcode {
+  display: none;
+  width: 212px;
+  height: 42px;
+  background-position: 0 -307px;
+  .ipt {
+    position: relative;
+    padding: 0 0 0 42px;
+    background-position: -341px -317px;
+  }
+  input {
+    width: 70px;
+  }
+  img {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    width: 80px;
+    height: 37px;
+    border-left: 1px solid #b9b9bb;
+    cursor: pointer;
+  }
+}
+
+.ipt-active {
+  background-position: 0 -260px;
+}
+
+.ipt-vcode-active {
+  background-position: 0 -354px;
+}
+
+.ipt label {
+  position: absolute;
+  top: 11px;
+  left: 45px;
+  font-size: 14px;
+  color: #909090;
+  cursor: text;
+}
+
+.ipt-vcode a {
+  position: absolute;
+  top: 2px;
+  right: -60px;
+  width: 45px;
+  color: #5398e1;
+}
+
+.ipt-item {
+  margin: 0 0 20px;
+}
+
+.ipt-ctrl .forget {
+  float: right;
+  color: #333;
+  text-decoration: underline;
+}
+
+.login-btns {
+  text-align: center;
+}
+
+.btn-login, .btn-reg {
+  display: inline-block;
+  width: 120px;
+  height: 38px;
+  border: 0;
+  font: 700 14px/38px simsun;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.btn-login {
+  margin: 0 10px 0 0;
+  background-position: 0 0;
+  color: #fff;
+  &:hover {
+    background-position: -126px 0;
+    text-decoration: none;
+  }
+  &:active {
+    background-position: -252px 0;
+  }
+}
+
+.btn-reg {
+  margin: 0 0 0 13px;
+  background-position: 0 -45px;
+  color: #59748e;
+  &:hover {
+    background-position: -126px -45px;
+    text-decoration: none;
+  }
+  &:active {
+    background-position: -252px -45px;
+  }
+}
+
+.loading {
+  background: url(../images/loading-blue.gif?1411181131) no-repeat;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  _display: inline;
+  _zoom: 1;
+  _position: absolute;
+  _margin-top: -5px;
+}
+
+.err-tip {
+  position: absolute;
+  top: 188px;
+  right: 380px;
+  display: none;
+  width: 262px;
+  height: 34px;
+  padding: 8px 0 0 8px;
+  background-position: 0 -165px;
+  font:12px/0.5 arial,tahoma,simsun;
+}
+
+.err-tip-show {
+  display: block;
+  -webkit-animation: shake .6s ease-in-out .3s;
+  -moz-animation: shake .6s ease-in-out .3s;
+  -o-animation: shake .6s ease-in-out .3s;
+  animation: shake .6s ease-in-out .3s;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@-moz-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@-o-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@-ms-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+.err-tip {
+  ins {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 0;
+    background-position: -353px -288px;
+    vertical-align: middle;
+  }
+  span {
+    color: #666;
+  }
+}
+
+.i-checkbox {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background-position: -127px -127px;
+  vertical-align: middle;
+}
+
+.ipt-ctrl .checked {
+  background-position: -156px -127px;
+}
+
+.link-mobile {
+  position: relative;
+  float: right;
+  margin: 20px 10px 0 0;
+  padding: 20px 0;
+  &:hover .link-down {
+    display: block;
+    /*position: relative;*/
+  }
+}
+
+.link-mobile {
+  a.icon {
+    font-size: 16px;
+    color: #619ee0;
+  }
+  .link-down {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0px;
+    z-index: 100;
+    border: 1px solid #d2d2d2;
+    padding: 20px;
+    width: 260px;
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 999;
+    i.tip-icon {
+      position: absolute;
+      top: -10px;
+      right: 57px;
+      z-index: 101;
+    }
+    .link-code {
+      display: inline-block;
+      float: left;
+      width: 120px;
+      height: 120px;
+    }
+    .down-r {
+      float: right;
+      width: 120px;
+      line-height: 1.5;
+      p {
+        line-height: 2.8;
+      }
+      a.dbtn {
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 4px;
+        padding: 0 15px;
+        width: 90px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background: #38adff;
+        &.off {
+          background: #c5c5c5;
+          &:hover {
+            text-decoration: none;
+            background: #c5c5c5;
+            cursor: not-allowed;
+          }
+        }
+        &:hover {
+          text-decoration: none;
+          background: #0598ff;
+          cursor: pointer;
+        }
+        i {
+          display: inline-block;
+          margin-right: 5px;
+          width: 16px;
+          height: 16px;
+          background: url(../images/icon-down.png) no-repeat;
+          vertical-align: middle;
+          &.icon-apple {
+            background-position: 0 0;
+          }
+          &.icon-android {
+            background-position: 0 -30px;
+          }
+        }
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -9px;
+      right: 10px;
+      border-width: 0 8px 8px 8px;
+      border-style: dashed dashed dashed dashed;
+      border-color: transparent transparent #d2d2d2 transparent;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      right: 10px;
+      border-width: 0 8px 8px 8px;
+      border-style: dashed dashed solid dashed;
+      border-color: transparent transparent #fff transparent;
+    }
+  }
+}
+
+.vm {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.fs16 {
+  font-size: 16px !important;
+}
+
+.fs18 {
+  font-size: 18px !important;
+}
+
+.fs20 {
+  font-size: 20px !important;
+}
+
+.fs24 {
+  font-size: 24px !important;
+}
+
+.android {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  span {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.app {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.apple {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  span {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.banner-next, .banner-prev, .btn-login, .btn-reg, .down .phone {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.err-tip {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  ins {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.i-checkbox, .ipt-account .ipt, .ipt-password .ipt {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.ipt-vcode {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+  .ipt {
+    background: url(../images/login-form.png?1411181131) no-repeat;
+    _background-image: url(../images/login-form@ie6.png?1411181131);
+  }
+}
+
+.tel s {
+  background: url(../images/login-form.png?1411181131) no-repeat;
+  _background-image: url(../images/login-form@ie6.png?1411181131);
+}
+
+.header {
+  height: 90px;
+}
+
+.footer-inner {
+  width: 980px;
+  margin: 0 auto;
+  color: #666;
+}
+
+.header-inner {
+  width: 980px;
+  margin: 0 auto;
+  color: #666;
+  h1 {
+    font: (28px / 90px) "microsoft yahei";
+    a {
+      color: #444;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .down {
+    float: right;
+    margin: 40px 0 0;
+    color: #619ee0;
+  }
+}
+
+.android, .app {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.apple {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-position: -221px -94px;
+  &:hover {
+    background-position: -190px -94px;
+  }
+}
+
+.android {
+  background-position: -159px -94px;
+  &:hover {
+    background-position: -128px -94px;
+  }
+}
+
+.app {
+  background-position: -190px -127px;
+  &:hover {
+    background-position: -231px -127px;
+  }
+}
+
+.down .phone {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  background-position: -358px -216px;
+  cursor: default;
+  vertical-align: middle;
+}
+
+.open-down .phone {
+  background-position: -358px -248px;
+  cursor: pointer;
+}
+
+.footer-inner {
+  padding: 20px 0;
+  a {
+    color: #666;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .tel {
+    float: right;
+    padding: 0 30px;
+  }
+}
+
+.tel s {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 8px 0 0;
+  background-position: -355px -185px;
+  vertical-align: text-bottom;
+}
+
+.android, .apple {
+  display: inline-block;
+  margin: 0 20px 0 0;
+  vertical-align: middle;
+}
+
+.android span {
+  display: block;
+  width: 22px;
+  height: 24px;
+  cursor: default;
+}
+
+.apple span {
+  display: block;
+  width: 22px;
+  height: 24px;
+  cursor: default;
+  background-position: -125px -91px;
+}
+
+.android span {
+  background-position: -186px -91px;
+}
+
+.apple span.on {
+  background-position: -156px -91px;
+  cursor: pointer;
+}
+
+.android span.on {
+  background-position: -220px -91px;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  height: 600px;
+}
+
+.banner-con {
+  display: block;
+  height: 600px;
+  .banner-main {
+    z-index: 10;
+    position: relative;
+    width: 1020px;
+    height: 600px;
+    margin: 0 auto;
+  }
+  .banner-left, .banner-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 600px;
+    background-repeat: repeat-x;
+  }
+  .banner-left {
+    left: 0;
+  }
+  .banner-right {
+    right: 0;
+  }
+}
+
+.banner-ctrl {
+  position: relative;
+  width: 980px;
+  height: 0;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.banner-next {
+  position: absolute;
+  top: 520px;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.banner-prev {
+  position: absolute;
+  top: 520px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  right: 65px;
+  background-position: 0 -87px;
+}
+
+.banner-next {
+  right: 10px;
+  background-position: -44px -87px;
+}
+
+.banner-prev:hover {
+  background-position: 0 -126px;
+}
+
+.banner-next:hover {
+  background-position: -44px -126px;
+}
+
+.login-box {
+  position: relative;
+  width: 980px;
+  height: 0;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+.login-aside {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  width: 348px;
+  border: 1px solid #a3b5c5;
+  background: rgba(255, 255, 255, 0.94);
+  overflow: hidden;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#F2FFFFFF', endColorstr='#F2FFFFFF');
+}
+
+:root .login-aside {
+  filter: none;
+}
+
+.login-tabs {
+  height: 45px;
+  ul {
+    overflow: hidden;
+    li {
+      &.full {
+        width: 349px;
+        a {
+          cursor: default;
+        }
+      }
+      float: left;
+      width: 117px;
+      margin: 0 0 0 -1px;
+      &.on a {
+        background: 0 0;
+        border-bottom-color: transparent;
+        _border-bottom-color: #fff;
+        cursor: default;
+      }
+    }
+    a {
+      display: block;
+      border: 1px solid #a8b5c2;
+      border-top: 0;
+      border-right: 0;
+      font: 16px/45px simsun;
+      background: #e4f0fc;
+      text-align: center;
+      color: #555;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.login-form {
+  padding: 40px;
+}
+
+.login-ipts input {
+  vertical-align: middle;
+}
+
+.ipt-account, .ipt-password {
+  width: 268px;
+  height: 36px;
+  padding: 2px 0;
+  /*background-position: 0 -213px*/
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #a3b5c5;
+  background: -moz-linear-gradient(top, #eee 0%, #ffffff 100%);
+  background: -o-linear-gradient(top, #eee 0%, #ffffff 100%);
+  background: -ms-linear-gradient(top, #eee 0%, #ffffff 100%);
+  /*background: linear-gradient(to bottom, #eee 0%,#ffffff 100%);*/
+}
+
+.ipt-account .ipt, .ipt-password .ipt {
+  position: relative;
+  padding: 0 0 0 45px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.ipt-account .ipt {
+  background-position: -340px -88px;
+}
+
+.ipt-password .ipt {
+  background-position: -340px -130px;
+}
+
+.ipt-account input, .ipt-password input, .ipt-vcode input {
+  height: 22px;
+  line-height: 22px;
+  padding: 7px 0 7px;
+  border: 0;
+  background: 0 0;
+  font-size: 14px;
+  outline: 0;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.ipt-account input, .ipt-password input {
+  width: 220px;
+}
+
+.ipt-vcode {
+  display: none;
+  width: 212px;
+  height: 42px;
+  background-position: 0 -307px;
+  .ipt {
+    position: relative;
+    padding: 0 0 0 42px;
+    background-position: -341px -317px;
+  }
+  input {
+    width: 70px;
+  }
+  img {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    width: 80px;
+    height: 37px;
+    border-left: 1px solid #b9b9bb;
+    cursor: pointer;
+  }
+}
+
+.ipt-active {
+  border-color: #38adff;
+  box-shadow: inset 0 0 2px #38adff;
+}
+
+.ipt-vcode-active {
+  background-position: 0 -354px;
+}
+
+.ipt label {
+  position: absolute;
+  top: 2px;
+  left: 45px;
+  font-size: 14px;
+  color: #909090;
+  cursor: text;
+}
+
+.ipt-vcode a {
+  position: absolute;
+  top: 2px;
+  right: -60px;
+  width: 45px;
+  color: #5398e1;
+}
+
+.ipt-item {
+  margin: 0 0 20px;
+}
+
+.ipt-ctrl .forget {
+  float: right;
+  color: #333;
+  text-decoration: underline;
+}
+
+.login-btns {
+  text-align: center;
+}
+
+.btn-login, .btn-reg {
+  display: inline-block;
+  width: 120px;
+  height: 38px;
+  border: 0;
+  font: 700 14px/38px simsun;
+  text-align: center;
+  outline: 0;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.btn-login {
+  margin: 0 10px 0 0;
+  background-position: 0 0;
+  color: #fff;
+  &:hover {
+    background-position: -126px 0;
+    text-decoration: none;
+  }
+  &:active {
+    background-position: -252px 0;
+  }
+}
+
+.btn-reg {
+  margin: 0 0 0 13px;
+  background-position: 0 -45px;
+  color: #59748e;
+  &:hover {
+    background-position: -126px -45px;
+    text-decoration: none;
+  }
+  &:active {
+    background-position: -252px -45px;
+  }
+}
+
+.loading {
+  background: url(../images/loading-blue.gif?1411181131) no-repeat;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  _display: inline;
+  _zoom: 1;
+  _position: absolute;
+  _margin-top: -5px;
+}
+
+.err-tip {
+  position: absolute;
+  top: 188px;
+  right: 380px;
+  display: none;
+  width: 262px;
+  height: 34px;
+  padding: 8px 0 0 8px;
+  background-position: 0 -165px;
+}
+
+.err-tip-show {
+  display: block;
+  -webkit-animation: shake .6s ease-in-out .3s;
+  -moz-animation: shake .6s ease-in-out .3s;
+  -o-animation: shake .6s ease-in-out .3s;
+  animation: shake 0.6s ease-in-out 0.3s;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@-moz-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@-o-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@-ms-keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+@keyframes shake {
+  0% {
+    right: 380px;
+  }
+
+  25% {
+    right: 382px;
+  }
+
+  50% {
+    right: 380px;
+  }
+
+  75% {
+    right: 382px;
+  }
+
+  100% {
+    right: 380px;
+  }
+}
+
+.err-tip {
+  ins {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 0;
+    background-position: -353px -288px;
+    vertical-align: middle;
+  }
+  span {
+    color: #666;
+  }
+}
+
+.i-checkbox {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background-position: -127px -127px;
+  vertical-align: middle;
+}
+
+.ipt-ctrl .checked {
+  background-position: -156px -127px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}

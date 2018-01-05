@@ -1,0 +1,57 @@
+<div class="exam-item" data-bind="click: onClick">
+  <div class="item-img">
+    <img data-bind="attr: { 'data-original': model.data.unit_info.cover_url ,src:defaultImg}" class="lazy-image" style="display: inline;">
+    <span class="item-ldt" data-bind="translate: { key: 'collection_exam_unitcard.score', properties: { userScore: model.data.extra?model.data.extra.best_scores:0, totalScore: model.data.unit_info.extra.total_score } }"></span>
+  </div>
+  <div class="item-info">
+    <div class="item-name ellipsis" data-bind="text: model.data.unit_info.title, attr: { title: model.data.unit_info.title }"></div>
+    <div class="item-icon mtb15 ellipsis fs13">
+      <!--ko if: model.data.extra&&getExamStatus() !== '70'-->
+        <!--ko if: model.data.extra.remain_chance <= 1000-->
+        <span class="v-line">
+              <!--ko translate:{ key: 'collection_exam_unitcard.examTimes' }--><!--/ko-->
+              <i data-bind="text: model.data.extra.remain_chance"></i>
+              <em></em>
+            </span>
+        <!--/ko-->
+        <!--ko if: model.data.extra.remain_chance > 1000-->
+        <span class="v-line">
+              <!--ko translate:{ key: 'collection_exam_unitcard.examTimes' }--><!--/ko-->
+              <i data-bind="translate:{ key: 'collection_exam_unitcard.noLimit' }"></i>
+              <em></em>
+            </span>
+        <!--/ko-->
+        <!--ko if: model.data.unit_info.extra.duration&&getExamStatus() !== '70'-->
+        <span class="v-line">
+          <!--ko translate:{ key: 'collection_exam_unitcard.duration' }--><!--/ko-->
+          <i data-bind="text: Math.floor(model.data.unit_info.extra.duration / 60)"></i>
+          <em></em>
+        </span>
+        <!--/ko-->
+      <!--/ko-->
+    </div>
+    <div class="item-label-box ellipsis">
+      <span class="item-view" data-bind="html: formatDateTime($data)">
+      </span>
+      <!--ko if: model.data.extra-->
+        <a class="btn fr" href="javascript:;" data-bind="css: { 'btn-disable': disableBtn() }, translate: { key:userExamStatus($data) }"></a>
+        <!--ko if: model.data.extra&&model.data.extra.pass_status== -1-->
+        <i style="top:-60px;" class="status-icon spec-icon-ring-verse failed" data-bind="translate: { key: 'collection_exam_unitcard.failed', target: ['data-flag'] }">
+            <span data-bind="translate: { key: 'collection_exam_unitcard.failed' }"></span>
+        </i>
+        <!--/ko-->
+        <!--ko if: model.data.extra&&model.data.extra.pass_status == 0-->
+        <i style="top:-60px;" class="status-icon spec-icon-ring-verse ended">
+            <span data-bind="translate: { key: 'collection_exam_unitcard.waitForMark' }"></span>
+        </i>
+        <!--/ko-->
+        <!--ko if:model.data.extra&&model.data.extra.pass_status == 1-->
+        <i style="top:-60px;" class="status-icon spec-icon-ring-verse passed">
+            <span data-bind="translate: { key: 'collection_exam_unitcard.passed' }"></span>
+        </i>
+        <!--/ko-->
+      <!--/ko-->
+    </div>
+  </div>
+  <i class="item-label" data-bind="translate:{key:'collection_exam_unitcard.exam'}"></i>
+</div>

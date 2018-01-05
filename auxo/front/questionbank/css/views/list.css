@@ -1,0 +1,6 @@
+.question-item{position:relative;padding:35px 160px 35px 20px}
+.question-item .question-right{position:absolute;right:0;top:35px;width:75px;height:140px}
+.question-item .question-right .question-date{font-size:12px;color:#999;margin-bottom:45px}
+.question-item .question-right .question-status{line-height:75px}
+.question-item .question-right .question-status i{font-size:75px;color:red}
+.question-item .question-right .question-status .statu{display:inline-block;vertical-align:middle;-webkit-transform:rotate(-15deg);transform:rotate(-15deg)}

@@ -1,0 +1,206 @@
+<div class="qa-block" style="position:absolute;">
+    <div class="qa">
+        <div class="qa-normal fix-types"
+             data-bind="visible: model.state.page()=='mine' || model.state.page()=='all' || model.state.page()=='search'">
+            <div class="qa-header" style="overflow:hidden">
+                <a href="javascript: void(0);" class="btn"
+                   data-bind="click: ask, translate:{ key: 'courseLearn.question.ask'}">我要提问</a>
+                <div class="qa-search" style="display:none;">
+                    <input type="text" placeholder="请输入答疑关键字"
+                           data-bind="value: model.keyword, translate:{ key: 'courseLearn.question.keywordPlaceHolder', target:['placeholder']}">
+                    <a href="javascript: void(0);" class="qa-search-btn">
+                        <i class="icon question-icon-search"
+                           data-bind="click: searchQuestion"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="qa-body" data-bind="style:{'top': model.state.page()=='search' ? '0' : '70px'}">
+                <!--我的问题，全部问题展示-->
+                <div class="qa-bily" data-bind="visible: model.state.page()!='search'">
+                    <div class="question-tabs">
+                        <div class="tabs-container">
+                            <a href="javascript: void(0);" quizType="1" class="tab"
+                               data-bind="click: $component.go.bind($component, 'mine'),css:{'active':model.state.page() == 'mine'},translate:{ key: 'courseLearn.question.myQuestion'}">我的问题</a>
+                            <a href="javascript: void(0);" quizType="2" class="tab"
+                               data-bind="click: $component.go.bind($component, 'all'),css:{'active':model.state.page() == 'all'},translate:{ key: 'courseLearn.question.allQuestion'}">全部问题</a>
+                        </div>
+                    </div>
+                    <div class="qa-types">
+                        <p class="fr"
+                           data-bind="translate: { key: 'courseLearn.question.totalQuestion', properties:{ 'total': model.questions[model.state.page()].total() }}">
+                            <!--全部问题时显示-->
+                        <div class="fl">
+                            <!--<a href="javascript: void(0);" class="qa-type active">最热</a>-->
+                            <a href="javascript: void(0);" class="qa-type" style="background:#38adff;color:#fff;"
+                               data-bind="click: getQuestions, translate: { key: 'courseLearn.question.latest' }">最新</a>
+                        </div>
+                    </div>
+                </div>
+                <!--搜索结果展示-->
+                <div class="qa-bily" data-bind="visible: model.state.page()=='search'">
+                    <div class="bily-res">
+                        <div class="fr">
+                            <a href="javascript:;" class="btn btn-back"
+                               data-bind="click: goBack, translate:{ key: 'courseLearn.question.goBack'}">返回</a>
+                        </div>
+                        <div class="fl">
+                            <p data-bind="translate: { key: 'courseLearn.question.findTotal', properties:{ 'total': model.questions[model.state.page()].total() }}"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--列表开始-->
+                <div class="qa-list-scroll"
+                     data-bind="style: {'top': model.state.page()=='search' ? '58px' : '130px'}">
+                    <div class="qa-list-container">
+                        <div class="nodata" data-bind="visible: model.questions[model.state.page()].items().length">
+                            <i class="icon icon-nodata"></i>
+                            <p data-bind="translate:{ key: 'courseLearn.question.noQuestion'}">暂无数据</p>
+                        </div>
+                        <ul class="qa-list" data-bind="foreach: model.questions[model.state.page()].items">
+                            <li>
+                                <div data-bind="component:{'name':'x-course-learn-question__question-item','params':{'config':$root.config,options':$root.model.question().viewModel.model.options,'question':$data,'userId':userId}}"></div>
+                            </li>
+                        </ul>
+                        <div class="qa-more">
+                            <a href="javascript: void(0);" class="qa-more" style="display: none;">点击加载更多回答</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--编辑问题开始-->
+        <!-- ko if: model.state.page()=='edit' -->
+        <div class="qa-issue" data-bind="visible:model.state.page()=='edit'">
+            <div class="issue-header">
+                <div class="qa-bily">
+                    <div class="bily-res">
+                        <div class="fr">
+                            <a href="javascript:;" class="btn btn-back"
+                               data-bind="click: goBack, translate:{ key: 'courseLearn.question.goBack'}">返回</a>
+                        </div>
+                        <div class="fl">
+                            <p><strong data-bind="translate:{ key: 'courseLearn.question.editQuestion'}">编辑问题</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="issue-body">
+                <div class="issue-main">
+                    <ul class="crumbs">
+                        <li><span>课程标题</span></li>
+                        <li><span data-bind="text: model.question().viewModel.model.courseResourceInfo"></span></li>
+                    </ul>
+                    <div class="question">
+                        <div class="question-input">
+                            <p><span data-bind="translate:{ key: 'learn.question'}">问题：</span>
+                                <!-- 非法+ invalid -->
+                                <span class="question-input-size"
+                                      data-bind="text: model.question().viewModel.model.wordCount() + '/50'"></span>
+                            </p>
+                            <div class="control">
+                                <input type="text" class="control-input" placeholder="写下你的问题"
+                                       data-bind="textInput: model.question().viewModel.model.questionTitle, translate:{ key: 'learn.writeQuestionLabel', target:['placeholder']}"/>
+                            </div>
+                        </div>
+                        <div class="question-detail">
+                            <p data-bind="translate:{ key: 'learn.questionDetailOption'}">问题详情（选填）：</p>
+                            <span style="float: right;font: 12px/normal 'microsoft yahei';color: #ccc;"
+                                  data-bind="text: model.question().viewModel.model.wordCountDes() + '/2000'"></span>
+                            <div style="margin-top: 10px;">
+                                <textarea style="width: 99.8%;height:100px;overflow: auto;padding: 0;"
+                                          class="control control-input" placeholder="问题详细信息"
+                                          id="editQuestion" maxlength="2000"
+                                          data-bind="textInput: model.question().viewModel.model.questionContent, translate:{ key: 'learn.questionDetailInfo', target:['placeholder']}"></textarea>
+                            </div>
+                        </div>
+                        <div class="question-btn">
+                            <!--ko if:model.question().viewModel.model.valid()-->
+                            <a href="javascript: void(0);" class="btn"
+                               data-bind="click: model.question().viewModel.addQuestion, translate:{ key: 'learn.quiz'}">马上提问</a>
+                            <!--/ko-->
+
+                            <!--ko if:!model.question().viewModel.model.valid()-->
+                            <a href="javascript: void(0);" class="btn"
+                               style="cursor:default;color:#000;background:#eee;"
+                               data-bind="translate:{ key: 'learn.quiz'}">马上提问</a>
+                            <!--/ko-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!--编辑问题结束-->
+
+        <!--问题详情页面-->
+        <!-- ko if: model.state.page()=='detail' -->
+        <div class="qa-detail" data-bind="visible: model.question().viewModel.model.isDetail">
+            <div class="detail-header">
+                <div class="qa-bily">
+                    <div class="bily-res">
+                        <div class="fr">
+                            <a href="javascript: void(0);" class="btn btn-back"
+                               data-bind="click: model.question().viewModel.backFromDetail, translate:{ key: 'learn.goback'}">返回</a>
+                        </div>
+                        <div class="fl">
+                            <p data-bind="translate:{ key: 'learn.questionDetail'}">问题详情</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-body">
+                <div class="article">
+                    <p class="article-title"
+                       data-bind="text: model.question().viewModel.model.questionTitle"></p>
+                    <p class="article-source"><span
+                                data-bind="translate:{ key: 'learn.from'}">来自：</span><span
+                                data-bind="text: model.question().viewModel.model.targetName"></span></p>
+                    <div class="article-content"
+                         data-bind="text: model.question().viewModel.model.questionDes">
+                        <!--<img src="../images/img.png" alt="" width="100%" style="margin: 10px 0 0;">-->
+                    </div>
+                    <p class="article-author"
+                       data-bind="model.question().viewModel.model.detailUserInfo"></p>
+                </div>
+                <div style="margin-top: 5px;background: #F2F2F2;width: 100%;padding: 10px 0 5px 10px;"
+                     data-bind="visible: model.question().viewModel.model.quizType() == '2'">
+                                <span style="margin-right: 20px;float: right;font: 12px/normal 'microsoft yahei';color: #ccc;"
+                                      data-bind="text: model.question().viewModel.model.wordCountAnswer() + '/2000'"></span>
+                    <textarea
+                            style="display: block;width: 335px;height: 100px;border-radius: 3px;margin-bottom: 10px;border: 1px solid #ddd;"
+                            maxlength="2000"
+                            data-bind="textInput: model.question().viewModel.model.answerContent"></textarea>
+                    <!--ko if:model.question().viewModel.model.answer_valid()-->
+                    <a href="javascript: void(0);" class="btn" style="margin-left: 248px;padding: 0 15px;"
+                       data-bind="click: model.question().viewModel.answerQuestion, translate:{ key: 'learn.answers'}">回答</a>
+                    <!--/ko-->
+
+                    <!--ko if:!model.question().viewModel.model.answer_valid()-->
+                    <a href="javascript: void(0);" class="btn"
+                       style="cursor:default;color:#000;background:#d0d0d0;margin-left: 248px;padding: 0 15px;"
+                       data-bind="translate:{ key: 'learn.answers'}">回答</a>
+                    <!--/ko-->
+                </div>
+                <div class="block-title">
+                    <i class="icon icon-comt"></i>
+                    <em data-bind="text: model.question().viewModel.model.detailTotal"></em>
+                    <span data-bind="translate:{key:'learn.answers'}">个回答</span>
+                </div>
+                <div class="detail-list">
+                    <ul class="reply-list" data-bind="foreach: model.question().viewModel.model.detailList">
+                        <li>
+                            <div data-bind="component:{'name':'x-course-learn-question__answer-item','params':{'config':$root.config,'options':$root.model.question().viewModel.model.options,'answer':$data, 'userId':userId}}"></div>
+                        </li>
+                    </ul>
+                    <div class="qa-more">
+                        <a href="javascript: void(0);" class="qa-more" style="display: none;">点击加载更多回答</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!--问题详情结束-->
+    </div>
+</div>

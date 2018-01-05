@@ -1,0 +1,305 @@
+@import "../shared/mixins";
+@import '../shared/iconfont';
+
+%iconFont {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'udialog-common' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sys-confirm .ui-dialog-content .udialog-text {
+  padding: 0 20px;
+}
+
+.udialog {
+  box-sizing: content-box;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 0 10px #E4E4E4;
+  font-family: 'microsoft yahei', arial, tahoma, simsun;
+  .ui-button {
+    height: 40px;
+    line-height: 40px;
+  }
+  .ui-widget-header {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: normal;
+    .ui-dialog-title {
+      font-size: 16px;
+      padding: 0;
+      margin: 0;
+      color: #333;
+    }
+    .ui-icon {
+      overflow: hidden;
+      text-indent: 0;
+      background: 0 0;
+    }
+  }
+  .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    opacity: 1;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    .ui-icon-closethick {
+      @extend %iconFont;
+      display: inline-block;
+      vertical-align: middle;
+      transition: all 0.3s;
+      width: 22px;
+      height: 22px;
+      &:before {
+        content: "\e90b";
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      .ui-icon-closethick {
+        //transform: rotate(90deg)
+      }
+    }
+  }
+
+  .ui-dialog-content {
+    padding: 40px 0;
+  }
+  &.ui-widget-content {
+    border: none;
+  }
+  .ui-widget-content {
+    background-color: #f9f9f9;
+    text-align: center;
+    border: none;
+  }
+  .ui-dialog-buttonpane {
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding: 16px 0;
+    margin-top: 0;
+    .ui-dialog-buttonset {
+      float: none;
+    }
+  }
+  .ui-dialog-buttonset {
+    .ui-button-text-only {
+      border: 1px solid #ccc;
+      background: none;
+      padding: 0 20px;
+      color: #808080;
+      &:hover {
+        background: none;
+        background-color: #eee;
+      }
+      &.default-btn {
+        color: #fff;
+        background-color: #4DA4D8;
+        &:hover {
+          background-color: lighten(#4DA4D8, 5%);
+        }
+      }
+      span {
+        background: none;
+        float: none;
+        display: inline;
+      }
+    }
+    .ui-btn-default {
+      border: 1px solid #ccc;
+      background: none;
+      padding: 0 20px;
+      &:hover {
+        background: none;
+        background-color: #eee;
+      }
+      span {
+        background: none;
+        float: none;
+        display: inline;
+      }
+    }
+  }
+
+  .ui-dialog-buttonpane .ui-dialog-buttonset button {
+    border-radius: 3px;
+  }
+  .ui-button .ui-button-text {
+    display: inline;
+    line-height: normal;
+  }
+  .ui-button-text-only .ui-button-text {
+    padding: 0;
+  }
+  .udialog-message {
+    .udialog-icon {
+      display: inline-block;
+      vertical-align: middle
+    }
+    .udialog-message-text {
+      display: inline-block;
+      vertical-align: middle
+    }
+    .udialog-text-center {
+      text-align: center;
+    }
+    .udialog-text-left {
+      text-align: left;
+    }
+  }
+  .udialog-icon-right {
+    background-position: 0 0;
+
+  }
+  .udialog-icon-right, .udialog-icon-error, .udialog-icon-info {
+    @extend %iconFont;
+    margin-right: 16px;
+    font-size: 54px;
+    color: $themeColor;
+  }
+  .udialog-icon-right {
+    &:before {
+      content: "\e927";
+    }
+  }
+  .udialog-icon-error {
+    &:before {
+      content: "\e92e";
+    }
+  }
+  .udialog-icon-info {
+    &:before {
+      content: "\e92e";
+    }
+  }
+
+  .ui-widget-header {
+    .ui-state-hover, .ui-state-focus {
+      background: none;
+      color: #444;
+    }
+  }
+  .ui-dialog-titlebar .ui-state-hover {
+    border: 0;
+    background: none;
+    color: #444;
+  }
+
+  .ui-btn-primary {
+    @include uiBtn(140px, 36px, $themeColor, #f9f9f9, 0, 5px, 18px);
+    &:hover {
+      background-color: darken(#f9f9f9, 3%) !important;
+    }
+  }
+
+  .ui-btn-confirm {
+    @include uiBtn(140px, 36px, #fff, $themeColor, 0 20px 0 0, 5px, 18px);
+    &:hover {
+      background-color: lighten($themeColor, 3%) !important;
+    }
+  }
+
+  .ui-btn-disabled {
+    @include uiBtn(140px, 36px, #fff, #bbb, 0 20px 0 0, 5px, 18px);
+    border: 1px solid #bbb !important;
+    &:hover {
+      cursor: default !important;
+    }
+  }
+}
+
+.sys-alert {
+  .ui-dialog-titlebar-close {
+    width: 40px;
+    height: 40px;
+    top: 0;
+    border: none;
+    span.ui-icon-closethick {
+      margin: 10px auto;
+    }
+  }
+  .ui-dialog-titlebar .ui-state-hover {
+    border: 0;
+  }
+  .udialog-text {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  .btn-red {
+    color: #fff;
+  }
+  .sys-ft {
+    text-align: right;
+  }
+  *:focus {
+    outline: none;
+  }
+}
+
+.sys-confirm {
+  .ui-dialog-content .udialog-text {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+  }
+}
+
+.ui-widget-overlay {
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sys-modalTip {
+  .ui-widget-header {
+    padding: 14px 14px 0 0 !important;
+    text-align: right;
+    .ui-icon-closethick {
+      font-size: 26px;
+    }
+  }
+  .sys-err-box {
+    padding: 7px 0 64px 0;
+  }
+  .sys-err-alert {
+    text-align: center;
+    .sys-err-text {
+      padding: 20px 0 10px 0;
+      font-size: 22px;
+      line-height: 22px;
+    }
+    .sys-err-desc {
+      font-size: 14px;
+      line-height: 14px;
+      color: #666;
+    }
+  }
+}
+

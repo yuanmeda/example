@@ -1,0 +1,50 @@
+
+.content {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+      border-bottom: 1px solid #BFBFBF;
+      height: 40px;
+      line-height: 40px;
+      padding-left: 20px;
+    }
+  }
+  th ,td{
+    border-bottom: 1px solid #BFBFBF;
+    border-left: 1px solid #BFBFBF;
+  }
+
+  width: 1000px;
+  border: 1px solid #BFBFBF;
+  margin: 50px auto;
+  background-color: #ffffff;
+  thead {
+    th {
+      height: 40px;
+      text-align: center;
+    }
+  }
+  .lastli {
+    border-bottom: 0;
+    pre {
+      background-color: #ffffff;
+      border: none;
+
+    }
+  }
+  .big {
+    height: 181px;
+    line-height: 181px;
+  }
+  .header {
+    text-align: center;
+    font-weight: bold;
+  }
+  .zhanwei {
+    height: 40px;
+  }
+
+
+}

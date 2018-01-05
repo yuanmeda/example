@@ -1,0 +1,35 @@
+<div class="qa-upimg-container">
+    <div class="qa-upimg-header clearfix">
+        <span class="fl"
+              data-bind="translate: {key: 'qaUploadImg.tip', properties:{total: model.attach_pictures().length, last:9 - model.attach_pictures().length }}"></span>
+        <a href="javascript:;" class="fr close" data-bind="click: close">&times;</a>
+    </div>
+    <i class="qa-upimg-icon-triangle"></i>
+    <div class="qa-upimg-body clearfix">
+        <ul class="qa-upimg-body-imgwarp clearfix">
+            <!-- ko foreach: model.attach_pictures -->
+            <li class="qa-upimg-item">
+                <a href="javascript:;">
+                    <div class="image"
+                         data-bind="style: {background: 'url('+resource_path+'&size=160) no-repeat center'}"></div>
+                    <div class="masking">
+                        <i class="qa-upimg-icon-close" data-bind="click: $component.remove.bind($component)">&times;</i>
+                    </div>
+                </a>
+            </li>
+            <!--/ko-->
+            <!-- ko foreach: model.filesQueued -->
+            <li class="qa-upimg-progress" data-bind="visible: show" style="display: none;">
+                <p data-bind="text: message(), visible: message()" style="display: none;"></p>
+                <i class="qa-upimg-icon-close" data-bind="click: $component.reset.bind($component)">&times;</i>
+                <div class="qa-upimg-progress-bar">
+                    <div class="progress" data-bind="style:{width: progress() + '%'}"></div>
+                </div>
+            </li>
+            <!--/ko-->
+            <li class="qa-upimg"
+                data-bind="attr: {id: model.upload_id}, visible: model.attach_pictures().length !== 9 && !model.hide()">
+                <i class="qa-upimg-icon-add">+</i></li>
+        </ul>
+    </div>
+</div>

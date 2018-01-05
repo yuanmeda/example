@@ -1,0 +1,1 @@
+import './shopping_card/index';

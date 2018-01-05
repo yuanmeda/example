@@ -1,0 +1,120 @@
+<div class="pk-wrap wrapper">
+
+  <div class="pk-answer-wrap">
+    <!-- 在这里加个类名no-stand-banner即可变成没有对手的样式 -->
+    <div class="pk-answer-banner" data-bind="css:{'no-stand-banner': is_alone}">
+      <img class="banner-bg" data-bind="attr:{src:banner}" />
+      <div class="banner-cont">
+        <h3 class="ico-pk"></h3>
+        <div class="timer-wrap">
+          <span class="timer" data-bind="text:time_countdown"></span>
+        </div>
+        <div class="counter-wrap">
+          <!--答题进度-->
+          <span class="counter">
+            <em data-bind="text:exam_question_count"></em>/<!--ko text:paper_total_questions()--><!--/ko-->
+          </span>
+        </div>
+        <div class="pk-double-wrap clearfix">
+          <!--我的PK信息-->
+          <dl class="pk-stand pk-me">
+            <dt>
+              <!--头像-->
+              <a><img data-bind="attr:{src:me_user_info().icon}"></a>
+              <!--姓名-->
+              <span class="name" data-bind="text:me_user_info().display_name, attr:{title:me_user_info().display_name}"></span>
+            </dt>
+            <dd>
+              <!--得分-->
+              <span class="score" data-bind="translate:{key:'pk_answer.score',properties:{score:me_score()}}"></span>
+              <!--得分进度-->
+              <div class="progress-bar-wrap orange-progress-bar">
+                <span class="bar-bg"></span>
+                <!--进度条-->
+                <div class="bar-progress-wrap" data-bind="attr:{style:'width:'+me_progress()+'%'}">
+                  <span class="bar-progress"></span>
+                  <span class="dot"></span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <!--对方的PK信息-->
+          <!--ko if:!is_alone-->
+          <dl class="pk-stand pk-others">
+            <dt>
+              <!--头像-->
+              <a><img data-bind="attr:{src:rival_user_info().icon}"></a>
+              <!--姓名-->
+              <span class="name" data-bind="text:rival_user_info().display_name, attr:{title:rival_user_info().display_name}"></span>
+            </dt>
+            <dd>
+              <!--得分-->
+              <!--ko if:rival_status() === 0-->
+              <span class="score" data-bind="translate:{key:'pk_answer.rival_waiting'}"></span>
+              <!--/ko-->
+
+              <!--ko if:rival_status() !== 0-->
+              <span class="score" data-bind="translate:{key:'pk_answer.score',properties:{score:rival_score()}}"></span>
+              <!--/ko-->
+
+              <!--得分进度-->
+              <div class="progress-bar-wrap blue-progress-bar">
+                <span class="bar-bg"></span>
+                <!--进度条-->
+                <div class="bar-progress-wrap" data-bind="attr:{style:'width:'+rival_progress()+'%'}">
+                  <span class="bar-progress"></span>
+                </div>
+              </div>
+            </dd>
+          </dl>
+          <!--/ko-->
+        </div>
+      </div>
+    </div>
+
+    <!-- 答题区-->
+    <div class="answer-area-wrapper">
+      <div class="answer-area" id="pk_exercise"></div>
+    </div>
+  </div>
+
+  <!--ko if:!is_alone && is_show_ready_popup()-->
+  <div class="pk-ready-popup">
+    <div class="mask"></div>
+    <div class="ready-popup">
+      <span class="ico-pk"></span>
+      <div class="pk-double-wrap clearfix">
+        <!--己方(me)信息-->
+        <dl class="pk-stand pk-me">
+          <dt>
+            <a><img width="60" height="60" data-bind="attr:{src:me_user_info().icon}"></a>
+            <span class="name" data-bind="translate:{key:'pk_answer.me'}"></span>
+          </dt>
+        </dl>
+        <!--对手(rival)信息-->
+        <dl class="pk-stand pk-others">
+          <dt>
+            <a><img width="60" height="60" data-bind="attr:{src:rival_user_info().icon}"></a>
+            <span class="name" data-bind="text:rival_user_info().display_name,attr:{title:rival_user_info().display_name}"></span>
+          </dt>
+        </dl>
+      </div>
+      <!-- 准备进度条 -->
+      <div class="ready-progress-bar">
+        <span class="bar-bg"></span>
+        <div class="bar-progress-wrap" style="width:0%;" data-bind="attr:{style:'width:'+ready_progress() + '%'}">
+          <span class="bar-progress"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <!-- /准备进度条 -->
+    </div>
+  </div>
+  <!--/ko-->
+</div>
+
+<!--ko if:is_loading()-->
+<div class="pk-answer-loading">
+  <span></span>
+</div>
+<!--/ko-->

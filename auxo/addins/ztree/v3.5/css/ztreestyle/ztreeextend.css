@@ -1,0 +1,111 @@
+.ztree li span.button.ico_close,
+.ztree li span.button.ico_open {
+    width: 20px;
+    margin-right: 4px;
+    background: url(./img/pIcon.png) no-repeat scroll 0 0 transparent;
+    vertical-align: top;
+    *vertical-align: middle
+}
+
+.ztree li span.button.ico_docu {
+    height: 20px;
+    margin:2px 4px 0 0; 
+    background: url(./img/ztree-docu.png) no-repeat scroll 0 0 transparent;
+}
+
+.ztree li {
+    position: relative
+}
+
+.ztree li a {
+    padding: 5px 10px;
+    height: 30px;
+    vertical-align: inherit
+}
+
+.ztree li a:hover {
+    text-decoration: none;
+    background-color: #f5f5f5
+}
+
+.ztree li a.curSelectedNode {
+    background-color: #e7e7e7;
+    border: 0;
+    height: 30px
+}
+
+.l-ztree-control {
+    position: absolute;
+    right: -20px;
+    top: 0
+}
+
+.ztree-control {
+    display: inline-block;
+    line-height: 30px
+}
+
+.ztree-control .icon {
+    width: 15px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: 4px
+}
+
+.ztree-control .add {
+    background: url(./img/ztree-add.png) no-repeat 50%;
+    background-size: 100% 100%
+}
+
+.ztree-control .del {
+    background: url(./img/ztree-del.png);
+    background-size: 100% 100%
+}
+
+.ztree-control .modify {
+    background: url(./img/ztree-modify.png);
+    background-size: 100% 100%
+}
+
+.ztree-control .up {
+    background: url(./img/ztree-up.png);
+    background-size: 100% 100%
+}
+
+.ztree-control .down {
+    background: url(./img/ztree-down.png);
+    background-size: 100% 100%
+}
+
+.ztree-control .item {
+    display: inline-block;
+    color: #666;
+    padding-right: 36px;
+    cursor: pointer
+}
+
+.ztree li a.curSelectedNode {
+    padding-top: 5px;
+    border: none
+}
+.ztree li span.button.bottom_docu,.ztree li span.button.center_docu{
+    background: none;
+    margin: 0 4px 0 0;
+}
+.ztree li span.button.noline_open,.ztree li span.button.root_open,.ztree li span.button.center_open, .ztree li span.button.bottom_open {
+    background: url(./img/ztree-noline_open.png) no-repeat 50%;
+    margin-right: 4px
+}
+
+.ztree li span.button.noline_close,.ztree li span.button.root_close,.ztree li span.button.center_close, .ztree li span.button.bottom_close {
+    background: url(./img/ztree-noline_close.png) no-repeat 50%;
+    margin-right: 4px
+}
+
+.ztree li span.button.chk {
+    width: 14px
+}
+.ztree li ul.line{
+    background: none;
+}

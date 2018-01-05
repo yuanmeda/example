@@ -1,0 +1,157 @@
+@import "_version_train";
+
+@font-face {
+    font-family: 'train-admin';
+    src:    url('../fonts/train-admin.eot?oduvrk&v=#{$version}');
+    src:    url('../fonts/train-admin.eot?oduvrk#iefix&v=#{$version}') format('embedded-opentype'),
+        url('../fonts/train-admin.ttf?oduvrk&v=#{$version}') format('truetype'),
+        url('../fonts/train-admin.woff?oduvrk&v=#{$version}') format('woff'),
+        url('../fonts/train-admin.svg?oduvrk#train-admin&v=#{$version}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="tricon-"], [class*=" tricon-"] {
+    font-family: 'train-admin';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+	vertical-align: middle;
+	display: inline-block;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: none;
+    height: auto;
+    width: auto;
+}
+[class^=tricon-]:before, [class*=" tricon-"]:before {
+	display: inline-block;
+}
+
+.tricon-class:before {
+    content: "\e601";
+}
+.tricon-course:before {
+    content: "\e602";
+}
+.tricon-plan:before {
+    content: "\e603";
+}
+.tricon-run:before {
+    content: "\e605";
+}
+.tricon-czd:before {
+    content: "\e606";
+}
+.tricon-ctj:before {
+    content: "\e607";
+}
+.tricon-tj:before {
+    content: "\e608";
+}
+.tricon-ts:before {
+    content: "\e609";
+}
+.tricon-approve:before {
+    content: "\e60a";
+}
+.tricon-add:before {
+    content: "\e900";
+}
+.tricon-article:before {
+    content: "\e901";
+}
+.tricon-change:before {
+    content: "\e902";
+}
+.tricon-Chart:before {
+    content: "\e903";
+}
+.tricon-chat:before {
+    content: "\e904";
+}
+.tricon-clear:before {
+    content: "\e905";
+}
+.tricon-close:before {
+    content: "\e906";
+}
+.tricon-yes:before {
+    content: "\e907";
+}
+.tricon-home:before {
+    content: "\e908";
+}
+.tricon-xiasanjiao:before {
+    content: "\e909";
+}
+.tricon-new-course:before {
+    content: "\e90a";
+}
+.tricon-delcourse:before {
+    content: "\e90b";
+}
+.tricon-online:before {
+    content: "\e90c";
+}
+.tricon-popup:before {
+    content: "\e90d";
+}
+.tricon-set:before {
+    content: "\e90e";
+}
+.tricon-Settings:before {
+    content: "\e90f";
+}
+.tricon-Users:before {
+    content: "\e910";
+}
+.tricon-View:before {
+    content: "\e911";
+}
+.tricon-offline:before {
+    content: "\e912";
+}
+.tricon-pro:before {
+    content: "\e913";
+}
+.tricon-sanjiao:before {
+    content: "\e914";
+}
+.tricon-search:before {
+    content: "\e915";
+}
+.tricon-larrow:before {
+    content: "\e916";
+}
+.tricon-rarrow:before {
+    content: "\e917";
+}
+.tricon-uparrow:before {
+    content: "\e918";
+}
+.tricon-darrow:before {
+    content: "\e919";
+}
+.tricon-star:before {
+    content: "\e91a";
+}
+.tricon-list:before {
+    content: "\e91b";
+}
+.tricon-gouxuan:before {
+    content: "\e91c";
+}
+.tricon-time:before {
+    content: "\e91d";
+}
+.tricon-arrow-right:before {
+    content: "\e91e";
+}
+.tricon-arrow-left:before {
+    content: "\e91f";
+}

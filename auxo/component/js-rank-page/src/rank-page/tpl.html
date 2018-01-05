@@ -1,0 +1,143 @@
+<div class="x-rank-page">
+  <div class="rp-header">
+    <h1 data-bind="translate:{key:'rank_page.leader_board'}"></h1>
+    <!--ko if:curr_rank_cate()-->
+    <p data-bind="translate:{key:'rank_page.sub_title.'+curr_rank_cate().name + '.' + rank_range}"></p>
+    <!--/ko-->
+  </div>
+
+
+  <!--ko if:!is_admin_config_error()-->
+
+  <!--排行维度切换-->
+  <!--ko if:viewable_dimensions().length > 0-->
+  <div class="rp-filter-dimensions">
+    <ul>
+      <!--ko foreach:viewable_dimensions-->
+      <li data-bind="
+        css:{active: $component.curr_dimension().id == id},
+        text:ranking_name,
+        attr:{title:ranking_name},
+        click:$component.change_dimension
+      "></li>
+      <!--/ko-->
+    </ul>
+
+    <!--ko if:viewable_dimensions().length < dimensions().length-->
+    <select data-bind="event:{change:on_dimension_select}">
+      <!--ko foreach:dimensions-->
+      <option data-bind="attr:{value:id},text:ranking_name"></option>
+      <!--/ko-->
+    </select>
+    <!--/ko-->
+  </div>
+  <!--/ko--><!--end if viewable_dimensions().length > 0-->
+
+  <!--排行摘要信息-->
+  <!--ko if:curr_rank_cate()-->
+  <!--ko if:curr_rank_cate().name === 'hour'-->
+  <div class="rp-summ" data-bind="translate:{html:{key: 'rank_page.rank_summ_info.hour',properties:{my_rank:my_rank(), my_minute:my_minute(), my_exceed:my_exceed()}}}"></div>
+  <!--/ko-->
+  <!--ko if:curr_rank_cate().name === 'score'-->
+  <div class="rp-summ" data-bind="translate:{html:{key: 'rank_page.rank_summ_info.score',properties:{my_rank:my_rank(), my_score:my_score(), my_cost_minutes:my_cost_minutes(), my_cost_seconds:my_cost_seconds(), my_exceed:my_exceed()}}}"></div>
+  <!--/ko-->
+  <!--/ko-->
+
+  <!--ko if:date_dimension_config().length>0-->
+  <!--排行维度时间配置切换-->
+  <div class="rp-filter-times">
+    <!--ko foreach:date_dimension_config-->
+    <span data-bind="
+      css:{active:$component.curr_date_dim_conf().id == id},
+      text:label,
+      click:$component.change_date_dim_conf
+    "></span>
+    <!--/ko-->
+  </div>
+  <!--/ko-->
+
+  <!--/ko--><!--end if:!is_admin_config_error()-->
+
+
+
+  <!--排行列表-->
+  <!--ko if:list().length > 0-->
+  <!--ko if:curr_rank_cate()-->
+  <!--ko if:curr_rank_cate().name === 'hour'-->
+  <!--学时排行榜-->
+  <div class="rp-rank-list">
+    <table>
+      <thead>
+      <tr>
+        <th data-bind="translate:{key: 'rank_page.table_headers.rank'}">排名</th>
+        <th data-bind="translate:{key: 'rank_page.table_headers.user'}">用户</th>
+        <th data-bind="translate:{key: 'rank_page.table_headers.learn_time_used'}">学习时长</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--ko foreach:list-->
+      <tr>
+        <td data-bind="text:rank"></td>
+        <td>
+          <img class="avatar" data-bind="attr:{src:user_icon + '?defaultImage=1'}" width="40" height="40" />
+          <!--ko text:nick_name--><!--/ko-->
+        </td>
+        <td data-bind="text:level"></td>
+      </tr>
+      <!--/ko-->
+      </tbody>
+    </table>
+  </div>
+  <!--/ko-->
+
+  <!--ko if:curr_rank_cate().name === 'score'-->
+  <!--成绩排行榜-->
+  <div class="rp-rank-list">
+    <table>
+      <thead>
+      <tr>
+        <th data-bind="translate:{key: 'rank_page.table_headers.rank'}">排名</th>
+        <th data-bind="translate:{key: 'rank_page.table_headers.user'}">用户</th>
+        <th data-bind="translate:{key: 'rank_page.table_headers.cost_time'}">用时</th>
+        <th data-bind="translate:{key: 'rank_page.table_headers.score'}">成绩</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--ko foreach:list-->
+      <tr>
+        <td data-bind="text:rank"></td>
+        <td>
+          <img class="avatar" data-bind="attr:{src:user_icon + '?defaultImage=1'}" width="40" height="40" />
+          <!--ko text:nick_name--><!--/ko-->
+        </td>
+        <td data-bind=""></td>
+        <td data-bind="text:level"></td>
+      </tr>
+      <!--/ko-->
+      </tbody>
+    </table>
+  </div>
+  <!--/ko-->
+
+  <!--/ko--><!--end if curr_rank_cate()-->
+
+  <!--ko if:!is_last_page()-->
+  <div class="rp-load-more"><span data-bind="click:load_more,translate:{key: 'rank_page.load_more'}"></span></div>
+  <!--/ko-->
+  <!--/ko--><!--end if list().length>0-->
+
+  <!--ko if:!is_loading() && list().length === 0-->
+  <div class="rp-list-empty">
+    <img data-bind="attr:{src:list_blank_img}" />
+    <span data-bind="text:list_blank_message"></span>
+  </div>
+  <!--/ko-->
+
+  <!--ko if:is_loading()-->
+  <div class="rp-loading">
+    <div class="rp-mask"></div>
+    <span class="rp-mask-tip" data-bind="translate:{key:'rank_page.loading'}"></span>
+  </div>
+  <!--/ko-->
+
+</div>

@@ -1,0 +1,44 @@
+@import 'base';
+@import 'imgbox';
+@import 'nodata';
+@import 'banner_header';
+body{
+	background: #ebebeb;
+	font-size: 14px;
+}
+.level2-name{
+	font-size: 16px;
+	line-height: 2;
+	margin: 20px 0;
+}
+.levl2-tit{
+	font-size: 16px;
+	color: $themeColor;
+	// font-weight: bold;
+	margin-bottom: 20px;
+}
+.joiner-info{
+	width: 60%;
+	li{
+		width: 50%;
+		float: left;
+		font-size: 16px;
+		margin-bottom: 20px;
+		span{
+			display: inline-block;
+			vertical-align: middle;
+			&:first-child{
+				width: 80px;
+				margin-right: 10px;
+				text-align: right;
+			}
+		}
+	}
+}
+.view-more{
+	font-size: 16px;
+	color: darken($themeColor,10%);
+}
+.table th, .table td{
+	padding:0.25rem 1rem;
+}

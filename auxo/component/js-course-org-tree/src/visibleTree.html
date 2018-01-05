@@ -1,0 +1,33 @@
+<div class="x-course-visible-tree">
+    <span class="org-tree-block">
+        <input type="radio"  data-bind="checked: model.visibleType, checkedValue: 0, attr: { name: model.radioId }"> 公开
+    </span>
+    <span class="org-tree-block">
+        <input type="radio"  data-bind="checked: model.visibleType, checkedValue: 1, attr: { name: model.radioId }"> 组织内部
+    </span>
+    <!-- ko if: +ko.unwrap(model.visibleType) === 1 -->
+    <span class="org-tree-block" data-bind="click:methods.toggleModal">
+        <input type="text" readonly data-bind="value: model.text">
+    </span>  
+    <!-- /ko -->
+    <div class="modal hide" data-bind="attr: { id: model.modalId }" data-backdrop="static" tabindex="-1" role="modal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="click:methods.toggleModal">×</button>
+            <h3>选择组织</h3>
+        </div>
+        <div class="modal-body">
+            <!-- ko if: model.isShowSearchBox -->
+            <div class="seach-box">
+                <span><input type="text" data-bind="value: model.searchText" placeholder="请输入组织名称"></span>
+                <span><div class="btn btn-default" data-bind="click: methods.seachBox">搜索</div></span>
+            </div>
+            <!-- /ko -->
+            <div data-bind="attr: { id: model.orgTreeId }" class="ztree">
+                请在项目中配置项目的UC组织
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn btn-primary" data-bind="click:methods.toggleModal">确定</div>
+        </div>
+    </div>
+</div>

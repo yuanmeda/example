@@ -1,0 +1,1 @@
+ko.applyBindings(document.getElementById('pk-answer-page'));

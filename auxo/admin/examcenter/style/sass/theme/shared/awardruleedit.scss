@@ -1,0 +1,30 @@
+@import "banner_header";
+@import "base";
+html,body{
+	height: 100%;
+  overflow: auto;
+}
+input[type='text']{
+  height:26px;
+}
+
+.container-fluid{
+  .box{
+    .block-content{
+      .txt-block{
+        display: block;
+        margin:10px 0 15px 68px;
+      }
+    }
+  }
+  .row-fluid{
+    margin-top:10px;
+    .control-group{
+      display: inline-block;
+      width:40%;
+    }
+  }
+}
+.error{
+  color: red;
+}

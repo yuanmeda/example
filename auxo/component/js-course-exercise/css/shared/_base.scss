@@ -1,0 +1,40 @@
+/* bass css */
+body{ margin:0 auto; font:14px/1.5 "microsoft yahei", Arial, sans-serif; color: #2d2928; background:#fff;}
+button {font:14px/1.5 "microsoft yahei", Arial, sans-serif; outline: none;}
+.course-exercise-wrapper{ margin:0 auto;  width: 1200px;}
+.minwidth {width: 1024px;}
+.clearfix:after{ content:""; height:0; visibility:hidden; display:block; clear:both;}
+.clearfix{zoom:1;}
+.clear {clear:both }
+a {
+  text-decoration:none;
+  outline:none;
+  cursor: pointer;
+}
+a:visited {
+  color: #8e8884;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.box{
+	position: relative;
+}
+.no-border{
+	border-bottom: none!important;
+}
+input {
+  box-sizing: content-box;
+  outline: none;
+}
+input::-ms-clear { display: none;}
+input::-ms-clear { width : 0; height: 0; } ::-ms-reveal { width : 0; height: 0; }
+.color-red {
+  color: #e64100;
+}
+a.color-red:hover {
+  text-decoration: underline;
+}

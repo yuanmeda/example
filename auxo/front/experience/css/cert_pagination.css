@@ -1,0 +1,16 @@
+.cert_pagination {
+    position: relative;
+    text-align: center; }
+.cert_pagination .pagination {
+    display: inline-block; }
+.cert_pagination .pagination span,
+.cert_pagination .pagination a {
+    height: 25px;
+    line-height: 25px; }
+
+.certificate .cert_pagination {
+    margin-top: -40px;
+}
+.train .cert_pagination {
+    margin-top: -20px;
+}

@@ -1,0 +1,24 @@
+.audit-header {
+    margin: 20px 20px 0 20px;
+    font-size: 26px;
+    clear: both;
+}
+
+.audit-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.audit-container a{
+    padding: 0 20px;
+}
+.audit-container .active {
+    color: #337ab7;
+    border-bottom: 3px solid #337ab7;
+}
+
+.audit-container a:hover {
+    text-decoration: none;
+    color: #337ab7;
+    border-bottom: 3px solid #337ab7;
+}
+

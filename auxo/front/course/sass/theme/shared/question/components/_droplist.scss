@@ -1,0 +1,43 @@
+.droplist {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 2px 5px 10px #ccc;
+    h3 {
+        margin: 0 14px;
+        border-bottom: 1px solid #f0f0f0;
+        font: 14px/36px 'microsoft yahei';
+        color: #ccc;
+    }
+    ul {
+        padding: 4px;
+    }
+    li {
+        margin: 1px 0 0;
+        padding: 0 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover,
+        &.active {
+            background: #eee;
+            p {
+                color: $themeColor;
+            }
+            span {
+                color: #999;
+            }
+        }
+        p, span {
+            font: 14px/36px 'microsoft yahei';
+            color: #333;
+            @extend %ellipse;
+        }
+        p {
+            float: left;
+            margin: 0 15px 0 0;
+        }
+        span {
+            color: #ccc;
+        }
+    }
+}

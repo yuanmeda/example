@@ -1,0 +1,54 @@
+    .backend-group-select {
+       padding: 0 80px;
+    }
+    .backend-group-select table{
+       border:1px solid #ccc
+    }
+    .backend-group-select td {
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+    .backend-group-select thead {
+       background: #f2f2f2;
+    }
+    .backend-group-select .text-right {
+       text-align:right;
+       padding-right: 16px
+    }
+    .backend-group-select a {
+       color: #08c;
+       margin-right:16px;    
+    }
+
+    .backend-user-select {
+      padding: 0 80px;
+    }
+    .backend-user-select .box{
+      overflow-x: hidden;
+      margin: 16px 0;
+      padding: 4px 16px;
+      border: 1px solid #0099FF;
+      width: 800px;
+      max-height: 160px;
+      overflow-y: auto;
+    }
+    .backend-user-select ul.inline{
+      margin-left: 0;
+      list-style: none;
+    }
+    .backend-user-select ul.inline>li {
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 6px;
+      margin: 5px 8px;
+    }
+
+    .text-tip{
+      color: #777;
+      margin-bottom: 0;
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 10px;
+      padding-top: 5px;
+    }
+

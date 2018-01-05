@@ -1,0 +1,105 @@
+<div class="mod-sidebar">
+    <!--当a.add-note-btn为显示状态时，div.tab添加btn-status-->
+    <!--当div.add-note-input为显示状态时，div.tab添加input-status-->
+    <!--todo: 0424新增div.tab这一层-->
+    <div class="tab btn-status">
+        <div class="n-ui-tab3">
+            <a href="javascript:;" class="btn-tab" noteType="1"
+               data-bind="click:switchTab.bind($component,'1'),translate:{key:'courseLearn.note.mine'},css:{'on':model.noteType()=='1'}"></a>
+            <a href="javascript:;" class="btn-tab" noteType="2"
+               data-bind="click:switchTab.bind($component,'2'),translate:{key:'courseLearn.note.all'},css:{'on':model.noteType()=='2'}"></a>
+        </div>
+
+        <div class="note-tab-cont" style="overflow: auto;position: absolute;bottom: 71px;top: 59px;right: 0;left: 0;">
+            <!--隐藏 hide-->
+            <!-- ko if: model.isShow() && model.myNoteList().length -->
+            <div class="note-tip">
+                <p class="n-ui-txt">
+                    <span data-bind="translate:{key:'courseLearn.note.total'}">共</span>
+                    <span class="n-ui-txt-main" data-bind="text: model.total"></span>
+                    <span data-bind="translate:{key:'courseLearn.note.notes'}">篇笔记</span>
+                </p>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: !model.isShow() && model.allNoteList().length -->
+            <div class="note-tip">
+                <p class="n-ui-txt">
+                    <span data-bind="translate:{key:'courseLearn.note.total'}">共</span>
+                    <span class="n-ui-txt-main" data-bind="text: model.allTotal"></span>
+                    <span data-bind="translate:{key:'courseLearn.note.notes'}">篇笔记</span>
+                </p>
+            </div>
+            <!-- /ko -->
+            <div class="note-list">
+                <!--笔记列表为空开始-->
+                <!-- ko if: model.isShow() && !model.myNoteList().length -->
+                <div class="note-empty">
+                    <i class="note-empty-icon"></i>
+                    <p class="note-empty-tips" data-bind="translate:{key:resource()?'courseLearn.note.noNote':'courseLearn.note.noResource'}">暂时没有笔记</p>
+                    <a class="note-empty-btn"
+                       data-bind="translate:{key:'courseLearn.note.addNote'}, click: showEdit,visible:resource">添加笔记</a>
+                </div>
+                <!-- /ko -->
+                <!--全部笔记为空的条件-->
+                <!-- ko if: !model.isShow() && !model.allNoteList().length -->
+                <div class="note-empty">
+                    <i class="note-empty-icon"></i>
+                    <p class="note-empty-tips" data-bind="translate:{key:resource()?'courseLearn.note.noNote':'courseLearn.note.noResource'}">暂时没有笔记</p>
+                    <a class="note-empty-btn"
+                       data-bind="translate:{key:'courseLearn.note.addNote'}, click: showEdit,visible:resource">添加笔记</a>
+                </div>
+                <!-- /ko -->
+
+                <!--我的笔记列表开始-->
+                <!-- ko if: model.isShow() -->
+                <!-- ko foreach: model.myNoteList -->
+                <div id="myNoteList"
+                     data-bind="component:{name: 'x-note-item-b', params:{note:$data, options: $parent.opts3}}"></div>
+                <!-- /ko -->
+                <!-- /ko -->
+
+                <!--全部笔记列表开始-->
+                <!-- ko if: !model.isShow() -->
+                <!-- ko foreach: model.allNoteList -->
+                <div id="allNoteList"
+                     data-bind="component:{name: 'x-note-item-b', params:{note:$data, options: $parent.opts4}}"></div>
+                <!-- /ko -->
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+    <div class="u-ui-add-note" style="background-color: #fff;">
+        <!--当a.add-note-btn为显示状态时，div.tab添加btn-status-->
+        <!--当div.add-note-input为显示状态时，div.tab添加input-status-->
+        <!--a.add-note-btn和div.dd-note-input的显示/隐藏状态，删除/添加hide-->
+        <a class="add-note-btn note-icon-txt"
+           style="position: absolute;bottom: 15px;width: 320px;background-color: #fff;border: 1px solid #DEDEDF;"
+           data-bind="click: showEdit,visible:resource">
+            <!--高亮状态为 on-->
+            <i class="note-icon iconfont-learn n-icon-pen"></i>
+            <span class="note-txt" data-bind="translate:{key:'courseLearn.note.addNote'}">添加笔记</span>
+        </a>
+        <!--组件在这里引用-->
+        <div data-bind="component: { name: 'x-course-learn-note__note-add', params: {'config':$root.config,data: model.createBuildNote} }"></div>
+    </div>
+    <!--弹窗-->
+    <div class="u-ui-mask" style="position: absolute;display: none;">
+        <div class="u-ui-pop" style="min-width: 340px;margin-left: -170px;">
+            <h3 class="pop-tit">
+                <span class="tit-left" data-bind="translate:{key:'courseLearn.note.tips'}">提示</span>
+                <span class="pop-close" data-bind="click: deleteCancel"></span>
+            </h3>
+            <div class="pop-content">
+                <p class="tip" data-bind="translate:{key:'courseLearn.note.confirm'}">确定删除此篇笔记吗？</p>
+            </div>
+            <div class="pop-footer">
+                <a href="javascript:;" class="u-ui-btn"
+                   data-bind="click: confirmDelete, translate: {key:'courseLearn.note.sure'}">确定</a>
+                <!-- u-ui-btn加类on表示变为蓝色 -->
+                <a href="javascript:;" class="u-ui-btn ml10"
+                   data-bind="click: deleteCancel, translate: {key:'courseLearn.note.cancel'}">取消</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗-->
+</div>

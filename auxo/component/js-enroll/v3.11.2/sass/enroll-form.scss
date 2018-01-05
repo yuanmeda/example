@@ -1,0 +1,126 @@
+$form-border:#ddd;
+.vm{
+	display: inline-block;
+	vertical-align: middle;
+}
+.fl{float: left;}
+.fr{float: right;}
+.tc{ text-align: center;}
+.tl{ text-align: left;}
+.tr{ text-align: right;}
+.cf:before, .cf:after{content:"";display:table;}
+.cf:after, .cl{clear:both;}
+.cf{zoom:1;}
+.form,.enroll-form{
+	*{
+		box-sizing:border-box;
+	}
+	width: 565px;
+  	margin: 0 auto;
+  	padding-top:30px;
+	.form-control{
+		margin-bottom: 25px;
+		position: relative;
+		.error-box{
+			width: 100%;
+			position: absolute;
+			bottom: -22px;
+			text-align: center;
+			color: red;
+		}
+		.label-left{
+			width: 80px;
+			height: 42px;
+			line-height: 42px;
+			text-align: right;
+			float: left;
+			margin-right: 12px;
+		}
+		.label-right{
+			float: right;
+			&.fl{
+				float: left;
+			}
+		}
+		.input{
+			padding-right:15px;
+			display: block;
+			width: 100%;
+		}
+		.input,.select{
+			height: 42px;
+			line-height: 42px;
+			padding-left:15px;
+		}
+		.input,.select,.textarea{
+			display: block;
+			border:1px solid $form-border;
+			border-radius: 5px;
+		}
+		.select{			
+			padding-right:42px;
+			option{
+				line-height: 36px;
+				height: 36px;
+			}
+		}
+		.textarea{
+			height: 83px;
+			width: 473px;
+			padding:15px;
+			overflow-x:hidden;
+			overflow-y:auto;
+			resize:none;
+		}
+		.w227{
+			width: 227px;
+		}
+		.w473{
+			width: 473px;
+		}	
+		.small-tit{
+			color: #999;
+		}
+		.radio-tit{
+			margin-bottom: 10px;
+			min-width: 80px;
+			text-align: right;
+			display: inline-block;
+		}
+		.radio-group{
+
+				display: block;
+				margin-left: 45px;
+				padding-left: 48px;
+				position: relative;
+				line-height:18px;
+			label{
+				margin-bottom: 10px;
+				display: block;
+				i.before,i.after{
+					display: inline-block;
+					border:1px solid $form-border;
+				}
+				&.radio-box{					
+					i.before,i.after{
+						border-radius: 50%;
+					}
+				}
+				&.check-box{
+					i.before{
+						border-radius: 2px;
+					}
+					i.after{
+						border-radius: 1px
+					}
+				}
+				&.active{
+					i.after{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	
+}

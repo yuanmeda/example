@@ -1,0 +1,133 @@
+.pagination-box{
+    .pull-left{
+        float: left;
+    }
+    .pull-right{
+        float: right;
+    }
+}
+.pagination,
+.pagination-info {
+    margin: 10px 0;
+}
+.pagination a {
+    text-decoration: none;
+
+    color: $fontColor666;
+}
+.pagination a,
+.page-input .select-page-btn,
+.pagination span {
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    border: solid 1px #ddd;
+    border-radius: 3px;
+    padding: 0 12px;
+    height: 30px;
+
+    line-height: 30px;
+    text-align: center;
+
+    background: $white;
+}
+.pagination .current,
+.pagination a:hover,
+.pagination span {
+    border: solid 1px darken($themeColor,5%);
+
+    color: $white;
+    background-color: $themeColor;
+}
+.page-input .select-page-btn:hover {
+    border: solid 1px darken($themeColor,5%);
+
+    color: $white;
+    background-color: $themeColor;
+
+    cursor: pointer;
+}
+.pagination .prev {
+    border: solid 1px #ddd;
+    -webkit-border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+
+       -moz-border-bottom-left-radius: 3px;
+       -moz-border-top-left-radius: 3px;
+}
+.pagination .current.prev,
+.pagination .current.next {
+    border-color: #ccc;
+
+    color: #666;
+    background: #ccc;
+}
+.pagination-info span {
+    display: block;
+
+    line-height: 34px;
+    vertical-align: middle;
+}
+.pagination .first {
+    margin-right: 5px;
+    border-width: 1px;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.pagination .last {
+    margin-left: 5px;
+    border-width: 1px;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+.page-input {
+    display: block;
+    float: left;
+    overflow: hidden;
+
+    margin-left: 15px;
+}
+.page-input .page-text {
+    margin-left: 5px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    padding: 0 10px 0 10px;
+    width: 50px;
+    height: 20px;
+
+    @include lineHeight(30px);
+}
+.page-input .select-page-btn {
+    margin-right: 10px;
+    float: right;
+    vertical-align: top;
+}
+.page-selector {
+    display: block;
+    float: left;
+    overflow: hidden;
+
+    margin: 5px 0 0 15px;
+}
+.page-selector select {
+    margin: 0 5px;
+    width: 60px;
+
+    vertical-align: baseline;
+}
+#pagination {
+    margin: 20px 0;
+
+    @include clearfix();
+    .page-input .page-text {
+        padding: 4px 6px;
+        height: 30px;
+    }
+    .pagination-info {
+        margin: 10px;
+    }
+}

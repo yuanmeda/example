@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .wh-files{
+            width:107px;
+            height:26px;
+            line-height:26px;
+            text-align:center;
+            display:block;
+            background:#5095eb;
+            border-radius: 5px;
+            color:#fff;
+            font-size: 14px;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .wh-files:hover{
+            background-color:#3e9bf9;
+            color:#fff;
+        }
+        .wh-files:active{
+            background-color:#4d95ef;
+            color:#fff;
+        }
+    </style>
+</head>
+<body style="position: relative;margin: 0;">
+
+<a class="wh-files" id="js_create" href="javascript:;">上传课程+</a>
+
+
+<script src="http://static.auxo.test.huayu.nd//auxo/addins/jquery/v1.7.1/jquery.min.js"></script>
+<script src="http://static.auxo.test.huayu.nd//auxo/addins/jquery-extension-nova/v1.0.0/jquery-extension-nova.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url: 'http://192.168.249.172:8888/fjedu/navs/html'
+        }).done(function (data) {
+            $('body').append(data.link);
+            $('body').append(data.header);
+            $('body').append('<div style="height: 850px;"></div>');
+            $('body').append(data.footer);
+            $('body').append(data.script);
+        })
+    })
+</script>
+
+
+</body>
+</html>

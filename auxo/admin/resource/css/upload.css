@@ -1,0 +1,29 @@
+﻿/*---  reset  ----*/
+.upload, .upload div, .upload span, .upload img { margin:0px; padding:0px; }
+.clearfix:before, .clearfix:after { content:""; display:table; }
+.clearfix:after{ clear:both; }
+.clearfix{ *zoom:1;/*ie6,7*/ }
+
+.upload { font-family: arial, helvetica, verdana, tahoma, sans-serif; }
+.upload #ed_con { display: block; width: 250px; height: 200px; }
+.upload .se { width: 250px; margin: 0px; padding-bottom: 20px; border: 1px solid #FFFFFF; }
+.upload .se.new.active { cursor: pointer; border-color: #D3d3d3; background-color: #F6F7F8;  }
+.upload .se_arr { margin: 20px auto 0px; width: 92px; height: 81px; background: url(./img/upload-sprite.png?100) no-repeat -49px -80px; }
+.upload .se_fil { margin: 12px auto 0px; width: 190px; height: 45px; background: url(./img/upload-sprite.png?100) no-repeat 0px -173px; }
+.upload .de { width:100%;  float: left; }
+.upload .de_fo { float: left; overflow: hidden; }
+.upload .de_na { height: 20px; line-height: 20px; margin: 10px 0px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.upload .de_pg { overflow: hidden; border: 1px solid #D3D3D3; float: left; width:400px; }
+.upload .to_con { margin: 0px 7px; }
+.upload .pg_con { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; margin: 5px 0px; height: 20px; background-color: #0e90d2;  width: 0%; }
+.upload .de_perc { margin-left: 10px; float: left; font-size: 36px; line-height: 36px; color: #909090; }
+.upload .de_num { font-family: 'SimSun'; color: #909090; font-size: 12px; height: 32px; margin: 10px 0px; }
+.upload .de_pre { float: left; overflow: hidden; margin-left: 10px; }
+.upload #pre_con { width: 200px; height: 110px; margin: 5px; overflow: hidden; }
+.upload .se.dispose { position: absolute; zoom: 0.001; -moz-transform: scale(0);-webkit-transform: scale(0);-o-transform: scale(0); transform: scale(0); }
+.upload .su_re { margin-left: 30px; color: black; text-decoration: none; }
+.upload .su_re:hover { text-decoration: underline; }
+.upload .btn_cl { display:block; text-decoration:none; font-weight: bold; text-align: center; font-family: SimSun; line-height: 45px; font-size: 14px; letter-spacing: 3px; color: #555555;  margin: 10px auto 0px; width: 190px; height: 45px; background: url(./img/upload-sprite.png) 0px -173px; }
+ 
+
+

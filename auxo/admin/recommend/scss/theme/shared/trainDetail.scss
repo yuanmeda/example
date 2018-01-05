@@ -1,0 +1,26 @@
+@import "banner_header";
+@import "mixins";
+.box {
+    .form-horizontal input[type="text"] {
+        width: 300px;
+        height: 26px;
+    }
+    .form-horizontal textarea {
+        width: 300px;
+    }
+    .ztree {
+        overflow: scroll;
+
+        border: #afa8a8 1px solid;
+        width: 300px;
+        height: 300px;
+    }
+    .back-btn {
+        display: block;
+
+        margin-left: 20px;
+    }
+    .chzn-choices {
+        width: 300px;
+    }
+}

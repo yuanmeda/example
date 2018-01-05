@@ -1,0 +1,303 @@
+@charset "UTF-8";
+
+@import "../shared/_reset.scss";
+@import "../shared/_base.scss";
+@import "../shared/_animate.scss";
+@import "../shared/_variable.scss";
+@import "../shared/_mixin.scss";
+@import "../shared/_common.scss";
+@import "../shared/_zTreeStyle.scss";
+@import "../shared/_iconfont.scss";
+
+/**
+ * 练习(pct)首页样式
+ * @authors wxm (you@example.org)
+ * @date    2017-06-08 13:54:21
+ * @version $Id$
+ */
+
+.practice-entrance-main{
+	margin-top: 15px;
+	.catelog-l{
+	    float: left;
+	    width: 253px;
+	    background: #fff;
+	    border: 1px solid #e9e9e9;
+	    box-shadow: 0 0 4px #e9e9e9;
+
+	}
+	.select-tree {
+	    width: 100%;
+	    border: 1px solid #eaeaea;
+	    background: #fff;
+	    font-size: 14px !important;
+	    min-height: 680px;
+	     // box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+	    a {
+	        color: #666666;
+	        &:hover {
+	            color: $themeColor;
+	        }
+	    }
+	    .select-tab {
+	        position: relative;
+	        font-size: 16px;
+	        border-bottom: 1px solid #eaeaea;
+	        a {
+	            display: inline-block;
+	            width: 50%;
+	            height: 59px;
+	            line-height: 59px;
+	            text-align: center;
+	            &:hover {
+	                background: #fafafa;
+	            }
+	            &.active {
+	                @extend :hover;
+	            }
+	            &.last {
+	                position: absolute;
+	                top: 0;
+	                right: 0;
+	                border-left: 1px solid #eaeaea;
+	            }
+	        }
+	    }
+	    .tree-pk{
+	        position: absolute;
+	        top: 50%;
+	        right: 10px;
+	        margin-top: -9px;
+	        width: 18px;
+	        height: 18px;
+	        background: url("../img/pk-spr.png") -23px -23px no-repeat;
+	    }
+	    .ztree .node_name{
+	    	width: 160px;
+	    }
+	}
+	.relavant-r{
+	    float: right;
+	    width: 924px;
+	    min-height: 680px;
+	    background: #fff;
+	    box-shadow: 0 0 4px #e9e9e9;
+	}
+}
+.passage-situ{
+	font-size: 16px;
+	color: #666;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	span{
+		color: $themeColor;
+		padding: 0 4px;
+	}
+}
+.practice-top-situ{
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #f0f0f0;
+    .passage-situ{
+    	float: left;
+    	position: relative;
+    	display: inline-block;
+    	padding-left: 56px;
+    	max-width: 620px;
+
+    	&:before{
+			position: absolute;
+			top: 0;
+			left: 24px;
+			content: "\e606";
+			font-family:"iconfont" !important;
+			font-size:16px;
+			color: $themeColor;
+			font-style:normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+    	}
+    }
+    .btn-border-blue{
+    	float: right;
+    	width: 86px;
+    	height: 28px;
+    	line-height: 28px;
+    	font-size: 14px;
+    	margin-top: 16px;
+    }
+}
+/*缺省样式*/
+.no-things-wrap{
+    text-align: center;
+    padding-top: 194px;
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+    p{
+        padding-top: 8px;
+        font-size: 18px;
+        color: #666;
+        text-align: center;
+    }
+    .btn-border-blue{
+        margin-top: 14px;
+        display: inline-block;
+        width: 170px;
+    }
+}
+/*练习方式设置*/
+.practice-way-wrap{
+	height: 46px;
+	border-bottom: 1px solid #f0f0f0;
+	.way-item{
+		position: relative;
+		float: right;
+		margin-left: 1px;
+		display: inline-block;
+		width: 144px;
+		text-align: center;
+		line-height: 46px;
+		cursor: pointer;
+		&:after{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			content: "";
+			width: 1px;
+			height: 20px;
+			margin-top: -10px;
+			background: #f0f0f0;
+			z-index: 5;
+		}
+		&.on{
+			.way-tit{
+				&:after{
+					background-position: 0 -29px;
+				}
+			}
+		}
+	}
+	.way-tit{
+		position: relative;
+		padding-right: 18px;
+		font-size: 14px;
+		color: #666;
+		&:after{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			content: "";
+			width: 11px;
+			height: 6px;
+			margin-top: -2px;
+			background: url("../../css/#{$pctSpr}") 0 -19px no-repeat;
+		}
+
+	}
+	.way-droplist{
+		position: absolute;
+		top: 47px;
+		left: 50%;
+		width: 140px;
+		padding: 0 2px;
+		margin-left: -73px;
+		background: #fff;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		display: none;
+		// z-index: 5;
+		li{
+            font-size: 14px;
+            color: #333;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 11px;
+            margin: 5px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow:ellipsis;
+            border-radius: 4px;
+            transition: all linear 0.2s;
+            -webkit-transition: all linear 0.2s;
+            &:hover,
+            &.on{
+            	color: $blue;
+            	background: #eee;
+            }
+		}
+	}
+}
+/*圆形进度条2*/
+.circle-progress2 {
+    position: relative;
+    display: inline-block;
+    width: 190px;
+    height: 190px;
+    text-align: center;
+    .percent {
+    	padding-top: 72px;
+        display: inline-block;
+        line-height: 20px;
+        font-size: 45px;
+        color: $themeColor;
+        z-index: 2;
+        &:after{
+        	content: '%';
+        	margin-left: 0.1em;
+        	font-size: 0.9em;
+        }
+    }
+    .txt-situ{
+    	display: block;
+    	padding-top: 4px;
+    	font-size: 18px;
+    	color: #666;
+        line-height: 1.2;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow:ellipsis;
+    }
+    canvas{
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    }
+}
+
+.practice-entrance-cont{
+	text-align: center;
+	h3{
+		margin: 0 auto;
+		padding-top: 30px;
+		font-weight: normal;
+		font-size: 26px;
+		color: #333;
+		max-width: 850px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow:ellipsis;
+	}
+	.circle-progress2{
+		margin-top: 50px;
+	}
+	.passage-situ{
+		padding: 18px 0;
+	}
+	.btm-wrap{
+		padding-top: 36px;
+	}
+	.btn-border-blue,.btn-blue{
+		display: inline-block;
+		height:50px;
+		line-height: 50px;
+		width: 154px;
+		margin: 0 10px;
+		vertical-align: middle;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	}
+}

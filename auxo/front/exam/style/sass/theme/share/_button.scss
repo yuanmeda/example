@@ -1,0 +1,90 @@
+@mixin btn-height($height: 2) {
+  height: $height;
+
+  line-height: $height;
+}
+
+$btn-color: (
+        primary:($themeColor #fff $themeColor),
+        default:(#e5e5e5 #333 #e5e5e5),
+        tips:(#f60 #fff #f60),
+        save:(#7fd729 #fff #7fd729),
+        nobg:(#fff $themeColor $themeColor),
+        disabled:(#999 #fff #999)
+);
+$btn-size: (
+        sm:(30px 15px 0),
+        md:(32px 20px 0),
+        lg:(42px 0 160px)
+);
+$btn-wsize: (
+        wsm:(42px 140px),
+        wmd:(50px 100%),
+        wlg:(50px 160px)
+);
+%btn {
+  display: inline-block;
+
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0 15px;
+
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+@each $type, $color in $btn-color {
+  .bt-#{$type},
+  a.bt-#{$type},
+  .udialog .bt-#{$type} {
+    border-color: nth($color, 3);
+
+    color: nth($color, 2);
+    background: nth($color, 1);
+
+    transition: background .3s;
+
+    @extend %btn;
+    &:hover {
+      text-decoration: none;
+
+      color: nth($color, 2);
+      background: darken(nth($color, 1), 8%);
+    }
+  }
+}
+
+@each $size, $height in $btn-size {
+  .bt-#{$size},
+  a.bt-#{$size}, .udialog .bt-#{$size} {
+    padding: 0 nth($height, 2);
+
+    @extend %btn;
+    @include btn-height(nth($height, 1));
+    min-width: nth($height, 3);
+  }
+}
+
+@each $wsize, $wheight in $btn-wsize {
+  .bt-#{$wsize},
+  a.bt-#{$wsize}, .udialog .bt-#{$wsize} {
+    width: nth($wheight, 2);
+
+    @extend %btn;
+    @include btn-height(nth($wheight, 1));
+  }
+}
+
+.bt-group {
+  [class^="bt-"] + [class^="bt-"] {
+    margin-left: 20px;
+  }
+}
+
+.bt-disabled {
+  cursor: default;
+  &:hover{
+    background-color: #999;
+  }
+}

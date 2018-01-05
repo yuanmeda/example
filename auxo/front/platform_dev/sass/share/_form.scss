@@ -1,0 +1,128 @@
+$form-border:#ddd;
+.form{
+	.form-control{
+		margin-bottom: 25px;
+		.label{
+			width: 80px;
+			height: 42px;
+			line-height: 42px;
+			text-align: right;
+			float: left;
+			margin-right: 12px;
+		}
+		.label-right{
+			float: right;
+			&.fl{
+				float: left;
+			}
+		}
+		.input{
+			padding-right:15px;
+			display: block;
+			width: 100%;
+		}
+		.input,.select{
+			height: 42px;
+			line-height: 42px;
+			padding-left:15px;
+		}
+		.input,.select,.textarea{
+			display: block;
+			border:1px solid $form-border;
+			border-radius: 5px;
+		}
+		.select{			
+			padding-right:42px;
+			option{
+				line-height: 36px;
+				height: 36px;
+			}
+		}
+		.textarea{
+			height: 83px;
+			width: 473px;
+			padding:15px;
+			overflow-x:hidden;
+			overflow-y:auto;
+			resize:none;
+		}
+		.w227{
+			width: 227px;
+		}
+		.w473{
+			width: 473px;
+		}
+		.file-btn{
+			display: inline-block;
+			height: 26px;
+			line-height: 26px;
+			padding:0 15px;
+			color: $themeColor;
+			border:1px solid $themeColor;
+			border-radius: 5px;
+		}
+		.form-file{
+			border:1px solid $form-border;
+			height: 42px;
+			padding:8px;
+			border-radius: 5px;
+		}
+	}
+	.form-radio-group{
+		.radio-group{
+			label{
+				display: block;
+				margin-left: 45px;
+				padding-left: 38px;
+				position: relative;
+				line-height:18px;
+				margin-bottom: 15px;
+				input{
+					width: 0;
+					height: 0;
+					opacity: 0;
+					display: none;
+				}
+				i.before,i.after{
+					display: inline-block;
+					border:1px solid $form-border;
+				}
+				&.radio-box{					
+					i.before,i.after{
+						border-radius: 50%;
+					}
+				}
+				&.check-box{
+					i.before{
+						border-radius: 2px;
+					}
+					i.after{
+						border-radius: 1px
+					}
+				}
+				i.before{
+					width: 18px;
+					height: 18px;
+					position: absolute;
+					left: 0;
+					top:0;
+				}
+				i.after{
+					width: 12px;
+					height: 12px;
+					border-radius: 3px;
+					display: none;
+					position: absolute;
+					left: 3px;
+					top:3px;
+					background: $themeColor;
+				}
+				&.active{
+					i.after{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

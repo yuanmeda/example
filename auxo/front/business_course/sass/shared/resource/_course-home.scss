@@ -1,0 +1,98 @@
+.course__r--btnwrap {
+    text-align: center
+}
+.course-wrap {
+    position: relative;
+    padding-left: 275px;
+}
+.course-content {
+    position: relative;
+    width: 100%;
+    min-height: 680px;
+    background: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    .course__tool-wrap {
+        position: absolute;
+        top: 12px;
+        right: 32px;
+        z-index: 9;
+    }
+}
+.course-side {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 61px;
+    width: 255px;
+    background: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+
+    &.has-search {
+        padding-top: 108px;
+        .course__search--wrap {
+            display: block;
+        }
+    }
+}
+/* 课程资源 */
+.course__resource {
+    padding: 20px;
+}
+
+/* 暂无学习资源 */
+.course__nores--wrap {
+    text-align: center;
+}
+.course__nores-lb {
+    display: inline-block;
+    max-width: 200px;
+    margin: 150px 50px;
+    .nores-icon {
+        display: block;
+        width: 146px;
+        height: 138px;
+        margin: 0 auto;
+        background: url($imgUrl + "sprite.png") no-repeat;
+        background-position: -200px 0;
+    }
+    .nores-word {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #666;
+    }
+}
+/*暂无课程目录*/
+.course__no-menu {
+    margin-top: 145px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #999;
+    text-align: center;
+}
+
+/* 课程章节信息 */
+.course__chapter--intro {
+    position: relative;
+    padding: 18px 34px;
+    border-bottom: 1px solid #f0f0f0;
+    .chapter-name {
+        font-size: 16px;
+        color: #666;
+        width: 620px;
+    }
+    .chapter-word {
+        margin-top: 14px;
+        font-size: 14px;
+        color: #999;
+    }
+    .chapter-btn {
+        user-select: none;
+        position: absolute;
+        right: 34px;
+        bottom: 18px;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+    }
+}

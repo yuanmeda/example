@@ -1,0 +1,30 @@
+<div class="qas-answer-list">
+
+  <!--填写回答内容-->
+  <!--ko if:!is_mine-->
+  <!--ko component:{name:'x-qas-post-answer', params:post_answer_params}--><!--/ko-->
+  <!--/ko-->
+
+
+  <!--ko if:list().length-->
+  <h1 class="qas-title" data-bind="translate:{key:'qas_cmp_questions.answers_count',properties:{total:total()}}"></h1>
+
+  <div class="qas-list-container">
+    <!--列表-->
+    <!--ko foreach:list-->
+    <!--ko component:{name:'x-qas-answer', params:{answer:$data, options:$component.answer_options}}--><!--/ko-->
+    <!--/ko-->
+  </div>
+  <!--/ko-->
+
+  <!--ko if:!list().length-->
+  <div class="qas-list-empty" data-bind="translate:{key: 'qas_cmp_questions.answer_list_empty'}"></div>
+  <!--/ko-->
+
+
+  <!--分页-->
+  <!--ko if:showPagination()-->
+  <!--ko component:{name:'x-qas-pagination-prv',params:pagination_params}--><!--/ko-->
+  <!--/ko-->
+  <span class="qas-arr"></span>
+</div>

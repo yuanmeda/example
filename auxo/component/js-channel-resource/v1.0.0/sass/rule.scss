@@ -1,0 +1,66 @@
+.step-bar {
+  position: relative;
+  margin-bottom: 20px;
+  &:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 50px;
+    top: 27%;
+    right: 50px;
+    z-index: 0;
+    background-color: #d7d7d7;
+  }
+  li {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    margin-left: 20%;
+    background-color: #fff;
+    i {
+      margin-left: 32%;
+      margin-bottom: 5px;
+      border-radius: 50%;
+      display: block;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      color: #fff;
+      background-color: #d7d7d7;
+    }
+    span {
+      color: #999;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &.active, &:hover {
+      i {
+        background-color: #337ab7;
+      }
+      span {
+        color: #337ab7;
+      }
+    }
+  }
+}
+
+.x-tree-selector-list {
+  overflow: hidden;
+}
+
+.x-tree-selector-list li {
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.x-tree-selector-list-close {
+  float: right;
+  margin: 0 0 0 10px;
+}

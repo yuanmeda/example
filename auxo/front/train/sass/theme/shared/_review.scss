@@ -1,0 +1,134 @@
+.review-view>span{
+  vertical-align: middle;
+  display: inline-block;
+}
+.star-mask{
+  width: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100px;
+}
+.star-mask .star-box i{
+  color: $themeColor;
+}
+.star-block{
+  position: relative;
+  width: 100px;
+  display: inline-block;
+  vertical-align:middle;
+}
+.star-box{
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.star-box:after{
+  clear: both;
+}
+.star-box i{
+  color: #cdcdcd;
+  font-size: 20px;
+  height: 22px;
+  float: right;
+}
+.star-box.star-hover i {
+  cursor:pointer;
+}
+.star-box i.on~i,.star-box i.on {
+  color:$themeColor;
+}
+
+.star-box  i:nth-of-type(1) {
+  right:0;
+}
+.star-box  i:nth-of-type(2) {
+  right:1em;
+}
+.star-box  i:nth-of-type(3) {
+  right:2em;
+}
+.star-box  i:nth-of-type(4) {
+  right:3em;
+}
+.star-box  i:nth-of-type(5) {
+  right:4em;
+}
+.star-box ~ span {
+  margin-left:3px;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+.review-view span{
+  vertical-align: middle;
+}
+.tab-review .tit{
+  padding: 50px 30px 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.tab-review .tit .send-btn{
+  display: inline-block;
+  float: right;
+  color: $themeColor;
+}
+.tab-review .content{
+  padding:0 30px 30px;
+}
+.review-list li{border-bottom:1px dashed #e5e5e5;}
+.review-list li .more {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 10px;
+}
+.review-dt-li li:last-child{border:none;}
+.review-dt{
+  padding:20px 0;
+  border-bottom: 1px dashed #e5e5e5;
+  .dt-text{
+    word-break:break-all;
+
+  }
+}
+.review-dd{
+  padding:20px 0;
+  margin-left: 70px;
+  border-top: 1px dashed #e5e5e5
+}
+.review-dt .review-dd.first{
+  margin-top: 20px;
+}
+.review-dt .review-dd:last-child{
+  padding-bottom: 0;
+}
+.review-dt .dt-r{
+  width: 750px;
+}
+.review-dt .dt-r .tool a{
+  color: $themeColor;
+  display: inline-block;
+  float: left;
+}
+.review-dt .dt-r .tool span,
+.review-dd .dd-r .tool span{
+  display: inline-block;
+  float: right;
+}
+.review-dd .dd-r{
+  width: 680px;
+}
+.review-dd .dd-r .tool a{
+  color: #999;
+  pointer-events: none;
+}
+.reivew-text{
+  border:1px solid #d8d8d8;
+  display: block;
+  width: 468px;
+  padding:10px;
+  height: 100px;
+  resize: none;
+  overflow-y:auto;
+}

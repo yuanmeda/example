@@ -1,0 +1,82 @@
+<div class="qas-azalea">
+  <!--头像-->
+  <div class="qas-profile">
+    <img width="50" height="50" data-bind="attr:{src: user_icon}">
+  </div>
+  <div class="qas-wrapper">
+    <!--标题-->
+    <h1 class="qas-title view-details" data-bind="keywordhh:{content:title,keyword:keyword()},click:view_detail"></h1>
+    <!--问题描述-->
+    <div class="qas-desc" data-bind="dot,keywordhh:{content:content,keyword:keyword()}"></div>
+
+    <!--数据-->
+    <p class="qas-meta">
+      <!--提问者姓名-->
+      <span data-bind="text:user_name"></span>
+      <!--创建日期-->
+      <span data-bind="text:create_time"></span>
+      <!--来源-->
+      <!--ko if:target_name-->
+      <span><!--ko translate:{key:'qas_cmp_questions.from'}--><!--/ko-->：<!--ko text:target_name--><!--/ko--></span>
+      <!--/ko-->
+    </p>
+    <!--脚部-->
+    <div class="qas-footer">
+
+      <!--回答数/展开/收起-->
+      <!--ko if:display_answers-->
+      <!--ko if:!show_answers()-->
+      <span class="qas-ans-count" data-bind="click:toggle_answers">
+        <i class="iconfont-qas ico-qas-chat"></i>
+        <!--ko if:answer_count() > 0 || is_mine-->
+        <strong data-bind="text:answer_count"></strong>
+        <!--ko translate:{key:'qas_cmp_questions.answers_count_suffix'}--><!--/ko-->
+        <!--/ko-->
+
+        <!--ko if:!is_mine && answer_count() === 0-->
+        <!--ko translate:{key:'qas_cmp_questions.add_answer'}--><!--/ko-->
+        <!--/ko-->
+      </span>
+      <!--/ko-->
+      <!--/ko-->
+
+      <!--关注-->
+      <span class="qas-follow-count" data-bind="css:{on:is_current_user_follow()},click:toggle_follow">
+        <i class="iconfont-qas ico-qas-star"></i>
+        <!--ko text:follow_label--><!--/ko-->
+      </span>
+
+      <!--回答-->
+      <!--ko if:show_answers()-->
+      <span class="qas-ans-count" data-bind="click:toggle_answers">
+        <i class="iconfont-qas ico-qas-chat"></i><!--ko translate:{key:'qas_cmp_questions.acts.hide_answers'}--><!--/ko-->
+      </span>
+      <!--/ko-->
+
+      <!--ko if:display_acts-->
+      <!--其他操作-->
+      <div class="qas-acts">
+        <!--编辑-->
+        <!--ko if:display_edit-->
+        <!--ko if:answer_count() == 0 && is_mine-->
+        <span class="act modify" data-bind="click:edit"><i class="iconfont-qas ico-qas-bianji"></i><!--ko translate:{key:'qas_cmp_questions.acts.edit'}--><!--/ko--></span>
+        <!--/ko-->
+        <!--/ko-->
+
+        <!--删除-->
+        <!--ko if:is_mine-->
+        <span class="act del" data-bind="click:del"><i class="iconfont-qas ico-qas-delete"></i><!--ko translate:{key:'qas_cmp_questions.acts.del'}--><!--/ko--></span>
+        <!--/ko-->
+      </div>
+      <!--/ko-->
+
+    </div>
+
+    <!--回答列表-->
+    <!--ko if:show_answers()-->
+    <!--ko component:{name:'x-qas-ans-li-quick-view',params:answers_list_params}--><!--/ko-->
+    <!--/ko-->
+  </div>
+
+
+</div>

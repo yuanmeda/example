@@ -1,0 +1,117 @@
+a.s-btn, a.m-btn, a.gs-btn, a.gs-btn:hover, a.gm-btn, a.gm-btn:hover {
+  text-align: center; }
+
+.rotate18 {
+  transform: rotate(180deg); }
+
+.rotate9 {
+  transform: rotate(-90deg); }
+
+.w120 {
+  width: 120px; }
+
+a.btn i, a.btn span {
+  vertical-align: middle; }
+
+a.btn i {
+  margin-right: 5px; }
+
+a.btn:hover {
+  text-decoration: none; }
+
+a.s-btn {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border-radius: 3px;
+  background: #0cadb7;
+  color: #fff; }
+  a.s-btn:hover {
+    color: #fff; }
+
+a.m-btn {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  border-radius: 3px;
+  background: #0cadb7;
+  color: #fff; }
+  a.m-btn:hover {
+    color: #fff; }
+
+a.gs-btn {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border-radius: 3px;
+  background: #b3b3b3;
+  color: #fff; }
+  a.gs-btn:hover {
+    background: #4d4d4d;
+    color: #fff; }
+
+a.gm-btn {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  border-radius: 3px;
+  background: #b3b3b3;
+  color: #fff; }
+  a.gm-btn:hover {
+    background: #4d4d4d;
+    color: #fff; }
+
+.ztree * {
+  font-size: 14px; }
+
+.ztree li {
+  line-height: 20px; }
+
+.ztree li a.curSelectedNode {
+  height: 20px; }
+
+.tool-bar {
+  margin-top: 10px;
+  padding: 3px 30px; }
+
+.tree-container {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px; }
+
+.commandButtonBar {
+  display: block;
+  left: 90px;
+  top: 133px;
+  position: absolute; }
+  .commandButtonBar a {
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left; }
+  .commandButtonBar .add {
+    background-image: url(../images/u144_normal.png); }
+  .commandButtonBar .edit {
+    background-image: url(../images/u140_normal.png); }
+  .commandButtonBar .delete {
+    background-image: url(../images/u142_normal.png); }
+  .commandButtonBar .move-up {
+    background-image: url(../images/move_up.png); }
+  .commandButtonBar .move-down {
+    background-image: url(../images/move_down.png); }
+
+.edit-table {
+  margin-top: 20px; }
+  .edit-table input {
+    height: 26px; }
+  .edit-table small {
+    color: #a00;
+    vertical-align: bottom;
+    margin-left: 5px; }

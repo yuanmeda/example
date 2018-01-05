@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/* -------------extend------------- */
+/* wordbreak */
+/* 文字超出显示省略号 */
+.pay-container .pay-body .table li {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+/* 垂直居中 */
+/* 清除浮动 */
+/* 垂直居中 */
+/* -------------mixin------------- */
+/* 设置透明度 0~100 */
+/* 背景图片 */
+/* -------------display------------- */
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.cl {
+  clear: both; }
+
+.tl {
+  text-align: left; }
+
+.tc {
+  text-align: center; }
+
+.tr {
+  text-align: right; }
+
+.underline {
+  text-decoration: underline; }
+
+/* -------------margin------------- */
+.ml10 {
+  margin-left: 10px; }
+
+.mr10 {
+  margin-right: 10px; }
+
+.pdl20 {
+  padding-left: 20px; }
+
+.pdl40 {
+  padding-left: 40px; }
+
+@font-face {
+  font-family: 'pay';
+  src: url("../../../../../css/shared/../../fonts/pay.eot?cx7bqq");
+  src: url("../../../../../css/shared/../../fonts/pay.eot?cx7bqq#iefix") format("embedded-opentype"), url("../../../../../css/shared/../../fonts/pay.ttf?cx7bqq") format("truetype"), url("../../../../../css/shared/../../fonts/pay.woff?cx7bqq") format("woff"), url("../../../../../css/shared/../../fonts/pay.svg?cx7bqq#pay") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="pay-icon-"], [class*=" pay-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'pay' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.pay-icon-circle:before {
+  content: "\e784"; }
+
+.pay-icon-scan:before {
+  content: "\e900"; }
+
+.pay-icon-success:before {
+  content: "\e604"; }
+
+.pay-icon-finish:before {
+  content: "\e91f"; }
+
+.pay-icon-circle-bold:before {
+  content: "\e924"; }
+
+.pay-container .ndpay, .pay-container .channel_alipay_qr, .pay-container .channel_wechat_pub_qr, .pay-container .pay-head .ndpay {
+  width: 152px;
+  height: 48px;
+  background: url("../../../../../images/pay.png?2017090502") no-repeat; }
+
+body {
+  background-color: #f2f2f2; }
+
+.pay-container .wrapper {
+  width: 1200px;
+  margin: 30px auto 0; }
+
+.pay-container .container {
+  color: #333;
+  font-size: 14px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin-bottom: 30px; }
+
+.pay-container .ndpay {
+  background-position: 31px 8px; }
+
+.pay-container .channel_alipay_qr {
+  background-position: 33px -50px; }
+
+.pay-container .channel_wechat_pub_qr {
+  background-position: 15px -105px; }
+
+.pay-container .pay-head {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 17px 30px;
+  border-bottom: 1px solid #eee; }
+  .pay-container .pay-head .ndpay {
+    background-position: 0 8px; }
+  .pay-container .pay-head .channel_alipay_qr {
+    background-position: 0 -50px; }
+  .pay-container .pay-head .channel_wechat_pub_qr {
+    background-position: 0 -105px; }
+
+.pay-container .pay-body {
+  padding: 30px 30px 10px; }
+  .pay-container .pay-body .table li {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    float: left;
+    text-align: center;
+    width: 25%;
+    padding: 15px; }
+  .pay-container .pay-body .table-head {
+    background-color: #eee; }
+  .pay-container .pay-body .table-body {
+    background-color: #f9f9f9; }
+  .pay-container .pay-body .pay-total {
+    padding: 20px 60px;
+    text-align: right; }
+    .pay-container .pay-body .pay-total strong {
+      color: #f85552;
+      font-size: 24px; }
+  .pay-container .pay-body .pay-total-wrap {
+    display: inline-block;
+    text-align: left;
+    line-height: 1.8; }
+  .pay-container .pay-body .pay-way {
+    padding: 0 0 30px 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #eee; }
+    .pay-container .pay-body .pay-way li {
+      float: left;
+      width: 152px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 4px;
+      border: 1px solid #d7d7d7;
+      margin: 0 40px 0;
+      position: relative;
+      text-align: center;
+      cursor: pointer; }
+      .pay-container .pay-body .pay-way li i {
+        position: absolute;
+        left: -42px;
+        top: 50%;
+        margin-top: -11px; }
+      .pay-container .pay-body .pay-way li:hover, .pay-container .pay-body .pay-way li.active {
+        border-color: #ce3f3f; }
+        .pay-container .pay-body .pay-way li:hover i:before, .pay-container .pay-body .pay-way li.active i:before {
+          color: #ce3f3f;
+          content: "\e91f"; }
+  .pay-container .pay-body .no-pay-way {
+    color: #999;
+    font-size: 18px;
+    padding: 16px 0 46px 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #eee; }
+  .pay-container .pay-body .pay-btn-wrap {
+    margin-bottom: 20px; }
+  .pay-container .pay-body .pay-btn {
+    color: #fff;
+    font-size: 20px;
+    width: 154px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #ce3f3f;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px; }
+    .pay-container .pay-body .pay-btn:hover {
+      background-color: #d14b4b; }
+    .pay-container .pay-body .pay-btn.disabled {
+      background-color: #ccc; }
+  .pay-container .pay-body .pay-tip {
+    color: #999;
+    vertical-align: middle; }
+  .pay-container .pay-body .pay-foot {
+    margin: 20px;
+    color: #999;
+    cursor: pointer;
+    position: relative; }
+    .pay-container .pay-body .pay-foot i:before {
+      position: relative;
+      left: -2px;
+      top: 2px;
+      margin-right: 5px; }
+    .pay-container .pay-body .pay-foot a {
+      font-weight: bold;
+      color: #ce3f3f; }
+      .pay-container .pay-body .pay-foot a:hover {
+        text-decoration: underline; }
+    .pay-container .pay-body .pay-foot .pay-icon-finish:before {
+      color: #7fd729; }
+    .pay-container .pay-body .pay-foot:hover i:before {
+      content: "\e91f";
+      color: #7fd729; }
+  .pay-container .pay-body .pay-icon-circle:before {
+    font-size: 20px;
+    color: #d7d7d7;
+    width: 20px;
+    height: 22px; }
+  .pay-container .pay-body .pay-code {
+    padding: 30px 0;
+    border-bottom: 1px dotted #eee; }
+    .pay-container .pay-body .pay-code .code-body {
+      position: relative;
+      margin: 0 auto;
+      padding: 25px;
+      width: 230px;
+      border: 1px solid #eee; }
+      .pay-container .pay-body .pay-code .code-body .code-img {
+        position: relative;
+        height: 230px;
+        margin: 15px 0 20px;
+        overflow: hidden; }
+      .pay-container .pay-body .pay-code .code-body .iframe-wrap {
+        position: absolute;
+        top: -18px;
+        left: -58px;
+        height: 500px; }
+      .pay-container .pay-body .pay-code .code-body img {
+        display: block;
+        width: 100%;
+        height: 100%; }
+      .pay-container .pay-body .pay-code .code-body .code-tip {
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        background-color: #f2f2f2; }
+        .pay-container .pay-body .pay-code .code-body .code-tip i {
+          color: #ce3f3f;
+          font-size: 30px;
+          vertical-align: middle;
+          display: inline-block;
+          margin-right: 10px; }
+    .pay-container .pay-body .pay-code .mask {
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      opacity: 0.95;
+      filter: alpha(opacity=95);
+      z-index: 2; }
+    .pay-container .pay-body .pay-code .mask-hint {
+      position: absolute;
+      text-align: center;
+      left: 0;
+      right: 0;
+      bottom: 32px; }
+      .pay-container .pay-body .pay-code .mask-hint a {
+        color: #ce3f3f;
+        text-decoration: underline; }
+  .pay-container .pay-body .pay-done {
+    padding: 120px 0;
+    text-align: center; }
+    .pay-container .pay-body .pay-done span {
+      color: #ce3f3f; }
+    .pay-container .pay-body .pay-done .pay-icon-success {
+      font-size: 55px; }
+    .pay-container .pay-body .pay-done p {
+      margin-top: 10px;
+      font-size: 22px; }
+
+.pay-container .tipcolor {
+  color: #999; }

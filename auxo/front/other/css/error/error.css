@@ -1,0 +1,189 @@
+﻿body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%
+}
+
+address, cite, dfn, em, var {
+    font-style: normal
+}
+
+code, kbd, pre, samp {
+    font-family: courier new, courier, monospace
+}
+
+small {
+    font-size: 12px
+}
+
+ul, ol {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+legend {
+    color: #000
+}
+
+fieldset, img {
+    border: 0
+}
+
+button, input, select, textarea {
+    font-size: 100%
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section, summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0
+}
+
+mark {
+    background: #ff0
+}
+
+body {
+    color: #555;
+    font-size: 14px;
+    background: url("../../images/err-bg.jpg") repeat
+}
+
+a {
+    color: #cd5c21
+}
+
+.green a {
+    color: #0f6613
+}
+
+.blue a {
+    color: #3c82ba
+}
+
+.err-i, .err-img {
+    background: url("../../images/err-icon.png") no-repeat
+}
+
+.err-con {
+    width: 680px;
+    margin: 230px auto 0;
+    padding: 0 0 0 0
+}
+
+.err-img {
+    height: 230px;
+    padding: 0 0 0 80px;
+    font: 400 32px/180px "microsoft yahei";
+    color: #fff;
+    text-align: center;
+    background-position: -24px -220px
+}
+
+.green .err-img {
+    background-position: -24px -0px
+}
+
+.blue .err-img {
+    background-position: -24px -460px
+}
+
+.err-wrapper {
+    padding: 0 0 0 100px
+}
+
+.err-m textarea {
+    display: none;
+    width: 490px;
+    height: 150px;
+    margin: 10px 0 0;
+    padding: 15px;
+    border: 1px solid #d1d1d1;
+    font-size: 12px;
+    resize: none
+}
+
+.err-contact {
+    margin: 15px 0 0
+}
+
+.err-contact .qq {
+    margin: 0 20px 0 0
+}
+
+.qq i, .tel i {
+    display: inline-block;
+    width: 24px;
+    height: 20px;
+    margin: 0 5px 0 0;
+    vertical-align: middle
+}
+
+.qq i {
+    background-position: 0 -3px
+}
+
+.tel i {
+    background-position: 0 -25px
+}
+
+.err-ctrl {
+    width: 520px;
+    text-align: right;
+    margin: 50px 0 0
+}
+
+.err-ctrl a {
+    margin: 0 0 0 15px
+}
+
+.arrow {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 0 0 5px;
+    background-position: 0 -68px;
+    vertical-align: middle
+}
+
+.green .arrow {
+    background-position: 0 -56px
+}
+
+.blue .arrow {
+    background-position: 0 -80px
+}
+
+.crm { width:600px; margin:0 auto; padding:45px 0 20px; overflow:hidden; font-size:0; }
+.crm .crm-touch { display:inline-block; color:#333; font-size:16px; }
+.crm .sep { float: right; width: 1px; height: 20px; margin:2px 10px 0; font-size: 0; background-color: #ccc; }
+.ico-crm-qq, .ico-crm-phone, .ico-crm-99u {
+    display: inline-block; width: 16px; height: 17px; margin: 0 5px 0 0;
+    background: url(../../images/ico-crm.png) no-repeat; vertical-align:middle;
+}
+.ico-crm-qq { background-position: 0 0; }
+.ico-crm-phone { background-position: 0 -51px; }
+.ico-crm-99u { background-position: 0 -104px; }

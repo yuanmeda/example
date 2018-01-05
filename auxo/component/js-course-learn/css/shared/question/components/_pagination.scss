@@ -1,0 +1,20 @@
+
+.pagination {
+    text-align: center;
+    a, span {
+        @extend %inline-block;
+        margin: 0 2px;
+        padding: 0 10px;
+        font: 12px/28px 'microsoft yahei';
+        color: #666;
+        background: #ddd;
+    }
+    a {
+        transition: background .2s linear;
+        &:hover,
+        &.current {
+            background: $themeColor;
+            color: #fff;
+        }
+    }
+}

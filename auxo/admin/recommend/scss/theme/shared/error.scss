@@ -1,0 +1,90 @@
+@import "base";
+body {
+    font-size: 14px;
+
+    color: #555;
+    background: url("../images/err-bg.jpg") repeat;
+}
+a {
+    color: #cd5c21;
+}
+.green a {
+    color: #0f6613;
+}
+.blue a {
+    color: #3c82ba;
+}
+.err-i,
+.err-img {
+    background: url("../images/err-icon.png") no-repeat;
+}
+.err-con {
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+    width: 700px;
+    height: 40%;
+    min-height: 450px;
+}
+.err-img {
+    padding: 0 0 0 80px;
+    height: 230px;
+
+    font: 400 32px/180px "microsoft yahei";
+    text-align: center;
+
+    color: #fff;
+    background-position: -24px -220px;
+}
+.green .err-img {
+    background-position: -24px -0;
+}
+.blue .err-img {
+    background-position: -24px -460px;
+}
+.err-wrapper {
+    padding: 0 0 0 100px;
+}
+.err-m textarea {
+    display: none;
+
+    margin: 10px 0 0;
+    border: 1px solid #d1d1d1;
+    padding: 15px;
+    width: 490px;
+    height: 150px;
+
+    font-size: 12px;
+
+    resize: none;
+}
+.err-ctrl {
+    margin: 50px 0 0;
+    width: 520px;
+
+    text-align: right;
+}
+.err-ctrl a {
+    margin: 0 0 0 15px;
+}
+.arrow {
+    display: inline-block;
+
+    margin: 0 0 0 5px;
+    width: 8px;
+    height: 8px;
+
+    vertical-align: middle;
+
+    background-position: 0 -68px;
+}
+.green .arrow {
+    background-position: 0 -56px;
+}
+.blue .arrow {
+    background-position: 0 -80px;
+}

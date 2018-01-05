@@ -1,0 +1,17 @@
+@import "list_base";
+.box{
+  margin-bottom: 20px;
+  margin-top:5px;
+  .form-horizontal input[type="text"]{
+    height:26px;
+  }
+  .form-horizontal .img-sm{
+    display:inline-block;
+    width:270px;
+    height:150px;
+  }
+}
+.row .span3{
+	width:auto;
+}
+.pdb{padding-bottom: 90px;}

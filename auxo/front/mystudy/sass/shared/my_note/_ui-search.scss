@@ -1,0 +1,55 @@
+/* n-ui-search */
+.n-ui-search {
+    display: inline-block;
+    position: relative;
+    .txt {
+        display: inline-block;
+        padding: 0 30px 0 15px;
+        min-width: 256px;
+        height: 28px;
+        line-height: 28px;
+        border: 1px solid #ddd;
+        font-size: 12px;
+        color: #333;
+        border-radius: $radius;
+        &:focus {
+            border-color: $main;
+        }
+    }  
+    .btn-search {
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-family:"iconfont-learn";
+        font-size: 22px;
+        color: $main;
+        text-align: center;
+        &:before {
+            content:'\e601';
+            display: inline-block;
+            vertical-align: middle;
+        }
+        // background: url(../images/icon.png);
+        // background-repeat: no-repeat;
+        // background-position: 0 0;
+        &:hover {
+            color: $main-light;
+        }
+        &:active {
+            color: $main-dark;
+        }
+    }
+    .tip {
+        display: inline-block;
+        padding-right: 15px;
+        line-height: 30px;
+        font-size: 14px;
+        color: #999;
+        vertical-align: middle;
+    }
+}
+

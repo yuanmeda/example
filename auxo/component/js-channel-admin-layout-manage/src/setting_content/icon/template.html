@@ -1,0 +1,119 @@
+<div class="section-block modal fade" data-backdrop="static" id="sectionSetting3">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title">图标导航</h4>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 20px;">
+                    <a href="javascript:;" class="btn btn-primary" data-bind="click:create">新增图标导航</a>
+                </div>
+                <div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="width: 15%">链接类型</th>
+                            <th class="text-center" style="width: 25%">推荐内容</th>
+                            <th class="text-center" style="width: 10%">图标</th>
+                            <th class="text-center" style="width: 20%">最后修改时间</th>
+                            <th class="text-center" style="width: 15%">资源状态</th>
+                            <th class="text-center" style="width: 15%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-format" data-bind="foreach: model.items,attr:{id:'icon-drag-'+params.id}">
+                        <tr class="text-center" data-bind='attr: { id: id, name: title, sort_number: id }'>
+                            <td class="text-center" data-bind="text: $component.data_type[data_type-1]"></td>
+                            <td class="text-center" data-bind="text: $component.getTitle($data)"
+                                style="max-width: 150px;word-wrap: break-word;"></td>
+                            <td class="text-center"><img style="width:50px;height:50px;"
+                                                         data-bind="attr:{'src':mobile_picture_url,'alt':title}"></td>
+                            <td class="text-center" data-bind="text: $.format.date(update_time,'yyyy-MM-dd HH:mm:ss')"></td>
+                            <td class="text-center"><span
+                                        data-bind="text: status == 0 ? '资源不可用，前台将不展示该图标' : '正常', css: status ? 'text-success':'text-danger' "></span>
+                            </td>
+                            <td class="text-center">
+                                <a href="javascript:;" data-bind="text:'编辑', click: $component.edit.bind($component)"></a>
+                                <a href="javascript:;" data-bind="text:'删除',click: $component.del.bind($component, id)"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody class="table-format" data-bind="visible: !model.items().length" style="display: none;">
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding:30px 0">暂无相关数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-bind="attr:{id: 'icon-modal-'+params.id}" class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                <h4 class="modal-title" data-bind="text: model.info.id() ? '编辑图标导航' : '新增图标导航'"></h4></div>
+            <div class="modal-body" style="max-height: 500px;overflow-y:auto;overflow-x:hidden;">
+                <form class="form-horizontal" id="bannerForm" onsubmit="return false;">
+                    <div class="form-group"><label class="col-sm-2 control-label">链接类型：</label>
+                        <div class="col-sm-10"><label class="radio-inline"><input name="linkType" type="radio"
+                                                                                  value="2"
+                                                                                  data-bind="checkedValue:2, checked: model.info.data_type, attr:{disabled: !!model.info.id()}">链接到资源</label><label
+                                    class="radio-inline"><input name="linkType" type="radio" value="1"
+                                                                data-bind="checkedValue:1, checked: model.info.data_type, attr:{disabled: !!model.info.id()}">链接到标签</label><label
+                                    class="radio-inline"><input name="linkType" type="radio" value="3"
+                                                                data-bind="checkedValue:3, checked: model.info.data_type, attr:{disabled: !!model.info.id()}">URL地址</label>
+                        </div>
+                    </div>
+                    <!-- ko if: model.info.data_type()!=3 -->
+                    <div class="form-group"><label class="col-sm-2 control-label"><em
+                                    class="required">*</em>推荐内容：</label>
+                        <div class="col-sm-10"><input type="text" readonly class="form-control"
+                                                      data-bind="click:_openDialog, value: model.info.resource_name"
+                                                      placeholder="请选择"/></div>
+                    </div>
+                    <!--/ko-->
+                    <!--url地址-->
+                    <!-- ko if: model.info.data_type()==3 -->
+                    <div class="urlBlock">
+                        <div class="form-group"><label class="col-sm-2 control-label"><em class="required">*</em>App
+                                Url：</label>
+                            <div class="col-sm-10"><input type="text" name="AppUrl" class="form-control"
+                                                          maxlength="1000"
+                                                          data-bind="value:model.info.mobile_url"
+                                                          placeholder="请输入App Url"/></div>
+                        </div>
+                    </div>
+                    <!--/ko-->
+                    <div class="form-group"><label class="col-sm-2 control-label"><em
+                                    class="required">*</em>导航名称：</label>
+                        <div class="col-sm-10"><input type="text" maxlength="30" class="form-control"
+                                                      data-bind="value:model.info.title"/></div>
+                    </div>
+                    <div class="form-group"><label class="col-sm-2 control-label"><em
+                                    class="required">*</em>标签图片：</label>
+                        <div class="col-sm-10 pic-area">
+                            <p class="text-warning">仅支持JPG、PNG、GIF格式，且大小 2M 以下图片</p>
+                            <!-- ko if: model.upload -->
+                            <div data-bind="component:{'name': 'x-channel-upload', params: model.upload}"></div>
+                            <!--/ko-->
+                            <p class="text-warning">手机尺寸：116*116</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><a class="btn-primary btn" data-bind="click: save">保存</a><a
+                        class="btn btn-default" data-dismiss="modal">取消</a></div>
+        </div>
+    </div>
+</div>
+<!--ko if: model.modal.tag -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-tag', params:{'selected_tag': model.info, from: 'icon', disable: !!model.info.id(), type:4,all:true, id: model.modal.tag_name()}}"></div>
+<!--/ko-->
+<!--ko if: model.modal.tab -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-resource', params: {'selected_course': model.selected_course, 'options': false, id: model.modal.tab_name()}}"></div>
+<!--/ko-->

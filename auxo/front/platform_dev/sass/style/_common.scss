@@ -1,0 +1,11 @@
+@import "../share/iconfont";
+
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+  background-color: #eee;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+input[readonly], select[readonly], textarea[readonly] {
+  cursor: default
+}

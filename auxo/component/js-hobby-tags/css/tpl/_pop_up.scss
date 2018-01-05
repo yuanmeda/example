@@ -1,0 +1,93 @@
+.hts-close{
+  position:absolute;
+  height:22px;
+  width:22px;
+  cursor:pointer;
+  background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFQTk5N0MzQTU1QjUxMUU3OTBBNEI3Q0E3NThDQTU3RiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFQTk5N0MzQjU1QjUxMUU3OTBBNEI3Q0E3NThDQTU3RiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkVBOTk3QzM4NTVCNTExRTc5MEE0QjdDQTc1OENBNTdGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkVBOTk3QzM5NTVCNTExRTc5MEE0QjdDQTc1OENBNTdGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+mW7fBgAAAJ5JREFUeNrE1DsKgDAMBuBoj5CcwrW9g5d39xIuLi4uplDBR+0zxcKPIuRD0rQKADRn52wgs5AzKIdafBXALWo48/mBOKN71qBeowbHWG0Jjqk1OTjm/kgKjqWtC+FYu9k+HAUm6IUno10Gbtz7xFliBT38uK6toBb9FTv+IYBazHAxnlNALe6J5JqaTaEWd/GnITabT0sLobfjfwgwAL8QF+M7KCN+AAAAAElFTkSuQmCC') no-repeat center center;
+}
+
+.hobby-tags-selector-pop-up{
+  $width: 860px;
+  position:fixed;
+  width:$width;
+  top:10%;
+  left:50%;
+  margin-left:- $width / 2;
+  z-index:1001;
+  background:#fff;
+  .hts-close{
+    right:15px;
+    top:18px;
+  }
+}
+.hobby-tags-mask{
+  position:fixed;
+  background:#000;
+  opacity:0.3;
+  left:0;top:0;bottom:0;right:0;
+  z-index:1000;
+}
+
+.hobby-tags-success-dlg{
+  position:fixed;
+  background:#fff;
+  $width:367px;
+  width: $width;
+  top:10%;
+  left:50%;
+  margin-left: - $width / 2;
+  z-index:1001;
+  .hts-dlg-header{
+    border-bottom:1px solid #e0e0e0;
+    position:relative;
+    h1{
+      color:#666666;
+      line-height:50px;
+      height:50px;
+      padding-left:20px;
+      font-size:16px;
+    }
+    .hts-close{
+      right:20px;
+      top:15px;
+    }
+  }
+  .hts-dlg-body{
+    padding-top:60px;
+    padding-bottom:30px;
+    p{
+      color:#333333;
+      font-size:18px;
+      text-align:center;
+      margin-bottom:20px;
+    }
+    .dc{
+      position:relative;
+      margin:0 auto;
+      width:240px;
+      height:214px;
+      background:url('/auxo/component/js-hobby-tags/images/hobby_tags_select_success.png') no-repeat 0 0;
+      a{
+        position:absolute;
+        font-size:18px;
+        color:#fff;
+        left:107px;top:107px;
+      }
+    }
+  }
+  .hts-dlg-footer{
+    background:#f9f9f9;
+    border-top:1px solid #e0e0e0;
+    padding:15px 0;
+    text-align:center;
+    a{
+      display:inline-block;
+      padding:5px 20px;
+      cursor:pointer;
+      border:1px solid $theme-color;
+      color:$theme-color;
+      font-size:18px;
+      border-radius:2px;
+    }
+  }
+}

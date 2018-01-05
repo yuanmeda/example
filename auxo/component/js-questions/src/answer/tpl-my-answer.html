@@ -1,0 +1,38 @@
+<!--回答-我的回答，包含问题-->
+<div class="qas-moran">
+  <!--头像-->
+  <div class="qas-profile">
+    <img width="50" height="50" data-bind="attr:{src:user_icon}"/>
+  </div>
+  <div class="qas-wrap">
+    <!--回答内容-->
+    <div class="qas-re-desc" data-bind="text:answer_content"></div>
+    <!--被回答的问题-->
+    <div class="qas-inner-question">
+      <!--问题的标题-->
+      <h1 class="qas-title" data-bind="text:question_title,click:view_detail"></h1>
+      <!--问题的数据-->
+      <p class="qas-meta">
+        <!--提问者名字-->
+        <span data-bind="text:question_user_name"></span>
+        <!--问题创建日期-->
+        <span data-bind="text:question_create_time"></span>
+        <!--来源-->
+        <!--ko if:question_target_name-->
+        <span data-bind="text:question_target_name"></span>
+        <!--/ko-->
+      </p>
+      <span class="arrow"></span>
+    </div>
+    <!--脚部-->
+    <div class="qas-footer">
+      <!--回答创建时间-->
+      <span class="qas-time" data-bind="text:answer_create_time"></span>
+      <!--点赞-->
+      <span class="qas-praise" data-bind="click:toggle_like,css:{on:is_current_user_like()}">
+        <i class="iconfont-qas ico-qas-praise"></i>
+        <!--ko text:like_count--><!--/ko-->
+      </span>
+    </div>
+  </div>
+</div>

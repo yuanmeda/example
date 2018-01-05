@@ -1,0 +1,29 @@
+.tabs{height:36px;border-bottom:1px solid #dcdcdc}
+.tabs li{float:left;padding:0 22px}
+.tabs li a{display:block;height:33px;padding:0 2px;font:16px/33px "microsoft yahei"}
+.tabs li a:hover{color:#3f85c5;text-decoration:none}
+.tabs li.active a{border-bottom:4px solid #5aacdc}
+.not-found{padding:60px 0 0;font:400 18px/1.5 "microsoft yahei";color:#b0b0b0;text-align:center;word-break:break-all}
+.not-found .not-found-txt{display:block;padding:0 0 25px}
+.not-found .not-found-txt i{display:inline-block;width:23px;height:30px;margin:0 10px 0 0;background-position:-147px -110px;vertical-align:top}
+.not-found .not-found-txt a{color:#3f85c5}
+.not-found .not-found-txt a:hover{text-decoration:none}
+.search-form-button i{background:url(../images/ico-base.png?v=2014102301) no-repeat 0 0}
+.search-form{position:relative}
+.search-form input{width:248px;height:21px;padding:7px 5px 6px;border:1px solid #cfcfcf;outline:0;font-size:14px;vertical-align:middle;-webkit-box-shadow:inset 1px 1px 3px rgba(0,0,0,.1);-moz-box-shadow:inset 1px 1px 3px rgba(0,0,0,.1);box-shadow:inset 1px 1px 3px rgba(0,0,0,.1)}
+.search-form .search-form-button{display:inline-block;width:26px;height:26px;padding:8px 0 0 8px;border-width:1px 1px 1px 0;border-style:solid;border-color:#cfcfcf;background-color:#f9f9f9;vertical-align:middle}
+.search-form .search-form-button i{float:left;width:20px;height:20px;background-position:-196px -110px}
+.search-form .search-form-button:hover i{background-position:-196px -137px}
+.search-form label{position:absolute;top:9px;left:8px;color:#333;white-space:nowrap;font-size:14px;cursor:text}
+.search-form-focus label{color:#777}
+.ui-button-b,.ui-button-b span{background:url(../images/btns.png?v=2014102301) no-repeat;}
+.ui-button-b{display:inline-block;height:30px;padding:0 20px 0 0;border:0;background-position:0 -287px;
+    color:#fff;vertical-align:middle;overflow:visible;font:14px/30px simsun;cursor:pointer}
+.ui-button-b:focus{outline:0}
+.ui-button-b:hover{text-decoration:none}
+.ui-button-b span{float:left;padding:0 0 0 20px;min-width:60px;height:30px;text-align:center}
+.ui-button-b span{background-position:0 -215px}
+.ui-button-b{font-size:14px;background-position:right -245px}
+.ui-button-b:hover{background-position:right -317px;text-decoration:none}
+.ui-button-b:hover span{background-position:0 -287px}
+.ui-button-b{margin:0 10px 0 0}

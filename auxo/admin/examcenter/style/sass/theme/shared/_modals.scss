@@ -1,0 +1,63 @@
+@import "mixins";
+
+.m-modal{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;left:0;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.2);
+  *{
+    box-sizing: border-box;
+  }
+  .m-panel{
+    position: fixed;
+    padding:5px;
+    color:#444;
+    background-color: #fff;
+    font-size: 13px;
+    font-family: '微软雅黑';
+    @include css3(box-shadow,0 0 1px #999);
+    @include css3(border-radius,3px);
+    .m-header{
+      position: relative;
+      border-bottom: 1px solid #ddd;
+      h2{
+        font-weight: bold;;
+        font-size: 15px;
+        padding:0px 10px;
+      }
+      a{
+        position: absolute;
+        font-size: 18px;
+        top:5px;
+        right:8px;
+        display: block;
+        width:20px;
+        height:20px;
+        text-align: center;
+        line-height: 20px;
+        cursor: pointer;
+        color:#c00;
+        &:hover{
+          color:#b00;
+          text-decoration: none;
+        }
+      }
+    }
+    .m-body{
+      padding:3px;
+      width:460px;
+      height: 250px;
+      overflow: hidden;
+      margin-top:10px;
+    }
+    .m-footer{
+      margin-top:10px;
+      border-top:1px solid #ddd;
+      padding:3px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+  }
+}

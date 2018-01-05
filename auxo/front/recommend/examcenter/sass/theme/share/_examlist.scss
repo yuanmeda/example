@@ -1,0 +1,201 @@
+@import "pagination";
+@import "nodata";
+.container {
+  margin: 15px auto 30px;
+  width: 1200px;
+  min-height: 540px
+}
+
+.list-tool {
+  color: #666;
+  margin: 35px 0 20px 0;
+  &:before {
+    content: "";
+    display: table;
+  }
+  .tool-l {
+    float: left;
+  }
+  .tool-r {
+    float: right;
+    a {
+      margin-left: 20px;
+      padding: 2px 10px;
+      color: #333;
+      border-radius: 4px;
+      display: inline-block;
+      &:hover {
+        color: $themeColor;
+        background-color: #ddd;
+      }
+    }
+    .active {
+      color: #fff;
+      background-color: $themeColor;
+      &:hover {
+        color: #fff;
+        background-color: $themeColor;
+      }
+    }
+  }
+}
+
+.item-box {
+  background-color: #fff;
+  //    position: relative;
+  .item {
+    margin: 0 0 40px 20px;
+    padding-top: 8px;
+    width: 1240px;
+    li {
+      box-sizing: border-box;
+      float: left;
+      margin: 10px;
+      width: 270px;
+      height: 345px;
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      position: relative;
+      .item-img {
+        width: 240px;
+        height: 150px;
+        display: block;
+        background: #fff;
+        margin-bottom: 10px;
+        img {
+          width: 240px;
+          height: 150px;
+        }
+      }
+      .item-title {
+        height: 35px;
+        span {
+          font: 16px "microsoft yahei";
+          color: #333;
+          word-wrap: break-word;
+          word-break: break-all;
+          overflow: hidden;
+        }
+        display: -webkit-box;
+        // margin-bottom: 15px;
+        &:hover {
+          span {
+            color: $themeColor;
+            cursor: pointer;
+          }
+        }
+      }
+      .candidate {
+        position: absolute;
+        left: 195px;
+        top: 235px;
+        border-left: 1px solid #e0e0e0;
+        display: inline-block;
+        padding-left: 5px;
+        color: #666;
+        .count {
+          display: inline-block;
+          width: 60px;
+          text-align: center;
+        }
+      }
+      .cadidate {
+        width: 15px;
+        height: 15px;
+        display: block;
+        padding: 2px 5px 2px 25px;
+        background: url("../../images/examlist.png") 20px -1px;
+      }
+      .details {
+        em {
+          display: inline-block;
+          width: 3px;
+          height: 3px;
+          background-color: #666;
+          border-radius: 3px;
+          margin-right: 5px;
+          margin-bottom: 3px;
+        }
+        display: block;
+        height: 80px;
+        li {
+          display: block;
+          width: 175px;
+          height: 20px;
+          padding: 2px 0;
+          margin: 0;
+          border: 0 none;
+        }
+        .item-times {
+          i {
+            font-weight: bold;
+            font-family: "microsoft yahei";
+            font-size: 14px;
+            color: #333;
+          }
+          margin-bottom: 5px;
+          font: 12px "microsoft yahei";
+          color: #666;
+        }
+        .item-score {
+          font: 12px "microsoft yahei";
+          color: #666;
+        }
+        .item-time {
+          font: 12px "microsoft yahei";
+          color: #666;
+        }
+      }
+      .padding-one {
+        padding-top: 20px;
+        height: 60px;
+      }
+      .padding-two {
+        padding-top: 40px;
+        height: 40px;
+      }
+      .foot {
+        border-top: 1px solid #e0e0e0;
+        display: block;
+        width: 240px;
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 10px;
+        .item-end {
+          display: inline-block;
+          margin-top: 15px;
+          font: 12px "microsoft yahei";
+          color: #999;
+          i {
+            margin-right: 3px;
+            color: #333;
+          }
+        }
+        .entrance {
+          background-color: $themeColor;
+          width: 90px;
+          height: 30px;
+          float: right;
+          font: 14px "microsoft yahei";
+          border-radius: 5px;
+          margin-top: 10px;
+          color: #fff;
+          text-align: center;
+          line-height: 27px;
+        }
+        .over {
+          background-color: #cccccc;
+          width: 90px;
+          height: 30px;
+          float: right;
+          font: 14px "microsoft yahei";
+          border-radius: 5px;
+          margin-top: 10px;
+          color: #fff;
+          text-align: center;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+}

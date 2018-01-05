@@ -1,0 +1,131 @@
+<div class="section-block modal fade" data-backdrop="static" id="sectionSetting2">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title">橱窗推荐</h4>
+            </div>
+            <div class="modal-body">
+                <!-- 橱窗推荐 -->
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <label class="control-label">数据来源：</label>
+                            <label class="radio-inline">
+                                <input type="radio" name="data_type" value="1"
+                                       data-bind="checkedValue:1,checked: model.setting.data.data_type">标签下的资源
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="data_type" value="2"
+                                       data-bind="checkedValue:2,checked: model.setting.data.data_type">选定的资源
+                            </label><label class="radio-inline">
+                                <input type="radio" name="data_type" value="3"
+                                       data-bind="checkedValue:3,checked: model.setting.data.data_type">推荐规则
+                            </label>
+                        </div>
+                        <div class="form-group" data-bind="visible: model.setting.data.data_type()===1">
+                            <label class="control-label">资源标签：</label>
+                            <a class="form-control-static" href="javascript:;"
+                               data-bind="click: _openDialog, text: model.tag_name">请选择标签</a>
+                        </div>
+                        <div class="form-group" data-bind="visible: model.setting.data.data_type()===2">
+                            <button class="btn btn-default"
+                                    data-bind="click: $component._openDialog.bind($component,model.items())">
+                                选择资源
+                            </button>
+                            <span class="editable">(资源列表可以拖动进行排序)</span>
+                        </div>
+                        <div class="form-group" data-bind="visible: model.setting.data.data_type()===3">
+                            <button class="btn btn-default" data-bind="click: openRuleModal.bind($component, 0, -1, 0)">
+                                新建推荐规则
+                            </button>
+                            <span class="editable">(若未应用推荐规则，系统将进行智能推荐)</span>
+                        </div>
+                    </form>
+                    <table class="table table-bordered table-striped"
+                           data-bind="visible: model.setting.data.data_type() === 2">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="width: 25%">序号</th>
+                            <th class="text-center" style="width: 25%">资源名称</th>
+                            <th class="text-center" style="width: 25%">资源状态</th>
+                            <th class="text-center" style="width: 25%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-format" data-bind="attr:{id: 'drag-'+model.id}, foreach: model.items">
+                        <tr class="text-center" data-bind="attr: { 'data-id': resource_id,'data-channel':channel_id }">
+                            <td class="text-center" data-bind="text: $index()+1"
+                                style="max-width: 150px;word-wrap: break-word;"></td>
+                            <td class="text-center" data-bind="text: resource_name"></td>
+                            <td class="text-center"><span class="label"
+                                                          data-bind="text: $component.formatStatus($data,1),css: $component.formatStatus($data,0)?'label-success':'label-default'"></span>
+                            </td>
+                            <td class="text-center">
+                                <a class="btn" href="javascript:;"
+                                   data-bind="text:'删除',click: $parent.remove.bind($component)"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody data-bind="visible: !model.items().length">
+                        <tr>
+                            <td class="text-center" colspan="5" style="text-align: center; padding:30px 0">暂无相关数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 规则推荐 -->
+                <div data-bind="visible: model.setting.data.data_type() === 3">
+                    <h5>推荐规则列表</h5>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="width: 10%">序号</th>
+                            <th class="text-center" style="width: 20%">规则名称</th>
+                            <th class="text-center" style="width: 20%">备注说明</th>
+                            <th class="text-center" style="width: 20%">创建时间</th>
+                            <th class="text-center" style="width: 10%">应用状态</th>
+                            <th class="text-center" style="width: 20%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-format" data-bind="foreach: model.rules">
+                        <tr class="text-center">
+                            <td class="text-center" data-bind="text: $index()+1"
+                                style="max-width: 150px;word-wrap: break-word;"></td>
+                            <td class="text-center" data-bind="text: name"></td>
+                            <td class="text-center" data-bind="text: description"></td>
+                            <td class="text-center"
+                                data-bind="text: $.format.date(create_time,'yyyy-MM-dd HH:mm')"></td>
+                            <td class="text-center"><span class="label"
+                                                          data-bind="text: status ? '已应用' : '未应用', css: status ?'label-success':'label-default'"></span>
+                            </td>
+                            <td class="text-center">
+                                <a href="javascript:;"
+                                   data-bind="text: status ? '停用': '应用', click: $parent.updateRule.bind($component)"></a>
+                                <a href="javascript:;"
+                                   data-bind="text:'编辑',click: $parent.openRuleModal.bind($component, id, $index(), status)"></a>
+                                <a href="javascript:;"
+                                   data-bind="text:'删除',click: $parent.remove.bind($component)"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody data-bind="visible: !model.rules().length">
+                        <tr>
+                            <td class="text-center" colspan="6" style="text-align: center; padding:30px 0">暂无相关数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ko if: model.setting.data.data_type() == 3 && model.isShow() -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-rule', params: {id: model.modal.rule_name(), rule: model.rule, rule_list: model.rule_data_list,'selected_course':model.selected_course, openDialog: $component._openDialog.bind($component) }}"></div>
+<!--/ko-->
+<!--ko if: model.modal.tag -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-tag', params:{'selected_tag': model.setting.data, type: 4,from:'window', all:true, save: true,  parent: $component,id: model.modal.tag_name()}}"></div>
+<!--/ko-->
+<!--ko if: model.modal.tab -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-resource', params: {'selected_course': model.selected_course, 'update_course': model.update_course, 'options': true,enableCount:model.enableCount(), parent: $data, id: model.modal.tab_name()}}"></div>
+<!--/ko-->

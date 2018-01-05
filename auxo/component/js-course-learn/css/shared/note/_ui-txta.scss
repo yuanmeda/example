@@ -1,0 +1,48 @@
+/* u-ui-txta */
+.u-ui-txta {
+    position: relative;
+    background: #fff;
+    //width: 94%;
+    .txta {
+        // display: flex;
+        padding: 10px 20px 10px 15px;
+        width: 100%;
+        height: 130px;
+        line-height: 21px;
+        border: 1px solid #f9f9f9;
+        border-bottom: none;
+        color: #333;
+        // border-radius: $radius-s $radius-s 0 0;
+        -moz-transition: border .3s ease-out;
+        -webkit-transition: border .3s ease-out;
+        -o-transition: border .3s ease-out;
+        transition: border .3s ease-out;
+        outline: none;
+        resize:none;
+        vertical-align: top;
+        &:focus {
+            border-color: $themeColor;
+            &+ .words {
+                border-color: $themeColor;
+            }
+        }
+    }
+    .words {
+        display: block;
+        padding: 0 20px 10px 15px;
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        border: 1px solid #f9f9f9;
+        border-top: none;
+        background: #fff;
+        color: $light-gray;
+        font-size: 12px;
+        text-align: right;
+        // border-radius: 0 0 $radius-s $radius-s;
+        -moz-transition: border .3s ease-out;
+        -webkit-transition: border .3s ease-out;
+        -o-transition: border .3s ease-out;
+        transition: border .3s ease-out;
+    }
+}

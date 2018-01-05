@@ -1,0 +1,181 @@
+/*!
+ 
+ @Name: layer拓展样式
+ @Date: 2012.12.13
+ @Author: 贤心
+ @blog: sentsin.com
+ 
+ */.layui-layer-imgbar,
+.layui-layer-imgtit a,
+.layui-layer-tab .layui-layer-title span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}.layui-layer-iconext {
+    background: url(default/icon-ext.png) no-repeat;
+}html #layui_layer_skinlayerextcss {
+    display: none;
+
+    position: absolute;
+
+    width: 1989px;
+}.layui-layer-prompt .layui-layer-input {
+    display: block;
+
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 0 5px;
+    width: 220px;
+    height: 30px;
+
+    line-height: 30px;
+
+    color: #333;
+
+    box-shadow: 1px 1px 5px rgba(0,0,0,.1) inset;
+}.layui-layer-prompt textarea.layui-layer-input {
+    width: 300px;
+    height: 100px;
+
+    line-height: 20px;
+}.layui-layer-tab {
+    box-shadow: 1px 1px 50px rgba(0,0,0,.4);
+}.layui-layer-tab .layui-layer-title {
+    overflow: visible;
+
+    border-bottom: 1px solid #ccc;
+    padding-left: 0;
+
+    background-color: #eee;
+}.layui-layer-tab .layui-layer-title span {
+    float: left;
+    overflow: hidden;
+
+    position: relative;
+
+    padding: 0 20px;
+    min-width: 80px;
+    max-width: 260px;
+
+    text-align: center;
+
+    cursor: default;
+}.layui-layer-tab .layui-layer-title span.layui-layer-tabnow {
+    z-index: 10;
+
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    height: 43px;
+
+    background-color: #fff;
+}.layui-layer-tab .layui-layer-title span:first-child {
+    border-left: none;
+}.layui-layer-tabmain {
+    clear: both;
+
+    line-height: 24px;
+}.layui-layer-tabmain .layui-layer-tabli {
+    display: none;
+}.layui-layer-tabmain .layui-layer-tabli.xubox_tab_layer {
+    display: block;
+}.xubox_tabclose {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    cursor: pointer;
+}.layui-layer-photos {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}.layui-layer-photos .layui-layer-content {
+    overflow: hidden;
+
+    text-align: center;
+}.layui-layer-photos .layui-layer-phimg img {
+    display: inline-block;
+
+    position: relative;
+
+    width: 100%;
+
+    vertical-align: top;
+
+    *display: inline;
+    *zoom: 1;
+}.layui-layer-imgbar,
+.layui-layer-imguide {
+    display: none;
+}.layui-layer-imgnext,
+.layui-layer-imgprev {
+    position: absolute;
+    top: 50%;
+
+    margin-top: -22px;
+    width: 27px;
+    height: 44px;
+
+    outline: 0;
+
+    _width: 44px;
+    blr: expression(this.onFocus=this.blur());
+}.layui-layer-imgprev {
+    left: 10px;
+
+    background-position: -5px -5px;
+
+    _background-position: -70px -5px;
+}.layui-layer-imgprev:hover {
+    background-position: -33px -5px;
+
+    _background-position: -120px -5px;
+}.layui-layer-imgnext {
+    right: 10px;
+
+    background-position: -5px -50px;
+
+    _background-position: -70px -50px;
+    _right: 8px;
+}.layui-layer-imgnext:hover {
+    background-position: -33px -50px;
+
+    _background-position: -120px -50px;
+}.layui-layer-imgbar {
+    overflow: hidden;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 32px;
+
+    font-size: 0;
+    line-height: 32px;
+
+    color: #fff;
+    background-color: rgba(0,0,0,.8);
+    background-color: #000\9;
+
+    filter: Alpha(opacity=80);
+}.layui-layer-imgtit * {
+    display: inline-block;
+
+    font-size: 12px;
+    vertical-align: top;
+
+    *display: inline;
+    *zoom: 1;
+}.layui-layer-imgtit a {
+    overflow: hidden;
+
+    max-width: 65%;
+
+    color: #fff;
+}.layui-layer-imgtit a:hover {
+    text-decoration: underline;
+
+    color: #fff;
+}.layui-layer-imgtit em {
+    padding-left: 10px;
+
+    font-style: normal;
+}

@@ -1,0 +1,31 @@
+.course_sell{
+  padding:20px;
+  .x-common-catalogs{
+    margin-bottom:20px;
+  }
+
+  .table{
+    .link{
+      color:#38ADFF;
+      cursor:pointer;
+      &:hover{
+        text-decoration:underline;
+      }
+    }
+  }
+
+  .incom-stat{
+    padding:20px 0;
+    color: #858585;
+    span{
+      margin-right:20px;
+    }
+  }
+
+  .empty-table{
+    text-align:center;
+    font-size:20px;
+    color: #959595;
+    padding:100px 0;
+  }
+}

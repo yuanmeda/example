@@ -1,0 +1,75 @@
+<div class="user__selector-layout container-fluid">
+    <div class="u__content row-fluid" data-bind="style:{height:model.height}">
+        <div class="span4 accordion-group u__box scroll">
+            <div class="u__body">
+                <!--ko if:model.orgId-->
+                <div class="u__tree-selector-component" data-bind="visible:!model.readonly()">
+                    <ul class="ztree"></ul>
+                </div>
+                <!--/ko-->
+                <!--ko if:!model.orgId-->
+                <p class="u__tree-notfound">请在项目上配置该组织</p>
+                <!--/ko-->
+            </div>
+        </div>
+        <div class="span8 u__box-group">
+            <div class="u__box-g-i u__box-g-l">
+                <div class="accordion-group u__box no-scroll">
+                    <div class="u__header">部门成员</div>
+                    <div class="u__filter">
+                        <div class="u__filter" data-bind="event:{keydown:function(data,event){onEnterKeydown(event,0);return true;}}">
+                            <input type="text" placeholder="简称或关键词" data-bind="value: model.userKeyword" />
+                            <i class="u__search u__icon-sprite u__icon-search" data-bind="event:{click:function(){onQuery(0)}}"></i>
+                        </div>
+                    </div>
+                    <div class="u__body u__list">
+                        <div class="scroll u__list-layout" data-bind="event:{scroll:onScrollEvent}">
+                            <ul data-bind="foreach:model.userList">
+                                <li>
+                                    <div class="u__item" data-bind="css:{'u__item-focus':$index() == $parent.model.focusIndex()},click:function(){$parent.clickItem($index,0)}">
+                                        <img class="u__avatar" data-bind="attr:{src:$parent.model.avatarPath() + '/' + $data.user_id + '/' + ($data['org.pic'] || $data.user_id) + '.jpg?size=80&defaultImage=1'}"></img>
+                                        <span class="u__item-text" data-bind="text:$data['org.real_name'] + '（' + $data.user_id + '）',attr:{title:$data['org.real_name'] + '（' + $data.user_id + '）'}"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u__btn-group">
+                <button class="btn btn-default" data-bind="click:addAll, visible:!model.isRadio()">&gt;&gt;</button>
+                <button class="btn btn-default" data-bind="click:addUser, attr:{disabled:model.isRadio() && model.selectedList().length > 0}">&gt;</button>
+                <button class="btn btn-default" data-bind="click:removeUser">&lt;</button>
+                <button class="btn btn-default" data-bind="click:removeAllShow, visible:!model.isRadio()">&lt;&lt;</button>
+            </div>
+            <div class="u__box-g-i u__box-g-r">
+                <div class="accordion-group u__box no-scroll">
+                    <div class="u__header">
+                        <div>
+                            <span>已选人员(<span data-bind="text:model.selectedList().length">0</span>)</span>
+                            <a href="javascript:void(0)" data-bind="click:removeAll">全部删除</a>
+                        </div>
+                    </div>
+                    <div class="u__filter">
+                        <div class="u__filter" data-bind="event:{keydown:function(data,event){onEnterKeydown(event,1);return true;}}">
+                            <input type="text" placeholder="简称或关键词" data-bind="value: model.selectedKeyword" />
+                            <i class="u__search u__icon-sprite u__icon-search" data-bind="event:{click:function(){onQuery(1)}}"></i>
+                        </div>
+                    </div>
+                    <div class="u__body u__list">
+                        <div class="scroll u__list-layout">
+                            <ul data-bind="foreach:model.selectedShowList">
+                                <li>
+                                    <div class="u__item" data-bind="css:{'u__item-focus':$index() == $parent.model.focusSelectedIndex()},click:function(){$parent.clickItem($index,1)}">
+                                        <img class="u__avatar" data-bind="attr:{src:$parent.model.avatarPath() + '/' + $data.user_id + '/' + ($data['org.pic'] || $data.user_id) + '.jpg?size=80&defaultImage=1'}"></img>
+                                        <span class="u__item-text" data-bind="text:$data['org.real_name'] + '（' + $data.user_id + '）',attr:{title:$data['org.real_name'] + '（' + $data.user_id + '）'}"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

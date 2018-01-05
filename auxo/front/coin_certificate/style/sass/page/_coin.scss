@@ -1,0 +1,139 @@
+@import "../shared/mixins";
+@import '../shared/iconfont';
+
+$version: 2016070301;
+//border bgc fontColor
+$colors: (available: #ff9617 #fff9e1 #ff9617, disabled: #ccc #f2f2f2 #999);
+
+@mixin coverCircle($fs,$type) {
+  position: absolute;
+  @if $type == 'up' {
+    top: - ($fs / 2);
+  } @else {
+    bottom: - ($fs / 2);
+  }
+  left: 74%;
+  margin-left: - $fs / 2;
+  color: #fff;
+  font-size: $fs;
+}
+
+.x-single-coin {
+  box-sizing: content-box;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  .circle-up {
+    @include coverCircle(26px, 'up');
+  }
+  .circle-down {
+    @include coverCircle(26px, 'down');
+  }
+  .coin-item {
+    position: relative;
+    border-radius: 5px;
+    background-color: nth(map-get($colors, available), 2);
+    border-top: 3px solid nth(map-get($colors, available), 1);
+    padding: 20px 0;
+    font-size: 0;
+    .coin-fl {
+      display: inline-block;
+      width: 70%;
+      vertical-align: middle;
+      border-right: 1px dashed nth(map-get($colors, available), 1);
+      padding-left: 3.5%;
+      text-align: left;
+      .coin-title {
+        font-size: 18px;
+        line-height: 22px;
+        width: 70%;
+        @extend %text-overflow;
+      }
+      .coin-time {
+        font-size: 14px;
+        line-height: 16px;
+        color: #666;
+        margin-top: 20px;
+      }
+      .coin-desc {
+        width: 70%;
+        @extend %text-overflow;
+        font-size: 14px;
+        line-height: 16px;
+        color: #666;
+        margin-top: 20px;
+      }
+    }
+    .coin-rt {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      width: 25%;
+      height: 98px;
+      line-height: 98px;
+      .coin-rt-wrap {
+        display: inline-block;
+        width: 88px;
+        height: 88px;
+        position: relative;
+        //.circle-bottom {
+        //  font-size: 88px;
+        //  color: nth(map-get($colors, available), 1);
+        //  position: absolute;
+        //  left: 0;
+        //  top: 0;
+        //  width: 88px;
+        //  height: 88px;
+        //  text-align: center;
+        //  line-height: 88px;
+        //  z-index: 2;
+        //}
+        .circle-above {
+          font-size: 84px;
+          color: nth(map-get($colors, available), 2);
+          position: absolute;
+          text-align: center;
+          top: 1px;
+          left: 1px;
+          width: 86px;
+          height: 86px;
+          line-height: 86px;
+          z-index: 3;
+        }
+        .coin-status {
+          width: 89px;
+          height: 89px;
+          text-align: center;
+          z-index: 4;
+          top: 0;
+          left: 0;
+          color: nth(map-get($colors, available), 3);
+          font-size: 18px;
+          line-height: 89px;
+          background: url("../../../../images/circle.png?#{$version}") center no-repeat;
+        }
+      }
+    }
+
+    &.disabled {
+      background-color: nth(map-get($colors, disabled), 2);
+      border-top: 3px solid nth(map-get($colors, disabled), 1);
+      .coin-fl {
+        border-right: 1px dashed nth(map-get($colors, disabled), 1);
+      }
+      .coin-rt {
+        .coin-rt-wrap {
+          .circle-bottom {
+            color: nth(map-get($colors, disabled), 1);
+          }
+          .circle-above {
+            color: nth(map-get($colors, disabled), 2);
+          }
+          .coin-status {
+            color: nth(map-get($colors, disabled), 3);
+          }
+        }
+      }
+    }
+  }
+}

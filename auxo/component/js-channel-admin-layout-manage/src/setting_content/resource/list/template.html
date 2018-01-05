@@ -1,0 +1,165 @@
+<div class="x-channel-resource section-block" data-bind="attr:{id: params.id}">
+    <div class="catalogs" id="catalogs">
+        <!--ko foreach:model.catalogs-->
+        <div class="catalog-column clearfix" data-bind="attr: { 'data-id': id}"><span class="column-title"
+                                                                                      data-bind="text: title"></span><span
+                    class="item-all item-label active"
+                    data-bind="click: $component.catalogOnClick.bind($component, $element), attr:{'data-type':id}"><a
+                        href="javascript:;">全部</a></span>
+            <ul class="column-list">
+                <!-- ko foreach: children -->
+                <li class="item-label"
+                    data-bind="attr: { title: title, 'data-id': id, 'data-type':$parent.id},click: $component.catalogOnClick.bind($component, $element)">
+                    <a href="javascript:;" data-bind="text: title"></a></li>
+                <!--/ko-->
+            </ul>
+        </div>
+        <!--/ko-->
+        <div class="catalog-column clearfix">
+            <span class="column-title">状态</span>
+            <span class="item-all item-label active"
+                  data-bind="click:$component.selectFlag.bind($component,-1,$element)"><a
+                        href="javascript:;">全部</a></span>
+            <ul class="column-list" data-bind="foreach: model.status">
+                <li class="item-label" data-bind="click:$component.selectFlag.bind($component,status, $element)">
+                    <a href="javascript:;" data-bind="text: title"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="catalog-column clearfix" style="display: none" data-bind="visible: model.group_names().length ">
+            <span class="column-title">资源类型</span>
+            <ul class="column-list">
+                <li class="item-label"><label class="checkbox-inline"><input type="checkbox" data-bind="checked: $component.model.isAllGroupNames">全部</label></li>
+                <!--ko foreach: model.group_names-->
+                <li class="item-label">
+                    <label class="checkbox-inline">
+                        <input type="checkbox"
+                               data-bind="checked: $component.model.filter.group_names, checkedValue: name">
+                        <!-- ko text: title--><!--/ko-->
+                    </label>
+                </li>
+                <!--/ko-->
+            </ul>
+        </div>
+    </div>
+    <div class="block col-sm-12" id="opencourseContent">
+        <div class="block-tit cf">
+            <div class="tit-tab-box">
+                <div class="tit-search fl">
+                    <input type="text" placeholder="输入关键词" data-bind="value: model.filter.name" id="keyword" autocomplete="off"
+                           name="keyword"/>
+                    <a class="vm" href="javascript:;" data-bind="click: doSearch,css:{'disabled':model.tips}">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </a>
+                    <!--ko if:model.tips-->
+                    <span class="tips">关键词不能多于50个字</span>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+        <div class="block-content" id="layout-content" data-bind="visible: model.items().length > 0">
+            <div class="item-list cf" data-bind="foreach: model.items, visible:model.style()=='pic'" data-type="item">
+                <a class="item cf" href="javascript:;"
+                   data-bind="click:$component.toggleSelectedItem.bind($component),css: {'selected': ~$component.checkSelected.call($component,$data)}">
+                    <span class="resource-type"
+                          data-bind="text:$component.formatResourceType($data),visible:$component.formatResourceType($data)"></span>
+                    <div class="item-img pos_r">
+                        <image-loader params="original:(cover && cover_url) ? cover_url +(~cover.indexOf('CLOUD')?'!m300x200.jpg':''): ' ',
+                                            element:$element,
+                                            hasRule:!(/default/.test(cover)),
+                                            container:'#layout-content',
+                                            imgRule:''">
+                        </image-loader>
+                    </div>
+                    <div class="item-dl fl">
+                        <!-- ko ifnot: type == 'famous_teacher'-->
+                        <div class="item-name ellipsis" data-bind="text: title, attr: { title: title }"></div>
+                        <!--/ko-->
+                        <!-- ko if: type == 'famous_teacher'-->
+                        <div class="item-name ellipsis" data-bind="text: title + (extra ? ' '+extra.teacher_id : ''), attr: { title: title + (extra ? ' '+extra.teacher_id : '') }"></div>
+                        <!--/ko-->
+                        <!--ko if: type=='auxo-train'-->
+                        <div class="item-dd"><span><i
+                                        data-bind="text: +extra.option_course_count + (+extra.require_course_count)"></i> 门课程<em></em></span><span><i
+                                        data-bind="text: extra.exam_count"></i> 个考试<em></em></span><span><i
+                                        data-bind="text: extra.total_period "></i> 学时</span></div>
+                        <!--/ko-->
+                        <!--ko if: type=='open-course'|| type=='opencourse_2'|| type=='offline_course'-->
+                        <div class="item-dd"><span><i data-bind="text:extra.video_count "></i> 视频<em></em></span><span><i
+                                        data-bind="text: extra.document_count"></i> 文档<em></em></span><span><i
+                                        data-bind="text: extra.exercise_count "></i> 练习</span></div>
+                        <!--/ko-->
+                        <!--ko if: ~$.inArray(type,['standard_exam','custom_exam','competition','design_methodlogy_exam','design_methodlogy_exercise','pk','online_exam','offline_exam'])-->
+                        <div class="item-dd"><span data-bind="visible:extra.duration">时长：<i
+                                        data-bind="text: extra.duration ? ~~(extra.duration/60) : 0"></i>
+                                <em></em></span><span>考试机会：<i
+                                        data-bind="text: extra.exam_chance? extra.exam_chance:'不限'"></i></span>
+                        </div>
+                        <!--/ko-->
+                        <!--ko if: type=='barrier'-->
+                        <div class="item-dd">
+                            <span>共 <i data-bind="text: extra.barrier_num"></i> 关</span>
+                        </div>
+                        <!--/ko-->
+                        <!--ko if: type=='e-certificate'-->
+                        <div class="item-dd">
+                            <span><i data-bind="text: extra.relation_course_count"></i> 公开课<em></em></span>
+                            <span><i data-bind="text: extra.relation_train_count"></i> 培训</span>
+                        </div>
+                        <!--/ko-->
+                        <!-- ko if: type == 'website'-->
+                        <div class="item-dd ellipsis"
+                             data-bind="text: description, attr: { title: description }"></div>
+                        <!--/ko-->
+                        <!--ko if: type=='famous_teacher'-->
+                        <div class="item-time" data-bind="if: extra">
+                            <!--ko foreach: extra.stages -->
+                            <span data-bind="text: $component.model.stages[$data]"></span>&nbsp;
+                            <!--/ko-->
+                            <!--ko foreach: extra.subjects -->
+                            <span data-bind="text: subject_name"></span>&nbsp;
+                            <!--/ko-->
+                            <span data-bind="text: extra.school_full_name"></span>
+                        </div>
+                        <div class="item-dd">
+                            <span>浏览量<i data-bind="text: user_count"></i><em></em></span>
+                            <span data-bind="if:extra">资源量<i data-bind="text: extra.resource_count"></i></span>
+                        </div>
+                        <!--/ko-->
+                        <!--ko if: type=='famous_school'-->
+                        <div class="item-time" data-bind="if: extra">
+                            <!--ko foreach: extra.stages -->
+                            <span data-bind="text: $component.model.stages[$data]"></span>&nbsp;
+                            <!--/ko-->
+                            <span data-bind="text: extra.area"></span>
+                        </div>
+                        <div class="item-dd" data-bind="if: extra">
+                            <span>浏览量<i data-bind="text: user_count"></i><em></em></span>
+                            <span data-bind="if:extra">资源量<i data-bind="text: extra.resource_count"></i></span>
+                        </div>
+                        <!--/ko-->
+                        <div class="item-time">
+                            <!-- ko if: !~$.inArray(type,['lecturer','lecturer_new','famous_teacher','famous_school','website']) -->
+                            <span class="item-user"><i data-bind="text:user_count"></i> 人学习</span>
+                            <!-- /ko -->
+                            <span class="item-price"><i data-bind="text:$component.formatPrice(commodity)"></i></span>
+                        </div>
+                    </div>
+                    <span class="item-check-left" style="left:auto;right:2px;"><i
+                                class="glyphicon glyphicon-ok"></i></span>
+                    <div class="mask"></div>
+                    <div class="item-label-box">
+                        <i class="item-label on" data-bind="text: visible_config==1 ? '内部' : '',visible:visible_config==1"></i>
+                        <i class="item-label" data-bind="text: online_status == 0 ? '下线' : '在线',css: { 'on': online_status == 1, 'off': online_status == 0 }"></i>
+                        <i class="item-label" data-bind="text: !enabled ? '禁用' : '发布',css: { 'on': enabled, 'off': !enabled }"></i>
+                        <i class="item-label zd" data-bind="visible: is_top != 0 ">置顶</i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div data-bind="attr:{id: 'pagination-'+params.id}"></div>
+        <div data-bind="visible: model.items().length<= 0">
+            <div class="item-nodata">暂无相关资源</div>
+        </div>
+    </div>
+</div>

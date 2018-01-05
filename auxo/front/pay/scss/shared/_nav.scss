@@ -1,0 +1,37 @@
+%tab-nav {
+    $navHeight: 60px;
+    .tab-nav,
+    .tab-content {
+        padding: 0 28px;
+
+        font-size: 14px;
+    }
+    .tab-nav {
+        position: relative;
+
+        border-bottom: 1px #e6e6e6 solid;
+        padding: 0 32px;
+        height: $navHeight;
+
+        line-height: $navHeight;
+        li {
+            display: inline-block;
+
+            margin-right: 20px;
+            padding: 0 32px;
+            height: $navHeight;
+
+            text-align: center;
+
+            cursor: pointer;
+            &.active {
+                border-bottom: 2px solid $themeColor;
+
+                color: $themeColor;
+            }
+        }
+        h2 {
+            font-size: 120%;
+        }
+    }
+}

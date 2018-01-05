@@ -1,0 +1,46 @@
+@import "./mixins";
+$btnHeight: 30px;
+$btnSmHeight: 24px;
+.ele-btn {
+    display: inline-block;
+
+    border-radius: 4px;
+    padding: 0 10px;
+    width: auto;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    @include text-middle($btnHeight);
+    &.disabled {
+        @include disabled;
+    }
+    &.ele-sm {
+        padding: 0 7px;
+
+        font-size: 12px;
+
+        @include text-middle($btnSmHeight);
+    }
+}
+.ele-btn-disabled {
+    @extend .ele-btn;
+    &.disabled {
+        @include disabled;
+    }
+}
+.ele-btn-theme {
+    border: 1px solid darken($themeColor,5%);
+
+    background: $themeColor;
+
+    @extend .ele-btn;
+    &:hover {
+        box-shadow: inset 0 0 3px darken($themeColor,10%);
+        background-color:darken($themeColor,10%);
+    }
+    &.disabled {
+        @include disabled;
+    }
+}

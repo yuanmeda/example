@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.sys-confirm .ui-btn-primary {
+  display: inline-block;
+  color: #fff;
+  background-color: #999;
+  border-color: #8c8c8c;
+  width: 110px;
+  height: 36px;
+  margin: 0 10px;
+  line-height: 36px;
+  border-radius: 5px
+}
+.sys-confirm .ui-btn-primary:hover {
+  background-color: gray;
+  border-color: gray;
+  text-decoration: none
+}
+.sys-confirm .ui-btn-confirm {
+  display: inline-block;
+  color: #fff;
+  background-color: #38adff;
+  border-color: #1fa2ff;
+  width: 110px;
+  height: 36px;
+  margin: 0 10px;
+  line-height: 36px;
+  border-radius: 5px
+}
+.sys-confirm .ui-btn-confirm:hover {
+  background-color: #0598ff;
+  border-color: #0598ff;
+  text-decoration: none
+}
+.udialog {
+  font-family: "microsoft yahei"
+}
+.udialog .ui-dialog-title {
+  color: #666
+}
+.sys-alert .ui-dialog-titlebar {
+  display: none
+}
+.sys-alert .udialog-icon-info {
+  display: none!important
+}
+.sys-alert .default-btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #38adff;
+  border-color: #1fa2ff;
+  width: 110px;
+  height: 36px;
+  margin: 0 10px;
+  line-height: 36px;
+  border-radius: 5px;
+  font-size: 16px
+}
+.sys-alert .default-btn:hover {
+  background-color: #0598ff;
+  border-color: #0598ff;
+  text-decoration: none
+}
+.sys-alert .udialog-text {
+  text-align: center;
+  padding: 20px 0 0 0!important
+}

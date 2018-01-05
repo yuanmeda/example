@@ -1,0 +1,16 @@
+@import "banner_header";
+@import "mixins";
+// 按钮
+@import "button";
+@import "baseinfo";
+//百度编辑器重置
+@import "umreset";
+
+.item-desc {
+    overflow-y: auto;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    height: 300px;
+}

@@ -1,0 +1,71 @@
+.box{box-shadow: none;}
+.input-xlarge{
+    width:300px;
+    box-sizing: content-box;
+}
+textarea.input-xlarge{width: 600px;}
+.img-sm{
+    height: 205px;
+    width: 307px;
+    float:left;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px;
+    margin-left:20px;
+}
+.img-sm img{
+    height:200px;
+    width: 300px;
+
+}
+.modal-footer .btn{
+    letter-spacing:normal;
+}
+.container-fluid{padding:0px;}
+.img-tip
+{
+    margin-left:160px;
+    font: 14px/1.5 "微软雅黑",arial,tahoma, simsun;
+    color: #333;
+}
+.text-help{width:600px;text-align: right;display: inline-block;color: #999;font-size:14px;}
+.text-help em{font: 18px/24px "微软雅黑",arial,tahoma, simsun;color:#0cadb7;font-style: italic;}
+.bt-md.bt-default
+{
+    margin:80px 20px;
+    float:left;
+}
+.btn{
+    text-shadow: none;
+    letter-spacing: 6px;
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+    transition: all .3s;
+    font: 14px/28px "微软雅黑",arial,tahoma, simsun;
+    box-sizing: content-box;
+    outline: none;}
+.btn.save,.btn.back
+{
+    border-color: #0a969f;
+    color: #fff;
+    background: #0cadb7;
+
+}
+.btn.back{margin-left:20px;}
+.btn.save:hover{
+    background: #0a969f;
+}
+.btn.back:hover{
+    background: #0a969f;
+}
+.btn.cancel
+{
+    margin-left:20px;
+    border-color: #d8d8d8;
+    color: #333;
+    background: #e5e5e5;
+}
+.btn.cancel:hover{
+    background-color: #d8d8d8;
+}

@@ -1,0 +1,284 @@
+@charset "UTF-8";
+.qa-container .qa-item-box:after,
+.qa-container .qa-item-box:before {
+  display: table;
+  content: ""
+}
+.qa-container .qa-item-box:after {
+  clear: both;
+  overflow: hidden
+}
+.pagination,
+.pagination-info {
+  margin: 10px 0
+}
+.pagination a {
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+  background: #fff
+}
+.pagination span {
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #fff
+}
+.pagination .current,
+.pagination a:hover,
+.pagination span {
+  display: inline-block;
+  border: solid 1px #1fa2ff;
+  padding: 0 12px;
+  color: #fff;
+  background-color: #38adff
+}
+.pagination .prev {
+  border: solid 1px #ddd;
+  border-bottom-left-radius: 3px
+}
+.pagination .current.next,
+.pagination .current.prev {
+  border-color: #ccc;
+  color: #666;
+  background: #ccc
+}
+.pagination-info span {
+  display: block;
+  line-height: 34px;
+  vertical-align: middle
+}
+.pagination .first {
+  margin-right: 5px;
+  border-width: 1px;
+  border-radius: 3px
+}
+.pagination .last {
+  margin-left: 5px;
+  border-width: 1px;
+  border-radius: 3px
+}
+.page-input {
+  display: block;
+  float: right;
+  overflow: hidden;
+  margin-left: 15px
+}
+.page-input .page-text {
+  box-sizing: content-box;
+  margin: 0 5px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  padding: 7px 5px;
+  width: 32px;
+  height: 14px;
+  line-height: 14px;
+  vertical-align: middle;
+  outline: 0
+}
+.page-input .select-page-btn {
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  width: 58px;
+  height: 30px;
+  vertical-align: top;
+  color: grey;
+  background: #fff;
+  cursor: pointer
+}
+.page-input .select-page-btn:hover {
+  color: #fff;
+  background-color: #38adff
+}
+.page-selector {
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 5px 0 0 15px
+}
+.page-selector select {
+  margin: 0 5px;
+  width: 60px;
+  vertical-align: baseline
+}
+#pagination {
+  margin: 20px 0;
+  *zoom: 1
+}
+#pagination:after,
+#pagination:before {
+  display: table;
+  content: ""
+}
+#pagination:after {
+  clear: both;
+  overflow: hidden
+}
+#pagination .pagination-info {
+  margin: 10px
+}
+.qa-container {
+  font-size: 14px;
+  background-color: #fff
+}
+.qa-container .validationMessage {
+  margin-left: 20px;
+  color: #ce3f3f;
+  display: inline-block;
+  vertical-align: top;
+  height: 18px;
+  line-height: 18px
+}
+.qa-container .pagination-box {
+  text-align: center
+}
+.qa-container .pagination-box .pagination {
+  display: inline-block
+}
+.qa-container .theme {
+  color: #38adff
+}
+.qa-container .k-edit-component > span {
+  font-size: 12px
+}
+.qa-container .qa-item-box {
+  padding-top: 30px;
+  padding-bottom: 20px
+}
+.qa-container .qa-item-box .qa-detail,
+.qa-container .qa-item-box .u-avatar {
+  float: left
+}
+.qa-container .qa-item-box .u-avatar {
+  margin-right: 25px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px
+}
+.qa-container .qa-item-box .qa-detail {
+  position: relative;
+  width: 890px
+}
+.qa-container .qa-item-box .qa-detail .word-break {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all
+}
+.qa-container .qa-item-box .qa-detail .u-content {
+  padding: 10px 0;
+  min-height: 60px
+}
+.qa-container .qa-item-box .qa-detail textarea.u-content {
+  border-color: #e5e5e5;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+  outline: 0;
+  resize: none
+}
+.qa-container .qa-item-box .qa-detail .u-commet,
+.qa-container .qa-item-box .qa-detail .u-name {
+  color: #999
+}
+.qa-container .qa-item-box .qa-detail .u-commet small {
+  margin-right: 10px
+}
+.qa-container .qa-item-box .qa-detail .u-from a {
+  margin-left: 3px;
+  font-size: 13px;
+  color: #38adff
+}
+.qa-container .qa-item-box .qa-detail .u-from a:hover {
+  color: #0f9cff
+}
+.qa-container .qa-item-box .qa-detail .op-list {
+  display: none;
+  float: right
+}
+.qa-container .qa-item-box .qa-detail .op-list a {
+  margin: 0 5px;
+  font-size: 12px;
+  color: #38adff;
+  cursor: pointer
+}
+.qa-container .qa-item-box .qa-detail .op-list a:hover {
+  color: #0f9cff
+}
+.qa-container .qa-item-box .qa-detail .op-list a > i {
+  margin-right: 3px;
+  vertical-align: initial
+}
+.qa-container .qa-item-box .qa-detail .op-list.show {
+  display: block
+}
+.qa-container .qa-item-box .qa-detail > div {
+  margin-top: 10px
+}
+.qa-container .qa-item-box .qa-detail .qa-item-edit {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 100%;
+  background-color: #fff
+}
+.qa-container .qa-item-box:hover .op-list {
+  display: block
+}
+.qa-container .qa-header {
+  padding-right: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px
+}
+.qa-container .qa-body {
+  margin-top: 10px
+}
+.qa-container .qa-count {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+  padding-left: 25px
+}
+.qa-container .qa-count em {
+  color: #38adff
+}
+.qa-container .qa-list {
+  padding: 25px;
+  padding-top: 0
+}
+.qa-container .qa-list .qa-item-box {
+  border-bottom: 1px dashed #e5e5e5
+}
+.qa-container .qa-footer {
+  margin-bottom: 20px;
+  padding: 0 25px
+}
+.qa-container .qa-footer textarea {
+  border-color: #e5e5e5;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+  min-height: 100px;
+  outline: 0;
+  resize: none
+}
+.qa-container .qa-footer .f-ope-list {
+  float: right;
+  margin-top: 8px
+}
+.qa-container .qa-footer .f-ope-list a {
+  width: 88px;
+  text-align: center
+}

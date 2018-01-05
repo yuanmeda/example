@@ -1,0 +1,194 @@
+.webuploader-element-invisible {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+}
+html {
+	overflow: auto;
+}
+.form-horizontal .control-group .control-label{
+	font-size: 14px;
+}
+.form-horizontal .control-group{
+	margin: 10px 0;
+}
+.banner-header{
+	margin-bottom: 25px;
+}
+.box .form-horizontal input[type="text"]{
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+}
+.form-horizontal .control-label{
+	height: 30px;
+	line-height: 28px;
+}
+.required{
+	color: #f70000;
+}
+.form-horizontal .controls{
+	line-height: 38px;
+}
+
+.form-horizontal .controls label{
+	margin-right: 25px;
+}
+.form-horizontal .controls label input{
+	margin-right: 3px;
+}
+.popbg{
+    border: 1px solid #e8e8e8;
+    box-shadow: 0px 2px 5px 0px #e4e4e4;
+	padding: 20px;
+	width: 90%;
+	margin:0px auto;
+}
+.SelectTag{
+	position: absolute;
+	z-index: 9;
+	background: #fff;
+}
+
+.SelectTag .choostit{
+	font-size: 14px;
+	line-height: 35px;
+}
+.SelectTag span{
+	border: 1px solid #ddd;
+	padding: 0 14px;
+	height: 30px;
+	line-height: 28px;
+    color: #808080;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.SelectTag span:hover{
+	background: #40ad6c;
+    color: #fff;
+    border: 1px solid #399c61;
+}
+.tag .tagname{
+	border: 1px solid #ddd;
+	padding: 0 14px;
+	height: 30px;
+	line-height: 28px;
+	color: #808080;
+	border-radius: 3px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.tag .tagname .tagdelet{
+	height: 28px;
+	padding-left: 5px;
+	text-align: center;
+	color: #fa8252;
+	cursor: pointer;
+	display: inline-block;
+}
+.popbg div{
+	margin-bottom: 15px;
+}
+.popbg div label{
+	padding-bottom: 5px;
+	padding-right: 15px;
+	display: inline-block;
+}
+.popbg div p{
+	padding-top: 5px;
+	padding-left: 72px;
+	color: #0078cc;
+}
+.EvrWeek .choosday{
+	padding-left: 72px;
+}
+.EvrWeek .choosday label{
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+}
+.EvrWeek .choosday label input{
+	margin: 0 3px 0 0;
+}
+
+.increaseTime{
+	padding-left: 72px;
+}
+.monthly .monthlyDay{
+	width: 320px;
+	margin-left: 72px;
+	float: left;
+}
+.monthly .monthlyDay div{
+	height: 40px;
+	width: 40px!important;
+	line-height: 38px;
+	color: #666;
+	border-radius: 3px;
+	border: 1px solid #ddd!important;
+	margin: 1px;
+	cursor: pointer;
+}
+.monthly .monthlyDay div:hover , .monthly .monthlyDay .curr{
+	background: #40ad6c;
+    color: #fff;
+    border: 1px solid #399c61;
+    color: #fff!important;
+}
+
+.monthly .increaseTime , .monthly .increaseTime div{
+	margin-bottom: 15px;
+}
+.upload-outer{
+	background: rgba(0,0,0,0.5);
+}
+.upload-outer .tool-bar{
+	position: absolute;
+	left: 2.5%;
+	margin-left: 20px;
+	margin-top: 40px;
+	background: none;
+}
+.upload-outer object{
+	margin-top: 50px;
+}
+.upload-outer .upload-container{
+	background: #fff;
+	width: 95%;
+	margin: 0px auto;
+
+}
+.form-horizontal .controls textarea{
+	padding: 10px;
+}
+
+
+#periodic_exam_setting .icon {
+	background: url(../images/glyphicons-halflings.png);
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+}
+
+
+#periodic_exam_setting .icon-calendar {
+    background-position: -192px -120px;
+    margin: 0 5px;
+}
+
+#periodic_exam_setting .newmodal.modal-larger {
+	position: fixed;
+}
+
+#periodicexam-paper-strategy-setting input {
+	height: 26px;
+}
+
+#periodicexam-paper-strategy-setting li div {
+	margin-bottom: 5px;
+}
+.menu-main-wrap .main-wrap {
+	bottom: inherit;
+}

@@ -1,0 +1,36 @@
+<!--ko if:model.bannerUrl-->
+<div class="banner-container"
+     data-bind="visible:model.bannerUrl,style:{ 'background': 'url(&quot;' + model.bannerUrl  + '&quot;) no-repeat center' }"></div>
+<!--/ko-->
+<div class="sku-container">
+    <div class="sku-wrap clearfix" data-bind="foreach:model.sku.items">
+        <a href="javascript:;" class="sku-cell" target="_blank" data-bind="attr:{'href':web_link}">
+            <div class="sku-img-wrap">
+                <img class="lazy-image" data-bind="attr:{'alt':name,'data-original':photo_url ? photo_url: ''}">
+            </div>
+            <div class="sku-price-badge"
+                 data-bind="visible:$data.goods_promotion&&goods_promotion.sales_sub_type === 1,translate:{'key':'salesMain.timeLimit'}">
+                限时抢
+            </div>
+            <div class="sku-price-badge"
+                 data-bind="visible:$data.goods_promotion&&goods_promotion.sales_sub_type === 2,translate:{'key':'salesMain.discount','properties':{'discount':$data.goods_promotion && (goods_promotion.sales_config.discount * 10).toFixed(1)+' '}}">
+                限时抢
+            </div>
+            <div class="sku-info-title" data-bind="text:name">班主任工作反思</div>
+            <div class="sku-combine-hint"
+                 data-bind="visible:$data.combine_promotion, translate:{'key':$data.combine_promotion && combine_promotion.sales_sub_type == 1?'salesMain.combineReduce':'salesMain.combineDiscount'}">
+                满减
+            </div>
+            <div class="sku-btn" data-bind="translate:{'key':'salesMain.getIt'}">立即抢购</div>
+            <div class="sku-foot">
+                <div class="sku-foot-price">
+                    <span class="o-price"
+                          data-bind="text:display_single_promotion_amount && display_amount">￥88.88</span>
+                    <span class="n-price"
+                          data-bind="text:display_single_promotion_amount ? display_single_promotion_amount : display_amount">￥88.88</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="pagination-box" id="pagination"></div>
+</div>

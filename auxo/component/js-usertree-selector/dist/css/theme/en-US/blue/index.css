@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/* -------------extend------------- */
+/* wordbreak */
+/* 文字超出显示省略号 */
+.user__selector-layout .u__content .u__box .u__body.u__list .u__list-layout .u__item-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+/* 垂直居中 */
+.user__selector-layout .u__content .u__box .u__body .u__tree-notfound {
+  transform: translate(-50%);
+  margin-left: 50%;
+  margin-top: 50%; }
+
+/* 清除浮动 */
+/* 垂直居中 */
+/* -------------mixin------------- */
+/* 设置透明度 0~100 */
+/* 背景图片 */
+/* -------------display------------- */
+.scroll {
+  overflow: auto; }
+
+.no-scroll {
+  overflow: hidden; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.cl {
+  clear: both; }
+
+.tl {
+  text-align: left; }
+
+.tc {
+  text-align: center; }
+
+.tr {
+  text-align: right; }
+
+.underline {
+  text-decoration: underline; }
+
+/* -------------margin------------- */
+.ml10 {
+  margin-left: 10px; }
+
+.mr10 {
+  margin-right: 10px; }
+
+.pdl20 {
+  padding-left: 20px; }
+
+.pdl40 {
+  padding-left: 40px; }
+
+/* -------------color------------- */
+/* other color */
+/* grey color */
+/* main color */
+/* sub color */
+/* -------------radius------------- */
+/* -------------z-index------------- */
+.u__icon-sprite {
+  background: url("../../../../../images/sprite.png") no-repeat;
+  background-size: auto 120px; }
+  .u__icon-sprite.u__icon-search {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-position: 0 -60px; }
+  .u__icon-sprite.u__icon-search:hover {
+    background-position: 0 -90px; }
+  .u__icon-sprite.u__icon-search:focus {
+    background-position: 0 -90px; }
+
+.user__selector-layout {
+  width: 100%;
+  height: 100%;
+  padding: 40px 12px 30px; }
+  .user__selector-layout .u__content {
+    min-height: 400px;
+    height: 690px; }
+    .user__selector-layout .u__content .u__box-group {
+      position: relative;
+      height: 100%; }
+      .user__selector-layout .u__content .u__box-group .u__btn-group {
+        width: 80px;
+        padding: 15px;
+        position: absolute;
+        left: 50%;
+        margin-left: -40px;
+        top: 35%; }
+        .user__selector-layout .u__content .u__box-group .u__btn-group button {
+          width: 50px;
+          margin: 6px 0;
+          letter-spacing: 0;
+          box-sizing: border-box; }
+      .user__selector-layout .u__content .u__box-group .u__box-g-i {
+        width: 50%;
+        height: inherit;
+        float: left; }
+      .user__selector-layout .u__content .u__box-group .u__box-g-l {
+        padding-right: 40px; }
+      .user__selector-layout .u__content .u__box-group .u__box-g-r {
+        padding-left: 40px; }
+    .user__selector-layout .u__content .u__box {
+      height: 100%;
+      border-color: #ccc; }
+      .user__selector-layout .u__content .u__box .u__header {
+        font-size: 16px;
+        height: 50px;
+        padding: 15px 20px 10px; }
+        .user__selector-layout .u__content .u__box .u__header a {
+          font-size: 14px;
+          float: right;
+          color: #08c; }
+      .user__selector-layout .u__content .u__box .u__filter {
+        height: 40px;
+        position: relative; }
+        .user__selector-layout .u__content .u__box .u__filter input {
+          width: 100%;
+          height: 100%;
+          padding: 4px 60px 4px 16px;
+          border-top: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+          border-left: none;
+          border-right: none;
+          border-radius: 0px;
+          outline: none; }
+        .user__selector-layout .u__content .u__box .u__filter .u__search {
+          position: absolute;
+          right: 9px;
+          top: 4px; }
+      .user__selector-layout .u__content .u__box .u__body {
+        padding: 12px;
+        display: inline-block; }
+        .user__selector-layout .u__content .u__box .u__body.u__list {
+          width: 100%;
+          height: 100%;
+          padding: 0 0 90px; }
+          .user__selector-layout .u__content .u__box .u__body.u__list .u__list-layout {
+            width: 100%;
+            height: 100%;
+            padding: 14px 16px; }
+            .user__selector-layout .u__content .u__box .u__body.u__list .u__list-layout .u__item {
+              position: relative;
+              cursor: pointer;
+              height: 40px;
+              padding: 0 12px;
+              line-height: 40px; }
+            .user__selector-layout .u__content .u__box .u__body.u__list .u__list-layout .u__item-focus {
+              background: #38adff; }
+            .user__selector-layout .u__content .u__box .u__body.u__list .u__list-layout .u__item-text {
+              margin-left: 30px;
+              display: block; }
+            .user__selector-layout .u__content .u__box .u__body.u__list .u__list-layout .u__avatar {
+              position: absolute;
+              margin-top: 8px;
+              display: inline-block;
+              height: 24px;
+              width: 24px; }
+        .user__selector-layout .u__content .u__box .u__body .u__tree-notfound {
+          padding: 10px 0;
+          text-align: center;
+          font-size: 16px; }

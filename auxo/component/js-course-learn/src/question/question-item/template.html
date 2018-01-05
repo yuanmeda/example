@@ -1,0 +1,54 @@
+<div class="x-course-learn-question qa-item expand" data-bind="attr:{'id':'question_'+model.question().id}">
+    <div class="qa-record">
+        <div class="qa-item-avtor">
+            <img data-bind="attr:{'src':display_user.icon+'&defaultImage=1','alt':display_user.display_name}">
+        </div>
+        <div class="qa-item-main">
+            <a class="qa-item-title" href="javascript:void(0);"
+               data-bind="text:model.question().title,click:questionDetail"></a>
+            <p class="qa-item-source"
+               data-bind="translate:{'key':'courseLearnQuestion.from',properties:{'from':model.question().target_name || ''}},visible:model.question().target_name"></p>
+            <div class="qa-item-cont init">
+                <!--ko text:model.question().content--><!--/ko-->&emsp;
+                <span class="toggle">
+                    <i class="icon xclq-icon-down-arrow"></i>
+                    <i class="icon xclq-icon-up-arrow"></i>
+                </span>
+            </div>
+            <p class="qa-item-author"><!--ko text:model.question().display_user.display_name--><!--/ko-->&emsp;
+                <!--ko text:$component.formatTime(model.question().create_time)--><!--/ko--></p>
+            <div class="qa-item-opts opts">
+                <div class="fl">
+                    <a href="javascript: void(0);" class="opt" data-bind="click:toggleAnswerArea">
+                        <i class="xclq-icon-reply"></i>
+                        <em data-bind="translate:{'key':model.state.showAnswerArea()?'courseLearnQuestion.foldAnswerArea':'courseLearnQuestion.totalAnswer',properties:{'count':model.question().answer_count}}"></em>
+                    </a>
+                </div>
+                <div class="fr" data-bind="visible:model.question().display_user.user_id == userId">
+                    <a href="javascript: void(0);" class="opt trash" data-bind="click:deleteQuestion">
+                        <i class="xclq-icon-delete"></i>
+                        <!--ko translate:{'key':'courseLearnQuestion.delete'}--><!--/ko-->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="qa-reply"
+         data-bind="visible:model.state.showAnswerArea() && (model.question().display_user.user_id != userId || model.answers.items().length)">
+        <div class="reply">
+            <div class="recovery"
+                 data-bind="visible:model.question().display_user.user_id != userId">
+                <textarea class="recovery-editor" maxlength="2000" data-bind="textInput:model.content"></textarea>
+                <div class="recovery-btns">
+                    <a href="javascript: void(0);" class="btn fr" data-bind="click:answer,css:{'disabled':!model.content().length}"><!--ko translate:{'key':'courseLearnQuestion.answer'}--><!--/ko--></a>
+                </div>
+            </div>
+            <ul class="reply-list" data-bind="foreach:model.answers.items">
+                <li>
+                    <div data-bind="component:{name:'x-course-learn-answer',params:{'options':$component.options,'answer':$data, 'userId':$component.userId}}"></div>
+                </li>
+            </ul>
+            <div class="pagination" data-bind="attr:{'id':'pagination_'+model.question().id}"></div>
+        </div>
+    </div>
+</div>

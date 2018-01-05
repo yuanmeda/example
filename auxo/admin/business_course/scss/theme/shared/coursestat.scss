@@ -1,0 +1,110 @@
+@import "base";
+@import "banner_header";
+@import "titbar";
+@import "mixins";
+// 按钮
+@import "nodata";
+@import "button";
+@import "laydate";
+@import "tablelist";
+
+.stat-info {
+    position: relative;
+    .stat-item {
+        display: inline-block;
+
+        width: 15%;
+        min-width: 120px;
+
+        text-align: center;
+        .item-tip,
+        .item-count {
+            display: block;
+        }
+        .item-count {
+            font-size: 18px;
+            font-weight: bold;
+
+            color: $themeColor;
+        }
+    }
+    .help-tip {
+        position: absolute;
+        top: 0;
+        right: 55px;
+        z-index: 99;
+        .question {
+            display: inline-block;
+
+            border: 1px solid #777;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+
+            font-style: normal;
+            line-height: 24px;
+            text-align: center;
+
+            color: #fff;
+            background-color: #999;
+
+            transition: all .2s linear;
+            &:hover {
+                border: 1px solid darken($tipsColor,5%);
+
+                background-color: $tipsColor;
+
+                cursor: pointer;
+            }
+        }
+        .help-panel {
+            display: none;
+
+            position: absolute;
+            top: 10px;
+            right: 30px;
+
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            width: 400px;
+
+            background-color: #fff;
+            strong {
+                color: #333;
+            }
+            span{
+                color:#666;
+                font-size: 13px;
+            }
+            p{
+                line-height: 1.7;
+            }
+        }
+        .question:hover + .help-panel {
+            display: block;
+        }
+    }
+}
+.laydate_body .laydate_box {
+    box-sizing: content-box;
+}
+.block .block-tit {
+    padding-left: 0;
+    .tit-tab-box .tit-search {
+        margin-left: 0;
+    }
+    .pd8 {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+}
+
+.banner-header{
+    &.block{
+        margin-bottom: 10px;
+        border-radius: 0;
+        padding: 0 10px 5px;
+        box-shadow: 4px 0 0 #fff,-4px 0 0 #fff,0 2px 5px #ddd;
+    }
+}

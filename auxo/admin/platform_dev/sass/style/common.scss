@@ -1,0 +1,20 @@
+@import '../share/common';
+
+body, button, input, select, textarea {
+  font-family: 'microsoft yahei', arial, tahoma, simsun;
+}
+
+body {
+  font-size: 12px;
+}
+
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+  background-color: #eee;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+input[readonly], select[readonly], textarea[readonly] {
+  cursor: default
+}
+

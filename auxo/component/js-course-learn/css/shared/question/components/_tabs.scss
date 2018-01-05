@@ -1,0 +1,22 @@
+.question-tabs {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 12px;
+    .tabs-container {
+        width: 372px;
+        @extend %clearfix;
+    }
+    .tab {
+        position: relative;
+        float: left;
+        margin: 0 40px -1px 0;
+        padding: 13px 10px 15px;
+        font: 16px/28px 'microsoft yagei';
+        color: #666;
+        border-bottom: 2px solid transparent;
+        &:hover,
+        &.active {
+            color: $themeColor;
+            border-bottom-color: $themeColor;
+        }
+    }
+}

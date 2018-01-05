@@ -1,0 +1,225 @@
+$version: 2016100901;
+.x-bank-edit {
+  .bank-edit-head {
+    width: 970px;
+    text-align: center;
+    .hint {
+      font-size: 16px;
+      margin-right: 58%;
+    }
+  }
+  .bank-edit-body {
+    font-size: 0;
+    border: 1px solid rgba(0, 0, 0, .05);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    .body-category {
+      border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    .body-question {
+      border-left: 1px solid rgba(0, 0, 0, .05);
+      overflow-y: auto;
+      position: relative;
+      .loading {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 50%;
+        left: 50%;
+        margin-top: -16px;
+        margin-left: -16px;
+        background: #fff url("../../images/loading.gif?v=#{$version}") center no-repeat;
+      }
+    }
+    .no-question-item {
+      font-size: 14px;
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, .05);
+    }
+    .category-list {
+      li {
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+      }
+    }
+    .more-panel {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      &:hover {
+        .more-category-list {
+          display: block;
+        }
+        .more-category-list-double {
+          display: block;
+        }
+      }
+      .more-btn {
+        font-size: 14px;
+        &:hover {
+          display: block;
+          color: #0074cc;
+        }
+      }
+      .more-category-list {
+        position: absolute;
+        top: 17px;
+        left: 0;
+        width: 74px;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, .05);
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        z-index: 100;
+        display: none;
+        &:hover {
+          display: block;
+        }
+        li {
+          text-align: center;
+          padding: 5px 10px;
+          cursor: pointer;
+          &.active, &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+      .more-category-list-double {
+        position: absolute;
+        top: 17px;
+        left: -180px;
+        width: 250px;
+        font-size: 14px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, .05);
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        z-index: 100;
+        display: none;
+        &:hover {
+          display: block;
+        }
+        li {
+          text-align: center;
+          padding: 5px 10px;
+          cursor: pointer;
+          &.active, &:hover {
+            background-color: #ddd;
+          }
+          display: inline-block;
+          width:121px;
+        }
+      }
+    }
+    .counter {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 28%;
+      font-size: 14px;
+    }
+  }
+
+  .add-question-head {
+    background-color: #e1edfa;
+    padding: 0 10px 10px;
+  }
+  .question-type-item {
+    display: inline-block;
+    margin: 8px;
+    width: 140px;
+    height: 136px;
+    $qtypes: 'choice', 'multiplechoice', 'match', 'judge', 'order', 'handwrite', 'graphicgapmatch', 'vote', 'textentrymultiple', 'extendedtext', 'drawing', 'data';
+    @each $qt in $qtypes {
+      &.bg-#{$qt} {
+        background: #fff url("../../images/qtype/qtype-#{$qt}.jpg?v=#{$version}") no-repeat 0 0;
+        &:hover {
+          background-position: 0 -144px;
+        }
+      }
+    }
+  }
+
+  .edit-question-head {
+    font-size: 14px;
+    padding: 0 10px 10px;
+  }
+  .edit-question-body {
+    width: 100%;
+    height: 700px;
+  }
+
+  &.mode-lr {
+    .bank-edit-body {
+      width: 970px;
+    }
+    .body-category {
+      width: 20%;
+      border-bottom: none;
+      display: inline-block;
+    }
+    .category-list {
+      max-height: 670px;
+      overflow-y: auto;
+      padding: 0;
+      li {
+        padding: 10px 0;
+        background-color: #f5f5f5;
+        border-top: 1px solid #eee;
+        width: 100%;
+        font-size: 16px;
+        &:first-child {
+          border-top: none;
+        }
+        &.active, &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+    .body-question {
+      display: inline-block;
+      width: 80%;
+      height: 670px;
+    }
+  }
+
+  &.mode-tb {
+    .category-list {
+      display: inline-block;
+      padding: 15px 6px;
+      vertical-align: middle;
+      li {
+        text-align: center;
+        font-size: 14px;
+        margin-right: 4px;
+        &.active, &:hover {
+          background: #0cadb7;
+          color: #fff;
+        }
+      }
+    }
+    .body-question {
+      height: 530px;
+    }
+  }
+
+  .inline {
+    display: inline-block;
+  }
+  .vt-middle {
+    vertical-align: middle;
+  }
+  .vt-top {
+    vertical-align: top;
+  }
+  .no-width {
+    width: auto;
+  }
+}
+
+#bank_pagination {
+  font-size: 14px;
+  padding: 0 10px;
+}

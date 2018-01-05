@@ -1,0 +1,32 @@
+<div class="x-course-learn-image-gallery">
+    <div class="preview">
+        <ul>
+            <!-- ko foreach: { data: model.imageArr, as: 'item' } -->
+            <li style="display: block; max-height: 200px;overflow: hidden; margin-bottom:3px;font-size: 0;">
+                <img class="img" style="width: 200px" data-bind="attr: { src: item.instance.src }, click: $parent.openGallay.bind($parent, $index())">
+            </li>
+            <!--/ko -->
+        </ul>
+    </div>
+    <div class="detail" data-bind="visible: model.isShow">
+        <div class="mask"></div>
+        <div class="content">
+            <div class="x-prev">
+                <div class="arrow-btn qaiconfont qaicon-left" data-bind="click: prev"></div>
+            </div>
+            <div class="x-next">
+                <div class="arrow-btn  qaiconfont qaicon-right" data-bind="click: next"></div>
+            </div>
+            <div class="images">
+                <ul>
+                    <!-- ko foreach: { data: model.imageArr, as: 'item' } -->
+                    <li data-bind="visible: $index() === $parent.model.current()" style="position:absolute; top:50%; left: 50%; transform: translate(-50%, -50%); width: 1000px; height: 600px;text-align: center">
+                        <img  style="position:absolute; top:50%; left: 50%; transform: translate(-50%, -50%)" data-bind="attr: { src: item.instance.src }, style: { width: ko.unwrap(item.width) > 1000 && ko.unwrap(item.width) > ko.unwrap(item.height) ? '100%': 'initial', height: ko.unwrap(item.height) > 600 && ko.unwrap(item.height)>ko.unwrap(item.width)? '100%': 'initial' }">
+                        <div class="close-btn qaiconfont qaicon-close2" data-bind="click: $component.closeGallay.bind($component)"></div>
+                    </li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+        </div>   
+    </div>
+</div>

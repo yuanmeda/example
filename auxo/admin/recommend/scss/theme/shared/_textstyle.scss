@@ -1,0 +1,22 @@
+/**
+ * 情景类样式
+ */
+
+$textStyles: (
+  error:$red,
+  muted:#666,
+  info:#0cadb7,
+  warning:$tipsColor,
+  success:#08c
+) !default;
+
+@each $type,$color in $textStyles {
+    .text-#{$type} {
+        color: $color;
+    }
+}
+@each $type,$color in $textStyles {
+    .bg-#{$type} {
+        background-color: $color;
+    }
+}

@@ -1,0 +1,54 @@
+@import "../share/variables";
+@import "../share/mixins";
+.f-group {
+    margin-bottom: 15px;
+    label,
+    input[type="text"],
+    select,
+    textarea,
+    .f-block {
+        @include v-position;
+    }
+    input[type="text"],
+    select,
+    textarea {
+        border: 1px solid #bdbebf;
+        border-radius: 2px;
+        padding: 3px 8px;
+        width: 200px;
+
+        outline: none;
+        &:focus {
+            border-color: #419ae6;
+
+            box-shadow: 0 0 1px #419ae6;
+        }
+    }
+    textarea {
+        vertical-align: top;
+    }
+    & > label {
+        margin: 0 10px 0 0;
+        width: 100px;
+
+        text-align: right;
+
+        color: $textColor;
+    }
+    .f-block {
+        max-width: 440px;
+    }
+}
+.ele-error {
+    border-color: $errorColor !important;
+    &:focus {
+        box-shadow: 0 0 1px lighten($errorColor,10%) !important;
+    }
+}
+.mes-error {
+    margin-left: 6px;
+
+    color: $errorColor;
+
+    @include v-position;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>笔记优化 Example</title>
+  <style>
+    .demo-title{
+      font-size:30px;
+      padding:10px;
+    }
+  </style>
+</head>
+<body>
+<h1 class="demo-title">style a</h1>
+<div data-bind="component:{name: 'x-note-item-a', params:{note:note, options: opts1}}"></div>
+<div data-bind="component:{name: 'x-note-item-a', params:{note:note, options: opts2}}"></div>
+
+<h1 class="demo-title">style b</h1>
+<div data-bind="component:{name: 'x-note-item-b', params:{note:note, options: opts3}}"></div>
+<div data-bind="component:{name: 'x-note-item-b', params:{note:note, options: opts4}}"></div>
+</body>
+</html>

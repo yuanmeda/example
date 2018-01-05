@@ -1,0 +1,26 @@
+<div class="dlist">
+    <div class="cata-header" data-bind="text:model.course()&&model.course().title,attr:{'title':model.course()&&model.course().title}"></div>
+    <!--ko foreach: model.catalog() && model.catalog().children-->
+    <div class="cata-list" data-bind="css:{'open':isOpen}">
+        <a class="icon-toggle" href="javascript:;"
+           data-bind="click:$component.toggleTree.bind($component),visible:children.length || lessons.length > 1">
+            <i class="xcl-icon-right" data-bind="css:{'xcl-icon-down':isOpen,'xcl-icon-right':!isOpen()}"></i>
+        </a>
+        <span class="d-item"
+              data-bind="html:name,attr:{'title':name},click:$component.getResourcesByCatalog.bind($component),css:{'active':lessons.length == 1 && lessons[0].id == $component.model.lesson_id()}"></span>
+        <ul class="list level-2">
+            <!--ko foreach:children-->
+                <!--ko template: { 'name': 'catalog-tree-item', 'data': $data }--><!--/ko-->
+            <!--/ko-->
+            <!--ko if:lessons.length>1-->
+                <!--ko foreach:lessons-->
+                    <!--ko template: { 'name': 'catalog-lesson-item', 'data': $data }--><!--/ko-->
+                <!--/ko-->
+            <!--/ko-->
+        </ul>
+    </div>
+    <!--/ko-->
+</div>
+<div class="course__no-menu" data-bind="translate:{'key':'courseLearn.catalog.notFound'},visible:model.ready() && !model.catalog().children.length">
+    没有找到目录
+</div>

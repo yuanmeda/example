@@ -1,0 +1,32 @@
+body{ background: url("../../images/notfound_bg.jpg") repeat; }
+.wt-phone i,.wt-qq i,.notfound-button i{ background: url("../../images/notfound_ico.png") no-repeat; }
+.notfound-mod,.notstart-mod{ width: 960px; margin: 0 auto; color:#666;  }
+.notfound-mod .hd,.notstart-mod .hd{ padding:70px 0 35px;  }
+.notfound-mod .hd h1{ height: 199px; background: url("../../images/notfound_hd.jpg") no-repeat center;  }
+.notstart-mod .hd h1{ height: 320px; background: url("../../images/notstart_hd.jpg") no-repeat center;   }
+.notfound-mod .ft,.notstart-mod .ft{ font: 400 14px/1.5 "microsoft yahei"; text-align: center;}
+.notfound-mod .bd h2,.notstart-mod .bd h2{ font: 400 30px/1.5 "microsoft yahei"; text-align: center; }
+.notfound-mod .bd p,.notstart-mod .bd p{  font: 18px/1.8 "microsoft yahei"; text-align: center; }
+.wt-form{ margin: 85px auto 0;  }
+.wt-form-hd{ text-align: center; font:18px/1.5 "microsoft yahei"; }
+.wt-form-ipt{ position: relative; padding: 0 0 10px; }
+.wt-form-ipt input { width: 350px; height: 21px; padding: 4px 5px 3px; border:1px solid #ddd; background: #fff; outline: none;  }
+.wt-form-ipt textarea{ width: 350px; height: 75px; padding: 5px; border:1px solid #ddd; background: #fff; resize: none; outline: none; overflow: auto; }
+.wt-form-label{ position: absolute; top: 7px; left: 6px; font-size:12px; color:#aaa; }
+.notfound-button,.wt-form-button{  height:30px; line-height: 30px; font-family: "microsoft yahei";  text-align: center; color:#fff;  background:#1096dc; border-radius: 2px; }
+.wtf-button-disabled{ background: #ddd; }
+.wt-form-button { display: inline-block; width: 360px; font-size:14px; }
+.notfound-button{ display: block; width: 400px; padding: 10px 0; font-size:18px; }
+.notfound-button i{ display: inline-block; width: 30px; height: 30px; margin: 0 0 0 10px; background-position:0 -59px;  vertical-align: middle;  }
+.wt-form-button:hover,.notfound-button:hover{ background:#0f9edb; text-decoration: none; }
+.wtf-button-disabled:hover{ background: #ddd; }
+.wt-form-ft{  width: 400px; margin: 20px auto 0; font:400 14px/1.5 "microsoft yahei"; text-align: center; }
+.wt-form-ft .wt-phone,.wt-form-ft .wt-qq{ padding: 0 20px; }
+.wt-phone i,.wt-qq i{ display: inline-block; width: 16px; height: 16px; margin: 0 5px 0 0; vertical-align: middle; }
+.wt-qq i{ background-position: -15px 0;  }
+.wt-phone i{ background-position: -15px -26px;  }
+.you-can{ padding: 85px 0 0; text-align: center; }
+.you-can h3{ font: 700 18px/1.5 "microsoft yahei"; }
+.you-can .notfound-button{ margin: 15px auto 0;  }
+.ft{ margin: 30px 0 0; padding: 15px 0; font-size:14px; color:#666; text-align: center; border-top:1px solid #ccc; }
+.you-nocan{ display: inline-block; width: 400px; height: 50px; margin: 15px 0 0; font:400 18px/50px "microsoft yahei";  border: 2px solid #666; }

@@ -1,0 +1,167 @@
+
+%icon { background: url("../../images/qa/question_icon.png?v=#{$version}"); }
+
+%img-badge-adopt { background: url("../../images/qa/get.png?v=#{$version}"); }
+
+%icon-adopt { background-position: -18px 0; }
+
+%icon-adopt-blue { background-position: -30px 0; }
+
+%icon-close { background-position: -8px -14px; }
+
+%icon-close-blue { background-position: -30px -14px; }
+
+%icon-comt { background-position: -16px -36px; }
+
+%icon-comt-blue { background-position: -30px -36px; }
+
+%icon-dropdown { background-position: -18px -50px; }
+
+%icon-dropdown-blue { background-position: -30px -50px; }
+
+%icon-praise { background-position: -18px -57px; }
+
+%icon-praise-blue { background-position: -30px -57px; }
+
+%icon-star { background-position: -16px -69px; }
+
+%icon-star-blue { background-position: -30px -69px; }
+
+%icon-trash { background-position: -15px -83px; }
+
+%icon-trash-blue { background-position: -30px -83px; }
+
+%icon-dropup { background-position: -18px -96px; }
+
+%icon-dropup-blue { background-position: -30px -96px; }
+
+%icon-search { background-position: -60px 0; }
+
+%icon-avtor { background-position: 0 -110px; }
+
+%icon-avtor2 { background-position: -50px -110px; }
+
+%icon-avtor3 { background-position: 0 -160px; }
+
+%icon-nodata { background-position: -90px 0; }
+
+
+.icon {
+    @extend %inline-block;
+    vertical-align: middle;
+    @extend %icon;
+
+    &.icon-adopt {
+        width: 12px;
+        height: 14px;
+        @extend %icon-adopt;
+    }
+    &.icon-adopt-blue {
+        width: 12px;
+        height: 14px;
+        @extend %icon-adopt-blue;
+    }
+
+    &.icon-close {
+        width: 22px;
+        height: 22px;
+        @extend %icon-close;
+    }
+    &.icon-close-blue {
+        width: 22px;
+        height: 22px;
+        @extend %icon-close-blue;
+    }
+
+    &.icon-comt {
+        width: 14px;
+        height: 14px;
+        @extend %icon-comt;
+    }
+    &.icon-comt-blue {
+        width: 14px;
+        height: 14px;
+        @extend %icon-comt-blue;
+    }
+
+    &.icon-dropdown {
+        width: 12px;
+        height: 7px;
+        @extend %icon-dropdown;
+    }
+    &.icon-dropdown-blue {
+        width: 12px;
+        height: 7px;
+        @extend %icon-dropdown-blue;
+    }
+
+    &.icon-praise {
+        width: 12px;
+        height: 12px;
+        @extend %icon-praise;
+    }
+    &.icon-praise-blue {
+        width: 12px;
+        height: 12px;
+        @extend %icon-praise-blue;
+    }
+
+    &.icon-star {
+        width: 14px;
+        height: 14px;
+        @extend %icon-star;
+    }
+    &.icon-star-blue {
+        width: 14px;
+        height: 14px;
+        @extend %icon-star-blue;
+    }
+
+    &.icon-trash {
+        width: 15px;
+        height: 13px;
+        @extend %icon-trash;
+    }
+    &.icon-trash-blue {
+        width: 15px;
+        height: 13px;
+        @extend %icon-trash-blue;
+    }
+
+    &.icon-dropup {
+        width: 12px;
+        height: 7px;
+        @extend %icon-dropup;
+    }
+    &.icon-dropup-blue {
+        width: 12px;
+        height: 7px;
+        @extend %icon-dropup-blue;
+    }
+
+    &.question-icon-search {
+        width: 15px;
+        height: 15px;
+        @extend %icon-search;
+    }
+    &.icon-avtor {
+        width: 40px;
+        height: 40px;
+        @extend %icon-avtor;
+    }
+    &.icon-avtor2 {
+        width: 34px;
+        height: 34px;
+        @extend %icon-avtor2;
+    }
+    &.icon-avtor3 {
+        width: 50px;
+        height: 50px;
+        @extend %icon-avtor3;
+    }
+    &.icon-nodata {
+        width: 104px;
+        height: 124px;
+        @extend %icon-nodata;
+    }
+}

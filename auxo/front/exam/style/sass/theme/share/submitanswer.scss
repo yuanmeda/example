@@ -1,0 +1,142 @@
+@import "common";
+@import "button";
+@import "iconfont";
+
+.sub-head {
+  background: #fff;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.head-inner {
+  height: 70px;
+  line-height: 70px;
+  font-size: 18px;
+  position: relative;
+  .tit {
+    font-size: 24px;
+    margin-right: 38px;
+    color: #666;
+  }
+  .name {
+    color: #555;
+    width: 950px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .meticon-close {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 23px;
+    color: #9f0f0f;
+    transition: all 0.3s;
+    &:hover {
+      transform: rotate(90deg);
+      cursor: pointer;
+    }
+  }
+}
+
+.sub-answer {
+
+}
+
+.sub-inner {
+  width: 750px;
+  padding: 60px 0;
+  margin: 0 auto;
+  [class^="bt-"], [class^="bt-"] {
+    font-size: 16px;
+  }
+  .bt-group {
+    margin: 50px 0 20px;
+  }
+  .upload-tips {
+    font-size: 16px;
+    color: #f60;
+  }
+}
+
+.end-time {
+  text-align: center;
+  .name {
+    font-size: 20px;
+    color: #999;
+    margin-bottom: 20px;
+  }
+  .time-box {
+    font-weight: bold;
+    margin-bottom: 60px;
+    dt, dd {
+      display: inline-block;
+      font-size: 50px;
+      font-weight: bold;
+      height: 80px;
+      line-height: 80px;
+    }
+    dt {
+      width: 80px;
+      border: 1px solid #cfcfcf;
+      border-radius: 3px;
+      background: #f6f6f6;
+    }
+    dd {
+      margin: 0 7px;
+    }
+  }
+}
+
+.upload-box {
+  border: 1px dashed #b2b2b2;
+  padding: 75px 115px;
+  .intro {
+    margin-bottom: 30px;
+    font-size: 16px;
+    li {
+      list-style: disc inside;
+      color: #999;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+  }
+  .succes-tip {
+    height: 64px;
+    line-height: 64px;
+    color: #999;
+    font-size: 0;
+    margin-bottom: 50px;
+    i {
+      font-size: 64px;
+      color: #b2b2b2;
+    }
+    span {
+      font-size: 24px;
+      margin-left: 30px;
+    }
+  }
+  .succes-text {
+    margin-bottom: 50px;
+    font-size: 16px;
+  }
+  .file-bt {
+    position: relative;
+    input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+  .filename {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

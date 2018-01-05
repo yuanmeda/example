@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'course';
+    src:  url('../../fonts/course.eot?47htkp');
+    src:  url('../../fonts/course.eot?47htkp#iefix') format('embedded-opentype'),
+    url('../../fonts/course.ttf?47htkp') format('truetype'),
+    url('../../fonts/course.woff?47htkp') format('woff'),
+    url('../../fonts/course.svg?47htkp#course') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+[class^="co-icon-"], [class*=" co-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'course' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: none;
+    height: auto;
+    width: auto;
+}
+
+[class^="co-icon-"]:before, [class*=" co-icon-"]:before {
+	display: inline-block;
+}
+
+.co-icon-add:before {
+    content: "\e900";
+}
+.co-icon-article:before {
+    content: "\e901";
+}
+.co-icon-change:before {
+    content: "\e902";
+}
+.co-icon-Chart:before {
+    content: "\e903";
+}
+.co-icon-chat:before {
+    content: "\e904";
+}
+.co-icon-clear:before {
+    content: "\e905";
+}
+.co-icon-close:before {
+    content: "\e906";
+}
+.co-icon-yes:before {
+    content: "\e907";
+}
+.co-icon-home:before {
+    content: "\e908";
+}
+.co-icon-xiasanjiao:before {
+    content: "\e909";
+}
+.co-icon-new-course:before {
+    content: "\e90a";
+}
+.co-icon-delcourse:before {
+    content: "\e90b";
+}
+.co-icon-online:before {
+    content: "\e90c";
+}
+.co-icon-popup:before {
+    content: "\e90d";
+}
+.co-icon-set:before {
+    content: "\e90e";
+}
+.co-icon-Settings:before {
+    content: "\e90f";
+}
+.co-icon-Users:before {
+    content: "\e910";
+}
+.co-icon-View:before {
+    content: "\e911";
+}
+.co-icon-offline:before {
+    content: "\e912";
+}
+.co-icon-pro:before {
+    content: "\e913";
+}
+.co-icon-sanjiao:before {
+    content: "\e914";
+}
+.co-icon-search:before {
+    content: "\e915";
+}
+.co-icon-larrow:before {
+    content: "\e916";
+}
+.co-icon-rarrow:before {
+    content: "\e917";
+}
+.co-icon-uparrow:before {
+    content: "\e918";
+}
+.co-icon-darrow:before {
+    content: "\e919";
+}
+.co-icon-star:before {
+    content: "\e91a";
+}
+.co-icon-list:before {
+    content: "\e91b";
+}
+.co-icon-gouxuan:before {
+    content: "\e91c";
+}
+.co-icon-remarks:before {
+    content: "\e91d";
+}
+.co-icon-warning:before {
+    content: "\e91e";
+}

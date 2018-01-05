@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'slide-bar';
+  src: url("../fonts/slide-bar.eot?hey14g");
+  src: url("../fonts/slide-bar.eot?hey14g#iefix") format("embedded-opentype"), url("../fonts/slide-bar.ttf?hey14g") format("truetype"), url("../fonts/slide-bar.woff?hey14g") format("woff"), url("../fonts/slide-bar.svg?hey14g#slide-bar") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="slide-bar-"], [class*="slide-bar-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'slide-bar' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.slide-bar-uparrow:before {
+  content: "\e90f"; }
+
+.slider-bar {
+  bottom: 10px;
+  position: fixed !important;
+  width: 50px;
+  right: 20px; }
+  .slider-bar .sfhdb {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 9px; }
+    .slider-bar .sfhdb:hover {
+      cursor: pointer; }
+      .slider-bar .sfhdb:hover i {
+        color: #fff; }
+    .slider-bar .sfhdb i {
+      font-weight: 100;
+      font-size: 25px;
+      color: #38adff;
+      display: block; }
+
+.circle {
+  height: 80px;
+  width: 70px;
+  position: relative;
+  z-index: 98; }
+  .circle a {
+    text-decoration: none; }
+    .circle a:hover {
+      text-decoration: none;
+      color: #fff; }
+
+.faqCircle {
+  height: 80px;
+  width: 70px;
+  position: relative;
+  z-index: 99; }
+  .faqCircle .circleFaq {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/faqBackground.png");
+    background-repeat: no-repeat; }
+  .faqCircle a {
+    text-decoration: none; }
+    .faqCircle a:hover {
+      text-decoration: none;
+      color: #fff; }
+
+.topCircle {
+  height: 80px;
+  width: 70px;
+  position: relative;
+  z-index: 99; }
+  .topCircle .circleTop {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/faqBackground.png");
+    background-repeat: no-repeat; }
+
+.cv {
+  height: 70px;
+  width: 70px;
+  margin: 0 auto; }
+
+.canvas-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 14px; }
+  .canvas-text a {
+    color: #38adff; }
+  .canvas-text:hover {
+    color: #fff; }
+    .canvas-text:hover a {
+      color: #fff; }
+    .canvas-text:hover .sfhdb a {
+      cursor: pointer; }
+    .canvas-text:hover .sfhdb i {
+      color: #fff; }
+
+.first_span {
+  display: block;
+  margin: 0px 20px -5px 20px; }
+
+.second_span {
+  display: inline-block;
+  margin: 0 20px; }
+
+.language-en {
+  padding-top: 25px; }
+
+.faqCircle .circleFaq {
+  background-position: -12px -18px; }
+
+.faqCircle:hover .circleFaq {
+  background-position: -8px -89px; }
+
+.topCircle .circleTop {
+  background-position: -12px -19px; }
+
+.topCircle:hover .circleTop {
+  background-position: -8px -89px; }

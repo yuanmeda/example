@@ -1,0 +1,22 @@
+// layer样式重置
+.layui-layer-btn{
+	text-align:center;
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: darken($themeColor,5%) !important;
+
+    background-color: $themeColor !important;
+    &:hover {
+        border-color: darken($themeColor,8%) !important;
+
+        background: darken($themeColor,5%) !important;
+    }
+}
+.layui-layer-dialog .layui-layer-padding{
+	margin-left:10px;
+}
+//layer-date样式重置
+.laydate_box,
+.laydate_box * {
+    box-sizing: content-box;
+}

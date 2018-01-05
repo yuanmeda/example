@@ -1,0 +1,24 @@
+@import "../share/color";
+@import "../share/resource_card";
+
+.panel-body {
+  min-height: 500px;
+  padding: 10px;
+}
+
+.select-info {
+  margin-left: 10px;
+  color: $themeColor;
+  font-size: 16px;
+}
+
+.panel-control {
+  margin: 10px 0 20px 0;
+  &-keyword {
+    min-width: 180px;
+    margin-left: 0.5%;
+  }
+  &-action {
+    min-width: 350px;
+  }
+}

@@ -1,0 +1,48 @@
+<script id="knowledge-tree-item" type="text/html">
+    <li class="sub-item open" data-bind="css:{ 'open': isOpen }">
+        <div class="item-content">
+            <i class="iconfont-e-course" data-bind="click: $component.toggleTree.bind($component), visible: children.length, css: { 'xcd-icon-e-course--down' : isOpen, 'xcd-icon-e-course--right': !isOpen() }"></i>
+            <span class="item-txt" data-bind="click: $component.select.bind($component), css: { 'state-on' : id == $component.model.knowledge_id() }">
+                <em data-bind="html: title, attr: { 'title' : name }"></em>
+            </span>
+         </div>
+        <ul class="list">
+            <!--ko foreach:children-->
+                <!--ko template: { 'name': 'knowledge-tree-item', 'data': $data }--><!--/ko-->
+            <!--/ko-->
+        </ul>
+    </li>
+</script>
+
+<div class="course__search--wrap">
+    <div class="course__search">
+        <input class="search-input" data-bind="attr: { 'placeholder': i18n.courseLearn.knowledge.searchPlaceHolder }, value: model.keyword, valueUpdate: 'afterkeydown', event: { keyup: $component.search.bind($component) }" type="text">
+        <i class="search-btn iconfont-e-course xcd-icon-e-course--del" data-bind="click: $component.clean.bind($component)"></i>
+    </div>
+</div>
+<div class="n-ui-menu-cata course-menu-default" data-bind="css: { 'hide': ((!model.knowledge() || model.knowledge().length <= 0) || model.searchno()) }">
+    <ul class="dlist">
+        <!--ko foreach:model.knowledge-->
+            <li class="sub-item open" data-bind="css:{'open':isOpen},click:$component.getResources.bind($component)">
+                <div class="item-content">
+                    <i class="iconfont-e-course" data-bind="click: $component.toggleTree.bind($component), visible: children.length, css: { 'xcd-icon-e-course--minus' : isOpen, 'xcd-icon-e-course--add' : !isOpen() }"></i>
+                    <span class="item-txt" data-bind="click: $component.select.bind($component), css: { 'state-on' : id == $component.model.knowledge_id() }">
+                        <em data-bind="html: title, attr: { 'title' : name }"></em>
+                    </span>
+                </div>
+                <ul class="list">
+                    <!--ko foreach:children-->
+                        <!--ko template: { 'name': 'knowledge-tree-item', 'data': $data }--><!--/ko-->
+                    <!--/ko-->
+                </ul>
+            </li>
+        <!--/ko-->
+    </ul>
+</div>
+<div class="course__no-menu" data-bind="css: { 'hide': (model.knowledge() && model.knowledge().length > 0) || model.searchno() }">
+    <p class="no-menu-word" data-bind="translate: { key: 'courseLearn.knowledge.nodata' }"></p>
+</div>
+<div class="course__no-menu" data-bind="css: { 'hide': !model.searchno() }">
+    <p class="no-menu-word" data-bind="translate: { key: 'courseLearn.knowledge.searchno' }"></p>
+    <p class="no-menu-word" data-bind="translate: { key: 'courseLearn.knowledge.tryother' }"></p>
+</div>

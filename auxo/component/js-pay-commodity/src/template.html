@@ -1,0 +1,110 @@
+<!--ko ifnot:model.success-->
+<div class="wrapper" data-bind="if:model.order">
+    <div class="container">
+        <div class="pay-head"><p data-bind="translate:{'key':'payCommodity.orderInfo'}">订单信息</p></div>
+        <div class="pay-body">
+            <ul class="table table-head cf">
+                <li data-bind="translate:{'key':'payCommodity.orderId'}">订单编号</li>
+                <li data-bind="translate:{'key':'payCommodity.title'}">名称</li>
+                <li data-bind="translate:{'key':'payCommodity.createTime'}">下单时间</li>
+                <li data-bind="translate:{'key':'payCommodity.price'}">实付金额</li>
+            </ul>
+            <!--ko foreach: model.goodsSnapshots-->
+            <ul class="table table-body cf">
+                <li data-bind="text:order_id">PAY2079431224910890778786529280</li>
+                <li data-bind="text:name">MySQL认证（2016.8）</li>
+                <li data-bind="text:$component.formatTime($component.model.order().create_time)">2016-01-01 21:19:17
+                </li>
+                <li data-bind="text:display_settlement_amount">200元</li>
+            </ul>
+            <!--/ko-->
+            <div class="pay-total">
+                <div class="pay-total-wrap">
+                    <div class="amount"
+                         data-bind="translate:{'key':'payCommodity.allTotal','properties':{'amount':model.order().display_amount}}">
+                        金额总计：￥45.00
+                    </div>
+                    <div class="amount"
+                         data-bind="translate:{'key':'payCommodity.discountTotal','properties':{'amount':model.order().display_promotion_amount}}">
+                        优惠总计：-￥22.00
+                    </div>
+                    <div class="total"
+                         data-bind="translate:{'key':'payCommodity.actuallyTotal','properties':{'amount':model.order().display_settlement_amount}}">
+                        应付总额：<strong>￥23.00</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper" data-bind="visible:!model.payParams()">
+    <div class="container">
+        <div class="pay-head"><p data-bind="translate:{'key':'payCommodity.payWay'}">支付方式</p></div>
+        <div class="pay-body">
+            <ul class="pay-way cf" data-bind="foreach:model.channels,visible:model.channels().length">
+                <li data-bind="css:[channel_name.toLowerCase(),$component.model.selectChannel() === $data && 'active'].join(' '),click:$component.handleSelectChannel.bind($component)">
+                    <i class="pay-icon-circle"></i></li>
+            </ul>
+            <div class="no-pay-way"
+                 data-bind="visible:!model.channels().length,translate:{'key':'payCommodity.noPayWay'}">
+                暂时不能支付
+            </div>
+            <div class="pay-btn-wrap">
+                <a href="javascript:;" class="pay-btn"
+                   data-bind="css:{'disabled':!model.selectChannel()},click:handlePayClick,translate:{'key':'payCommodity.pay'}">去支付</a><span
+                        class="pay-tip" data-bind="translate:{'key':'payCommodity.payHint'}">下单后，请在24小时内完成支付。超出24小时再支付可能导致购买失败，需重新下单购买。</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper" data-bind="if:model.payParams">
+    <div class="container">
+        <div class="pay-head"><p data-bind="css:model.selectChannel().channel_name.toLowerCase()"></p></div>
+        <div class="pay-body">
+            <div class="pay-code">
+                <div class="code-body">
+                    <p data-bind="translate:{'key':'payCommodity.qrCode'}">二维码</p>
+                    <div class="code-img">
+                        <!--ko if:model.selectChannel().channel_name === 'CHANNEL_ALIPAY_QR'-->
+                        <div class="iframe-wrap">
+                            <iframe height="100%" width="100%" frameborder="no" scrolling="no"
+                                    data-bind="attr:{'src':model.payParams().data.PayParams}"></iframe>
+                        </div>
+                        <!--/ko-->
+                        <!--ko if:model.selectChannel().channel_name === 'CHANNEL_WECHAT_PUB_QR'-->
+                        <img data-bind="attr:{'src':'http://cloud.101.com/v3/general/qrcode?w=230&h=230&ecl=L&data=' + model.payParams().data.PayParams}">
+                        <!--/ko-->
+                    </div>
+                    <div class="code-tip"><i class="pay-icon-scan"></i>
+                        <!--ko translate:{'key':'payCommodity.scanToPay'}-->扫描完成支付<!--/ko--></div>
+                    <div class="mask" data-bind="visible:model.showQRcodeMask">
+                        <div class="mask-hint"><!--ko translate:{'key':'payCommodity.returnFailed'}-->返回结果失败，请稍后再试
+                            <!--/ko-->
+                            <a href="javascript:;" data-bind="click:retry,translate:{'key':'payCommodity.retry'}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pay-foot"></div>
+        </div>
+    </div>
+</div>
+<!--/ko-->
+<!--ko if:model.success-->
+<div class="wrapper">
+    <div class="container">
+        <div class="pay-head"><p data-bind="translate:{'key':'payCommodity.orderInfo'}">订单信息</p></div>
+        <div class="pay-body">
+            <div class="pay-done">
+                <span class="pay-icon-success"></span>
+                <p data-bind="translate:{'key':'payCommodity.orderSuccess','properties':{'orderId':model.order().id}}">
+                    您的订单<span>EL967811</span>已成功</p>
+                <div class="tipcolor"
+                     data-bind="translate:{'key':'payCommodity.secondsToReturn','properties':{'second':5}}">
+                    <span>5</span>秒后返回商品
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ko-->

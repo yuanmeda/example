@@ -1,0 +1,24 @@
+<div class="qas-post-answer">
+  <div class="qas-rep-textarea">
+    <textarea rows="3" placeholder="写下你的回答" data-bind="value:re_content,valueUpdate:'input'"></textarea>
+  </div>
+  <p class="qas-re-act">
+    <span class="img-upload" data-bind="click:toggle_images_upload,css:{on:show_images_upload()}">
+      <i class="iconfont-qas ico-qas-image"></i>
+      <!--ko translate:{key:'qas_cmp_questions.pics'}--><!--/ko-->
+    </span>
+    <!--ko if:!submitting()-->
+    <span class="submit" data-bind="click:submit, css:{disabled: !valid()},translate:{key:'qas_cmp_questions.acts.answer'}">回答</span>
+    <!--/ko-->
+    <!--ko if:submitting()-->
+    <span class="submit disabled" data-bind="translate:{key:'qas_cmp_questions.acts.submitting'}">正在提交</span>
+    <!--/ko-->
+    <!--字数统计-->
+    <span class="count-down">
+      <!--ko text:re_content().length--><!--/ko-->/<!--ko text:content_max--><!--/ko-->
+    </span>
+  </p>
+  <div class="qas-img-uploader" data-bind="visible:show_images_upload()">
+    <!--ko component:{name:'x-question-uploadimg',params:image_upload_params}--><!--/ko-->
+  </div>
+</div>

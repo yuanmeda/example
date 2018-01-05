@@ -1,0 +1,16 @@
+<div class="upload">
+    <img class="upload-img"
+         data-bind="attr:{src: model.img_url}, visible: model.load, style:{width: model.image_width + 'px', height: model.image_height +'px'},event:{load: load}"
+         style="display: none;">
+    <p data-bind="visible: model.img_url()&&!model.load()">图片加载中，请稍后...</p>
+    <div class="progress" data-bind="visible: model.progress() && !model.load()"
+         style="display: none;width:400px;margin-top:10px;">
+        <div class="progress-bar progress-bar-striped active"
+             data-bind="style:{width: model.progress()+'%'},text: model.progress()+'%'"></div>
+    </div>
+    <p class="text-danger" data-bind="text: model.message"></p>
+    <div style="color: #fff;height: 40px;">
+        <div data-bind="attr:{id: model.upload_id}"><span class="glyphicon glyphicon-cloud-upload"></span>
+            <!--ko text: model.picture.id() ? '重新上传':'选择图片' --><!--/ko--></div>
+    </div>
+</div>

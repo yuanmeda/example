@@ -1,0 +1,63 @@
+
+.form-search {
+    margin: 15px 0 0;
+}
+.form-inline .form-group {
+    margin-right: 15px;
+}
+.btn-tools {
+    margin: 15px 0 0;
+}
+.btn-tools:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+.table {
+    margin: 15px 0 0;
+    table-layout: fixed;
+}
+.table tbody tr td{
+    vertical-align: middle;
+}
+.page-input {
+    line-height: 34px;
+}
+.nodata {
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+    color: #666;
+    padding: 0;
+    margin: 0;
+}
+.container {
+    padding: 35px 0 50px;
+}
+.required {
+    color: red;
+}
+.error-msg {
+    color: red;
+}
+.btn-upload {
+    position: relative;
+}
+.btn-upload .swfupload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.table {
+    table-layout: fixed;
+}
+.table th, .table td {
+    word-break: break-all;
+}
+.label {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 15px 0 0;
+}

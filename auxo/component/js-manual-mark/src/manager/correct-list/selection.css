@@ -1,0 +1,73 @@
+.select{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.select-label{
+  width: 90px;
+  height: 29px;
+  line-height: 29px;
+  border-radius: 5px;
+  padding: 0 30px 0 13px;
+  border: 1px solid #e3e3e3;
+}
+
+.select-label.placeholder{
+  color: #b9b9b9;
+}
+
+.icon-hover{
+  background-position: -56px -7px;
+}
+
+.select-up{
+  background-position: -43px 0;
+}
+
+.select-up.icon-hover{
+  background-position: -43px -7px;
+}
+
+.separate{
+  position: absolute;
+  display: block;
+  right: 37px;
+  top: 7px;
+  width: 1px;
+  height: 16px;
+  background: #e3e3e3;
+}
+
+.select-opts{
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 130%;
+  width: 238px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  box-shadow: 0 0 3px #ddd;
+  z-index: 2;
+  overflow-x: hidden;
+}
+
+.select-opts.show{
+  display: inherit;
+}
+
+.select-opt-item{
+  padding-left: 10px;
+  height: 34px;
+  line-height: 34px;
+}
+
+.select-opt-item.selected,
+.select-opt-item:hover{
+  background: #38adff;
+  color: #fff;
+}
+
+

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@mixin opacity($s) {
+  opacity: $s/100;
+  filter: alpha(opacity=$op);
+}
+
+@mixin bgurl($url, $repeat:no-repeat, $x:left, $y:top, $xsize:auto, $ysize: 100%) {
+  background: url('../images/#{$url}') $repeat $x $y; 
+  background-size: $xsize $ysize;
+}
+
+%wb {
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+
+%tof {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+%vm-css3 {
+  transform: translate(-50%);
+  margin-left: 50%;
+  margin-top: 50%;
+}
+
+
+%clearfix { 
+  display: inline-block;
+  &:after {
+    content: ''; 
+    display: table; 
+    clear: both;
+  }
+  
+}
+
+%vm {
+    &:after {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+}
+

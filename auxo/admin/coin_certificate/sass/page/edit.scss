@@ -1,0 +1,24 @@
+@import "../share/variables";
+@import "../share/mixins";
+@import "../share/header";
+
+.coin-certificate-content {
+  padding: 20px 20px 50px;
+  .required{
+    color:#a00;
+    &:after{
+      content:' '
+    }
+  }
+  .help-line{
+    display: inline-block;
+    margin-right: 20px;
+  }
+  input{
+    display: inline-block;
+    width: auto;
+  }
+  select{
+    width: auto;
+  }
+}

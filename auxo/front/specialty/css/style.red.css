@@ -1,0 +1,308 @@
+@charset "UTF-8";
+/**
+ * @API
+ * 1. @mixin render($property, $value...) 添加各浏览器前缀
+ *
+ * 2. %clearfix 较为通用的清除浮动样式
+ *
+ * 3. %ellipse 文字溢出显示 ...
+ *
+ * 4. %inline-block 兼容IE7的 display: inline-block;
+ *
+ * 5. @mixin fadeIn($time) CSS3淡入效果
+ *    %fadeIn 默认0.6s淡入效果
+ *
+ * 6. @mixin blur($depth) CSS3模糊加深效果，常用于图片模糊化处理， $depth不加单位
+ *    %blur 默认的2px加深模糊效果
+ *    %blur-recover 模糊效果还原
+ *
+ * 7. @mixin transition($value...) 加添各浏览器前缀的动画样式
+ *    %transition 默认动画 all .3s linear
+ *
+ * 8. @mixin rotate($deg) 旋转$deg度，需要元素为transform添加动画
+ *    %rotate 默认旋转180度
+ *
+ * 9. @mixin img-hover($value) 鼠标悬浮图片放大，需要元素为transform添加动画
+ *    %img-hover 默认放大1.2倍
+ *
+ * 10. @mixin autorotate($time) 自动顺时针旋转，通常适合用loading图片
+ *     %autorotate 默认2s自动旋转
+ *
+ * 11. @mixin caret (
+            $className: caret,
+            $direction: up,
+            $borderWidth: 1px,
+            $borderColor: #ccc,
+            $caretWidth: 7px,
+            $caretColor: #fff
+        ) 制作箭头图标
+ *
+ * 12. @function getMapValue($map, $list) 取单/多层嵌套map的值
+ *
+ * @Date: 2015-11-27
+ * @Author: chennh
+ */
+/**
+ * 添加多浏览器前缀
+ */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes autorotate {
+  0% {
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -xhtml-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  25% {
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -xhtml-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  50% {
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -xhtml-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+  75% {
+    -o-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -xhtml-transform: rotate(-270deg);
+    -webkit-transform: rotate(-270deg);
+    transform: rotate(-270deg); }
+  100% {
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -xhtml-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+@-webkit-keyframes autorotate {
+  0% {
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -xhtml-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  25% {
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -xhtml-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  50% {
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -xhtml-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+  75% {
+    -o-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -xhtml-transform: rotate(-270deg);
+    -webkit-transform: rotate(-270deg);
+    transform: rotate(-270deg); }
+  100% {
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -xhtml-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+@-moz-keyframes autorotate {
+  0% {
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -xhtml-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  25% {
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -xhtml-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  50% {
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -xhtml-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+  75% {
+    -o-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -xhtml-transform: rotate(-270deg);
+    -webkit-transform: rotate(-270deg);
+    transform: rotate(-270deg); }
+  100% {
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -xhtml-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+@-o-keyframes autorotate {
+  0% {
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -xhtml-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  25% {
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -xhtml-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  50% {
+    -o-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -xhtml-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+  75% {
+    -o-transform: rotate(-270deg);
+    -ms-transform: rotate(-270deg);
+    -moz-transform: rotate(-270deg);
+    -xhtml-transform: rotate(-270deg);
+    -webkit-transform: rotate(-270deg);
+    transform: rotate(-270deg); }
+  100% {
+    -o-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -xhtml-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
+body {
+  background: #f2f2f2; }
+
+.wrapper-index {
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 14px; }
+  .wrapper-index .total-specialty {
+    height: 42px; }
+    .wrapper-index .total-specialty .right {
+      float: right;
+      margin-top: 16px;
+      color: #999999; }
+      .wrapper-index .total-specialty .right span {
+        color: #000000; }
+  .wrapper-index .specialty-list {
+    margin-bottom: 22px; }
+    .wrapper-index .specialty-list .college .college-detail h1 {
+      font-size: 26px;
+      line-height: 26px;
+      margin-bottom: 9px;
+      width: 1200px;
+      word-wrap: break-word; }
+    .wrapper-index .specialty-list .college .college-detail p {
+      line-height: 24px;
+      color: #555555;
+      width: 1200px;
+      word-wrap: break-word; }
+    .wrapper-index .specialty-list .college .specialty-show {
+      margin-top: 23px;
+      width: 1240px; }
+      .wrapper-index .specialty-list .college .specialty-show .specialty-box {
+        background-color: #ffffff;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        float: left;
+        top: 0;
+        -o-transition: all 0.2s linear;
+        -ms-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -xhtml-transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear; }
+        .wrapper-index .specialty-list .college .specialty-show .specialty-box:hover {
+          position: relative;
+          cursor: pointer;
+          top: -2px;
+          box-shadow: -5px 10px 10px #dddddd, 0 0 0 #dddddd, 10px 20px 30px #dddddd, 5px 10px 10px #dddddd;
+          -moz-box-shadow: -5px 10px 10px #dddddd, 0 0 0 #dddddd, 10px 20px 30px #dddddd, 5px 10px 10px #dddddd;
+          -webkit-box-shadow: -5px 10px 10px #dddddd, 0 0 0 #dddddd, 10px 20px 30px #dddddd, 5px 10px 10px #dddddd; }
+          .wrapper-index .specialty-list .college .specialty-show .specialty-box:hover .specialty-name {
+            color: #38acff; }
+        .wrapper-index .specialty-list .college .specialty-show .specialty-box a .img-box {
+          overflow: hidden;
+          width: 270px;
+          height: 180px; }
+          .wrapper-index .specialty-list .college .specialty-show .specialty-box a .img-box img {
+            transition: all 0.5s; }
+        .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box {
+          overflow: hidden;
+          width: 240px;
+          padding: 15px; }
+          .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box .specialty-name {
+            white-space: nowrap;
+            width: 240px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 18px;
+            line-height: 25px; }
+          .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box .courses {
+            font-size: 12px;
+            color: #999999;
+            line-height: 15px;
+            margin: 15px 0; }
+            .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box .courses .counts {
+              color: #38acff; }
+          .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box .peoples {
+            color: #999999;
+            font-size: 12px; }
+            .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box .peoples .people-logo {
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              background: url("../images/peoples.png");
+              vertical-align: middle; }
+            .wrapper-index .specialty-list .college .specialty-show .specialty-box a .item-box .peoples em {
+              display: inline-block;
+              vertical-align: middle;
+              padding-left: 5px; }
+        .wrapper-index .specialty-list .college .specialty-show .specialty-box a:hover .img-box {
+          width: 270px;
+          height: 180px;
+          overflow: hidden; }
+          .wrapper-index .specialty-list .college .specialty-show .specialty-box a:hover .img-box img {
+            transform: scale(1.2); }
+
+/*# sourceMappingURL=style.red.css.map */

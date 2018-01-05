@@ -1,0 +1,86 @@
+<!--做笔记-->
+<div class="n-ui-note-item">
+  <div class="note-item-header">
+    <div class="note-icon-txt">
+      <!--ko if:biz_data-->
+      <a target="_blank" data-bind="attr:{href:biz_data.location.web_link, 'class':'note-icon iconfont-learn '+ resourceClassName}"></a>
+      <span class="note-txt" data-bind="text:biz_data.location.location"></span>
+      <!--/ko-->
+    </div>
+    <!--创建时间-->
+    <span class="note-txt fr note-txt-light-gray" data-bind="text:create_time"></span>
+  </div>
+  <!--笔记内容-->
+  <div class="note-item-body">
+    <p data-bind="text:content,limitNoteContent"></p>
+    <span class="iconfont-learn n-icon-down" data-id="unfold"></span>
+  </div>
+  <div class="note-item-footer">
+
+    <!--点赞-->
+    <!--ko if:is_open()-->
+    <div class="note-icon-txt first">
+      <a class="note-icon iconfont-learn n-icon-like" data-bind="click:togglePraise"></a>
+      <span class="note-txt" data-bind="text: praise_count() > 0 ? praise_count() : i18nHelper.getKeyValue('noteitem.like')" style="cursor:default;"></span>
+    </div>
+    <!--/ko-->
+
+    <!--ko if: showExcerpt && userId!= user_id() -->
+    <!--ko if:!has_excerpted()-->
+    <a class="note-txt note-txt-light-gray" data-bind="click:excerpt, translate:{key:'noteitem.excerpt'}">摘录</a>
+    <!--/ko-->
+    <!--ko if:has_excerpted()-->
+    <a class="note-txt note-txt-light-gray" data-bind="translate:{key:'noteitem.excerpted'}">已摘录</a>
+    <!--/ko-->
+    <!--/ko-->
+
+    <!--ko if:showBlowing && userId!= user_id() -->
+    <!--ko if:!has_reported()-->
+    <a class="note-txt note-txt-light-gray" data-bind="click:whistleBlowing, translate:{key:'noteitem.report'}">举报</a>
+    <!--/ko-->
+    <!--ko if:has_reported()-->
+    <a class="note-txt note-txt-light-gray" data-bind="translate:{key: 'noteitem.reported'}">已被举报</a>
+    <!--/ko-->
+    <!--/ko-->
+
+    <!--ko if:isLogin-->
+    <!--ko if:showEdit-->
+    <a class="note-icon iconfont-learn n-icon-edit" title="编辑" data-bind="click:edit, attr:{title: i18nHelper.getKeyValue('noteitem.edit') }"></a>
+    <!--/ko-->
+    <!--ko if:showDel-->
+    <a class="note-icon iconfont-learn n-icon-delete" title="删除" data-bind="click:del, attr:{title: i18nHelper.getKeyValue('noteitem.del') }"></a>
+    <!--/ko-->
+    <!--/ko-->
+
+
+    <!--ko if:isFromExcerpt-->
+    <div class="note-icon-txt fr">
+      <a class="note-icon  iconfont-learn n-icon-star"></a>
+      <span class="note-txt note-txt-light-gray"  data-bind="translate:{key: 'noteitem.form'}">来自摘录</span>
+    </div>
+    <!--/ko-->
+  </div>
+</div>
+<!--ko if:showLoginTipDlg-->
+<div data-bind="component:{
+  name: 'x-note-tip',
+  params:{
+    message: i18nHelper.getKeyValue('noteitem.login'),
+    onConfirmCommand: confirmToLogin,
+    onCancelCommand:cancelToLogin
+  }
+}"></div>
+<!--/ko-->
+
+<!--ko if:showBlowingDlg-->
+<div data-bind="component:{
+  name: 'x-note-blowing',
+  params: {
+    apiHost: apiHost,
+    noteId: noteId,
+    noteContent: content,
+    onBlowed: onBlowed,
+    onCanceled: onBlowCancel
+  }
+}"></div>
+<!--/ko-->

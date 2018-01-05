@@ -1,0 +1,27 @@
+.udialog .ui-widget-header{
+     height:50px;
+     line-height: 50px;
+     padding: 0 0 0 20px;
+     overflow: hidden;
+}
+.sys-alert .udialog-text{
+    padding: 20px 30px 30px 30px;
+}
+.udialog .default-btn{
+    display: inline-block;
+    border: 1px solid transparent;
+    background:none;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    background-color: #fff;
+}
+.udialog .default-btn span{
+    line-height: normal;
+    display: inline;
+    font-family: arial, "microsoft yahei", sans-serif;
+}
+.sys-confirm .ui-dialog-content .udialog-text{
+    font-size:16px;
+}
+.ui-dialog-buttonset .default-btn{ margin: 0 10px; }

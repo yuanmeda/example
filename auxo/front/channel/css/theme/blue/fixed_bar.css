@@ -1,0 +1,58 @@
+.fixed-bar {
+  bottom: 10px;
+  position: fixed;
+  right: 20px;
+  z-index: 100
+}
+.fixed-bar .btn {
+  display: block;
+  width: 67px;
+  height: 67px;
+  line-height: 67px;
+  text-align: center;
+  background: url(../../../images/faq_btn_bg.png?v=2017021601) center no-repeat;
+  color: #38adff;
+  font-size: 0;
+  margin: 10px 0
+}
+.fixed-bar .btn:hover {
+  color: #fff
+}
+.fixed-bar .faq-btn span {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  vertical-align: middle
+}
+.fixed-bar .top-btn .arrow-up:after,
+.fixed-bar .top-btn .arrow-up:before {
+  position: absolute;
+  content: "";
+  border-style: dashed dashed solid;
+  border-width: 0 12px 12px;
+  border-color: transparent transparent #38adff
+}
+.fixed-bar .top-btn {
+  position: relative
+}
+.fixed-bar .top-btn .arrow-up:before {
+  left: 22px;
+  top: 25px
+}
+.fixed-bar .top-btn .arrow-up:after {
+  border-bottom-color: #fff;
+  left: 22px;
+  top: 27px
+}
+.fixed-bar .top-btn:hover .arrow-up:before {
+  border-bottom-color: #fff
+}
+.fixed-bar .top-btn:hover .arrow-up:after {
+  border-bottom-color: #38adff
+}
+.fixed-bar .btn {
+  background-position: -14px -21px
+}
+.fixed-bar .btn:hover {
+  background-position: -10px -92px
+}

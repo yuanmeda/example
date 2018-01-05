@@ -1,0 +1,94 @@
+#recommendList .courses .course-box {
+  margin: 0 30px 40px 10px; }
+  #recommendList .courses .course-box .img-box {
+    width: 270px; }
+    #recommendList .courses .course-box .img-box img {
+      display: block; }
+
+#recommendList .wrap-reco > .item-box {
+  background-color: transparent;
+  padding-top: 0; }
+  #recommendList .wrap-reco > .item-box > .item {
+    padding-top: 0;
+    margin-left: 0; }
+    #recommendList .wrap-reco > .item-box > .item:hover {
+      box-shadow: none;
+      transform: none; }
+    #recommendList .wrap-reco > .item-box > .item > li {
+      background-color: #fff;
+      margin: 10px 30px 30px 10px; }
+  #recommendList .wrap-reco > .item-box:hover > .item-title span {
+    color: #ce3f3f; }
+
+#recommendList .courses .course-box .item-box .item-other > div.tag-list {
+  height: 20px;
+  overflow: hidden; }
+
+#recommendList {
+  min-height: 700px;
+  min-height: calc(100% - 157px); }
+  #recommendList .wrap-reco {
+    width: 1240px; }
+  #recommendList .none {
+    text-align: center;
+    margin-top: 200px; }
+  #recommendList .mod-tab {
+    max-width: 95%; }
+    #recommendList .mod-tab a.spec.on {
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+  #recommendList .mod-tit {
+    width: 1200px;
+    padding: 0 0 0 10px;
+    margin-top: 20px; }
+  #recommendList .course {
+    margin-top: 0;
+    margin-bottom: 0; }
+    #recommendList .course ul {
+      margin-left: -10px; }
+
+#recommendList .slide {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  min-width: 1300px;
+  height: 400px; }
+  #recommendList .slide .slide-bd {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden; }
+    #recommendList .slide .slide-bd .slide-wrap {
+      width: 100%; }
+    #recommendList .slide .slide-bd .slide-item {
+      float: left;
+      width: 100%;
+      height: 100%; }
+    #recommendList .slide .slide-bd .uswipe-nav {
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      right: 0;
+      text-align: center; }
+      #recommendList .slide .slide-bd .uswipe-nav a {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #3bb800;
+        border-radius: 50%;
+        margin: 0 10px;
+        vertical-align: middle;
+        opacity: 0.5;
+        filter: alpha(opacify=50); }
+      #recommendList .slide .slide-bd .uswipe-nav .active {
+        opacity: 1;
+        filter: alpha(opacify=100); }
+  #recommendList .slide .slide-wrap {
+    position: absolute;
+    height: 100%; }

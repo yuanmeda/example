@@ -1,0 +1,16 @@
+@import "banner_header";
+@import "mixins";
+.main-wrap{
+  min-height: auto!important;
+}
+.train-main {
+  font-size: 14px;
+  background-color: #ebebeb;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 40px;
+}

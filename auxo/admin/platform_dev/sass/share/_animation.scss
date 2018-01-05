@@ -1,0 +1,78 @@
+/*!
+ * 图片加载动画
+ * 容器(.loading)绝对定位占满定位父级窗口;
+ * 动画类型:.dot-style(点状加载)
+ */
+
+/**
+ * 定义组件变量
+ */
+$themeColor: #fff !default;
+$dots: 0 .3s .6s !default;
+$baseSize: 14px !default;
+
+/**
+ * 定义占位符
+ */
+%dot {
+    display: inline-block;
+
+    border-radius: 50%;
+    width: 1.425em;
+    height: 1.425em;
+
+    background-color: lighten(rgba($themeColor,.7),20%);
+
+    animation-name: dot;
+    animation-duration: length($dots)*.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+%position-absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/**
+ * 动画主容器,容器下可定义各种动画
+ */
+.loading-stage {
+    font-size: $baseSize;
+
+    @extend %position-absolute;
+    //点状动画
+    &.dot-style {
+        .dots {
+            margin: auto;
+            width: length($dots)*1.425em+1em;
+            height: 1.425em;
+
+            text-align: center;
+
+            @extend %position-absolute;
+            .dot {
+                @extend %dot;
+            }
+            @for $index from 1 through length($dots) {
+                .dot:nth-child(#{$index}) {
+                    animation-delay: nth($dots,$index);
+                }
+            }
+            @at-root {
+                @keyframes dot {
+                    0% {
+                        transform: scale(.9);
+                    }
+                    50% {
+                        transform: scale(.5);
+                    }
+                    100% {
+                        transform: scale(.9);
+                    }
+                }
+            }
+        }
+    }
+}

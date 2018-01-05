@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*
+ * Version: 	v1.0
+ * Author:  	klj
+ * Date:    	2017-04-21
+ */
+
+
+
+
+/* variables and mixins */
+@import "_base/_mixin";
+// @import "_base/_reset";
+@import "_base/_utilities";
+@import "_base/_variables";
+@import "_base/fonts/iconfont"; 
+
+
+$blue:                   #38adff;
+$main:                  $blue;
+$main-light:            #52b8ff;
+$main-dark:             #1e9af1;
+
+
+/* -------------common------------- */
+@import "_ui-task-list/ui-task-list";
+@import "_ui-task-tab/ui-task-tab";
+@import "_ui-task-filter/ui-task-filter";
+
+/* -------------pages------------- */
+@import "mod-task";

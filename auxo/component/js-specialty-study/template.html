@@ -1,0 +1,54 @@
+<div class="specialty-item" data-bind="click: onClick">
+  <div class="item-img">
+    <img data-bind="attr: { 'data-original': data.unit_info.cover_url+'&size=240' ,src:defaultImg}" class="lazy-image" style="display: inline;">
+    <span class="item-ldt" data-bind="translate: { key: 'specialty.learned', properties: { userScore: data.had_period, totalScore: data.unit_info.extra.pass_score } },visible:data.status!==2"></span>
+  </div>
+  <div class="item-info">
+    <div class="study-prspecess">
+      <span class="inner" data-bind="style: { width: data.progress + '%'}"></span>
+    </div>
+    <div class="item-name ellipsis" data-bind="text: data.unit_info.title, attr: { title: data.unit_info.title }"></div>
+    <div class="item-icon mtb15 ellipsis fs13">
+    <!--ko if:data.unit_info.extra.course_count&&data.unit_info.extra.course_count>0-->
+      <span class="v-line">
+        <i data-bind="text: data.unit_info.extra.course_count"></i>
+        <!--ko translate:{ key: 'specialty.course' }--><!--/ko-->
+        <em></em>
+      </span>
+      <!--/ko-->
+      <!--ko if:data.unit_info.extra.pass_score&&data.unit_info.extra.pass_score>0-->
+      <span class="v-line">
+        <i data-bind="text: data.unit_info.extra.pass_score"></i>
+        <!--ko translate:{ key: 'specialty.score' }--><!--/ko-->
+        <em></em>
+      </span>
+      <!--/ko-->
+    </div>
+    <div class="item-label-box ellipsis">
+      <span class="item-view" data-bind="if: !!data.end_time">
+        <!--ko translate:{ key: 'specialty.endTime' }--><!--/ko-->
+        <i class="date" data-bind="text: data.end_time.slice(0, 10)"></i>
+      </span>
+      <a class="btn fr" href="javascript:;" data-bind="visible: data.status == 0, click: onBtnClick, translate: { key: 'specialty.start' }"></a>
+      <a class="btn fr" href="javascript:;" data-bind="visible: data.status == 1, click: onBtnClick, translate: { key: 'specialty.continue_studying' }"></a>
+      <!--ko if: data.status == 2-->
+        <!--ko if: data.extra.pass_status == 0-->
+          <i class="status-icon oc-icon-ring-verse finished" >
+            <span data-bind="translate: { key: 'specialty.finished' }"></span>
+          </i>  
+        <!--/ko-->
+        <!--ko if: data.extra.pass_status == 1-->
+          <i class="status-icon oc-icon-ring-verse passed">
+              <span data-bind="translate: { key: 'specialty.passed' }"></span>  
+          </i>  
+        <!--/ko-->
+        <!--ko if: data.extra.pass_status == -1-->
+          <i class="status-icon oc-icon-ring-verse failed">
+              <span data-bind="translate: { key: 'specialty.failed' }"></span>
+          </i>  
+        <!--/ko-->  
+      <!--/ko-->
+    </div>
+  </div>
+  <i class="item-label" data-bind="translate:{key:'specialty.specialty'}"></i>
+</div>

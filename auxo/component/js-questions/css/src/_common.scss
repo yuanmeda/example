@@ -1,0 +1,16 @@
+.qas-g-mask{
+  position:fixed;
+  left:0;top:0;bottom:0;right:0;
+  background:#000;
+  opacity:0.5;
+  z-index:100;
+}
+
+.qas-empty{
+  font-size:20px;
+  text-align:center;
+  padding: 158px 0 30px 0;
+  margin-top: 90px;
+  color: #7f7f7f;
+  background:url("/auxo/component/js-course-detail-pk/images/ico-nopk.png") no-repeat center top;
+}

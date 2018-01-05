@@ -1,0 +1,75 @@
+
+.reply {
+    position: relative;
+    padding: 0 0 12px;
+    border-radius: 3px;
+    background: #eee;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 20px;
+        top: -16px;
+        border-style: solid;
+        border-color: transparent transparent #eee;
+        border-width: 8px 7px;
+    }
+    .pagination {
+        margin: 14px 0 0;
+    }
+}
+
+.reply-item {
+    padding: 20px 12px;
+    border-bottom: 1px dashed #e0e0e0;
+    &.last {
+        border-bottom-color: transparent;
+    }
+    &.adopt {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            top: 14px;
+            right: 20px;
+            width: 39px;
+            height: 39px;
+            animation: zoomIn .5s linear;
+            @extend %img-badge-adopt;
+        }
+    }
+    .reply-header {
+        @extend %clearfix;
+        .reply-avtor {
+            float: left;
+            margin: 0 12px 0 0;
+            @extend %icon;
+            @extend %icon-avtor2;
+            img {
+                display: block;
+                border-radius: 50%;
+            }
+        }
+        .reply-user {
+            overflow: hidden;
+            h4 {
+                margin: -3px 0 0;
+                @extend %ellipse;
+            }
+        }
+    }
+    h4 {
+        font: 14px/24px 'microsoft yahei';
+        color: #666;
+    }
+    .reply-time {
+        font: 12px/22px 'microsoft yahei';
+        color: #999;
+        @extend %ellipse;
+    }
+    .reply-body {
+        margin: 10px 0 0;
+        font: 14px/21px 'microsoft yahei';
+        color: #333;
+    }
+}

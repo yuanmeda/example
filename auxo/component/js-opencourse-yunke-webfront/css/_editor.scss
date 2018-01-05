@@ -1,0 +1,245 @@
+.opencourse-yunke-editor {
+  left: 5%;
+  top: 5%;
+  bottom: 5%;
+  right: 5%;
+  z-index: 101;
+  min-width: 520px;
+  $header-height: 175px;
+  $footer-height: 60px;
+  .cc-dlg-header {
+    height: $header-height;
+    overflow: hidden; // 进度条
+    .progress-bar {
+      position: relative;
+      height: 60px;
+      margin: 12px 190px 0 190px;
+      $step-width: 120px;
+      $circle-size: 48px;
+      .bar-num {
+        width: $step-width;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        .circle {
+          width: $circle-size;
+          height: $circle-size;
+          position: relative;
+          margin: 0 auto 5px auto;
+          .deco-back {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 100px;
+            background: #999;
+            opacity: 0.2;
+          }
+          .num {
+            $border: 8px;
+            $size: $circle-size - $border;
+            width: $size;
+            height: $size;
+            line-height: $size;
+            text-align: center;
+            left: $border/2;
+            top: $border/2;
+            position: absolute;
+            font-size: 22px;
+            color: #fff;
+            background: #999;
+            border-radius: 100px;
+          }
+        }
+        p {
+          text-align: center;
+          font-size: 14px;
+          color: #666;
+        } // 完成的步骤
+        &.done {
+          .circle {
+            .num {
+              background: $themeColor;
+            }
+          }
+        }
+      }
+      .n1 {
+        left: - $step-width / 2;
+      }
+      .n2 {
+        left: 50%;
+        margin-left: - $step-width / 2;
+      }
+      .n3 {
+        right: - $step-width / 2;
+      } // 背景条
+      .bar {
+        position: absolute;
+        z-index: 1;
+        height: 10px;
+        width: 100%;
+        background: #E4E4E4;
+        left: 0;
+        top: 20px;
+        span {
+          width: 50%;
+          background: $themeColor;
+          height: 100%;
+        }
+        .active-left {
+          float: left;
+        }
+        .active-right {
+          float: right;
+        }
+      }
+    }
+  }
+  .cc-dlg-body {
+    top: $header-height + 1px;
+    bottom: $footer-height;
+  }
+  .cc-dlg-footer {
+    height: $footer-height;
+    span {
+      margin-top: 13px;
+    }
+  } // 基本信息
+  .create-base-info {
+    padding: 20px 0;
+    input {
+      height: 28px;
+      line-height: 28px;
+      padding: 0 10px;
+      background: #fff;
+      border-radius: 3px;
+      border: 1px solid #d2d2d2;
+      width: 80%;
+    }
+    textarea {
+      border: 1px solid #d2d2d2;
+      border-radius: 3px;
+      background: #fff;
+      padding: 10px;
+      resize: none;
+      width: 80%;
+    }
+    table {
+      width: 100%;
+      th,
+      td {
+        padding: 8px 3px;
+        vertical-align: top;
+      }
+      th {
+        text-align: right;
+        font-weight: normal;
+        width: 200px;
+        white-space: nowrap;
+      }
+      td {}
+    } // 必填
+    .required {
+      color: red;
+      margin-right: 10px;
+      font-size: 20px;
+      vertical-align: middle;
+    } // 剩余字数
+    .summary-remain-words {
+      text-align: right;
+      padding: 10px;
+      font-size: 14px;
+      width: 80%;
+      span {
+        color: $themeColor;
+        ;
+        font-style: italic;
+      }
+    } // 树
+    .tree-border {
+      width: 300px;
+      border: 1px solid #b9b9b9;
+    } // ko的错误信息标签
+    .validationMessage {
+      display: none;
+    }
+  } // 章节设置
+  .create-chapter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  } // 封面设置
+  .create-cover {
+    padding: 20px;
+    div {
+      margin-bottom: 20px;
+      img {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    span {
+      display: block;
+      width: 120px;
+      background: #eee;
+      padding: 10px 0;
+      text-align: center;
+      cursor: pointer;
+      margin: 0 auto;
+    }
+  }
+}
+
+// 加载数据时的遮罩
+.cc-loading-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 200;
+}
+
+// 上传图片对话框
+.opencourse-yunke-img-uploader {
+  $width: 1028px;
+  width: $width;
+  top: 13%;
+  bottom: 23%;
+  left: 50%;
+  margin-left: - $width / 2;
+  z-index: 103;
+  $header-height: 70px;
+  $footer-height: 50px;
+  .cc-dlg-header {
+    h1 {
+      text-align: left;
+      font-weight: normal;
+      padding-left: 20px;
+      font-size: 18px;
+    }
+    height: $header-height;
+  }
+  .cc-dlg-body {
+    top: $header-height;
+    bottom: $footer-height;
+  }
+  .cc-dlg-footer {
+    height: $footer-height;
+    span {
+      margin-top: 7px;
+    }
+  }
+}
+
+.cc-img-uploader-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 102;
+}

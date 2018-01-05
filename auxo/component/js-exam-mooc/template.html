@@ -1,0 +1,44 @@
+<div data-bind="click:refreshMac">
+<a class="center-item" href="javascript:void(0);" data-bind="attr: { href: getExamPrepareUrl(), title: model.data.unit_info.title }"
+  target="_blank">
+  <h5 class="item-title" data-bind="text: model.data.unit_info.title"></h5>
+  <div class="item-info clearfix">
+    <ul class="info-fl fl pt1">
+      <!-- ko if:model.data.unit_type == 'mooc-exam' -->
+      <li class="ellipsis">
+        <i>•</i>
+        <span class="info" data-bind="translate:{ key:'exam_mooc_card.examType'}"></span>
+        <span class="info" data-bind="text:getExamType(model.data)"></span>
+      </li>
+      <!--/ko -->
+      <!-- ko if:model.data.unit_type == 'mooc-exam' -->
+      <li class="ellipsis">
+        <i>•</i>
+        <span class="info" data-bind="translate:{ key:'exam_mooc_card.examRoom'}"></span>
+        <span class="info" data-bind="text:formatName(model.data.unit_info.extra.room)"></span>
+      </li>
+      <!--/ko -->
+      <li class="ellipsis">
+        <i>•</i>
+        <!-- ko if:model.data.unit_type == 'mooc-exam' -->
+        <span class="info" data-bind="translate:{ key:'exam_mooc_card.examSubjectName'}"></span>
+        <!--/ko -->
+        <!-- ko if:model.data.unit_type == 'mooc-exercise' -->
+        <span class="info" data-bind="translate:{ key:'exam_mooc_card.exerciseSubjectName'}"></span>
+        <!--/ko -->
+        <span class="info" data-bind="text:formatName(model.data.unit_info.extra.subjectName)"></span>
+      </li>
+    </ul>
+    <div class="info-fr fr" style="display: none;" data-bind="css: { 'wait': ko.unwrap(model.data.extra.pass_status) == 0, 'failed': ko.unwrap(model.data.extra.pass_status) == 2 }, visible: (ko.unwrap(model.data.extra.pass_status) == 1 || ko.unwrap(model.data.extra.pass_status) == 2)">
+      <p data-bind="translate: { key: 'exam_mooc_card.scoreMark', properties:{ count: formatScore(ko.unwrap(model.data.extra.score)) } }"></p>
+      <p data-bind="visible: ko.unwrap(model.data.extra.pass_status) == 2, translate: { key: 'exam_mooc_card.failed' }"></p>
+      <p data-bind="visible: ko.unwrap(model.data.extra.pass_status) == 0, translate: { key: 'exam_mooc_card.waitForMark' }"></p>
+      <p data-bind="visible: ko.unwrap(model.data.extra.pass_status) == 1, translate: { key: 'exam_mooc_card.passed' }"></p>
+    </div>
+  </div>
+  <div class="item-ft">
+    <p class="ft-fl fl" data-bind="html: formatDateTime($data)"></p>
+    <span class="ft-fr fr btn btn-primary" data-bind="css: { 'btn-default': disableBtn() }, translate: { key:userExamStatus($data) }"></span>
+  </div>
+</a>
+</div>

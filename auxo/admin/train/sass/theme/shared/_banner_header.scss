@@ -1,0 +1,68 @@
+@import "mixins";
+$themeColor: $themeColor;
+//标题栏样式
+.banner-header {
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 0 10px 5px;
+
+    box-shadow: 4px 0 0 #fff,-4px 0 0 #fff,0 2px 5px #ddd;
+
+    @include clearfix();
+    &:before {
+        display: inline-block;
+
+        margin-right: 10px;
+        border: 2px solid $themeColor;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+    }
+    h2 {
+        display: inline-block;
+
+        font-size: 18px;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    a.btn,
+    button {
+        float: right;
+
+        margin-right: 5px;
+
+        vertical-align: bottom;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+//底部按钮组样式
+.tool-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+
+    border-top: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px 20px 12px 140px;
+    width: 100%;
+
+    background: #fff;
+
+    box-shadow: 0 1px 2px 2px #ddd;
+    a.btn,
+    button {
+        margin-left: 20px;
+        &.left {
+            float: left;
+        }
+        &.right {
+            float: right;
+        }
+    };
+}

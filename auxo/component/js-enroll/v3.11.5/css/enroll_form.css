@@ -1,0 +1,57 @@
+.enroll-form .form-control .input:focus,.enroll-form .form-control .textarea:focus,.form .form-control .input:focus,.form .form-control .textarea:focus{outline:0}
+.vm{display:inline-block;vertical-align:middle}
+.fl{float:left}
+.fr{float:right}
+.tc{text-align:center}
+.tl{text-align:left}
+.tr{text-align:right}
+.cf:after,.cf:before{content:"";display:table}
+.cf:after,.cl{clear:both}
+.cf{zoom:1}
+.enroll-form,.form{width:580px;margin:0 auto;padding-top:30px}
+.enroll-form *,.form *{box-sizing:border-box}
+.enroll-form .label-name,.form .label-name{width:72px;height:42px;line-height:42px;overflow:hidden}
+.enroll-form .form-control,.form .form-control{margin-bottom:25px;position:relative}
+.enroll-form .form-control .error-box,.form .form-control .error-box{width:100%;position:absolute;bottom:-22px;text-align:center;color:red}
+.enroll-form .form-control .label-left,.form .form-control .label-left{width:92px;height:42px;line-height:42px;text-align:right;float:left;margin-right:12px}
+.enroll-form .form-control .label-right,.form .form-control .label-right{float:left}
+.enroll-form .form-control .label-right.fl,.form .form-control .label-right.fl{float:left}
+.enroll-form .form-control .input,.form .form-control .input{padding-right:15px;width:100%;height:42px;line-height:42px;padding-left:15px;box-shadow:none}
+.enroll-form .form-control .input,.enroll-form .form-control .select,.enroll-form .form-control .textarea,.form .form-control .input,.form .form-control .select,.form .form-control .textarea{display:block;border:1px solid #ddd;border-radius:5px}
+.enroll-form .form-control .select,.form .form-control .select{height:42px;line-height:42px;padding:10px 0}
+.enroll-form .form-control .select option,.form .form-control .select option{line-height:36px;height:36px}
+.enroll-form .form-control .textarea,.form .form-control .textarea{height:83px;width:473px;padding:15px;overflow-x:hidden;overflow-y:auto;resize:none}
+.enroll-form .form-control .w227,.form .form-control .w227{width:227px}
+.enroll-form .form-control .w473,.form .form-control .w473{width:473px}
+.enroll-form .form-control .small-tit,.form .form-control .small-tit{color:#999;word-break:break-all;word-wrap:break-word}
+.enroll-form .form-control .radio-tit,.form .form-control .radio-tit{margin-bottom:10px;min-width:80px;text-align:right;display:inline-block}
+.enroll-form .form-control .radio-group,.form .form-control .radio-group{display:block;margin-left:58px;padding-left:48px;position:relative;line-height:18px}
+.enroll-form .form-control .radio-group label,.form .form-control .radio-group label{margin-bottom:10px;display:block}
+.enroll-form .form-control .radio-group label i.after,.enroll-form .form-control .radio-group label i.before,.form .form-control .radio-group label i.after,.form .form-control .radio-group label i.before{display:inline-block;border:1px solid #ddd}
+.enroll-form .form-control .radio-group label.radio-box i.after,.enroll-form .form-control .radio-group label.radio-box i.before,.form .form-control .radio-group label.radio-box i.after,.form .form-control .radio-group label.radio-box i.before{border-radius:50%}
+.enroll-form .form-control .radio-group label.check-box i.before,.form .form-control .radio-group label.check-box i.before{border-radius:2px}
+.enroll-form .form-control .radio-group label.check-box i.after,.form .form-control .radio-group label.check-box i.after{border-radius:1px}
+.enroll-form .form-control .radio-group label.active i.after,.form .form-control .radio-group label.active i.after{display:block}
+.enroll-form .form-control .radio-group .attachment-group:after,.enroll-form .form-control .radio-group .picture-group:after,.form .form-control .radio-group .attachment-group:after,.form .form-control .radio-group .picture-group:after{content:"";display:table;clear:both;zoom:1}
+.enroll-form .form-control .radio-group .attachment-group,.form .form-control .radio-group .attachment-group{padding-top:10px}
+.enroll-form .form-control .radio-group .attachment-group,.enroll-form .form-control .radio-group .picture-group,.form .form-control .radio-group .attachment-group,.form .form-control .radio-group .picture-group{margin-bottom:10px}
+.enroll-form .form-control .radio-group .attachment-group .add-file,.form .form-control .radio-group .attachment-group .add-file{height:30px;line-height:28px;overflow:hidden;position:relative}
+.enroll-form .form-control .radio-group .attachment-group .add-file .inner-text,.form .form-control .radio-group .attachment-group .add-file .inner-text{margin-top:0}
+.enroll-form .form-control .radio-group .attachment-group .attachment-box,.form .form-control .radio-group .attachment-group .attachment-box{height:26px;line-height:26px;position:relative;margin-bottom:10px}
+.enroll-form .form-control .radio-group .attachment-group .attachment-box .icon-attachment,.form .form-control .radio-group .attachment-group .attachment-box .icon-attachment{vertical-align:middle;background:url(../image/enroll-icon-attachment-small.png);width:22px;height:22px;display:inline-block}
+.enroll-form .form-control .radio-group .attachment-group .attachment-box .tit,.form .form-control .radio-group .attachment-group .attachment-box .tit{width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle}
+.enroll-form .form-control .radio-group .add-img,.form .form-control .radio-group .add-img{width:90px;height:90px;line-height:90px;overflow:hidden;display:inline-block;vertical-align:middle;position:relative;border:1px solid #ececec;margin:10px 10px 0 0;background:#f2f2f2;color:#666;text-align:center}
+.enroll-form .form-control .radio-group .add-attach,.form .form-control .radio-group .add-attach{overflow:inherit!important}
+.enroll-form .form-control .radio-group .add-attach .inner-text,.form .form-control .radio-group .add-attach .inner-text{display:inline-block;line-height:1.5;vertical-align:middle;margin-top:10px}
+.enroll-form .form-control .radio-group .add-attach .inner-text .tip-text,.form .form-control .radio-group .add-attach .inner-text .tip-text{font-size:12px}
+.enroll-form .form-control .radio-group .add-attach .full-mask,.enroll-form .form-control .radio-group .add-attach .webuploader-pick,.form .form-control .radio-group .add-attach .full-mask,.form .form-control .radio-group .add-attach .webuploader-pick{position:absolute;left:0;right:0;bottom:0;top:0}
+.enroll-form .form-control .radio-group .add-attach .add-btn,.form .form-control .radio-group .add-attach .add-btn{display:inline-block;border-radius:3px;color:#38adff;line-height:26px;height:28px;border:1px solid #38adff;text-align:center;padding:0 10px}
+.enroll-form .form-control .radio-group .picture-group .img-box,.form .form-control .radio-group .picture-group .img-box{width:90px;height:90px;line-height:90px;overflow:hidden;display:inline-block;position:relative;border:1px solid #ececec;margin:10px 10px 0 0;vertical-align:middle;text-align:center}
+.enroll-form .form-control .radio-group .picture-group .img-box img,.form .form-control .radio-group .picture-group .img-box img{vertical-align:middle;width:auto;height:auto;max-width:100%;max-height:100%}
+.enroll-form .form-control .radio-group .picture-group .img-box .enroll-close,.form .form-control .radio-group .picture-group .img-box .enroll-close{position:absolute;right:5px;top:5px}
+.enroll-form .form-control .radio-group .no-data,.form .form-control .radio-group .no-data{margin-top:10px}
+.enroll-close{display:inline-block;background:rgba(0,0,0,.4);border-radius:50%;width:20px;height:20px;line-height:20px;text-align:center}
+.enroll-close i{display:inline-block;vertical-align:middle;width:14px;height:14px;background:url(../image/enroll-icon-close.png) center center no-repeat;background-size:14px}
+.error,.required{color:red}
+.webuploader-element-invisible{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+.upload-progress{display:block;clear:both;text-align:left}

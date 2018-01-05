@@ -1,0 +1,121 @@
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  z-index: 101;
+}
+
+.coupon-box {
+  .coupon-nodata {
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    background: #f9f9f9;
+    font-size: 16px;
+  }
+  width: 588px;
+  box-sizing: content-box;
+  position: fixed;
+  z-index: 102;
+  top: 50%;
+  left: 50%;
+  margin-top: -278px;
+  margin-left: -294px;
+  .box-t {
+    height: 50px;
+    line-height: 50px;
+    background: #fff;
+    font-size: 16px;
+    color: #666;
+    padding-left: 30px;
+    position: relative;
+    .coupon-close {
+      position: absolute;
+      right: 25px;
+      top: 13px;
+      font-size: 22px;
+      color: #b7b7b7;
+    }
+  }
+  //.x-single-coin .coin-item .coin-rt {
+  //  height: 98px;
+  //  line-height: 98px;
+  //  .coin-rt-wrap {
+  //    display: inline-block;
+  //    vertical-align: middle;
+  //  }
+  //}
+  li {
+    font-size: 0;
+    margin-bottom: 20px;
+
+  }
+  .x-single-coin .circle-down, .x-single-coin .circle-up {
+    color: #f9f9f9;
+  }
+  .box-c {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 25px;
+  }
+  .check-box {
+    line-height: 140px;
+    margin-right: 23px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .coupon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 478px;
+  }
+  .view-coupon {
+    height: 45px;
+    line-height: 45px;
+    a {
+      font-size: 14px;
+      color: $themeColor;
+      &:hover {
+        color: lighten($themeColor, 10%);
+      }
+    }
+  }
+  .coupon-btnarea {
+    a {
+      width: 190px;
+      margin: 0;
+    }
+  }
+  i.check {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    &:after {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 1px solid #999;
+      border-radius: 3px;
+    }
+    &.active {
+      &:before {
+        display: block;
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: $themeColor;
+        border-radius: 2px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.course__resource--item {
+    float: left;
+    padding: 0 10px;
+    img {
+        width: 100%;
+    }
+}
+.course__resource--card {
+    position: relative;
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    transition: all .2s linear;
+    overflow: hidden;
+    width: 270px;
+    margin: 0 0 50px 0;
+    border: 1px solid #e0e0e0;
+    .card-img {
+        position: relative;
+        display: block;
+        background: #fff;
+        width: 270px;
+        height: 180px;
+        overflow: hidden;
+        .img {
+            width: 100%;
+            height: 100%;
+            transform: scale(1);
+            transition: all .3s;
+        }
+    }
+    .card-process {
+        position: relative;
+    }
+    .card-process-word {
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        max-width: 100%;
+        padding-right: 40px;
+        .process-word {
+            padding-left: 18px;
+            line-height: 24px;
+            font-size: 12px;
+            color: #fff;
+            background: rgba(0, 0, 0, .3);
+            background: url($imgUrl + "mask_repeat.png") repeat left top;
+            @extend %tof;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 100%;
+            background: url($imgUrl + "sprite.png") no-repeat;
+            background-position: 0 0;
+        }
+    }
+    .card-process-strip {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background: #eee;
+        .card-process-value {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background: $themeColor;
+        }
+    }
+    .card-info {
+        padding: 15px;
+        font-size: 12px;
+        line-height: 1;
+        background: #fff;
+    }
+    .card-info-title {
+        margin-top: 5px;
+        font-size: 18px;
+        width: 100%;
+        height: 19px;
+        color: #333;
+        transition: all .3s;
+        @extend %tof;
+    }
+    .card-info-other {
+        position: relative;
+        margin-top: 18px;
+        font-size: 12px;
+        padding-left: 20px;
+        // height: 14px;
+        .iconfont-e-course {
+            position: absolute;
+            left: 0;
+            top: -1px;
+            font-size: 15px;
+            color: #b7b7b7;
+        }
+        .other-txt {
+            font-size: 12px;
+            color: #999;
+            display: block;
+            @extend %tof;
+        }
+    }
+    &:hover {
+        transform:  translate(0,-2px);
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1), -1px 1px 20px rgba(0, 0, 0, 0.1);
+        .img {
+            transform: scale(1.2) translate3d(-1px,0,0);
+        }
+        .card-info-title {
+             color: $main-dark;
+        }
+    }
+}

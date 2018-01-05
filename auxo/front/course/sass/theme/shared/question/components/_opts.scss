@@ -1,0 +1,37 @@
+.opts {
+    margin: 10px 0 0;
+    @extend %clearfix;
+    .opt {
+        @extend %inline-block;
+        margin: 0 5px 0 0;
+        font: 12px/normal 'microsoft yahei';
+        color: #999;
+        &:hover {
+            .icon-praise {
+                @extend %icon-praise-blue;
+            }
+            .icon-comt {
+                @extend %icon-comt-blue;
+            }
+            .icon-trash {
+                @extend %icon-trash-blue;
+            }
+            .icon-adopt {
+                @extend %icon-adopt-blue;
+            }
+            .icon-star {
+                @extend %icon-star-blue;
+            }
+        }
+        &.trash:hover {
+            color: $themeColor;
+        }
+    }
+    em, span {
+        @extend %inline-block;
+        vertical-align: middle;
+    }
+    em {
+        color: #333;
+    }
+}

@@ -1,0 +1,41 @@
+
+.x-my-dcu-stat{
+  margin:0 20px;
+  padding:40px 0;
+  overflow:hidden;
+  border-bottom:1px solid #d7d7d7;
+
+  .stat-col{
+    float:left;
+    text-align:center;
+    h1{
+      color:#666666;
+      font-size:20px;
+      line-height:1;
+      margin-bottom:30px;
+    }
+    p{
+      vertical-align:bottom;
+      span{
+        color:#666;
+        font-size:14px;
+        margin:0 20px;
+      }
+      strong{
+        font-size:24px;
+        font-weight:normal;
+        margin-right:10px;
+        color: $theme-color;
+      }
+    }
+  }
+  // 上传总数
+  .upload-count{
+    width:387px;
+    border-right:1px solid #eee;
+  }
+  // 累计收益
+  .earnings{
+    width:590px;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["es2015", { "modules": false }]
+  ],
+  "comments": false,
+  "plugins": [
+    "external-helpers",
+    "transform-class-properties",
+    "transform-es3-property-literals",
+    "transform-es3-member-expression-literals"
+  ]
+}

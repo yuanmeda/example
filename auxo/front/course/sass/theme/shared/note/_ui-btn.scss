@@ -1,0 +1,67 @@
+$main:                  $main;
+
+/* u-ui-btn */
+.u-ui-btn {
+    display: inline-block;
+    min-width: 140px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border: 1px solid $main;
+    border-radius: 5px;
+    font-size: 18px;
+    -moz-transition: background 0.3s ease-out,color 0.3s ease-out;
+    -webkit-transition: background 0.3s ease-out,color 0.3s ease-out;
+    -o-transition: background 0.3s ease-out,color 0.3s ease-out;
+    transition: background 0.3s ease-out,color 0.3s ease-out;
+    &:hover,
+    &.on {
+        color: #fff;
+        background: $main;
+    }
+}
+a.u-ui-btn {
+    color: $main;
+}
+
+/* n-ui-btn */
+.n-ui-btn{
+    display:inline-block;
+    padding:0 18px;
+    line-height:26px;
+    vertical-align:middle;
+    text-align:center;
+    border-radius:5px;
+    &.n-ui-btn-gray {
+        color:#666;
+        &:hover {
+            color: #999;
+        }
+        &:active {
+            opacity: .9;
+        }
+    }
+    &.n-ui-btn-main{
+        background:$main;
+        color:#fff;
+        &:hover {
+            color: #fff;
+            background: $main;
+        }
+        &:active {
+            opacity: .9;
+        }
+    }
+    &.n-ui-btn-disable{
+        background: $light-gray;
+        color: #fff;
+        cursor: not-allowed;
+        &:hover {
+            color: #fff;
+            background: $light-gray;
+        }
+        &:active {
+            opacity: .9;
+        }
+    }
+}

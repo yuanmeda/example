@@ -1,0 +1,118 @@
+.hobby-tags-selector{
+  .hts-title{
+    font-size:14px;
+    padding:25px 20px;
+    line-height:1;
+    border-bottom:1px solid #e5e5e5;
+    h1{
+      display:inline;
+      color:#666666;
+    }
+    span{
+      color:#999999;
+    }
+  }
+
+  .hts-list{
+    padding:20px 15px;
+    font-size:14px;
+  }
+  .hts-item{
+    overflow:hidden;
+    background:#f9f9f9;
+    padding:20px;
+    margin-bottom:10px;
+    $cell-height:28px;
+    .cate-title{
+      float:left;
+      color:$theme-color;
+      padding-right:10px;
+      width:110px;
+      line-height:$cell-height + 10px;
+      word-break:break-all;
+    }
+    ul{
+      overflow:hidden;
+      padding-left:10px;
+      border-left:1px solid #ddd;
+      li{
+        float:left;
+        padding:0 10px;
+        color:#666666;
+        border:1px solid transparent;
+        margin:5px 30px 5px 0;
+        white-space:nowrap;
+        line-height:$cell-height;
+        height:$cell-height;
+        cursor:pointer;
+        &:hover{
+          color:$theme-color;
+        }
+        &.selected{
+          border-color:$theme-color;
+          color:$theme-color;
+        }
+      }
+    }
+  }
+
+  .hts-empty{
+    padding-top:180px;
+    i{
+      display:block;
+      background:url('/auxo/component/js-course-detail-pk/images/ico-nopk.png') no-repeat 0 0;
+      width:146px;
+      height:138px;
+      margin:0 auto 20px auto;
+    }
+    span{
+      display:block;
+      text-align:center;
+      font-size:18px;
+      color:#666666;
+    }
+  }
+
+
+  .hts-footer{
+    padding:20px;
+    position:relative;
+    p{
+      font-size:14px;
+      margin-right:110px;
+      span{
+        color:#999999;
+      }
+      color: #666666;
+    }
+
+    .hts-save{
+      right:20px;
+      top:14px;
+      position:absolute;
+      padding:5px 20px;
+      font-size:14px;
+      background:$theme-color;
+      color:#fff;
+      cursor:pointer;
+      border-radius:2px;
+      &.disabled{
+        background:gray;
+        color:#fff;
+        cursor:default;
+      }
+    }
+  }
+
+}
+
+.hts-dlg-mode{
+  .hts-list{
+    max-height: 800px;
+    overflow-y:auto;
+  }
+  .hts-footer{
+    background:#f9f9f9;
+    border-top:1px solid #e0e0e0;
+  }
+}

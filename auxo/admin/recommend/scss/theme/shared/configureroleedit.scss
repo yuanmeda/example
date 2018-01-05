@@ -1,0 +1,341 @@
+@import "base";
+@import "list_base";
+@import "banner_header";
+@import "mixins";
+$fontSize: 13px;
+html {
+    overflow: auto;
+}
+
+.box {
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    font-size: $fontSize;
+    label,
+    input,
+    button,
+    select,
+    textarea {
+        font-size: $fontSize;
+    }
+    .banner-box {
+        margin-bottom: 20px;
+        max-width: 500px;
+        img {
+            display: block;
+
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            &.img-view {
+                width: auto;
+                max-width: 450px;
+                height: auto;
+            }
+        }
+        .upload #pre_con,
+        .upload #ed_con {
+            width: auto;
+            max-width: 450px;
+            height: auto;
+        }
+    }
+    .form-horizontal input,
+    .form-horizontal textarea {
+        padding: 3px;
+    }
+    .form-horizontal .controls {
+        //font-weight: bold;
+        max-width: 600px;
+
+        word-break: break-all;
+    }
+    .form-horizontal input[type="text"] {
+        height: 26px;
+    }
+    .form-horizontal span.form-static {
+        display: inline-block;
+
+        margin-top: 3px;
+    }
+}
+
+.type-box {
+    margin-bottom: 10px;
+    .type-name {
+        height: 32px;
+
+        font-size: 14px;
+        line-height: 32px;
+        span {
+            display: inline-block;
+
+            margin-left: 10px;
+
+            font-size: 12px;
+
+            color: #999;
+        }
+    }
+}
+
+//diy-checkbox
+.diy-checkbox {
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    padding: 10px;
+    width: 400px;
+    min-height: 30px;
+
+    @include clearfix;
+    &.diy-view {
+        width: auto;
+    }
+    &.diy-border {
+        border: 1px solid #ccc;
+    }
+    .diy-item,
+    .diy-add {
+        display: inline-block;
+
+        border: 1px solid #ddd;
+    }
+    .diy-item {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        padding: 0 10px;
+        min-width: 60px;
+        .diy-item-close {
+            display: inline-block;
+
+            margin-left: 5px;
+            height: 30px;
+
+            font-size: 16px;
+            line-height: 30px;
+            vertical-align: middle;
+            &:hover {
+                text-decoration: none;
+
+                color: #c00;
+            }
+        }
+        span {
+            display: inline-block;
+            overflow: hidden;
+
+            max-width: 120px;
+            height: 30px;
+
+            font-size: 14px;
+            line-height: 30px;
+            vertical-align: middle;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            color: #0a0a0a;
+        }
+    }
+    .diy-add {
+        display: inline-block;
+
+        position: relative;
+
+        margin-top: 3px;
+        border-color: #47a3f9;
+        border-radius: 50%;
+        padding: 3px;
+        width: 24px;
+        height: 24px;
+
+        vertical-align: middle;
+
+        color: #47a3f9;
+        &:after {
+            position: absolute;
+            top: 47%;
+            left: 48%;
+
+            font-size: 22px;
+
+            transform: translate(-50%, -50%);
+
+            content: "+";
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.modal-larger {
+    top: 30%;
+
+    margin-left: -600px;
+    width: 1200px;
+    max-height: 600px;
+    .lay-fl,
+    .lay-fr {
+        float: left;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        height: 100%;
+        max-height: 387px;
+        .selectAll {
+            margin: 0 2px 9px 1px;
+            input {
+                margin-right: 5px;
+            }
+        }
+    }
+    .modal-body {
+        overflow: hidden;
+
+        max-height: 450px;
+        .ztree .tree-no-data {
+            display: block;
+
+            width: 100%;
+
+            font-size: 15px;
+            text-align: center;
+
+            color: #999;
+        }
+        ;
+        .border-l {
+            border-right: 1px solid #ddd;
+        }
+        [class*="span"] {
+            overflow: auto;
+
+            margin-left: 0 !important;
+            height: 400px;
+        }
+        ;
+        .search-bar {
+            margin-bottom: 10px;
+            margin-left: -26px;
+            padding: 10px;
+
+            background-color: #f9f9f9;
+
+            box-shadow: 0 0 1px 0 rgba(0, 0, 0, .3);
+        }
+    }
+    .modal-footer {
+        text-align: center;
+    }
+}
+
+.lay-fl {
+    overflow: auto;
+
+    border-right: 1px solid #ccc;
+    width: 199px;
+    max-height: 435px;
+}
+
+.lay-fr {
+    padding: 0 0 0 15px;
+    width: 950px;
+    min-height: 100px;
+}
+
+.item-list .item-box {
+    width: 220px;
+    .item-img {
+        height: 140px;
+        .tip {
+            cursor: pointer;
+
+            @include clearfix();
+            &:hover .tip-bg {
+                border-color: rgba(0, 0, 0, .6);
+            }
+            .tip-bg {
+                position: absolute;
+                top: -50px;
+                right: -50px;
+
+                border: 50px solid rgba(0, 0, 0, .4);
+                border-color: transparent transparent transparent rgba(0, 0, 0, .4);
+
+                @include css3(transform, rotate(-45deg));
+                & + .tip-img {
+                    position: absolute;
+                    top: 3px;
+                    right: 0;
+
+                    width: 32px;
+                    height: 32px;
+
+                    background: url("../images/check.png") no-repeat center;
+                    background-position: 0 0;
+                }
+                &.active + .tip-img {
+                    background-position: -32px 0;
+                }
+            }
+        }
+    }
+}
+
+.item-list .item-desc h3 {
+    padding-left: 5px;
+
+    text-align: left;
+
+    @include singleline-ellipsis(0);
+}
+
+.input-medium {
+    padding: 4px 4px;
+    width: 220px;
+    height: 26px;
+}
+
+@media(max-width: 1440px) {
+    .modal-larger {
+        top: 30%;
+
+        margin-left: -500px;
+        width: 1000px;
+    }
+    .modal-larger .lay-fr {
+        width: 715px;
+    }
+}
+.tree-border {
+    overflow: scroll;
+
+    border: #afa8a8 1px solid;
+    width: 270px;
+    min-height: 300px;
+    max-height: 600px;
+}
+
+
+.role-list {
+    overflow: hidden;
+    overflow-y: auto;
+
+    max-height: 500px;
+    span {
+        display: inline-block;
+
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 18px;
+    }
+    label {
+        display: inline-block;
+        input {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    }
+}

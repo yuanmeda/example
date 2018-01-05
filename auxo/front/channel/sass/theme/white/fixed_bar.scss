@@ -1,0 +1,11 @@
+@import "theme";
+@import "../../share/fixed_bar";
+
+.fixed-bar {
+  .btn {
+    background-position: -14px -21px;
+    &:hover {
+      background-position: -10px -92px;
+    }
+  }
+}

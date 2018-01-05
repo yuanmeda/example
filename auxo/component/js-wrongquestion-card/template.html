@@ -1,0 +1,24 @@
+<!-- ko foreach:items -->
+<div data-bind="visiable:!loading,click:$component.gotoDetail.bind($component)" class="error-exercises">
+    <div class="problem">
+        <a href="javascript:;">
+            <dl data-bind="visiable:!question_preview_url,attr:{'id':'qti-'+question_id}"
+                class="question-card"></dl>
+            <img data-bind="visiable:question_preview_url,attr:{'src':question_preview_url}">
+        </a>
+    </div>
+    <div class="problem-msg">
+        <div>
+            <span data-bind="text:$component.getQuestionTypeTitle(question_type)" class="type"></span>
+            <span class="count">错<em data-bind="text:wrong_times"></em>次</span>
+        </div>
+        <div>
+            <span data-bind="text:$component.formatTime(update_time)" class="time"></span>
+            <a data-bind="click:$component.onBtnClick.bind($component)" class="problem-same-link" href="javascrpt:;">类似题></a>
+        </div>
+    </div>
+</div>
+<!-- /ko -->
+<!--ko if:loading-->
+<div class="loading">正在加载数据...</div>
+<!--/ko-->

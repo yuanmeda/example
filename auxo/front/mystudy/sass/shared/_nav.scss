@@ -1,0 +1,29 @@
+%tab-nav {
+  .tab-nav,
+  .tab-content {
+    padding: 0 28px;
+    font-size: 14px;
+  }
+
+  $navHeight: 60px;
+  .tab-nav {
+    position: relative;
+    padding: 0 40px;
+    border-bottom: 1px #e6e6e6 solid;
+    height: $navHeight;
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      height: $navHeight;
+      padding: 0 32px;
+      line-height: $navHeight;
+      text-align: center;
+
+      cursor: pointer;
+      &.active {
+        border-bottom: 2px solid $themeColor;
+        color: $themeColor;
+      }
+    }
+  }
+}

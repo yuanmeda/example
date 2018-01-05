@@ -1,0 +1,123 @@
+/* n-ui-menu-cata */
+
+.n-ui-menu-cata.course-menu-default {
+    .dlist {
+        font-size: 14px;
+        color: #666;
+        .n-ui-menu-cata-title {
+            padding: 0 15px;
+            line-height: 48px;
+            border-bottom: 1px solid #f0f0f0;
+            @extend %tof;
+        }
+        .n-ui-menu-cata-title {
+            font-weight: bold;
+            text-align: center;
+            &:hover {
+                color: $themeColor;
+                background-color: #fafafa;
+                cursor: pointer;
+            }
+            &.state-on {
+                background-color: #fafafa;
+                color: $themeColor;
+            }
+        }
+        .sub-item {
+            position: relative;
+            padding-left: 0px !important;
+        }
+        .open {
+            >.list {
+                display: block;
+            }
+        }
+        /* 一级内容的字体颜色 */
+        >.sub-item>.item-content {
+            margin-top: -1px;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+    }
+    .list {
+        display: none;
+    }
+    .list,
+    .dlist {
+        .item-txt {
+            padding-left: 45px;
+        }
+        .sub-item {
+            position: relative;
+            cursor: pointer;
+            .item-txt {
+                display: block;
+                line-height: 48px;
+                max-width: 100%;
+                padding-right: 56px;
+                @extend %tof;
+                em {
+                    font-style: normal
+                }
+                &:hover,
+                &.state-on {
+                    background-color: #fafafa;
+                    color: $themeColor;
+                }
+                >.iconfont-e-course {
+                    position: absolute;
+                    top: 15px;
+                    right: 18px;
+                    font-size: 20px;
+                    line-height: 1;
+                    color: $themeColor;
+                }
+                .xcd-icon-e-course--empty {
+                    color: #cdcdcd;
+                }
+            }
+            .item-content {
+                position: relative;
+                >.iconfont-e-course {
+                    display: block;
+                    position: absolute;
+                    left: 14px;
+                    top: 16px;
+                    line-height: 16px;
+                    z-index: 5;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                /* 圆形 + - */
+                .xcd-icon-e-course--add,
+                .xcd-icon-e-course--minus {
+                    width: 18px;
+                    height: 18px;
+                    background-color: #eee;
+                    border-radius: 50%;
+                }
+                .xcd-icon-e-course--add {
+                    color: $themeColor;
+                    &:before {
+                        top: 1px;
+                        position: relative;
+                    }
+                }
+                .xcd-icon-e-course--minus {
+                    color: #333;
+                    &:before {
+                        top: 1px;
+                        position: relative;
+                    }
+                }
+                .xcd-icon-e-course--right,
+                .xcd-icon-e-course--down {
+                    left: 21px;
+                    top: 18px;
+                    font-size: 12px;
+                    color: #666666;
+                }
+            }
+        }
+    }
+}

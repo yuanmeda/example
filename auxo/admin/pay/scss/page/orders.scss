@@ -1,0 +1,36 @@
+.orders{
+  background:#fff;
+
+  .users-list{
+    i{
+      cursor:pointer;
+    }
+  }
+
+  .income-stat{
+    padding:20px 0;
+    span{
+      color: #848484;
+      font-size:13px;
+      margin-right:10px;
+    }
+  }
+
+  .empty{
+    font-size:22px;
+    color:#848484;
+    text-align:center;
+    padding:100px 0;
+  }
+}
+
+.x-users-chooses{
+  $width: 1000px;
+  $height: 750px;
+  width: $width;
+  height: $height;
+  left:50%!important;
+  margin-left: - $width / 2!important;
+  margin-top: - $height / 2!important;
+  display: block;
+}

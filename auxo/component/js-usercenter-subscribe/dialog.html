@@ -1,0 +1,26 @@
+<div class="model-dialog">
+    <div class="modal-mark"></div>
+    <div class="modal" style="display: block;">
+        <div class="modal-hd">
+            <p class="modal-tt">提示</p>
+            <a href="javascript:;" class="btn-close" data-bind="click: closeDialog">×</a>
+        </div>
+        <div class="modal-bd">
+            <p class="subscription-tit">
+                <i class="iconfont" data-bind="css: model.type == 'notice' ? 'icon-fail' : 'icon-succeed'"></i>
+                <!--ko text: model.title--><!--/ko-->
+            </p>
+            <!--ko if: model.content-->
+            <p class="tit" data-bind="template: {nodes: ko.utils.parseHtmlFragment(model.content)}"></p>
+            <!--/ko-->
+        </div>
+        <div class="modal-ft">
+            <!--ko if: model.showCancel-->
+            <a href="javascript:;" class="modal-primary btn-cancle" data-bind="click: closeDialog">取消</a>
+            <!--/ko-->
+            <!--ko if: model.showConfirm-->
+            <a href="javascript:;" class="modal-primary btn-confirm" data-bind="click: confirm">确定</a>
+            <!--/ko-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/*
+ * 常用mixins类
+ */
+/* 超出省略 */
+/* 禁用样式 */
+/* 垂直据中 */
+/* 水平居中 */
+/* 浮动 */
+/* 清除浮动 */
+/* 绝对定位：默认居中 */
+/* 透明度 */
+@font-face {
+  font-family: 'opencoursecard';
+  src: url("../../../css/fonts/opencoursecard.eot?hg1y5j");
+  src: url("../../../css/fonts/opencoursecard.eot?hg1y5j#iefix") format("embedded-opentype"), url("../../../css/fonts/opencoursecard.ttf?hg1y5j") format("truetype"), url("../../../css/fonts/opencoursecard.woff?hg1y5j") format("woff"), url("../../../css/fonts/opencoursecard.svg?hg1y5j#opencoursecard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="oc-icon-"], [class*=" oc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'opencoursecard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.oc-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.offline-study-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .offline-study-item .fr {
+    float: right; }
+  .offline-study-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .offline-study-item i {
+    font-style: normal; }
+  .offline-study-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #ce3f3f;
+    height: 24px;
+    line-height: 24px; }
+  .offline-study-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .offline-study-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .offline-study-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .offline-study-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .offline-study-item .item-info .item-name {
+      font-size: 18px;
+      cursor: pointer; }
+      .offline-study-item .item-info .item-name .title {
+        font-size: 14px;
+        color: #000 !important;
+        cursor: pointer; }
+      .offline-study-item .item-info .item-name .content {
+        font-size: 12px;
+        color: #000 !important;
+        cursor: pointer; }
+    .offline-study-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: -19px;
+      line-height: 30px;
+      height: 30px; }
+      .offline-study-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .offline-study-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #ce3f3f;
+        cursor: pointer; }
+      .offline-study-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .offline-study-item .item-info .v-line:not(:last-child) > em {
+      font-style: normal;
+      color: #999; }
+      .offline-study-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .offline-study-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .offline-study-item .item-info,
+  .offline-study-item .item-img {
+    position: relative; }
+  .offline-study-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .offline-study-item:hover .item-name {
+    color: #ce3f3f; }
+  .offline-study-item:hover a.bc-btn {
+    display: inline-block; }
+  .offline-study-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .offline-study-item .status-icon:after {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg);
+      content: attr(data-flag); }
+    .offline-study-item .status-icon.passed {
+      color: #38adff; }
+    .offline-study-item .status-icon.failed {
+      color: #ff7c7c; }
+    .offline-study-item .status-icon.ended {
+      color: #a0a0a0; }
+    .offline-study-item .status-icon.finished {
+      color: #38adff; }
+  .offline-study-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .offline-study-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #ce3f3f;
+      transition: all .3s; }

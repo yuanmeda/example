@@ -1,0 +1,173 @@
+@charset "UTF-8";
+.pagination-box {
+  margin-bottom: 30px; }
+
+.pagination-box .pagination {
+  text-align: center;
+  position: inherit; }
+
+.pagination-box .pagination:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.pagination-box .pagination span,
+.pagination-box .pagination a {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  border-radius: 2px;
+  padding: 0 18px;
+  height: 37px;
+  line-height: 37px;
+  background: #ddd; }
+
+.pagination-box .pagination a:hover,
+.pagination-box .pagination span {
+  background: #38adff;
+  color: #fff; }
+
+.pagination-box .pagination .prev {
+  width: 80px;
+  margin: 0 10px 0 0; }
+
+.pagination-box .pagination .next {
+  width: 80px;
+  margin: 0 0 0 10px; }
+
+.pagination-box .pagination span.current {
+  border-color: #38adff;
+  background: #38adff;
+  color: #fff; }
+
+.pagination-box .pagination span.prev,
+.pagination-box .pagination span.next {
+  background: #fff;
+  color: #c8c8c8; }
+
+.pagination-box .page-input {
+  display: inline-block;
+  margin: 0 0 0 40px;
+  color: #808080;
+  font-size: 14px;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  float: right; }
+
+.pagination-box .page-input input {
+  width: 46px;
+  height: 21px;
+  line-height: 21px;
+  margin: 0 5px;
+  padding: 7px 5px;
+  border: 1px solid #d8d8d8;
+  outline: 0;
+  vertical-align: middle;
+  border-radius: 3px; }
+
+.pagination-box .page-input input:focus {
+  border-color: #38adff; }
+
+.pagination-box .page-input input.select-page-btn {
+  width: 58px;
+  height: 36px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  color: #808080; }
+
+.pagination-box .page-input input.select-page-btn:active {
+  border-color: #d8d8d8;
+  outline-color: #d8d8d8; }
+
+.pagination-box .page-input input.select-page-btn:hover {
+  color: #fff;
+  cursor: pointer;
+  background: #38adff;
+  border: 1px solid #38adff; }
+
+.pagination-box .pagination-info {
+  margin: 24px 0 0;
+  font-size: 14px; }
+
+.pagination-box .pull-left {
+  float: left; }
+
+.pagination-box .pull-right {
+  float: right; }
+
+/*!
+ * 无数据通用样式
+ */
+.nodata {
+  font-size: 20px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center; }
+
+body {
+  background-color: #f2f2f2; }
+
+.container {
+  padding: 0 0 28px 0; }
+
+#faqList {
+  background-color: #f2f2f2;
+  padding: 30px;
+  min-height: 540px; }
+  #faqList .container {
+    background-color: #fff;
+    min-height: 540px;
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%; }
+    #faqList .container .title {
+      margin: 0 31px;
+      border-bottom: 1px dotted #e0e0e0;
+      text-align: center;
+      padding: 15px;
+      font-size: 22px; }
+    #faqList .container .faqContentList {
+      margin: 20px 28px 0;
+      border: 1px solid #dedede;
+      min-height: 176px;
+      padding: 2px 10px; }
+      #faqList .container .faqContentList .border_bottom {
+        border-bottom: 1px dotted #e0e0e0; }
+      #faqList .container .faqContentList .faqList {
+        min-height: 88px;
+        position: relative;
+        overflow: hidden; }
+        #faqList .container .faqContentList .faqList .faq-icon {
+          position: absolute;
+          display: inline-block;
+          padding-top: 20px;
+          font-size: 30px;
+          color: #38adff;
+          margin: 0 12px; }
+        #faqList .container .faqContentList .faqList .content {
+          display: inline-block;
+          margin: 30px 30px 30px 70px;
+          font-size: 14px;
+          position: relative; }
+          #faqList .container .faqContentList .faqList .content ol {
+            margin: 0 1em;
+            list-style-type: decimal; }
+          #faqList .container .faqContentList .faqList .content ul {
+            margin: 0 1em;
+            list-style-type: disc; }
+          #faqList .container .faqContentList .faqList .content img {
+            display: block;
+            max-width: 1000px; }
+          #faqList .container .faqContentList .faqList .content strong {
+            font-weight: bold; }
+            #faqList .container .faqContentList .faqList .content strong em {
+              font-weight: bold; }
+          #faqList .container .faqContentList .faqList .content em {
+            font-style: italic; }
+            #faqList .container .faqContentList .faqList .content em strong {
+              font-style: italic; }
+  #faqList .page-container {
+    width: 1200px;
+    margin: 30px auto; }

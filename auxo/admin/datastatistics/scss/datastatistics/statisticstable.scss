@@ -1,0 +1,136 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+@import "../utils/pagination";
+@import "../utils/utils";
+$widthLeft: 260px;
+$tipSize: 26px;
+#container_js {
+    display: none;
+}
+body{
+    padding-top:20px;
+}
+.statistics-content {
+    position: relative;
+
+    // margin-top: 20px;
+
+    @include clearfix;
+    .toggle-tip {
+        position: absolute;
+        top: 3px;
+        left: $widthLeft+20px;
+
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        width: $tipSize;
+        height: $tipSize;
+
+        font-size: 12px;
+        line-height: $tipSize;
+        text-align: center;
+
+        color: #337ab7;
+        color: #fff;
+        background: lighten(#337ab7,8%);
+
+        cursor: pointer;
+    }
+    .tree-container {
+        float: left;
+
+        border-right: 1px solid #e9e6e6;
+        padding-right: 5px;
+        width: $widthLeft;
+        .ztree {
+            overflow: auto;
+
+            margin-top: 10px;
+            height: 700px;
+        }
+    }
+    .main-container {
+        margin-left: $widthLeft;
+        padding: 0 20px;
+        padding-left: 40px;
+
+        transition: all .2s linear;
+        .tips {
+            position: relative;
+
+            text-decoration: none;
+
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                .tip-block {
+                    display: block;
+                }
+            }
+            .tip-block {
+                display: none;
+
+                position: absolute;
+                top: 19px;
+                left: -370px;
+
+                border: 1px solid #000;
+                padding: 1em;
+                width: 420px;
+
+                background: #fff;
+            }
+        }
+        .sort-icon {
+            text-decoration: none;
+
+            color: lighten(#337ab7, 20%);
+
+            outline: none;
+            &:hover {
+                text-decoration: none;
+
+                color: #337ab7;
+            }
+        }
+    }
+    .time-box,
+    .label-group,
+    .time-group {
+        @extend %v-middle;
+    }
+    .time-box {
+        .label-group > span {
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 4px 10px;
+
+            cursor: pointer;
+            &:hover {
+                border-color: #337ab7;
+
+                color: #337ab7;
+            }
+            &.active {
+                border-color: darken(#337ab7,5%);
+
+                color: #fff;
+                background: #337ab7;
+            }
+        }
+    }
+    .chart-block{
+        width:900px;
+        height:400px;
+    }
+    .nomargin-left-reverse{
+        margin-left:-20px;
+    }
+}
+.padding_top{
+  padding-top: 10px;
+}
+.padding_left{
+  padding-left: 10px;
+}

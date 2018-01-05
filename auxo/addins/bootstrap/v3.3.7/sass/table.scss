@@ -1,0 +1,22 @@
+.table-less {
+   border: 1px solid #e0e0e0;
+    thead {
+        tr {
+            th {
+                border-width: 1px 0;
+                background-color: #f8f8f8;
+                border-color: #e0e0e0;
+                font-weight: 400;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                padding: 10px;
+                vertical-align: middle;
+                border: 0 none;
+            }
+        }
+    }
+}

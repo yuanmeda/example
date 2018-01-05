@@ -1,0 +1,73 @@
+<div class="x-course-learn-answer reply-item"
+     data-bind="css:{'adopt':model.answer().accepted || model.state.showAcceptIcon()}">
+    <div class="reply-header">
+        <div class="reply-avtor">
+            <img data-bind="attr:{'src':model.answer().display_user.icon+'&defaultImage=1','alt':model.answer().display_user.display_name}">
+        </div>
+        <div class="reply-user">
+            <h4 data-bind="text:display_user.display_name"></h4>
+            <p class="reply-time" data-bind="text:$component.formatTime(model.answer().create_time)"></p>
+        </div>
+    </div>
+    <div class="reply-body" data-bind="text:model.answer().content"></div>
+    <div class="reply-opts opts">
+        <div class="fl">
+            <a href="javascript: void(0);" class="opt" data-bind="click:$component.showAnswerDialog">
+                <i class="xclq-icon-reply"></i>
+                <em data-bind="translate: {'key': 'courseLearnQuestion.totalReply', properties:{'count': model.answer().reply_count }}"></em>
+            </a>
+            <a href="javascript: void(0);" class="opt" data-bind="click: toggleLikeAnswer">
+                <i class="xclq-icon-like"></i>
+                <em data-bind="text: model.answer().like_count"></em>
+            </a>
+            <a href="javascript: void(0);" class="opt" data-bind="click:accept,visible:model.state.showAcceptBtn">
+                <i class="xclq-icon-accept active"></i>
+                <em data-bind="translate:{'key':'courseLearnQuestion.accept'}">采纳答案</em>
+            </a>
+        </div>
+    </div>
+    <div class="qaui-mask" data-bind="visible: model.shouldShowAnswerDialog">
+        <div class="qaui-pop pop__list">
+            <div class="pop__title"><!--ko translate:{'key':'courseLearnQuestion.lookAnswer'}--><!--/ko-->
+                <span class="pop__close qaicon-close2 qaiconfont" data-bind="click:$component.hideAnswerDialog"></span>
+            </div>
+            <div class="pop__body">
+                <div class="qaui-txta">
+                    <textarea class="txta" style="height: 200px" rows="" cols=""  placeholder="写下你的回复..." data-bind="textInput: model.replayContent"></textarea>
+                    <div class="txta__oper">
+                        <a href="###" class="qaui-btn qaui-btn-main" data-bind="click:$component.handleClickAnswer"><!--ko translate:{'key':'courseLearnQuestion.answer'}--><!--/ko--></a>
+                    </div>
+                </div>
+                <div class="pop__total">
+                    <div class="qaui-oper">
+                        <span class="qaiconfont qaicon-answer"></span>
+                        <span class="oper__text">
+                            <em class="num"><!-- ko translate: { key: 'courseLearnQuestion.totalReply', properties: { 'count': model.answer().reply_count } } --><!-- /ko --></em>
+                        </span>
+                    </div>
+                </div>
+                <div class="qacom-list list__answer">
+                    <ul class="list__col"  style="overflow-y: auto" data-bind="foreach:model.replays">
+                        <li class="list__item">
+                            <div class="list__photo">
+                                <img data-bind="attr:{'src': reply_user_info.icon+'&defaultImage=1','alt': reply_user_info.display_name }">
+                            </div>
+                            <div class="list__wrap">
+                                <p class="list__name">
+
+                                    <span class="name" data-bind="text:reply_user_info.display_name"></span>
+                                    <span class="sep"><!--ko translate:{'key':'courseLearnQuestion.answer'}--><!--/ko--></span>
+                                    <span class="name" data-bind="text:reply_to_user_info.display_name"></span></p>
+                                <p class="list__sub" data-bind="text: create_time.split('.')[0].replace('T', ' ')"></p>
+                                <div class="list__con show--more">
+                                    <p class="text" data-bind="text:content"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--<a href="###" class="qaui-load">点击加载更多回答</a>-->
+            </div>
+        </div>
+    </div>
+</div>

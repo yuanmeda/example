@@ -1,0 +1,123 @@
+.banner-header {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 0 10px 5px;
+  box-shadow: 4px 0 0 #fff,-4px 0 0 #fff,0 2px 5px #ddd;
+  *zoom: 1; }
+  .banner-header:before, .banner-header:after {
+    content: "";
+    display: table; }
+  .banner-header:after {
+    clear: both;
+    overflow: hidden; }
+  .banner-header:before {
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid #0cadb7;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px; }
+  .banner-header h2 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold; }
+  .banner-header a:hover {
+    text-decoration: none; }
+  .banner-header a.btn,
+  .banner-header button {
+    float: right;
+    margin-right: 5px;
+    vertical-align: bottom; }
+    .banner-header a.btn:hover,
+    .banner-header button:hover {
+      text-decoration: none; }
+
+.banner-header .create_record {
+  float: right;
+  padding: 5px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+.box-content .record {
+  padding: 0 10px 5px 35px;
+  overflow: hidden;
+}
+
+.box-content .record:not(:last-child) {
+  border-bottom: 1px solid rgba(218, 218, 218, 0.5);
+}
+
+
+.box-content .record .record-title {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+}
+
+.box-content .record .record-title:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: -25px;
+  margin-right: 10px;
+  background: #0cadb7;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  line-height: 27px;
+}
+
+.box-content .record .record-time {
+  padding: 5px 0;
+  font-size: 14px;
+}
+.box-content .record-footer {
+  overflow: hidden;
+  font-size: 14px;
+}
+.box-content .record-footer .edit-time {
+  float: left;
+  padding: 5px 0;
+  color: #ccc;
+}
+
+.box-content .record .operate-area{
+  float: right;
+  color: #5bc0de;
+}
+
+.box-content .record .operate-area span {
+  cursor: pointer;
+}
+
+form[class="form-horizontal"] input {
+  padding: 10px 5px;
+  height: 28px;
+  margin: 2px 0;
+}
+/* 隐藏webuploader的input按钮 */
+.webuploader-element-invisible {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);  
+}
+
+table.table thead {
+  background: #ccc;
+}
+
+table.table a {
+  color: #08c;
+}
+
+table.table a:hover {
+  text-decoration: none;
+}
+
+.record-desc {
+    margin-bottom: 5px;
+}
+    

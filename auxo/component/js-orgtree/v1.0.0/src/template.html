@@ -1,0 +1,26 @@
+<div class="x-tree-selector">
+    <!--ko if:model.orgId-->
+    <div class="well form-inline" data-bind="visible:!model.readonly()">
+         <input type="text" class="input-small" placeholder="输入搜索关键字" data-bind="value:model.text">
+         <button type="button" class="btn" data-bind="click:search">搜索</button>
+    </div>
+    <div class="x-tree-selector-list">
+        <ul data-bind="foreach:model.selectedNodes">
+            <!--ko if: $data.title-->
+            <li data-bind="attr:{ title: $data.path }">
+                <!--ko if:!$parent.model.readonly()-->
+                <a class="x-tree-selector-list-close" href="javascript:;" data-bind="click:$parent.removeNode.bind($parent)" >&times;</a>
+                <!--/ko-->
+                <span data-bind="text:$data.title"></span>
+            </li>
+            <!--/ko-->
+        </ul>
+    </div>
+    <div class="x-tree-selector-component" data-bind="visible:!model.readonly()">
+        <ul class="ztree"></ul>
+    </div>
+    <!--/ko-->
+    <!--ko if:!model.orgId-->
+    <p class="x-tree-notfound">请在项目上配置该组织</p>
+    <!--/ko-->
+</div>

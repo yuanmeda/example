@@ -1,0 +1,236 @@
+<div class="section-block modal fade layout-setting ls-window" data-backdrop="static" id="sectionLayoutSetting2">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                    class="sr-only">Close</span></button>
+                <h4 class="modal-title">橱窗推荐</h4>
+            </div>
+            <div class="modal-body">
+                <table class="set-section-title">
+                    <tr>
+                        <td width="1">
+                            <label>
+                                <input type="checkbox" data-bind="checked: model.setting.display.is_title_show">
+                                显示板块标题：
+                            </label>
+                        </td>
+                        <td>
+                            <input type="text" data-bind="textInput: model.setting.data.title"
+                                   class="form-control"
+                                   maxlength=30
+                                   placeholder="请输入板块标题..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="remain"><span data-bind="text:model.title_remain"></span>/30(可编辑)</p>
+                        </td>
+                    </tr>
+                </table>
+                <!--ko if: model.type !== 6 -->
+                <div class="form-group">
+                    <button class="btn btn-primary"
+                            data-bind="click:$component.showAdDialog">编辑橱窗广告位
+                    </button>
+                </div>
+                <!--/ko-->
+
+                <div class="sub-title">WEB端展示方式：</div>
+                <table class="web-dis-type">
+                    <tr>
+                        <td><label>显示行数：</label></td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.web_row_num,optionsText:'text',
+                                    optionsValue:'value',
+                                    value: model.setting.display.web.row_num"></select>
+                        </td>
+                        <td><label>单行资源数：</label></td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.web_col_num,
+                                    optionsText:'text',
+                                    optionsValue:'value',
+                                    value: model.setting.display.web.column_num"></select>
+                        </td>
+                        <!--ko if:model.type === 6-->
+                        <td><label>翻页数量：</label></td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.web_show_num,optionsText:'text',
+                                    optionsValue:'value',
+                                    value: model.setting.display.web.show_num"></select>
+                        </td>
+                        <!--/ko-->
+                    </tr>
+                </table>
+
+                <div class="sub-title">手机端展示方式：</div>
+                <div class="mb-dis-type">
+                    <div class="col slide pull-left">
+                        <table>
+                            <tr>
+                                <td width="1">
+                                    <label>
+                                        <input type="radio"
+                                               id="mbDisplaySlide"
+                                               name="display_type"
+                                               value="1"
+                                               data-bind="checkedValue:1,
+                                       checked: model.setting.display.mobile.display_type">
+                                        左右滑动
+                                    </label>
+                                </td>
+                                <td>
+                                    <label for="mbDisplaySlide"><img data-bind="attr:{src:model.cmp_url+'/images/slides.jpg'}"/></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>显示数量： </td>
+                                <td>
+                                    <select class="form-control select-inline"
+                                            data-bind="options:model.m_display_num,
+                                        optionsText:'text',
+                                        optionsValue:'value',
+                                        value: model.setting.display.mobile.display_num"></select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col matt pull-right">
+                        <table>
+                            <tr>
+                                <td width="1">
+                                    <label>
+                                        <input type="radio"
+                                               id="mbDisplayMatt"
+                                               name="display_type"
+                                               value="2"
+                                               data-bind="checkedValue:2,
+                                              checked: model.setting.display.mobile.display_type">
+                                        田字格
+                                    </label>
+                                </td>
+                                <td>
+                                    <label for="mbDisplayMatt"><img data-bind="attr:{src:model.cmp_url+'/images/matts.jpg'}"/></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>显示行数：</td>
+                                <td>
+                                    <select class="form-control select-inline"
+                                            data-bind="options:model.web_row_num,
+                                        optionsText:'text',
+                                        optionsValue:'value',
+                                        value: model.setting.display.mobile.row_num"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>单行资源数：</td>
+                                <td>
+                                    <select class="form-control select-inline"
+                                            data-bind="options:model.m_col_num,
+                                        optionsText:'text',
+                                        optionsValue:'value',
+                                        value: model.setting.display.mobile.column_num"></select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" data-bind="visible: model.type == 6" style="display:none;"><label
+                        class="control-label ">翻页数量：</label><select
+                        class="form-control select-inline"
+                        data-bind="options: model.web_show_num,optionsText:'text',optionsValue:'value', value: model.setting.display.mobile.show_num"></select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click:save">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--ko if: model.adUploadDialog -->
+<div data-bind="attr:{id: 'window-modal-'+$component.model.id}" class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">×</span></button>
+                <h4 class="modal-title">编辑橱窗广告位</h4>
+            </div>
+            <div class="modal-body" style="max-height: 500px;overflow-y:auto;overflow-x:hidden;">
+                <form class="form-horizontal" onsubmit="return false;">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">广告开关：</label>
+                        <div class="col-sm-3">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" data-bind="checked:model.advertisement.web.ad_enable">WEB端
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" disabled
+                                           data-bind="checked:model.advertisement.mobile.ad_enable">移动端
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ko if: model.advertisement.web.ad_enable-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">WEB URL：</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="webUrl" class="form-control" maxlength="1000"
+                                   data-bind="value:model.advertisement.web.ad_url" placeholder="请输入WEB URL"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">WEB图片：</label>
+                        <div class="col-sm-10 pic-area">
+                            <p class="text-warning">仅支持JPG、PNG、GIF格式，且大小 2M 以下图片</p>
+                            <div data-bind="component:{'name': 'x-channel-upload', params:model.uploadParams.web}">
+                                {% include "../shared/_partialUpload.html" %}
+                            </div>
+                            <p class="text-warning">WEB尺寸：<!--ko text: model.sizeHint--><!--/ko-->（广告图片会占据一列）</p>
+                        </div>
+                    </div>
+                    <!--/ko-->
+                    <!--ko if: model.advertisement.mobile.ad_enable-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">APP URL：</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="AppUrl" class="form-control" maxlength="1000"
+                                   data-bind="value:model.advertisement.mobile.ad_url" placeholder="请输入APP URL"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">APP图片：</label>
+                        <div class="col-sm-10 pic-area">
+                            <p class="text-warning">仅支持JPG、PNG、GIF格式，且大小 2M 以下图片</p>
+                            <div data-bind="component:{'name': 'x-channel-upload', params: model.uploadParams.mobile}">
+                                {% include "../shared/_partialUpload.html" %}
+                            </div>
+                            <p class="text-warning">手机尺寸：<!--ko text: model.sizeHint--><!--/ko-->（广告图片会占据一列）</p>
+                        </div>
+                    </div>
+                    <!--/ko-->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a class="btn-primary btn" href="javascript:;"
+                   data-bind="click: $component.saveAd.bind($component)">保存</a>
+                <a class="btn btn-default" data-dismiss="modal">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ko-->

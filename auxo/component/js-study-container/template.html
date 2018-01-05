@@ -1,0 +1,5 @@
+<div class="study-list clearfix" data-bind="foreach:items">
+	<!--ko if: $data.unit_info-->
+	<div data-bind="component:{name:$parent._getComponent(unit_type),params:{model:$data,bxkType:$parent.bxkType, host:$parent._getHost(unit_type),openType:$parent.openType}}"></div>
+	<!--/ko-->
+</div>

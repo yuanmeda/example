@@ -1,0 +1,64 @@
+.modal .mask-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal .mask-panel .input-block {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #dbdbdb;
+  padding: 20px 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px #dbdbdb;
+}
+
+.modal .mask-panel .input-block .remark {
+  margin: 0 auto 10px;
+  width: 90%;
+}
+
+.modal .mask-panel .input-block .remark textarea {
+  padding: 5px 8px;
+  width: 100%;
+  resize: none;
+}
+
+.modal .mask-panel .input-block .remark .small {
+  font-size: 90%;
+  color: #333;
+}
+
+.modal .mask-panel .input-block .btns {
+  margin: 0 auto;
+  width: 90%;
+  text-align: right;
+}
+
+.modal .remark .text-help {
+  display: block;
+  text-align: right;
+}
+
+.text-help {
+  display: inline-block;
+  vertical-align: top;
+  color: #999;
+}
+
+.text-help em {
+  margin: 0 2px;
+  font-size: 1.2em;
+  font-style: oblique;
+  color: #0cadb7;
+}
+
+.modal-value {
+  word-wrap: break-word;
+  white-space: normal;
+  word-break: break-all;
+}

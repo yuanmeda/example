@@ -1,0 +1,10 @@
+.ui-placeholder-container{
+  position: relative;
+  .ipt-placeholder{
+    position: absolute;
+    top:50%;
+    margin-top:-0.5em;
+    left:5px;
+    line-height: 1em;
+  }
+}

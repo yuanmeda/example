@@ -1,0 +1,374 @@
+@charset "UTF-8";
+/*
+ * 常用mixins类
+ */
+/* 超出省略 */
+/* 禁用样式 */
+/* 垂直据中 */
+/* 水平居中 */
+/* 浮动 */
+/* 清除浮动 */
+/* 绝对定位：默认居中 */
+/* 透明度 */
+@font-face {
+  font-family: "iconfont";
+  src: url("../../../fonts/iconfont.eot?t=1497258396299");
+  /* IE9*/
+  src: url("../../../fonts/iconfont.eot?t=1497258396299#iefix") format("embedded-opentype"), url("../../../fonts/iconfont.woff?t=1497258396299") format("woff"), url("../../../fonts/iconfont.ttf?t=1497258396299") format("truetype"), url("../../../fonts/iconfont.svg?t=1497258396299#iconfont") format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.ms-icon-subscribe:before {
+  content: "\e603"; }
+
+.icon-succeed:before {
+  content: "\e604"; }
+
+.icon-fail:before {
+  content: "\e606"; }
+
+.header {
+  position: relative;
+  height: 66px;
+  border-bottom: 1px solid #ddd;
+  background: #fff; }
+
+/*订阅标签*/
+.list-filter {
+  color: #666;
+  margin: 35px 0 28px; }
+  .list-filter .filter-lf {
+    float: left;
+    font-size: 0; }
+    .list-filter .filter-lf .filter-btn {
+      width: 98px;
+      height: 24px;
+      text-align: center;
+      color: #666;
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      border: 1px solid #eee;
+      font-size: 14px;
+      line-height: 24px;
+      background-color: #fff;
+      margin-left: -1px; }
+  .list-filter .subscription-label {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin-left: 20px;
+    padding: 0 13px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background: #38adff;
+    border-radius: 5px; }
+    .list-filter .subscription-label span {
+      display: inline-block;
+      *display: inline;
+      vertical-align: text-bottom;
+      margin-right: 5px;
+      font-size: 20px;
+      line-height: 1; }
+    .list-filter .subscription-label:before {
+      position: absolute;
+      content: '';
+      top: -5px;
+      left: 50%;
+      margin-left: -6px;
+      width: 12px;
+      height: 5px;
+      background: url(../../../images/sprite.png) -19px -35px no-repeat; }
+    .list-filter .subscription-label:hover {
+      background: #0f9cff; }
+      .list-filter .subscription-label:hover:before {
+        background-position: -34px -35px; }
+
+/*提示弹窗*/
+.modal-mark {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  z-index: 101; }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -185px 0 0 -235px;
+  width: 470px;
+  background: #fff;
+  z-index: 102; }
+  .modal .btn-close {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    font-size: 24px;
+    color: #b7b7b7; }
+    .modal .btn-close:hover {
+      color: #38adff; }
+  .modal .modal-hd {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e0e0e0; }
+    .modal .modal-hd .modal-tt {
+      font-size: 16px;
+      color: #666;
+      padding-left: 30px; }
+  .modal .modal-bd {
+    padding: 40px 35px;
+    background: #f9f9f9;
+    text-align: center;
+    min-height: 50px; }
+    .modal .modal-bd .tit {
+      margin: 15px 0;
+      font-size: 14px;
+      color: #666;
+      text-align: left; }
+      .modal .modal-bd .tit span {
+        color: #38adff; }
+    .modal .modal-bd .note {
+      font-size: 14px;
+      color: #999;
+      text-align: left; }
+    .modal .modal-bd .login-tit {
+      font-size: 18px;
+      line-height: 50px; }
+    .modal .modal-bd .subscription-tit {
+      font-size: 22px;
+      color: #333; }
+    .modal .modal-bd .icon-succeed, .modal .modal-bd .icon-fail {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      margin-right: 20px;
+      font-size: 40px;
+      color: #38adff; }
+  .modal .modal-ft {
+    height: 75px;
+    line-height: 75px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center; }
+
+.modal-primary {
+  display: inline-block;
+  min-width: 140px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin: 0 8px;
+  border: 1px solid #38adff;
+  border-radius: 5px; }
+  .modal-primary.btn-cancle {
+    color: #38adff;
+    background: #fff; }
+    .modal-primary.btn-cancle:hover {
+      background: #38adff;
+      color: #fff; }
+  .modal-primary.btn-confirm {
+    background: #38adff; }
+    .modal-primary.btn-confirm:hover {
+      background: #38adff; }
+
+.user-center {
+  border: 1px solid #e0e0e0;
+  width: 1028px;
+  min-height: 885px;
+  background: #fff; }
+  .user-center .user-top {
+    padding-left: 45px;
+    height: 58px;
+    line-height: 58px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #666; }
+    .user-center .user-top span {
+      color: #38adff; }
+  .user-center .training-box {
+    padding: 0 50px; }
+  .user-center .training-list {
+    padding: 20px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    margin-bottom: -1px; }
+  .user-center .trining-certification {
+    position: relative;
+    z-index: 15;
+    *zoom: 1; }
+    .user-center .trining-certification i {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      width: 5px;
+      height: 5px;
+      background: #38adff;
+      border-radius: 50px; }
+    .user-center .trining-certification .title {
+      margin: 0 5px;
+      font-size: 14px;
+      color: #333; }
+    .user-center .trining-certification a {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      padding: 0 10px;
+      background: #f2f2f2;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #38adff; }
+      .user-center .trining-certification a:hover {
+        background: #e6e5e5; }
+    .user-center .trining-certification .line {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      width: 10px;
+      height: 1px;
+      background: #38adff; }
+    .user-center .trining-certification .number {
+      margin: 0 5px;
+      font-size: 14px;
+      color: #999; }
+      .user-center .trining-certification .number em {
+        font-style: normal;
+        color: #38adff; }
+  .user-center .unsubscribe {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: url(../../../images/sprite.png) -105px 0 no-repeat;
+    cursor: pointer;
+    z-index: 15;
+    *zoom: 1; }
+    .user-center .unsubscribe .btn-cancle {
+      position: absolute;
+      right: 0;
+      top: 25px;
+      width: 108px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid #dddddd;
+      border-radius: 3px;
+      background: #fff;
+      font-size: 14px;
+      color: #38adff; }
+  .user-center .course-list {
+    position: relative;
+    z-index: 10;
+    *zoom: 1;
+    margin-left: -50px; }
+    .user-center .course-list li {
+      position: relative;
+      float: left;
+      background-color: #fff;
+      transition: all .2s linear;
+      overflow: hidden;
+      width: 270px;
+      margin: 20px 0 0 52px; }
+      .user-center .course-list li:hover {
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+        box-shadow: #ddd 0 15px 30px 0; }
+        .user-center .course-list li:hover img {
+          -webkit-transform: scale(1.2) translate3d(-1px, 0, 0);
+          transform: scale(1.2) translate3d(-1px, 0, 0); }
+        .user-center .course-list li:hover .cell-info-title {
+          color: #38adff; }
+    .user-center .course-list .cell-img {
+      position: relative;
+      height: 180px;
+      overflow: hidden; }
+      .user-center .course-list .cell-img img {
+        width: 100%;
+        height: 100%;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        transition: all .3s; }
+    .user-center .course-list .cell-badge-type {
+      position: absolute;
+      padding: 2px 10px;
+      left: 0;
+      top: 0;
+      font-size: 12px;
+      color: #fff;
+      background-color: #38adff;
+      opacity: .9;
+      filter: alpha(opacity=90);
+      z-index: 11; }
+    .user-center .course-list .cell-info {
+      padding: 15px;
+      font-size: 12px;
+      line-height: 1;
+      border: 1px solid #e0e0e0;
+      border-top: none; }
+    .user-center .course-list .cell-info-title {
+      width: 100%;
+      height: 19px;
+      font-size: 17px;
+      color: #333;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+    .user-center .course-list .cell-info-other {
+      margin-top: 25px;
+      color: #999;
+      font-size: 14px;
+      height: 14px; }
+      .user-center .course-list .cell-info-other .strong {
+        color: #38adff; }
+      .user-center .course-list .cell-info-other em {
+        height: 10px;
+        width: 1px;
+        background: #ccc;
+        display: inline-block;
+        *display: inline;
+        vertical-align: middle;
+        margin: 0 1%; }
+    .user-center .course-list .end-time {
+      margin-top: 20px;
+      color: #999;
+      font-size: 14px; }
+  .user-center .check-more {
+    padding-top: 20px; }
+    .user-center .check-more a {
+      font-size: 12px;
+      color: #666; }
+    .user-center .check-more a:hover {
+      color: #38adff; }
+
+/*没有订阅*/
+.subscription-none {
+  margin-top: 240px;
+  text-align: center; }
+  .subscription-none i {
+    display: block;
+    margin: 0 auto;
+    width: 146px;
+    height: 146px;
+    background: url(../../../images/sprite.png) 0 -45px no-repeat; }
+  .subscription-none p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #666; }

@@ -1,0 +1,11 @@
+// layer样式重置
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: darken($themeColor,5%) !important;
+
+    background-color: $themeColor !important;
+    &:hover {
+        border-color: darken($themeColor,8%) !important;
+
+        background: darken($themeColor,5%) !important;
+    }
+}

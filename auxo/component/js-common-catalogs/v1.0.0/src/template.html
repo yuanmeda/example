@@ -1,0 +1,45 @@
+<div class="x-common-catalogs">
+  <!--ko if:channels().length > 0-->
+  <div class="list-row channels">
+    <span class="lead-title">频道</span>
+    <ul class="column-list">
+      <li class="tag-label" data-bind="
+        css:{on:$component.curr_channel() === null},
+        click:$component.select_all_channel
+      ">全部</li>
+      <!--ko foreach:channels-->
+      <li class="tag-label" data-bind="
+        css:{on:$component.curr_channel() && $component.curr_channel().id === id},
+        text:title,
+        click:$component.select_channel.bind($component, $data)
+     "></li>
+      <!--/ko-->
+    </ul>
+  </div>
+  <!--/ko-->
+
+
+  <!--ko foreach:{data:tags_tree, as:'parent'}-->
+  <div class="list-row x-catalogs">
+    <span class="lead-title" data-bind="text:parent.title"></span>
+    <ul class="column-list">
+      <li class="tag-label" data-bind="
+        css:{on:!$component.tag_rows()[parent.id]},
+        click:$component.select_curr_all.bind($component, parent)
+      ">全部</li>
+      <!--ko foreach:{data:children, as:'child'}-->
+      <li class="tag-label" data-bind="
+        css:{on:$component.tag_rows()[parent.id] === child.id},
+        click:$component.select_tag.bind($component, parent, child),
+        text:title
+      "></li>
+      <!--/ko-->
+    </ul>
+  </div>
+  <!--/ko-->
+
+
+  <!--ko if:curr_channel() !== null && tags_tree().length === 0-->
+  <div class="tag-empty">此频道下没有标签</div>
+  <!--/ko-->
+</div>

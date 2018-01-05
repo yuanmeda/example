@@ -1,0 +1,53 @@
+.box {
+    padding: 10px 20px;
+}
+
+.tip {
+    position: relative;
+}
+
+.tip > div {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 20px;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 5px #000;
+    padding: 10px;
+}
+
+a.tip:hover div {
+    display: block;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.tree {
+    float: left;
+    width:260px;
+}
+.ztree{
+    overflow: auto;
+    height: 700px;
+}
+
+.content {
+    margin-left: 280px;
+}
+
+.sort {
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.no-data {
+    background-color: #f5f5f5;
+    padding: 50px;
+    font-size: 36px;
+    color: #cac9c9;
+}
+
+

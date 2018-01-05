@@ -1,0 +1,75 @@
+@import "_mixins";
+@import "_button";
+@import "_banner_header";
+@import "nlabel";
+@import "_tablelist";
+@import "_titbar";
+@import "toolbar";
+@import "_nodata";
+@import "_pagination";
+@import "_examtab";
+.layui-layer-dialog.layer-confirm{
+	.layui-layer-content{
+		padding:10px 0;
+	}
+	.layui-layer-btn{
+		text-align: center;
+	}
+}
+.tit-search{
+	.user-status{
+		width: 100px !important;
+		padding:0 0 0 10px
+	}
+}
+.search-tit{
+	input.sc{
+		width: 150px;
+		height: 30px;
+		line-height: 30px;
+		border-radius:2px;
+	    border: 1px solid #d2d2d2;
+	    padding-left:6px;
+	    padding-right:6px;
+	}
+	input.sm{
+		width: 80px;
+		height: 30px;
+		line-height: 30px;
+		border-radius:2px;
+	    border: 1px solid #d2d2d2;
+	    padding-left:6px;
+	    padding-right:6px;
+	}
+	select.sm{
+		width: 80px;
+		height: 30px;
+		line-height: 30px;
+		border-radius:2px;
+	    border: 1px solid #d2d2d2;
+	    padding-left:6px;
+	    padding-right:6px;
+	}
+}
+
+
+
+
+.item-check {
+  background: #c3c3c3;
+  z-index: 20;
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  display: inline-block;
+  border-radius: 3px; }
+  .item-check.icon-radio {
+    border-radius: 50%; }
+  .item-check i {
+    color: #fff; }
+  .item-check.on, .item-check:hover {
+    background: #0cadb7; }
+
+.on .item-check {
+  display: inline-block;
+  background: #0cadb7; }

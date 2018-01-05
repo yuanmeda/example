@@ -1,0 +1,24 @@
+@import "list_base";
+@import "animation";
+@import "_banner_header";
+.main-wrap{
+  min-height: auto!important;
+}
+.train-main {
+  font-size: 14px;
+  background-color: #ebebeb;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  .bc_f{
+    background: #fff;
+  }
+}
+.item-list .item .item-check-left.right{
+  right: 2px;
+  left: inherit;
+}

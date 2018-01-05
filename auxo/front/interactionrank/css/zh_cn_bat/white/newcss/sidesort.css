@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.x-week-rank .ellipsis,.x-week-rank .side-pro .name{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.x-week-rank .sidebox{background:#fff}
+.x-week-rank .side-tit{position:relative;font-size:16px;font-weight:700;padding:18px 20px;border-bottom:1px solid #e5e5e5}
+.x-week-rank .side-tit i{display:inline-block;margin-left:10px;font-size:12px;font-weight:400;color:#666}
+.x-week-rank .side-tit .more{position:absolute;right:20px;bottom:18px;font-size:12px;font-weight:400;color:#666}
+.x-week-rank .side-content{padding:0 20px}
+.x-week-rank .side-content .side-nodata{font-size:16px;line-height:100px;text-align:center;color:#999}
+.x-week-rank .side-content .side-item,.x-week-rank .side-content a{display:block;border-bottom:1px dashed #e5e5e5;padding:20px 0}
+.x-week-rank .side-content .side-item:last-child{border-bottom:none}
+.x-week-rank .side-content a:last-child{border-bottom:0}
+.x-week-rank .side-pro .s-img{float:left}
+.x-week-rank .side-pro .info{width:165px;float:right}
+.x-week-rank .side-pro .name{display:block;font-size:16px}
+.x-week-rank .side-pro .dt{display:block;font-size:12px;color:#999;margin-top:12px}
+.x-week-rank .side-pro .dt i{color:#38adff}
+.x-week-rank .seven-sort li i{font-size:18px;display:inline-block;color:#666;width:30px;text-align:left;font-style:italic}
+.x-week-rank .seven-sort li{line-height:50px}
+.x-week-rank .seven-sort li i:nth-child(-n+3){color:#f60}
+.x-week-rank .seven-sort li .name{display:inline-block;margin-left:10px;width:84px}
+.x-week-rank .seven-sort li em,.x-week-rank .seven-sort li i,.x-week-rank .seven-sort li img,.x-week-rank .seven-sort li span{vertical-align:middle}
+.x-week-rank .seven-sort li em b{width:58px;overflow:hidden;font-weight:400;vertical-align:middle}
+.x-week-rank .sort-tab-t em{height:8px;width:1px;background:#ccc;display:inline-block;margin:0 10px}
+.x-week-rank .sort-tab-t a.on{color:#38adff}
+.x-week-rank .sort-tab-t{position:absolute;right:20px;top:20px}
+.x-week-rank .seven-sort li em{display:inline-block;float:right;color:#38adff}
+.x-week-rank .m-u-pic{width:40px;height:40px;border-radius:50%}
+.x-week-rank .fc9{color:#999!important}
+.x-week-rank .fs12{font-size:12px!important}
+.x-week-rank .tc{text-align:center}

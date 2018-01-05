@@ -1,0 +1,171 @@
+
+// 外层容器
+@mixin item-container{
+  overflow:hidden;
+  padding:20px 0;
+  border-bottom:1px dashed #e2e2e2;
+}
+
+// 头像位置
+@mixin profile{
+  float:left;
+  width:50px;
+  height:50px;
+  margin-right:19px;
+  img{
+    border-radius:100px;
+  }
+}
+
+@mixin desc{
+  $line-height: 20px;
+  color:#333333;
+  font-size:14px;
+  line-height:$line-height;
+  margin-bottom:10px;
+  word-break:break-all;
+  &.fold{
+    height: $line-height*2;
+    overflow:hidden;
+  }
+}
+
+// 数据
+@mixin meta{
+  margin-bottom:18px;
+  span{
+    margin-right:1.5em;
+    font-size:12px;
+    color:#cccccc;
+  }
+}
+
+// 图标-文字 对
+@mixin icon-text-pair{
+  color:#666;
+  font-size:12px;
+  cursor:pointer;
+  i{
+    font-size:14px;
+    color:#999;
+    margin-right:3px;
+    vertical-align:middle;
+  }
+  &:hover, &.on{
+    i{
+      color:$theme-color;
+    }
+  }
+}
+
+
+// 采纳答案
+@mixin do-accept{
+  @include icon-text-pair();
+}
+
+// 点赞
+@mixin praise{
+  @include icon-text-pair();
+}
+
+// 回复（回答）数
+@mixin re-count{
+  color:#999999;
+  font-size:12px;
+  float:left;
+  i{
+    vertical-align:middle;
+    margin-right:5px;
+  }
+  strong{
+    font-weight:normal;
+    color:#333333;
+  }
+
+  &:hover{
+    cursor:pointer;
+    i{
+      color:$theme-color;
+    }
+  }
+  // 无回答时禁用
+  &.disabled{
+    &:hover{
+      cursor:default;
+      i{
+        color:#999;
+      }
+    }
+  }
+}
+
+@mixin gray-arr-up{
+  position: absolute;
+  width:16px;
+  height:8px;
+  top:-8px;
+  left:20px;
+  background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNzgxQjk4NDMwOTUxMUU3OEIyQ0M1MEZCNEY1MjFDMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNzgxQjk4NTMwOTUxMUU3OEIyQ0M1MEZCNEY1MjFDMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU3ODFCOTgyMzA5NTExRTc4QjJDQzUwRkI0RjUyMUMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU3ODFCOTgzMzA5NTExRTc4QjJDQzUwRkI0RjUyMUMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+QLt50gAAAExJREFUeNpi/PHjBwMeUA3EjEDcgksBCwHNyBqxGsKEQ3MNmoZmqBhRBtRANaADrIYwEakZpyFMJGjGaggTiZoxDGEhQzOyIQwAAQYAYc4Q+GkuDk4AAAAASUVORK5CYII=") no-repeat 0 0;
+}
+
+@mixin re-form{
+  padding:20px;
+  .qas-rep-textarea{
+    border:1px solid #dddddd;
+    border-radius:3px;
+    padding:5px;
+    margin-bottom:20px;
+    background:#fff;
+    textarea{
+      border:0 none;
+      padding:0;
+      width:100%;
+      outline:0 none;
+      resize:none;
+    }
+  }
+  .qas-re-act{
+    overflow:hidden;
+    // 字数限制
+    .count-down{
+      float:right;
+      font-size:12px;
+      color:#ccc;
+      margin-right:20px;
+      line-height:30px;
+    }
+    // 图片上传
+    .img-upload{
+      float:left;
+      font-size:14px;
+      color:#999;
+      cursor:pointer;
+      i{
+        margin-right:3px;
+      }
+      &.on,
+      &:hover{
+        color:$theme-color;
+      }
+    }
+    // 回复提交按钮
+    .submit{
+      float:right;
+      width:88px;
+      text-align:center;
+      height:30px;
+      line-height:30px;
+      color:#fff;
+      font-size:14px;
+      background:$theme-color;
+      cursor:pointer;
+      border-radius:2px;
+      &.disabled{
+        background:#eee;
+        color:#000;
+        cursor:default;
+      }
+    }
+  }
+}

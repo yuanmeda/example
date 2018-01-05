@@ -1,0 +1,145 @@
+@import "common";
+@import "button";
+
+.meth-detail {
+  padding: 40px;
+  .name {
+    font-size: 26px;
+    margin-bottom: 80px;
+  }
+  .dt-block {
+    font-size: 18px;
+    margin-bottom: 40px;
+    .dt-tit {
+      font-weight: bold;;
+      width: 130px;
+      text-align: right;
+      margin-right: 25px;
+    }
+    .dt-cont {
+      border-bottom: 1px solid #e5e5e5;
+      width: (1200-155-80)+px;
+      padding-bottom: 40px;
+      color: #555;
+      line-height: 1.75;
+      [class^="bt-"] {
+        font-size: 16px;
+      }
+      .l {
+        width: 840-130+px;
+        float: left;
+        &.spc {
+          width: 670-130+px;
+        }
+      }
+      .r {
+        text-align: right;
+        float: right;
+        a.bt-nobtn, .bt-nobtn {
+          display: inline-block;
+          height: 42px;
+          line-height: 42px;
+          color: #999;
+          text-align: center;
+          min-width: 160px;
+        }
+      }
+      .cont-inner {
+        padding: 35px 0;
+        border-top: 1px dashed #ccc;
+        &:first-child {
+          padding-top: 0;
+          border-top: 0;
+        }
+        &:last-child {
+          padding: 35px 0 0;
+        }
+        &.last {
+          padding-bottom: 0;
+        }
+      }
+      &.ft-time {
+        p {
+          vertical-align: middle;
+          i {
+            color: $themeColor;
+          }
+        }
+        .end-time {
+          font-weight: bold;
+          font-size: 24px;
+          color: #333;
+        }
+      }
+    }
+    .btn-cont {
+      //width: (1200-155-80)+px;
+      width: 100%;
+    }
+    &:last-child {
+      .dt-cont {
+        border-bottom: 0;
+      }
+    }
+    &.last {
+      .dt-cont {
+        border-bottom: 0;
+        &.bor {
+          border-bottom: 1px solid #e5e5e5;
+        }
+      }
+    }
+  }
+  .annex {
+    margin-top: 30px;
+    line-height: 2;
+    a {
+      color: $themeColor;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .intro-block {
+    margin-bottom: 50px;
+    .tit {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .cont {
+      border: 1px dashed #ccc;
+      font-size: 18px;
+      [class^="bt-"] {
+        font-size: 16px;
+      }
+      .spc {
+
+      }
+    }
+    .cont-inner {
+      padding: 25px;
+      border-top: 1px dashed #ccc;
+      &:first-child {
+        border-top: 0;
+      }
+      .l {
+        width: 840px;
+        float: left;
+        &.spc {
+          width: 670px;
+        }
+      }
+      .r {
+        text-align: right;
+        float: right;
+      }
+      .rs {
+        padding-top: 20px;
+        clear: both;
+      }
+    }
+  }
+
+}

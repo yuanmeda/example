@@ -1,0 +1,45 @@
+<!-- ko if:status() != 6 -->
+<div class="x-enroll-status hide">
+    <div class="enroll--info" data-bind="visible:blockShow">
+        <div class="table-layout">
+            <p data-bind="visible:start()||end()">
+                <span data-bind="text:_dateFormat(start)"></span>
+                <!--ko translate:{key:'enroll.to'}--><!--/ko-->
+                <span data-bind="text:_dateFormat(end)"></span>
+            </p>
+            <p data-bind="visible:limit">
+                <span data-bind="translate:{key:'enroll.enrollLimit',properties:{enrolled:enrolled_count,limit:limit}}"></span>
+            </p>
+            <p data-bind="visible:displayAmount">
+                <span data-bind="translate:{'key':'enroll.enrollPay'}"></span>
+                <strong data-bind="text:displayAmount"></strong>
+            </p>
+        </div>
+        <div class="badge"></div>
+    </div>
+    <div class="default-icon" data-bind="visible:!blockShow()">
+        <i class="es-icon-study"></i>
+    </div>
+    <div class="enroll--button">
+        <a href="javascript:;" class="button"
+           data-bind="click:onClick,text:displayText,css:{'button--disabled':isDisabled,'button--theme':!isDisabled()}"></a>
+    </div>
+</div>
+<!--/ko-->
+<!-- ko ifnot:status() != 6 -->
+<div class="pay-wrap" data-bind="component:{
+    name:'x-sales-shopping-card',
+    params:{
+        e_goods_gw_host: hosts.eGoodsGatewayUrl,
+        e_sales_gw_host: hosts.eSalesGatewayUrl,
+        e_cart_srv_host: hosts.eCartServiceUrl,
+        e_cart_gw_host: hosts.eCartGatewayUrl,
+        project_code: projectCode,
+        learning_unit_id: unitId,
+        on_sales_timeout: on_sales_timeout,
+        on_add_to_cart_success: on_add_to_cart_success,
+        on_add_to_cart_fail: on_add_to_cart_fail
+    }
+}">
+</div><!--/ko-->
+<!--/ko-->

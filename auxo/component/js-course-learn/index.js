@@ -1,0 +1,7 @@
+import './src/main'
+import './src/catalog'
+import './src/knowledge'
+import './src/resource'
+import './src/player'
+import './src/question'
+import './src/note'

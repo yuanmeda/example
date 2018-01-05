@@ -1,0 +1,93 @@
+<div class="section-block modal fade layout-setting ls-other" data-backdrop="static" id="sectionLayoutSetting4">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title" data-bind="text:model.modal_title">资源列表</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td width="1">
+                            <label>
+                                <input type="checkbox" data-bind="checked: model.setting.display.is_title_show" />
+                                显示板块标题：
+                            </label>
+                        </td>
+                        <td>
+                            <input type="text"
+                                   class="form-control"
+                                   data-bind="textInput: model.setting.data.title"
+                                   maxlength=30
+                                   placeholder="请输入板块标题..."/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="remain"><span data-bind="text:model.remain_title">5</span>/30(可编辑)</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>单行数量：</label></td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.column_num, optionsText:'text',optionsValue: 'value',value: model.setting.display.column_num">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                <input type="checkbox" data-bind="checked: model.setting.display.is_tag_show" />
+                                标签显示方式：
+                            </label>
+                        </td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.tag_show_type, optionsText:'text',optionsValue: 'value',value: model.setting.display.tag_show_type">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" data-bind="checked: model.setting.display.is_sort_enabled"/>
+                                开启排序功能
+                            </label>
+                        </td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.order_type, optionsText:'text',optionsValue: 'value',value: model.setting.display.order_type">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" data-bind="checked: model.setting.display.is_filter_enabled"/>
+                                开启资源筛选
+                            </label>
+                        </td>
+                        <td>
+                            <select class="form-control select-inline"
+                                    data-bind="options: model.filter_type, optionsText:'text',optionsValue: 'value',value: model.setting.display.filter_type"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" data-bind="checked: model.setting.display.is_show_price_filter">是否显示付费筛选
+                            </label>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click:create">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

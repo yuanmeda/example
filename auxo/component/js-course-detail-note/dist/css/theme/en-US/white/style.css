@@ -1,0 +1,593 @@
+@charset "UTF-8";
+/*
+ * module:  n-mod-note
+ * author:  lj
+ */
+/* variables and mixins */
+/* wordbreak */
+/* 文字超出显示省略号 */
+.n-ui-menu .dlist dt,
+.n-ui-menu .dlist .d-item, .n-ui-menu .list .sub-item, .note-empty-tips {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+/* 垂直居中 */
+/* 清除浮动 */
+/* 垂直居中 */
+/* 设置透明度 0~100 */
+/* hover and active */
+/* 背景图片 */
+/* -------------display------------- */
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.cl {
+  clear: both; }
+
+.tl {
+  text-align: left; }
+
+.tc {
+  text-align: center; }
+
+.tr {
+  text-align: right; }
+
+.underline {
+  text-decoration: underline; }
+
+/* -------------margin------------- */
+.ml10 {
+  margin-left: 10px; }
+
+.mr10 {
+  margin-right: 10px; }
+
+.pdl20 {
+  padding-left: 20px; }
+
+.pdl40 {
+  padding-left: 40px; }
+
+/* -------------color------------- */
+/* other color */
+/* grey color */
+/* main color */
+/* sub color */
+/* -------------radius------------- */
+/* -------------z-index------------- */
+@font-face {
+  font-family: "iconfont-learn";
+  src: url("../../../../../fonts/elearing-note.eot?t=1493203212336");
+  /* IE9*/
+  src: url("../../../../../fonts/elearing-note.eot?t=1493203212336#iefix") format("embedded-opentype"), url("../../../../../fonts/elearing-note.woff?t=1493203212336") format("woff"), url("../../../../../fonts/elearing-note.ttf?t=1493203212336") format("truetype"), url("../../../../../fonts/elearing-note.svg?t=1493203212336#iconfont-learn") format("svg");
+  /* iOS 4.1- */ }
+
+.iconfont-learn {
+  font-family: "iconfont-learn" !important;
+  color: #b7b7b7;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  .iconfont-learn:before {
+    font-size: 20px; }
+
+.n-icon-delete:before {
+  content: "\e600"; }
+
+.n-icon-add:before {
+  content: "\e60f"; }
+
+.n-icon-del:before {
+  content: "\e627"; }
+
+.n-icon-like:before {
+  content: "\e610"; }
+
+.n-icon-report:before {
+  content: "\e6e2"; }
+
+.n-icon-minus:before {
+  content: "\e603"; }
+
+.n-icon-topic:before {
+  content: "\e62d"; }
+
+.n-icon-edit:before {
+  content: "\e66f"; }
+
+.n-icon-pen:before {
+  content: "\e60b"; }
+
+.n-icon-chapter:before {
+  content: "\e70c"; }
+
+.n-icon-star:before {
+  content: "\e60e"; }
+
+.n-icon-down:before {
+  content: "\e809"; }
+
+.n-icon-search:before {
+  content: "\e601"; }
+
+.n-icon-video:before {
+  content: "\e6b8"; }
+
+.n-icon-check:before {
+  content: "\e80a"; }
+
+.n-icon-left:before {
+  content: "\e80b"; }
+
+.n-icon-up:before {
+  content: "\e80c"; }
+
+/* -------------common------------- */
+/* tab侧边顶部（高度较小） */
+.n-ui-tab3 {
+  border-bottom: 1px solid #d2d2d2;
+  padding: 22px 0 0; }
+  .n-ui-tab3 .btn-tab {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    margin: 0 15px;
+    padding: 0 2px;
+    color: #333;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 32px; }
+    .n-ui-tab3 .btn-tab.on, .n-ui-tab3 .btn-tab:hover {
+      text-decoration: none;
+      color: #333;
+      border-bottom: 4px solid #38adff; }
+
+/* n-ui-tab2 */
+.n-ui-tab2 {
+  overflow: hidden;
+  border-bottom: 1px solid #d2d2d2;
+  padding: 0 50px; }
+  .n-ui-tab2 .btn-tab {
+    display: inline-block;
+    position: relative;
+    padding: 0 25px;
+    line-height: 60px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    border-bottom: 2px solid #fff; }
+    .n-ui-tab2 .btn-tab:hover, .n-ui-tab2 .btn-tab.on {
+      text-decoration: none;
+      border-bottom-color: #38adff;
+      color: #38adff; }
+
+/* n-ui-tab */
+.n-ui-tab {
+  overflow: hidden; }
+  .n-ui-tab .btn-tab {
+    display: inline-block;
+    position: relative;
+    padding: 0 35px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #666;
+    text-align: center; }
+    .n-ui-tab .btn-tab:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -10px;
+      width: 1px;
+      height: 21px;
+      background: #f0f0f0; }
+    .n-ui-tab .btn-tab:first-child:before {
+      display: none; }
+    .n-ui-tab .btn-tab:hover {
+      color: #38adff; }
+  .n-ui-tab .on {
+    color: #38adff; }
+
+/* n-ui-tab-menu */
+.n-ui-tab-menu {
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0; }
+  .n-ui-tab-menu .btn-tab {
+    float: left;
+    width: 100%;
+    line-height: 60px;
+    background: #fafafa;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    border-left: 1px solid #f0f0f0;
+    cursor: default;
+    /*&:hover {
+            color: $main;
+        }*/ }
+    .n-ui-tab-menu .btn-tab:first-child {
+      border-left: 0; }
+  .n-ui-tab-menu .on {
+    background: #fff;
+    color: #38adff; }
+
+/* n-ui-tab-filter */
+.n-ui-tab-filter {
+  line-height: 20px;
+  font-size: 14px;
+  color: #666; }
+  .n-ui-tab-filter .btn-tab {
+    display: inline-block;
+    margin-left: 26px;
+    position: relative;
+    padding: 0 10px;
+    border-radius: 5px;
+    color: #666; }
+    .n-ui-tab-filter .btn-tab:hover {
+      color: #38adff; }
+    .n-ui-tab-filter .btn-tab.on {
+      background: #38adff;
+      color: #fff; }
+  .n-ui-tab-filter .total {
+    padding-left: 30px; }
+    .n-ui-tab-filter .total .num {
+      padding: 0 5px;
+      color: #38adff;
+      font-weight: normal; }
+
+/* n-ui-search */
+.n-ui-search {
+  display: inline-block;
+  position: relative; }
+  .n-ui-search .txt {
+    outline: none;
+    display: inline-block;
+    padding: 0 30px 0 15px;
+    min-width: 256px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    color: #333;
+    border-radius: 5px; }
+    .n-ui-search .txt:focus {
+      border-color: #38adff; }
+  .n-ui-search .btn-search {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-family: "iconfont-learn";
+    font-size: 22px;
+    color: #38adff;
+    text-align: center; }
+    .n-ui-search .btn-search:before {
+      content: '\e601';
+      display: inline-block;
+      vertical-align: middle; }
+    .n-ui-search .btn-search:hover {
+      color: #52b8ff; }
+    .n-ui-search .btn-search:active {
+      color: #1fa2ff; }
+  .n-ui-search .tip {
+    display: inline-block;
+    padding-right: 15px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #999;
+    vertical-align: middle; }
+  .n-ui-search .placeholder {
+    font-size: 12px;
+    position: absolute;
+    top: 6px;
+    right: 167px;
+    color: #999;
+    cursor: text; }
+
+/* n-ui-menu */
+.n-ui-menu {
+  /*暂无课程目录*/ }
+  .n-ui-menu .dlist {
+    font-size: 14px;
+    color: #666; }
+    .n-ui-menu .dlist dt,
+    .n-ui-menu .dlist .d-item {
+      padding: 0 15px;
+      line-height: 48px;
+      border-bottom: 1px solid #f0f0f0; }
+    .n-ui-menu .dlist dt {
+      font-weight: bold; }
+    .n-ui-menu .dlist dd {
+      position: relative; }
+    .n-ui-menu .dlist .d-item {
+      display: block;
+      position: relative;
+      padding-left: 45px;
+      font-weight: bold;
+      cursor: pointer; }
+      .n-ui-menu .dlist .d-item:hover {
+        background-color: #fafafa;
+        color: #38adff; }
+      .n-ui-menu .dlist .d-item.active {
+        background-color: #fafafa;
+        color: #38adff; }
+    .n-ui-menu .dlist .n-icon-add,
+    .n-ui-menu .dlist .n-icon-minus {
+      display: block;
+      position: absolute;
+      left: 14px;
+      top: 16px;
+      width: 18px;
+      height: 18px;
+      line-height: 16px;
+      background-color: #eee;
+      text-align: center;
+      border-radius: 50%;
+      z-index: 5;
+      cursor: pointer; }
+      .n-ui-menu .dlist .n-icon-add:before,
+      .n-ui-menu .dlist .n-icon-minus:before {
+        position: absolute;
+        left: 0;
+        left: 3px\0;
+        left: 0\9\0;
+        width: 100%;
+        height: 100%;
+        font-size: 12px; }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          .n-ui-menu .dlist .n-icon-add:before,
+          .n-ui-menu .dlist .n-icon-minus:before {
+            left: 0; } }
+    .n-ui-menu .dlist .n-icon-add {
+      color: #38adff; }
+      .n-ui-menu .dlist .n-icon-add:before {
+        top: 2px; }
+    .n-ui-menu .dlist .n-icon-minus {
+      color: #333; }
+      .n-ui-menu .dlist .n-icon-minus:before {
+        top: 1px; }
+    .n-ui-menu .dlist .open .list {
+      display: block; }
+  .n-ui-menu .list {
+    border-bottom: 1px solid #f0f0f0;
+    display: none; }
+    .n-ui-menu .list .sub-item {
+      padding: 0 15px 0 45px;
+      line-height: 48px;
+      cursor: pointer; }
+      .n-ui-menu .list .sub-item:hover {
+        background-color: #fafafa;
+        color: #38adff; }
+      .n-ui-menu .list .sub-item.active {
+        background-color: #fafafa;
+        color: #38adff; }
+  .n-ui-menu .no-menu {
+    margin-top: 145px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #ccc;
+    text-align: center; }
+
+/*分页*/
+.pagination-box {
+  margin-bottom: 30px; }
+
+.pagination-box .pagination {
+  text-align: center;
+  position: inherit; }
+
+.pagination-box .pagination:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.pagination-box .pagination span,
+.pagination-box .pagination a {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  border-radius: 2px;
+  padding: 0 18px;
+  height: 37px;
+  line-height: 37px;
+  background: #ddd; }
+
+.pagination-box .pagination a:hover,
+.pagination-box .pagination span {
+  background: #38adff;
+  color: #fff; }
+
+.pagination-box .pagination .prev {
+  width: 80px;
+  margin: 0 10px 0 0; }
+
+.pagination-box .pagination .next {
+  width: 80px;
+  margin: 0 0 0 10px; }
+
+.pagination-box .pagination span.current {
+  border-color: #38adff;
+  background: #38adff;
+  color: #fff; }
+
+.pagination-box .pagination span.prev,
+.pagination-box .pagination span.next {
+  background: #fff;
+  color: #c8c8c8;
+  border: 1px solid #d8d8d8; }
+
+.pagination-box .page-input {
+  display: inline-block;
+  margin: 0 0 0 40px;
+  color: #808080;
+  font-size: 14px;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  float: right; }
+
+.pagination-box .page-input input {
+  width: 46px;
+  height: 21px;
+  line-height: 21px;
+  margin: 0 5px;
+  padding: 7px 5px;
+  border: 1px solid #d8d8d8;
+  outline: 0;
+  vertical-align: middle;
+  border-radius: 3px; }
+
+.pagination-box .page-input input:focus {
+  border-color: #38adff; }
+
+.pagination-box .page-input input.select-page-btn {
+  width: 58px;
+  height: 36px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  color: #808080; }
+
+.pagination-box .page-input input.select-page-btn:active {
+  border-color: #d8d8d8;
+  outline-color: #d8d8d8; }
+
+.pagination-box .page-input input.select-page-btn:hover {
+  color: #fff;
+  cursor: pointer;
+  background: #38adff;
+  border: 1px solid #38adff; }
+
+.pagination-box .pagination-info {
+  margin: 24px 0 0;
+  font-size: 14px; }
+
+.pagination-box .pull-left {
+  float: left; }
+
+.pagination-box .pull-right {
+  float: right; }
+
+/*
+ * module:  n-mod-note
+ * author:  lj
+ */
+.n-mod-note {
+  position: relative; }
+  .n-mod-note .note-wrap {
+    position: relative;
+    padding-left: 275px; }
+  .n-mod-note .note-side {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 61px;
+    width: 255px;
+    background: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1); }
+    .n-mod-note .note-side .n-ui-tab-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0; }
+    .n-mod-note .note-side .n-ui-menu {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100%;
+      width: 100%; }
+  .n-mod-note .note-content {
+    position: relative;
+    width: 100%;
+    min-height: 680px;
+    background: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1); }
+    .n-mod-note .note-content .n-ui-tab {
+      border-bottom: 1px solid #f0f0f0; }
+    .n-mod-note .note-content .note-head {
+      overflow: hidden;
+      padding: 8px 8px 0 0;
+      height: 38px;
+      border-bottom: 1px solid #f0f0f0; }
+      .n-mod-note .note-content .note-head .head-tip {
+        margin-top: -8px;
+        padding-left: 34px;
+        line-height: 46px;
+        font-size: 14px;
+        color: #666; }
+        .n-mod-note .note-content .note-head .head-tip .num {
+          padding: 0 5px;
+          color: #38adff; }
+      .n-mod-note .note-content .note-head .n-ui-tab-filter {
+        margin-top: 5px; }
+      .n-mod-note .note-content .note-head .btn-back {
+        margin-left: 34px;
+        line-height: 32px;
+        font-size: 14px;
+        font-family: "iconfont-learn";
+        color: #38adff; }
+        .n-mod-note .note-content .note-head .btn-back:before {
+          display: inline-block;
+          margin-right: 3px;
+          font-size: 20px;
+          content: "\e80b";
+          vertical-align: middle; }
+        .n-mod-note .note-content .note-head .btn-back:hover {
+          opacity: .7; }
+        .n-mod-note .note-content .note-head .btn-back:active {
+          opacity: .9; }
+    .n-mod-note .note-content .n-ui-note-item {
+      padding: 15px 34px; }
+  .n-mod-note .note-empty {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 260px;
+    margin-top: -60px;
+    font-size: 18px;
+    text-align: center; }
+    .note-empty-icon {
+      display: block;
+      background: url(../../../../../css/images/icon-none.png) no-repeat center;
+      height: 138px; }
+    .note-empty-tips {
+      margin: 10px 20px;
+      color: #666;
+      text-align: center; }
+    .note-empty-btn {
+      display: inline-block;
+      *display: inline;
+      *zoom: 1;
+      color: #38adff;
+      border: 1px solid #38adff;
+      border-radius: 3px;
+      height: 42px;
+      line-height: 42px;
+      margin: auto;
+      padding: 0 30px; }
+      .note-empty-btn:hover {
+        background: #52b8ff;
+        color: #fff; }
+      .note-empty-btn:active {
+        background: #1fa2ff; }
+  .n-mod-note .pagination-box {
+    padding: 20px 20px; }
+
+.n-ui-search .placeholder {
+  right: 159px; }

@@ -1,0 +1,214 @@
+$version: 20160524001;
+@mixin baseBtn($w, $h, $f, $color: #fff) {
+    display: inline-block;
+
+    width: $w;
+    height: $h;
+
+    font-size: $f;
+    line-height: $h;
+    text-align: center;
+
+    color: $color;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin effectBtn($color, $hoverColor) {
+    background-color: $color;
+    &:hover {
+        background-color: $hoverColor;
+    }
+}
+
+%ico {
+    background: url("../../images/userexam.png?#{$version}") no-repeat;
+}
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.center-item {
+    float: left;
+
+    margin: 50px 50px 0 0;
+    box-sizing: content-box;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    width: 240px;
+    height: 192px;
+
+    font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+    text-decoration: none;
+
+    color: #333;
+    .btn {
+        border-radius: 4px;
+
+        @include baseBtn(87px,
+        30px,
+        14px);
+    }
+    .btn-primary {
+        @include effectBtn($themeColor,
+        $btnhover);
+    }
+    .btn-default {
+        @include effectBtn(#ccc,
+        #ccc);
+    }
+    .no-exam {
+        .no-exam-bg {
+            margin: 180px auto 15px;
+            width: 100px;
+            height: 130px;
+
+            background-position: 0 0;
+
+            @extend %ico;
+        }
+        .no-exam-tip {
+            font-size: 18px;
+            text-align: center;
+
+            color: #666;
+        }
+    }
+    .pt1 {
+        padding-top: 24px;
+    }
+    .pt2 {
+        padding-top: 48px;
+    }
+    .fl {
+        float: left;
+    }
+    .fr {
+        float: right;
+    }
+    a {
+        outline: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    a {
+        text-decoration: none;
+        text-decoration: none;
+
+        color: #333;
+    }
+    em {
+        font-style: normal;
+    }
+    li {
+		max-width: 150px;
+        list-style: none;
+        line-height: 2em;
+    }
+    &:hover {
+        .item-title {
+            color: $themeColor;
+        }
+    }
+    .item-title {
+        display: block;
+        overflow: hidden;
+
+        margin: 0;
+        width: 240px;
+        height: 50px;
+        max-height: 50px;
+
+        font-size: 16px;
+        font-weight: normal;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .item-info {
+        margin-top: 20px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 10px;
+        min-height: 83px;
+    }
+    .info-fl {
+        margin: 0;
+        padding: 0;
+
+        font-size: 12px;
+        line-height: 2em;
+
+        color: #666;
+        .info {
+            font-size: 12px;
+        }
+        i {
+            display: inline-block;
+
+            margin-right: 5px;
+        }
+        em {
+            font-size: 12px;
+            font-weight: bold;
+        }
+        ins {
+            display: inline-block;
+
+            margin: 0 10px;
+
+            color: #e0e0e0;
+        }
+    }
+    .info-fr {
+        border: 1px solid #64cb00;
+        padding: 8px 10px;
+
+        font-size: 14px;
+        text-align: center;
+
+        color: #64cb00;
+        em {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .failed {
+        border-color: #ff7c7c;
+
+        color: #ff7c7c;
+    }
+    .wait {
+        border-color: rgb(56, 173, 255);
+
+        color: rgb(56, 173, 255);
+    }
+    .item-ft {
+        padding-top: 8px;
+        .ft-fl {
+            margin-top: 5px;
+
+            font-size: 12px;
+        }
+        .ml {
+            margin-left: 2px;
+
+            color: #999;
+        }
+    }
+}

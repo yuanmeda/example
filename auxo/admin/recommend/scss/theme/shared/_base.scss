@@ -1,0 +1,319 @@
+/** 清除内外边距 **/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+/* structural elements 结构元素 */
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/* list elements 列表元素 */
+pre,
+/* text formatting elements 文本格式元素 */
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+/* form elements 表单元素 */
+th,
+td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+
+/** 设置默认字体 **/
+body,
+button,
+input,
+select,
+textarea /* for ie */ {
+    font: 12px/1.5  "微软雅黑",arial,tahoma, simsun;
+
+    color: #333;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+} /* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp {
+    font-family: tahoma, arial,"microsoft yahei", simsun, sans-serif;
+} /* 统一等宽字体 */
+pre {
+    border: none;
+
+    font-size: inherit;
+
+    background: none;
+}
+small {
+    font-size: 12px;
+} /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul,
+ol {
+    list-style: none;
+}
+
+/** 重置文本格式元素 **/
+a {
+    text-decoration: none;
+
+    color: #333;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+sup {
+    vertical-align: text-top;
+} /* 重置，减少对行高的影响 */
+sub {
+    vertical-align: text-bottom;
+}
+
+/** 重置表单元素 **/
+legend {
+    color: #000;
+} /* for ie6 */
+fieldset,
+img {
+    border: 0;
+} /* img 搭车：让链接里的 img 无边框 */
+button,
+input,
+select,
+textarea {
+    // font-size: 100%;
+    vertical-align: middle;
+} /* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* 重置 HTML5 元素 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+}
+mark {
+    background: #ff0;
+}
+
+.clear {
+    clear: both;
+}
+.bold {
+    font-weight: bold;
+}
+.over-hidden {
+    overflow: hidden !important;
+}
+.required {
+    color: #a00;
+    &:after {
+        content: "  ";
+    }
+}
+
+.ellipse,
+.ellipsis {
+    display: block;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.bc_f {
+    background: #fff;
+}
+.container-fluid {
+    padding: 20px 20px 50px;
+}
+.box,
+.block {
+    margin-bottom: 20px;
+    border-radius: 3px;
+    padding: 10px 20px;
+
+    background: #fff;
+    background: #fff;
+
+    box-shadow: 0 1px 2px 2px #ddd;
+}
+.clearfix:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: "";
+}
+.clearfix {
+    zoom: 1;
+}
+.cf:before,
+.cf:after {
+    display: table;
+
+    content: "";
+}
+.cf:after,
+.cl {
+    clear: both;
+}
+.cf {
+    zoom: 1;
+}
+.hide {
+    display: none;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.show {
+    display: block;
+}
+.tc {
+    text-align: center !important;
+}
+.tl {
+    text-align: left !important;
+}
+.tr {
+    text-align: right !important;
+}
+.vm {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+.vb {
+    display: inline-block;
+
+    vertical-align: baseline;
+}
+.vt {
+    display: inline-block;
+
+    vertical-align: top;
+}
+p.break {
+    word-break: break-all;
+}
+.hidden{
+    visibility: hidden;
+}
+@each $fs in 12 14 16 18 20 22 24 26 {
+    .fs#{$fs} {
+        font-size: $fs+0 !important;
+    }
+}
+body {
+    background: #ebebeb;
+}
+.is-hidden{
+    visibility: hidden;
+}
+// .header,
+// .main,
+// .main-wrap {
+//     overflow: hidden;
+// }
+iframe html body {
+    padding-bottom: 50px;
+}
+* {
+    box-sizing: border-box;
+}
+.controls>.radio{
+  padding-top:5px;
+}
+@import "scrollBar";
+@import "iconfont";
+/* bootstrap重置样式 */
+.text-help {
+    display: inline-block;
+
+    vertical-align: top;
+
+    color: #999;
+    em {
+        margin: 0 2px;
+
+        font-size: 1.2em;
+        font-style: oblique;
+
+        color: $themeColor;
+    }
+}
+.form-horizontal {
+    .help-block:empty {
+        margin-top: 0;
+    }
+    .img-sm {
+        display: inline-block;
+
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 2px;
+        width: 300px;
+        height: 200px;
+
+        vertical-align: middle;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@charset "UTF-8";
+/*
+ * module:  n-mod-note
+ * author:  lj
+ */
+
+.n-mod-note {
+    position: relative;
+    .note-wrap {
+        position: relative;
+        padding-left: 275px;
+    }
+    .note-side {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding-top: 61px;
+        width: 255px;
+        background: #fff;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+        .n-ui-tab-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        .n-ui-menu {
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .note-content {
+        position: relative;
+        width: 100%;
+        min-height: 680px;
+        background: #fff;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+        .n-ui-tab {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .note-head {
+            overflow: hidden;
+            padding: 8px 8px 0 0;
+            height: 38px;
+            border-bottom: 1px solid #f0f0f0;
+            .head-tip {
+                margin-top: -8px;
+                padding-left: 34px;
+                line-height: 46px;
+                font-size: 14px;
+                color: #666;
+                .num {
+                    padding: 0 5px;
+                    color: $main;
+                }
+            }
+            .n-ui-tab-filter {
+                margin-top: 5px;
+            }
+            .btn-back {
+                margin-left: 34px;
+                line-height: 32px;
+                font-size: 14px;
+                font-family:"iconfont-learn";
+                color: $main;
+                // background: url("../images/icon2.png");
+                // background-repeat: no-repeat;
+                // background-position: 0 -167px;
+                &:before {
+                    display: inline-block;
+                    margin-right: 3px;
+                    font-size: 20px;
+                    content: "\e80b";
+                    vertical-align: middle;
+                }
+                &:hover {
+                    opacity: .7;
+                }
+                &:active {
+                    opacity: .9;
+                }
+            }
+        }
+        .n-ui-note-item {
+            padding: 15px 34px;
+        }
+    }
+
+    .note-empty {
+        $w: 300px;
+        $h: 260px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: $w;
+        height: $h;
+        margin-top: -60px;
+        margin-left: - $w /2;
+        font-size: 18px;
+        text-align: center;
+        @at-root {
+            .note-empty-icon {
+                display: block;
+                background: url(../../images/icon-none.png) no-repeat center;
+                height: 138px;
+            }
+            .note-empty-tips {
+                margin: 10px 0;
+                color: $gray;
+                text-align: center;
+            }
+            .note-empty-btn {
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+                color: $main;
+                border: 1px solid $main;
+                border-radius: $radius-s;
+                height: 42px;
+                line-height: 42px;
+                margin: auto;
+                padding: 0 30px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,60 @@
+/*
+我的回答列表项
+*/
+.qas-moran{
+  @include item-container();
+  // 头像
+  .qas-profile{
+    @include profile();
+  }
+
+  .qas-wrap{
+    overflow:hidden;
+  }
+
+  // 回答内容
+  .qas-re-desc{
+    @include desc();
+    margin-bottom:20px;
+  }
+
+  // 被回答的问题
+  .qas-inner-question{
+    padding:20px;
+    background-color:#f8f8f8;
+    border-radius:6px;
+    position:relative;
+    margin-bottom:15px;
+    // 问题标题
+    .qas-title{
+      @include desc();
+      font-size:14px;
+      color:#666666;
+      cursor:pointer;
+    }
+    // 数据
+    .qas-meta{
+      @include meta();
+      color:#cccccc;
+      margin-bottom:0;
+    }
+    // 箭头
+    .arrow{
+      @include gray-arr-up();
+    }
+  }
+
+  .qas-footer{
+    // 时间
+    .qas-time{
+      color:#cccccc;
+      font-size:12px;
+      margin-right:30px;
+    }
+    // 点赞
+    .qas-praise{
+      @include praise();
+    }
+  }
+
+}

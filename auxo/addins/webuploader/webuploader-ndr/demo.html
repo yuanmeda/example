@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<title>资源上传</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div>
+    <button id="testDemo" onclick="change()">上传资源</button>
+</div>
+<div id="uploadResource" style="display: none;margin:250px 500px;border:solid;overflow-y: auto;">
+    <iframe
+            src="http://static.auxo.test.huayu.nd/auxo/addins/webuploader/webuploader-ndr/recourseUpload.html?ndr_token=E9DD88BD9A653CFB36D3E639A1A1F71818D73D0FBFE56D24E618F057F39D773F3D06F2D88A2092B5&ndr-server-url=http://esp-lifecycle.debug.web.nd&coverage=Org/nd&uid=123123"
+            width="800px" style="display: block;" height="800px" scrolling="no" frameborder="0"></iframe>
+</div>
+<script type="text/javascript">
+    var resourceUpload = document.getElementById("uploadResource");
+    function change() {
+        document.getElementById("uploadResource").style.display='block';
+   }
+    window.onmessage=function(e){
+        if (e.data == "addResourceDone") {
+            //收到文件上传完成的消息
+        }
+    };
+</script>
+</body>
+</html>

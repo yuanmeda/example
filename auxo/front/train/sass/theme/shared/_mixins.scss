@@ -1,0 +1,97 @@
+/*
+ * 常用mixins类
+ */
+
+/* 超出省略 */
+@mixin text-overflow($width: 0) {
+    overflow: hidden;
+
+    width: 100% - $width;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+%text-overflow {
+    @include text-overflow;
+}
+
+/* 禁用样式 */
+@mixin disabled($color: #e6e6e6,$bgColor:#ababab) {
+    color: $color !important;
+    background-color: $bgColor !important;
+
+    cursor: not-allowed !important;
+    pointer-events: none;
+    border-color: darken($bgColor,5%);
+}
+%disabled {
+    @include disabled;
+}
+
+/* 垂直据中 */
+@mixin v-position($pos: middle) {
+    display: inline-block;
+
+    vertical-align: $pos;
+}
+%v-middle {
+    @include v-position(middle);
+}
+@mixin text-middle($px) {
+    height: $px;
+
+    line-height: $px;
+}
+
+/* 水平居中 */
+@mixin h-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+%h-center {
+    @include h-center;
+}
+
+/* 浮动 */
+@mixin float($position: left) {
+    float: $position;
+}
+%float-left {
+    @include float(left);
+}
+%float-right {
+    @include float(right);
+}
+
+/* 清除浮动 */
+@mixin clearfix {
+    &:before,
+    &:after {
+        display: table;
+
+        content: "";
+    };
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+%clearfix {
+    @include clearfix;
+}
+
+/* 绝对定位：默认居中 */
+@mixin position-absolute($top: 0,$right:0,$bottom:0,$left:0) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+
+    position: absolute;
+}
+
+/* 透明度 */
+@mixin opacity($val:50){
+  opacity: $val/100;
+  filter: alpha(opacity=$val);
+}

@@ -1,0 +1,38 @@
+<div class="u-ui-mask">
+  <div class="u-ui-pop pop-edit adjustPopPosition">
+    <h3 class="pop-tit"><span class="tit-left" data-bind="translate:{key:'noteitemeditor.title'}"></span>
+      <span class="pop-close" data-bind="click:cancel"></span></h3>
+    <div class="pop-content">
+      <div class="u-ui-txta" style="width:100%;">
+        <textarea class="txta u-layout-scroll"
+                  style="width:100%;padding:0;"
+                   tabindex="5002" data-bind="
+                   value:content, valueUpdate:'input',
+                   attr:{placeholder:place_holder_msg}"></textarea>
+        <span class="words" data-bind="text:remain() + '/' + max" style="width: 100%;padding:0;"></span>
+      </div>
+    </div>
+    <div class="pop-footer" style="bottom:30px;">
+
+
+      <!--ko if:report_count < 3-->
+      <!--ko if:!isFromExcerpt()-->
+      <label class="u-ui-check select" data-bind="css:{select: is_open()}, click:toggleOpen">
+        <input class="radio" type="radio"><!--ko translate:{key:'noteitemeditor.open'}--><!--/ko-->
+      </label>
+      <!--/ko-->
+
+      <!--ko if:isFromExcerpt()-->
+      <span style="position: absolute;left: 25px;top: 29px;"><!--ko translate:{key:'noteitemeditor.from_excerpt'}--><!--/ko--></span>
+      <!--/ko-->
+      <!--/ko-->
+
+      <!--ko if:report_count > 3-->
+      <span style="position: absolute;left: 25px;top: 29px;"><!--ko translate:{key:'noteitemeditor.be_reported'}--><!--/ko--></span>
+      <!--/ko-->
+
+      <a class="u-ui-btn" data-bind="click:submit,translate:{key:'noteitemeditor.confirm'}">确定</a>
+      <a class="u-ui-btn ml10" data-bind="click:cancel,translate:{key:'noteitemeditor.cancel'}">取消</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,259 @@
+@import "list_base";
+@import "../../../../../nae/style/sass/_animation";
+@import "textstyle";
+
+.nav-tabs {
+    $height: 50px;
+    li {
+        display: inline-block;
+
+        position: relative;
+
+        margin-right: 20px;
+        width: 120px;
+        height: $height;
+
+        line-height: $height;
+        text-align: center;
+
+        cursor: pointer;
+        &.active,
+        &:hover {
+            border-bottom: 2px solid $themeColor;
+        }
+        i.tip {
+            display: block;
+
+            position: absolute;
+            top: 5px;
+            right: 2px;
+
+            border-radius: 50%;
+            width: $height * .5;
+            height: $height * .5;
+
+            font-size: 80%;
+            line-height: $height * .5;
+            text-align: center;
+
+            color: #fff;
+            background: $themeColor;
+        }
+    }
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.modal {
+    .control-label {
+        font-size: 14px;
+    }
+    .controls {
+        margin-bottom: 5px;
+        padding-top: 5px;
+        .modal-value {
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    }
+    .mask-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background-color: rgba(#000,.3);
+        .input-block {
+            position: absolute;
+            bottom: 0;
+
+            border-top: 1px solid #dbdbdb;
+            padding: 20px 0;
+            width: 100%;
+
+            background-color: #fff;
+
+            box-shadow: 0 0 10px #dbdbdb;
+            .remark {
+                margin: 0 auto 10px;
+                width: 90%;
+                textarea {
+                    padding: 5px 8px;
+                    width: 100%;
+
+                    resize: none;
+                }
+                .small {
+                    font-size: 90%;
+
+                    color: #333;
+                }
+            }
+            .btns {
+                margin: 0 auto;
+                width: 90%;
+
+                text-align: right;
+            }
+        }
+    }
+    .remark .text-help {
+        display: block;
+
+        text-align: right;
+    }
+}
+
+.audit-fail .remark {
+    textarea {
+        padding: 5px 8px;
+        width: 100%;
+
+        resize: none;
+    }
+}
+
+$size: 25px;
+.check-group {
+    position: relative;
+
+    margin: 0 auto;
+    width: $size;
+    height: $size;
+
+    line-height: $size;
+    .check-cover {
+        display: inline-block;
+
+        top: 0;
+        left: 0;
+        z-index: 20;
+
+        border-radius: 3px;
+        width: $size;
+        height: $size;
+
+        line-height: $size;
+
+        color: #fff;
+        background-color: #c3c3c3;
+
+        cursor: pointer;
+    }
+    .check-self:checked + .check-cover {
+        background-color: #0cadb7;
+    }
+    .check-self {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        margin: 0;
+        width: $size;
+        height: $size;
+
+        opacity: 0;;
+    }
+}
+
+.disabled {
+    background-color: #bbb !important;
+
+    cursor: default !important;
+}
+
+.select-box {
+    position: relative;
+
+    $size: 30px;
+    $panelHeight:144px;
+    $panelWidth:116px;
+    input {
+        padding-right: $size !important;
+
+        cursor: pointer;
+    }
+    i {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: $size;
+        height: $size;
+
+        line-height: $size;
+        text-align: center;
+
+        cursor: pointer;
+        &:hover {
+            color: $themeColor;
+        }
+    }
+    .selector-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: $panelWidth*10+2px;
+    }
+    .selector-panel {
+        position: absolute;
+        top: $size+2px;
+        left: 0;
+        z-index: 21;
+        overflow: hidden;
+
+        border: 1px solid $themeColor;
+        border-radius: 5px;
+        width: auto;
+        height:$panelHeight+12px;
+
+        background-color: #fff;
+        .select-item {
+            float:left;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            position: relative;
+
+            margin: 6px 0;
+            padding: 0 6px;
+            width: $panelWidth;
+            height: $panelHeight;
+            border-left: 1px solid #ddd;
+            &:first-child {
+                border-left: none;
+            }
+            li {
+                display: block;
+                overflow: hidden;
+
+                margin-bottom: 5px;
+                border-radius: 5px;
+                padding: 0 5px;
+                width: 100%;
+                height: 24px;
+
+                font-size: 13px;
+                line-height: 24px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                color: #666;
+
+                cursor: pointer;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &.active,
+                &:hover {
+                    color: #fff;
+                    background-color: $themeColor;
+                }
+            }
+        }
+    }
+}

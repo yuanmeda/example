@@ -1,0 +1,6 @@
+$themeColor: #ce3f3f;
+$btnhover: lighten($themeColor, 3%);
+$iconfont-path:"../";
+$main:$themeColor;
+$main-light:lighten($main, 5%);
+$main-dark:darken($main, 5%);

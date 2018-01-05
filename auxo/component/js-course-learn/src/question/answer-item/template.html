@@ -1,0 +1,30 @@
+<div class="x-course-learn-answer reply-item"
+     data-bind="css:{'adopt':model.answer().accepted || model.state.showAcceptIcon()}">
+    <div class="reply-header">
+        <div class="reply-avtor">
+            <img data-bind="attr:{'src':model.answer().display_user.icon+'&defaultImage=1','alt':model.answer().display_user.display_name}">
+        </div>
+        <div class="reply-user">
+            <h4 data-bind="text:display_user.display_name"></h4>
+            <p class="reply-time" data-bind="text:$component.formatTime(model.answer().create_time)"></p>
+        </div>
+    </div>
+    <div class="reply-body" data-bind="text:model.answer().content"></div>
+    <div class="reply-opts opts">
+        <div class="fl">
+            <!--<a href="javascript: void(0);" class="opt">
+                <i class="xclq-icon-reply"></i>
+                <em>11</em>
+                <span>个回复</span>
+            </a>
+            <a href="javascript: void(0);" class="opt">
+                <i class="xclq-icon-like"></i>
+                <em>17</em>
+            </a>-->
+            <a href="javascript: void(0);" class="opt" data-bind="click:accept,visible:model.state.showAcceptBtn">
+                <i class="xclq-icon-accept active"></i>
+                <em data-bind="translate:{'key':'courseLearnQuestion.accept'}">采纳答案</em>
+            </a>
+        </div>
+    </div>
+</div>

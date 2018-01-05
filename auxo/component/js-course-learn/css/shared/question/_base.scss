@@ -1,0 +1,40 @@
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ins {
+    text-decoration: none;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+}
+
+.c-black {
+    color: #333;
+}
+
+.c-gray {
+    color: #999;
+}
+
+.c-lightgray {
+    color: #ccc;
+}
+
+.c-red {
+    color: #ce0000 !important;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}

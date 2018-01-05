@@ -1,0 +1,44 @@
+<div class="exam-item" data-bind="click: onClick">
+  <div class="item-img">
+    <img data-bind="attr: { 'data-original': model.data.unit_info.cover_url ,src:defaultImg}" class="lazy-image" style="display: inline;">
+    <span class="item-ldt" data-bind="translate: { key: 'collection_exam_mooc_card.score', properties: { userScore: model.data.extra.best_scores, totalScore: model.data.unit_info.extra.total_score } }"></span>
+  </div>
+  <div class="item-info">
+    <div class="item-name ellipsis" data-bind="text: model.data.unit_info.title, attr: { title: model.data.unit_info.title }"></div>
+    <div class="item-icon mtb15 ellipsis fs13">
+      <!-- ko if:model.data.unit_type == 'mooc-exam' -->
+      <span class="v-line">
+        <!--ko translate:{ key: 'collection_exam_mooc_card.examType' }--><!--/ko-->
+        <i data-bind="text: text:getExamType(model.data)"></i>
+        <em></em>
+      </span>
+      <span class="v-line">
+        <!--ko translate:{ key: 'collection_exam_mooc_card.examRoom' }--><!--/ko-->
+        <i data-bind="text: text:formatName(model.data.unit_info.extra.room)"></i>
+        <em></em>
+      </span>
+      <!--/ko-->
+    </div>
+    <div class="item-label-box ellipsis">
+      <span class="item-view" data-bind="html: formatDateTime($data)">
+      </span>
+      <a class="btn fr" href="javascript:;" data-bind="css: { 'btn-disable': disableBtn() }, translate: { key:userExamStatus($data) }"></a>
+      <!--ko if: model.data.extra.pass_status== 2-->
+      <i style="top:-60px;" class="status-icon spec-icon-ring-verse failed" >
+        <span data-bind="translate: { key: 'collection_exam_mooc_card.failed' }"></span>
+      </i>
+      <!--/ko-->
+      <!--ko if: model.data.extra.pass_status == 0-->
+      <i style="top:-60px;" class="status-icon spec-icon-ring-verse ended">
+          <span data-bind="translate: { key: 'collection_exam_mooc_card.waitForMark' }"></span>
+      </i>
+      <!--/ko-->
+      <!--ko if:model.data.extra.pass_status == 1-->
+      <i style="top:-60px;" class="status-icon spec-icon-ring-verse passed">
+          <span data-bind="translate: { key: 'collection_exam_mooc_card.passed' }"></span>
+      </i>
+      <!--/ko-->
+    </div>
+  </div>
+  <i class="item-label" data-bind="translate:{key:'collection_exam_mooc_card.exam'}"></i>
+</div>

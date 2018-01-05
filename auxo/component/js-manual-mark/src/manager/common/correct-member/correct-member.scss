@@ -1,0 +1,111 @@
+.correct-warp {
+  table {
+    width: 660px;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 14px;
+    th {
+      background:#D7D7D7;
+    }
+    td, th {
+      border: 1px solid #CCCCCC;
+      text-align: center;
+      .input-group{
+        margin-right: 13%;
+        padding-top: 7px;
+        .form-ctrl{
+          height: 18px;
+          border-radius: 5px 0 0 5px;
+          border-right-color: #fff;
+          border-right: none;
+          width: 80px;
+        }
+
+        .percent{
+          height: 18px;
+          border-radius: 5px;
+          width: 40px;
+          text-align: center;
+        }
+        .uname {
+          margin-left:6px;
+          max-width: 60px;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 20px;
+        }
+        .uname-l {
+          margin-left:6px;
+          max-width: 120px;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 20px;
+        }
+        .percent-s{
+          font-size: 22px;
+          vertical-align: super
+        }
+      }
+
+    }
+    .corrector {
+      width: 150px;
+    }
+    .approver {
+      cursor: pointer;
+      width: 130px;
+    }
+    .percent {
+      width: 4em !important;
+    }
+    .action {
+      width: 50px;
+    }
+    .progress {
+      width: 150px;
+    }
+    .statis {
+      width: 100px;
+    }
+    .td-cusrsor{
+      cursor: pointer;
+    }
+  }
+  a {
+    color: #169BD5;
+    text-decoration: underline;
+  }
+  min-height: 80px;
+  padding-bottom: 15px;
+  width: 660px;
+  background: #fff;
+}
+
+.input-group-add{
+          display: inline-block;
+          width: 28px;
+          height: 26px;
+          line-height: 23px;
+          background-image: url(../../../../styles/img/add-m.png);
+          background-repeat: no-repeat;
+          background-size: 27px 25px;
+          cursor: pointer;
+          border: 1px solid #ccc;
+          border-radius: 0 5px 5px 0;
+          position: fixed;
+        }
+
+        .del{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        background-image: url(../../../../styles/img/delete-c.png);
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        cursor: pointer;
+      }

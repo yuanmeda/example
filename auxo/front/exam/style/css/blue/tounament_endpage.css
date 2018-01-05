@@ -1,0 +1,103 @@
+body {
+  padding-top: 15px !important;
+  background-color: #f2f2f2;
+  font: 24px/1.5 "microsoft yahei"; }
+
+.icon {
+  width: 14px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: text-bottom; }
+
+.i-history {
+  background-image: url("../../images/tounament/history_icon.png"); }
+
+.i-integral {
+  background-image: url("../../images/tounament/integral_icon.png"); }
+
+.i-ranking {
+  background-image: url("../../images/tounament/ranking_icon.png"); }
+
+.pre-container {
+  padding: 145px 0px;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 1200px;
+  box-shadow: 0 1px 2px 2px #ddd; }
+
+.pre-header {
+  text-align: center;
+  line-height: 45px;
+  margin: 0 0 30px 0;
+  font-size: 26px; }
+
+.pre-content .banner {
+  height: 236px;
+  width: 418px;
+  margin-left: 392px;
+  display: inline-block; }
+
+.pre-content .success {
+  background-image: url("../../images/tounament/end-success.png"); }
+
+.pre-content .fail {
+  background-image: url("../../images/tounament/end-fail.png"); }
+
+.pre-content .main {
+  margin: 0 0 0 299px;
+  font-size: 14px; }
+  .pre-content .main .stat {
+    height: 58px;
+    padding: 0;
+    margin: 14px 0px; }
+    .pre-content .main .stat .s-item {
+      color: #999999;
+      width: 154px;
+      height: 58px;
+      list-style: none;
+      float: left;
+      text-align: center; }
+  .pre-content .main .options {
+    width: 435px;
+    height: 53px;
+    margin-left: 90px;
+    text-align: center; }
+    .pre-content .main .options .option-item {
+      line-height: 58px;
+      color: #38adff;
+      text-decoration: none;
+      width: 140px;
+      display: inline-block; }
+
+.pre-footer {
+  margin-left: 370px;
+  height: 55px;
+  padding-top: 9px; }
+  .pre-footer .button {
+    margin: 0 12px;
+    width: 175px;
+    font-size: 15px;
+    padding: 6px 15px;
+    line-height: normal;
+    background: #38adff;
+    color: #FFF;
+    border-radius: 5px;
+    font: 20px/1.5 "microsoft yahei";
+    display: inline-block;
+    text-decoration: none;
+    text-align: center; }
+
+.blue {
+  background-color: #38adff !important;
+  color: #ffffff !important; }
+
+.white {
+  background-color: #ffffff !important;
+  color: #38adff !important;
+  border: 1px solid #38adff; }
+
+.disabled {
+  cursor: default;
+  border: none;
+  color: #fff !important;
+  background-color: #ccc !important; }

@@ -1,0 +1,29 @@
+<div class="x-course-file-upload">
+    <!-- ko ifnot: ko.unwrap(model.readOnly) -->
+    <div class="x-btn" data-bind="attr: { id: model.id }, text: model.btnText">上传文件</div>
+    <!-- /ko -->
+    <!-- ko if: ko.unwrap(model.files).length > 0 -->
+    <table class="table table-bordered" style="width: 500px">
+        <thead>
+        <tr>
+            <td>文件</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: model.files">
+        <tr>
+            <td data-bind="text: $data.name"></td>
+            <td>
+                <!-- ko ifnot: ko.unwrap(model.readOnly) -->
+                <a href="javscript: void(0)" data-bind="click: $component.methods.remove.bind($component)">删除</a>
+                <!-- /ko -->
+                <a data-bind="attr: { href: $data.url }">下载</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- /ko -->
+    <!-- ko if: ko.unwrap(model.files).length <= 0 && ko.unwrap(model.readOnly) -->
+    <div>无附件</div>
+    <!-- /ko -->
+</div>

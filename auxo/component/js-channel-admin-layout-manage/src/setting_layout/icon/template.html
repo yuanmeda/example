@@ -1,0 +1,73 @@
+<div class="section-block modal fade layout-setting ls-icon" data-backdrop="static" id="sectionLayoutSetting3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title">图标导航</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td><label class="control-label">展示样式：</label></td>
+                        <td>
+                            <div class="radio-group">
+                                <div class="radio"><label>
+                                    <input type="radio"
+                                           name="data_type"
+                                           value="1"
+                                           data-bind="checkedValue:1,checked: model.setting.display.display_type">
+                                    纯图片</label>
+                                </div>
+                                <div class="radio ">
+                                    <label>
+                                    <input type="radio"
+                                           name="data_type"
+                                           value="2"
+                                           data-bind="checkedValue:2,checked: model.setting.display.display_type">
+                                        图片+文字</label>
+                                </div>
+                                <div class="radio "><label>
+                                    <input type="radio"
+                                           name="data_type"
+                                           value="3"
+                                           data-bind="checkedValue:3,checked: model.setting.display.display_type">
+                                    纯文字</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label ">显示行数：</label>
+                        </td>
+                        <td>
+                            <div class="form-group"><select
+                                class="form-control select-inline"
+                                data-bind="options: model.row_num, optionsText:'text',optionsValue: 'value',value: model.setting.display.row_num"></select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="control-label ">单行资源数：</label>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select
+                                class="form-control select-inline"
+                                data-bind="options: model.column_num, optionsText:'text',optionsValue: 'value',value: model.setting.display.column_num"></select>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bind="click:save">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

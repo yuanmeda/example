@@ -1,0 +1,60 @@
+@import "mixins";
+//浮层样式
+.modal-larger {
+    top: 30%;
+
+    margin-left: -600px;
+    width: 1200px;
+    .modal-body {
+        overflow: hidden;
+
+        max-height: 450px;
+    }
+    .lay-fl,
+    .lay-fr {
+        float: left;
+
+        height: 100%;
+    }
+}
+.form-block {
+    margin: 0 0 10px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 10px;
+}
+.lay-fl {
+    overflow: auto;
+
+    border-right: 1px solid #ccc;
+    width: 199px;
+    max-height: 435px;
+}
+.lay-fr {
+    padding: 0 0 0 15px;
+    width: 950px;
+    min-height: 100px;
+    .lay-content {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        max-height: 387px;
+    }
+}
+.input-medium {
+    padding: 4px 4px;
+    height: 26px;
+}
+@media(max-width: 1400px) {
+    .modal-larger {
+        top: 30%;
+
+        margin-left: -500px;
+        width: 1000px;
+    }
+    .modal-larger .lay-fr {
+        width: 750px;
+    }
+}
+.ztree li ul.line {
+    overflow: inherit !important;
+}

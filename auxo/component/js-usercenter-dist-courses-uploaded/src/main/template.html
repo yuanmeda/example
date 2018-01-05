@@ -1,0 +1,78 @@
+
+<!--ko if:is_loading()-->
+<div class="x-my-dcu-loading" data-bind="translate:{key:'my_dcu.loading'}"></div>
+<!--/ko-->
+
+<!--ko if:!is_loading()-->
+<!--无数据-->
+<!--ko if:courses_stat().upload_count === 0-->
+<div class="x-my-dcu-nothing-course">
+  <div class="ico"></div>
+  <p class="dsc" data-bind="translate:{key:'my_dcu.nothing_course'}"></p>
+  <p><span data-bind="click:$component.go_upload.bind($component), translate:{key:'my_dcu.go_upload'}"></span></p>
+</div>
+<!--/ko-->
+<!--有数据-->
+<!--ko if:courses_stat().upload_count > 0-->
+<!--统计-->
+<div class="x-my-dcu-stat">
+  <div class="stat-col upload-count">
+    <h1 data-bind="translate:{key:'my_dcu.stat.upload_count'}"></h1>
+    <p>
+      <span><strong data-bind="text:courses_stat().upload_count"></strong><!--ko translate:{key:'my_dcu.stat.unit_course'}--><!--/ko--></span>
+    </p>
+  </div>
+  <div class="stat-col earnings">
+    <h1 data-bind="translate:{key:'my_dcu.stat.earnings'}"></h1>
+    <p>
+      <span><strong data-bind="text:income_stat().CHANNEL_EMONEY || 0"></strong><!--ko translate:{key:'my_dcu.stat.unit_platform_coin'}--><!--/ko--></span>
+      <span><strong data-bind="text:income_stat().CHANNEL_CASH || 0"></strong><!--ko translate:{key:'my_dcu.stat.unit_rmb'}--><!--/ko--></span>
+      <span><strong data-bind="text:income_stat().CHANNEL_GOLD || 0"></strong><!--ko translate:{key:'my_dcu.stat.unit_point'}--><!--/ko--></span>
+    </p>
+  </div>
+</div>
+<!--tab切换-->
+<div class="x-my-dcu-tab">
+  <!--ko foreach:classifies-->
+  <span data-bind="
+    css:{on:$component.curr_classify().name===name},
+    click:$component.change_tab.bind($component, $data)
+  ">
+    <!--ko translate:{key:'my_dcu.stat_lb.'+name}--><!--/ko-->
+    (<!--ko text:$component.courses_stat()[name+'_count']--><!--/ko-->)
+  </span>
+  <!--/ko-->
+</div>
+
+<!--列表-->
+<!--ko if:list().length > 0-->
+<div class="x-my-dcu-list">
+  <!--ko foreach:list-->
+  <!--ko component:{name:'x-my-dcu-course-card', params:{course:$data, options:$component.card_options, opc2_api_host: $component.opc2_api_host}}--><!--/ko-->
+  <!--/ko-->
+
+  <!--分页-->
+  <!--ko if:page_no() < total_pages() && !is_list_loading()-->
+  <span class="load-more" data-bind="click:load_more, translate:{key:'my_dcu.load_more'}"></span>
+  <!--/ko-->
+  <!--ko if:page_no() < total_pages() && is_list_loading()-->
+  <span class="load-more disable" data-bind="translate:{key:'my_dcu.loading_more'}"></span>
+  <!--/ko-->
+</div>
+<!--/ko--><!--endif list.length>0-->
+
+<!--空列表，未在加载中且列表为空时-->
+<!--ko if:list().length === 0 && !is_list_loading()-->
+<div class="x-my-dcu-empty">
+  <div class="ico"></div>
+  <p data-bind="translate:{key:'my_dcu.list_empty'}"></p>
+</div>
+<!--/ko-->
+
+<!--加载中，在加载中且列表为空时-->
+<!--ko if:list().length === 0 && is_list_loading()-->
+<div class="x-my-dcu-loading" data-bind="translate:{key:'my_dcu.loading'}"></div>
+<!--/ko-->
+
+<!--/ko--><!--endif courses_stat().upload_count > 0-->
+<!--/ko--><!--endif !is_loading-->

@@ -1,0 +1,89 @@
+/*筛选*/
+.proFilter{
+	background: #fff;
+	padding: 6px 30px;
+	margin-bottom: 35px;
+	box-shadow: 0 1px 2px 2px #ddd
+}
+.proFilter .pro-attr{
+	border-bottom: 1px dotted #dcdcdc;
+	line-height: 26px;
+	padding: 11px 0 3px;
+	position: relative;
+	height: auto;
+	-webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.proFilter .pro-attr:last-child{
+	border-bottom: none;
+}
+.proFilter .pro-attr .attr-label{
+	float: left;
+    width: 90px;
+    margin-right: 10px;
+    font-weight: bold;
+    text-align: right;
+}
+.proFilter .pro-attr .attr-values{
+	float: left;
+	width: 950px;
+	position: relative;	
+}
+.proFilter .pro-attr .attr-values a{
+	display: inline-block;
+	float: left;
+	line-height: 26px;
+	padding: 0 15px;
+	margin: 0 20px 8px 0;
+}
+.attr-values a.on,
+.attr-values a.active,
+.attr-values a.active:hover{
+	background: $themeColor;
+	color: #fff;
+	border-radius: 4px;
+}
+.attr-values a:hover{
+	color: $themeColor;
+}
+.pro-attr .attr-more{
+	color: $themeColor;
+	font-size: 12px;
+	position: absolute;
+	right:10px; 
+	top:10px;
+}
+.pro-attr .attr-more em{
+	
+}
+.pro-attr .attr-more i{
+	margin-left: 5px;
+	color: #8c8c8c;
+	 transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transition: transform .2s ease-in;
+    -moz-transition: transform .2s ease-in;
+    -o-transition: transform .2s ease-in;
+    transition: transform .2s ease-in;
+    vertical-align: initial;
+}
+.proFilter .pro-attr.on .attr-values{
+	height: 34px;
+	overflow: hidden;
+}
+.proFilter .pro-attr .attr-more:before{
+	content:attr(data-up);
+}
+.proFilter .pro-attr.on .attr-more:before{
+	content:attr(data-down);
+}
+.proFilter .pro-attr.on .icon-darrow{
+	transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    cursor: default;
+}

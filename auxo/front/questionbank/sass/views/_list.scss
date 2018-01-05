@@ -1,0 +1,110 @@
+@import '../share/base';
+@import '../share/iconfont';
+@import '../share/pagination';
+@import '../share/common';
+
+.list-container {
+  padding: 20px;
+}
+
+.question-list {
+  .question-item {
+    position: relative;
+    padding: 35px 160px 35px 20px;
+    min-height: 208px;
+    border-bottom: 1px solid #dbdbdb;
+    &:hover {
+      cursor: pointer;
+    }
+    // .question-content{
+
+    // }
+    .question-right {
+      position: absolute;
+      right: 0;
+      top: 35px;
+      width: 90px;
+      height: 140px;
+      .question-date {
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 10px;
+      }
+      .question-status {
+        line-height: 75px;
+        position: relative;
+        color: #ff7c7c;
+        i {
+          font-size: 75px;
+        }
+        .status {
+          display: inline-block;
+          vertical-align: middle;
+          transform: rotate(-15deg);
+          position: absolute;
+          width: 75px;
+          height: 75px;
+          left: 0;
+          top: 0;
+          text-align: center;
+        }
+      }
+
+    }
+    .right-link{
+      position: absolute;
+      right:25px;
+      bottom: 0;
+      height:45px;
+      line-height: 45px;
+      a{
+        background: $themeColor;
+        color: #fff;
+        padding: 8px 10px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+.udialog .ui-dialog-buttonset .ui-button-text-only span{
+  line-height: inherit;
+}
+.pop-win{
+  display: none;
+  position: absolute;
+  z-index: 110;
+  width:90%;
+  margin: 50px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-bottom: 45px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 750px;
+  top:0;
+  left:0;
+  background-color: #fff;
+  .pop-body{
+    margin-bottom: 10px;
+  }
+  .pop-foot{
+    text-align: center;
+    a{
+      background: $themeColor;
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 4px;
+    }
+  }
+}
+.pop-overlay{
+  display: none;
+  z-index: 109;
+  opacity: 0.2;
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

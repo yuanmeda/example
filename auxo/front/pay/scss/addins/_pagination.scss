@@ -1,0 +1,170 @@
+/*!
+ * 分页插件
+ */
+$themeColor: #38adff !default;
+$fontColor666: #666 !default;
+$white: #fff !default;
+$legacy-support-for-ie: true !default;
+$border-radius: 3px !default;
+
+//清除浮动
+@mixin clearfix {
+    @if $legacy-support-for-ie {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        display: table;
+
+        content: "";
+    }
+    &:after {
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+.pagination,
+.pagination-info {
+    margin: 10px 0;
+}
+
+.pagination {
+    a {
+        display: inline-block;
+        float: left;
+
+        margin-left: 5px;
+        border: solid 1px #ddd;
+        border-radius: $border-radius;
+        padding: 0 12px;
+        height: 30px;
+
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+
+        color: $fontColor666;
+        background: $white;
+    }
+    span {
+        display: inline-block;
+        float: left;
+
+        margin-left: 5px;
+        border: solid 1px #ddd;
+        border-radius: $border-radius;
+        padding: 0 12px;
+        height: 30px;
+
+        line-height: 30px;
+        text-align: center;
+
+        background: $white;
+    }
+    .current,
+    a:hover,
+    span {
+        display: inline-block;
+
+        border: solid 1px darken($themeColor, 5%);
+        padding: 0 12px;
+
+        color: $white;
+        background-color: $themeColor;
+    }
+    .prev {
+        border: solid 1px #ddd;
+        border-bottom-left-radius: $border-radius;
+    }
+    .current {
+        &.prev,
+        &.next {
+            border-color: #ccc;
+
+            color: $fontColor666;
+            background: #ccc;
+        }
+    }
+}
+
+.pagination-info span {
+    display: block;
+
+    line-height: 34px;
+    vertical-align: middle;
+}
+
+.pagination {
+    .first {
+        margin-right: 5px;
+        border-width: 1px;
+        border-radius: $border-radius;
+    }
+    .last {
+        margin-left: 5px;
+        border-width: 1px;
+        border-radius: $border-radius;
+    }
+}
+
+.page-input {
+    display: block;
+    float: right;
+    overflow: hidden;
+
+    margin-left: 15px;
+    .page-text {
+        margin: 0 5px;
+        border: 1px solid #d8d8d8;
+        border-radius: $border-radius;
+        padding: 7px 5px;
+        width: 32px;
+        height: 14px;
+
+        line-height: 14px;
+        vertical-align: middle;
+
+        outline: 0;
+    }
+    .select-page-btn {
+        border: 1px solid #d8d8d8;
+        border-radius: $border-radius;
+        width: 58px;
+        height: 30px;
+
+        vertical-align: top;
+
+        color: grey;
+        background: #fff;
+
+        cursor: pointer;
+        &:hover {
+            color: $white;
+            background-color: $themeColor;
+        }
+    }
+}
+
+.page-selector {
+    display: block;
+    float: left;
+    overflow: hidden;
+
+    margin: 5px 0 0 15px;
+    select {
+        margin: 0 5px;
+        width: 60px;
+
+        vertical-align: baseline;
+    }
+}
+
+#pagination {
+    margin: 20px 0;
+
+    @include clearfix();
+    .pagination-info {
+        margin: 10px;
+    }
+}

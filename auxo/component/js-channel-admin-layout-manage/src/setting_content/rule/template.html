@@ -1,0 +1,314 @@
+<div class="x-channel-rule">
+    <div data-bind="attr:{id: model.modal_id}" class="modal fade" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" data-bind="text: model.rule.id() ? '编辑推荐规则' : '新建推荐规则'">新建推荐规则</h4></div>
+                <div class="modal-body" id="js_rule_body"
+                     style="min-height:400px;max-height: 475px;overflow-y:scroll;overflow-x:hidden;">
+                    <ul class="step-bar">
+                        <li data-bind="click: switchStep.bind($component, 1), css:{active: model.step() == 1}">
+                            <i>1</i><span>推荐课程</span></li>
+                        <li data-bind="click: switchStep.bind($component, 2), css:{active: model.step() == 2}">
+                            <i>2</i><span>推荐对象</span></li>
+                        <li data-bind="click: switchStep.bind($component, 3), css:{active: model.step() == 3}">
+                            <i>3</i><span>推荐时间</span></li>
+                        <li data-bind="click: switchStep.bind($component, 4), css:{active: model.step() == 4}">
+                            <i>4</i><span>保存及应用</span></li>
+                    </ul>
+                    <p class="bg-danger text-danger" style="margin:0 40px 10px;padding: 10px;border-radius: 5px;"
+                       data-bind="visible:model.error.message, html: model.error.message"></p>
+                    <form id="ruleForm" class="form-horizontal" onsubmit="return false;">
+                        <!-- 第一步 -->
+                        <div data-bind="visible: model.step() == 1">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"><em class="required">*</em>推荐方式：</label>
+                                <label class="radio-inline"><input name="recommend_way" type="radio" value="0"
+                                                                   data-bind="checkedValue:0,checked: model.rule.recommend_way">按条件推荐</label>
+                                <label class="radio-inline"><input name="recommend_way" type="radio" value="1"
+                                                                   data-bind="checkedValue:1,checked: model.rule.recommend_way">直接推荐课程</label>
+                            </div>
+                            <div class="form-group">
+                                <span class="editable col-sm-offset-2" style="margin-top: 0;"
+                                      data-bind="text: model.rule.recommend_way()==1?'可直接从课程列表中选择所需的课程':'请选择合适的条件，最多添加10个，系统将匹配符合条件的课程并生成推荐列表'"></span>
+                            </div>
+                            <!-- ko ifnot: model.rule.recommend_way -->
+                            <div class="form-group">
+                                <label class="control-label" style="margin-left: 58px;">符合
+                                    <select class="select-inline"
+                                            data-bind="value: model.rule.condition_relation">
+                                        <option value="1">全部</option>
+                                        <option value="0">任何</option>
+                                    </select>
+                                    以下推荐条件</label>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="text-center" style="width: 10%">序号</th>
+                                    <th class="text-center" style="width: 20%">条件规则</th>
+                                    <th class="text-center" style="width: 60%">规则属性</th>
+                                    <th class="text-center" style="width: 10%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="table-format"
+                                       data-bind="foreach: model.rule.rule_items, visible: model.rule.rule_items().length">
+                                <tr class="text-center">
+                                    <td class="text-center" data-bind="text: $index()+1">1</td>
+                                    <td class="text-center">
+                                        <select class="form-control select-inline"
+                                                data-bind="value: item_key, enable: enable">
+                                            <option value="tags_content">根据课程标签/内容匹配</option>
+                                            <option value="study_count">根据课程学习人数</option>
+                                            <option value="online_time">根据课程上线时间</option>
+                                            <option value="course_relation">根据课程关联性</option>
+                                        </select>
+                                    </td>
+                                    <!--ko if: item_key() == 'tags_content' -->
+                                    <td class="text-center form-inline">
+                                        <div class="form-group">
+                                            <label>包含：</label>
+                                            <input type="text" data-bind="value: item_value.value" class="form-control"
+                                                   maxlength="100"
+                                                   style="width:420px;" placeholder="用空格分隔不同的关键词">
+                                        </div>
+                                    </td>
+                                    <!-- /ko -->
+                                    <!-- ko if: item_key() == 'study_count'-->
+                                    <td class="text-center form-inline">
+                                        <div class="form-group">
+                                            <select class="form-control select-inline"
+                                                    data-bind="value: item_value.condintion">
+                                                <option value="0">&gt;=</option>
+                                                <option value="1">&lt;=</option>
+                                            </select>
+                                            <input type="text" data-bind="value: item_value.value" class="form-control"
+                                                   style="width:392px;" maxlength="8" placeholder="请输入非负整数">
+                                        </div>
+                                    </td>
+                                    <!-- /ko -->
+                                    <!-- ko if: item_key() == 'online_time'-->
+                                    <td class="text-center form-inline">
+                                        <div class="form-group">
+                                            <select class="form-control select-inline"
+                                                    data-bind="value: item_value.condintion,event:{change: $component.initDateTimePicker.bind($component)}">
+                                                <option value="0">最近</option>
+                                                <option value="1">时间</option>
+                                            </select>
+                                            <!-- ko if: item_value.condintion() == 0 -->
+                                            <input type="text"
+                                                   data-bind="value: item_value.value"
+                                                   maxlength="8"
+                                                   class="form-control"
+                                                   style="width:369px;"
+                                                   placeholder="请输入非负整数"> 天
+                                            <!--/ko-->
+                                            <input type="text"
+                                                   data-bind="visible: item_value.condintion()==1,value: item_value.start_time"
+                                                   class="form-control datepicker_js" style="width: 189px" readonly=""
+                                                   placeholder="开始时间">
+                                            <input type="text"
+                                                   data-bind="visible: item_value.condintion()==1,value: item_value.end_time"
+                                                   class="form-control datepicker_js" style="width: 189px" readonly=""
+                                                   placeholder="结束时间">
+                                        </div>
+                                    </td>
+                                    <!-- /ko -->
+                                    <!-- ko if: item_key() == 'course_relation' -->
+                                    <td class="text-center form-inline">
+                                        <div class="checkbox" style="width: 48%; text-align: left">
+                                            <label>
+                                                <input type="checkbox" value="1"
+                                                       data-bind="checkedValue:1,checked: item_value.group">
+                                                已学课程的课程标签
+                                            </label>
+                                        </div>
+                                        <div class="checkbox" style="width: 48%; text-align: left">
+                                            <label>
+                                                <input type="checkbox" value="2"
+                                                       data-bind="checkedValue:2,checked: item_value.group">
+                                                在学课程的课程标签
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <!-- /ko -->
+                                    <td class="text-center">
+                                        <button data-bind="click: $component.delRule.bind($component)"
+                                                class="btn btn-warning" type="button">删除
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tbody class="table-format" data-bind="visible: !model.rule.rule_items().length">
+                                <tr>
+                                    <td class="text-center" colspan="4" style="text-align: center; padding:30px 0">
+                                        暂无规则
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-group" style="text-align: center;">
+                                <button type="button"
+                                        data-bind="click: addRule, disable: model.rule.rule_items().length==10"
+                                        class="btn btn-primary">
+                                    添加条件
+                                </button>
+                                <span class="editable"
+                                      data-bind="visible: model.rule.rule_items().length==10">最多添加10条规则</span>
+                            </div>
+                            <!-- /ko -->
+                            <!-- ko if: model.rule.recommend_way -->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2"><em class="required">*</em>课程列表：</label>
+                                <a data-bind="click: openDialog" href="javascript:;" class="btn btn-default">选择课程</a>
+                                <span class="editable">(资源列表可以拖动进行排序)</span>
+                            </div>
+                            <div data-bind="attr:{id: 'dragwrap-'+model.modal_id}"
+                                 style="max-height: 230px; overflow-y:scroll; ">
+                                <table class="table table-bordered table-striped" style="margin-bottom: 0;">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 25%">序号</th>
+                                        <th class="text-center" style="width: 25%">资源名称</th>
+                                        <th class="text-center" style="width: 25%">资源状态</th>
+                                        <th class="text-center" style="width: 25%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="table-format"
+                                           data-bind="attr:{id: 'drag-'+model.modal_id}, foreach: model.course">
+                                    <tr class="text-center" data-bind="attr: { 'data-info': JSON.stringify($data) }">
+                                        <td class="text-center" data-bind="text: $index()+1"></td>
+                                        <td class="text-center" data-bind="text: resource_name"></td>
+                                        <td class="text-center"><span class="label"
+                                                                      data-bind="text: enabled?'发布':'禁用', css:enabled?'label-success':'label-default'"></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn" href="javascript:;"
+                                               data-bind="click: $component.delCourse.bind($component)">删除</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tbody data-bind="visible: !model.course().length">
+                                    <tr>
+                                        <td class="text-center" colspan="5" style="text-align: center; padding:30px 0">
+                                            暂无相关数据
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                        <!-- 第二步 -->
+                        <div data-bind="visible: model.step() == 2">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">可见范围：</label>
+                                <label class="radio-inline"
+                                       data-bind="style:{paddingTop:model.rule.disable_config.type()?'0px':'7px' }">
+                                    <input type="radio" name="visible" value="0"
+                                           data-bind="checkedValue: 0, checked: model.rule.disable_config.type"> 公开
+                                </label>
+                                <label class="radio-inline"
+                                       data-bind="style:{paddingTop:model.rule.disable_config.type()?'0px':'7px' }">
+                                    <input type="radio" name="visible" value="1"
+                                           data-bind="checkedValue: 1, checked: model.rule.disable_config.type"> 组织内部
+                                </label>
+                                <button type="button" class="btn btn-default"
+                                        data-bind="visible: model.rule.disable_config.type, click: showOrgTree">选择组织
+                                </button>
+                            </div>
+                            <div class="from-group" data-bind="">
+                                <div class="col-sm-offset-2" data-bind=""></div>
+                            </div>
+                        </div>
+                        <!-- 第3步 -->
+                        <div data-bind="visible: model.step() == 3">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"><em class="required">*</em>推荐时间：</label>
+                                <!-- ko foreach: model.week -->
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"
+                                           data-bind="checkedValue: value, checked: $component.model.rule.week_group">
+                                    <!-- ko text: name --><!--/ko-->
+                                </label>
+                                <!--/ko-->
+                            </div>
+                            <div class="form-group">
+                                <span class="col-sm-offset-2 editable"
+                                      style="margin-top: 0;">默认为全选，即每天推荐；用户加载页面时自动推荐列表；</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-inline">
+                                    <label class="col-sm-2 control-label">生效日期：</label>
+                                    <input type="text" data-bind="value: model.rule.begin_time"
+                                           class="form-control datepicker_js" style="width: 189px" readonly
+                                           placeholder="开始时间">
+                                    <input type="text" data-bind="value: model.rule.end_time"
+                                           class="form-control datepicker_js" style="width: 189px" readonly
+                                           placeholder="结束时间">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-sm-offset-2 editable"
+                                      style="margin-top: 0;">若未设置日期，则以应用状态和停用状态为准；</span>
+                            </div>
+                        </div>
+                        <!-- 第4步 -->
+                        <div data-bind="visible: model.step() == 4">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"><em class="required">*</em>规则名称：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" data-bind="value: model.rule.name" class="form-control"
+                                           placeholder="最多50个字"
+                                           maxlength="50">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"><em class="required">*</em>备注说明：</label>
+                                <div class="col-sm-9">
+                                    <textarea data-bind="value: model.rule.description" class="form-control" rows="3"
+                                              maxlength="100" placeholder="最多100个字"
+                                              style="resize: vertical;"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"><em class="required">*</em>应用设置：</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="application" value="0"
+                                           data-bind="checkedValue: 0, checked: model.rule.status"> 暂不应用
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="application" value="1"
+                                           data-bind="checkedValue: 1, checked: model.rule.status"> 现在应用
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a data-bind="click: switchStep.bind($component,null,'prev'), visible: model.step() != 1"
+                       class="btn-primary btn pull-left">上一步</a>
+                    <a data-bind="click: switchStep.bind($component,null,'next'), visible: model.step() != 4"
+                       class="btn-primary btn">下一步</a>
+                    <!-- ko if: model.step() == 4-->
+                    <a class="btn-primary btn" data-bind="click: createRule">保存</a>
+                    <a class="btn btn-default" data-dismiss="modal">取消</a>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--ko if: model.tree.init -->
+    <div data-bind="component:{'name': 'x-channel-admin-layout-content-organizeTree', params: {
+        'showSelect': true,
+        'selectedNodeIds': model.rule.disable_config.nodes,
+        'managerData': model.tree.manager,
+        'treeData': model.tree.org,
+        'org_nodes': model.rule.disable_config.nodes,
+        'org_text': model.tree.text}}">
+    </div>
+    <!-- /ko -->
+</div>

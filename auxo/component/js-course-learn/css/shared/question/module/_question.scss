@@ -1,0 +1,44 @@
+
+.question {
+    padding: 25px 30px;
+    p {
+        font: 14px/normal 'microsoft yahei';
+        color: #333;
+    }
+    .control {
+        margin: 13px 0 0;
+    }
+    .question-input {
+        position: relative;
+        .question-input-size {
+            float: right;
+            font: 12px/normal 'microsoft yahei';
+            color: #ccc;
+            &.invalid {
+                color: #e33e2b;
+            }
+        }
+    }
+    .droplist {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: -1px;
+        p {
+            max-width: 630px;
+        }
+    }
+    .question-detail {
+        margin: 36px 0 0;
+        textarea {
+            height: 280px;
+        }
+    }
+    .question-btn {
+        margin: 20px 0 0;
+        @extend %clearfix;
+        .btn {
+            float: right;
+        }
+    }
+}

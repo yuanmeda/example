@@ -1,0 +1,49 @@
+<div class="qas-pop-replies">
+  <div class="qas-pop-header">
+    <h1 data-bind="translate:{key:'qas_cmp_questions.reply_pop_title'}">查看回复</h1>
+    <span class="close" data-bind="click:close">×</span>
+  </div>
+  <div class="qas-pop-body">
+    <!--填写回复内容-->
+    <div class="qas-rep-form">
+      <div class="qas-rep-textarea">
+        <textarea rows="3" data-bind="value:re_content,valueUpdate:'input',attr:{placeholder:place_holder}"></textarea>
+      </div>
+      <p class="qas-re-act">
+        <!--ko if:!submitting()-->
+        <span class="submit" data-bind="click:submit, css:{disabled: !valid()}, translate:{key:'qas_cmp_questions.acts.reply'}">回复</span>
+        <!--/ko-->
+        <!--ko if:submitting()-->
+        <span class="submit disabled" data-bind="translate:{key:'qas_cmp_questions.acts.submitting'}">正在提交</span>
+        <!--/ko-->
+        <!--字数统计-->
+        <span class="count-down">
+          <!--ko text:re_content().length--><!--/ko-->/<!--ko text:content_max--><!--/ko-->
+        </span>
+      </p>
+    </div>
+    <!--回复列表-->
+    <!--ko if:is_my_answer || total_items() > 0-->
+    <h1 class="qas-title" data-bind="translate:{key:'qas_cmp_questions.reply_count', properties:{'total':total_items()}}"></h1>
+    <!--/ko-->
+    <!--ko if:!is_my_answer && total_items() === 0-->
+    <h1 class="qas-title" data-bind="translate:{key:'qas_cmp_questions.add_reply'}"></h1>
+    <!--/ko-->
+    <!--ko if:total_items()-->
+    <div class="qas-replies">
+      <!--ko foreach:replies-->
+      <!--ko component:{name:"x-qas-reply", params:{reply: $data, options: $component.reply_options}}--><!--/ko-->
+      <!--/ko-->
+    </div>
+    <!--/ko-->
+
+    <!--ko if:!total_items()-->
+    <div class="qas-empty" data-bind="translate:{key:'qas_cmp_questions.empty'}"></div>
+    <!--/ko-->
+
+    <!--ko if:page_num() < total_pages()-->
+    <p class="qas-re-load"><span data-bind="click:load_more, translate:{key:'qas_cmp_questions.load_replies'}">更多回复</span></p>
+    <!--/ko-->
+  </div>
+</div>
+<div class="qas-g-mask"></div>

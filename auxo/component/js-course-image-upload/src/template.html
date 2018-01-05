@@ -1,0 +1,29 @@
+<div class="x-course-image-upload">
+    <div class="pre-view">
+        <!-- ko if: model.coverUrl -->
+        <img class="cover" data-bind="attr: { src: 
+            ko.unwrap(model.coverId) === ko.unwrap(model.defaultCoverId)
+            ?
+            ko.unwrap(model.defaultCoverSrc)
+            :
+            ko.unwrap(model.coverUrl)+(
+                new RegExp(ko.unwrap(model.coverId)).test(ko.unwrap(model.coverUrl))?'':'!m300x200.jpg'
+                ) 
+        }" alt="封面">
+        <!-- /ko -->
+    </div>
+    <!-- ko ifnot: model.readOnly -->
+    <div class="operate-area">
+        <button class="x-btn" data-bind="text: model.uploadCoverText, click: method.toggleVisible"></button>
+        <button class="x-btn" data-bind="text: model.useDefaultCoverText, click: method.setDefaultCover"></button>
+    </div>
+    <div class="uploader-outer" data-bind="visible: model.maskVisible">
+        <div class="uploader-inner">
+            <button class="x-btn" data-bind="text: model.returnBtnText, click: method.toggleVisible"></button>
+            <div>
+                <div data-bind="attr: { id: model.id }"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件自测页</title>
+</head>
+<body>
+    <div id="content">
+        <!-- <div data-bind="component: { name: 'x-course-learn-note', params: {data: model.note().viewModel.model.createBuildNote} }"></div> -->
+        <div data-bind="component:{name: 'x-note-item-b', params:{note:model.note, options: model.options}"></div>
+    </div>
+    <script src="./auxo/addins/jquery/v1.12.4/jquery.min.js"></script>
+    <script src="./auxo/addins/ko/v3.4.2/knockout.min.js"></script>
+    <script src="./auxo/addins/ko-i18n/v0.9.0/ko-i18n-min.js"></script>
+    <script src="./auxo/component/js-note-item/dist/index.js"></script>
+    <script>
+        var viewModel = {
+            model: {
+                note:ko.observable({
+                    "id": "f2376d64-d06b-4a5b-9786-c6cc09348cda", 
+                    "user_id": 130061, 
+                    "content": "测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记测试笔记", 
+                    "target_id": "video:237bb092-6710-4b46-adb1-485c0c6ea35a", 
+                    "target_name": null, 
+                    "is_open": true, 
+                    "praise_count": 0, 
+                    "report_count": 0, 
+                    "excerpt_note_id": null, 
+                    "biz_data": "{\"course_name\":\"ND波士堂-DJ：冲出自我限制 迎接辉煌明天\",\"chapter_name\":{\"name\":\"课程内容\",\"child\":null},\"knowledge_name\":null,\"resource_id\":\"237bb092-6710-4b46-adb1-485c0c6ea35a\",\"resource_type\":\"0\",\"location\":{\"location\":\"00:00\",\"web_link\":\"http://webfront-course.sdp.101.com/ndu/course/d9e13365-82ea-11e6-a6ca-bc305bf4bcd4/learn?resource_uuid=237bb092-6710-4b46-adb1-485c0c6ea35a&resource_type=0#/237bb092-6710-4b46-adb1-485c0c6ea35a/0/0\",\"cmp_link\":\"cmp://com.nd.sdp.component.elearning-course/ecourse?courseId=d9e13365-82ea-11e6-a6ca-bc305bf4bcd4&resource_id=237bb092-6710-4b46-adb1-485c0c6ea35a&location=0&auto_play=true\"},\"resource_name\":\"冲出自我限制 迎接辉煌明天-04\"}", 
+                    "biz_view": "course_biz_view", 
+                    "create_time": "2018-01-03T14:19:26.000+0800", 
+                    "update_time": "2018-01-03T14:25:31.000+0800", 
+                    "project_id": 58, 
+                    "has_excerpted": false, 
+                    "has_praised": false, 
+                    "has_reported": false
+                }),
+                options:{
+                    apiHost: '', //api主机。
+                    gatewayHost : '' ,//网关主机。
+                    isLogin :true,//是否已登录。
+                    showExcerpt : false,//是否显示“摘要”按钮。默认false。
+                    showBlowing : false,//是否显示“举报”按钮。默认false。
+                    showEdit : true,//是否显示“编辑”按钮。默认false。
+                    showDel : true,//是否显示“删除”按钮。默认false。
+                    // onEditCommand {function(note)} 编辑按钮按下时的回调函数。
+                    // onDelCommand {function(noteId)} 删除按钮按下时的回调函数。
+                }
+            },
+            init: function(){
+                ko.applyBindings(this, document.getElementById('content'))
+            }
+        }
+        viewModel.init();
+    </script>
+</body>
+</html>

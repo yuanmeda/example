@@ -1,0 +1,71 @@
+<!--ko foreach: data-->
+<a class="exam-item clearfix" href="javascript:;" data-bind="click: $parent.goToDetail.bind($root)">
+    <div class="item-title">
+        <span style="display: inline-block" data-bind="text:title,attr:{title:title}"></span>
+    </div>
+    <!--ko if: sub_type != 2-->
+    <ul class="details">
+        <li class="item-times" data-bind="visible:status != 70">
+            <em></em>
+            <i data-bind="text: exam_chance?exam_chance:''"></i>
+            <!--ko translate:{key:exam_chance?'examList.chanceOfExams':'examList.unlimitedChances'}-->
+            <!--/ko-->
+        </li>
+        <li class="item-time" data-bind="visible:offline_exam&&begin_time">
+            <em></em>
+            <!--ko translate:{key:'examList.start'}--><!--/ko-->: <i
+                data-bind="text: Utils.formatDate(begin_time)"></i>
+        </li>
+        <li class="item-time" data-bind="visible:offline_exam&&end_time">
+            <em></em>
+            <!--ko translate:{key:'examList.end'}--><!--/ko-->: <i
+                data-bind="text: Utils.formatDate(end_time)"></i>
+        </li>
+        <!--ko if: sub_type != 1-->
+        <li class="item-score" data-bind="visible:!offline_exam">
+            <em></em>
+            <!--ko translate:{key:'examList.totalScore'}--><!--/ko-->
+            <i data-bind="text:total_score ? total_score: 0"></i>
+            <!--ko translate:{key:'examList.score'}--><!--/ko-->
+            <!--ko translate:{key:'examList.lt'}-->
+            <!--/ko-->
+            <i data-bind="text: passing_score ? passing_score : 0"></i>
+            <!--ko translate:{key:'examList.score'}--><!--/ko-->
+            <!--ko translate:{key:'examList.pass'}--><!--/ko--><!--ko translate:{key:'examList.rt'}-->
+            <!--/ko-->
+        </li>
+        <!--/ko-->
+        <li class="item-time" data-bind="visible:duration&&!offline_exam">
+            <em></em><!--ko translate:{key:'examList.duration'}--><!--/ko--><i
+                data-bind="text: duration/60"></i><!--ko translate:{key:'examList.minute'}--><!--/ko-->
+        </li>
+    </ul>
+    <div class="candidate">
+        <i class="cadidate"></i>
+        <span class="count" data-bind="text:examinee_count ? examinee_count : 0"></span>
+    </div>
+    <!--/ko-->
+    <div class="foot">
+        <div class="foot-wrap">
+                <span class="item-end"
+                      data-bind="visible:Utils.formatDate(end_time) && status != 50&&!offline_exam && sub_type != 2">
+                    <i data-bind="text: Utils.formatDate(end_time)"></i>
+                    <!--ko translate:{key:'examList.end'}--><!--/ko-->
+                </span>
+                <span class="item-end"
+                      data-bind="visible:Utils.formatDate(begin_time) && status == 50&&!offline_exam && sub_type != 2">
+                    <i data-bind="text: Utils.formatDate(begin_time)"></i>
+                    <!--ko translate:{key:'examList.start'}--><!--/ko-->
+                </span>
+                <span class="item-btn" style="display: none;"
+                      data-bind="visible: offline_exam,click:$parent.gotoExam.bind($root,'/' + projectCode + '/exam/offline_exam/scores?exam_id='+id), clickBubble: false">
+                    <!--ko translate:{key:'examList.examRecord'}--><!--/ko-->
+                </span>
+                <span data-bind="css:{'entrance':status==60,'over':status==70||status==50}" class="entrance">
+                    <!--ko translate:{key:status==60?'examList.gotoExam':(status==70?'examList.ended':'examList.waiting')}-->
+                    <!--/ko-->
+                </span>
+        </div>
+    </div>
+</a>
+<!--/ko-->

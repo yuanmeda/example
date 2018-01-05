@@ -1,0 +1,15 @@
+<div class="select-tab" data-bind="css:{'tmaterial_tab': model.type()=='tmaterial'}">
+  <a class="" data-bind="css:{'active':model.selectedTab()== 0},event:{click:onTabChange.bind($data,0)}" href="javascript:;" title="按章节">按章节</a>
+  <a class="last" data-bind="visible:model.type()!='tmaterial',css:{'active':model.selectedTab()== 1},event:{click: onTabChange.bind($data,1)}" href="javascript:;" title="按知识点">按知识点</a>
+</div>
+<div class="tree-con">
+    <div style="height: 50px;line-height: 50px; text-align: center; color: #999;" data-bind="visible: model.loading">加载中...</div>
+    <div data-bind="visible: model.selectedTab() == 0">
+        <div style="height: 50px;line-height: 50px; text-align: center; color: #999;" data-bind="visible: model.nochapterdata">暂无数据</div>
+        <ul id="chapterTree" class="ztree"></ul>
+    </div>
+    <div data-bind="visible: model.selectedTab() == 1">
+        <div style="height: 50px;line-height: 50px; text-align: center; color: #999;" data-bind="visible: model.noknowledgedata">暂无数据</div>
+        <ul id="knowledgeTree" class="ztree" ></ul>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.displayInLine{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.addReviewer{
+  display: inline-block;
+  padding-top: 5px;
+  margin-top: 3px
+}
+
+.back-gray{
+  background: #e8e8e8;
+}
+
+.operations{
+
+}
+
+.cancel,
+.save{
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #eee;
+}
+
+.label-long{
+  width: 220px !important
+}
+
+.required::before{
+  content: '* ';
+  color: #f00
+}

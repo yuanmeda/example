@@ -1,0 +1,13 @@
+<div class="qas-course-q-details">
+  <div class="qas-h">
+    <span class="qas-return" data-bind="click:back,translate:{key:'qas_course_question.acts.back'}">返回</span>
+  </div>
+  <!--ko if:!is_loading()-->
+  <!--ko component:{name:"x-qas-question-indep", params:{question:question(), options:question_options}}--><!--/ko-->
+  <!--ko component:{name:"x-qas-ans-indep", params:answers_params}--><!--/ko-->
+  <!--/ko-->
+
+  <!--ko if:is_loading()-->
+  <div class="qas-loading" data-bind="translate:{key:'qas_course_question.loading'}">加载中</div>
+  <!--/ko-->
+</div>

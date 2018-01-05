@@ -1,0 +1,72 @@
+<div class="mooc-item" data-bind="click: onClick">
+  <div class="item-img">
+    <img data-bind="attr: { 'data-original': data.unit_info.cover_url?(data.unit_info.cover_url+'!m270x180.jpg'):null ,src:defaultImg}" class="lazy-image" style="display: inline;">
+     <!--ko if:data.extra &&data.extra.study_time_length>=0-->
+    <span class="item-ldt" data-bind="translate: { key: 'mooc_unit.learned', properties: { studyTimeLength: parseInt(data.extra.study_time_length / 60)} },visible:data.extra!==null && parseInt(data.extra.study_time_length / 60) < 60 "></span>
+    <span class="item-ldt" data-bind="translate: { key: 'mooc_unit.learnedHour', properties: { hour: parseInt(parseInt(data.extra.study_time_length / 60)/60),minuter: parseInt(parseInt(data.extra.study_time_length / 60)%60)}},visible:data.extra!==null && parseInt(data.extra.study_time_length / 60) > 60 "></span>
+     <!--/ko-->
+  </div>
+  <div class="item-info">
+    <!--ko if:data.progress && data.progress>0-->
+    <div class="study-process">
+      <div class="inner" data-bind="style: { width: data.progress + '%'}">
+      </div>
+     
+    </div>
+    <!--/ko-->
+    <div class="item-name ellipsis" data-bind="text: data.unit_info.title, attr: { title: data.unit_info.title }"></div>
+    <div class="item-icon mtb15 ellipsis fs13">
+    <!--ko if:data.unit_info.extra.course_count&&data.unit_info.extra.course_count>0-->
+      <span class="v-line">
+        <i data-bind="text: data.unit_info.extra.course_count"></i>
+        <!--ko translate:{ key: 'mooc_unit.course' }--><!--/ko-->
+        <em></em>
+      </span>
+      <!--/ko-->
+      <!--ko if:data.unit_info.extra.total_course_score&&data.unit_info.extra.total_course_score>0-->
+      <span class="v-line">
+        <i data-bind="text: data.unit_info.extra.total_course_score"></i>
+        <!--ko translate:{ key: 'mooc_unit.score' }--><!--/ko-->
+        <em></em>
+      </span>
+      <!--/ko-->
+      <!--ko if:data.unit_info.extra.spec_name-->
+       <span class="v-line">
+            <!--ko translate:{ key: 'mooc_unit.specialy' }--><!--/ko-->
+            <i data-bind="text: data.unit_info.extra.spec_name"></i>
+             <em></em>
+        </span>
+       <!--/ko-->
+    </div>
+    <div class="item-label-box ellipsis">
+      <span class="item-view" data-bind="if: !!data.end_time">
+        <!--ko translate:{ key: 'mooc_unit.endTime' }--><!--/ko-->
+        <i class="date" data-bind="text: data.end_time.slice(0, 10)"></i>
+      </span>
+      <a class="btn fr" href="javascript:;" data-bind="visible: data.status == 0, click: onBtnClick, translate: { key: 'mooc_unit.start' }"></a>
+      <a class="btn fr" href="javascript:;" data-bind="visible: data.status == 1, click: onBtnClick, translate: { key: 'mooc_unit.continue_studying' }"></a>
+      <!--ko if: data.status == 2-->
+        <!--ko if:  data.extra.pass_status == 0-->
+          <i class="status-icon oc-icon-ring-verse finished">
+            <span data-bind="translate: { key: 'mooc_unit.finished' }"></span>
+          </i>
+        <!--/ko-->
+        <!--ko if:  data.extra.pass_status== 1-->
+        <i class="status-icon oc-icon-ring-verse passed">
+              <span data-bind="translate: { key: 'mooc_unit.passed' }"></span>  
+          </i>
+        <!--/ko-->
+        <!--ko if:  data.extra.pass_status == -1-->
+        <i class="status-icon oc-icon-ring-verse failed">
+              <span data-bind="translate: { key: 'mooc_unit.failed' }"></span>
+          </i>
+        <!--/ko-->        
+      <!--/ko-->
+    </div>
+  </div>
+  <i class="item-label" data-bind="translate:{key:'mooc_unit.mooc'}"></i>
+  <i class="item-label" style="right:0;left:auto;" data-bind="translate:{key:'mooc_unit.elective'},
+  visible:data.unit_info.extra.is_optional == 'true'">选修</i>
+  <i class="item-label" style="right:0;left:auto;" data-bind="translate:{key:'mooc_unit.required'},
+  visible:data.unit_info.extra.is_optional == 'false'">必修</i>
+</div>

@@ -1,0 +1,24 @@
+
+::-webkit-input-placeholder { color: #ccc; }
+
+::-moz-placeholder { color: #ccc; }
+
+:-moz-placeholder { color: #ccc; }
+
+.control {
+    padding: 7px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color .2s linear;
+    .control-input {
+        width: 100%;
+        font: 14px/24px 'microsoft yahei';
+        color: #333;
+        outline: none;
+        border: none;
+        resize: none;
+    }
+    &.focus {
+        border-color: $themeColor;
+    }
+}

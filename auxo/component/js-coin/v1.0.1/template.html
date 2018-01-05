@@ -1,0 +1,19 @@
+<div class="x-single-coin clearfix">
+    <div class="coin-item">
+        <div class="coin-fl">
+            <div class="coin-title"
+                 data-bind="attr:{'title':model.coin_certificate_vo.name},text:model.coin_certificate_vo.name"></div>
+            <div class="coin-time"
+                 data-bind="translate:{'key':'singleCoin.availableTime',properties:{'startTime':formatTime(model.coin_certificate_vo.allow_use_start_time),'endTime':formatTime(model.coin_certificate_vo.allow_use_end_time)}}"></div>
+            <div class="coin-desc"
+                 data-bind="attr:{'title':model.coin_certificate_vo.limit_object_name},text:model.coin_certificate_vo.limit_object_name"></div>
+        </div>
+        <div class="coin-rt">
+            <div class="coin-rt-wrap">
+                <div class="coin-status" data-bind="translate:{'key':formatStatus(model.use_status)}"></div>
+            </div>
+        </div>
+    </div>
+    <i class="cc-icon-circle-solid circle-up"></i>
+    <i class="cc-icon-circle-solid circle-down"></i>
+</div>

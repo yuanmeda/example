@@ -1,0 +1,13 @@
+{
+    "name": "js-enroll-status",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "gulp"
+    },
+    "devDependencies": {
+        "gulp": "",
+        "gulp-autoprefixer": "",
+        "gulp-minify-css": "",
+        "gulp-sass": ""
+    }
+}

@@ -1,0 +1,92 @@
+/*
+提问列表项
+*/
+.qas-azalea{
+  @include item-container();
+  &.qas-no-border{
+    border-bottom:0 none;
+  }
+  // 头像
+  .qas-profile{
+    @include profile();
+  }
+
+  .qas-wrapper{
+    overflow:hidden;
+  }
+
+  // 标题
+  .qas-title{
+    font-size:18px;
+    color:#333333;
+    margin-bottom:18px;
+    span{
+      color:$theme-color;
+    }
+    &.view-details{
+      cursor:pointer;
+      &:hover{
+        color:$theme-color;
+      }
+    }
+  }
+  // 描述
+  .qas-desc{
+    @include desc();
+    color:#999999;
+    span{
+      color:$theme-color;
+    }
+    .toggle{
+      display:inline-block;
+      height:16px;
+      width:16px;
+      cursor:pointer;
+      position: relative;
+      bottom: -5px;
+      background:#000;
+      background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhBxIFAThuLmq3AAAAdklEQVQoz2NgGARgJ/fmFTuEsMlsFtm8+gwrk/vX/89/78FUslmEYR/DHZPfDAwMDAyb+jefQ1WyTnjzxc3tSAKoStYJb76AIo2qZIfQ5vMIaUZkJYz2rC4MDL/3MuzwrcSiAKKEgYFhJ0IaA2xq3Vw/0AGPCQAmxy6n3oCyAAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0wNy0xOFQwNTowMTo1NiswMjowMNL/lTAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMDctMThUMDU6MDE6NTYrMDI6MDCjoi2MAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==") no-repeat center center;
+    }
+  }
+  // 折叠
+  .qas-expand-toggle{}
+  // 数据
+  .qas-meta{
+    @include meta();
+  }
+  .qas-footer{
+    overflow:hidden;
+  }
+  // 回答数
+  .qas-ans-count{
+    margin-right:15px;
+    @include re-count();
+  }
+  // 关注
+  .qas-follow-count{
+    margin-right:15px;
+    @include icon-text-pair();
+  }
+  // 操作
+  .qas-acts{
+    display:none;
+    float:right;
+    font-size:12px;
+    .sp{
+      display:inline-block;
+      width:1px;
+      height:10px;
+      background-color:#ddd;
+      margin:0 10px;
+    }
+    .act{
+      @include icon-text-pair();
+      margin:0 10px;
+    }
+  }
+  &:hover{
+    .qas-acts{
+      display:block;
+    }
+  }
+}

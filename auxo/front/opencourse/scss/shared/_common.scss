@@ -1,0 +1,37 @@
+/*!
+ * 页面公共样式类
+ * @type {css}
+ */
+$version: 20160520;
+@import "mixins";
+//@import "reset";
+@import "./../addins/scrollbar";
+@import "utils";
+
+.auxo-opencourse {
+  body,
+  button,
+  input,
+  select,
+  textarea,
+  div,
+  p,
+  a {
+    font: 14px/1.5 tahoma, arial, "microsoft yahei", simsun, sans-serif;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.yuncourse-loading {
+  display: none;
+
+  margin: 40% auto;
+  width: 32px;
+  height: 32px;
+
+  background: url("../../images/loading.gif?v=#{$version}") center center no-repeat;
+
+  @include position-absolute;
+}

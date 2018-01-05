@@ -1,0 +1,14 @@
+@import "_theme";
+@import "_base";
+@import "_iconfont";
+
+.container {
+    .player-container {
+        display: none;
+
+        width: 100%;
+        height: 100%;
+
+        background: #000;
+    }
+}

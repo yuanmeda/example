@@ -1,0 +1,248 @@
+@font-face {
+  font-family: 'elearning-course';
+  src: url('#{$iconfont-path}/fonts/elearning-course.eot?f2su1j');
+  src: url('#{$iconfont-path}/fonts/elearning-course.eot?f2su1j#iefix') format('embedded-opentype'),
+  url('#{$iconfont-path}/fonts/elearning-course.ttf?f2su1j') format('truetype'),
+  url('#{$iconfont-path}/fonts/elearning-course.woff?f2su1j') format('woff'),
+  url('#{$iconfont-path}/fonts/elearning-course.svg?f2su1j#elearning-course') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i[class^="icon-"],
+i[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'elearning-course' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=icon-]:before,
+[class*=" icon-"]:before {
+  display: inline-block;
+}
+
+.icon-add:before {
+  content: "\e900";
+}
+
+.icon-min:before {
+  content: "\e901";
+}
+
+.icon-search:before {
+  content: "\e902";
+}
+
+.icon-phone:before {
+  content: "\e903";
+}
+
+.icon-rarrow:before {
+  content: "\e904";
+}
+
+.icon-larrow:before {
+  content: "\e905";
+}
+
+.icon-rsj:before {
+  content: "\e906";
+}
+
+.icon-dsj:before {
+  content: "\e907";
+}
+
+.icon-view:before {
+  content: "\e908";
+}
+
+.icon-user:before {
+  content: "\e909";
+}
+
+.icon-close:before {
+  content: "\e90a";
+}
+
+.icon-play:before {
+  content: "\e90b";
+}
+
+.icon-star2:before {
+  content: "\e90c";
+}
+
+.icon-star1:before {
+  content: "\e90d";
+}
+
+.icon-darrow:before {
+  content: "\e90e";
+}
+
+.icon-uparrow:before {
+  content: "\e90f";
+}
+
+.icon-question:before {
+  content: "\e910";
+}
+
+.icon-document:before {
+  content: "\e911";
+}
+
+.icon-study:before {
+  content: "\e912";
+}
+
+.icon-sort:before {
+  content: "\e913";
+}
+
+.icon-halfstar:before {
+  content: "\e914";
+}
+
+.icon-study2:before {
+  content: "\e915";
+}
+
+.icon-exam2:before {
+  content: "\e916";
+}
+
+.icon-note2:before {
+  content: "\e917";
+}
+
+.icon-answer2:before {
+  content: "\e918";
+}
+
+.icon-auth2:before {
+  content: "\e919";
+}
+
+.icon-sort2:before {
+  content: "\e91a";
+}
+
+.icon-check-yes:before {
+  content: "\e91b";
+}
+
+.icon-radio:before {
+  content: "\e91c";
+}
+
+.icon-gz:before {
+  content: "\e91d";
+}
+
+.icon-finish:before {
+  content: "\e91e";
+}
+
+.icon-half:before {
+  content: "\e91f";
+}
+
+.icon-star:before {
+  content: "\e920";
+}
+
+.icon-write:before {
+  content: "\e921";
+}
+
+.icon-share:before {
+  content: "\e922";
+}
+
+.icon-circle:before {
+  content: "\e923";
+}
+
+.icon-url:before {
+  content: "\e924";
+}
+
+.icon-book:before {
+  content: "\e925";
+}
+
+.icon-review:before {
+  content: "\e926";
+}
+
+.icon-lg-locked:before {
+  content: "\e927";
+}
+
+.icon-vide:before {
+  content: "\e928";
+}
+
+.icon-collection:before {
+  content: "\e929";
+}
+
+.icon-pic:before {
+  content: "\e92a";
+}
+
+.icon-doc:before {
+  content: "\e92b";
+}
+
+.icon-txt:before {
+  content: "\e92c";
+}
+
+.icon-music:before {
+  content: "\e92d";
+}
+
+.icon-locked:before {
+  content: "\e92e";
+}
+
+.icon-dy:before {
+  content: "\e92f";
+}
+
+.icon-catalog:before {
+  content: "\e930";
+}
+
+.icon-vr:before {
+  content: "\e931";
+}
+
+.icon-forward:before {
+  content: "\e969";
+}
+
+.icon-edit:before {
+  content: "\f044";
+}
+
+.icon-trash:before {
+  content: "\f1f8";
+}
+
+.icon-fav:before {
+  content: "\e929"
+}

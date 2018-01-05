@@ -1,0 +1,10 @@
+.x-course-file-upload .x-btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: #0a969f;
+    color: #fff;
+    line-height: 32px;
+    padding: 0 20px;
+    border-radius: 3px;
+}

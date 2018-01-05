@@ -1,0 +1,6 @@
+﻿/*修正bootstrap的样式，使之更符合我们的要求*/
+legend { font-weight: bold; }
+.loading .bar { -webkit-transition: width 0.1s ease; -moz-transition: width 0.1s ease; -ms-transition: width 0.1s ease; -o-transition: width 0.1s ease; transition: width 0.1s ease; }
+.table thead th { height: 24px; font-size: 16px; font-weight: bold; line-height: 24px; }
+.table-vertical { display: table; }
+.table-vertical td { display: table-cell; vertical-align: middle; }

@@ -1,0 +1,7 @@
+.qas-post-answer{
+  @include re-form();
+  overflow:hidden;
+  .qas-img-uploader{
+    float:left;
+  }
+}

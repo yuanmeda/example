@@ -1,0 +1,27 @@
+.margin-bottom{
+  margin-bottom:20px;
+}
+.padding{
+  padding:20px;
+}
+.label{
+  padding:5px 10px;
+}
+.form-inline .form-group{
+  margin-right:10px;
+}
+.opts-bar{
+  overflow:hidden;
+}
+.opts-bar .btn{
+  margin-left:10px;
+}
+.empty-table{
+  text-align:center;
+  color: #a8a8a8;
+  padding:100px 0;
+  font-size:15px;
+}
+.table td{
+  word-break: break-all;
+}

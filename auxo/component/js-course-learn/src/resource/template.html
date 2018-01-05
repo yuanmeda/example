@@ -1,0 +1,29 @@
+<div class="cplay__content--resource" data-bind="visible:model.resources().length">
+    <a href="javascript:;" class="cplay__switch-btn btn-left"
+       data-bind="event:{'mousedown':$component.startScroll.bind($root,'left'),'mouseup':$component.endScroll.bind($root)}">
+        <i class="xcl-icon-triangle-left"></i>
+    </a>
+    <a href="javascript:;" class="cplay__switch-btn btn-right"
+       data-bind="event:{'mousedown':$component.startScroll.bind($root,'right'),'mouseup':$component.endScroll.bind($root)}">
+        <i class="xcl-icon-triangle-right"></i>
+    </a>
+    <div class="cplay__resource--scroller">
+        <ul class="cplay__resource--list clearfix"
+            data-bind="foreach:model.resources,style:{'width':model.resources().length*220 +'px'}">
+            <li class="cplay__resource--item"
+                data-bind="css:{'state-on':$data==$component.model.resource()},click:$component.selectResource.bind($component)">
+                <p class="cplay__resource--name">
+                    <i class="icon-sprite" data-bind="css:$component.model.ICON_CLASS_MAP[$data==$component.model.resource() ? $component.model.resourceStatus() : status]"></i>
+                    <span class="name-text" data-bind="text:name"></span>
+                </p>
+                <p class="cplay__resource--other">
+                    <i data-bind="css:iconClass"></i>
+                    <span class="other-txt" data-bind="text:displayData"></span>
+                    <!--ko if:extra_data && extra_data.exp_config && extra_data.exp_config.exp_type == 1 && courseStatusCode != 10-->
+                    <span class="exp-tip" data-bind="translate: { key: 'courseLearn.player.freeTrial' }"></span>
+                    <!--/ko-->
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>

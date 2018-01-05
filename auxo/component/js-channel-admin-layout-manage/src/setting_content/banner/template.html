@@ -1,0 +1,128 @@
+<div class="section-block modal fade" data-backdrop="static" id="sectionSetting1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                            class="sr-only">Close</span></button>
+                <h4 class="modal-title">图片轮播</h4>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 20px;">
+                    <a href="javascript:;" class="btn btn-primary" data-bind="click:create">新增图片轮播</a>
+                </div>
+                <div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="width: 20%">Banner标题</th>
+                            <th class="text-center" style="width: 20%">类型</th>
+                            <th class="text-center" style="width: 20%">最后修改时间</th>
+                            <th class="text-center" style="width: 20%">资源状态</th>
+                            <th class="text-center" style="width: 20%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="banner-drag" class="table-format"
+                               data-bind="attr:{id: 'banner-drag-'+params.id},foreach: model.items">
+                        <tr class="text-center" data-bind='attr: { id: id, name: title, sort_number: id }'>
+                            <td class="text-center" data-bind="text: title"
+                                style="max-width: 150px;word-wrap: break-word;"></td>
+                            <td class="text-center" data-bind="text: $component.data_type[data_type-1]"></td>
+                            <td class="text-center"
+                                data-bind="text: $.format.date(update_time,'yyyy-MM-dd HH:mm:ss')"></td>
+                            <td class="text-center"><span
+                                        data-bind="text: status == 0 ? '资源不可用，前台将不展示该banner' : '正常', css: status ? 'text-success':'text-danger' "></span>
+                            </td>
+                            <td class="text-center">
+                                <a href="javascript:;" class="btn"
+                                   data-bind="text:'编辑', click: $component.edit.bind($component)"></a>
+                                <a class="btn" href="javascript:;"
+                                   data-bind="text:'删除',click: $component.del.bind($component, id)"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody data-bind="visible: !model.items().length">
+                        <tr>
+                            <td class="text-center" colspan="5" style="text-align: center; padding:30px 0">暂无相关数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div data-bind="attr:{id: 'banner-modal-'+params.id}" class="modal fade" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                <h4 class="modal-title" data-bind="text: model.info.id() ? '编辑Banner' : '新增Banner'"></h4></div>
+            <div class="modal-body" style="max-height: 500px;overflow-y:auto;overflow-x:hidden;">
+                <form class="form-horizontal" id="bannerForm" onsubmit="return false;">
+                    <div class="form-group"><label class="col-sm-2 control-label">链接类型：</label>
+                        <div class="col-sm-10"><label class="radio-inline"><input name="linkType" type="radio"
+                                                                                  value="2"
+                                                                                  data-bind="checkedValue:2,checked: model.info.data_type,attr:{disabled: !!model.info.id()}">链接到资源</label><label
+                                    class="radio-inline"><input name="linkType" type="radio" value="1"
+                                                                data-bind="checkedValue:1,checked: model.info.data_type,attr:{disabled: !!model.info.id()}">链接到标签</label><label
+                                    class="radio-inline"><input name="linkType" type="radio" value="3"
+                                                                data-bind="checkedValue:3,checked: model.info.data_type,attr:{disabled:!!model.info.id()}">URL地址</label>
+                        </div>
+                    </div>
+                    <!-- ko if: model.info.data_type()!=3 -->
+                    <div class="form-group"><label class="col-sm-2 control-label"><em
+                                    class="required">*</em>推荐内容：</label>
+                        <div class="col-sm-10"><input type="text" name="courseTitle" readonly class="form-control"
+                                                      data-bind="click:_openDialog, value:model.info.title"
+                                                      placeholder="请选择"/></div>
+                    </div>
+                    <!--/ko-->
+                    <!--url地址-->
+                    <!-- ko if: model.info.data_type()==3 -->
+                    <div class="urlBlock">
+                        <div class="form-group"><label class="col-sm-2 control-label"><em class="required">*</em>
+                                Banner标题：</label>
+                            <div class="col-sm-10"><input maxlength="50" type="text" name="bannerTitle"
+                                                          class="form-control" data-bind="value:model.info.title"
+                                                          placeholder="请输入Banner标题"/></div>
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label">Web Url：</label>
+                            <div class="col-sm-10"><input type="text" name="webUrl" class="form-control"
+                                                          maxlength="1000"
+                                                          data-bind="value:model.info.web_url"
+                                                          placeholder="请输入Web Url"/></div>
+                        </div>
+                        <div class="form-group"><label class="col-sm-2 control-label">App Url：</label>
+                            <div class="col-sm-10"><input type="text" name="AppUrl" class="form-control"
+                                                          maxlength="1000"
+                                                          data-bind="value:model.info.mobile_url"
+                                                          placeholder="请输入App Url"/></div>
+                        </div>
+                    </div>
+                    <!--/ko-->
+                    <div class="form-group"><label class="col-sm-2 control-label">Banner图片：</label>
+                        <div class="col-sm-10 pic-area">
+                            <!--ko if: model.upload.info -->
+                            <p class="text-warning">仅支持JPG、PNG、GIF格式，且大小 2M 以下图片</p>
+                            <div data-bind="component:{'name': 'x-channel-upload', params: model.upload.web}"></div>
+                            <p class="text-warning">WEB尺寸：1920*400（全屏）、1200*400（居中）</p>
+                            <hr>
+                            <div data-bind="component:{'name': 'x-channel-upload', params: model.upload.mobile}"></div>
+                            <p class="text-warning">手机尺寸：750*300</p>
+                            <!--/ko-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"><a class="btn-primary btn" data-bind="click: saveBanner">推荐</a><a
+                        class="btn btn-default" data-dismiss="modal">取消</a></div>
+        </div>
+    </div>
+</div>
+<!--ko if: model.modal.tag -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-tag', params:{'selected_tag': model.info, disable: !!model.info.id(), from:'banner', type: 4, all: true, id: model.modal.tag_name()}}"></div>
+<!--/ko-->
+<!--ko if: model.modal.tab -->
+<div data-bind="component:{'name': 'x-channel-admin-layout-content-resource', params: {'selected_course': model.selected_course,'options': false, id: model.modal.tab_name()}}"></div>
+<!--/ko-->

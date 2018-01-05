@@ -1,0 +1,274 @@
+html {
+	overflow: auto;
+}
+.form-horizontal .control-group .control-label{
+	font-size: 14px;
+}
+.form-horizontal .control-group{
+	margin: 10px 0;
+}
+.banner-header{
+	margin-bottom: 25px;
+}
+.box .form-horizontal input[type="text"]{
+	height: 35px;
+	line-height: 35px;
+	padding: 0 10px;
+}
+.form-horizontal .control-label{
+	height: 30px;
+	line-height: 28px;
+}
+.required{
+	color: #f70000;
+}
+.form-horizontal .controls{
+	line-height: 38px;
+}
+
+.form-horizontal .controls label{
+	margin-right: 25px;
+}
+.form-horizontal .controls label input{
+	margin-right: 3px;
+}
+.popbg{
+    border: 1px solid #e8e8e8;
+    box-shadow: 0px 2px 5px 0px #e4e4e4;
+	padding: 20px;
+	width: 90%;
+	margin:0px auto;
+}
+.SelectTag{
+	position: absolute;
+	z-index: 9;
+	background: #fff;
+}
+
+.SelectTag .choostit{
+	font-size: 14px;
+	line-height: 35px;
+}
+.SelectTag span{
+	border: 1px solid #ddd;
+	padding: 0 14px;
+	height: 30px;
+	line-height: 28px;
+    color: #808080;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.SelectTag span:hover{
+	background: #40ad6c;
+    color: #fff;
+    border: 1px solid #399c61;
+}
+.tag .tagname{
+	border: 1px solid #ddd;
+	padding: 0 14px;
+	height: 30px;
+	line-height: 28px;
+	color: #808080;
+	border-radius: 3px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.tag .tagname .tagdelet{
+	height: 28px;
+	padding-left: 5px;
+	text-align: center;
+	color: #fa8252;
+	cursor: pointer;
+	display: inline-block;
+}
+.popbg div{
+	margin-bottom: 15px;
+}
+.popbg div label{
+	padding-bottom: 5px;
+	padding-right: 15px;
+	display: inline-block;
+}
+.popbg div p{
+	padding-top: 5px;
+	padding-left: 72px;
+	color: #0078cc;
+}
+.EvrWeek .choosday{
+	padding-left: 72px;
+}
+.EvrWeek .choosday label{
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+}
+.EvrWeek .choosday label input{
+	margin: 0 3px 0 0;
+}
+
+.increaseTime{
+	padding-left: 72px;
+}
+.monthly .monthlyDay{
+	width: 320px;
+	margin-left: 72px;
+	float: left;
+}
+.monthly .monthlyDay div{
+	height: 40px;
+	width: 40px!important;
+	line-height: 38px;
+	color: #666;
+	border-radius: 3px;
+	border: 1px solid #ddd!important;
+	margin: 1px;
+	cursor: pointer;
+}
+.monthly .monthlyDay div:hover , .monthly .monthlyDay .curr{
+	background: #40ad6c;
+    color: #fff;
+    border: 1px solid #399c61;
+    color: #fff!important;
+}
+
+.monthly .increaseTime , .monthly .increaseTime div{
+	margin-bottom: 15px;
+}
+.upload-outer{
+	background: rgba(0,0,0,0.5);
+}
+.upload-outer .tool-bar{
+	position: absolute;
+	left: 2.5%;
+	margin-left: 20px;
+	margin-top: 40px;
+	background: none;
+}
+.upload-outer object{
+	margin-top: 50px;
+}
+.upload-outer .upload-container{
+	background: #fff;
+	width: 95%;
+	margin: 0px auto;
+
+}
+.form-horizontal .controls textarea{
+	padding: 10px;
+}
+
+
+#periodic_exam_setting .icon {
+	background: url(../images/glyphicons-halflings.png);
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+}
+
+
+#periodic_exam_setting .icon-calendar {
+    background-position: -192px -120px;
+    margin: 0 5px;
+}
+
+#periodic_exam_setting .newmodal.modal-larger {
+	position: fixed;
+}
+
+#periodicexam-paper-strategy-setting input {
+	height: 26px;
+}
+
+#periodicexam-paper-strategy-setting li div {
+	margin-bottom: 5px;
+}
+
+.banner-header {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 0 10px 5px;
+  box-shadow: 4px 0 0 #fff,-4px 0 0 #fff,0 2px 5px #ddd;
+  *zoom: 1; }
+  .banner-header:before, .banner-header:after {
+    content: "";
+    display: table; }
+  .banner-header:after {
+    clear: both;
+    overflow: hidden; }
+  .banner-header:before {
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid #0cadb7;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px; }
+  .banner-header h2 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold; }
+  .banner-header a:hover {
+    text-decoration: none; }
+  .banner-header a.btn,
+  .banner-header button {
+    float: right;
+    margin-right: 5px;
+    vertical-align: bottom; }
+    .banner-header a.btn:hover,
+    .banner-header button:hover {
+      text-decoration: none; }
+
+form[class="form-inline"] .control-group input,
+form[class="form-inline"] .control-group select {
+    vertical-align: baseline;
+}
+
+form[class="form-horizontal"] input {
+    padding: 10px 5px;
+    height: 28px;
+    margin: 2px 0;
+}
+
+table.table thead{
+  background: #ccc;
+}
+
+table.table td {
+  text-align: center;
+}
+
+.box-content .content-area {
+  margin-top: 10px; 
+}
+
+body {
+  background: #ebebeb;
+}
+
+#create_offline_exam{
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+}
+
+input[type=file] {
+	display: none; 
+	/* 隐藏webuploader自有样式*/
+}
+
+.modal .modal-header h3 {
+	/* 组织树定制 */
+	font-size: 100%;
+}
+
+.modal .modal-body input[type=text] {
+	/* 组织树定制 */
+	height: 20px;
+}
+
+.webuploader-element-invisible {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+}

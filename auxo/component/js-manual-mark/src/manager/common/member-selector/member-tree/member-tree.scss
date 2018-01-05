@@ -1,0 +1,120 @@
+.mem-warp {
+  display: inline-block;
+  width: 210px;
+  height: 310px;
+  border: 1px solid #ddd;
+  background: #FFF;
+  overflow: auto;
+  float: left;
+}
+
+.mem-box {
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+  * {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+  }
+}
+
+.triangle-bottom {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  line-height: 11px;
+  background-image: url(../../../../../styles/img/bottom-t.png);
+  background-position: 5px 0;
+  background-repeat: no-repeat;
+  background-size: 11px 11px;
+}
+
+.triangle-right {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  line-height: 11px;
+  background-image: url(../../../../../styles/img/right-t.png);
+  background-position: 5px 0;
+  background-repeat: no-repeat;
+  background-size: 11px 11px;
+}
+.mem-tree {
+  line-height: 26px;
+  padding-left: 0;
+  margin: 0;
+  .li-pd{
+    padding-left:5px;
+  }
+  li {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    list-style-type: none;
+    .mem-tree-spread {
+      display: inline-block;
+      vertical-align: top;
+      height: 26px;
+      *display: inline;
+      *zoom: 1;
+      cursor: pointer;
+    }
+    a {
+      display: inline-block;
+      vertical-align: top;
+      height: 26px;
+      line-height: 26px;
+      *display: inline;
+      *zoom: 1;
+      cursor: pointer;
+      font-size: 0;
+      text-decoration: none;
+      color: #000;
+      &.on {
+        background: #FCEBA9 !important;
+      }
+      &:hover {
+        background: #C3E2F8;
+      }
+      i {
+        font-size: 10px;
+      }
+      cite {
+        padding: 0 6px;
+        font-size: 13px;
+        font-style: normal;
+      }
+    }
+    img{
+      height: 25px;
+      width: 25px;
+      border-radius: 5px;
+    }
+    i {
+      padding-left: 6px;
+      color: #333;
+    }
+    .disable {
+      cursor: not-allowed;
+    }
+    .mem-tree-check {
+      font-size: 13px;
+      &:hover {
+        color: #009E94;
+      }
+    }
+    ul {
+      display: none;
+      margin-left: 20px;
+      padding-left: 0;
+    }
+  }
+}
+
+.mem-show {
+  display: block !important;
+}
+
+.mem-hide {
+  display: none !important;
+}

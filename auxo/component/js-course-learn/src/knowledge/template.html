@@ -1,0 +1,20 @@
+<div class="dlist">
+    <!--ko foreach:model.knowledge-->
+    <div class="cata-list" data-bind="css:{'open':isOpen}">
+        <a class="icon-toggle" href="javascript:;"
+           data-bind="click:$component.toggleTree.bind($component),visible:children.length">
+            <i class="xcl-icon-right" data-bind="css:{'xcl-icon-down':isOpen,'xcl-icon-right':!isOpen()}"></i>
+        </a>
+        <span class="d-item"
+              data-bind="html:title,attr:{'title':name},click:$component.getResources.bind($component),css:{'active':id == $component.model.knowledge_id()}"></span>
+        <ul class="list level-2">
+            <!--ko foreach:children-->
+                <!--ko template: { 'name': 'knowledge-tree-item', 'data': $data }--><!--/ko-->
+            <!--/ko-->
+        </ul>
+    </div>
+    <!--/ko-->
+</div>
+<div class="course__no-menu" data-bind="translate:{'key':'courseLearn.knowledge.notFound'},visible:model.ready() && !model.knowledge().length">
+    没有找到知识点
+</div>

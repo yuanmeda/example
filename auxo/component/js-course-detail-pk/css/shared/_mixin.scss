@@ -1,0 +1,68 @@
+/*==== font ====*/
+@mixin font($size: 14, $color: #333,$weight:normal, $family: ''){
+  @if $family != '' {
+    font-family: $family;
+  }
+  font-size: $size + px;
+  color: $color;
+  font-weight: $weight;
+}
+
+@mixin ellipse(){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*==== opacity ====*/
+@mixin opacity($num){
+  opacity: $num / 100;
+  filter:alpha(opacity=$num);
+}
+/*==== placeholder ====*/
+@mixin placeholder($fontSize, $color) {
+    :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        font-family: 'microsoft yahei';
+        color: $color;
+        font-size: $fontSize + px;
+    }
+
+    ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        font-family: 'microsoft yahei';
+        color: $color;
+        font-size: $fontSize + px;
+    }
+
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        font-family: 'microsoft yahei';
+        color: $color !important;
+        font-size: $fontSize + px;
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        font-family: 'microsoft yahei';
+        color: $color !important;
+        font-size: $fontSize + px;
+    }
+
+    .placeholder {
+        font-family: 'microsoft yahei';
+        color: $color !important;
+        font-size: $fontSize + px;
+    }
+}
+// block得有宽度margin左右为auto才能居中
+@mixin center-block ($extend:true) {
+  @if $extend {
+    @extend %center-block;
+  } @else {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+%center-block{
+  @include center-block(false);
+}

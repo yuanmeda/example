@@ -1,0 +1,26 @@
+@import '../shared/variables';
+@import '../shared/mixins';
+.banner-header {
+    margin-bottom: 10px;
+    border-radius: $smallRadius;
+    padding: 0 10px 5px;
+
+    box-shadow: 4px 0 0 #fff,-4px 0 0 #fff,0 2px 5px #ddd;
+
+    @include clearfix();
+    &:before {
+        display: inline-block;
+
+        margin-right: 10px;
+        border: 2px solid $themeColor;
+        border-radius: 50%;
+        width: $baseFontSize;
+        height: $baseFontSize;
+    }
+    h2 {
+        display: inline-block;
+
+        font-size: 18px;
+        font-weight: bold;
+    }
+}

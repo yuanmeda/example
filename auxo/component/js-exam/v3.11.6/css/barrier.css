@@ -1,0 +1,503 @@
+.bt-primary,
+a.bt-primary, .bt-default,
+a.bt-default, .bt-tips,
+a.bt-tips, .bt-save,
+a.bt-save, .bt-disabled,
+a.bt-disabled, .bt-sm,
+a.bt-sm, .bt-md,
+a.bt-md, .bt-lg,
+a.bt-lg {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.bt-primary,
+a.bt-primary {
+    border-color: #0a969f;
+    color: #fff;
+    background: #0cadb7;
+    transition: all .3s;
+}
+
+.bt-primary:hover,
+a.bt-primary:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #0a969f;
+}
+
+.bt-default,
+a.bt-default {
+    border-color: #d8d8d8;
+    color: #333;
+    background: #e5e5e5;
+    transition: all .3s;
+}
+
+.bt-default:hover,
+a.bt-default:hover {
+    text-decoration: none;
+    color: #333;
+    background: #d8d8d8;
+}
+
+.bt-tips,
+a.bt-tips {
+    border-color: #e65c00;
+    color: #fff;
+    background: #f60;
+    transition: all .3s;
+}
+
+.bt-tips:hover,
+a.bt-tips:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #e65c00;
+}
+
+.bt-save,
+a.bt-save {
+    border-color: #7fc33e;
+    color: #fff;
+    background: #8cc951;
+    transition: all .3s;
+}
+
+.bt-save:hover,
+a.bt-save:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #7fc33e;
+}
+
+.bt-disabled,
+a.bt-disabled {
+    border-color: #8c8c8c;
+    color: #fff;
+    background: #999;
+    transition: all .3s;
+}
+
+.bt-disabled:hover,
+a.bt-disabled:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #8c8c8c;
+}
+
+.bt-sm,
+a.bt-sm {
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.bt-md,
+a.bt-md {
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.bt-lg,
+a.bt-lg {
+    padding: 0 25px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.bt-group [class^="bt-"] + [class^="bt-"] {
+    margin-left: 20px;
+}
+
+.level-box {
+    line-height: 37px;
+    margin-bottom: 8px;
+}
+
+.level-box .content {
+    font-size: 0;
+    background: #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    line-height: 1.5;
+    margin-right: 10px;
+}
+
+.level-box .content label {
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.level-box .content label input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.level-box .content label input[type="radio"]:checked + span {
+    background: #0cadb7;
+}
+
+.level-box .content label span {
+    display: inline-block;
+    border-radius: 3px;
+    background: transparent;
+    color: #fff;
+    transition: background 0.3s;
+    height: 27px;
+    line-height: 27px;
+    width: 66px;
+}
+
+.level-box .content input[type="text"] {
+    height: 27px;
+    line-height: 27px;
+    width: 70px;
+    padding: 0 5px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px #eee;
+}
+
+.level-box .content input[type="text"]:focus {
+    box-shadow: inset 0 0 5px #0fdae7;
+}
+
+.level-box .label-op .del {
+    color: #098087;
+    display: none;
+    margin-left: 10px;
+}
+
+.level-box:hover .label-op .del {
+    display: inline-block;
+}
+
+.answer-li {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #0cadb7;
+}
+
+.answer-li a.name {
+    color: #0cadb7;
+    margin-right: 10px;
+}
+
+.answer-li a.name:hover {
+    text-decoration: underline;
+}
+
+.answer-li .answer-op a {
+    display: inline-block;
+    color: #0cadb7;
+    padding: 0 10px;
+}
+
+.answer-li .answer-op a:hover {
+    text-decoration: underline;
+}
+
+.answer-li .answer-op a + a {
+    margin-left: 10px;
+}
+
+.setting-bc-box {
+    background: #eee;
+    height: 280px;
+    overflow: auto;
+    padding: 10px;
+}
+
+input[type="text"] {
+    height: 26px;
+    line-height: 26px;
+    padding: 0 5px;
+}
+
+.label-div {
+    margin-right: 10px;
+}
+
+.mr10 {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/*.modal-catalog {
+  height: 37px;
+  width: 50%;
+  line-height: 32px; }
+  .modal-catalog .name {
+    color: #333;
+    line-height: 32px; }
+  .modal-catalog .option {
+    font-size: 0; }
+    .modal-catalog .option a {
+      display: inline-block;
+      padding: 0 10px;
+      margin: 0 5px;
+      border-radius: 3px;
+      height: 32px;
+      line-height: 32px;
+      color: #666;
+      font-size: 14px; }
+      .modal-catalog .option a.active {
+        background: #0cadb7;
+        color: #fff; }
+  .modal-catalog .more {
+    position: relative; }
+    .modal-catalog .more .more-title {
+      padding: 0 10px;
+      margin: 0 5px;
+      border-radius: 3px;
+      display: inline-block;
+      background: #0cadb7;
+      color: #fff; }
+      .modal-catalog .more .more-title li {
+        color: #0cadb7; }
+    .modal-catalog .more .more-li {
+      position: absolute;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 3px;
+      top: 32px;
+      left: 0;
+      max-width: 180px; }
+      .modal-catalog .more .more-li a {
+        display: block;
+        height: 32px;
+        line-height: 32px;
+        color: #666;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 0 10px; }
+        .modal-catalog .more .more-li a:hover {
+          background: #e1e1e8; }
+
+.newmodal.modal-larger {
+  margin-left: 20%;
+  margin-top: 6%;
+  position: absolute;
+  top: 0;
+  z-index: 1050;
+  overflow: auto;
+  width: 60%;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box; }
+  .newmodal.modal-larger .row {
+    margin: 0; }
+  .newmodal.modal-larger .modal-body {
+    max-height: 550px;
+    height: 550px;
+    overflow: hidden; }*/
+
+.chapter-tree {
+    width: 30%;
+    border-right: 1px solid #ddd;
+}
+
+.chapter-tree h1 {
+    width: 100%;
+    display: inline-block;
+    border-bottom: 1px solid #ddd;
+}
+
+.itempool-list {
+    width: 70%;
+}
+
+.itempool-list .item-header {
+    height: 35px;
+    line-height: 35px;
+}
+
+.itempool-list .item-header .item-more {
+    position: relative;
+}
+
+.itempool-list .item-header .item-more .more-title {
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    display: inline-block;
+    background: #0cadb7;
+    color: #fff;
+}
+
+.itempool-list .item-header .item-more .more-title li {
+    color: #0cadb7;
+}
+
+.itempool-list .item-header .item-more .more-item {
+    position: absolute;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 3px;
+    top: 32px;
+    left: 0;
+    max-width: 180px;
+}
+
+.itempool-list .item-header .item-more .more-item a {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+}
+
+.itempool-list .item-header .item-more .more-item a:hover {
+    background: #e1e1e8;
+}
+
+.input-append .add-on, .input-append .btn {
+    margin-left: -5px;
+    height: 26px;
+}
+
+.modal-body {
+    max-height: 710px;
+}
+
+.modal-body.no-foot {
+    max-height: 770px;
+}
+
+.chapter-tree {
+    width: 30%;
+    border-right: 1px solid #ddd;
+}
+
+.chapter-tree h1 {
+    width: 100%;
+    display: inline-block;
+    border-bottom: 1px solid #ddd;
+}
+
+.x-itempool .ztree {
+    height: 540px;
+    width: 320px;
+    overflow-y: auto;
+}
+
+.itempool-list {
+    width: 70%;
+}
+
+.row {
+    margin-left: 0;
+}
+
+.modal-catalog {
+    height: 28px;
+    line-height: 26px;
+    margin: 0 5px 5px 0;
+}
+
+.modal-catalog .name {
+    color: #333;
+    line-height: 26px;
+    margin-right: 5px;
+}
+
+.modal-catalog .option {
+    font-size: 0;
+}
+
+.modal-catalog .option a {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0 1px;
+    border-radius: 3px;
+    height: 26px;
+    line-height: 26px;
+    color: #666;
+    font-size: 14px;
+}
+
+.modal-catalog .option a.active {
+    background: #0cadb7;
+    color: #fff;
+}
+
+.modal-catalog .option .more {
+    font-size: 14px;
+    position: relative;
+}
+
+.modal-catalog .option .more .more-title {
+    cursor: pointer;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.modal-catalog .option .more .more-title li {
+    color: #0cadb7;
+}
+
+.modal-catalog .option .more:hover .more-li {
+    display: block;
+}
+
+.modal-catalog .option .more .more-li {
+    position: absolute;
+    display: none;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 3px;
+    top: 26px;
+    left: 5px;
+    max-width: 180px;
+    z-index: 1;
+}
+
+.modal-catalog .option .more .more-li a {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+}
+
+.modal-catalog .option .more .more-li a:hover {
+    background: #e1e1e8;
+}
+
+.x-itempool .ztree {
+    height: 540px;
+    width: 285px;
+    overflow-y: auto;
+}
+
+.itempool-list {
+    width: 70%;
+}

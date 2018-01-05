@@ -1,0 +1,150 @@
+//@import "base";
+@import "mixins";
+@import "list_base";
+@import "_nlabel";
+@import "modals";
+@import "banner_header";
+.box{
+  margin-bottom: 20px;
+  margin-top:5px;
+  .item-list:empty,.opencourse-item:empty{
+    height:40px;
+    display: block;
+    margin:10px;
+    &.clearfix:after{
+      content:'暂无选项 -_- !';
+      color:#666;
+      font-size: 15px;
+      height:auto;
+      height: 40px;
+      line-height: 40px;
+      visibility: visible;
+    }
+  }
+}
+//覆盖样式
+.course-item .item-desc{
+  padding:0;
+  .item-title{
+    font-size:18px;
+  }
+  .item-label span{
+    color:#000;
+  }
+}
+//当独课程样式
+.course-item{
+  .item-desc{
+    float: left;
+    padding: 10px;
+    width: 600px;
+    width: calc(100% - 300px);
+    word-break: break-all;
+    h2{
+      font-size: 22px;
+      display: inline;
+    }
+    small{
+      margin-left: 20px;
+    }
+    .item-detail{
+      padding: 10px 0;
+      max-height: 120px;
+      overflow: hidden;
+    }
+  }
+}
+//去除样式
+.item-img,.catalog-label{
+  position: relative;
+  .remove-item{
+    position: absolute;
+    top:2px;
+    right:2px;
+    width:20px;
+    height:20px;
+    line-height: 18px;
+    background-color: #ff3c30;
+    color:#eee;
+    cursor: pointer;
+    text-align: center;
+    z-index: 1;
+    @include css3(border-radius,50%);
+    &:after{
+      content:'—';
+      font-weight: bold;
+      font-size: 14px;
+    }
+    &:hover{
+      background-color: #f00;
+    }
+  }
+}
+//公开课
+.opencourse-item{
+  .catalog-label{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1ECBD6;
+    color: #fff;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  .remove-item{
+    width:18px;
+    height:18px;
+    line-height: 16px;
+    &:after{
+      font-size: 14px;
+    }
+  }
+}
+
+//左右移动框样式
+.handler-area{
+  float: left;
+  height:100%;
+  width:40%;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: auto;
+  &.middle{
+    width:20%;
+  }
+  .btns>button{
+    display: block;
+    margin: 25px auto;
+    width: 42px;
+  }
+
+  &.left,&.right{
+    padding:2px 6px;
+    div{
+      height: 24px;
+      line-height: 24px;
+      text-align: left;
+      padding:0 5px;
+      margin-top:1px;
+      cursor: pointer;
+      overflow: hidden;
+      &:hover{
+        background-color: #eee;
+        color:#10AEB8;
+      }
+      &.active{
+        background-color: #169bd5;
+        color: #fff;
+      }
+    }
+  }
+}
+
+//标签树样式
+.tree-container{
+  height:100%;
+  overflow: hidden;
+  overflow-y: auto;
+}

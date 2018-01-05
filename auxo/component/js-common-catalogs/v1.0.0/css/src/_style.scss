@@ -1,0 +1,57 @@
+.x-common-catalogs {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  overflow:hidden;
+  .list-row {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    overflow: hidden;
+    &:last-child {
+      border-bottom: 0 none;
+    }
+    .lead-title {
+      line-height: 26px;
+      word-break: break-all;
+      width: 90px;
+      font-weight: 700;
+      text-align: right;
+      color: #333;
+      float:left;
+      margin-right:15px;
+    }
+    .tag-label{
+      float:left;
+      margin:0 0 8px 2px;
+      height:26px;
+      line-height:26px;
+      padding: 0 15px;
+      color:#333;
+      font-size:13px;
+      border-radius:3px;
+      min-width:50px;
+      cursor:pointer;
+      &.on,
+      &:hover{
+        background:$theme-color;
+        color:#fff;
+      }
+    }
+    .column-list{
+      overflow:hidden;
+      margin:0;
+      padding:0;
+      list-style:none;
+      li{
+        list-style:none;
+      }
+    }
+  }
+}
+
+.tag-empty{
+  text-align:center;
+  padding:20px 0;
+  font-size:14px;
+  color: #989898;
+}

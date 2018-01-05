@@ -1,0 +1,94 @@
+@import "mixins";
+$fontColor:#444;
+.catalogs{
+  padding:20px 20px 10px;
+  .catalog-column:last-child{
+    border-bottom: none;
+  }
+}
+.catalogs .catalog-column {
+  padding: 15px 10px 7px;
+  border-bottom: 1px dashed #dedede;
+  // @include css3(box-shadow,0 0 1px 0 #eee);
+
+  .column-list,.column-title,.item-all{
+    display:block;
+    float:left;
+  }
+  span.column-title{
+    &:after{
+      content:"：";
+    }
+  }
+  .column-title{
+    //height:20px;
+    //line-height: 20px;
+    height: 26px;
+    line-height: 26px;
+    word-break: break-all;
+    padding-top: 2px;
+    width: 175px;
+    font-weight: bold;
+    text-align: right;
+    overflow: hidden;
+    color: #333;
+  }
+  .item-all{
+    margin-left: 8px;
+    padding-top: 2px;
+    a{
+      display: block;
+      height: 26px;
+      line-height: 26px;
+      padding: 0 15px;
+      color: #666;
+      font-size: 13px;
+      text-decoration: none;
+      border-radius: 3px;
+    }
+    &:hover a,&.active a{
+      color: #fff;
+      background-color: $themeColor;
+      text-decoration: none;
+    }
+  }
+  .column-list{
+    //width:910px;
+    @include css3(width,calc(100% - 270px));
+    padding-left: 8px;
+    li{
+      float: left;
+      margin-left: 2px;
+      padding-top:2px;
+      margin-bottom: 8px;
+      a{
+        min-width:50px;
+        display: block;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 15px;
+        color: $fontColor;
+        font-size: 13px;
+        text-align: center;
+        border-radius: 3px;
+      }
+      &:hover a,&.active a{
+        color: #fff;
+        background-color: $themeColor;
+        text-decoration: none;
+      }
+      b.warn{
+        display: block;
+        float: right;
+        vertical-align: middle;
+        width:15px;
+        height:24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        background-color: #fff;
+        background-image: url(/elearningweb/admin/images/warn.png);
+      }
+    }
+  }
+}

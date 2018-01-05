@@ -1,0 +1,31 @@
+@import "list_base";
+@import "animation";
+@import "banner_header";
+@import "basebox";
+.main-wrap{
+  min-height: auto!important;
+}
+.train-main {
+  font-size: 14px;
+  font-size: 14px;
+  background-color: #ebebeb;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  .bc_f{
+    background: #fff;
+  }
+  .footer{
+    text-align: center;
+    max-width: 1643px;
+    .controls{
+      a{
+        width:105px
+      }
+    }
+  }
+}

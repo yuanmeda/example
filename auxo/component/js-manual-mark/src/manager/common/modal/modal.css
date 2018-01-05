@@ -1,0 +1,79 @@
+.wrap{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .3);
+  z-index: 1;
+}
+
+.wrap.hide{
+  display: none
+}
+
+.modal{
+  position: absolute;
+  min-width: 500px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden
+}
+
+.modal-header{
+  padding: 10px 20px;
+  background: #21a9de;
+  color: #fff;
+  overflow: hidden;
+}
+
+.modal-title{
+
+}
+
+.modal-close{
+  float: right;
+  cursor: pointer;
+}
+
+.confirm .modal-content{
+  text-align: center;
+}
+
+.modal-content{
+  padding: 30px 20px 20px;
+}
+
+.modal-operations{
+  text-align: center;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.btn{
+  padding: 8px 15px;
+  width: 100px;
+  margin: 0 40px;
+  border: none;
+  border-radius: 4px;
+}
+
+.btn-cancel{
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  color: #666;
+}
+
+.btn-ok{
+  background: #21a9de;
+  color: #fff;
+  border: 1px solid #21a9de;
+}
+
+.btn-ok:hover,.btn-ok:active{
+  background: #1c89d6;
+  border-color: #1c89d6;
+}

@@ -1,0 +1,77 @@
+@import "mixins";
+
+/* 常用类定义 */
+.mask {
+    z-index: 100;
+
+    background-color: #000;
+
+    @include opacity(0);
+    @include position-absolute;
+}
+//超出... 
+.ellipsis {
+    @include text-overflow;
+}
+// 清除浮动
+.clearfix {
+    @include clearfix;
+}
+.hide {
+    display: none !important;
+}
+.fl {
+    float: left !important;
+}
+.fr {
+    float: right !important;
+}
+.show {
+    display: block !important;
+}
+.tc {
+    text-align: center !important;
+}
+.tl {
+    text-align: left !important;
+}
+.tr {
+    text-align: right !important;
+}
+.mt10{
+    margin-top: 10px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.mr10{
+    margin-right: 10px;
+}
+.vm {
+    @include v-position(middle);
+}
+@each $fs in 12 14 16 18 20 22 24 26 {
+    .fs#{$fs} {
+        font-size: $fs+0 !important;
+    }
+}
+@each $w in 60 100 120 160 200 300 {
+    .w#{$w} {
+        width: $w + px !important;
+    }
+}
+.nodata-box {
+    height: 200px;
+    font-size: 22px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 36px;
+    color: #777;
+    &:after {
+        content: attr(data-content);
+    }
+}
+

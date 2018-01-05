@@ -1,0 +1,116 @@
+//@import "_base";
+@import "iconfont";
+@import "common";
+@import "side";
+@import "base_info";
+// @import "_detail";
+@import "review";
+@import "popbox";
+@import "animation";
+@import "exam_list";
+@import "couponbox";
+
+.tab-item {
+  min-height: 225px;
+}
+
+.dialog-tl {
+  text-indent: 12px;
+  text-align: left;
+}
+
+.lh2 {
+  line-height: 2;
+}
+
+.pre-train-hint {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  max-width: 230px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-icon {
+  font-size: 70px;
+
+  color: #ccc;
+}
+
+.line {
+  display: inline-block;
+}
+
+.font14 {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.item-info-over {
+  position: relative;
+  margin-top: 0 !important;
+}
+
+.info-fl {
+  min-height: 76px;
+}
+
+.mt03 {
+  height: 34px !important;
+}
+
+.course-list-tit {
+  padding: 20px 30px 0;
+  line-height: 32px;
+  .course-num-info {
+    i {
+      display: inline;
+      margin: 0 5px;
+      color: $themeColor;
+    }
+  }
+  .bt-group {
+    [class*='btn'].bc-blue {
+      color: #fff;
+      border-radius: 3px;
+      &:hover {
+        background: darken($themeColor, 10%);
+      }
+    }
+  }
+}
+
+/*收藏按钮样式开始*/
+$disabledColor: #ccc !default;
+$fontSize: 15px;
+
+$buttonMap: (theme:($themeColor, #fff, $btnhover), disabled:($disabledColor, #fff, $disabledColor));
+.collectionButton {
+  border-radius: 4px;
+  font-size: $fontSize;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 15px;
+  padding: 10px 15px;
+}
+
+@each $type, $colors in $buttonMap {
+  .collectionButton--#{$type} {
+    color: nth($colors, 2);
+    border-color: nth($colors, 1);
+    background-color: nth($colors, 1);
+    @if $type!=disabled {
+      &:hover {
+        border-color: nth($colors, 3);
+        background-color: nth($colors, 3);
+      }
+    }
+  }
+}

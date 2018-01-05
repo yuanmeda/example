@@ -1,0 +1,24 @@
+@import "./_theme";
+@import "../share/faqButton";
+
+
+.faqCircle{
+  .circleFaq{
+    background-position: -12px -18px;
+  }
+  &:hover {
+    .circleFaq{
+      background-position: -8px -89px;
+    }
+  }
+}
+.topCircle{
+  .circleTop{
+    background-position: -12px -19px;
+  }
+  &:hover {
+    .circleTop{
+      background-position: -8px -89px;
+    }
+  }
+}

@@ -1,0 +1,266 @@
+@import "./_mixin";
+@import "./_variables";
+
+
+/*reset*/
+a,
+span,
+div,
+p {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 12px;
+}
+.fr {
+    float: right;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.pdl20 {
+    padding-left: 20px;
+}
+
+.pdl40 {
+    padding-left: 40px;
+}
+
+
+
+/* item组件 */
+.n-ui-note-item {
+    padding: 15px 20px;
+    border-bottom: 1px dashed #e0e0e0;
+    &:hover {
+        .note-item-footer {
+            .n-icon-edit, .n-icon-delete {
+                display: inline-block;
+                *display: inline;
+                *zoom: 1;
+            }
+        }
+    }
+    .note-icon-txt {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: top;
+        min-width: 32px;
+        //line-height: 40px;
+    }
+    .note-icon {
+        display: inline-block;
+        position: relative;
+        margin-top: -2px;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: middle;
+        margin-right: 2px;
+        cursor: pointer;
+        &:before {
+            font-size: 18px;
+            color: #b7b7b7;
+        }
+        &:hover {
+            opacity: .8;
+        }
+        &.n-icon-topic {
+            margin-left: 4px;
+            margin-right: 4px;
+            margin-top: -3px;
+            width: 14px;
+            height: 18px;
+            color: #fff;
+            background-color: #b7b7b7;
+            &:before {
+                display: inline-block;
+                margin-top: -20px;
+                vertical-align: middle;
+                font-size: 16px;
+                color: #fff;
+            }
+        }
+        &.n-icon-like {
+            & + .note-txt {
+                cursor: pointer;
+            }
+            &.on {
+                color: $main;
+            }
+        }
+        &.n-icon-edit {
+            display: none;
+            position: relative;
+            margin-right: 10px;
+            &:after {
+                content: '';
+                position: absolute;
+                left: 100%;
+                top: 50%;
+                margin-left: 12px;
+                background: #f2f2f2;
+                width: 2px;
+                height: 17px;
+                margin-top: -9px;
+            }
+            &:hover {
+                color: $main;
+            }
+        }
+        &.n-icon-pen {
+            &:hover {
+                color: $main;
+            }
+
+        }
+        &.n-icon-delete {
+            display: none;
+            margin-left: 10px;
+            &:hover {
+                color: $main;
+            }
+        }
+        &.n-icon-star {
+            margin-top: -2px;
+            &:hover {
+                opacity: .8;
+            }
+
+            &.on {
+                color: $main;
+            }
+        }
+        &.n-icon-report {
+            &.on {
+                color: $main;
+            }
+        }
+    }
+    .note-txt {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: top;
+        color: $gray;
+        font-size: 12px;
+        &:link {
+            color: $gray;
+        }
+    }
+    .note-txt-light-gray {
+        color: $light-gray;
+        &:link {
+            color: $light-gray;
+        }
+    }
+    a.note-txt {
+        &:hover {
+            color: $main;
+        }
+        &:active {
+            color: $main-dark;
+        }
+    }
+
+    .note-txt-main {
+        color: $main;
+    }
+    .note-item-header {
+        @extend %clearfix;
+        line-height: 40px;
+        width: 100%;
+    }
+    .note-item-body {
+        line-height: 24px;
+        color: $dark-gray;
+        font-size: 14px;
+        word-wrap: break-word;
+        word-break: break-all;
+        .n-icon-down {
+            display: none;
+        }
+        &.text-limit {
+            position: relative;
+            padding-bottom: 5px;
+            p {
+                overflow: hidden;
+                max-height: 120px;
+            }
+            .n-icon-down {
+                display: block;
+                position: absolute;
+                left: 50%;
+                bottom: -12px;
+                margin-left: -8px;
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+                &:hover {
+                    opacity: .7;
+                }
+                &:active {
+                    opacity: .9;
+                }
+            }
+        }
+    }
+    .note-item-footer {
+        @extend %clearfix;
+        width: 100%;
+        line-height: 40px;
+        .note-icon-txt {
+            min-width: 35px;
+            &.first {
+                margin-right: 30px;
+                ~ .note-txt {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+    .grey-line {
+        position: relative;
+        width: 50px;
+        &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: 25px;
+            top: 12px;
+            width: 0;
+            height: 18px;
+            border: 1px solid #f2f2f2;
+        }
+    }
+
+    &.person-note {
+        .note-item-header {
+            .note-icon-txt {
+                float: left;
+                overflow: hidden;
+                margin-right: 20px;
+                width: 100px;
+                max-height: 42px;
+                white-space: nowrap;
+            }
+            .note-txt-light-gray {
+                overflow: hidden;
+                max-height: 42px;
+                @extend %tof;
+            }
+        }
+        .n-icon-edit, .n-icon-delete {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+    }
+}
+

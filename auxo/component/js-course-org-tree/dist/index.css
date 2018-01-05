@@ -1,0 +1,60 @@
+.x-course-org-tree .org-tree-block {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.x-course-org-tree .modal-body .ztree {
+    height: 300px;
+    width: initial;
+    border: #eee 1px solid;
+    overflow: scroll;
+}
+
+.x-course-org-tree .org-tree-block input[type='text'] {
+    color: #999;
+    height: 26px;
+    line-height: 26px;
+    padding: 5px;
+}
+
+.x-course-org-tree .modal-body {
+    padding: 5px 15px;
+}
+
+.x-course-org-tree .seach-box {
+    padding-bottom: 5px;
+}
+
+.x-course-org-tree .seach-box input[type='text'] {
+    padding: 0 5px;
+}
+.x-course-visible-tree .org-tree-block {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.x-course-visible-tree .modal-body .ztree {
+    height: 300px;
+    width: initial;
+    border: #eee 1px solid;
+    overflow: scroll;
+}
+
+.x-course-visible-tree .org-tree-block input[type='text'] {
+    color: #999;
+    height: 26px;
+    line-height: 26px;
+    padding: 5px;
+}
+
+.x-course-visible-tree .modal-body {
+    padding: 5px 15px;
+}
+
+.x-course-visible-tree .seach-box {
+    padding-bottom: 5px;
+}
+
+.x-course-visible-tree .seach-box input[type='text'] {
+    padding: 0 5px;
+}

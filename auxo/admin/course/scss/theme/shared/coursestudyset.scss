@@ -1,0 +1,43 @@
+@import "banner_header";
+@import "mixins";
+// 按钮
+@import "button";
+@import "baseinfo";
+//输入框提示
+.text-help {
+  display: inline-block;
+
+  vertical-align: top;
+
+  color: #999;
+  float: right;
+  em {
+    margin: 0 2px;
+
+    font-size: 1.2em;
+    font-style: oblique;
+
+    color: $themeColor;
+  }
+}
+
+.c-group .contxt textarea {
+  width: 600px;
+}
+
+.c-group .contxt {
+  margin-left: 200px;
+  .inline {
+    display: inline-block;
+  }
+}
+
+.c-group .tit {
+  width: 180px;
+}
+
+.input-small {
+  width: 90px !important;
+  background: #fff !important;
+  vertical-align: top;
+}

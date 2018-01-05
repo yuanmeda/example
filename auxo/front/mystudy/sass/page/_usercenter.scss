@@ -1,0 +1,218 @@
+@import "../shared/mixins";
+@import "../shared/btn";
+@import "../shared/nav";
+
+$containerWidth: 1200px;
+$borderColor: #e0e0e0;
+$tabHeight: 60px;
+$minHeight: 885px;
+body {
+  min-width: $containerWidth;
+  height: inherit;
+  min-height: 100%;
+  background-color: #f2f2f2;
+}
+
+%fixHeight {
+  margin-bottom: -32767px;
+  padding-bottom: 32767px;
+}
+
+.study-container {
+  margin: 30px auto 50px;
+  width: $containerWidth;
+  min-height: $minHeight;
+  @include clearfix;
+  .user-layout {
+    position: relative;
+    background: #f9f9f9;
+    overflow: hidden;
+    min-height:760px;
+    &:before {
+      display: block;
+      content: "";
+      height: 1px;
+      position: absolute;
+      width: 1020px;
+      right: 0;
+      bottom: 0;
+      background-color: $borderColor;
+      z-index: 20;
+    }
+  }
+  // 左侧导航
+  .user-left {
+    width: 180px;
+    min-height: 540px;
+    @extend %fixHeight;
+    > div {
+      min-height: 885px;
+    }
+    .info {
+      padding: 20px 0;
+      text-align: center;
+      .user-img {
+        margin-bottom: 10px;
+        img {
+          display: inline-block;
+          border-radius: 50%;
+          width: 100px;
+          min-height: 100px;
+        }
+      }
+      .user-name {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      .user-dl {
+        color: #999;
+        .user-dd {
+          width: 50%;
+          &:first-child {
+            border-right: 1px solid $borderColor;
+          }
+          span {
+            display: block;
+            i {
+              color: $themeColor;
+            }
+          }
+        }
+      }
+    }
+    .user-nav {
+      font-size: 16px;
+      text-align: center;
+      .nav-second {
+        .nav-item {
+          padding-left: 60px;
+          color: #999;
+          height: 36px;
+          line-height: 36px;
+          &.active {
+            padding-left: 58px;
+          }
+        }
+      }
+      .nav-item {
+        display: block;
+        box-sizing: inherit;
+        padding-left: 30px;
+        height: 44px;
+        line-height: 44px;
+        text-align: left;
+        font-size: 0;
+        i {
+          margin-right: 8px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #999;
+          width: 19px;
+          height: 19px;
+          display: inline-block;
+          overflow: hidden;
+          text-align: center;
+          &.ms-icon-rarrow {
+            font-weight: normal;
+            margin: 0 0 0 8px;
+            font-size: 16px;
+            height: auto;
+          }
+        }
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 16px;
+        }
+        &.nav-leaf:hover,
+        &.active {
+          color: $themeColor;
+          i {
+            color: $themeColor;
+          }
+        }
+        &.active {
+          position: relative;
+          padding-left: 28px;
+          z-index: 10;
+          margin-right: -1px;
+          border-top: 1px solid $borderColor;
+          border-bottom: 1px solid $borderColor;
+          border-left: 2px solid $themeColor;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  // 右侧内容
+  .user-center {
+    position: relative;
+    border: 1px solid $borderColor;
+    width: 1020px;
+    min-height: $minHeight;
+    background: #fff;
+    @extend %fixHeight;
+    @extend %tab-nav;
+    .iframe-container {
+      width: 100%;
+      min-height: 1032px;
+      margin-top: -1px;
+      overflow: auto;
+      iframe {
+        width: 100%;
+        min-height: 1032px;
+      }
+    }
+  }
+  // 无数据提示信息
+  .nodata-box {
+    padding-top: ($minHeight - $tabHeight - 280px)/2;
+    height: $minHeight - $tabHeight;
+    text-align: center;
+    i {
+      font-size: 145px;
+      color: #eee;
+    }
+    p {
+      font-size: 18px;
+      line-height: 3.5;
+      color: #666;
+    }
+  }
+  // 点击加载更多
+  .click-load {
+    margin-bottom: 20px;
+    color: #666;
+    a,
+    span {
+      display: inline-block;
+      border: 1px solid #e6e6e6;
+      border-radius: 16px;
+      padding: 0 20px;
+      height: 33px;
+      line-height: 33px;
+    }
+    &.loading-status {
+      color: $themeColor;
+      & > span {
+        border: 1px solid darken($themeColor, 5%);
+      }
+    }
+  }
+  // 加载文本
+  .loading-box {
+    position: absolute;
+    top: $tabHeight;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 670px;
+    font-size: 24px;
+    line-height: 540px;
+    color: #ccc;
+    background-color: #fff;
+    p {
+      text-align: center;
+    }
+  }
+}

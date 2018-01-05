@@ -1,0 +1,273 @@
+@charset "UTF-8";
+.x-my-question .item-nodata {
+  height: 500px;
+  font-size: 24px;
+  text-align: center;
+  color: #777;
+  padding-top: 200px
+}
+.x-my-question .item-nodata .ms-icon-doc {
+  display: block;
+  font-size: 126px;
+  color: #eee
+}
+.x-my-question .search-box {
+  position: absolute;
+  top: 15px;
+  right: 30px
+}
+.x-my-question .search-box .search-label {
+  position: absolute;
+  color: #ccc;
+  top: 4px;
+  left: 12px;
+  cursor: text
+}
+.x-my-question .search-box .search-input {
+  padding: 0 28px 0 12px;
+  border-radius: 5px;
+  outline: 0;
+  border: 1px solid #ccc;
+  width: 215px;
+  height: 30px
+}
+.x-my-question .search-box .search-input:focus {
+  border: 1px solid #38adff
+}
+.x-my-question .search-box .search-btn {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  color: #ccc
+}
+.x-my-question .search-result {
+  padding: 20px 0;
+  border-bottom: 1px #ddd dashed
+}
+.x-my-question .question-list .question-item {
+  position: relative;
+  display: block;
+  padding: 24px 0;
+  border-bottom: 1px #ddd dashed
+}
+.x-my-question .question-list .question-item.has-user {
+  padding-left: 70px
+}
+.x-my-question .question-list .question-item.has-user .btns {
+  top: 48px
+}
+.x-my-question .question-list .question-item.has-user .user,
+.x-my-question .question-list .question-item.has-user .user-logo {
+  display: block
+}
+.x-my-question .question-list .question-item:hover .hover-btns {
+  display: block
+}
+.x-my-question .question-list .question-item .user-logo {
+  position: absolute;
+  display: none;
+  top: 30px;
+  left: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px
+}
+.x-my-question .question-list .question-item .user {
+  display: none;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px
+}
+.x-my-question .question-list .question-item .title {
+  font-size: 14px;
+  margin-bottom: 10px;
+  word-break: break-all;
+  padding-right: 90px
+}
+.x-my-question .question-list .question-item .info {
+  font-size: 12px;
+  color: #999
+}
+.x-my-question .question-list .question-item .btns {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  text-align: right
+}
+.x-my-question .question-list .question-item .btns .reply {
+  font-size: 12px;
+  text-align: center;
+  width: 60px;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #38adff;
+  color: #38adff;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  display: inline-block
+}
+.hover-btns {
+  display: none
+}
+.hover-btns .hover-btn {
+  font-size: 12px;
+  color: #38adff;
+  padding-left: 14px;
+  margin-left: 14px;
+  border-left: 1px solid #ddd
+}
+.hover-btns .hover-btn i {
+  margin-right: 3px
+}
+.hover-btns .hover-btn:first-child {
+  padding-left: 0;
+  margin-left: 0;
+  border-left: none
+}
+.course-name {
+  color: #38adff
+}
+.course-name:hover {
+  color: #52b8ff
+}
+.return-btn {
+  display: inline-block;
+  color: #38adff;
+  background-color: #fff;
+  width: 110px;
+  height: 30px;
+  margin: 0;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 1px solid #38adff;
+  text-align: center;
+  margin-top: 15px
+}
+.return-btn:hover {
+  text-decoration: none;
+  background-color: #38adff;
+  color: #fff
+}
+.pagination,
+.pagination-info {
+  margin: 10px 0
+}
+.pagination a {
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+  background: #fff
+}
+.pagination span {
+  display: inline-block;
+  float: left;
+  margin-left: 5px;
+  border: solid 1px #ddd;
+  border-radius: 3px;
+  padding: 0 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #fff
+}
+.pagination .current,
+.pagination a:hover,
+.pagination span {
+  display: inline-block;
+  border: solid 1px #1fa2ff;
+  padding: 0 12px;
+  color: #fff;
+  background-color: #38adff
+}
+.pagination .prev {
+  border: solid 1px #ddd;
+  border-bottom-left-radius: 3px
+}
+.pagination .current.next,
+.pagination .current.prev {
+  border-color: #ccc;
+  color: #666;
+  background: #ccc
+}
+.pagination-info span {
+  display: block;
+  line-height: 34px;
+  vertical-align: middle
+}
+.pagination .first {
+  margin-right: 5px;
+  border-width: 1px;
+  border-radius: 3px
+}
+.pagination .last {
+  margin-left: 5px;
+  border-width: 1px;
+  border-radius: 3px
+}
+.page-input {
+  display: block;
+  float: right;
+  overflow: hidden;
+  margin-left: 15px
+}
+.page-input .page-text {
+  box-sizing: content-box;
+  margin: 0 5px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  padding: 7px 5px;
+  width: 32px;
+  height: 14px;
+  line-height: 14px;
+  vertical-align: middle;
+  outline: 0
+}
+.page-input .select-page-btn {
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  width: 58px;
+  height: 30px;
+  vertical-align: top;
+  color: grey;
+  background: #fff;
+  cursor: pointer
+}
+.page-input .select-page-btn:hover {
+  color: #fff;
+  background-color: #38adff
+}
+.page-selector {
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 5px 0 0 15px
+}
+.page-selector select {
+  margin: 0 5px;
+  width: 60px;
+  vertical-align: baseline
+}
+#pagination {
+  margin: 20px 0;
+  *zoom: 1
+}
+#pagination:after,
+#pagination:before {
+  display: table;
+  content: ""
+}
+#pagination:after {
+  clear: both;
+  overflow: hidden
+}
+#pagination .pagination-info {
+  margin: 10px
+}

@@ -1,0 +1,45 @@
+.x-coursepool {
+    display: block;
+
+    margin: -230px 0 0 -466px;
+    box-sizing: border-box;
+    width: auto;
+
+    font-size: 14px;
+
+    margin
+    & * {
+        box-sizing: inherit;
+    }
+    .modal-body {
+        overflow-x: hidden;
+        .table td,
+        .table th {
+            font-size: 14px;
+        }
+    }
+    .container-fluid {
+        padding-bottom: 0;
+        min-width: 900px;
+    }
+    input[type="text"] {
+        padding: 3px 6px;
+        height: 26px;
+
+        line-height: 26px;
+    }
+    .tc {
+        text-align: center;
+    }
+    .tl {
+        text-align: left;
+    }
+    .cp-nodata {
+        margin: 100px 0;
+
+        font-size: 28px;
+        text-align: center;
+
+        color: #999;
+    }
+}

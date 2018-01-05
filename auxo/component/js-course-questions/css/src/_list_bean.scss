@@ -1,0 +1,29 @@
+.qas-list-bean{
+  padding:0 20px 40px 20px;
+  .qas-l-footer{
+    padding:20px;
+  }
+}
+
+.qas-list-fl{
+  padding:150px 0;
+  background:#fff;
+  .ico{
+    background:url('/auxo/component/js-course-detail-pk/images/ico-nopk.png') no-repeat center center;
+    width:146px;
+    height:138px;
+    display:block;
+    margin:0 auto 20px auto;
+  }
+  p{
+    font-size:18px;
+    text-align:center;
+  }
+}
+
+.qas-loading{
+  color: #a4a4a4;
+  font-size:18px;
+  text-align:center;
+  padding:100px 0;
+}

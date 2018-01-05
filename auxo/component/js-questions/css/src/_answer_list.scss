@@ -1,0 +1,35 @@
+.qas-answer-list{
+  background:#f8f8f8;
+  border-radius:5px;
+  position:relative;
+  margin-top:20px;
+  padding-bottom:20px;
+  &.indep{
+    background:#fff;
+  }
+  .qas-rep-form{
+    @include re-form();
+  }
+  .qas-title{
+    padding:10px 0 10px 20px;
+    font-size:14px;
+    color:#333333;
+    border-bottom:1px solid #e5e5e5;
+    span{
+      color:$theme-color;
+      font-weight:bold;
+    }
+  }
+  .qas-list-container{
+    padding:0 20px 20px 20px;
+  }
+  .qas-arr{
+    @include gray-arr-up();
+  }
+
+  .qas-list-empty{
+    text-align:center;
+    font-size:18px;
+    padding:40px 0;
+  }
+}

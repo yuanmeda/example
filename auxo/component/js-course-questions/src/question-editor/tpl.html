@@ -1,0 +1,65 @@
+<div class="qas-course-q-editor">
+  <div class="qas-h">
+    <!--ko if:target_name-->
+    <span class="qas-label"><!--ko translate:{key:'qas_course_question.range'}--><!--/ko-->：<!--ko text:target_name--><!--/ko--></span>
+    <!--/ko-->
+    <span class="qas-return" data-bind="click:back,translate:{key:'qas_course_question.acts.back'}">返回</span>
+  </div>
+
+  <!--ko if:!is_loading_question()-->
+  <!--表单-->
+  <div class="qas-form">
+    <p><!--ko translate:{key:'qas_course_question.label_question_title'}--><!--/ko-->：<span class="remain" data-bind="text:(title() ? title().length : 0) + '/'+ max_title"></span></p>
+    <div class="qas-q-title qas-q-field" data-bind="css:{on:title_has_focus()}">
+      <input type="text" data-bind="
+        value:title,
+        valueUpdate:'input',
+        event:{focus:on_title_focus,click:stop_propagation},
+        attr:{placeholder:title_placeholder},
+        hasFocus:title_has_focus" />
+    </div>
+    <!--自动匹配-->
+    <!--ko if:match_list().length>0 && match_enable()-->
+    <div class="qas-q-title-match-list" data-bind="event:{click:stop_propagation}">
+      <h1 data-bind="translate:{key:'qas_course_question.match_list_title'}">你的问题可能已有答案</h1>
+      <ul>
+        <!--ko foreach:match_list-->
+        <li data-bind="click:$component.check_question">
+          <h2 data-bind="text:title"></h2>
+          <!--ko if:answer_count>0-->
+          <span data-bind="translate:{key:'qas_course_question.answers_count', properties:{count:answer_count}}"></span>
+          <!--/ko-->
+          <!--ko if:answer_count === 0-->
+          <span data-bind="translate:{key: 'qas_course_question.empty.no_answer'}"></span>
+          <!--/ko-->
+        </li>
+        <!--/ko-->
+      </ul>
+    </div>
+    <!--/ko--><!--end if:match_list.length-->
+    <p style="color:red;" data-bind="text:title_err_msg"></p>
+    <p><!--ko translate:{key:'qas_course_question.label_question_content'}--><!--/ko-->：</p>
+    <div class="qas-q-content qas-q-field" data-bind="css:{on:content_has_focus()}">
+      <textarea rows="10" data-bind="value:content,valueUpdate:'input',attr:{placeholder:content_placeholder},hasFocus:content_has_focus"></textarea>
+    </div>
+    <p><span class="remain" data-bind="text:content().length + '/' + max_content"></span></p>
+  </div>
+  <p class="qas-act">
+    <span class="img-upload" data-bind="click:toggle_images_upload,css:{on:show_images_upload()}">
+      <i class="iconfont-qas-page ico-qasp-image"></i>
+      <!--ko translate:{key:'qas_course_question.pics'}--><!--/ko-->
+    </span>
+    <span class="submit" data-bind="click:submit,translate:{key:'qas_course_question.acts.submit_question'}">马上提问</span>
+  </p>
+
+  <!--图片上传-->
+  <div class="qas-img-uploader" data-bind="visible:show_images_upload()">
+    <!--ko component:{name:'x-question-uploadimg',params:image_upload_params}--><!--/ko-->
+  </div>
+  <!--/ko--><!--end if:!is_loading_question-->
+
+
+  <!--ko if:is_loading_question()-->
+  <div class="qas-loading" data-bind="translate:{key:'qas_course_question.loading'}">加载中</div>
+  <!--/ko-->
+</div>

@@ -1,0 +1,10 @@
+.qas-course-q-details{
+  .qas-h{
+    @include qas-h();
+  }
+
+  .qas-azalea{
+    padding:20px;
+    border-bottom:0 none;
+  }
+}

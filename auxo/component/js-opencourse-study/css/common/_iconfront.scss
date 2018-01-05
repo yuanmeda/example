@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'opencoursecard';
+  src:  url('../fonts/opencoursecard.eot?hg1y5j');
+  src:  url('../fonts/opencoursecard.eot?hg1y5j#iefix') format('embedded-opentype'),
+    url('../fonts/opencoursecard.ttf?hg1y5j') format('truetype'),
+    url('../fonts/opencoursecard.woff?hg1y5j') format('woff'),
+    url('../fonts/opencoursecard.svg?hg1y5j#opencoursecard') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="oc-icon-"], [class*=" oc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'opencoursecard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oc-icon-ring-verse:before {
+  content: "\e91e";
+}

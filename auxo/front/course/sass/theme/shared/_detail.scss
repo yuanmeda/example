@@ -1,0 +1,86 @@
+//@import "_base";
+@import "_iconfont";
+@import "_common";
+@import "_side";
+@import "_base_info";
+@import "_review";
+@import "_popbox";
+@import "_examitem";
+@import "_catalog";
+@import "couponbox";
+
+.dialog-tl {
+  text-indent: 12px;
+  text-align: left;
+}
+
+.lh2 {
+  line-height: 2;
+}
+
+.pre-course-hint {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  max-width: 230px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-icon {
+  font-size: 70px;
+  color: #ccc;
+}
+
+.locked-icon {
+  font-size: 42px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 4px solid #f2f2f2;
+  color: #ddd;
+  text-align: center;
+  line-height: 92px;
+  i {
+    vertical-align: baseline;
+  }
+}
+
+.info-wrapper{
+  .pro-info{
+    padding-bottom: 0;
+  }
+  .pro-intro{
+    border-top:1px solid #dfdfdf;
+  }
+}
+
+/*收藏按钮样式开始*/
+$disabledColor: #ccc !default;
+$fontSize: 15px;
+
+$buttonMap: (theme:($themeColor, #fff, $btnhover), disabled:($disabledColor, #fff, $disabledColor));
+.collectionButton {
+  border-radius: 4px;
+  font-size: $fontSize;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 15px;
+  padding: 10px 15px;
+}
+
+@each $type, $colors in $buttonMap {
+  .collectionButton--#{$type} {
+    color: nth($colors, 2);
+    border-color: nth($colors, 1);
+    background-color: nth($colors, 1);
+    @if $type!=disabled {
+      &:hover {
+        border-color: nth($colors, 3);
+        background-color: nth($colors, 3);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+body {
+  background: #ebebeb;
+}
+
+#score_inquiry{
+  margin: 20px;
+  background: #fff;
+}
+
+.banner-header {
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 0 10px 5px;
+  box-shadow: 4px 0 0 #fff,-4px 0 0 #fff,0 2px 5px #ddd;
+  *zoom: 1; }
+  .banner-header:before, .banner-header:after {
+    content: "";
+    display: table; }
+  .banner-header:after {
+    clear: both;
+    overflow: hidden; }
+  .banner-header:before {
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid #0cadb7;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px; }
+  .banner-header h2 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold; }
+  .banner-header a:hover {
+    text-decoration: none; }
+  .banner-header a.btn,
+  .banner-header button {
+    float: right;
+    margin-right: 5px;
+    vertical-align: bottom; }
+    .banner-header a.btn:hover,
+    .banner-header button:hover {
+      text-decoration: none; }
+
+form[class="form-inline"] .control-group {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+form[class="form-inline"] .control-group input,
+form[class="form-inline"] .control-group select {
+    vertical-align: baseline;
+    padding: 0 5px
+}

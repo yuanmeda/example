@@ -1,0 +1,62 @@
+@import "banner_header";
+@import "mixins";
+// 按钮
+@import "button";
+@import "baseinfo";
+//百度编辑器重置
+@import "umreset";
+//上传
+@import "upload";
+@import "_examtab";
+//输入框提示
+.text-help {
+  display: inline-block;
+
+  vertical-align: top;
+
+  color: #999;
+  float: right;
+  em {
+    margin: 0 2px;
+
+    font-size: 1.2em;
+    font-style: oblique;
+
+    color: $themeColor;
+  }
+}
+
+.c-group .contxt textarea {
+  width: 600px;
+}
+
+.upload-outer {
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+}
+
+i.item-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  margin-left: 3px;
+  padding: 0 10px;
+  height: 21px;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 21px;
+  color: #fff;
+  background-color: #8cc951;
+  &.off {
+    background-color: #c3c3c3;
+  }
+  &.on {
+    background-color: #8cc951;
+  }
+}

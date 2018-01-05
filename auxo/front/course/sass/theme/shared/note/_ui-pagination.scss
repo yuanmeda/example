@@ -1,0 +1,65 @@
+/* 翻页按钮 */
+.u-ui-pagination-box{
+    margin-bottom: 30px;
+    .u-ui-pagination {
+        text-align: center;
+        position: inherit;
+        a {
+            display :inline-block;
+            margin-right: 9px;
+            border-radius: 2px;
+            padding: 0 18px;
+            height: 37px;
+            line-height: 37px;
+            background: #f2f2f2;
+            transition: background .3s ease-out,color .3s ease-out;
+            &.current {
+                border-color: $main;
+                background: $main;
+                color: #fff;
+            }
+            &:hover {
+                background: $main;
+                color: #fff
+            }
+        }
+    }
+    .page-input {
+        display: inline-block;
+        margin: 0 0 0 24px;
+        color: grey;
+        font-size: 14px;
+        vertical-align: middle;
+        .page-text {
+            width: 35px;
+            line-height: 21px;
+            margin: 0 5px;
+            padding: 7px 5px;
+            border: 1px solid #d8d8d8;
+            outline: 0;
+            vertical-align: middle;
+            border-radius: 3px;
+            &:focus{
+                border-color:$main;
+            }
+        }
+        .select-page-btn {
+            width: 45px;
+            height: 36px;
+            border: 0;
+            background: #f2f2f2;
+            color: grey;
+            border-radius: 3px;
+            &:active {
+                border-color: #d8d8d8;
+                outline-color: #d8d8d8;
+            }
+            &:hover {
+                color: #fff;
+                cursor: pointer;
+                background: $main;
+                border: 1px solid $main;
+            }
+        }
+    }
+}

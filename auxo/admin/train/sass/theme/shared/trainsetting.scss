@@ -1,0 +1,89 @@
+@import "banner_header";
+@import "mixins";
+
+.main-wrap {
+  min-height: 0 !important;
+}
+
+.train-main {
+  font-size: 14px;
+  background-color: #ebebeb;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  .container-fluid {
+    .box {
+      .form-horizontal input[type="text"] {
+        width: 300px;
+        height: 26px;
+      }
+      .img-sm {
+        position: relative;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        display: inline-block;
+        height: 200px;
+        padding: 2px;
+        vertical-align: middle;
+        width: 300px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .form-horizontal textarea {
+        width: 300px;
+      }
+      .ztree {
+        overflow: scroll;
+
+        border: #afa8a8 1px solid;
+        width: 300px;
+        height: 300px;
+      }
+      .back-btn {
+        display: block;
+
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+i.item-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  margin-left: 3px;
+  padding: 0 10px;
+  height: 21px;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 21px;
+  color: #fff;
+  background-color: #8cc951;
+  &.off {
+    background-color: #c3c3c3;
+  }
+  &.on {
+    background-color: #8cc951;
+  }
+}
+
+.text-help {
+  display: inline-block;
+  color: #999;
+  em {
+    margin: 0 2px;
+
+    font-size: 1.2em;
+    font-style: oblique;
+
+    color: $themeColor;
+  }
+}

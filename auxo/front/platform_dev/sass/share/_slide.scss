@@ -1,0 +1,58 @@
+.w-banner {
+  margin-bottom: 60px;
+}
+
+.slide {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  min-width: 1300px;
+  height: 400px;
+  .slide-bd {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    .slide-wrap {
+      width: 100%;
+    }
+    .slide-item {
+      float: left;
+      width: 100%;
+      height: 100%
+    }
+
+    .uswipe-nav {
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      a {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: $themeColor;
+        border-radius: 50%;
+        margin: 0 10px;
+        vertical-align: middle;
+        opacity: 0.5;
+        filter: alpha(opacify=50);
+      }
+      .active {
+        opacity: 1;
+        filter: alpha(opacify=100);
+      }
+    }
+    .uswipe-opts {
+    }
+  }
+  .slide-wrap {
+    position: absolute;
+    height: 100%;
+  }
+}

@@ -1,0 +1,54 @@
+
+@font-face {font-family: "iconfont-e-course";
+  src: url('_base/fonts/iconfont.eot?t=1496986821131'); /* IE9*/
+  src: url('_base/fonts/iconfont.eot?t=1496986821131#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('_base/fonts/iconfont.woff?t=1496986821131') format('woff'), /* chrome, firefox */
+  url('_base/fonts/iconfont.ttf?t=1496986821131') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('_base/fonts/iconfont.svg?t=1496986821131#iconfont-e-course') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont-e-course {
+  font-family:"iconfont-e-course" !important;
+  font-size:16px;
+  font-style:normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-e-course-add:before { content: "\e62f"; }
+
+.icon-e-course-minus:before { content: "\e68d"; }
+
+.icon-e-course-fujian:before { content: "\e63b"; }
+
+.icon-e-course-ask:before { content: "\e6d7"; }
+
+.icon-e-course-empty:before { content: "\e784"; }
+
+.icon-e-course-right-2:before { content: "\e604"; }
+
+.icon-e-course-pan:before { content: "\e60b"; }
+
+.icon-e-course-video:before { content: "\e607"; }
+
+.icon-e-course-half:before { content: "\e603"; }
+
+.icon-e-course-done:before { content: "\e600"; }
+
+.icon-e-course-del:before { content: "\e615"; }
+
+.icon-e-course-down:before { content: "\e80d"; }
+
+.icon-e-course-left:before { content: "\e80e"; }
+
+.icon-e-course-top:before { content: "\e80f"; }
+
+.icon-e-course-right:before { content: "\e810"; }
+
+.icon-e-course-left-2:before { content: "\e811"; }
+
+.icon-e-course-note:before { content: "\e60c"; }
+
+.icon-e-course-file:before { content: "\e60e"; }
+

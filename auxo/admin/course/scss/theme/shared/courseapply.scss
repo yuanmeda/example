@@ -1,0 +1,36 @@
+@import "_mixins";
+@import "_banner_header";
+@import "_button";
+@import "_baseinfo";
+@import "_nodata";
+.layui-layer-dialog.layer-confirm {
+    .layui-layer-content {
+        padding: 10px 0;
+    }
+    .layui-layer-btn {
+        text-align: center;
+    }
+}
+//输入框提示
+.text-help {
+    display: inline-block;
+    float: right;
+
+    vertical-align: top;
+
+    color: #999;
+    em {
+        margin: 0 2px;
+
+        font-size: 1.2em;
+        font-style: oblique;
+
+        color: $themeColor;
+    }
+}
+.h34 {
+    height: 34px;
+}
+.c-group .contxt textarea {
+    width: 600px;
+}

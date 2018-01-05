@@ -1,0 +1,25 @@
+
+.btn {
+    @extend %inline-block;
+    vertical-align: middle;
+    padding: 0 30px;
+    font: 14px/30px 'microsoft yahei';
+    color: #fff;
+    background: $themeColor;
+    border-radius: 4px;
+    transition: background .2s linear;
+    &:hover {
+        background: darken($themeColor, 5%);
+    }
+
+    &.btn-back {
+        padding: 0 16px;
+        border: 1px solid #ddd;
+        line-height: 24px;
+        background: #fff;
+        color: #666;
+        &:hover {
+            background: darken(#fff, 5%);
+        }
+    }
+}

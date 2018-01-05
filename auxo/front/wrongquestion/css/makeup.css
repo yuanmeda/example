@@ -1,0 +1,166 @@
+.main-homework .select-tree {
+    min-height: 616px;
+    margin-right: 16px;
+}
+.main-homework .select-tree .select-tab {
+    background: #FAFAFA;
+}
+.main-homework .select-tree .select-tab.tmaterial_tab a:hover, .main-homework .select-tree .select-tab.tmaterial_tab a.active {
+    background: #FAFAFA;
+}
+.main-homework .select-tree .select-tab a.active {
+    background: #FFF;
+}
+.main-homework .select-tree .select-tab a {
+    background: #FAFAFA;
+}
+.detail-main .error-reason .error-reason-label input{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.detail-main .error-reason .error-reason-label input:hover {
+    color:#000
+}
+.detail-main .error-reason .error-reason-label.on input:hover {
+    color:#5095eb
+}
+.detail-main .error-reason .error-reason-label:hover {
+     border: 1px solid #ccc
+}
+.detail-main .error-reason .error-reason-label.on:hover {
+    border: 1px solid #5095eb
+}
+.main-homework .error-con .error-tongji {
+    width: 100%;
+}
+.main-homework .error-con .error-tongji .error-tongji-table .error-tongji-item {
+    width: 35%;
+    display: inline-block;
+}
+.main-homework .error-con._noChapter .error-tongji .error-tongji-table .error-tongji-item {
+    width: 40%;
+}
+.test-main::before, .test-main::after {
+    display: none;
+}
+.select-bar dd .btn-more {
+    top: auto;
+    bottom: 12px;
+}
+.btn_wrapper {
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+.btn.disabled {
+    opacity:.6;
+    filter:alpha(opacity=60);
+    background: #6c6c6c;
+    border: 1px solid #6c6c6c;
+}
+html {
+    height: inherit;
+}
+.detail-main {
+    margin-bottom: 0;
+}
+.error-detail {
+    margin-top: 0;
+}
+.select-bar {
+    margin-top: 0;
+}
+.select-bar dd {
+    margin-top: 3px;
+    min-height: 37px;
+}
+/*.wrapper ._noChapter {*/
+    /*width: 1028px;*/
+/*}*/
+/*._noChapter .select-bar {*/
+    /*border: none;*/
+/*}*/
+a {
+    color: #000;
+}
+.loading{
+    width:160px;
+    height:56px;
+    position: absolute;
+    top:350px;
+    left:50%;
+    margin-left: -106px;
+    margin-top: -60px;
+    line-height:56px;
+    color:#fff;
+    padding-left:60px;
+    font-size:15px;
+    background: #000 url(../img/loader.gif) no-repeat 10px 50%;
+    opacity: 0.7;
+    z-index:9999;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+.detail-main .write-reason INPUT {
+    vertical-align: top;
+    line-height: 39px;
+}
+.detail-main .error-reason .error-reason-label INPUT {
+    line-height: 28px;
+    pointer-events: none;
+}
+.detail-main .error-reason .error-reason-label SPAN {
+    display: block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+.error-empty {
+    width: 100%;
+    height: 600px;
+    background: #fff;
+    margin: 0 auto;
+}
+.error-empty i {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    display: block;
+    width: 146px;
+    height: 138px;
+    margin-left: -73px;
+    background: url(../img/icon-blank-02.png) no-repeat;
+}
+.error-empty span {
+    position: relative;
+    top: 323px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}
+ul [class^=level] {
+    overflow: visible!important;
+}
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+}
+.main-homework .error-con {
+    width: auto;
+    float: none;
+}
+.main-homework .error-con .error-con-bd {
+    width: auto;
+}
+.main-homework .error-con .error-exercises {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.select-bar dl {
+    height: auto;
+}

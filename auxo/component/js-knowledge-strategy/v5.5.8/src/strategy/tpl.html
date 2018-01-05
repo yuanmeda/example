@@ -1,0 +1,150 @@
+<script type="text/ko" id="knowledgeTemplate">
+<tr><td colspan="5" data-bind="visible:isVisible()">
+<table style="width:100%;">
+<thead>
+<tr>
+<th>知识点</th>
+<th>题目数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i class="icon-plus" data-bind="css:{'icon-minus':opened() || children().length==0}, click: $component.toggleNodeOpen"></i><span data-bind="text:title"></span></td>
+<td><input class="span1" type="text" data-bind="value: question_number, disable: opened(), event:{change: $component.inputOnChangeEvent}, valueUpdate:'afterkeydown'"/>/<!--ko text: totalNumber--><!--/ko--></td>
+</td>
+</tr>
+<!--ko if: children().length-->
+<!--ko foreach: children-->
+    <!--ko template:{name:'knowledgeTemplate', data:$data}--><!--/ko-->
+<!--/ko-->
+<!--/ko-->
+</tbody>
+</table>
+</td></tr>
+
+
+
+
+
+</script>
+
+<style>
+    .input-error {
+        border-color: red !important;
+    }
+
+    .error {
+        color: red;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <fieldset>
+            <legend>题目内容</legend>
+        </fieldset>
+        <ul id="strategyList" class="inline" data-bind="foreach:localStrategies">
+            <li class="strategyItem" style="margin:10px 0;" data-bind="attr:{'data-sort_number':$index()+1}">
+                <div><span>大题名称<input type="text"
+                                      data-bind="value:title"/>
+                    <!--ko text: $component.getStrategyText.call($component, $data)--><!--/ko--></span>
+                    <span
+                            class="btn drag-item">点住拖拽</span>
+                    <span class="btn pull-right"
+                          data-bind="click:function(){$component.localStrategies.remove($data);}">删除</span></div>
+
+                <table class="table table-bordered" style="margin-bottom: 10px;">
+                    <thead>
+                    <tr>
+                        <th>题型</th>
+                        <th>题目数</th>
+                        <th>分值</th>
+                        <th>总分</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <!--ko foreach:question_strategies-->
+                    <tbody data-bind="attr:{class:question_type}">
+                    <tr class="level0">
+                        <td>
+                            <select class="span2"
+                                    data-bind="value: question_type, event:{change: $component.selectOnChangeEvent.bind($component, $data)}">
+                                <option value="201">单选题</option>
+                                <option value="202">多选题</option>
+                                <option value="203">判断题</option>
+                                <option value="206">问答题</option>
+                                <option value="208">复合题</option>
+                                <option value="209">填空题</option>
+                            </select>
+                            <!--<select class="span2"-->
+                            <!--data-bind="options: $component.questionTypeList, optionsText:'name',optionsValue:'type', selectedOptions: question_type, event:{change: $component.selectOnChangeEvent.bind($component, $data)}">-->
+                            <!--</select>-->
+                            <a href="javascript:;"
+                               data-bind="text: opened()? '收起知识点':'展开知识点', click: $component.toggleOpen.bind($component, $data, true)"></a>
+                        </td>
+                        <td><input class="span1" type="text"
+                                   data-bind="value:question_number, disable: opened()"/>/<span
+                                data-bind="text:totalNumber"></span>
+                        </td>
+                        <td><input class="span1" type="text" data-bind="value:score"/></td>
+                        <td><span data-bind="text: score()*question_number()"></span></td>
+                        <td>
+                            <a href="javascript:;" data-bind="click: $component.questionStrategyMoveDown.bind($component, $parent, $data, $index())">下移</a>
+                            <a href="javascript:;" data-bind="click: function(){$parent.question_strategies.remove($data);}">删除</a>
+                        </td>
+                    </tr>
+                    <!--ko foreach:knowledge_strategies-->
+                    <!--<tr data-bind="visible: $parent.opened()">-->
+                    <!--<td colspan="5">-->
+                    <!--<table class="table table-bordered"-->
+                    <!--data-bind="attr:{id:$parents[2].getOneTreeId.call($parents[2], identifier())}">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                    <!--<th>知识点</th>-->
+                    <!--<th>题目数</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr data-bind="attr:{'data-tt-id':identifier}">-->
+                    <!--<td>-->
+                    <!--<i class="icon-plus"-->
+                    <!--data-bind="css:{'icon-minus':opened()}, click: $parents[2].toggleChildOpen.bind($parents[2],$data,$element)"></i>-->
+                    <!--<span data-bind="text:title"></span>-->
+                    <!--</td>-->
+                    <!--<td><input class="span1" type="text" data-bind="value: question_number"/>/-->
+                    <!--&lt;!&ndash;ko text: totalNumber&ndash;&gt;&lt;!&ndash;/ko&ndash;&gt;</td>-->
+                    <!--</tr>-->
+                    <!--ko template:{name:'knowledgeTemplate', data:$data}-->
+                    <!--/ko-->
+                    <!--</tbody>-->
+                    <!--</table>-->
+                    <!--</td>-->
+                    <!--</tr>-->
+                    <!--/ko-->
+                    </tbody>
+                    <!--/ko-->
+                </table>
+                <span class="btn btn-info"
+                      data-bind="click: $component.addOneQuestionType.bind($component, $data)">添加题型</span>
+                <span class="error" data-bind="validationMessage:question_strategies"></span>
+            </li>
+        </ul>
+        <p style="text-align: right;" data-bind="text:$component.getTotalStrategyInfo.call($component)"></p>
+        <div style="text-align:center;">
+            <a class="btn btn-primary" href="javascript:;"
+               data-bind="click:$component.addOneStrategyItem.bind($component)">添加大题</a>
+        </div>
+    </div>
+    <div style="text-align: center; margin:35px 0;">
+        <a class="btn" data-bind="visible:!isPopupWin, click:$component.lastStepEvent.bind($component)">上一步</a>
+        <a class="btn" data-bind="visible:isPopupWin, click:$component.cancelEvent.bind($component)">取消</a>
+        <a class="btn" data-bind="click:$component.saveEvent.bind($component)">保存</a>
+        <a class="btn" data-bind="visible:!isPopupWin, click:$component.saveThenReturnEvent.bind($component)">保存并返回</a>
+    </div>
+</div>
+
+<!--&lt;!&ndash;ko if:is_loading()&ndash;&gt;-->
+<!--<div class="pk-choose-loading">-->
+<!--<span></span>-->
+<!--</div>-->
+<!--&lt;!&ndash;/ko&ndash;&gt;-->

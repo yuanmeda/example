@@ -1,0 +1,47 @@
+<div id="x-course-learn-note" style="position: absolute;bottom: 0;left:0;background-color: #EDEDEF;width:360px;">
+    <div class="add-note-input hide">
+        <div class="note-icon-txt">
+            <!-- ko if: model.biz_param.resource_type() == '0' || model.biz_param.resource_type() == '101' -->
+            <a class="note-icon iconfont-learn n-icon-video"></a>
+            <span class="note-txt" data-bind="text: model.videoCurrentTime"></span>
+            <!-- /ko -->
+            <!-- ko if: model.biz_param.resource_type() == '1' || model.biz_param.resource_type() == '102' -->
+            <a class="note-icon iconfont-learn n-icon-chapter"></a>
+            <span class="note-txt"><span data-bind="text: model.docInfo"></span></span>
+            <!-- /ko -->
+        </div>
+        <div class="add-note-textarea">
+            <form action="">
+                <textarea placeholder="在此写下您的笔记..." name="writeDown" id="content" style="padding: 0;resize: none;"
+                    data-bind="textInput: model.noteContent, translate:{ key: 'note.placeholder',target:['placeholder']}"></textarea>
+            </form>
+            <div style="margin-left: 290px;"><span data-bind="text: wordCount">0</span>/400</div>
+        </div>
+        <div class="add-note-btns" style="margin-bottom: 10px;">
+            <!-- ko if: !model.excerpt_note_id()  && model.report_count() < 3 -->
+            <label for="tht" style="position: absolute;left: 0;top: 3px;">
+                <input id="tht" type="checkbox" style="margin-bottom: 2px;" data-bind="checked: model.isOpen">
+                <!-- ko translate: {key: 'note.isOpen'} -->
+                公开笔记
+                <!-- /ko -->
+            </label>
+            <!-- /ko -->
+            <!-- ko if: model.excerpt_note_id() && model.report_count() < 3 -->
+            <div class="note-icon-txt">
+                <a class="note-icon  iconfont-learn n-icon-star"></a>
+                <span class="note-txt note-txt-light-gray" data-bind="translate:{key:'note.fromExcerpt'}">来自摘录</span>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: model.report_count() >= 3 -->
+            <div class="note-icon-txt">
+                <span class="note-txt note-txt-light-gray" data-bind="translate:{key:'note.reported'}">被举报</span>
+            </div>
+            <!-- /ko -->
+            <a href="javascript:;" class="n-ui-btn n-ui-btn-gray"
+               data-bind="click: cancel, translate: {key: 'note.cancel'}">取消</a>
+            <a href="javascript:;" class="n-ui-btn n-ui-btn-main"
+               data-bind="click: saveNote, translate:{key:'note.save'}" style="display: none;">保存</a>
+            <a href="javascript:;" class="n-ui-btn n-ui-btn-disable" data-bind="translate:{key:'note.save'}">保存</a>
+        </div>
+    </div>
+</div>

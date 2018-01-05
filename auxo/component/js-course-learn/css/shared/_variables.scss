@@ -1,0 +1,41 @@
+@charset "UTF-8";
+$iconPath: '../../';
+/* -------------color------------- */
+
+/* other color */
+$blue:                  #38adff;
+$red:                   #ce3f3f;
+
+/* grey color */
+// $grey-fz:38adff4d4d4d;
+// $grey-border:           #dedede;
+// $grey-border-lighte:    #e7e7e7;
+// $grey-bg:               #f4f5f9;
+$light-gray: #999;
+$gray:#666;
+$dark-gray: #333;
+
+/* main color */
+$main:                  $blue;
+$main-light:            #60b9f8;
+$main-dark:             #1e9af1;
+
+/* sub color */
+// $sub:                  $main;
+// $sub-light:            #698efd;
+// $sub-dark:             #3969f7;
+
+/* -------------radius------------- */
+
+$radius-s:              3px; 
+$radius:                5px;    
+
+/* -------------z-index------------- */
+
+$zindex-below:          -1; 
+$zindex-default:        1; 		//default
+$zindex-fix:            50;		//fixed topbar,backtotop
+$zindex-dd:             70;		//dropdown
+$zindex-modal:          100;	//pop    
+$zindex-font:           3;
+$zindex-behind:         2;

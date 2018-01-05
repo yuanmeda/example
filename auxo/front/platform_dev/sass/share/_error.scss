@@ -1,0 +1,64 @@
+$version: 2017021701;
+$themeColor: #38adff;
+body {
+  background-color: #f6f6f6;
+  font: 14px/1 'microsoft yahei', arial, tahoma, simsun;
+  color: #666;
+}
+
+a {
+  text-decoration: none;
+  color: $themeColor;
+  font-size: 16px;
+  &:hover {
+    color: lighten($themeColor, 5%);
+    .arrow-right:before {
+      border-left-color: lighten($themeColor, 5%);
+    }
+  }
+}
+
+.arrow-right {
+  padding-left: 10px;
+  &:before {
+    position: absolute;
+    content: "";
+    margin-top: 1px;
+    border-style: dashed dashed dashed solid;
+    border-width: 7px 0 7px 7px;
+    border-color: transparent transparent transparent $themeColor;
+  }
+}
+
+.error {
+  width: 630px;
+  margin: 120px auto 0;
+  &-wrap {
+    border-radius: 25px;
+    border: 3px solid #fff;
+    text-align: center;
+    padding: 86px 0 95px 0;
+  }
+  &-img {
+    margin-bottom: 57px;
+  }
+  &-text {
+    padding: 15px;
+    width: 420px;
+    height: 150px;
+    resize: none;
+    margin-bottom: 16px;
+    font-family: 'microsoft yahei', arial, tahoma, simsun;
+    &:focus {
+      outline: none;
+    }
+  }
+  &-info {
+    font-size: 27px;
+    margin-bottom: 16px;
+  }
+  &-hint {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}

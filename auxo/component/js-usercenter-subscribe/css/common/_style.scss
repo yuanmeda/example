@@ -1,0 +1,404 @@
+@import "./_mixins.scss";
+@import "./_iconfront.scss";
+
+.header {
+  position: relative;
+  height: 66px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+
+/*订阅标签*/
+.list-filter {
+  color: #666;
+  margin: 35px 0 28px;
+  .filter-lf {
+    float: left;
+    font-size: 0;
+    .filter-btn {
+      width: 98px;
+      height: 24px;
+      text-align: center;
+      color: #666;
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      border: 1px solid #eee;
+      font-size: 14px;
+      line-height: 24px;
+      background-color: #fff;
+      margin-left: -1px;
+    }
+  }
+  .subscription-label {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin-left: 20px;
+    padding: 0 13px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background: #38adff;
+    border-radius: 5px;
+    span {
+      display: inline-block;
+      *display: inline;
+      vertical-align: text-bottom;
+      margin-right: 5px;
+      font-size: 20px;
+      line-height:1;
+    }
+    &:before {
+      position: absolute;
+      content: '';
+      top: -5px;
+      left: 50%;
+      margin-left: -6px;
+      width: 12px;
+      height: 5px;
+      background: url(../../images/sprite.png) -19px -35px no-repeat;
+    }
+    &:hover {
+      background: #0f9cff;
+      &:before {
+        background-position: -34px -35px;
+      }
+    }
+  }
+}
+
+/*提示弹窗*/
+.modal-mark {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  z-index: 101;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -185px 0 0 -235px;
+  width: 470px;
+  background: #fff;
+  z-index: 102;
+  .btn-close {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    font-size: 24px;
+    color: #b7b7b7;
+    &:hover {
+      color: $themeColor;
+    }
+  }
+  .modal-hd {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #e0e0e0;
+    .modal-tt {
+      font-size: 16px;
+      color: #666;
+      padding-left: 30px;
+    }
+  }
+  .modal-bd {
+    padding: 40px 35px;
+    background: #f9f9f9;
+    text-align: center;
+    min-height: 50px;
+    .tit {
+      margin: 15px 0;
+      font-size: 14px;
+      color: #666;
+      text-align: left;
+      span {
+        color: $themeColor;
+      }
+    }
+    .note {
+      font-size: 14px;
+      color: #999;
+      text-align: left;
+    }
+    .login-tit {
+      font-size: 18px;
+      line-height: 50px;
+    }
+    .subscription-tit {
+      font-size: 22px;
+      color: #333;
+    }
+    .icon-succeed,.icon-fail {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      margin-right: 20px;
+      font-size: 40px;
+      color: $themeColor
+    }
+  }
+  .modal-ft {
+    height: 75px;
+    line-height: 75px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+  }
+}
+.modal-primary {
+  display: inline-block;
+  min-width: 140px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin: 0 8px;
+  border: 1px solid $themeColor;
+  border-radius: 5px;
+  &.btn-cancle {
+    color: $themeColor;
+    background: #fff;
+    &:hover {
+      background: $themeColor;
+      color: #fff;
+    }
+  }
+  &.btn-confirm {
+    background: $themeColor;
+    &:hover {
+      background: $themeColor;
+    }
+  }
+}
+
+.user-center {
+  border: 1px solid #e0e0e0;
+  width: 1028px;
+  min-height: 885px;
+  background: #fff;
+  .user-top {
+    padding-left: 45px;
+    height: 58px;
+    line-height: 58px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #666;
+    span {
+      color: $themeColor;
+    }
+  }
+  .training-box {
+    padding: 0 50px;
+  }
+  .training-list {
+    padding: 20px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    margin-bottom: -1px;
+  }
+  .trining-certification {
+    position: relative;
+    z-index: 15;
+    *zoom:1;
+    i {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      width: 5px;
+      height: 5px;
+      background: $themeColor;
+      border-radius: 50px;
+    }
+    .title {
+      margin: 0 5px;
+      font-size: 14px;
+      color: #333;
+    }
+    a {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      padding: 0 10px;
+      background: #f2f2f2;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      border-radius: 3px;
+      font-size: 12px;
+      color: $themeColor;
+      &:hover {
+        background: #e6e5e5;
+      }
+    }
+    .line {
+      display: inline-block;
+      *display: inline;
+      vertical-align: middle;
+      width: 10px;
+      height: 1px;
+      background: $themeColor;
+    }
+    .number {
+      margin: 0 5px;
+      font-size: 14px;
+      color: #999;
+      em {
+        font-style: normal;
+        color: $themeColor;
+      }
+    }
+  }
+  .unsubscribe {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: url(../../images/sprite.png) -105px 0 no-repeat;
+    cursor: pointer;
+    z-index: 15;
+    *zoom:1;
+    .btn-cancle {
+      position: absolute;
+      right: 0;
+      top: 25px;
+      width: 108px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid #dddddd;
+      border-radius: 3px;
+      background: #fff;
+      font-size: 14px;
+      color: $themeColor;
+    }
+  }
+  .course-list {
+    position: relative;
+    z-index: 10;
+    *zoom:1;
+    margin-left: -50px;
+    li {
+      position: relative;
+      float: left;
+      background-color: #fff;
+      transition: all .2s linear;
+      overflow: hidden;
+      width: 270px;
+      margin: 20px 0 0 52px;
+      &:hover {
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+        box-shadow: #ddd 0 15px 30px 0;
+        img {
+          -webkit-transform: scale(1.2) translate3d(-1px, 0, 0);
+          transform: scale(1.2) translate3d(-1px, 0, 0);
+        }
+        .cell-info-title {
+          color: $themeColor;
+        }
+      }
+
+    }
+    .cell-img {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        transition: all .3s;
+      }
+    }
+    .cell-badge-type {
+      position: absolute;
+      padding: 2px 10px;
+      left: 0;
+      top: 0;
+      font-size: 12px;
+      color: #fff;
+      background-color: $themeColor;
+      opacity: .9;
+      filter: alpha(opacity=90);
+      z-index: 11;
+    }
+    .cell-info {
+      padding: 15px;
+      font-size: 12px;
+      line-height: 1;
+      border: 1px solid #e0e0e0;
+      border-top: none;
+    }
+    .cell-info-title {
+      width: 100%;
+      height: 19px;
+      font-size: 17px;
+      color: #333;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .cell-info-other {
+      margin-top: 25px;
+      color: #999;
+      font-size: 14px;
+      height: 14px;
+      .strong {
+        color: $themeColor;
+      }
+      em {
+        height: 10px;
+        width: 1px;
+        background: #ccc;
+        display: inline-block;
+        *display: inline;
+        vertical-align: middle;
+        margin: 0 1%;
+      }
+    }
+    .end-time {
+      margin-top: 20px;
+      color: #999;
+      font-size: 14px;
+    }
+  }
+  .check-more {
+    padding-top: 20px;
+    a {
+      font-size: 12px;
+      color: #666;
+    }
+    a:hover {
+      color: $themeColor;
+    }
+  }
+}
+/*没有订阅*/
+.subscription-none{
+  margin-top:240px;
+  text-align: center;
+  i{
+    display: block;
+    margin: 0 auto;
+    width:146px;
+    height:146px;
+    background: url(../../images/sprite.png) 0 -45px no-repeat;
+  }
+  p{
+    margin: 5px 0;
+    font-size:18px;
+    color: #666;
+  }
+}

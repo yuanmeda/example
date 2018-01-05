@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ko 测试</title>
+    <script src="../../addins/ko/v3.4.0/knockout.min.js" charset="utf-8"></script>
+    <script src="../../addins/jquery/v1.12.4/jquery.min.js" charset="utf-8"></script>
+    <script src="./dist/index.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <style media="screen">
+      body {
+        background-color: #f2f2f2;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="course-lecturer-card" data-bind='component: "x-course-lecturers"'>
+    </div>
+    <script type="text/javascript">
+      ko.applyBindings()
+    </script>
+  </body>
+</html>

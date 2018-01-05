@@ -1,0 +1,1365 @@
+@charset "UTF-8";
+/*
+ * 常用mixins类
+ */
+/* 超出省略 */
+/* 禁用样式 */
+/* 垂直据中 */
+/* 水平居中 */
+/* 浮动 */
+/* 清除浮动 */
+/* 绝对定位：默认居中 */
+/* 透明度 */
+@font-face {
+  font-family: 'opencoursecard';
+  src: url("../../../../js-opencourse-study/css/fonts/opencoursecard.eot?hg1y5j");
+  src: url("../../../../js-opencourse-study/css/fonts/opencoursecard.eot?hg1y5j#iefix") format("embedded-opentype"), url("../../../../js-opencourse-study/css/fonts/opencoursecard.ttf?hg1y5j") format("truetype"), url("../../../../js-opencourse-study/css/fonts/opencoursecard.woff?hg1y5j") format("woff"), url("../../../../js-opencourse-study/css/fonts/opencoursecard.svg?hg1y5j#opencoursecard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="oc-icon-"], [class*=" oc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'opencoursecard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.oc-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.opencourse-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .opencourse-item .fr {
+    float: right; }
+  .opencourse-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .opencourse-item i {
+    font-style: normal; }
+  .opencourse-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .opencourse-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .opencourse-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .opencourse-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .opencourse-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .opencourse-item .item-info .item-name {
+      font-size: 18px; }
+    .opencourse-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .opencourse-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .opencourse-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .opencourse-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .opencourse-item .item-info .v-line:not(:last-child) > em {
+      font-style: normal;
+      color: #999; }
+      .opencourse-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .opencourse-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .opencourse-item .item-info,
+  .opencourse-item .item-img {
+    position: relative; }
+  .opencourse-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .opencourse-item:hover .item-name {
+    color: #38adff; }
+  .opencourse-item:hover a.bc-btn {
+    display: inline-block; }
+  .opencourse-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .opencourse-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .opencourse-item .status-icon.passed {
+      color: #38adff; }
+    .opencourse-item .status-icon.failed {
+      color: #ff7c7c; }
+    .opencourse-item .status-icon.ended {
+      color: #a0a0a0; }
+    .opencourse-item .status-icon.finished {
+      color: #38adff; }
+  .opencourse-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .opencourse-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'traincard';
+  src: url("../../../../js-train-study/css/fonts/traincard.eot?uvr6nn");
+  src: url("../../../../js-train-study/css/fonts/traincard.eot?uvr6nn#iefix") format("embedded-opentype"), url("../../../../js-train-study/css/fonts/traincard.ttf?uvr6nn") format("truetype"), url("../../../../js-train-study/css/fonts/traincard.woff?uvr6nn") format("woff"), url("../../../../js-train-study/css/fonts/traincard.svg?uvr6nn#traincard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="tuc-icon-"], [class*=" tuc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'traincard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.tuc-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.train-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .train-item .fr {
+    float: right; }
+  .train-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .train-item i,
+  .train-item em {
+    font-style: normal; }
+  .train-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .train-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .train-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .train-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .train-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .train-item .item-info .item-name {
+      font-size: 18px; }
+    .train-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .train-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .train-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .train-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .train-item .item-info .v-line:not(:last-child) > em {
+      color: #999; }
+      .train-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .train-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .train-item .item-info,
+  .train-item .item-img {
+    position: relative; }
+  .train-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .train-item:hover .item-name {
+    color: #38adff; }
+  .train-item:hover a.bc-btn {
+    display: inline-block; }
+  .train-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .train-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .train-item .status-icon.passed {
+      color: #38adff; }
+    .train-item .status-icon.failed {
+      color: #ff7c7c; }
+    .train-item .status-icon.ended {
+      color: #a0a0a0; }
+    .train-item .status-icon.finished {
+      color: #38adff; }
+  .train-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .train-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'specialtycard';
+  src: url("../../../../js-specialty-study/css/fonts/specialtycard.eot?5k0n7w");
+  src: url("../../../../js-specialty-study/css/fonts/specialtycard.eot?5k0n7w#iefix") format("embedded-opentype"), url("../../../../js-specialty-study/css/fonts/specialtycard.ttf?5k0n7w") format("truetype"), url("../../../../js-specialty-study/css/fonts/specialtycard.woff?5k0n7w") format("woff"), url("../../../../js-specialty-study/css/fonts/specialtycard.svg?5k0n7w#specialtycard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="spec-icon-"], [class*=" spec-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'specialtycard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.spec-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.specialty-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .specialty-item .fr {
+    float: right; }
+  .specialty-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .specialty-item i {
+    font-style: normal; }
+  .specialty-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .specialty-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .specialty-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .specialty-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .specialty-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .specialty-item .item-info .item-name {
+      font-size: 18px; }
+    .specialty-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .specialty-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .specialty-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .specialty-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .specialty-item .item-info .v-line:not(:last-child) > em {
+      font-style: normal;
+      color: #999; }
+      .specialty-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .specialty-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .specialty-item .item-info,
+  .specialty-item .item-img {
+    position: relative; }
+  .specialty-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .specialty-item:hover .item-name {
+    color: #38adff; }
+  .specialty-item:hover a.bc-btn {
+    display: inline-block; }
+  .specialty-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .specialty-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .specialty-item .status-icon.passed {
+      color: #38adff; }
+    .specialty-item .status-icon.failed {
+      color: #ff7c7c; }
+    .specialty-item .status-icon.ended {
+      color: #a0a0a0; }
+    .specialty-item .status-icon.finished {
+      color: #38adff; }
+  .specialty-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .specialty-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'traincard';
+  src: url("../../../../js-mooc-study/css/fonts/traincard.eot?uvr6nn");
+  src: url("../../../../js-mooc-study/css/fonts/traincard.eot?uvr6nn#iefix") format("embedded-opentype"), url("../../../../js-mooc-study/css/fonts/traincard.ttf?uvr6nn") format("truetype"), url("../../../../js-mooc-study/css/fonts/traincard.woff?uvr6nn") format("woff"), url("../../../../js-mooc-study/css/fonts/traincard.svg?uvr6nn#traincard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="tuc-icon-"], [class*=" tuc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'traincard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.tuc-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.mooc-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .mooc-item .fr {
+    float: right; }
+  .mooc-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .mooc-item i,
+  .mooc-item em {
+    font-style: normal; }
+  .mooc-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .mooc-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .mooc-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .mooc-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .mooc-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .mooc-item .item-info .item-name {
+      font-size: 18px; }
+    .mooc-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .mooc-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .mooc-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .mooc-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .mooc-item .item-info .v-line:not(:last-child) > em {
+      color: #999; }
+      .mooc-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .mooc-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .mooc-item .item-info,
+  .mooc-item .item-img {
+    position: relative; }
+  .mooc-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .mooc-item:hover .item-name {
+    color: #38adff; }
+  .mooc-item:hover a.bc-btn {
+    display: inline-block; }
+  .mooc-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .mooc-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .mooc-item .status-icon.passed {
+      color: #38adff; }
+    .mooc-item .status-icon.failed {
+      color: #ff7c7c; }
+    .mooc-item .status-icon.ended {
+      color: #a0a0a0; }
+    .mooc-item .status-icon.finished {
+      color: #38adff; }
+  .mooc-item .item-info .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .mooc-item .item-info .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'traincard';
+  src: url("../../../../js-barrier-study/css/fonts/traincard.eot?uvr6nn");
+  src: url("../../../../js-barrier-study/css/fonts/traincard.eot?uvr6nn#iefix") format("embedded-opentype"), url("../../../../js-barrier-study/css/fonts/traincard.ttf?uvr6nn") format("truetype"), url("../../../../js-barrier-study/css/fonts/traincard.woff?uvr6nn") format("woff"), url("../../../../js-barrier-study/css/fonts/traincard.svg?uvr6nn#traincard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="tuc-icon-"], [class*=" tuc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'traincard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.tuc-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.barrier-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .barrier-item .fr {
+    float: right; }
+  .barrier-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .barrier-item i,
+  .barrier-item em {
+    font-style: normal; }
+  .barrier-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .barrier-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .barrier-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .barrier-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .barrier-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .barrier-item .item-info .item-name {
+      font-size: 18px; }
+    .barrier-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .barrier-item .item-info .item-label-box .item-view i.date {
+        font-size: 12px; }
+      .barrier-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .barrier-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .barrier-item .item-info .v-line:not(:last-child) > em {
+      color: #999; }
+      .barrier-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .barrier-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .barrier-item .item-info,
+  .barrier-item .item-img {
+    position: relative; }
+  .barrier-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .barrier-item:hover .item-name {
+    color: #38adff; }
+  .barrier-item:hover a.bc-btn {
+    display: inline-block; }
+  .barrier-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .barrier-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .barrier-item .status-icon.passed {
+      color: #38adff; }
+    .barrier-item .status-icon.failed {
+      color: #ff7c7c; }
+    .barrier-item .status-icon.ended {
+      color: #a0a0a0; }
+    .barrier-item .status-icon.finished {
+      color: #38adff; }
+  .barrier-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .barrier-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'specialtycard';
+  src: url("../../../../js-collection-exam-study/css/fonts/specialtycard.eot?5k0n7w");
+  src: url("../../../../js-collection-exam-study/css/fonts/specialtycard.eot?5k0n7w#iefix") format("embedded-opentype"), url("../../../../js-collection-exam-study/css/fonts/specialtycard.ttf?5k0n7w") format("truetype"), url("../../../../js-collection-exam-study/css/fonts/specialtycard.woff?5k0n7w") format("woff"), url("../../../../js-collection-exam-study/css/fonts/specialtycard.svg?5k0n7w#specialtycard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="spec-icon-"], [class*=" spec-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'specialtycard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.spec-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.exam-item {
+  display: inline-block;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .exam-item .fr {
+    float: right; }
+  .exam-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .exam-item i {
+    font-style: normal; }
+  .exam-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .exam-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .exam-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .exam-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .exam-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .exam-item .item-info .item-name {
+      font-size: 18px; }
+    .exam-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .exam-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .exam-item .item-info .item-label-box .ml {
+        margin-left: 5px; }
+      .exam-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .exam-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .exam-item .item-info .v-line:not(:last-child) > em {
+      font-style: normal;
+      color: #999; }
+      .exam-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .exam-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .exam-item .item-info,
+  .exam-item .item-img {
+    position: relative; }
+  .exam-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .exam-item:hover .item-name {
+    color: #38adff; }
+  .exam-item:hover a.bc-btn {
+    display: inline-block; }
+  .exam-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .exam-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .exam-item .status-icon.passed {
+      color: #38adff; }
+    .exam-item .status-icon.failed {
+      color: #ff7c7c; }
+    .exam-item .status-icon.ended {
+      color: #a0a0a0; }
+    .exam-item .status-icon.finished {
+      color: #38adff; }
+  .exam-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .exam-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'specialtycard';
+  src: url("../../../../js-collection-exam-mooc/css/fonts/specialtycard.eot?5k0n7w");
+  src: url("../../../../js-collection-exam-mooc/css/fonts/specialtycard.eot?5k0n7w#iefix") format("embedded-opentype"), url("../../../../js-collection-exam-mooc/css/fonts/specialtycard.ttf?5k0n7w") format("truetype"), url("../../../../js-collection-exam-mooc/css/fonts/specialtycard.woff?5k0n7w") format("woff"), url("../../../../js-collection-exam-mooc/css/fonts/specialtycard.svg?5k0n7w#specialtycard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="spec-icon-"], [class*=" spec-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'specialtycard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.spec-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.exam-mooc-item {
+  display: inline-block;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .exam-mooc-item .fr {
+    float: right; }
+  .exam-mooc-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .exam-mooc-item i {
+    font-style: normal; }
+  .exam-mooc-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .exam-mooc-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .exam-mooc-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .exam-mooc-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .exam-mooc-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .exam-mooc-item .item-info .item-name {
+      font-size: 18px; }
+    .exam-mooc-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px; }
+      .exam-mooc-item .item-info .item-label-box .item-view i.date {
+        font-size: 12px; }
+      .exam-mooc-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .exam-mooc-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .exam-mooc-item .item-info .v-line:not(:last-child) > em {
+      font-style: normal;
+      color: #999; }
+      .exam-mooc-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .exam-mooc-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .exam-mooc-item .item-info,
+  .exam-mooc-item .item-img {
+    position: relative; }
+  .exam-mooc-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .exam-mooc-item:hover .item-name {
+    color: #38adff; }
+  .exam-mooc-item:hover a.bc-btn {
+    display: inline-block; }
+  .exam-mooc-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .exam-mooc-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .exam-mooc-item .status-icon.passed {
+      color: #38adff; }
+    .exam-mooc-item .status-icon.failed {
+      color: #ff7c7c; }
+    .exam-mooc-item .status-icon.ended {
+      color: #a0a0a0; }
+    .exam-mooc-item .status-icon.finished {
+      color: #38adff; }
+  .exam-mooc-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .exam-mooc-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+@font-face {
+  font-family: 'opencoursecard';
+  src: url("../../../../js-course-offline-study/css/fonts/opencoursecard.eot?hg1y5j");
+  src: url("../../../../js-course-offline-study/css/fonts/opencoursecard.eot?hg1y5j#iefix") format("embedded-opentype"), url("../../../../js-course-offline-study/css/fonts/opencoursecard.ttf?hg1y5j") format("truetype"), url("../../../../js-course-offline-study/css/fonts/opencoursecard.woff?hg1y5j") format("woff"), url("../../../../js-course-offline-study/css/fonts/opencoursecard.svg?hg1y5j#opencoursecard") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="oc-icon-"], [class*=" oc-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'opencoursecard' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.oc-icon-ring-verse:before {
+  content: "\e91e"; }
+
+.offline-study-item {
+  display: inline-block;
+  float: left;
+  position: relative;
+  margin: 0 24px 20px;
+  width: 270px;
+  font: 14px/1.5 "microsoft yahei", Tahoma, Arial, sans-serif;
+  cursor: pointer; }
+  .offline-study-item .fr {
+    float: right; }
+  .offline-study-item .ellipsis {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+  .offline-study-item i {
+    font-style: normal; }
+  .offline-study-item .item-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #fff;
+    background: #38adff;
+    height: 24px;
+    line-height: 24px; }
+  .offline-study-item .item-img {
+    width: 270px;
+    height: 180px; }
+    .offline-study-item .item-img .lazy-image {
+      width: 100%;
+      height: 100%; }
+    .offline-study-item .item-img .item-ldt {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0.01));
+      height: 24px;
+      line-height: 24px; }
+  .offline-study-item .item-info {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    background: #fff; }
+    .offline-study-item .item-info .item-name {
+      font-size: 18px;
+      cursor: pointer; }
+      .offline-study-item .item-info .item-name .title {
+        font-size: 14px;
+        color: #000 !important;
+        cursor: pointer; }
+      .offline-study-item .item-info .item-name .content {
+        font-size: 12px;
+        color: #000 !important;
+        cursor: pointer; }
+    .offline-study-item .item-info .item-label-box {
+      overflow: inherit;
+      position: relative;
+      margin-top: -19px;
+      line-height: 30px;
+      height: 30px; }
+      .offline-study-item .item-info .item-label-box .item-view {
+        font-size: 12px; }
+      .offline-study-item .item-info .item-label-box .btn {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0 10px;
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #38adff;
+        cursor: pointer; }
+      .offline-study-item .item-info .item-label-box .btn-disable {
+        background-color: #ccc; }
+    .offline-study-item .item-info .v-line:not(:last-child) > em {
+      font-style: normal;
+      color: #999; }
+      .offline-study-item .item-info .v-line:not(:last-child) > em:before {
+        content: "丨"; }
+    .offline-study-item .item-info .item-icon {
+      height: 20px;
+      line-height: 20px; }
+  .offline-study-item .item-info,
+  .offline-study-item .item-img {
+    position: relative; }
+  .offline-study-item a.bc-btn {
+    display: inline-block;
+    display: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .offline-study-item:hover .item-name {
+    color: #38adff; }
+  .offline-study-item:hover a.bc-btn {
+    display: inline-block; }
+  .offline-study-item .status-icon {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 54px; }
+    .offline-study-item .status-icon span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 54px;
+      text-align: center;
+      transform: rotate(-16deg); }
+    .offline-study-item .status-icon.passed {
+      color: #38adff; }
+    .offline-study-item .status-icon.failed {
+      color: #ff7c7c; }
+    .offline-study-item .status-icon.ended {
+      color: #a0a0a0; }
+    .offline-study-item .status-icon.finished {
+      color: #38adff; }
+  .offline-study-item .study-process {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    left: -1px;
+    height: 6px;
+    background: #eee; }
+    .offline-study-item .study-process .inner {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #38adff;
+      transition: all .3s; }
+
+.study-list {
+  padding: 20px 30px 0; }
+  .study-list.clearfix:before, .study-list.clearfix:after {
+    display: table;
+    content: ""; }
+  .study-list.clearfix:after {
+    clear: both;
+    overflow: hidden; }

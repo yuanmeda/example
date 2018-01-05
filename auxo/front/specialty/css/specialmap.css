@@ -1,0 +1,343 @@
+/*
+ * Author: 
+ * Version: 0.1.0
+ * Compile Date: 2017-05-18 18:33
+*/ 
+/*
+ *
+ * @authors chenzl(199283)
+ * @editor  chenzl(199283)
+ * @date    2017-05-18 11:25:53
+ */
+/* CSS Reset */
+body, section, nav, button, div, span, object, iframe, input, h1, h2, h3, h4, h5, h6, p, pre, a, acronym, address, code, del, em, font, img, ins, strong, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td {
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ins {
+  text-decoration: none; }
+
+del {
+  text-decoration: line-through; }
+
+input, select {
+  vertical-align: middle; }
+
+input, textarea, select {
+  font: 12px/1.5 "microsoft yahei", Arial, sans-serif; }
+
+fieldset, img {
+  border: 0; }
+
+address, code, th, em {
+  font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+input {
+  box-sizing: content-box; }
+
+input, button {
+  border: none;
+  outline: none; }
+
+/* bass css */
+body {
+  margin: 0 auto;
+  max-width: 1920px;
+  font: 12px/1.5 "microsoft yahei", Arial, sans-serif;
+  color: #333; }
+
+.wrapper {
+  margin: 0 auto;
+  width: 1200px; }
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both; }
+
+a {
+  text-decoration: none; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.hide {
+  display: none !important; }
+
+.show {
+  display: block !important; }
+
+.txthide {
+  height: 0;
+  text-indent: -999em;
+  overflow: hidden;
+  line-height: 0;
+  font-size: 0; }
+
+.TQD-map-wrap {
+  width: 840px;
+  background: #fff; }
+  .TQD-map-wrap .map-head {
+    height: 26px;
+    margin-bottom: 14px; }
+  .TQD-map-wrap .btn-back {
+    width: 58px;
+    height: 24px;
+    border: 1px solid #38adff;
+    line-height: 24px;
+    text-align: center;
+    color: #38adff;
+    border-radius: 4px; }
+  .TQD-map-wrap .instr-wrap, .TQD-map-wrap .slt-wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    *zoom: 1; }
+  .TQD-map-wrap .instr-wrap {
+    margin-right: 5px; }
+    .TQD-map-wrap .instr-wrap .ico-instr {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url(../img/spr.png) no-repeat 0 -55px; }
+    .TQD-map-wrap .instr-wrap:hover .ico-instr {
+      background-position: -34px -55px; }
+    .TQD-map-wrap .instr-wrap:hover .detail-wrap {
+      display: block; }
+    .TQD-map-wrap .instr-wrap .detail-wrap {
+      position: absolute;
+      top: -5px;
+      right: 16px;
+      z-index: 10;
+      display: none; }
+    .TQD-map-wrap .instr-wrap .detail-box {
+      width: 230px;
+      margin-right: 4px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 8px; }
+    .TQD-map-wrap .instr-wrap p {
+      color: #333;
+      line-height: 1.8; }
+    .TQD-map-wrap .instr-wrap .txt {
+      margin-bottom: 5px;
+      max-height: 63px;
+      overflow: hidden; }
+    .TQD-map-wrap .instr-wrap .name {
+      color: #999; }
+    .TQD-map-wrap .instr-wrap em {
+      color: #ff9617; }
+  .TQD-map-wrap .slt-wrap {
+    position: relative;
+    width: 144px;
+    height: 24px;
+    border: 1px solid #ddd;
+    color: #ddd;
+    border-radius: 4px; }
+    .TQD-map-wrap .slt-wrap .slt-val {
+      display: inline-block;
+      width: 80px;
+      padding-left: 20px;
+      vertical-align: middle;
+      color: #333;
+      line-height: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .TQD-map-wrap .slt-wrap .slt-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      width: 35px;
+      height: 24px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      background: url(../img/spr.png) no-repeat 11px -18px; }
+      .TQD-map-wrap .slt-wrap .slt-btn:hover {
+        background-position: -26px -18px; }
+    .TQD-map-wrap .slt-wrap .slt-list {
+      position: absolute;
+      top: 24px;
+      left: -1px;
+      z-index: 10;
+      width: 136px;
+      padding: 0 4px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 4px;
+      display: none; }
+      .TQD-map-wrap .slt-wrap .slt-list li {
+        height: 26px;
+        margin: 10px 0;
+        padding-left: 16px;
+        line-height: 26px;
+        color: #333;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        .TQD-map-wrap .slt-wrap .slt-list li:hover {
+          color: #38adff;
+          background: #eee;
+          border-radius: 5px; }
+    .TQD-map-wrap .slt-wrap.open .slt-btn {
+      background-position: 11px 8px; }
+      .TQD-map-wrap .slt-wrap.open .slt-btn:hover {
+        background-position: -26px 8px; }
+    .TQD-map-wrap .slt-wrap.open .slt-list {
+      display: block; }
+  .TQD-map-wrap .map-cont {
+    position: relative;
+    height: 520px;
+    background: #38adff; }
+  .TQD-map-wrap .map-container {
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: auto; }
+  .TQD-map-wrap .map-detail {
+    position: relative;
+    width: 1353px;
+    height: 520px; }
+    .TQD-map-wrap .map-detail .ico-lock, .TQD-map-wrap .map-detail .tag {
+      position: absolute;
+      z-index: 10; }
+    .TQD-map-wrap .map-detail .ico-lock {
+      width: 24px;
+      height: 24px;
+      background: url(../img/spr.png) no-repeat -26px -98px; }
+    .TQD-map-wrap .map-detail .tag {
+      width: 51px;
+      height: 19px;
+      line-height: 19px;
+      text-align: center;
+      color: #fff;
+      cursor: pointer;
+      font-style: normal;
+      overflow: hidden;
+      border-radius: 4px; }
+    .TQD-map-wrap .map-detail .tag-unconform {
+      background: #fe8282; }
+    .TQD-map-wrap .map-detail .tag-conformed {
+      background: #7fd729; }
+  .TQD-map-wrap .popup {
+    position: absolute;
+    width: 230px;
+    padding: 15px;
+    color: #fff;
+    background: #000;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 8px; }
+    .TQD-map-wrap .popup .tit {
+      color: #fff;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .TQD-map-wrap .popup .intro {
+      max-height: 54px;
+      margin: 8px 0;
+      overflow: hidden;
+      opacity: 0.5;
+      filter: alpha(opacity=50); }
+    .TQD-map-wrap .popup .other {
+      margin-left: -5px; }
+      .TQD-map-wrap .popup .other span {
+        margin: 0 5px; }
+      .TQD-map-wrap .popup .other em {
+        color: #38adff; }
+    .TQD-map-wrap .popup .condition {
+      margin-top: 8px; }
+      .TQD-map-wrap .popup .condition em {
+        color: #38adff; }
+    .TQD-map-wrap .popup .desc {
+      padding-left: 5px;
+      color: #38adff; }
+    .TQD-map-wrap .popup .course {
+      display: block;
+      max-width: 160px;
+      font-size: 13px;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  .TQD-map-wrap .user-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff; }
+    .TQD-map-wrap .user-wrap .avatar {
+      position: absolute;
+      top: -43px;
+      left: 18px;
+      z-index: 10; }
+    .TQD-map-wrap .user-wrap .info-wrap {
+      padding: 0 30px 0 110px; }
+    .TQD-map-wrap .user-wrap .user-box {
+      width: 240px; }
+    .TQD-map-wrap .user-wrap .name {
+      margin: 5px 0 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .TQD-map-wrap .user-wrap .progress {
+      position: relative;
+      padding-right: 30px; }
+    .TQD-map-wrap .user-wrap .progress-box {
+      width: 210px;
+      height: 4px;
+      background: #ddd;
+      overflow: hidden;
+      border-radius: 2px; }
+    .TQD-map-wrap .user-wrap .progress-bar {
+      width: 70%;
+      height: 4px;
+      background: #38adff;
+      border-radius: 2px; }
+    .TQD-map-wrap .user-wrap .percent {
+      position: absolute;
+      top: -5px;
+      right: 0;
+      color: #38adff;
+      line-height: 1; }
+    .TQD-map-wrap .user-wrap .integral-box {
+      position: relative;
+      padding-left: 26px;
+      margin-top: 12px;
+      font-size: 14px; }
+    .TQD-map-wrap .user-wrap .ico-integ {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background: url(../img/spr.png) no-repeat 0 -98px; }
+    .TQD-map-wrap .user-wrap .cur-num {
+      color: #ff9617; }

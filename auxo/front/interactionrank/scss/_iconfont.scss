@@ -1,0 +1,119 @@
+@font-face {
+	font-family: 'elearning';
+	src:url('#{$iconfont-path}/fonts/elearning.eot?4rzqfm');
+	src:url('#{$iconfont-path}/fonts/elearning.eot?4rzqfm#iefix') format('embedded-opentype'),
+		url('#{$iconfont-path}/fonts/elearning.ttf?4rzqfm') format('truetype'),
+		url('#{$iconfont-path}/fonts/elearning.woff?4rzqfm') format('woff'),
+		url('#{$iconfont-path}/fonts/elearning.svg?4rzqfm#elearning') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'elearning';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+	vertical-align: middle;
+	display: inline-block;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+[class^=icon-]:before, [class*=" icon-"]:before {
+	display: inline-block;
+}
+
+.icon-add:before {
+    content: "\e900";
+}
+.icon-min:before {
+    content: "\e901";
+}
+.icon-search:before {
+    content: "\e902";
+}
+.icon-phone:before {
+    content: "\e903";
+}
+.icon-rarrow:before {
+    content: "\e904";
+}
+.icon-larrow:before {
+    content: "\e905";
+}
+.icon-rsj:before {
+    content: "\e906";
+}
+.icon-dsj:before {
+    content: "\e907";
+}
+.icon-view:before {
+    content: "\e908";
+}
+.icon-user:before {
+    content: "\e909";
+}
+.icon-close:before {
+    content: "\e90a";
+}
+.icon-play:before {
+    content: "\e90b";
+}
+.icon-star2:before {
+    content: "\e90c";
+}
+.icon-star1:before {
+    content: "\e90d";
+}
+.icon-darrow:before {
+    content: "\e90e";
+}
+.icon-uparrow:before {
+    content: "\e90f";
+}
+.icon-question:before {
+    content: "\e910";
+}
+.icon-document:before {
+    content: "\e911";
+}
+.icon-study:before {
+    content: "\e912";
+}
+.icon-sort:before {
+    content: "\e913";
+}
+.icon-halfstar:before {
+    content: "\e914";
+}
+.icon-study2:before {
+    content: "\e915";
+}
+.icon-exam2:before {
+    content: "\e916";
+}
+.icon-note2:before {
+    content: "\e917";
+}
+.icon-answer2:before {
+    content: "\e918";
+}
+.icon-auth2:before {
+    content: "\e919";
+}
+.icon-sort2:before {
+    content: "\e91a";
+}
+.icon-check-yes:before {
+    content: "\e91b";
+}
+.icon-radio:before {
+    content: "\e91c";
+}
+.icon-gz:before {
+    content: "\e91d";
+}

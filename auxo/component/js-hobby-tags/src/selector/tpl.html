@@ -1,0 +1,47 @@
+<div class="hobby-tags-selector" data-bind="css:{'hts-dlg-mode': dlg_mode}">
+  <div class="hts-title">
+    <h1 data-bind="translate:{key:'hobby_tags.main_title'}"></h1><span data-bind="translate:{key: 'hobby_tags.sub_title'}"></span>
+  </div>
+
+
+  <!--ko if:tags().length > 0-->
+  <div class="hts-list">
+    <!--ko foreach:tags-->
+    <div class="hts-item">
+      <div class="cate-title" data-bind="text:title"></div>
+      <ul>
+        <!--ko foreach:children-->
+        <li data-bind="
+          text:title,
+          click:$component.toggle_tag,
+          css:{selected:$component.user_selected().indexOf(id)>-1}"></li>
+        <!--/ko-->
+      </ul>
+    </div>
+    <!--/ko-->
+  </div>
+  <!--/ko-->
+
+  <!--ko if:tags().length === 0-->
+  <div class="hts-empty">
+    <i></i>
+    <span data-bind="translate:{key: 'hobby_tags.tags_empty'}"></span>
+  </div>
+  <!--/ko-->
+
+  <!--ko if:tags().length > 0-->
+  <div class="hts-footer">
+    <p data-bind="event:{mouseover:toggle_fold.bind($component, false),mouseout:toggle_fold.bind($component, true)}">
+      <span data-bind="translate:{key:'hobby_tags.lbl_has_selected'}"></span>
+      <!--ko text:user_tags_labels_display--><!--/ko-->
+    </p>
+    <!--ko if:user_selected().length-->
+    <span class="hts-save" data-bind="translate:{key: 'hobby_tags.act_save'},click:save_tags"></span>
+    <!--/ko-->
+    <!--ko if:!user_selected().length-->
+    <span class="hts-save disabled" data-bind="translate:{key: 'hobby_tags.act_save'}"></span>
+    <!--/ko-->
+  </div>
+  <!--/ko-->
+</div>
+

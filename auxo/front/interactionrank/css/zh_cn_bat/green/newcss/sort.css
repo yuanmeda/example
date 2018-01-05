@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.x-project-rank{position:relative;box-sizing:content-box;height:100%;min-height:730px;padding-bottom:55px}
+.x-project-rank *,.x-project-rank :after,.x-project-rank :before{box-sizing:inherit}
+.x-project-rank .sort-page{margin:0 auto;width:645px}
+.x-project-rank .sort-page ul.sort-list{padding-bottom:0}
+.x-project-rank .sort-page ul.sort-list li{border-bottom:1px dashed #e0e0e0;padding:20px 0;height:40px;line-height:40px}
+.x-project-rank .sort-page ul.sort-list li:first-child{border:none;padding:0}
+.x-project-rank .sort-page ul.sort-list li.thead{font-weight:700}
+.x-project-rank .sort-page ul.sort-list li.thead .td2{color:#333；}
+.x-project-rank .sort-page ul.sort-list li span{display:inline-block;float:left;height:40px;line-height:40px;text-align:center;vertical-align:middle}
+.x-project-rank .sort-page ul.sort-list li span.time{color:#999}
+.x-project-rank .sort-page ul.sort-list li .td1{width:130px}
+.x-project-rank .sort-page ul.sort-list li .td1 i{font-size:20px;font-style:italic;color:#666}
+.x-project-rank .sort-page ul.sort-list li .td1 i.sn{display:inline-block;width:42px;height:40px;color:#fff;background:url(../../../images/sort-ui.png) no-repeat}
+.x-project-rank .sort-page ul.sort-list li .td1 i.sort1{background-position:3px 0}
+.x-project-rank .sort-page ul.sort-list li .td1 i.sort2{background-position:3px -43px}
+.x-project-rank .sort-page ul.sort-list li .td1 i.sort3{background-position:3px -86px}
+.x-project-rank .sort-page ul.sort-list li .td2{box-sizing:border-box;padding-left:20px;width:350px;text-align:left;color:#4d4d4d;overflow:hidden;text-overflow:ellipsis}
+.x-project-rank .sort-page ul.sort-list li .td3{width:164px}
+.x-project-rank .sort-page ul.sort-list li .sort-img{display:inline-block;border-radius:50%;width:40px;height:40px;line-height:40px;vertical-align:middle}
+.x-project-rank .sort-page ul.sort-list li:after{clear:both;zoom:1;content:""}
+.x-project-rank .sort-page ul.sort-list li.current .td1 i,.x-project-rank .sort-page ul.sort-list li.current .td2,.x-project-rank .sort-page ul.sort-list li.current span.time{color:#5cb731}
+.x-project-rank .click-load{position:absolute;bottom:5px;left:0;margin:5px 0;width:100%;color:#666}
+.x-project-rank .click-load a,.x-project-rank .click-load span{display:inline-block;border:1px solid #e6e6e6;border-radius:16px;padding:0 20px;height:33px;line-height:33px}
+.x-project-rank .click-load a:hover{color:#5cb731}
+.x-project-rank .sort-tips{position:absolute;bottom:-35px;left:0;width:100%;color:#666}
+.x-project-rank .tit{position:relative;border-bottom:1px solid #e0e0e0;padding-left:30px;height:60px;line-height:60px;color:#999}
+.x-project-rank .tit .tit-name{font-size:26px;color:#666}
+.x-project-rank .tit .tit-desc{margin-left:20px;font-size:12px;line-height:42px}
+.x-project-rank .tit .tit-tab{position:absolute;right:10px;bottom:-1px;z-index:9}
+.x-project-rank .tit .tit-tab a{display:inline-block;border-color:2px solid transparent;padding:0 20px;height:60px;line-height:60px}
+.x-project-rank .tit .tit-tab a.active{border-bottom:2px solid #5cb731;color:#5cb731}
+.x-project-rank .sort-top{min-height:100%}
+.x-project-rank .tit-total{overflow:hidden;margin-bottom:20px;height:48px;line-height:48px;text-align:center}
+.x-project-rank .tit-total .total-content{display:inline-block;border-radius:0 0 100px 100px;padding:0 80px 30px;background-image:-webkit-linear-gradient(bottom,#fffde0,#fffccd);background-image:linear-gradient(0deg,#fffde0,#fffccd)}
+.x-project-rank .tit-total .total-content i{display:inline-block;margin:0 5px;font-size:20px;color:#5cb731}
+.x-project-rank .nodata-box{padding:120px 0;text-align:center}
+.x-project-rank .nodata-box i{font-size:150px;color:#e0e0e0}
+.x-project-rank .nodata-box p{font-size:24px;color:#ccc}

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*
+ * Version: 	v1.0
+ * Author:  	klj
+ * Date:    	2017-04-21
+ */
+
+
+/* -------------init------------- */
+
+
+/* variables and mixins */
+@import "./_theme";
+@import "../shared/note/_mixin";
+// @import "_base/_reset";
+@import "../shared/note/_utilities";
+@import "../shared/note/_variables";
+@import "../shared/note/iconfont";
+
+/* -------------common------------- */
+@import "../shared/note/ui-btn";
+@import "../shared/note/ui-tab";
+@import "../shared/note/ui-search";
+//@import "../shared/note/ui-menu";
+@import "../shared/note/ui-check";
+@import "../shared/note/_ui-list-pic";
+@import "../shared/note/_ui-txta";
+@import "../shared/note/_ui-pagination";
+@import "../shared/note/_ui-pop";
+
+@import "../shared/note/_ui-add-note";
+
+/* -------------pages------------- */
+@import "../shared/note/_mod-sidebar";
+@import "../shared/note/_mod-note";
+// @import "mod-user-center";
+// @import "mod-mynote";

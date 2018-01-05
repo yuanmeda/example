@@ -1,0 +1,62 @@
+﻿.pln { color: #000; }
+
+@media screen {
+    .str { color: #080; }
+    .kwd { color: #008; }
+    .com { color: #800; }
+    .typ { color: #606; }
+    .lit { color: #066; }
+    .pun, .opn, .clo { color: #660; }
+    .tag { color: #008; }
+    .atn { color: #606; }
+    .atv { color: #080; }
+    .dec, .var { color: #606; }
+    .fun { color: red; }
+}
+
+@media print,projection {
+    .str { color: #060; }
+    .kwd { color: #006; font-weight: bold; }
+    .com { color: #600; font-style: italic; }
+    .typ { color: #404; font-weight: bold; }
+    .lit { color: #044; }
+    .pun, .opn, .clo { color: #440; }
+    .tag { color: #006; font-weight: bold; }
+    .atn { color: #404; }
+    .atv { color: #060; }
+}
+
+pre.prettyprint { padding: 2px; }
+ol.linenums { margin-top: 0; margin-bottom: 0; }
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 { list-style-type: none; }
+li.L1, li.L3, li.L5, li.L7, li.L9 { background: #eee; }
+
+
+.profiler-results { position: fixed; left: 0px; top: 0px; color: #696969; z-index: 990000; }
+.profiler-result { }
+.profiler-button { background-color: #fff; height: 24px; width: 60px; display: block; border: 1px solid #ccc; border-width: 1px 0px; margin-bottom: 1px; text-align: center; line-height: 24px; cursor: pointer; }
+.profiler-button-active { background-color: #800000; color: #fff; }
+.profiler-popup { position: fixed; left: 60px; top: 0px; border: 1px solid #ccc; padding: 8px; display: none; background-color: #fff; max-width: 1100px; min-width: 800px; }
+.profiler-info { border-bottom: 1px solid #ccc; font-weight: bold; }
+.profiler-tabs { padding-left: 24px; border-bottom: 1px solid #c98383; }
+.profiler-tabbutton { display: inline-block; width: 80px; line-height: 24px; cursor: pointer; text-align: center; margin: 4px 4px 0 4px; }
+.profiler-tabbutton-active { background-color: #c98383; color: #fff; }
+.profiler-tabbody { display: none; overflow: auto; max-height: 600px; min-height: 300px; }
+.profiler-tabbody-trace { display: block; }
+
+.profiler-tabbody pre { display: block; overflow: visible; margin: 0; padding: 0px; }
+
+.profiler-tabbody dt { background-color: #faefef; font-size: 12px; font-family: Consolas,monospace,serif; line-height: 14px; white-space: pre-wrap; margin: 8px 0 0 0; padding: 0px; padding: 4px; cursor: pointer; }
+.profiler-tabbody dd { padding-top: 4px; display: none; padding-left: 8px; font-size: 11px; font-family: Consolas,monospace,serif; line-height: 13px; margin-bottom: 16px; color: #393939; }
+
+.profiler-trace-types { padding-top: 8px; }
+    .profiler-trace-types span { display: inline-block; width: 100px; height: 24px; line-height: 24px; text-align: center; margin: 0px 4px; cursor: pointer; }
+.profiler-trace-type-active { background-color: #faefef; color: #800000; }
+
+.profiler-header strong { width: 40px; text-align: right; padding: 4px 4px; background-color: #f8b02f; display: inline-block; font-size: 11px; line-height: 15px; }
+.profiler-watch-item { overflow: hidden; margin-bottom: 3px; }
+    .profiler-watch-item strong { width: 40px; text-align: right; padding: 2px 4px; background-color: #f8e4c0; display: block; float: left; font-size: 11px; line-height: 17px; }
+    .profiler-watch-item span { display: block; background-color: #f3dfdf; cursor: pointer; margin-left: 50px; padding: 2px 14px; }
+    .profiler-watch-item pre { font-size: 11px; font-family: Consolas,monospace,serif; line-height: 13px; color: #393939; padding: 2px 12px; }
+
+.profiler-tabbody-request { padding: 8px; line-height: 16px; }

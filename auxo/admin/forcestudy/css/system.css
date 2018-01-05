@@ -1,0 +1,186 @@
+a:hover {
+    text-decoration: none;
+}
+.fs-header {
+    padding: 18px 0;
+    border-bottom: 1px solid #999;
+}
+.fs-header form {
+    margin: 0;
+}
+.fs-header .form-inline label {
+    margin: 0 25px 10px 0;
+}
+.fs-header .form-inline .dropdown .dropdown-toggle {
+    padding: 6px 12px;
+    margin: 0 2px;
+    -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+    line-height: 14px;
+}
+.fs-header .form-inline .dropdown .caret {
+    margin-top: 4px;
+}
+.fs-header .form-inline .input-small {
+    width: 120px;
+}
+.fs-wrapper {
+    margin: 18px 0;
+}
+.inline-block {
+    display: inline-block;
+    *vertical-align: auto; // fixed IE7 inline-block
+    zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+}
+.text-c {
+    text-align: center;
+}
+.text-l {
+    text-align: left;
+}
+.table-black th{
+    background: #ccc;
+}
+.data-empty {
+    text-align: center;
+    margin: 15px 0;
+}
+.middle {
+    display: inline-block;
+    *vertical-align: auto; // fixed IE7 inline-block
+    zoom: 1;
+    *display: inline;
+    vertical-align: middle;
+}
+.line-b {
+    padding-bottom: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.list-inline {
+    overflow: hidden;
+    margin: 0;
+}
+.list-inline li {
+    float: left;
+    display: block;
+}
+.list-one li:first-child:nth-last-child(1){ width: 100%; }
+.list-two li:first-child:nth-last-child(2),
+.list-two li:first-child:nth-last-child(2) ~li { width: 50%; }
+.list-three li:first-child:nth-last-child(3),
+.list-three li:first-child:nth-last-child(3) ~li { width: 33.3333%; }
+.list-four li:first-child:nth-last-child(4),
+.list-four li:first-child:nth-last-child(4) ~li { width: 25%; }
+.list-five li:first-child:nth-last-child(5),
+.list-five li:first-child:nth-last-child(5) ~li { width: 20%; }
+.list-border .card { border: 1px solid #333; }
+.list-border.list-two li:first-child ~li .card,
+.list-border.list-three li:first-child ~li .card,
+.list-border.list-four li:first-child ~li .card,
+.list-border.list-five li:first-child ~li .card{ border-left: none; }
+.member {
+    width: 120px;
+    margin: 0 30px 0 0;
+}
+.member .member-thum {
+    float: left;
+    margin: 0 15px 10px 0;
+}
+.member .member-thum img{
+    width: 40px;
+    height: 40px;
+}
+.member .member-body {
+    float: left;
+    width: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 40px;
+}
+.panel-header {
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
+}
+.panel-body {
+    overflow-y: auto;
+    height: 100%;
+    padding: 15px;
+}
+.block {
+    margin: 20px 0 0;
+}
+.course {
+    width: 260px;
+    overflow: hidden;
+    margin: 0 20px 30px;
+}
+.course .course-thum {
+    min-width: 260px;
+    min-height: 150px;
+    background: #EFEFEF;
+}
+.course .course-thum img {
+    display: block;
+}
+.course .course-body {
+    margin: 10px 0 0;
+}
+.course-body h4 {
+    font: 16px/26px "microsoft yahei";
+    color: #333;
+}
+.course-body .course-info {
+    margin: 5px 0 0;
+}
+.course-info a, .course-info span {
+    font: 16px/20px "microsoft yahei";
+    color: #ccc;
+    display: inline-block;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+    margin: 0 10px 0 0;
+}
+.course-info span {
+    font-size: 12px;
+}
+.course-info em {
+    color: #38adff;
+    font-style: normal;
+}
+.table-easy thead th {
+    line-height: 32px;
+    vertical-align: middle;
+}
+.table-easy td {
+    line-height: 26px;
+    vertical-align: middle;
+}
+.card-gray {
+    background: #f2f2f2;
+}
+.card {
+    padding: 10px 30px;
+    min-width: 200px;
+}
+.card p {
+    font: 14px/normal "microsoft yahei";
+    color: #666;
+}
+.card span {
+    font: 14px/normal "microsoft yahei";
+    color: #333;
+}
+.input-mini {
+    width: 80px;
+}
+.daterangepicker .ranges {
+    width: 190px !important;
+}
+.bg-gray {
+    background: #ccc;
+}

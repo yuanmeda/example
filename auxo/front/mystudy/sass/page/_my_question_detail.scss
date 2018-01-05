@@ -1,0 +1,173 @@
+@import "../shared/mixins";
+@import "../shared/pagination";
+$gutterWidth: 25px;
+$borderColor: #e5e5e5;
+.qa-container {
+    font-size: 14px;
+
+    background-color: #fff;
+    .validationMessage {
+        margin-left: 20px;
+
+        color: #ce3f3f;
+
+        @include v-position(top);
+        @include text-middle(18px);
+    }
+    .pagination-box {
+        text-align: center;
+        .pagination {
+            display: inline-block;
+        }
+    }
+    .theme {
+        color: $themeColor;
+    }
+    .k-edit-component > span {
+        font-size: 12px;
+    }
+    .qa-item-box {
+        padding-top: 30px;
+        padding-bottom: $gutterWidth - 5px;
+
+        @extend %clearfix;
+        .u-avatar,
+        .qa-detail {
+            float: left;
+        }
+        .u-avatar {
+            margin-right: $gutterWidth;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        .qa-detail {
+            position: relative;
+
+            width: 890px;
+            .word-break {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+            .u-content {
+                padding: 10px 0;
+                min-height: 60px;
+            }
+            textarea.u-content {
+                border-color: $borderColor;
+                border-radius: 5px;
+                padding: 8px;
+                width: 100%;
+
+                outline: none;
+
+                resize: none;
+            }
+            .u-name,
+            .u-commet {
+                color: #999;
+            }
+            .u-commet small {
+                margin-right: 10px;
+            }
+            .u-from a {
+                margin-left: 3px;
+
+                font-size: 13px;
+
+                color: $themeColor;
+                &:hover {
+                    color: darken($themeColor,8%);
+                }
+            }
+            .op-list {
+                display: none;
+                float: right;
+                a {
+                    margin: 0 5px;
+
+                    font-size: 12px;
+
+                    color: $themeColor;
+
+                    cursor: pointer;
+                    &:hover {
+                        color: darken($themeColor,8%);
+                    }
+                }
+                a > i {
+                    margin-right: 3px;
+
+                    vertical-align: initial;
+                }
+                &.show {
+                    display: block;
+                }
+            }
+            & > div {
+                margin-top: 10px;
+            }
+            .qa-item-edit {
+                position: absolute;
+                top: 17px;
+                left: 0;
+
+                width: 100%;
+
+                background-color: #fff;
+            }
+        }
+        &:hover .op-list {
+            display: block;
+        }
+    }
+    .qa-header {
+        padding-right: $gutterWidth;
+        padding-bottom: $gutterWidth;
+        padding-left: $gutterWidth;
+    }
+    .qa-body {
+        margin-top: 10px;
+    }
+    .qa-count {
+        border-bottom: 1px solid $borderColor;
+        padding-bottom: 10px;
+        padding-left: $gutterWidth;
+        em {
+            color: $themeColor;
+        }
+    }
+    .qa-list {
+        padding: $gutterWidth;
+        padding-top: 0;
+    }
+    .qa-list .qa-item-box {
+        border-bottom: 1px dashed $borderColor;
+    }
+    .qa-footer {
+        margin-bottom: 20px;
+        padding: 0 $gutterWidth;
+        textarea {
+            border-color: $borderColor;
+            border-radius: 5px;
+            padding: 8px;
+            width: 100%;
+            min-height: 100px;
+
+            outline: none;
+
+            resize: none;
+        }
+        .f-ope-list {
+            float: right;
+            margin-top: 8px;
+
+            a {
+                width: 88px;
+
+                text-align: center;
+            }
+        }
+    }
+}

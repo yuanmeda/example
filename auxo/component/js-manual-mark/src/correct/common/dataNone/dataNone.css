@@ -1,0 +1,25 @@
+.empty-tips{
+  padding:70px 0;
+  color:#333;
+  text-align:center
+}
+.empty-tips .btn{
+  margin-top:10px
+}
+.empty-tips .btn.hide{
+  display:none
+}
+.empty-tips .tips-txt{
+  display:block;
+  height:auto;
+  margin-top:10px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:16px;
+  text-align:center
+}
+.empty-tips-icon{
+  display:block;
+  height:200px;
+  background:url(./empty-tips.png) no-repeat 50%
+}

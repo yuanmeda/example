@@ -1,0 +1,108 @@
+
+$caption-color: #be2c2c;
+
+body {
+  background-color: #efefef;
+  padding-bottom: 157px;
+}
+
+.header-logo {
+  height: 60px;
+}
+
+.user_space {
+  float: right;
+  margin-top: 5px;
+}
+
+.login-text {
+  margin-top: 23px;
+  float: right;
+}
+
+.fix-info-bar {
+  background-color: #fff;
+  padding: 15px 15px 15px 0px;
+  margin: -20px 0 0 1px;
+}
+
+.clear-top-layer {
+  background: none;
+}
+
+.mod-fixed {
+  padding: 90px 0 0 0;
+}
+
+.reset-top-layder {
+  height: 40px;
+  padding-bottom: 40px;
+  background: #fff;
+  border-bottom: 1px solid #d8d8d8;
+}
+.m-mod {
+  width: 741px;
+}
+.myspace {
+  color:#000;
+}
+.top-layer .top-link {
+  color: #FFF;
+  cursor: pointer;
+  display: inline;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: left;
+  white-space: nowrap;
+  margin: 20px 0 0 40px;
+  float: left;
+  a{
+    margin: 0 30px 0 0;
+    color:#000;
+  }
+}
+
+.nav_active {
+  color: #543207;
+}
+
+.caption {
+  display: block;
+  color: #{$caption-color};
+  background: #f6f6f6;
+  border-left: 0px solid #fff;
+  a{
+    border-left: 0px solid #fff !important;
+    cursor: default;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+.drop-menu .menu-bd li a {
+  padding-left: 20px;
+}
+
+.main-mod {
+  min-height: 700px;
+  padding: 20px 40px 70px 20px;
+}
+
+
+a.success-btn {
+  font-family: 'Arial Negreta', Arial;
+  font-size: 20px;
+  background-color: #3D91D1;
+  line-height: 60px;
+  background-image: none;
+  color: white;
+  &:hover{
+    color: #fff;
+  }
+  &:link{
+    text-decoration: none;
+  }
+}

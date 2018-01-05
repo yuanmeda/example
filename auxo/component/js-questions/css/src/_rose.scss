@@ -1,0 +1,122 @@
+/*
+回复列表项
+提问的回答列表项
+*/
+.qas-rose{
+  @include item-container();
+  position:relative;
+  // 头像
+  .qas-profile{
+    @include profile();
+  }
+
+  .qas-wrap{
+    overflow:hidden;
+  }
+
+  // 用户名等前导信息
+  .qas-prelead{
+    color:#999;
+    font-size:14px;
+    margin-bottom:5px;
+  }
+
+  // 回答内容
+  .qas-re-desc{
+    @include desc();
+  }
+
+  // 时间
+  .qas-time{
+    color:#999999;
+    font-size:12px;
+    margin-bottom:15px;
+  }
+
+  // 脚注
+  .qas-footer{
+    margin-bottom:10px;
+    // 回复数
+    .qas-reply-count{
+      @include re-count();
+      margin-right:40px;
+    }
+    // 点赞
+    .qas-praise{
+      margin-right:40px;
+      @include praise();
+    }
+    // 采纳
+    .qas-do-accept{
+      @include do-accept();
+    }
+
+    // 删除
+    .qas-do-del{
+      @include icon-text-pair();
+    }
+  }
+
+  // 已采纳
+  .qas-accepted{
+    position:absolute;
+    width:39px;
+    height:39px;
+    right:0;
+    bottom:20px;
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBODUzMkQzRjMwQTIxMUU3OEQzN0JBNkM5OTNFMkY5NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBODUzMkQ0MDMwQTIxMUU3OEQzN0JBNkM5OTNFMkY5NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkE4NTMyRDNEMzBBMjExRTc4RDM3QkE2Qzk5M0UyRjk0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE4NTMyRDNFMzBBMjExRTc4RDM3QkE2Qzk5M0UyRjk0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+pPCShwAAB3lJREFUeNqkmAmQj2Uc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") no-repeat 0 0;
+  }
+
+
+}
+
+/*
+学习课程回答列表项
+学习课程回复列表项
+*/
+.qas-rose-nar{
+  @include item-container();
+  .qas-header{
+    overflow:hidden;
+    margin-bottom:10px;
+    // 头像
+    .qas-profile{
+      @include profile();
+    }
+
+    .qas-meta{
+      overflow:hidden;
+    }
+
+    // 用户名
+    .qas-name{
+      color:#666666;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+    // 时间
+    .qas-time{
+      color:#999999;
+      font-size:12px;
+    }
+
+  }
+
+  // 回复内容
+  .qas-re-desc{
+    @include desc();
+    margin-bottom:10px;
+  }
+
+  // 脚注
+  // 回复数
+  .qas-reply-count{
+    @include re-count();
+    margin-right:40px;
+  }
+  // 点赞
+  .qas-praise{
+    margin-right:40px;
+    @include praise();
+  }
+}

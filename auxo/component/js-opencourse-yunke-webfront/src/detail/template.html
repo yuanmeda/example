@@ -1,0 +1,35 @@
+<div class="opencourse-yunke-dialog opencourse-yunke-detail">
+  <div class="cc-dlg-header">
+    <h1>课程详情</h1>
+    <span class="close" data-bind="click: close.bind($root)">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAiEAAAIhAENVwL6AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAGNQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf7bw3gAAACF0Uk5TAAEGBwsOFRctRUlVWGBie32WmKaywcLEzdri7vLz9Pf8M2K5HwAAAOVJREFUOMuFU8kWhCAMi6i4oOC+oIzz/185h1EBl9eeCklbSFvgtDBv+tmYuW/yEHdL6nXrVJllpeq2tU4uMKvMJKLjFInJVMwLH3URuBdBoUcnSaoHfi3JB52e8bpl90exVu852Dg84AAbxv99pTkejesKABJT4MUKkwCop+CNEEw1EK5iPy7yAOSyO2INkW+HPvIrLw6iLUfTnRl3wOJA16BX8BkuDtVjLuExPBzlDJPBY3g4MkMTyBLkI8lvkkJZqT9W6o8jtW1WbEvHTrPodpMDQ48cObT02NOLQ68evbzv6/8D99YT4ZkEYkQAAAAASUVORK5CYII=" />
+    </span>
+  </div>
+  <div class="cc-dlg-body">
+    <div class="course-detail">
+      <table>
+        <tr>
+          <th><span data-bind="translate:{key:'opencourse.courseModel.name'}"></span>：</th>
+          <td data-bind="text:courseTitle"></td>
+        </tr>
+        <tr>
+          <th><span data-bind="translate:{key:'opencourse.courseModel.summary'}"></span>：</th>
+          <td data-bind="text:courseSummary"></td>
+        </tr>
+        <tr>
+          <th><span data-bind="translate:{key:'opencourse.courseModel.tag'}"></span>：</th>
+          <td data-bind="text:courseTagsText"></td>
+        </tr>
+        <tr>
+          <th><span data-bind="translate:{key:'opencourse.courseModel.cover'}"></span>：</th>
+          <td>
+            <img
+              width="300"
+              height="200"
+              data-bind="attr:{src:courseCoverUrl}"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

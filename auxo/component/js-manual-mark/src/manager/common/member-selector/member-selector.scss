@@ -1,0 +1,223 @@
+.mem-choose {
+  margin-left: auto;
+  margin-right: auto;
+  width: 480px;
+  background: #fff;
+  border: 1px solid #999;
+  font: 16px Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  margin-top: 15%;
+  margin-left: 35%;
+  .mem-footer {
+    height: 40px;
+    padding: 10px;
+    background: #F8F8F8;
+    border-radius: 0 0 5px 5px;
+    .btn {
+      display: inline-block;
+      padding: 0 7px;
+      min-width: 60px;
+      height: 30px;
+      line-height: 25px;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+      color: #fff;
+      background: #2AB0E9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      float: right;
+      margin-right: 10px;
+      &:hover {
+        background: #2aa5d9;
+      }
+    }
+    .disable {
+      cursor: not-allowed;
+      color: #DADADA !important;
+      background: #2aa5d9 !important;
+    }
+  }
+  .mem-header {
+    height: 30px;
+    padding: 10px;
+    background: #2AB0E9;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 0 0;
+    .title {
+      height: 20px;
+      font-size: 18px;
+      color: #fff;
+      line-height: 20px;
+    }
+    .close {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      font-size: 20px;
+      line-height: 20px;
+      float: right;
+      color: #ddd;
+      cursor: pointer;
+    }
+  }
+  .mem-body {
+    padding: 0 15px;
+    width: 480px;
+    .mem-main {
+      height: 310px;
+    }
+  }
+  .mem-choosed-warp {
+    display: inline-block;
+    width: 160px;
+    height: 310px;
+    border: 1px solid #ddd;
+    background: #FFF;
+    overflow: hidden;
+    float: left;
+  }
+  .mem-choose-warp {
+    display: inline-block;
+    width: 80px;
+    height: 310px;
+    background: #FFF;
+    overflow: auto;
+    float: left;
+  }
+  .mem-choosed-title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    .infom {
+      overflow: hidden;
+      position: fixed;
+      z-index: 60;
+      background: #fff;
+      width: 210px;
+      border: 1px solid #3C616A;
+      display: none;
+    }
+    .show {
+      display: block !important;
+    }
+    .infom ul {
+      margin: 0;
+      padding: 0;
+      li {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        list-style-type: none;
+        display: block;
+        vertical-align: top;
+        height: 26px;
+        *display: inline;
+        *zoom: 1;
+        cursor: pointer;
+        line-height: 26px;
+        &.on {
+          background: #FCEBA9 !important;
+        }
+        &:hover {
+          background: #C3E2F8;
+        }
+        cite {
+          padding: 0 6px;
+          font-size: 13px;
+          font-style: normal;
+        }
+        img{
+          height: 25px;
+          width: 25px;
+          border-radius: 5px;
+        }
+      }
+      .disable{
+        cursor: not-allowed;
+      }
+    }
+    input {
+      width: 200px;
+      height: 26px;
+    }
+    span {
+      margin-left: 80px;
+      font-size: 14px;
+    }
+  }
+  .mem-choose-warp {
+    .btn {
+      display: inline-block;
+      padding: 0 7px;
+      min-width: 50px;
+      height: 25px;
+      line-height: 25px;
+      border-radius: 5px;
+      font-size: 12px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+      color: #333;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin: 70px 15px 0;
+      &:hover {
+        background: #eee;
+      }
+    }
+    .disable {
+      background: #DADADA !important;
+    }
+  }
+  .mem-choosed-warp ul {
+    margin: 0;
+    padding: 0;
+    li {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      list-style-type: none;
+      display: block;
+      vertical-align: top;
+      height: 26px;
+      *display: inline;
+      *zoom: 1;
+      cursor: pointer;
+      line-height: 26px;
+      &.on {
+        background: #FCEBA9 !important;
+      }
+      &:hover {
+        background: #C3E2F8;
+      }
+      cite {
+        padding: 0 6px;
+        font-size: 13px;
+        font-style: normal;
+      }
+      img{
+        height: 25px;
+        width: 25px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+.mem-mask{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}

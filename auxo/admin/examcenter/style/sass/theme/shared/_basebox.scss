@@ -1,0 +1,49 @@
+/*!
+ * 单个课程样式
+ */
+.basebox {
+    .base-item {
+        @import "nlabel";
+        .l {
+            float: left;
+
+            position: relative;
+
+            margin-right: 20px;
+        }
+        .item-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .item-img,
+        img {
+            width: 240px;
+            height: 160px;
+        }
+        .item-info {
+            float: left;
+
+            max-width: 600px;
+            .item-name {
+                font-size: 20px;
+                font-weight: bold;
+
+                color: $fontColor333;
+            }
+            p.item-desc,
+            .item-desc {
+                font-size: 14px;
+                line-height: 1.2;
+                word-break: break-all;
+
+                color: $fontColor666;
+            }
+            .item-dd {
+                margin-top: 5px;
+
+                color: $fontColor999;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+//@import "base";
+@import "mixins";
+
+.tool-bar{
+  margin-top:10px;
+  padding:3px 30px;
+}
+
+.tree-container{
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.edit-table{
+  margin-top:20px;
+  input{
+    height:26px;
+  }
+}
+
+.add{
+  background-image: url(../images/u144_normal.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 16px;
+  height: 16px;
+  float: left;
+}
+.edit{
+  background-image: url(../images/u140_normal.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  float: left;
+}
+.delete{
+  background-image: url(../images/u142_normal.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  float: left;
+}

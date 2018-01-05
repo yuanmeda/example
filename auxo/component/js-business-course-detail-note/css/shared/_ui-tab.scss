@@ -1,0 +1,141 @@
+/* tab侧边顶部（高度较小） */
+.n-ui-tab3 {
+    border-bottom: 1px solid #d2d2d2;
+    padding: 22px 0 0;
+    .btn-tab {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        border-bottom: 2px solid #fff;
+        margin: 0 15px;
+        padding: 0 2px;
+        color: $dark-gray;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 32px;
+        &.on, &:hover {
+            text-decoration: none;
+            color: $dark-gray;
+            border-bottom: 4px solid $main;
+        }
+    }
+}
+
+/* n-ui-tab2 */
+.n-ui-tab2 {
+    overflow: hidden;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 0 50px;
+    .btn-tab {
+        display: inline-block;
+        position: relative;
+        padding: 0 25px;
+        line-height: 60px;
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        border-bottom: 2px solid #fff;
+        &:hover,
+        &.on {
+              text-decoration: none;
+              border-bottom-color: $main;
+              color: $main;
+        }
+    }
+}
+
+/* n-ui-tab */
+.n-ui-tab {
+    overflow: hidden;
+    .btn-tab {
+        display: inline-block;
+        position: relative;
+        padding: 0 35px;
+        line-height: 60px;
+        font-size: 16px;
+        color: #666;
+        text-align: center;
+        &:before {
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -10px;
+            width: 1px;
+            height: 21px;
+            background: #f0f0f0;
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
+        }
+        &:hover {
+            color: $main;
+        }
+    }
+    .on {
+        color: $main;
+    }
+}
+
+
+/* n-ui-tab-menu */
+.n-ui-tab-menu {
+    overflow: hidden;
+    border-bottom: 1px solid #f0f0f0;
+    .btn-tab {
+        float: left;
+        width: 100%;
+        //width: 127px;
+        line-height: 60px;
+        background: #fafafa;
+        font-size: 16px;
+        color: #666;
+        text-align: center;
+        border-left: 1px solid #f0f0f0;
+        cursor: default;
+        &:first-child {
+            border-left: 0;
+        }
+        /*&:hover {
+            color: $main;
+        }*/
+    }
+    .on {
+        background: #fff;
+        color: $main;
+    }
+}
+
+
+/* n-ui-tab-filter */
+.n-ui-tab-filter {
+    line-height: 20px;
+    font-size: 14px;
+    color: #666;
+    .btn-tab {
+        display: inline-block;
+        margin-left: 26px;
+        position: relative;
+        padding: 0 10px;
+        border-radius: $radius;
+        color: #666;
+        &:hover {
+            color: $main;
+        }
+        &.on {
+            background: $main;
+            color: #fff;
+        }
+    }
+    
+    .total {
+       padding-left: 30px; 
+       .num {
+            padding: 0 5px;
+            color: $main;
+            font-weight: normal;
+       }
+    }
+}

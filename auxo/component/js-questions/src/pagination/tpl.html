@@ -1,0 +1,23 @@
+<!--ko if:pages().length>1-->
+<div class="qas-pagination">
+  <!--ko if:hasPrev()-->
+  <span class="prev" data-bind="click:changePage.bind(this, currPage()-1),translate:{key:'qas_cmp_questions.acts.prev_page'}">上一页</span>
+  <!--/ko-->
+
+  <!--ko if:hasLess()-->
+  <span class="omit">...</span>
+  <!--/ko-->
+
+  <!--ko foreach: pages-->
+  <span data-bind="text:$data,css:{on:$data == $component.currPage()},click:$component.changePage.bind(this, $data)"></span>
+  <!--/ko-->
+
+  <!--ko if:hasMore()-->
+  <span class="omit">...</span>
+  <!--/ko-->
+
+  <!--ko if:hasNext()-->
+  <span class="next" data-bind="click:changePage.bind(this, currPage()+1),translate:{key:'qas_cmp_questions.acts.next_page'}">下一页</span>
+  <!--/ko-->
+</div>
+<!--/ko-->

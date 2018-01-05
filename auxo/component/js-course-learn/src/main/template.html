@@ -1,0 +1,89 @@
+<div class="cplay__header" data-bind="if:model.course()">
+    <a class="cplay__btn-back" href="javascript:;" data-bind="click:returnDetail.bind($component)">
+        <i class="xcl-icon-left"></i>
+        <span data-bind="translate:{'key':'courseLearn.main.returnDetail'}">返回课程主页</span>
+    </a>
+    <h1 class="cplay__header-title" data-bind="text:model.course().title"></h1>
+</div>
+
+<!--
+    左侧收起时，加类名 close-left
+    右侧收起时，加类名 close-right
+-->
+<div class="cplay__wrap" data-bind="css:{'close-left':model.state.hideLeft,'close-right':model.state.hideRight}">
+    <div class="cplay__side-l">
+        <div class="cplay__tab--menu">
+            <!-- 靠右用pos-right， 靠左用pos-left (圆角的区别) -->
+            <div class="cplay__btn-side pos-left">
+                <a href="javascript:;" class="menu-tab"
+                   data-bind="css:{'state-on':model.cata_type()=='0'},click:switchLeftSide.bind($component,'0')">
+                    <span class="menu-tab-txt" data-bind="translate:{'key':'courseLearn.main.chapter'}">章节</span>
+                </a>
+                <a href="javascript:;" class="menu-tab"
+                   data-bind="css:{'state-on':model.cata_type()=='1'},click:switchLeftSide.bind($component,'1')">
+                    <span class="menu-tab-txt" data-bind="translate:{'key':'courseLearn.main.knowledge'}">知识点</span>
+                </a>
+                <a class="menu-btn" href="javascript:;" data-bind="click:toggleLeft">
+                    <i class="xcl-icon-left"
+                       data-bind="css:{'xcl-icon-left':!model.state.hideLeft(),'xcl-icon-right':model.state.hideLeft}"></i>
+                </a>
+            </div>
+        </div>
+        <!-- 课程目录 -->
+        <div class="cplay__chapter_box">
+            <div class="cplay__chapter">
+                <div data-bind="component:{'name':'x-course-learn-catalog','params':{'config':$root.config}},visible:model.cata_type()=='0'"></div>
+                <div data-bind="component:{'name':'x-course-learn-knowledge','params':{'config':$root.config}},visible:model.cata_type()=='1'"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cplay__content">
+        <div class="cplay__content--title" data-bind="foreach:model.breadcrumb">
+            <i class="xcl-icon-right" data-bind="visible:$index()>0"></i>
+            <!-- 有后续子集，才会出现 -->
+            <span class="title-txt" data-bind="html:$data"></span>
+        </div>
+        <!-- 资源tab -->
+        <div data-bind="component:{'name':'x-course-learn-resource','params':{'config':$root.config}}"></div>
+        <!-- 资源播放区 -->
+        <div data-bind="component:{'name':'x-course-learn-player','params':{'config':$root.config}}"></div>
+    </div>
+
+    <!-- 主内容右侧 -->
+    <div class="cplay__side-r">
+        <div class="cplay__other--wrap">
+            <!-- <div data-bind="component:{'name':'x-course-learn-question','params':{'config':$root.config}},if:model.rightTab()=='1'"></div>-->
+            <!-- <div data-bind="component:{'name':'x-course-learn-attachment','params':{'config':$root.config}},if:model.rightTab()=='2'"></div>-->
+            <div data-bind="component:{'name':'x-course-learn-note','params':{'config':$root.config}}"></div>
+        </div>
+        <!-- 按钮 -->
+        <div class="cplay__tab--other">
+            <!--<div class="cplay__btn-side pos-right">
+                <a href="javascript:;" class="menu-tab"
+                   data-bind="click:switchRightSide.bind($component,'1'),css:{'state-on':model.rightTab()=='1'}">
+                    <i class="icon-tab xcl-icon-ask"></i>
+                </a>
+            </div>
+            <div class="cplay__btn-side pos-right">
+                <a href="javascript:;" class="menu-tab"
+                   data-bind="click:switchRightSide.bind($component,'2'),css:{'state-on':model.rightTab()=='2'}">
+                    <i class="icon-tab xcl-icon-attachment"></i>
+                </a>
+            </div>-->
+            <div class="cplay__btn-side pos-right">
+                <a href="javascript:;" class="menu-tab"
+                   data-bind="click:switchRightSide.bind($component,'3'),css:{'state-on':model.rightTab()=='3'}">
+                    <i class="icon-tab xcl-icon-note"></i>
+                </a>
+                <a class="menu-btn" href="javascript:;" data-bind="click:toggleRight">
+                    <i class="xcl-icon-right"
+                       data-bind="css:{'xcl-icon-left':model.state.hideRight,'xcl-icon-right':!model.state.hideRight()}"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--ko if:courseStatusCode != 10-->
+<div class="cplay__buy-tip" data-bind="translate: { key: 'courseLearn.player.buyTip' }"></div>
+<!--/ko-->

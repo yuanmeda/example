@@ -1,0 +1,126 @@
+<div class="user-top">
+    <!-- ko if: model.subscribes.init()-->
+    <!--ko translate: {'key': 'subscribe.common.hi'}--><!--/ko-->
+    <!--ko text: model.user.nickName--><!--/ko-->
+    <!--ko translate: {'key': 'subscribe.common.student'}--><!--/ko-->
+    <span data-bind="text: model.subscribes.counts"></span>
+    <!--ko translate: {'key': 'subscribe.common.notice'}--><!--/ko-->
+    <!--/ko-->
+</div>
+<div class="training-box">
+    <!-- ko if: model.subscribes.init() && model.subscribes.items().length > 0 -->
+    <!-- ko foreach: model.subscribes.items -->
+    <div class="training-list">
+        <div class="trining-certification">
+            <i></i>
+            <span data-bind="click: $component.hrefToList.bind($component, $data)" style="cursor: pointer;">
+            <span class="title" data-bind="text: channel_name"></span>
+            <!-- ko if: tags.length > 0-->
+                <!-- ko foreach: tags -->
+                <!-- ko if: $index() != 0-->
+                <span class="line"></span>
+                <!--/ko-->
+                <a href="javascript:;" data-bind="text: title"></a>
+                <!--/ko-->
+            <!--/ko-->
+            </span>
+
+            <span class="number" data-bind="translate: {'key': 'subscribe.common.totalCount', properties:{count: num}}"></span>
+            <!-- ko if: resources.total == 0 -->
+            <span class="number" data-bind="translate: {'key': 'subscribe.common.noContent'}"></span>
+            <!-- /ko -->
+            <div class="unsubscribe">
+                <a class="btn-cancle"
+                   href="javascript:;"
+                   style="display: none"
+                   data-bind="translate: {'key': 'subscribe.common.cancel'}, click: $component.unsubscribe.bind($component, $data)">取消订阅</a>
+            </div>
+        </div>
+        <!-- ko if: resources.total > 0 -->
+        <ul class="course-list clearfix">
+            <!-- ko foreach: resources.items -->
+            <!-- ko if: $parent.resources.showMore() || $index() < 3-->
+            <li>
+                <!-- ko with: $data -->
+                <a class="cell" href="javascript:;" data-bind="attr:{'title':title},click:$component.hrefToResource.bind($component,$data,'type')">
+                    <div class="cell-img">
+                        <span class="cell-badge-type" data-bind="text: $component.formatCourseDate(channel_update_time)"></span>
+                        <img class="lazy-image" data-bind="attr:{'alt':title,'src':(cover && cover_url) ? cover_url +(~cover.indexOf('CLOUD')?'!m300x200.jpg':''): defaultImage}">
+                    </div>
+                    <div class="cell-info">
+                        <div class="cell-info-title" data-bind="text:title"></div>
+                        <div class="cell-info-other">
+                            <!-- ko if:type == 'open-course' -->
+                            <span class="strong" data-bind="text:extra.period"></span>
+                            <span data-bind="translate: {'key': 'subscribe.cell.hours'}"></span>
+                            <!--/ko-->
+                            <!-- ko if:type == 'auxo-train' -->
+                            <span class="strong" data-bind="text:+extra.option_course_count + (+extra.require_course_count)"></span>
+                            <span data-bind="translate: {'key': 'subscribe.cell.course'}"></span>
+                            <em></em>
+                            <span class="strong" data-bind="text:extra.total_period"></span>
+                            <span data-bind="translate: {'key': 'subscribe.cell.hours'}"></span>
+                            <span class="patch-hide">
+                                <em></em>
+                                <span class="strong" data-bind="text:extra.exam_count"></span>
+                                <span data-bind="translate: {'key': 'subscribe.cell.exam'}"></span>
+                            </span>
+                            <!--/ko-->
+                            <!--ko if: ~$.inArray(type,['standard_exam','custom_exam','competition','pk'])-->
+                            <span data-bind="visible:$component.formatTime(extra.end_time) && time_status != 1 && extra.subtype != 2">
+                                <span class="info" data-bind="text:$component.formatTime(extra.end_time)"></span>
+                                <span data-bind="translate: {'key': 'subscribe.cell.end'}"></span>
+                            </span>
+                            <span data-bind="visible:$component.formatTime(extra.begin_time) && time_status == 1 && extra.subtype != 2">
+                                <span class="info" data-bind="text:$component.formatTime(extra.begin_time)"></span>
+                                <span data-bind="translate: {'key': 'subscribe.cell.begin'}"></span>
+                            </span>
+                            <!--/ko-->
+                            <!-- ko if:type == 'barrier' -->
+                            <span data-bind="translate: {'key': 'subscribe.cell.level',properties:{'count':extra.barrier_num || 0 }}"></span>
+                            <!--/ko-->
+                            <!-- ko if:type == 'lecturer' -->
+                            <span class="strong" data-bind="text: extra.unit_count || 0 "></span>
+                            <span data-bind="translate: {'key': 'subscribe.cell.course'}"></span>
+                            <!--/ko-->
+                            <!-- ko if:type == 'e-certificate' -->
+                            <span class="strong" data-bind="text:extra.relation_course_count"></span>
+                            <span data-bind="translate: {'key': 'subscribe.cell.openCourse'}"></span>
+                            <em></em>
+                            <span class="strong" data-bind="text:extra.relation_train_count"></span>
+                            <span data-bind="translate: {'key': 'subscribe.cell.train'}"></span>
+                            <!--/ko-->
+                        </div>
+                        <div class="end-time">
+                            <!--ko translate: {'key': 'subscribe.common.endTime'}--><!--/ko-->
+                            <!--ko text: $component.formatTime(end_time)--><!--/ko-->
+                        </div>
+                    </div>
+                </a>
+                <!--/ko-->
+            </li>
+            <!--/ko-->
+            <!-- /ko -->
+        </ul>
+        <div class="check-more clearfix">
+            <!-- ko if: resources.items.length > 3 && !resources.showMore()-->
+            <a class="fr" href="javascript:;" data-bind="translate: {'key': 'subscribe.common.more'}, click: $component.showMore.bind($component, $data.resources)"></a>
+            <!-- /ko -->
+            <!-- ko if: resources.items.length <= 3 || resources.showMore()-->
+            <a class="fr" href="javascript:;" data-bind="translate: {'key': 'subscribe.common.gotoList'}, click: $component.hrefToList.bind($component, $data)"></a>
+            <!-- /ko -->
+        </div>
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+    <div id="js_qa_pagination" class="cf pagination-box"></div>
+    <!-- /ko -->
+    <!-- ko if: model.subscribes.init() && model.subscribes.counts() == 0 -->
+    <div class="subscription-none">
+        <i></i>
+
+        <p data-bind="translate: {'key': 'subscribe.common.noSubscribe'}"></p>
+        <a class="modal-primary btn-cancle" href="javascript:;" data-bind="translate: {'key': 'subscribe.common.gotoLearn'}, click: gotoPortal"></a>
+    </div>
+    <!-- /ko -->
+</div>

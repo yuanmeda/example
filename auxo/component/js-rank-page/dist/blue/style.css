@@ -1,0 +1,136 @@
+body, html {
+  overflow: hidden; }
+
+.x-rank-page {
+  background: #fff;
+  padding-bottom: 20px; }
+  .x-rank-page .rp-header {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 20px 0 10px 20px; }
+    .x-rank-page .rp-header h1 {
+      display: inline;
+      margin-right: 1em;
+      color: #333;
+      font-size: 18px; }
+    .x-rank-page .rp-header p {
+      display: inline;
+      font-size: 12px;
+      color: #8f8f8f; }
+  .x-rank-page .rp-filter-dimensions {
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+    padding-top: 20px; }
+    .x-rank-page .rp-filter-dimensions ul {
+      margin: 0 200px;
+      text-align: center;
+      line-height: 1; }
+      .x-rank-page .rp-filter-dimensions ul li {
+        text-align: center;
+        font-size: 16px;
+        padding-bottom: 5px;
+        color: #333;
+        margin: 0 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        cursor: pointer;
+        width: 5em;
+        display: inline-block;
+        vertical-align: -1px;
+        border-bottom: 1px solid transparent; }
+        .x-rank-page .rp-filter-dimensions ul li:hover {
+          color: #38adff; }
+      .x-rank-page .rp-filter-dimensions ul .active {
+        color: #38adff;
+        border-bottom: 1px solid #38adff; }
+    .x-rank-page .rp-filter-dimensions select {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      max-width: 180px; }
+  .x-rank-page .rp-summ {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 13px; }
+    .x-rank-page .rp-summ span {
+      color: #38adff;
+      margin: 0 0.3em; }
+  .x-rank-page .rp-filter-times {
+    text-align: center; }
+    .x-rank-page .rp-filter-times span {
+      padding: 5px 15px;
+      font-size: 14px;
+      display: inline-block;
+      cursor: pointer;
+      line-height: 1;
+      border-radius: 3px; }
+      .x-rank-page .rp-filter-times span:hover {
+        color: #38adff; }
+    .x-rank-page .rp-filter-times .active {
+      background: #38adff;
+      color: #fff; }
+      .x-rank-page .rp-filter-times .active:hover {
+        color: #fff; }
+  .x-rank-page .rp-rank-list {
+    padding: 20px 5%; }
+    .x-rank-page .rp-rank-list table {
+      width: 100%; }
+      .x-rank-page .rp-rank-list table td, .x-rank-page .rp-rank-list table th {
+        text-align: left;
+        font-size: 14px;
+        border-bottom: 1px solid #eee;
+        padding: 5px;
+        vertical-align: middle; }
+      .x-rank-page .rp-rank-list table thead th {
+        font-weight: bold; }
+      .x-rank-page .rp-rank-list table td {
+        padding: 10px 5px; }
+      .x-rank-page .rp-rank-list table .avatar {
+        vertical-align: middle;
+        border-radius: 100px; }
+  .x-rank-page .rp-load-more {
+    padding: 20px;
+    text-align: center; }
+    .x-rank-page .rp-load-more span {
+      display: inline-block;
+      padding: 5px 15px;
+      font-size: 13px;
+      color: #525252;
+      border: 1px solid #525252;
+      border-radius: 100px;
+      cursor: pointer; }
+      .x-rank-page .rp-load-more span:hover {
+        color: #38adff;
+        border-color: #38adff; }
+  .x-rank-page .rp-list-empty {
+    text-align: center;
+    padding-top: 190px;
+    padding-bottom: 200px; }
+    .x-rank-page .rp-list-empty span {
+      display: block;
+      font-size: 15px;
+      padding-top: 30px; }
+  .x-rank-page .rp-loading {
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; }
+    .x-rank-page .rp-loading .rp-mask {
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: #fff;
+      opacity: 0.8; }
+    .x-rank-page .rp-loading .rp-mask-tip {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      position: fixed;
+      font-size: 18px;
+      text-align: center;
+      z-index: 2; }

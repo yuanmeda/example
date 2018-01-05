@@ -1,0 +1,89 @@
+@import "../share/variables";
+@import "../share/mixins";
+@import "../share/form";
+@import "../share/timeline";
+@media print {
+    @page {
+        margin: 0;
+
+        size: auto;
+    }
+    body {
+        margin: 1.6cm;
+    }
+}
+.nodata {
+    margin: 5% 0;
+
+    text-align: center;
+
+    color: $grayDark;
+    i {
+        font-size: 60px;
+    }
+    p {
+        margin-top: 15px;
+
+        font-size: 20px;
+    }
+}
+.certificate-container {
+    display: none;
+
+    padding: 30px;
+
+    background-color: #fff;
+    // bs样式重置
+    .theme-text {
+        color: $themeColor;
+    }
+    .table > tbody > tr > td,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > td,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > thead > tr > th {
+        vertical-align: middle;
+    }
+    @media (min-width: 768px) {
+        .form-inline .form-group {
+            margin-bottom: 10px;
+        }
+    }
+    .btn-link:hover {
+        text-decoration: none !important;
+    }
+    // check 工具栏
+    .tool-bar {
+        border: 1px solid #ccc;
+        border-radius: $smallRadius;
+        padding: 12px 6px;
+
+        background-color: #c7f8fb;
+        .check-tip {
+            margin: 0 0 0 50px;
+        }
+        .check-tip,
+        .tool {
+            display: inline-block;
+
+            vertical-align: middle;
+        }
+    }
+}
+
+.container-list {
+    margin-top: 20px;
+}
+
+.goods-main {
+    overflow-y: auto;
+
+    max-height: 300px;
+}
+.tree {
+    overflow: hidden;
+    overflow-y: auto;
+
+    max-height: 400px;
+}

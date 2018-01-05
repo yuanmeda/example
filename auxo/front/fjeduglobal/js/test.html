@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="position: relative;margin: 0;">
+
+
+<script src="http://static.auxo.local.huayu.nd//auxo/addins/jquery/v1.7.1/jquery.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url: 'http://192.168.249.172:8888/fjedu/navs/html'
+        }).done(function (data) {
+            $('body').append(data.link);
+            $('body').append(data.header);
+            $('body').append('<div style="height: 850px;"></div>');
+            $('body').append(data.footer);
+            $('body').append(data.script);
+        })
+    })
+</script>
+
+
+</body>
+</html>

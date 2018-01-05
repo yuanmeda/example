@@ -1,0 +1,309 @@
+body {
+    background: #fafafa;
+    font: 400 14px/1.5 arial, "microsoft yahei"
+}
+
+.navbar {
+    margin: 0 0 20px;
+    border-bottom: 1px solid #c3c3c3
+}
+
+.navbar .navbar-hd {
+    height: 50px
+}
+
+.navbar .navbar-hd h3 {
+    margin: 0;
+    font: 400 18px/50px "microsoft yahei";
+    color: #333;
+    text-indent: 20px
+}
+
+.navbar .navbar-hd ul {
+    margin: 0;
+    padding: 0 0 0 20px
+}
+
+.navbar .navbar-hd ul li {
+    float: left;
+    display: inline;
+    font: 400 14px/50px simsun
+}
+
+.navbar .navbar-hd ul li a {
+    color: #15b0ba
+}
+
+.navbar .navbar-hd ul li .divider {
+    padding: 0 5px;
+    font-family: simsun
+}
+
+.navbar .navbar-hd ul li:first-child {
+    font-size: 20px;
+    font-family: 'microsoft yahei'
+}
+
+.navbar .navbar-bd {
+    position: relative;
+    height: 39px;
+    border-width: 1px 0;
+    border-color: #c3c3c3;
+    border-style: solid;
+    background: #fcfcfc;
+    background: -moz-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(100%, #efefef));
+    background: -webkit-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: -o-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: -ms-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: linear-gradient(to bottom, #fcfcfc 0, #efefef 100%)
+}
+
+.navbar .navbar-bd ul {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    margin: 0;
+    list-style: none
+}
+
+.navbar .navbar-bd li {
+    float: left;
+    display: inline;
+    margin: 0 0 0 -1px;
+    border-width: 0 1px;
+    border-color: #c3c3c3;
+    border-style: solid
+}
+
+.navbar .navbar-bd li a {
+    display: block;
+    padding: 0 25px;
+    height: 39px;
+    border-top: 3px solid transparent;
+    line-height: 39px;
+    color: #777
+}
+
+.navbar .navbar-bd li a:hover {
+    text-decoration: none
+}
+
+.navbar .navbar-bd li.active a {
+    border-top-color: #0cadb7;
+    font-weight: 700;
+    color: #000;
+    background: #fafafa
+}
+
+.well {
+    margin-bottom: 20px;
+    background: #fafafa;
+    border-width: 0;
+    border-radius: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
+}
+
+.table {
+    border-collapse: collapse;
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.table-hover tbody tr:hover > td, .table-hover tbody tr:hover > th {
+    background-color: #ffeeca
+}
+
+.table-first thead th:first-child, .table-first tbody td:first-child {
+    padding: 8px 8px 8px 20px
+}
+
+.table tbody + tbody {
+    border-top-width: 1px
+}
+
+.btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.btn-default[disabled] {
+    border-color: #ccc;
+    background: #fff;
+    color: #333
+}
+
+.btn-default[disabled]:hover {
+    border-color: #adadad;
+    background: #e6e6e6
+}
+
+.btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:active:hover {
+    border-color: #428bca;
+    background: #428bca;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none
+}
+
+button.btn-mini, a.btn-mini {
+    min-width: 0
+}
+
+.btn-default, .btn-default:focus {
+    color: #333;
+    background: #fff;
+    border-color: #ccc
+}
+
+.btn-primary, .btn-primary:focus {
+    border-color: #357ebd;
+    background: #428bca;
+    color: #fff
+}
+
+.btn-default:hover {
+    background: #ebebeb;
+    border-color: #adadad
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background: #3071a9;
+    border-color: #285e8e
+}
+
+.btn-primary:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+}
+
+.btn:active {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -o-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -ms-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
+}
+
+.btn-danger {
+    background: #d9534f;
+    border-color: #d43f3a;
+    color: #fff
+}
+
+.btn-danger:hover, .btn-danger:active {
+    background: #c9302c;
+    border-color: #ac2925
+}
+
+.row-bfc {
+    border: 1px solid #ccc
+}
+
+.row-bfc .form-actions {
+    margin-bottom: 0
+}
+
+.row-bfc form {
+    margin: 0
+}
+
+.navbar-horizontal {
+    position: relative;
+    float: left;
+    width: 120px
+}
+
+.navbar-horizontal ul {
+    margin: 0;
+    list-style: none
+}
+
+.navbar-horizontal li {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    margin: -1px 0 0
+}
+
+.navbar-horizontal li a {
+    display: block;
+    width: 117px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 20px;
+    color: #777;
+    border-left: 3px solid transparent;
+    border-right: 1px solid #ccc;
+    background: #fcfcfc;
+    background: -moz-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(100%, #efefef));
+    background: -webkit-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: -o-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: -ms-linear-gradient(top, #fcfcfc 0, #efefef 100%);
+    background: linear-gradient(to bottom, #fcfcfc 0, #efefef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#efefef', GradientType=0)
+}
+
+.navbar-horizontal li a:hover {
+    text-decoration: none;
+    background: #fafafa
+}
+
+.navbar-horizontal li.active {
+    border-right-color: #fafafa
+}
+
+.navbar-horizontal li.active a {
+    background: #fafafa;
+    color: #000;
+    border-right-color: #fff;
+    border-left-color: #15b0ba
+}
+
+.navbar-horizontal li.disabled a {
+    background: #ececec;
+    color: #ccc
+}
+
+.right-row {
+    padding: 20px;
+    border-left: 1px solid #ccc;
+    overflow: hidden
+}
+
+table .input-append {
+    margin: 0
+}
+
+table .input-append input[type=text] {
+    margin: 0
+}
+
+.alert {
+    display: none
+}
+
+.cu-loading {
+    z-index: 2000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: none;
+    margin: -50px 0 0 -50px;
+    background: url(../img/loading-bg.png) no-repeat
+}
+
+.cu-loading .cu-loading-img {
+    width: 100px;
+    height: 100px;
+    background: url(../img/loading_48x48.gif) no-repeat center
+}
+
+.cu-loading-show {
+    display: block
+}

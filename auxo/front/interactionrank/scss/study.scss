@@ -1,0 +1,235 @@
+$orange: #f60;
+@import "_base";
+@import "_iconfont";
+@import "_common";
+@import "_usermain";
+@import "_item";
+@import "_animation";
+.my-study {
+    padding-bottom: 20px;
+    .tit {
+        .tab-tit {
+            a {
+                display: inline-block;
+
+                padding: 0 50px;
+                height: 59px;
+
+                line-height: 59px;
+
+                color: #666;
+                &.active {
+                    margin-bottom: -1px;
+                    border-bottom: 2px solid $themeColor;
+                    height: 58px;
+
+                    font-weight: bold;
+                    line-height: 58px;
+
+                    color: $themeColor;
+                }
+            }
+        }
+    }
+    .study-list {
+        padding: 20px 50px 0;
+        width: 110%;
+        li {
+            float: left;
+
+            margin: 0 52px 48px 0;
+        }
+        .item-info {
+            border: 1px solid #e0e0e0;
+        }
+    }
+}
+.pagination-box {
+    padding: 0 50px;
+}
+.pagination-box .pagination span.next,
+.pagination-box .pagination span.prev {
+    color: #fff;
+    background: lighten(#333,50%);
+}
+.item {
+    cursor: pointer;
+    .item-label-box {
+        overflow: inherit;
+
+        position: relative;
+
+        min-height: 24px;
+        a.apply-btn {
+            display: inline-block;
+        }
+    }
+    .item-info,
+    .item-img {
+        position: relative;
+    }
+    .item-view i.date {
+        font-size: 12px;
+    }
+    .item-name {
+        span {
+            display: inline-block;
+        }
+    }
+    .item-ldt {
+        display: inline-block;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        padding: 0 20px;
+        height: 24px;
+
+        font-size: 12px;
+        line-height: 24px;
+
+        color: #fff;
+        background-image: -webkit-linear-gadient(90deg, rgba(0,0,0,.5) 60%, rgba(255,255,255,.3));
+        background-image: linear-gradient(90deg, rgba(0,0,0,.5) 60%, rgba(255,255,255,.3));
+
+        // box-shadow: 10px 0 15px rgba(255,255,255,.3);
+    }
+    a.btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    &:hover .item-name {
+        color: $themeColor;
+    }
+    &:hover a.btn.pos-tr {
+        display: inline-block;
+    }
+}
+.status-icon {
+    $iconSize:54px;
+    display: inline-block;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: $iconSize;
+    height: $iconSize;
+
+    font-size: $iconSize;
+    &:after {
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        margin: auto;
+        width: 100%;
+        height: 100%;
+
+        font-family: inherit;
+        font-size: 12px;
+        line-height: $iconSize;
+        text-align: center;
+
+        transform: rotate(-16deg);
+
+        content:attr(data-flag);
+    }
+    &.yes {
+        color: rgb(56, 173, 255);
+    }
+    &.no {
+        color: #ff7c7c;
+    }
+    &.finished {
+        color: #a0a0a0;
+    }
+    &.ended {
+        color: #38adff;
+    }
+}
+
+a.btn {
+    display: inline-block;
+
+    border-radius: 4px;
+    padding: 0 10px;
+    width: auto;
+    height: 30px;
+
+    line-height: 30px;
+
+    color: #fff;
+    &.pos-tr {
+        display: none;
+
+        top: 0;
+
+        padding: 0 7px;
+        height: 24px;
+
+        font-size: 12px;
+        line-height: 24px;
+    }
+    &.no-point {
+        pointer-events: none;
+    }
+}
+.study-process {
+    position: absolute;
+    top: 0;
+    left: -1px;
+
+    width: 270px;
+    height: 6px;
+
+    background: #eee;
+    .inner {
+        display: inline-block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 0;
+        height: 100%;
+
+        background: $themeColor;
+
+        transition: all .3s;
+    }
+}
+.click-load {
+    color: #666;
+    a,
+    span {
+        display: inline-block;
+
+        border: 1px solid #e6e6e6;
+        border-radius: 16px;
+        padding: 0 20px;
+        height: 33px;
+
+        line-height: 33px;
+    }
+}
+.book-icon {
+    font-size: 100px;
+
+    color: $grey9;
+}
+.text-panel {
+    margin-top: -30px;
+    height: auto;
+
+    line-height: 2.5;
+    span {
+        display: block;
+
+        color: $grey9;
+    }
+}

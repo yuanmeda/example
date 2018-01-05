@@ -1,0 +1,68 @@
+<div class="sales-shopping-card">
+  <!--价格-->
+  <div class="header-info">
+    <span class="label" data-bind="translate:{key:'sales_promotion_card.price_label'}">价格：</span>
+    <strong class="real" data-bind="text:display_real_price">￥150</strong>
+    <!--ko if:!is_sales_amount_equal()-->
+    <span class="fake" data-bind="text:display_amount">￥200</span>
+    <!--/ko-->
+  </div>
+  <!--优惠信息-->
+  <!--ko if:sales_promotion()-->
+  <div class="promotion-info">
+    <div class="proms">
+      <!--ko if:goods_promotion-->
+      <div class="prom-item"><span class="label" data-bind="text:goods_promotion">4.5折</span></div>
+      <!--/ko-->
+      <!--ko if:combine_promotion().length>0-->
+      <div class="prom-item">
+        <span class="label" data-bind="text:combine_promotion()[0]">满100减10</span>
+        <ul class="full-proms">
+          <!--ko foreach:combine_promotion-->
+          <li class="label" data-bind="text:$data">满100减10</li>
+          <!--/ko-->
+        </ul>
+      </div>
+      <!--/ko-->
+      <a class="get-more"
+         target="_blank"
+         data-bind="
+         translate:{key:'sales_promotion_card.get_more_promotion'},
+         attr:{href:promotion_event_url()}
+        ">更多优惠点击</a>
+    </div>
+    <!--ko if:show_count_down() || !is_sold_out()-->
+    <p class="time" data-bind="text:expires">距离抢购结束 03天09时48分10秒</p>
+    <!--/ko-->
+  </div>
+  <!--/ko-->
+  <!--商品数-->
+  <!--ko if:sales_count() !== null-->
+  <div class="goods-remain">
+    <!--ko if:!is_sold_out()-->
+    <p class="desc">
+      <span class="count" data-bind="translate:{key:'sales_promotion_card.sales_count', properties:{sales_count:sales_count()}}">已抢650件</span>
+      <span class="perc" data-bind="translate:{key:'sales_promotion_card.sales_percentage', properties:{sales_percent:sales_percent()}}">已抢60%</span>
+    </p>
+    <p class="remain-progress-bar">
+      <span style="width:0" data-bind="style:{width:sales_percent() + '%'}"></span>
+    </p>
+    <!--/ko-->
+    <!--ko if:is_sold_out()-->
+    <p class="desc">
+      <span class="count" data-bind="translate:{key:'sales_promotion_card.sales_count', properties:{sales_count:sales_count()}}">已抢650件</span>
+    </p>
+    <!--/ko-->
+  </div>
+  <!--/ko-->
+  <!--操作-->
+  <div class="bottom-bar">
+    <!--ko if:!is_sold_out()-->
+    <span class="nm on-left" data-bind="translate:{key:'sales_promotion_card.buy_now'},click:buy_now">立即购买</span>
+    <span class="prm on-right" data-bind="translate:{key:'sales_promotion_card.add_to_cart'},click:add_to_cart">加入购物车</span>
+    <!--/ko-->
+    <!--ko if:is_sold_out()-->
+    <span class="disable on-right" data-bind="translate:{key:'sales_promotion_card.sold_out'}">已抢光</span>
+    <!--/ko-->
+  </div>
+</div>

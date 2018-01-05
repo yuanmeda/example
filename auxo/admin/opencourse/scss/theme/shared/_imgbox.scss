@@ -1,0 +1,269 @@
+@import "mixins";
+/*!
+ * 杂项
+ */
+i{
+  font-style: normal;
+}
+a:hover{text-decoration: none;}
+.fl{float: left;}
+.fr{float: right;}
+.cf:before, .cf:after{content:"";display:table;}
+.cf:after, .cl{clear:both;}
+.vm{
+  display: inline-block;
+  vertical-align: middle;
+}
+.ml10{
+  margin-left: 10px;
+  display: inline-block;
+}
+.rotate18{
+  @include rotate(180deg);
+}
+.rotate9{
+  @include rotate(-90deg);
+}
+.w120{
+  width: 120px;
+}
+.theme{
+  color: $themeColor;
+}
+@import "titbar";
+@import "nlabel";
+@import "tablelist";
+@import "toolbar";
+@import "pagination";
+/*!
+ * 界面块状限宽元素
+ */
+.block {
+  min-height: auto;
+  max-width: 1643px;
+  min-width: 1000px; 
+}
+/*!
+ * 课程列表样式
+ */
+.item-list,.list-table{
+  .item:hover .item-check{
+    display: block;
+  }
+  a{
+    color: $themeColor !important;
+    &:hover{
+      text-decoration: none !important;
+      color:darken($themeColor,10%) !important;
+    }
+  }
+}
+.item-list{
+  overflow: hidden;
+  .item{
+    position: relative;
+    border:2px solid lighten($fontColor333,72%);
+    background: $white;
+    margin:0 20px 20px 0;
+    transition:transform .2s linear;
+    padding:3px;
+    border-radius:5px;
+    &:hover{
+      box-shadow:0 10px 20px rgba(0,0,0,.1);
+      cursor: pointer;
+      color: $fontColor333;
+    } 
+    @include float;
+    &:after{
+      clear: both;
+    }     
+    .item-img{
+      width: 141px;
+      height: 94px;
+      position: relative;
+      @include float;
+    }   
+    .item-dl{
+      width: 155px;
+      height: 94px;
+      @include float(right);
+      padding:10px 5px 10px 10px;       
+      .item-name{
+        line-height: 1.3;
+      }
+    }   
+    .item-dd{
+      margin-top: 8px;
+      @include fs(12px);
+    }
+    .item-dd{
+      color: $fontColor999;
+      span{
+        display: inline-block;
+        i{
+          color: $themeColor;
+        }
+        em{
+        @include vhr; 
+        margin:0 5px;
+      }
+      }
+      
+    }
+  }
+}
+/*!
+ * 自定义复选框样式
+ */
+
+.item-check{
+  transition:all 0.3s;
+  position: absolute;
+  z-index: 999;
+  right:2px;
+  top:2px;
+  display: none;
+  cursor: pointer;
+    &.active{
+        display: block;
+        i{
+          transform: rotate(-180deg);
+        }
+        .control-btn{
+          display: block;
+        }
+      }
+    .control-btn{
+      width: 80px;
+      display: none;
+      position: absolute;
+      top: 25px;
+      right: 0;
+      background: rgba(255,255,255,.8);
+      border-radius: 5px;
+      border:1px solid #ddd;
+      a{
+        display: block;
+        @include lineHeight(30px);
+        text-align: center;
+        &:hover{
+          cursor: pointer;
+          background: #eee;
+        }
+      }
+    }
+    z-index: 20;
+    @include lineHeight(25px);
+    width: 25px;
+    @extend %tc;
+    i{
+      color:$themeColor;
+    }     
+  }
+/*!
+ * 列表整体框架样式媒体
+ * @param  {[type]} max-width: 1920px        [description]
+ * @return {[type]}            [description]
+ */
+$media-width:(
+  1920:(126px 190px 94px),
+  1680:(141px 209px 94px),
+  1440:(141px 183px 94px),
+  1366:(141px 183px 94px),
+  1280:(141px 155px 94px)
+);
+@media (max-width: 1920px) {
+  .item-list {
+    box-sizing:border-box;
+    width: 105%;
+    .sort-state-highlight {
+      display: inline-block;
+      width: 371px;
+      height:  112px;
+      padding: 4px !important;
+      margin: 0 20px 20px 0;
+      border-width: 1px;
+      border-style: dashed;
+      border-color: $themeColor !important;
+    }
+  }
+  .item-list .item{
+    width: 369px !important;
+    height: 110px !important;
+    overflow: hidden;
+  }
+    .item-list .item .item-img {
+      width: 150px;
+      height: 100px; }
+    .item-list .item .item-dl {
+      width: 209px;
+      height: 100px; } 
+}
+@each $type, $size in $media-width{
+  @media (max-width:#{$type - 230px}){
+    .sort-state-highlight{
+      display: inline-block;
+      width: nth($size,1) + nth($size,2);
+      height:  nth($size, 3) + 4px;
+      padding: 4px !important;
+      margin: 0 20px 20px 0;
+      //border-width: 1px;
+      //border-style: dashed;
+      //border-color: $themeColor !important;
+      border: 1px dashed $themeColor !important;
+    }
+
+    .item-list{
+      width: 105%;
+      .item{
+        width: nth($size,1) + nth($size,2) !important;
+        height:  nth($size, 3) + 2px !important;
+        box-sizing: content-box;
+        .item-img{
+          width: nth($size,1);
+          height: nth($size,3);
+          }
+        .item-dl{
+          width:nth($size,2);
+          height: nth($size,3);
+          }
+      }
+    }
+  }
+}
+
+// /*!
+//  * 弹层课程块媒体样式
+//  */
+// .lay-fr{
+//   .item-list {
+//     .item{
+//       margin-right: 10px;
+//       margin-bottom: 10px;
+//     }
+//     width: 105%;
+//   }
+//     .item-list .item .item-img {
+//       width: 141px;
+//       height: 94px; }
+//     .item-list .item .item-dl {
+//       width: 147px;
+//       height: 94px; }
+// }
+// @media(max-width: 1400px) {
+//   .lay-fr{
+//     .item-list {
+//       .item{
+//         margin-right: 10px;
+//         margin-bottom: 10px;
+//       }
+//       width: 105%;
+//     }
+//       .item-list .item .item-img {
+//         width: 141px;
+//         height: 94px; }
+//       .item-list .item .item-dl {
+//         width: 183px;
+//         height: 94px; }
+//   }
+// }

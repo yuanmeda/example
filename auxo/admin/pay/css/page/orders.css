@@ -1,0 +1,23 @@
+.orders {
+  background: #fff; }
+  .orders .users-list i {
+    cursor: pointer; }
+  .orders .income-stat {
+    padding: 20px 0; }
+    .orders .income-stat span {
+      color: #848484;
+      font-size: 13px;
+      margin-right: 10px; }
+  .orders .empty {
+    font-size: 22px;
+    color: #848484;
+    text-align: center;
+    padding: 100px 0; }
+
+.x-users-chooses {
+  width: 1000px;
+  height: 750px;
+  left: 50% !important;
+  margin-left: -500px !important;
+  margin-top: -375px !important;
+  display: block; }

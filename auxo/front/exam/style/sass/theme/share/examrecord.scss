@@ -1,0 +1,109 @@
+@import 'common';
+.record-list{
+	padding:40px;
+	position: relative;
+	.record-tit{
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+	.pass-box{
+		background: url(../../images/pass-bg.png) no-repeat center;
+		color: #59a144;
+		position: absolute;
+		top:30px;
+		right:30px;
+		&.no{
+			background: url(../../images/nopass-bg.png) no-repeat center;		
+			color: #de7676;
+		}
+		height: 92px;
+		width: 185px;
+		i{
+			display: inline-block;
+			height: 92px;
+			width: 92px;
+			line-height: 92px;
+			font-size: 20px;
+			text-align: center;
+		}
+	}
+}
+.nomal-table{
+	line-height: 1.75;
+	font-size: 14px;
+	width: 100%;
+	td{
+		padding:15px 25px;
+	}
+	tr,td,th{
+		border:1px solid #e5e5e5;
+
+		height: 50px;
+	}
+	tr{
+		td:nth-child(2),th:nth-child(2){
+			text-align: center;
+		}
+	}
+	th,.total{
+		font-weight: bold;
+		padding:10px 25px;
+	}
+}
+.cord-table{
+	line-height: 1.75;
+	font-size: 14px;
+	border:1px solid #e5e5e5;
+	text-align: center;
+	font-size: 16px;
+	width: 100%;
+	&.exercise{
+		tr{
+			td,th{
+				&:nth-child(3){
+					padding-right: 70px;
+					text-align: right;
+				}
+			}
+		}
+	}
+	th,.total{
+		font-weight: bold;
+		padding:10px 25px;
+	}
+	thead{
+		th{			
+		border:1px solid #e5e5e5;
+		height: 50px;
+		font-size: 14px;
+		font-weight: bold;
+		}
+	}
+	tbody{
+		tr{
+			border:1px dashed #e5e5e5;
+		}
+		td{
+			border-left:1px solid #e5e5e5;
+			border-right:1px solid #e5e5e5;
+			height: 50px;
+		}
+	}
+	.control{
+		font-size: 0;
+		a{
+			font-size: 16px;
+			color: $themeColor;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.hr{
+		height:10px;
+		width: 1px;
+		display: inline-block;
+		background: #e5e5e5;
+		margin:0 15px;
+	}
+}

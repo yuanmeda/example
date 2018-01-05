@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>  
+        <head>
+            <meta charset="utf-8" />
+            <title></title>
+            <link href="style/style.min.css" rel="stylesheet">
+        </head>
+        <body>
+            <div id="fplayer"></div>
+            <script src="js/common.js"></script>
+            <script src="js/libs.js"></script>
+            <script>
+                var element = document.getElementById('fplayer'),
+                playerSeeting  = {
+                    staticHost: "http://debug.static.huayu.nd/",
+                    video:{
+                        accessToken:"",
+                        autoPlay:true
+                    }
+                }
+                var player = new Video.Player(element,playerSeeting);
+                player.play('http://changle.v1.huayu.nd/b/p/4/7f6c7c3eb119430f94297dbfe68a13d5/7f6c7c3eb119430f94297dbfe68a13d5.v.854.480.mp4')
+            </script>
+        </body>
+    </html>

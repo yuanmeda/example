@@ -1,0 +1,163 @@
+
+.block {
+    min-width: 1000px;
+    max-width: 1643px;
+    min-height: auto;
+    .block-tit {
+        position: relative;
+
+        margin-bottom: 10px;
+        padding: 8px 20px;
+
+        background: $white;
+
+        //@include lineHeight(46px);
+        a.add-btn {
+            i {
+                vertical-align: baseline;
+            }
+            &:hover {
+                background: darken($themeColor,5%);
+            }
+        }
+        .tit-name {
+            color: $fontColor999;
+            b {
+                color: $fontColor333;
+
+                @include fs(16px);
+            }
+            i {
+                display: inline-block;
+
+                margin: 0 3px;
+            }
+            .vhr {
+                margin: 0 5px;
+
+                @include vhr;
+            }
+        }
+        .tit-tab-box {
+            position: relative;
+
+            @include lineHeight(30px);
+            @include fs(12px);
+            .vline {
+                margin-right: 5px;
+                margin-left: 15px;
+
+                @include vhr(30px);
+            }
+            .tit-status {
+                a {
+                    margin: 0 10px;
+
+                    @extend %vm;
+                    &.on,
+                    &.active {
+                        color: $tipsColor;
+                    }
+                }
+            }
+            .tit-search {
+                position: relative;
+
+                margin-left: 20px;
+
+                background: $white;
+
+                @include lineHeight(30px);
+                input {
+                    display: inline-block;
+
+                    border: none;
+                    border: 1px solid #d2d2d2;
+                    border-radius: 2px;
+                    padding: 0 10px 0 10px;
+                    width: 150px;
+
+                    vertical-align: top;
+
+                    //background: #fff;/*agan1111chang*/
+
+                    box-shadow: none;
+
+                    @include lineHeight(30px);
+                }
+                .sc-select {
+                    display: inline-block;
+
+                    margin-right: 5px;
+                    border: none;
+                    border: 1px solid #d2d2d2;
+                    border-radius: 2px;
+                    width: 60px;
+
+                    vertical-align: top;
+
+                    background: #eee;
+
+                    outline: none;
+
+                    @include lineHeight(30px);
+                    &:hover {
+                        color: darken(#333,3%);
+                        background: lighten(#eee,3%);
+
+                        cursor: pointer;
+                    }
+                }
+                a {
+                    border-radius: 3px;
+                    //width: 30px;
+                    padding:0 5px;
+                    text-align: center;
+                    vertical-align: top;
+
+                    color: $white;
+                    background: $themeColor;
+
+                    @include lineHeight(30px);
+                    @include fs(16px);
+                    i {
+                        vertical-align: baseline;
+                    }
+                    &:hover {
+                        color: darken($white,5%);
+                        background: darken($themeColor,5%);
+                    }
+                }
+                .tips {
+                    display: inline-block;
+
+                    margin-left: 10px;
+
+                    color: $themeColor;
+                }
+            }
+            .tit-tab {
+                a {
+                    display: inline-block;
+                    .icon-list {
+                        margin-top: 2px;
+
+                        font-size: 23px;
+                    }
+                    .icon-pro {
+                        margin-right: 15px;
+
+                        font-size: 18px;
+                    }
+                    &.on,
+                    &.active {
+                        color: $themeColor;
+                    }
+                    &:hover {
+                        color: darken($themeColor,10%);
+                    }
+                }
+            }
+        }
+    }
+}

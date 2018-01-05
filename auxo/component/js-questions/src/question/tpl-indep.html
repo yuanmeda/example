@@ -1,0 +1,40 @@
+<div class="qas-azalea">
+  <!--头像-->
+  <div class="qas-profile">
+    <img width="50" height="50" data-bind="attr:{src: user_icon}">
+  </div>
+  <div class="qas-wrapper">
+    <!--标题-->
+    <h1 class="qas-title" data-bind="text:title"></h1>
+
+    <!--问题描述-->
+    <div class="qas-desc" data-bind="prewrap:content"></div>
+
+    <!--图片-->
+    <!--ko if:image_preview_params.images.length > 0-->
+    <!--ko component:{name:'x-qas-image-preview', params:image_preview_params}--><!--/ko-->
+    <!--/ko-->
+
+    <!--数据-->
+    <p class="qas-meta">
+      <!--提问者姓名-->
+      <span data-bind="text:user_name"></span>
+      <!--创建日期-->
+      <span data-bind="text:create_time"></span>
+      <!--来源-->
+      <!--ko if:target_name-->
+      <span>来自：<!--ko text:target_name--><!--/ko--></span>
+      <!--/ko-->
+    </p>
+
+    <p class="qas-meta">
+      <!--关注数-->
+      <span><!--ko text:follow_count--><!--/ko--><!--ko translate:{key: 'qas_cmp_questions.follow_count'}--><!--/ko--></span>
+    </p>
+  </div>
+
+  <!--回答框-->
+  <!--ko if:!is_mine-->
+  <!--ko component:{name:'x-qas-post-answer', params:post_answer_params}--><!--/ko-->
+  <!--/ko-->
+</div>

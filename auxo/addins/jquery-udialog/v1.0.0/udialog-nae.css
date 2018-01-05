@@ -1,0 +1,45 @@
+﻿.udialog {  padding:0; border: 1px solid rgba(200, 200, 200, 0.8); background:#fff; border-radius:0;}
+.udialog .ui-widget-header {  height: 40px;  padding: .3em 1em;   background: #f9f9f9; font: 700 16px/40px simsun; border-width:0 0 1px; border-color:#d6d6d6;  border-radius:0; }
+.udialog .ui-dialog-titlebar .ui-dialog-titlebar-close { color: #fff; opacity:1; border-radius: 0;  }
+.udialog .ui-dialog-title { padding:0; margin:0; color: #333; }
+.udialog .ui-dialog-titlebar-close { top:0; right:0; width:50px; height:50px; margin:0;padding:0; border-left:1px solid #d6d6d6; }
+.udialog .ui-dialog-titlebar-close span.ui-icon-closethick { display:block; width:20px; height:20px; margin:15px auto; background:url("img/u-icon.png") no-repeat -180px -2px;  text-indent:-9999px; }
+.udialog .ui-dialog-titlebar .ui-state-hover  span.ui-icon-closethick{ background-position:-220px -2px; }
+
+.udialog .ui-dialog-content { padding:0 20px; }
+
+
+
+.udialog .ui-dialog-buttonpane { float:none; text-align:center; margin:0; padding:15px 0; background:#fff; border-top:1px solid #e4e4e4; }
+.udialog .ui-dialog-buttonpane .ui-dialog-buttonset { float:none; }
+.udialog button.udialogBtn.ui-state-default { background-image: none; background-color: #ce3f3f; background-image: -moz-linear-gradient(center top, #c11000, #ce3f3f); background-image: -webkit-gradient(linear,0% 0%, 0% 100%, from(#c11000), to(#ce3f3f)); border-color: #b11000; color: #FFFFFF; }
+.udialog button.udialogBtn.ui-state-default span { color: white; }
+.udialog button.udialogBtn.ui-state-hover { background-image: none; background-color: #b11000;  background-image: -moz-linear-gradient(center top, #be3f3f, #b11000); background-image: -webkit-gradient(linear,0% 0%, 0% 100%, from(#be3f3f), to(#b11000)); }
+
+.udialog .udialog-message-text { position:relative; }
+
+.udialog .ui-dialog-buttonpane .ui-dialog-buttonset button { -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+.udialog .udialog-message .udialog-icon { position:absolute; top:12px; left:40px; }
+.udialog .udialog-icon { background-image: url(img/u-icon.png); width: 48px; height: 48px; display: block; }
+.udialog .udialog-icon-right { background-position: 0px 0px; }
+.udialog .udialog-icon-info { background-position: -54px 0; }
+.udialog .udialog-icon-error { background-position: -108px 0; }
+.udialog .ui-widget-header .ui-state-hover,.udialog .ui-widget-header .ui-state-focus { background:none; }
+.udialog .ui-dialog-titlebar .ui-state-hover { border:0; border-left:1px solid #d6d6d6; background:none; }
+.udialog .ui-state-hover .ui-icon, .udialog .ui-state-focus .ui-icon { }
+
+
+.sys-alert .ui-widget-header { background:#fff; border:0; height:30px; line-height:30px; }
+.sys-alert .ui-dialog-titlebar-close {  top:0; width:40px; height:40px; border:0; }
+.sys-alert .ui-dialog-titlebar-close span.ui-icon-closethick { margin:10px auto; }
+.sys-alert .ui-dialog-titlebar .ui-state-hover { border:0; }
+.sys-alert .ui-dialog-buttonpane { padding:10px 0 25px; border:0; }
+.sys-alert .udialog-text{  padding: 20px 30px 30px 80px; font: 18px/1.8 "microsoft yahei";  }
+.sys-alert .udialog-text em{ padding: 0 5px; color:#9f0a00; }
+.sys-alert .btn-red { color: #fff; }
+.sys-alert .sys-ft { text-align: right; }
+.sys-alert *:focus { outline:none; }
+
+
+.sys-confirm .ui-dialog-content .udialog-text { line-height:1.8; padding:20px 20px 30px; font-size:14px;  text-align:center; }
+.ui-widget-overlay {  background:#000;}

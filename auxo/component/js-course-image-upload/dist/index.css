@@ -1,0 +1,50 @@
+.x-course-image-upload {
+    display: block;
+    overflow: hidden;
+}
+
+.x-course-image-upload .pre-view {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #eee;
+    float: left;
+}
+
+.x-course-image-upload .cover {
+    width: 100%;
+    height: 100%;
+}
+
+.x-course-image-upload .operate-area {
+    overflow: hidden;
+    padding: 0 5px;
+    float: left;
+    line-height: 200px;
+}
+
+.x-course-image-upload .uploader-outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 1000;
+    background: #fff;
+}
+
+.x-course-image-upload .uploader-inner {
+    max-width: 1020px;
+    margin: 20px auto;
+}
+
+.x-course-image-upload .x-btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: #0a969f;
+    color: #fff;
+    line-height: 32px;
+    padding: 0 20px;
+    border-radius: 3px;
+}

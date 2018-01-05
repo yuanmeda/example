@@ -1,0 +1,137 @@
+.pagination, .pagination-info {
+    margin: 10px 0
+}
+
+.pagination a {
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    border: solid 1px #ddd;
+    border-radius: 3px;
+    padding: 0 12px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+    background: #fff
+}
+
+.pagination span {
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+    border: solid 1px #ddd;
+    border-radius: 3px;
+    padding: 0 12px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fff
+}
+
+.pagination .current, .pagination a:hover, .pagination span {
+    display: inline-block;
+    border: solid 1px #1fa2ff;
+    padding: 0 12px;
+    color: #fff;
+    background-color: #38ADFF
+}
+
+.pagination .prev {
+    border: solid 1px #ddd;
+    border-bottom-left-radius: 3px
+}
+
+.pagination .current.prev, .pagination .current.next {
+    border-color: #ccc;
+    color: #666;
+    background: #ccc
+}
+
+.pagination-info span {
+    display: block;
+    line-height: 34px;
+    vertical-align: middle
+}
+
+.pagination .first {
+    margin-right: 5px;
+    border-width: 1px;
+    border-radius: 3px
+}
+
+.pagination .last {
+    margin-left: 5px;
+    border-width: 1px;
+    border-radius: 3px
+}
+
+.page-input {
+    display: block;
+    float: right;
+    overflow: hidden;
+    margin-left: 15px
+}
+
+.page-input .page-text {
+    box-sizing: content-box;
+    margin: 0 5px;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    padding: 7px 5px;
+    width: 32px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: middle;
+    outline: 0
+}
+
+.page-input .select-page-btn {
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    width: 58px;
+    height: 30px;
+    vertical-align: top;
+    color: grey;
+    background: #fff;
+    cursor: pointer
+}
+
+.page-input .select-page-btn:hover {
+    color: #fff;
+    background-color: #38ADFF
+}
+
+.page-selector {
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 5px 0 0 15px
+}
+
+.page-selector select {
+    margin: 0 5px;
+    width: 60px;
+    vertical-align: baseline
+}
+
+#pagination {
+    *zoom: 1
+}
+
+#pagination:before, #pagination:after {
+    display: table;
+    content: ""
+}
+
+#pagination:after {
+    clear: both;
+    overflow: hidden
+}
+
+#pagination .pagination-info {
+    margin: 10px
+}
+
+/*# sourceMappingURL=a.css.map */

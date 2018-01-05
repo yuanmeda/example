@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "pay";
+    font-weight: normal;
+    font-style: normal;
+
+    src: url("../../fonts/pay.eot?tzdxw3");
+    src: url("../../fonts/pay.eot?tzdxw3#iefix") format("embedded-opentype"),
+    url("../../fonts/pay.ttf?tzdxw3") format("truetype"),
+    url("../../fonts/pay.woff?tzdxw3") format("woff"),
+    url("../../fonts/pay.svg?tzdxw3#pay") format("svg");
+}
+
+[class^="pay-icon-"], [class*=" pay-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'pay' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pay-icon-common-empty:before {
+  content: "\e902";
+}
+.pay-icon-search:before {
+  content: "\e90a";
+}
+.pay-icon-circle-stroke:before {
+  content: "\e924";
+}
+.pay-icon-circle-full:before {
+  content: "\e930";
+}

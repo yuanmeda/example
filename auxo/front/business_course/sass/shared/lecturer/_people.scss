@@ -1,0 +1,30 @@
+.course__r--btnwrap {
+    text-align: center
+}
+
+.course__r-item {
+    margin-bottom: 28px;
+}
+.course__r--img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.course__r--word {
+    overflow: hidden;
+    padding-left: 10px;
+    padding-top: 6px;
+    
+    .name {
+        font-size: 12px;
+        color: #333;
+        @extend %tof;
+    }
+    .introduce {
+        margin-top: 4px;
+        font-size: 12px;
+        color: #333;
+        @extend %tof;
+    }
+}

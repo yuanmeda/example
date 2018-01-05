@@ -1,0 +1,151 @@
+// 列表
+.opencourse-yunke-list {
+  overflow-x: auto;
+  .list-queries {
+    padding: 0 40px;
+    border-bottom: 1px #e6e6e6 solid;
+    height: 60px;
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      height: 60px;
+      padding: 0 32px;
+      line-height: 60px;
+      text-align: center;
+      cursor: pointer;
+      &.active {
+        border-bottom: 2px solid $themeColor;
+      }
+    }
+  } // 表格
+  .list {
+    margin-bottom: 20px;
+    table {
+      width: 100%;
+      .tl {
+        text-align: left;
+      }
+      th,
+      td {
+        height: 60px;
+        line-height: 60px;
+        padding: 0 10px;
+      }
+      th {
+        vertical-align: bottom; // font-size: 15px;
+        border-bottom: 1px solid #eceeef;
+      }
+      td {
+        // font-size: 14px;
+        text-align: center;
+        .label {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+          word-wrap: break-word;
+          word-break: break-all;
+        }
+      }
+      tbody {
+        tr:nth-of-type(odd) {
+          background-color: #f9f9f9;
+        }
+      }
+      a {
+        color: $themeColor;
+        cursor: pointer;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .empty {
+    padding: 20px;
+    font-size: 23px;
+    text-align: center;
+  }
+}
+
+// 脚部
+.yunke-list-foot {
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+// 分页
+.yunke-pagination {
+  float: left;
+  span {
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 12px;
+    text-decoration: none;
+    color: #666;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    background: #fff;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $themeColor;
+      color: #fff;
+      background-color: $themeColor;
+    }
+  }
+  span.disabled {
+    border-color: #ccc;
+    color: #666;
+    background: #ccc;
+    &:hover {
+      cursor: default;
+      border-color: #ccc;
+      color: #666;
+      background: #ccc;
+    }
+  }
+  span.active {
+    border: 1px solid $themeColor;
+    color: #fff;
+    background-color: $themeColor;
+  }
+}
+
+// 分页跳转
+.yunke-jump {
+  float: right;
+  font-size: 13px;
+  padding-top: 2px;
+  input {
+    margin: 0 5px;
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    padding: 7px 5px;
+    width: 32px;
+    height: 17px;
+    line-height: 14px;
+    vertical-align: 0px;
+    outline: 0;
+    text-align: center;
+  }
+  .btn {
+    margin-left: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 0 12px;
+    text-decoration: none;
+    color: #666;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    background: #fff;
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $themeColor;
+      color: #fff;
+      background-color: $themeColor;
+    }
+  }
+}

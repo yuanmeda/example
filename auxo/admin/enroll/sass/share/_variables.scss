@@ -1,0 +1,65 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// setting scss
+//-----------------------------------------------------	\
+
+
+// font相关
+//-----------------------------------------------------	
+$baseFontSize: 14px !default;
+$baseLineHeight: 1.5 !default;
+$baseFontFamily: "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
+$fontCn: "SimSun"; //宋体
+$fontYaHei: "Microsoft Yahei"; //微软雅黑
+$fontHeiTi: "SimHei"; //黑体
+
+
+// 基本颜色
+//-----------------------------------------------------	
+$black: #000 !default;
+$grayDarker: #333 !default;
+$grayDark: #999 !default;
+$gray: #ccc !default;
+$grayLight: #f5f5f5 !default;
+$white: #fff !default;
+$red: #c30 !default;
+$blue: #00a3cf !default;
+$blueDark: #0064cd !default;
+$orange: #f47837 !default;
+$green: #51b148 !default;
+$yellow: #ffc40d !default;
+$pink: #c3325f !default;
+$purple: #7a43b6 !default;
+$primary: #0078e7 !default;//主色
+
+$themeColor: #0cadb7 !default;
+
+
+// link
+$linkColor: #08c !default;
+
+
+// scaffolding
+//-----------------------------------------------------	
+$bodyBgColor: $white !default;
+$textColor: $grayDarker !default;
+
+
+// placeholder
+$placeholder: true $gray !default;
+
+
+// 交互配色
+// 警告，错误，成功，提示
+//-----------------------------------------------------	
+// 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
+$warningColor: #514721 #fff6bf #ffd324 !default;
+$errorColor: #8a1f11 #fbe3e4 #fbc2c4 !default;
+$successColor: #264409 #e6efc2 #c6d880 !default;
+$infoColor: #205791 #d5edf8 #92cae4 !default;
+
+
+// radius
+//-----------------------------------------------------	
+$baseRadius: 5px;
+$smallRadius: 3px;

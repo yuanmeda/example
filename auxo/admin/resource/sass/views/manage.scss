@@ -1,0 +1,77 @@
+@import "../share/color";
+@import "../share/list_base";
+@import "../share/animation";
+
+.train-main {
+  font-size: 14px;
+  background-color: #ebebeb;
+  overflow-x: hidden;
+  overflow-y: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  .bc_f {
+    background: #fff;
+  }
+}
+
+.item-list .item .item-check-left.right {
+  right: 2px;
+  left: inherit;
+}
+
+.tag-filter {
+  .catalog-title {
+    min-width: 110px;
+    color: #666;
+    font-weight: bold;
+    padding: 6px 12px;
+  }
+}
+
+.container-content {
+  .btn-link {
+    color: #666;
+    text-decoration: none;
+  }
+  .mode-btn-group {
+    border-right: 1px solid #999;
+    float: left;
+    padding-left: 14px;
+    width: 102px;
+    .btn-link {
+      padding: 2px 8px;
+      font-size: 20px;
+      &:hover {
+        color: #337ab7;
+      }
+    }
+  }
+  .inline {
+    display: inline-block;
+    vertical-align: middle;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 20px;
+    &:first-child {
+      padding-left: 20px;
+    }
+  }
+  .sep {
+    padding-right: 10px;
+    border-right: 1px solid #ccc;
+  }
+  .default-btn {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    margin-left: 10px;
+    color: #666;
+    &:hover {
+      color: lighten(#666, 5%);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.x-my-dcu-tab{
+  border-bottom:1px solid #d7d7d7;
+  text-align:center;
+  margin: 0 20px;
+  span{
+    display:inline-block;
+    color:#666666;
+    font-size:14px;
+    padding:20px 40px;
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+    position:relative;
+    bottom:-1px;
+    &:hover{
+      color:$theme-color;
+    }
+    &.on{
+      color:$theme-color;
+      border-bottom-color:$theme-color;
+    }
+  }
+}

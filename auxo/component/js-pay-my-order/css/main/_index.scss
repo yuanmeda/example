@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import "../shared/_mixin.scss";
+@import "../shared/_utilities.scss";
+@import "../shared/_iconfont.scss";
+@import "../shared/_pagination.scss";
+
+$version: 2017090502;
+$colorMap: (0:(bgc:#ddd, bc:#ddd, hbc: #999), 1:(bgc:#eaf8ff, bc:#daf3ff, hbc: #aed8ff), 2:(bgc:#eaffea, bc:#cffdd2, hbc:#93df98));
+
+.pay-container {
+  //width: 1020px;
+  //margin: 0 auto;
+  .tab-nav {
+    padding: 0 40px;
+    height: 60px;
+    border-bottom: 1px #e6e6e6 solid;
+    font-size: 14px;
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      height: 60px;
+      padding: 0 32px;
+      line-height: 60px;
+      text-align: center;
+      cursor: pointer;
+      &.active, &:hover {
+        border-bottom: 2px solid $themeColor;
+        color: $themeColor;
+      }
+    }
+  }
+  .order-container {
+    padding: 0 20px;
+  }
+  .no-order {
+    font-size: 24px;
+    text-align: center;
+    padding-top: 300px;
+    color: #bbb;
+  }
+  .order-list {
+    margin-bottom: 20px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout: fixed;
+      tr th {
+        font-weight: normal;
+      }
+    }
+    .order-head {
+      border: 1px solid #e8e8e8;
+      background-color: #f5f5f5;
+      color: #3c3c3c;
+      margin: 20px 0 10px;
+      tr th {
+        padding: 10px 0;
+        font-size: 14px;
+      }
+    }
+    @each $status, $colors in $colorMap {
+      .order-item-wrap {
+        margin: 10px 0;
+        border: 1px solid;
+        &.status-#{$status} {
+          border-color: map_get($colors, bc);
+          &:hover {
+            border-color: map_get($colors, hbc);
+          }
+          .order-item {
+            .lt {
+              text-decoration: line-through;
+              color: #ccc;
+            }
+            tr th:first-child {
+              text-align: left;
+              padding-left: 20px;
+            }
+            thead {
+              background-color: map_get($colors, bgc);
+            }
+            tr td {
+              border-width: 1px 1px 0 0;
+              border-style: solid;
+              border-color: map_get($colors, bc);
+              padding: 10px;
+              text-align: center;
+              &.no-br {
+                border-right: none;
+              }
+            }
+            tr th {
+              border-width: 0 1px 0 0;
+              border-style: solid;
+              border-color: map_get($colors, bc);
+              padding: 10px;
+            }
+            .btn {
+              display: inline-block;
+              margin: 0 auto;
+              padding: 0 10px;
+              height: 30px;
+              font-size: 12px;
+              line-height: 30px;
+              text-align: center;
+              color: #fff;
+              background-color: $themeColor;
+              border-radius: 5px;
+              &:hover {
+                background-color: $btnHover;
+              }
+            }
+            .btn-link {
+              color: $themeColor;
+              word-break: keep-all;
+              &:hover {
+                color: $btnHover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[0504/201324:INFO:CONSOLE(0)] "Unsafe JavaScript attempt to access frame with URL file:///C:/Users/Administrator/AppData/Roaming/Adobe/CEPServiceManager4/extensions/Cutterman/index.html from frame with URL http://www.cutterman.cn/app/Cutterman/content/index.html?t=1493900003759&flag=1. Domains, protocols and ports must match.
+," source: (0)
+[0504/201324:INFO:CONSOLE(0)] "create jsx_dir failed," source: http://www.cutterman.cn/app/Cutterman/content/js/base.js?t=2.5.30(32)
+[0504/201324:INFO:CONSOLE(0)] "write constants.jsx success," source: http://www.cutterman.cn/app/Cutterman/content/js/base.js?t=2.5.30(51)
+[0504/201324:INFO:CONSOLE(0)] "write library.jsx success," source: http://www.cutterman.cn/app/Cutterman/content/js/base.js?t=2.5.30(51)
+[0504/201324:INFO:CONSOLE(0)] "write export.jsx success," source: http://www.cutterman.cn/app/Cutterman/content/js/base.js?t=2.5.30(51)

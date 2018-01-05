@@ -1,0 +1,32 @@
+//@import "base";
+@import "mixins";
+.banner-header {
+  border-bottom: 1px solid #ccc;
+  padding: 4px 8px;
+  @include css3(box-shadow, -3px 0px 0 0 #1ECBD6);
+  @include clearfix();
+  h2 {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  button {
+    float: right;
+    vertical-align: bottom;
+  }
+}
+
+
+  .tool-footer{
+    border-top: 1px solid #ccc;
+    padding: 4px 8px;
+    button{
+      margin-left:20px;
+      &.left{
+        float: left;
+      }
+      &.right{
+        float: right;
+      }
+    };
+  }

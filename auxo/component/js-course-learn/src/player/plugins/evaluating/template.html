@@ -1,0 +1,249 @@
+<!--ko if:model.evaluatingInfo() && model.activities() && model.isShowAnswer()===false-->
+    <div class="n-evaluate result">
+    <div class="icon-flag"></div>
+    <h2 class="result-tit" data-bind="text:model.evaluatingInfo().title"></h2>
+    <div class="result-statu ing" data-bind="visible:model.activities().status===model.RESOURCE_STATUS.UNDO"></div>
+    <div class="result-statu success" data-bind="visible:model.activities().status===model.RESOURCE_STATUS.DONE, translate:{'key':'courseLearn.evaluating.passed'}">达标</div>
+    <div class="result-statu failed" data-bind="visible:model.activities().status===model.RESOURCE_STATUS.DOING, translate:{'key':'courseLearn.evaluating.failed'}">未达标</div>
+    <!-- 记忆曲线模式 -->
+    <div data-bind="if: model.evaluatingInfo().rule_type==='MEMORY'">
+        <div class="result-step-list">
+            <!--ko if:model.activities().extra_data.last_pass !==undefined && model.activities().extra_data.last_pass!==null-->
+            <span class="result-step" data-bind="css:{'success': model.activities().extra_data.pass_times>0, 'failed':model.activities().extra_data.pass_times===0 && model.activities().extra_data.last_pass===false && model.activities().status===model.RESOURCE_STATUS.DOING, 'ing': model.activities().extra_data.pass_times===0 && model.activities().status===model.RESOURCE_STATUS.UNDO}, translate:{'key':'courseLearn.evaluating.firstEvaluating'}">第一次评测</span>
+            <span class="result-step" data-bind="css:{'success': model.activities().extra_data.pass_times>1, 'failed':model.activities().extra_data.pass_times===1 && model.activities().extra_data.last_pass===false, 'ing': model.activities().extra_data.pass_times===1 && model.activities().extra_data.last_pass===true}, translate:{'key':'courseLearn.evaluating.secondEvaluating'}">第二次评测</span>
+            <span class="result-step" data-bind="css:{'success': model.activities().extra_data.pass_times>2, 'failed':model.activities().extra_data.pass_times===2 && model.activities().extra_data.last_pass===false, 'ing': model.activities().extra_data.pass_times===2 && model.activities().extra_data.last_pass===true}, translate:{'key':'courseLearn.evaluating.thirdEvaluating'}">第三次评测</span>
+            <!--/ko-->
+            <!--ko if:model.activities().extra_data.last_pass ===undefined || model.activities().extra_data.last_pass===null-->
+            <span class="result-step" data-bind="translate:{'key':'courseLearn.evaluating.firstEvaluating'}">第一次评测</span>
+            <span class="result-step" data-bind="translate:{'key':'courseLearn.evaluating.secondEvaluating'}">第二次评测</span>
+            <span class="result-step" data-bind="translate:{'key':'courseLearn.evaluating.thirdEvaluating'}">第三次评测</span>
+            <!--/ko-->
+        </div>
+        <!-- 评测前 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.UNDO">
+            <ul class="result-info">
+                <li><!-- ko translate:{key:'courseLearn.evaluating.questionCount'}--> 评测题数<!--/ko-->(<span class="highlight" data-bind="text:model.evaluatingInfo().rule_value.question_count"></span>)</li>
+                <li><!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->(<span class="highlight"><!-- ko translate:{key:'courseLearn.evaluating.accuracy'}--> 正确率<!--/ko--><!--ko text:model.evaluatingInfo().rule_value.qualified_rate--><!--/ko-->%</span>)</li>
+                <li><span data-bind="translate:{'key':'courseLearn.evaluating.evaluatingCount'}">评测次数</span>(<span class="highlight">3</span>)</li>
+                <li><!-- ko translate:{key:'courseLearn.evaluating.quizTime'}--> 答题时间<!--/ko-->(<span class="highlight" data-bind="translate:{'key':'courseLearn.evaluating.unlimited'}">不限</span>)</li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn"  data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.beginToAnswer'}">开始作答</a>
+            </div>
+        </div>
+        <!-- 未达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DOING">
+            <!-- 上一次评测没有通过 -->
+            <!--ko if:model.activities().extra_data.last_pass !==undefined && model.activities().extra_data.last_pass!==null && model.activities().extra_data.last_pass===false-->
+                <div class="result-btn-item">
+                    <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.reEvaluating'}">重新评测</a>
+                </div>
+            <!--/ko-->
+            <!-- 上一次评测有通过 -->
+            <!--ko if:model.activities().extra_data.last_pass !==undefined && model.activities().extra_data.last_pass!==null && model.activities().extra_data.last_pass===true-->
+                <!-- 未到评测开放时间 -->
+                <div data-bind="if: model.isStartBtnDisabled()===true">
+                    <ul class="result-info">
+                        <li><span data-bind="translate:{'key':'courseLearn.evaluating.nextEvaluatingOpenTime'}">下次评测开放时间</span>：<span class="highlight" data-bind="text:dateFormat(model.activities().extra_data.next_start_time)"></span></li>
+                    </ul>
+                </div>
+                <div class="result-btn-item">
+                    <a href="javascript:;" class="ui-btn" data-bind="css:{'disabled': model.isStartBtnDisabled()===true}, click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.beginToAnswer'}">开始作答</a>
+                </div>
+            <!--/ko-->
+            <!--ko if:model.activities().extra_data.last_pass ===undefined || model.activities().extra_data.last_pass===null-->
+                <div class="result-btn-item">
+                    <a href="javascript:;" class="ui-btn" data-bind="css:{'disabled': model.isStartBtnDisabled()===true}, click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.beginToAnswer'}">开始作答</a>
+                </div>
+            <!--/ko-->
+        </div>
+        <!-- 已达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DONE">
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+            </div>
+        </div>
+    </div>
+    <!-- 连续答题模式 -->
+    <div data-bind="if: model.evaluatingInfo().rule_type==='CONTINUOUS'">
+        <!-- 评测前 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.UNDO">
+            <ul class="result-info">
+                <li><!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->(<span class="highlight" data-bind="translate: { key: 'courseLearn.evaluating.continuousRightCount', properties:{ 'continuousRightCount': model.evaluatingInfo().rule_value.continuous_right_count }}"></span>)</li>
+                <li><!-- ko translate:{key:'courseLearn.evaluating.quizTime'}--> 答题时间<!--/ko-->(<span class="highlight" data-bind="translate:{'key':'courseLearn.evaluating.unlimited'}">不限</span>)</li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.beginToAnswer'}">开始作答</a>
+            </div>
+        </div>
+        <!-- 未达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DOING">
+            <div class="result-step-list">
+                <span class="success result-step"><span class="highlight" data-bind="translate: { key: 'courseLearn.evaluating.hightlightContinuousRightCount', properties:{ 'continuousRightCount': model.activities().extra_data.continuous_right_count || 0 }}"></span></span>
+            </div>
+            <ul class="result-info">
+                <li><!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->：<span data-bind="translate: { key: 'courseLearn.evaluating.continuousRightCount', properties:{ 'continuousRightCount': model.evaluatingInfo().rule_value.continuous_right_count }}"></span></li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+                <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.reEvaluating'}">重新评测</a>
+            </div>
+        </div>
+        <!-- 已达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DONE">
+            <div class="result-step-list">
+                <span class="success result-step"><span class="highlight" data-bind="translate: { key: 'courseLearn.evaluating.hightlightContinuousRightCount', properties:{ 'continuousRightCount': model.activities().extra_data.continuous_right_count || 0 }}"></span></span>
+            </div>
+            <ul class="result-info">
+                <li><!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->：<span data-bind="translate: { key: 'courseLearn.evaluating.continuousRightCount', properties:{ 'continuousRightCount': model.evaluatingInfo().rule_value.continuous_right_count }}"></span></li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+            </div>
+        </div>
+    </div>
+    <!-- 快速答题模式 -->
+    <div data-bind="if: model.evaluatingInfo().rule_type==='QUICK'">
+        <!-- 评测前 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.UNDO">
+            <ul class="result-info">
+                <li><!-- ko translate:{key:'courseLearn.evaluating.questionCount'}--> 评测题数<!--/ko-->(<span class="highlight" data-bind="text:model.evaluatingInfo().rule_value.question_count"></span>)</li>
+                <li>
+                    <!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->(<span class="highlight" data-bind="if: model.evaluatingInfo().rule_value.qualified_rate"><span data-bind="translate:{'key':'courseLearn.evaluating.accuracy'}">正确率</span><span data-bind="text:model.evaluatingInfo().rule_value.qualified_rate"></span>%</span><span class="highlight" data-bind="if: model.evaluatingInfo().rule_value.right_count"><span data-bind="translate: { key: 'courseLearn.evaluating.rightCount', properties:{ 'rightCount': model.evaluatingInfo().rule_value.right_count }}"></span></span><span class="highlight" data-bind="if: model.evaluatingInfo().rule_value.qualified_score"><span data-bind="text:model.evaluatingInfo().rule_value.qualified_score"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>)
+                </li>
+                <li><!-- ko translate:{key:'courseLearn.evaluating.quizTime'}--> 答题时间<!--/ko-->(<span class="highlight" data-bind="text:model.evaluatingInfo().rule_value.duration"></span><span data-bind="translate:{'key':'courseLearn.evaluating.minutes'}">分钟</span>)</li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.beginToAnswer'}">开始作答</a>
+            </div>
+        </div>
+        <!-- 未达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DOING">
+            <div class="result-step-list">
+                <ul class="scole-item">
+                    <li>
+                        <p class="value"><span data-bind="text:model.activities().extra_data.right_count || 0"></span><span data-bind="translate:{'key':'courseLearn.evaluating.questions'}">题</span></p>
+                        <p class="label" data-bind="translate:{'key':'courseLearn.evaluating.answerCorrect'}">答对</p>
+                    </li>
+                    <li>
+                        <p class="value"><span data-bind="text:model.activities().extra_data.score || 0"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></p>
+                        <p class="label" data-bind="translate:{'key':'courseLearn.evaluating.getScore'}">得分</p>
+                    </li>
+                    <li>
+                        <p class="value"><span data-bind="text:model.activities().extra_data.accuracy || 0"></span>%</p>
+                        <p class="label"><span data-bind="translate:{'key':'courseLearn.evaluating.accuracy'}">正确率</span></p>
+                    </li>
+                </ul>
+            </div>
+            <ul class="result-info">
+                <li>
+                    <!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->:
+                    <span data-bind="if: model.evaluatingInfo().rule_value.qualified_rate"><span data-bind="translate:{'key':'courseLearn.evaluating.accuracy'}">正确率</span><span data-bind="text:model.evaluatingInfo().rule_value.qualified_rate"></span>%</span>
+                    <span data-bind="if: model.evaluatingInfo().rule_value.right_count"><span data-bind="translate:{'key':'courseLearn.evaluating.answerCorrect'}">答对</span><span data-bind="text:model.evaluatingInfo().rule_value.right_count"></span><span data-bind="translate:{'key':'courseLearn.evaluating.questions'}">题</span></span>
+                    <span data-bind="if: model.evaluatingInfo().rule_value.qualified_score"><span data-bind="text:model.evaluatingInfo().rule_value.qualified_score"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>
+                </li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+                <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.reEvaluating'}">重新评测</a>
+            </div>
+        </div>
+        <!-- 已达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DONE">
+            <div class="result-step-list">
+                <ul class="scole-item">
+                    <li>
+                        <p class="value"><span data-bind="text:model.activities().extra_data.right_count || 0"></span><span data-bind="translate:{'key':'courseLearn.evaluating.questions'}">题</span></p>
+                        <p class="label" data-bind="translate:{'key':'courseLearn.evaluating.answerCorrect'}">答对</p>
+                    </li>
+                    <li>
+                        <p class="value"><span data-bind="text:model.activities().extra_data.score || 0"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></p>
+                        <p class="label" data-bind="translate:{'key':'courseLearn.evaluating.getScore'}">得分</p>
+                    </li>
+                    <li>
+                        <p class="value"><span data-bind="text:model.activities().extra_data.accuracy || 0"></span>%</p>
+                        <p class="label"><span data-bind="translate:{'key':'courseLearn.evaluating.accuracy'}">正确率</span></p>
+                    </li>
+                </ul>
+            </div>
+            <ul class="result-info">
+                <li>
+                    <!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->:
+                    <span data-bind="if: model.evaluatingInfo().rule_value.qualified_rate"><span data-bind="translate:{'key':'courseLearn.evaluating.accuracy'}">正确率</span><span data-bind="text:model.evaluatingInfo().rule_value.qualified_rate"></span>%</span>
+                    <span data-bind="if: model.evaluatingInfo().rule_value.right_count"><span data-bind="translate:{'key':'courseLearn.evaluating.answerCorrect'}">答对</span><span data-bind="text:model.evaluatingInfo().rule_value.right_count"></span><span data-bind="translate:{'key':'courseLearn.evaluating.questions'}">题</span></span>
+                    <span data-bind="if: model.evaluatingInfo().rule_value.qualified_score"><span data-bind="text:model.evaluatingInfo().rule_value.qualified_score"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>
+                </li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+            </div>
+        </div>
+    </div>
+    <!-- 试卷模式 -->
+    <div data-bind="if: model.evaluatingInfo().rule_type==='TEST'">
+        <!-- 评测前 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.UNDO">
+            <ul class="result-info">
+                <li><!-- ko translate:{key:'courseLearn.evaluating.questionCount'}--> 评测题数<!--/ko-->(<span class="highlight" data-bind="text:model.evaluatingInfo().rule_value.question_count"></span>)</li>
+                <li>
+                    <!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->(<span class="highlight" data-bind="if: model.evaluatingInfo().rule_value.qualified_score"><span data-bind="text:model.evaluatingInfo().rule_value.qualified_score"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>)
+                </li>
+                <li><!-- ko translate:{key:'courseLearn.evaluating.quizTime'}--> 答题时间<!--/ko-->(<span class="highlight" data-bind="text:model.evaluatingInfo().rule_value.duration"></span><span data-bind="translate:{'key':'courseLearn.evaluating.minutes'}">分钟</span>)</li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.beginToAnswer'}">开始作答</a>
+            </div>
+        </div>
+        <!-- 未达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DOING">
+            <div class="result-step-list">
+                <span class="result-scole"><span class="num failed" data-bind="text:model.activities().extra_data.score || 0"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>
+            </div>
+            <ul class="result-info">
+                <li>
+                    <!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->:
+                    <span data-bind="if: model.evaluatingInfo().rule_value.qualified_score"><span data-bind="text:model.evaluatingInfo().rule_value.qualified_score"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>
+                </li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+                <a href="javascript:;" class="ui-btn" data-bind="click:showAnswer.bind($component, false), translate:{'key':'courseLearn.evaluating.reEvaluating'}">重新评测</a>
+            </div>
+        </div>
+        <!-- 已达标 -->
+        <div data-bind="if: model.activities().status===model.RESOURCE_STATUS.DONE">
+            <div class="result-step-list">
+                <span class="result-scole"><span class="num success" data-bind="text:model.activities().extra_data.score || 0"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>
+            </div>
+            <ul class="result-info">
+                <li>
+                    <!-- ko translate:{key:'courseLearn.evaluating.eliRequires'}--> 合格要求<!--/ko-->:
+                    <span data-bind="if: model.evaluatingInfo().rule_value.qualified_score"><span data-bind="text:model.evaluatingInfo().rule_value.qualified_score"></span><span data-bind="translate:{'key':'courseLearn.evaluating.score'}">分</span></span>
+                </li>
+            </ul>
+            <div class="result-btn-item">
+                <a href="javascript:;" class="ui-btn2" data-bind="click:showAnswer.bind($component, true), translate:{'key':'courseLearn.evaluating.aweAndExplanation'}">答案解析</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ko-->
+<!--ko if:model.isShowAnswer()===true-->
+    <!--ko component:{'name':'x-course-learn-player-answer','params':{ 'config':$root.config,'data':{evaluatingInfo: model.evaluatingInfo(),activities: model.activities(),isAnswerExp: model.isAnswerExp(),resourceId: model.resourceId,lessonId: model.lessonId}}}-->
+    <!--/ko-->
+<!--/ko-->
+<!--ko if:model.popTimeZero()===true-->
+<div class="ui-pop">
+    <div class="mask"></div>
+    <div class="model">
+        <div class="model-hd" data-bind="translate:{'key':'courseLearn.common.hint'}">提示</div>
+        <div class="model-bd">
+            <div class="tip-warn" data-bind="translate:{'key':'courseLearn.evaluating.timeZeroWarning'}">评测时间不可以设置为0分钟</div>
+        </div>
+        <div class="model-ft">
+            <a href="javascript:;" class="ui-btn" data-bind="click:hideTimeZeroPop.bind($component), translate:{'key':'courseLearn.evaluating.confirm'}">确定</a>
+        </div>
+        <a href="javascript:;" class="btn-close" data-bind="click:hideTimeZeroPop.bind($component)"></a>
+    </div>
+</div>
+<!--/ko-->

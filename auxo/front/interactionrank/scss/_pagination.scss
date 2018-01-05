@@ -1,0 +1,40 @@
+.listpage{
+	padding:20px 0 80px;
+
+}
+.listpage .page-l{
+
+}
+.listpage a,
+.listpage strong{
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+	border-radius: 2px;
+	padding: 0 18px;
+	height: 37px;
+	line-height: 37px;
+	background: #ddd;
+}
+.listpage a.on,
+.listpage a:hover{
+	background: $themeColor;
+	color: #fff;
+}
+.page-r a span{
+	display: inline-block;
+	margin-right: 30px;
+}
+.listpage .topage{
+	display: block;
+	width: 38px;
+	height: 35px;
+	line-height: 35px;
+	padding:0 10px;
+	border:1px solid #d2d2d2;
+	border-radius: 3px;
+	background: none;
+}
+.listpage .topage:focus{
+	border-color:$themeColor;
+}
