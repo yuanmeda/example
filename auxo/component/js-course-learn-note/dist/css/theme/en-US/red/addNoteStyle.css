@@ -14,9 +14,9 @@
  */
 @font-face {
   font-family: "iconfont-learn";
-  src: url("../../../../../fonts/iconfont.eot?t=1493203212336");
+  src: url("../../fonts/iconfont.eot?t=1493203212336");
   /* IE9*/
-  src: url("../../../../../fonts/iconfont.eot?t=1493203212336#iefix") format("embedded-opentype"), url("../../../../../fonts/iconfont.woff?t=1493203212336") format("woff"), url("../../../../../fonts/iconfont.ttf?t=1493203212336") format("truetype"), url("../../../../../fonts/iconfont.svg?t=1493203212336#iconfont-learn") format("svg");
+  src: url("../../fonts/iconfont.eot?t=1493203212336#iefix") format("embedded-opentype"), url("../../fonts/iconfont.woff?t=1493203212336") format("woff"), url("../../fonts/iconfont.ttf?t=1493203212336") format("truetype"), url("../../fonts/iconfont.svg?t=1493203212336#iconfont-learn") format("svg");
   /* iOS 4.1- */ }
 
 .iconfont-learn {
@@ -95,7 +95,9 @@
   border: 1px solid #ce3f3f;
   border-radius: 5px;
   font-size: 18px;
+  -moz-transition: background 0.3s ease-out,color 0.3s ease-out;
   -webkit-transition: background 0.3s ease-out,color 0.3s ease-out;
+  -o-transition: background 0.3s ease-out,color 0.3s ease-out;
   transition: background 0.3s ease-out,color 0.3s ease-out; }
   .u-ui-btn:hover, .u-ui-btn.on {
     color: #fff;
@@ -193,7 +195,7 @@ a {
       color: #999; }
     .u-ui-add-note .add-note-btn .note-icon-pen {
       margin-left: 15px;
-      background: url(../../../../../css/images/icon-none.png) no-repeat 0 -240px; }
+      background: url(../images/icon-none.png) no-repeat 0 -240px; }
     .u-ui-add-note .add-note-btn:hover .note-txt {
       color: #ce3f3f; }
     .u-ui-add-note .add-note-btn:hover .n-icon-pen {

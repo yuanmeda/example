@@ -83,7 +83,7 @@ glob('css/**/[!_]*.scss', function (err, files) {
 });
 
 rollup.rollup({
-    entry: 'index.js',
+    entry: 'src/index.js',
     external: ['knockout', 'jquery'],
     globals: {
         knockout: 'ko',
