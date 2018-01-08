@@ -101,16 +101,7 @@ rollup.rollup({
             extensions: ['.js', '.json']
         }),
         commonjs(),
-        babel(),
-        uglify({
-            compress: {
-                screw_ie8: false,
-                //properties: false // optional: don't convert foo["bar"] to foo.bar
-            },
-            output: {
-                screw_ie8: false
-            }
-        })
+        babel()
     ],
 
 }).then(function (bundle) {

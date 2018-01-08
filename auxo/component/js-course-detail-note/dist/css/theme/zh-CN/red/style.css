@@ -68,9 +68,9 @@
 /* -------------z-index------------- */
 @font-face {
   font-family: "iconfont-learn";
-  src: url("../../../../../fonts/elearing-note.eot?t=1493203212336");
+  src: url("../../fonts/elearing-note.eot?t=1493203212336");
   /* IE9*/
-  src: url("../../../../../fonts/elearing-note.eot?t=1493203212336#iefix") format("embedded-opentype"), url("../../../../../fonts/elearing-note.woff?t=1493203212336") format("woff"), url("../../../../../fonts/elearing-note.ttf?t=1493203212336") format("truetype"), url("../../../../../fonts/elearing-note.svg?t=1493203212336#iconfont-learn") format("svg");
+  src: url("../../fonts/elearing-note.eot?t=1493203212336#iefix") format("embedded-opentype"), url("../../fonts/elearing-note.woff?t=1493203212336") format("woff"), url("../../fonts/elearing-note.ttf?t=1493203212336") format("truetype"), url("../../fonts/elearing-note.svg?t=1493203212336#iconfont-learn") format("svg");
   /* iOS 4.1- */ }
 
 .iconfont-learn {
@@ -564,7 +564,7 @@
     text-align: center; }
     .note-empty-icon {
       display: block;
-      background: url(../../../../../css/images/icon-none.png) no-repeat center;
+      background: url(../images/icon-none.png) no-repeat center;
       height: 138px; }
     .note-empty-tips {
       margin: 10px 20px;

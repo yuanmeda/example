@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://s14.e.99.com/?f=/auxo/front/other/css/reset.css,/auxo/front/other/css/white/header.css&v=20171213322716">
+    <link rel="stylesheet" href="http://s14.e.99.com/?f=/auxo/front/mystudy/css/style/common.css,/auxo/front/other/css/reset.css,/auxo/front/other/css/white/header.css,/auxo/front/mystudy/css/white/skin_common.css,/auxo/addins/jquery-udialog/v1.0.0/udialog-mystudy.css&v=20171213322716">
+    <link rel="stylesheet" href="http://s12.e.99.com/?f=/auxo/front/mystudy/css/style/common.css,/auxo/front/mystudy/css/white/skin_common.css,/auxo/addins/jquery-udialog/v1.0.0/udialog-mystudy.css&v=20171213322716"><link rel="stylesheet" href="http://s13.e.99.com/?f=/auxo/front/mystudy/css/white/usercenter.css,/auxo/front/certificate/css/web/mycertificate.white.css,/auxo/front/mystudy/css/white/my_note.css,/auxo/front/fjedu/css/independent/second-note-white.css&v=20171213322716"><link rel="stylesheet" href="http://s13.e.99.com/?f=/auxo/front/mystudy/css/white/my_note_edit.css,/auxo/component/js-note-item/dist/white/style.css,/auxo/component/js-note-pop-editor/dist/white/style.css&v=20171213322716"><link rel="stylesheet" href="http://s15.e.99.com/?f=/auxo/component/js-usercenter-subscribe/dist/css/white/style.css,/auxo/front/mystudy/css/white/my_voucher.css&v=20171213322716"><link rel="stylesheet" href="http://s13.e.99.com/?f=/auxo/component/js-study-container/dist/css/white/style.css&v=20171213322716"><link rel="stylesheet" href="http://s11.e.99.com/?f=/auxo/front/mystudy/css/white/my_exam.css,/auxo/component/js-exam-container/dist/css/white/style.css,/auxo/front/mystudy/css/white/my_bxk.css,/auxo/component/js-my-enroll/dist/css/theme/zh-CN/white/style.css&v=20171213322716"><link rel="stylesheet" href="http://s14.e.99.com/?f=/auxo/component/js-usercenter-question/dist/css/theme/zh-CN/white/style.css,/auxo/component/js-questions/dist/white/style.css,/auxo/front/fjedu/css/independent/second-faq-white.css&v=20171213322716"><link rel="stylesheet" href="http://s14.e.99.com/?f=/auxo/component/js-question-uploadimg/dist/css/theme/white/index.css,/auxo/addins/webuploader/v0.1.5/css/webuploader.css,/auxo/component/js-hobby-tags/dist/white/style.css&v=20171213322716">
+	<title>测试笔记</title>
+</head>
+<body>
+	<div id="content">
+		<div data-bind="component:{name:'x-my-note',params:{noteNickName: noteNickName}}">
+        </div>
+	</div>
+	<script src="../../../addins/jquery/v1.12.4/jquery.min.js"></script>
+    <script src="../../../addins/ko/v3.4.2/knockout.min.js"></script>
+    <script src="../../../addins/ko-mapping/v2.6.0/knockout.mapping.min.js"></script>
+    <script src="../../../addins/ko-i18n/v0.9.0/ko-i18n-min.js"></script>
+    <script src="../../../common/i18n/translate.js"></script>
+    <script src="../../../front/mystudy/js/common/i18n/zh-CN.js"></script>
+    <script>
+        var gaea_js_properties ={"auxo_train_url":"http://elearning-train-api.edu.web.sdp.101.com","front_specialtycourse_url":"http://specialty-course-webfront.sdp.101.com","auxo_channel_url":"http://auxo-channel-api.edu.web.sdp.101.com","auxo_opencourse_url":"http://auxo-open-course-service.edu.web.sdp.101.com","auxo_qa_api":"http://assist.sdp.101.com","auxo_mystudy_url":"http://auxo-my-study-service.edu.web.sdp.101.com","elearning_web_url":"http://e.101.com","portal_web_url":"http://e.101.com","front_coin_url":"http://coin-certificate-gateway.edu.web.sdp.101.com","mystudy_mooc_web_url":"http://mooc.101.com","auxo_interaction_qa_url":"http://assist.sdp.101.com","online_exam_gateway_url":"http://elearning-onlineexam-gateway.sdp.101.com","elearning_task_url":"http://elearning-task-gateway.sdp.101.com","business_course_gateway_url":"http://business-course-gateway.sdp.101.com","auxo_appraise_service_url":"http://assist.sdp.101.com","auxo_qa_gateway":"http://assist-gw.sdp.101.com","auxo_note_api":"http://elearning-note-api.edu.web.sdp.101.com","auxo_note_gateway":"http://elearning-note-gateway.sdp.101.com","auxo_mystudy_gateway_url":"http://auxo-my-study-gateway.edu.web.sdp.101.com","auxo_examcenter_url":"http://auxo-examcenter-api.edu.web.sdp.101.com","auxo_exam_url":"http://auxo-exam-service.edu.web.sdp.101.com","front_certificate_url":"http://certificate-webfront.sdp.101.com","front_opencourse_url":"http://webfront-opencourse.sdp.101.com","front_course_url":"http://webfront-course.sdp.101.com","front_train_url":"http://webfront-train.sdp.101.com","auxo_course_url":"http://auxo-course.edu.web.sdp.101.com","web_front_url":"http://xue.101.com","uc_uri":"https://aqapi.101.com/v0.93/"};
+        var staticUrl = 'http://s11.e.99.com/';
+    </script>
+    <script src="./my_note.js"></script>
+	<script>
+        var viewModel = {
+            noteNickName: '钟媛',
+            init: function(){
+                ko.applyBindings(this, document.getElementById('content'))
+            }
+        }
+        viewModel.init();
+    </script>
+</body>
+</html>

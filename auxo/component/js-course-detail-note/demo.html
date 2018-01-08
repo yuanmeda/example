@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://s14.e.99.com/?f=/auxo/front/other/css/reset.css,/auxo/front/other/css/white/header.css&v=20171213322716">
+    <link rel="stylesheet" href="http://s11.e.99.com/?f=/auxo/admin/interactionappraise/css/emoji.css,/auxo/front/course/css/white/detail.css,/auxo/addins/jquery-udialog/v1.0.0/style/css/theme/zh-CN/white/udialog-common.css,/auxo/front/interactionappraise/css/style/emoji.css,/auxo/front/interactionappraise/css/white/appraise.css,/auxo/component/js-coin/v1.0.1/dist/css/theme/zh-CN/white/style.css,/auxo/component/js-course-detail/dist/css/index.css,/auxo/component/js-course-detail-note/dist/css/theme/zh-CN/white/style.css,/auxo/component/js-note-item/dist/white/style.css,/auxo/component/js-note-pop-editor/dist/white/style.css,/auxo/component/js-resource-certificate-big/dist/blue/style.css&v=20171213322716"><link rel="stylesheet" href="http://s12.e.99.com/?f=/auxo/addins/webuploader/v0.1.5/css/webuploader.css,/auxo/component/js-question-uploadimg/dist/css/theme/white/index.css,/auxo/component/js-questions/dist/white/style.css,/auxo/component/js-course-questions/dist/white/style.css&v=20171213322716"><link rel="stylesheet" href="http://s13.e.99.com/?f=/auxo/component/js-course-detail-pk/dist/css/theme/zh-CN/white/index.css,/auxo/component/js-course-recommend-bar/dist/white/style.css&v=20171213322716"><link rel="stylesheet" href="http://s11.e.99.com/?f=/auxo/component/js-enroll-status-plus/dist/css/theme/zh-CN/white/index.css,auxo/component/js-sales-promotion-card/dist/white/style.css&v=20171213322716">
+	<title>测试笔记</title>
+</head>
+<body>
+	<div id="content">
+		<div data-bind="component: {name: 'x-course-detail-note', params: model}">
+        </div>
+	</div>
+	<script src="../../addins/jquery/v1.12.4/jquery.min.js"></script>
+    <script src="../../addins/ko/v3.4.2/knockout.min.js"></script>
+    <script src="../../addins/ko-mapping/v2.6.0/knockout.mapping.min.js"></script>
+    <script src="../../addins/ko-i18n/v0.9.0/ko-i18n-min.js"></script>
+    <script src="../../common/i18n/translate.js"></script>
+    <script src="./dist/i18n/zh-CN.js"></script>
+    <script src="./dist/index.js"></script>
+	<script>
+        var viewModel = {
+            model: {
+                user_id: '130061',
+                content: '[{"id":"6c1fef90-b199-4725-b9b5-f14445a23ebe","title":"课程内容","sort_num":1,"resource_flag":true,"children":[],"resource_list":[{"uuid":"cc018cce-ef55-4208-b0bc-1f603e11e632","resource_type":"0","name":"冲出自我限制 迎接辉煌明天-01","resource_id":"f24f24ed-f334-427a-aba2-3b0bafe88c02","file_size":285721809,"duration":731,"status":0,"locked":false,"downloadable":false,"score":0,"star":0,"experience_config":null,"extra":null},{"uuid":"158176ae-c871-4f4d-8239-440d6191084d","resource_type":"0","name":"冲出自我限制 迎接辉煌明天-02","resource_id":"b8275f0f-a143-4b41-ad85-2acc7d9749c8","file_size":161954130,"duration":601,"status":2,"locked":false,"downloadable":false,"score":100,"star":3,"experience_config":null,"extra":null},{"uuid":"6bb5d0e0-fb0d-4e2f-91b9-2a35733564ca","resource_type":"0","name":"冲出自我限制 迎接辉煌明天-03","resource_id":"cb3f4e7d-3a05-494e-9d0e-d5334f2700fa","file_size":198192073,"duration":733,"status":2,"locked":false,"downloadable":false,"score":100,"star":3,"experience_config":null,"extra":null},{"uuid":"0382dad3-a732-4a50-9673-a634490c49fa","resource_type":"0","name":"冲出自我限制 迎接辉煌明天-04","resource_id":"237bb092-6710-4b46-adb1-485c0c6ea35a","file_size":222776438,"duration":827,"status":2,"locked":false,"downloadable":false,"score":100,"star":3,"experience_config":null,"extra":null}],"last_study_resource_type":null,"last_study_resource":null,"extra":null,"experience_config":null}]',
+                course_name: 'ND波士堂-DJ：冲出自我限制 迎接辉煌明天',
+                course_id: 'd9e13365-82ea-11e6-a6ca-bc305bf4bcd4',
+                user_name: '钟媛',
+                api_url:'http://elearning-note-api.edu.web.sdp.101.com',
+                gateway:'http://elearning-note-gateway.sdp.101.com',
+                is_login:true
+
+            },
+            init: function(){
+                ko.applyBindings(this, document.getElementById('content'))
+            }
+        }
+        viewModel.init();
+    </script>
+</body>
+</html>
